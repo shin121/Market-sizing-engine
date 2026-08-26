@@ -47,6 +47,7 @@ import {
   StatusBadge,
 } from "@/components/ui";
 import { AddToComparisonButton } from "@/components/comparison-selection";
+import { RelationshipAtlas, type RelationshipNode } from "@/components/relationship-atlas";
 import { SaveCatalogSegmentButton } from "@/components/workbench-controls";
 
 function countValue(record: DataRecord, ...keys: string[]) {
@@ -306,14 +307,97 @@ export function DomainExplorer({ value }: { value: unknown }) {
   );
 }
 
-export function DomainOverview({ value }: { value: unknown }) {
+export function DomainOverview({ value, archetypesValue }: { value: unknown; archetypesValue?: unknown }) {
   const domain = asRecord(value);
   const axes = recordList(domain, "axes", "dimensions", "segmentationAxes", "segmentation_axes");
   const subtypes = recordList(domain, "subtypes", "primarySubtypes", "primary_subtypes");
+  const archetypes = records(archetypesValue, ["archetypes"]);
   const domainCode = text(domain, "domainCode", "domain_code", "code") ?? identifier(domain) ?? "";
   const metrics = nested(domain, "metrics", "counts", "summary");
   const unit = entityUnit(domain);
   const base = number(domain, "countBase", "count_base", "baseCount", "base_count");
+  const relationshipBreakdown = (record: DataRecord, ...keys: string[]) => keys.flatMap((key) => recordList(record, key)).flatMap((item) => {
+    const value = number(item, "value", "shareBase", "share_base");
+    return value === null ? [] : [{ label: label(item), value }];
+  });
+  const relationshipDomain: RelationshipNode = {
+    id: domainCode,
+    label: label(domain),
+    description: description(domain),
+    kind: "domain",
+    href: `/explore/${encodeURIComponent(domainCode)}`,
+    unit,
+    countLow: number(domain, "countLow", "count_low"),
+    countBase: base,
+    countHigh: number(domain, "countHigh", "count_high"),
+    shareBase: number(domain, "shareBase", "share_base"),
+    confidence: number(domain, "confidenceScore", "confidence_score"),
+    grade: text(domain, "estimateGrade", "estimate_grade"),
+    referenceYear: text(domain, "referenceYear", "reference_year"),
+    method: methodDisplayLabel(text(domain, "methodCode", "method_code", "calibrationMethod", "calibration_method")),
+    breakdown: relationshipBreakdown(domain, "geographyDistribution", "geography_distribution"),
+  };
+  const relationshipAxes: RelationshipNode[] = axes.flatMap((axis) => {
+    const id = text(axis, "axisCode", "axis_code", "code") ?? identifier(axis);
+    if (!id) return [];
+    return [{
+      id,
+      label: axisLabel(axis),
+      description: description(axis),
+      kind: "axis" as const,
+      href: `/explore/${encodeURIComponent(domainCode)}/axes/${encodeURIComponent(id)}`,
+      unit,
+      countLow: null,
+      countBase: number(axis, "parentPopulation", "parent_population"),
+      countHigh: null,
+      confidence: number(axis, "confidenceScore", "confidence_score"),
+      grade: text(axis, "confidenceGrade", "confidence_grade"),
+      referenceYear: text(axis, "referenceYear", "reference_year"),
+      method: "Calibration 가중 분포",
+      breakdown: relationshipBreakdown(axis, "distribution"),
+    }];
+  });
+  const relationshipSubtypes: RelationshipNode[] = subtypes.flatMap((subtype) => {
+    const id = hrefId(subtype, ["subtypeId", "subtype_id"]);
+    if (!id) return [];
+    return [{
+      id,
+      label: label(subtype),
+      description: description(subtype),
+      kind: "subtype" as const,
+      href: `/segments/subtypes/${encodeURIComponent(id)}`,
+      unit: entityUnit(subtype),
+      countLow: number(subtype, "countLow", "count_low"),
+      countBase: number(subtype, "countBase", "count_base"),
+      countHigh: number(subtype, "countHigh", "count_high"),
+      shareBase: number(subtype, "shareBase", "share_base", "domainShareBase", "domain_share_base"),
+      confidence: number(subtype, "confidenceScore", "confidence_score"),
+      grade: text(subtype, "estimateGrade", "estimate_grade", "confidenceGrade", "confidence_grade"),
+      referenceYear: text(subtype, "referenceYear", "reference_year"),
+      method: methodDisplayLabel(text(subtype, "uncertaintyMethod", "uncertainty_method", "methodCode", "method_code")),
+    }];
+  });
+  const relationshipArchetypes: RelationshipNode[] = archetypes.flatMap((archetype) => {
+    const id = hrefId(archetype, ["archetypeId", "archetype_id"]);
+    if (!id) return [];
+    return [{
+      id,
+      label: label(archetype),
+      description: description(archetype),
+      kind: "archetype" as const,
+      href: `/archetypes/${encodeURIComponent(id)}`,
+      unit: entityUnit(archetype),
+      countLow: number(archetype, "countLow", "count_low"),
+      countBase: number(archetype, "countBase", "count_base"),
+      countHigh: number(archetype, "countHigh", "count_high"),
+      shareBase: number(archetype, "shareBase", "share_base"),
+      confidence: number(archetype, "confidenceScore", "confidence_score"),
+      grade: text(archetype, "confidenceGrade", "confidence_grade"),
+      referenceYear: text(archetype, "referenceYear", "reference_year"),
+      method: methodDisplayLabel(text(archetype, "calibrationMethod", "calibration_method", "methodCode", "method_code")),
+      linkedSubtypeIds: stringList(archetype, "relatedSubtypeIds", "related_subtype_ids"),
+    }];
+  });
 
   return (
     <div className="page-stack">
@@ -339,6 +423,12 @@ export function DomainOverview({ value }: { value: unknown }) {
         <Metric label="Behavior" value={countValue(domain, "behaviorCount", "behavior_count")} />
         <Metric label="관련 지출" value="근거 미등록" note="같은 Domain 분모의 지출 관측이 연결되지 않았습니다." />
       </div>
+      <RelationshipAtlas
+        domain={relationshipDomain}
+        axes={relationshipAxes}
+        subtypes={relationshipSubtypes}
+        archetypes={relationshipArchetypes}
+      />
       <div className="dashboard-grid domain-evidence-grid">
         <DistributionPanel title="지역별 시장 분포" value={domain} keys={["geographyDistribution", "geography_distribution"]} />
         <ConfidencePanel value={domain} />

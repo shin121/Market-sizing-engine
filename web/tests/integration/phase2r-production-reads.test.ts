@@ -26,7 +26,9 @@ describe.runIf(databaseEnabled)("Phase 2R-A production read models", () => {
 
   it("serves named production estimates and excludes prototype fixtures", async () => {
     const [estimates, segments] = await Promise.all([
-      listEstimates(),
+      // Coverage assertions span the full production baseline, not the
+      // deliberately bounded first page used by the workbench directory.
+      listEstimates({ limit: 200, status: "estimated" }),
       listSavedSegments({ limit: 200 }),
     ]);
 

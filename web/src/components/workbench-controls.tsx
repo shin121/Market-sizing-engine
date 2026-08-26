@@ -494,7 +494,7 @@ export function ResearchCreateForm({
       <label><span>조사 질문</span><textarea name="research_question" required defaultValue={defaultQuestion} placeholder="기존 Baseline으로 계산할 수 없는 질문" /></label>
       <label><span>대상 세그먼트</span><input name="target_segment" required defaultValue={defaultTargetSegment} placeholder="예: 대한민국 소상공인" /></label>
       <label><span>대상 변수</span><input name="target_variable" required defaultValue={defaultTargetVariable} placeholder="검증할 단일 변수" /></label>
-      <label><span>Canonical Baseline JSON (선택)</span><textarea name="baseline_json" defaultValue={defaultBaselineJson} placeholder={'예: {"status":"not_estimable","denominator":"대한민국 사업체"}'} spellCheck={false} /></label>
+      <label><span>Canonical Baseline JSON (선택)</span><textarea name="baseline_json" defaultValue={defaultBaselineJson} placeholder={'예: {"description":"현재 자료로 산정 어려움","denominator":"대한민국 사업체"}'} spellCheck={false} /></label>
       <small>집계 근거만 입력하세요. 이메일·전화번호 등 명백한 식별자 패턴은 자동 차단하지만 모든 개인정보를 탐지하지는 못하므로 실명·연락처·상세 주소·계정 ID·미성년자 식별정보를 입력하지 마세요.</small>
       <button className="button button-primary" type="submit" disabled={feedback.pending}><FileSearch aria-hidden="true" /> {buttonLabel}</button>
       {feedback.message ? <p className="form-message" role="status">{feedback.message}</p> : null}

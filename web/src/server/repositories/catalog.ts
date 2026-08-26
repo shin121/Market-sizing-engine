@@ -286,6 +286,7 @@ export interface ArchetypeSummary {
   categoryCode: string;
   categoryNameKo: string;
   relatedDomainIds: string[];
+  relatedSubtypeIds: string[];
   estimateId: string | null;
   estimateEntityUnit: EntityUnit | null;
   estimateStatus: "estimated" | "not_estimable" | "suppressed" | "superseded" | null;
@@ -1506,6 +1507,7 @@ interface ArchetypeRow extends QueryResultRow {
   category_code: string;
   category_name_ko: string;
   related_domain_ids: string[] | null;
+  related_subtype_ids: string[] | null;
   estimate_id: string | null;
   estimate_entity_unit: EntityUnit | null;
   estimate_status: ArchetypeSummary["estimateStatus"];
@@ -1556,6 +1558,7 @@ const ARCHETYPE_COLUMNS = `
   search.category_code,
   search.category_name_ko,
   coalesce(relations.related_domain_ids, ARRAY[]::text[]) AS related_domain_ids,
+  coalesce(relations.related_subtype_ids, ARRAY[]::text[]) AS related_subtype_ids,
   'archetype-market:' || market.archetype_id || ':' || market.domain_context_id AS estimate_id,
   market.entity_unit AS estimate_entity_unit,
   market.status AS estimate_status,
@@ -1589,7 +1592,9 @@ const ARCHETYPE_FROM = `
   JOIN production.v_workbench_archetype_primary_context market
     ON market.archetype_id = search.archetype_id
   LEFT JOIN LATERAL (
-    SELECT array_agg(DISTINCT sd.domain_id ORDER BY sd.domain_id) AS related_domain_ids
+    SELECT
+      array_agg(DISTINCT sd.domain_id ORDER BY sd.domain_id) AS related_domain_ids,
+      array_agg(DISTINCT sa.subtype_id ORDER BY sa.subtype_id) AS related_subtype_ids
     FROM subtype_allocation sa
     JOIN subtype_definition sd USING (subtype_id)
     WHERE sa.phase1_archetype_id = search.archetype_id
@@ -1610,6 +1615,7 @@ function mapArchetype(row: ArchetypeRow): ArchetypeSummary {
     categoryCode: row.category_code,
     categoryNameKo: row.category_name_ko,
     relatedDomainIds: stringArray(row.related_domain_ids),
+    relatedSubtypeIds: stringArray(row.related_subtype_ids),
     estimateId: row.estimate_id,
     estimateEntityUnit: row.estimate_entity_unit,
     estimateStatus: row.estimate_status,
@@ -1834,7 +1840,9 @@ export async function listArchetypes(options: ListArchetypesOptions = {}): Promi
          JOIN production.v_workbench_archetype_primary_context market
            ON market.archetype_id = search.archetype_id
          LEFT JOIN LATERAL (
-           SELECT array_agg(DISTINCT sd.domain_id ORDER BY sd.domain_id) AS related_domain_ids
+           SELECT
+             array_agg(DISTINCT sd.domain_id ORDER BY sd.domain_id) AS related_domain_ids,
+             array_agg(DISTINCT sa.subtype_id ORDER BY sa.subtype_id) AS related_subtype_ids
            FROM subtype_allocation sa
            JOIN subtype_definition sd USING (subtype_id)
            WHERE sa.phase1_archetype_id = search.archetype_id
