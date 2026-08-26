@@ -80,7 +80,7 @@ Run DB integration through `../scripts/test_workbench_integration.sh`. It recrea
 ## Authentication and secrets
 
 - `WORKBENCH_AUTH_MODE=local` is development/test only and is rejected when `NODE_ENV=production`.
-- Production uses `WORKBENCH_AUTH_MODE=secret`, a `WORKBENCH_ACCESS_SECRET` of at least 32 characters, and explicit workspace/actor UUIDs.
+- Production uses `WORKBENCH_AUTH_MODE=secret`, a `WORKBENCH_ACCESS_SECRET` of at least 32 characters, an optional separate server-only `WORKBENCH_ACCESS_PASSWORD` for browser login, and explicit workspace/actor UUIDs.
 - The current secret-session mode is one fixed service identity. It is not SSO or per-member RBAC.
 - PostgreSQL credentials, the access secret, and `OPENAI_API_KEY` are server-only. Never prefix them with `NEXT_PUBLIC_`.
 - Web runtime sets `MARKET_ENGINE_DATABASE_ROLE=market_engine_app`; a separate worker process may use `market_engine_worker`.

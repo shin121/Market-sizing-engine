@@ -13,16 +13,24 @@ function digest(value: string): Buffer {
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const supplied = formData.get("secret");
-  const configured = process.env.WORKBENCH_ACCESS_SECRET?.trim() ?? "";
+  const accessSecret = process.env.WORKBENCH_ACCESS_SECRET?.trim() ?? "";
+  const accessPassword = process.env.WORKBENCH_ACCESS_PASSWORD?.trim() ?? "";
+  const configuredPassword = accessPassword || accessSecret;
+  const passwordConfigured = accessPassword ? accessPassword.length >= 4 : accessSecret.length >= 32;
   const next = normalizeLocalNext(formData.get("next"));
-  if (typeof supplied !== "string" || configured.length < 32 || !timingSafeEqual(digest(supplied), digest(configured))) {
+  if (
+    typeof supplied !== "string"
+    || accessSecret.length < 32
+    || !passwordConfigured
+    || !timingSafeEqual(digest(supplied), digest(configuredPassword))
+  ) {
     const url = new URL("/access", request.url);
     url.searchParams.set("next", next);
     url.searchParams.set("error", "invalid_secret");
     return NextResponse.redirect(url, 303);
   }
   const response = NextResponse.redirect(new URL(next, request.url), 303);
-  response.cookies.set(COOKIE_NAME, digest(configured).toString("hex"), {
+  response.cookies.set(COOKIE_NAME, digest(accessSecret).toString("hex"), {
     httpOnly: true,
     sameSite: "strict",
     secure: process.env.NODE_ENV === "production",

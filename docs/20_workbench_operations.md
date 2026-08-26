@@ -139,6 +139,7 @@ Complete `.env.local` with:
 
 ```text
 WORKBENCH_AUTH_MODE=local
+WORKBENCH_ACCESS_PASSWORD=
 WORKBENCH_ACCESS_SECRET=
 WORKBENCH_DEFAULT_WORKSPACE_ID=9f693300-49ad-5bd5-ad98-af4e225661ea
 WORKBENCH_DEFAULT_ACTOR_ID=314126eb-26a2-55fa-a613-28180096cbac
@@ -188,6 +189,7 @@ Workbench server code uses the single canonical `web/src/server/db/*` repository
 |---|---|
 | `NODE_ENV` | Production disables local auth/context fallback. |
 | `WORKBENCH_AUTH_MODE` | `local` only outside production; `secret` is required in production. |
+| `WORKBENCH_ACCESS_PASSWORD` | Optional server-only browser login password, at least 4 characters. When absent, the access secret remains the login credential. |
 | `WORKBENCH_ACCESS_SECRET` | Shared production access secret, at least 32 characters. Store in a secret manager. |
 | `WORKBENCH_DEFAULT_WORKSPACE_ID` | Explicit UUID for the authenticated secret session. Required in production. |
 | `WORKBENCH_DEFAULT_ACTOR_ID` | Explicit UUID for the authenticated secret session. Required in production. |

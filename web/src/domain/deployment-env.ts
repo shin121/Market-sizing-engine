@@ -26,6 +26,7 @@ export function auditDeploymentEnvironment(environment: NodeJS.ProcessEnv): Depl
   const errors: string[] = [];
   const warnings: string[] = [];
   const accessSecret = configured(environment.WORKBENCH_ACCESS_SECRET);
+  const accessPassword = configured(environment.WORKBENCH_ACCESS_PASSWORD);
   const workerSecret = configured(environment.RESEARCH_WORKER_SECRET) || configured(environment.CRON_SECRET);
   const databaseUrl = configured(environment.MARKET_ENGINE_DATABASE_URL)
     || configured(environment.DATABASE_URL)
@@ -38,6 +39,7 @@ export function auditDeploymentEnvironment(environment: NodeJS.ProcessEnv): Depl
   const publicSecretKeys = [
     "NEXT_PUBLIC_OPENAI_API_KEY",
     "NEXT_PUBLIC_WORKBENCH_ACCESS_SECRET",
+    "NEXT_PUBLIC_WORKBENCH_ACCESS_PASSWORD",
     "NEXT_PUBLIC_RESEARCH_WORKER_SECRET",
     "NEXT_PUBLIC_CRON_SECRET",
     "NEXT_PUBLIC_DATABASE_URL",
@@ -49,6 +51,11 @@ export function auditDeploymentEnvironment(environment: NodeJS.ProcessEnv): Depl
   const secretAuth = environment.WORKBENCH_AUTH_MODE === "secret" && accessSecret.length >= 32;
   if (environment.WORKBENCH_AUTH_MODE !== "secret") errors.push("WORKBENCH_AUTH_MODE_must_be_secret");
   if (accessSecret.length < 32) errors.push("WORKBENCH_ACCESS_SECRET_must_be_at_least_32_characters");
+  if (accessPassword && accessPassword.length < 4) {
+    errors.push("WORKBENCH_ACCESS_PASSWORD_must_be_at_least_4_characters");
+  } else if (accessPassword && accessPassword.length < 8) {
+    warnings.push("WORKBENCH_ACCESS_PASSWORD_is_a_short_shared_password");
+  }
 
   const workspaceContext = UUID_PATTERN.test(workspaceId) && UUID_PATTERN.test(actorId);
   if (!UUID_PATTERN.test(workspaceId)) errors.push("WORKBENCH_DEFAULT_WORKSPACE_ID_must_be_uuid");

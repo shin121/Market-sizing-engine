@@ -7,6 +7,7 @@ function validEnvironment(): NodeJS.ProcessEnv {
     NODE_ENV: "production",
     WORKBENCH_AUTH_MODE: "secret",
     WORKBENCH_ACCESS_SECRET: "workbench-secret-that-is-long-enough-2026",
+    WORKBENCH_ACCESS_PASSWORD: "1210",
     WORKBENCH_DEFAULT_WORKSPACE_ID: "9f693300-49ad-5bd5-ad98-af4e225661ea",
     WORKBENCH_DEFAULT_ACTOR_ID: "314126eb-26a2-55fa-a613-28180096cbac",
     DATABASE_URL: "postgresql://app:secret@managed.example/db?sslmode=require",
@@ -23,6 +24,7 @@ describe("cloud deployment environment audit", () => {
     const audit = auditDeploymentEnvironment(validEnvironment());
     expect(audit.ok).toBe(true);
     expect(audit.errors).toEqual([]);
+    expect(audit.warnings).toContain("WORKBENCH_ACCESS_PASSWORD_is_a_short_shared_password");
     expect(audit.checks).toMatchObject({
       remoteDatabase: true,
       databaseTlsRequired: true,
@@ -30,6 +32,15 @@ describe("cloud deployment environment audit", () => {
       leastPrivilegeDatabaseRole: true,
       publicSecretLeakAbsent: true,
     });
+  });
+
+  it("rejects an access password shorter than four characters", () => {
+    const environment = validEnvironment();
+    environment.WORKBENCH_ACCESS_PASSWORD = "123";
+    const audit = auditDeploymentEnvironment(environment);
+
+    expect(audit.ok).toBe(false);
+    expect(audit.errors).toContain("WORKBENCH_ACCESS_PASSWORD_must_be_at_least_4_characters");
   });
 
   it("accepts the dedicated inherited app login required by managed poolers", () => {

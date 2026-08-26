@@ -17,6 +17,7 @@ MARKET_ENGINE_DATABASE_ROLE=market_engine_app npm run start -- --hostname 0.0.0.
 ## 필수 환경변수
 
 - `WORKBENCH_AUTH_MODE=secret`
+- `WORKBENCH_ACCESS_PASSWORD` — 선택적 브라우저 로그인 비밀번호, 최소 4자, server-side 주입
 - `WORKBENCH_ACCESS_SECRET` — 최소 32자, secret manager에서 주입
 - `WORKBENCH_DEFAULT_WORKSPACE_ID`, `WORKBENCH_DEFAULT_ACTOR_ID` — UUID
 - `MARKET_ENGINE_DATABASE_URL` 또는 `PGHOST`/`PGPORT`/`PGDATABASE`

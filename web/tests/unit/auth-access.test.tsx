@@ -6,8 +6,9 @@ import AccessPage from "@/app/access/page";
 import { POST } from "@/app/api/auth/access/route";
 
 const ACCESS_SECRET = "unit-test-access-secret-that-is-long-enough";
+const ACCESS_PASSWORD = "1210";
 
-function accessRequest(next: string, secret = ACCESS_SECRET): NextRequest {
+function accessRequest(next: string, secret = ACCESS_PASSWORD): NextRequest {
   return new NextRequest("https://app.example/api/auth/access", {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded" },
@@ -18,6 +19,7 @@ function accessRequest(next: string, secret = ACCESS_SECRET): NextRequest {
 describe("access redirect boundary", () => {
   beforeEach(() => {
     vi.stubEnv("WORKBENCH_ACCESS_SECRET", ACCESS_SECRET);
+    vi.stubEnv("WORKBENCH_ACCESS_PASSWORD", ACCESS_PASSWORD);
   });
 
   afterEach(() => {
@@ -45,6 +47,21 @@ describe("access redirect boundary", () => {
 
     expect(response.status).toBe(303);
     expect(response.headers.get("location")).toBe(`https://app.example${target}`);
+  });
+
+  it("keeps the server secret separate from the user-facing password", async () => {
+    const response = await POST(accessRequest("/explore", ACCESS_SECRET));
+
+    expect(response.status).toBe(303);
+    expect(response.headers.get("location")).toContain("error=invalid_secret");
+  });
+
+  it("falls back to the server secret when a separate password is not configured", async () => {
+    vi.stubEnv("WORKBENCH_ACCESS_PASSWORD", "");
+    const response = await POST(accessRequest("/explore", ACCESS_SECRET));
+
+    expect(response.status).toBe(303);
+    expect(response.headers.get("location")).toBe("https://app.example/explore");
   });
 
   it("stores only a normalized local target in the access form", async () => {
