@@ -1,0 +1,113 @@
+{
+  "retrieved_at":"2026-08-24T23:51:00+09:00",
+  "sources":[
+    {
+      "source_id":"SRC-KOCCA-MUSIC",
+      "publisher":"문화체육관광부·한국콘텐츠진흥원",
+      "dataset_title":"2024 음악산업백서 — 음악 이용자 조사",
+      "official_url":"https://welcon.kocca.kr/ko/info/report/1954309",
+      "license":"공공누리 제4유형(출처표시·비상업·변경금지)",
+      "source_tier":1,
+      "source_type":"official_weighted_sample_survey",
+      "population_universe":"최근 1년 음악 이용 경험이 있는 전국 만 10–69세; 이용률 사후조사 포함",
+      "entity_unit":"person",
+      "geographic_coverage":"KR, 17 provinces",
+      "notes":"유효표본 3,500명. 음악 이용·스트리밍·음반·공연·온라인 동영상·팬덤·지불의향을 조사. 미성년 응답은 활성화 대상이 아닌 집계 근거로만 사용.",
+      "release":{"release_id":"REL-KOCCA-MUSIC-2024","version_label":"2024 음악산업백서","reference_period_start":"2024-01-01","reference_period_end":"2024-06-30","publication_date":"2024-10-18","local_uri":"data/raw/kocca_2024_music_whitepaper.pdf","file_format":"pdf","checksum":"8c0f42b39227e2649485c075b6faabf9db749a568048cdaf0486d1cc299b22a1","status":"verified"}
+    },
+    {
+      "source_id":"SRC-KOSTAT-BUSINESS-DEMOGRAPHY",
+      "publisher":"국가데이터처",
+      "dataset_title":"기업생멸행정통계",
+      "official_url":"https://kostat.go.kr/boardDownload.es?bid=11469&list_no=438913&seq=1",
+      "license":"공공누리/기관 저작권정책 확인",
+      "source_tier":1,
+      "source_type":"official_administrative_statistics",
+      "population_universe":"영리기업 중 매출액 또는 상용근로자가 있는 활동기업",
+      "entity_unit":"enterprise",
+      "geographic_coverage":"KR, province",
+      "notes":"2024 잠정; 공표표 단위 천 개의 반올림 불확실성을 interval에 보존",
+      "release":{"release_id":"REL-KOSTAT-BD-2024-P","version_label":"2024 잠정","reference_period_start":"2024-01-01","reference_period_end":"2024-12-31","publication_date":"2025-10-23","local_uri":"data/raw/kostat_2024_business_demography.pdf","file_format":"pdf","checksum":"eddc33449b7556bc8c6cbb80503ce0c2e5b0c48e14c7c637e6c287ee1042223d","status":"verified"}
+    },
+    {
+      "source_id":"SRC-MOIS-RESIDENT-AGE",
+      "publisher":"행정안전부",
+      "dataset_title":"주민등록 인구통계 행정동별 연령별 인구현황",
+      "official_url":"https://jumin.mois.go.kr/ageStatMonth.do",
+      "license":"공공데이터 이용정책 확인",
+      "source_tier":1,
+      "source_type":"official_administrative_statistics",
+      "population_universe":"주민등록 거주자·거주불명자·재외국민; 외국인 제외",
+      "entity_unit":"person",
+      "geographic_coverage":"KR, province, district, town",
+      "notes":"2024-12 월말, 1세 단위 0–18세 POST 조회 결과 HTML 보존",
+      "release":{"release_id":"REL-MOIS-AGE-2024-12","version_label":"2024-12 월간","reference_period_start":"2024-12-31","reference_period_end":"2024-12-31","publication_date":"2025-01-01","local_uri":"data/raw/mois_age_2024_12_0_18.html","file_format":"html","checksum":"5538925fb74e1a7fcd5a4156b86e013e7924293438e4711650df4d91bdf34509","status":"verified"}
+    },
+    {
+      "source_id":"SRC-KOSTAT-CENSUS",
+      "publisher":"국가데이터처(구 통계청)",
+      "dataset_title":"인구주택총조사",
+      "official_url":"https://kostat.go.kr/boardDownload.es?bid=203&list_no=437767&seq=3",
+      "license":"공공누리/기관 저작권정책 확인",
+      "source_tier":1,
+      "source_type":"official_census",
+      "population_universe":"대한민국 영토 내 3개월 이상 상주하는 내·외국인과 가구",
+      "entity_unit":"person,household",
+      "geographic_coverage":"KR, province, district",
+      "release":{"release_id":"REL-KOSTAT-CENSUS-2024","version_label":"2024 등록센서스","reference_period_start":"2024-11-01","reference_period_end":"2024-11-01","publication_date":"2025-07-29","local_uri":"data/raw/kostat_2024_census_results.pdf","file_format":"pdf","checksum":"c682415c76405d6c8ee895f7cd963ee52b837119a9f171d74ec0512c2ebd40ea","status":"downloaded"}
+    },
+    {
+      "source_id":"SRC-KOSTAT-ESTABLISHMENTS",
+      "publisher":"국가데이터처",
+      "dataset_title":"전국사업체조사",
+      "official_url":"https://mods.go.kr/boardDownload.es?bid=233&list_no=438719&seq=7",
+      "license":"공공누리/기관 저작권정책 확인",
+      "source_tier":1,
+      "source_type":"official_census",
+      "population_universe":"국내에서 산업활동을 수행하는 조사대상 사업체",
+      "entity_unit":"establishment",
+      "geographic_coverage":"KR, province",
+      "release":{"release_id":"REL-KOSTAT-EST-2024-P","version_label":"2024 잠정","reference_period_start":"2024-12-31","reference_period_end":"2024-12-31","publication_date":"2025-09-23","local_uri":"data/raw/kostat_2024_census_of_establishments_preliminary.pdf","file_format":"pdf","checksum":"3c9fd19f77aac17cd7229c2efd0e0b425d109eb99599e3c90d4405c796d4c28a","status":"downloaded"}
+    },
+    {
+      "source_id":"SRC-MSS-SMALL-BUSINESS",
+      "publisher":"중소벤처기업부·소상공인시장진흥공단",
+      "dataset_title":"소상공인실태조사",
+      "official_url":"https://mss.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000001008674&fileSn=1",
+      "license":"정부 발간물; 재이용 조건 확인 필요",
+      "source_tier":1,
+      "source_type":"official_sample_survey",
+      "population_universe":"11개 주요 산업의 소상공인 기업체",
+      "entity_unit":"enterprise",
+      "geographic_coverage":"KR, province",
+      "release":{"release_id":"REL-MSS-SB-2023","version_label":"2023 확정","reference_period_start":"2023-01-01","reference_period_end":"2023-12-31","publication_date":"2025-06-23","local_uri":"data/raw/mss_2023_small_business_survey.pdf","file_format":"pdf","checksum":"522e2d57dc24f7918eca7c85c06c95a0bf28a6fbd94e536ab5ba6141299cf4e5","status":"downloaded"}
+    },
+    {
+      "source_id":"SRC-NVIDIA-NPK",
+      "publisher":"NVIDIA Corporation",
+      "dataset_title":"Nemotron-Personas-Korea",
+      "official_url":"https://huggingface.co/datasets/nvidia/Nemotron-Personas-Korea",
+      "license":"CC BY 4.0",
+      "source_tier":3,
+      "source_type":"synthetic_dataset",
+      "population_universe":"합성된 대한민국 성인(19+) 페르소나; 공식 모집단 아님",
+      "entity_unit":"synthetic_person_record",
+      "geographic_coverage":"17 provinces, ~252 districts",
+      "notes":"Dataset card and all nine Parquet shards are locally verified; per-shard checksums are in config/nemotron_manifest.yml.",
+      "release":{"release_id":"REL-NVIDIA-NPK-1.0","version_label":"1.0","reference_period_start":"2026-04-20","reference_period_end":"2026-04-20","publication_date":"2026-04-20","local_uri":"data/raw/nemotron_README.md","file_format":"markdown+parquet","checksum":"4dafe7971490a3693cff1abb4a31110f7f151c818ef7ad7181a6c49a95ffc77e","status":"verified"}
+    },
+    {
+      "source_id":"SRC-KOSTAT-REGIONAL-EMPLOYMENT",
+      "publisher":"국가데이터처 동남지방통계청",
+      "dataset_title":"상반기 지역별고용조사 50+ 분석",
+      "official_url":"https://www.kostat.go.kr/boardDownload.es?bid=11802&list_no=437653&seq=3",
+      "license":"공공누리/기관 저작권정책 확인",
+      "source_tier":1,
+      "source_type":"official_weighted_survey",
+      "population_universe":"50세 이상 취업자",
+      "entity_unit":"person",
+      "geographic_coverage":"KR; Busan, Ulsan, Gyeongnam detail",
+      "release":{"release_id":"REL-KOSTAT-REA-2024","version_label":"2024 상반기","reference_period_start":"2024-01-01","reference_period_end":"2024-06-30","publication_date":"2025-07-22","local_uri":"data/raw/kostat_2024_regional_employment_50plus.pdf","file_format":"pdf","checksum":"d53449eda32608717d12a911d898faa804df03b78863e5adc28d78af80f1d011","status":"verified"}
+    }
+  ]
+}

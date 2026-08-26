@@ -1,0 +1,332 @@
+{
+  "manifest_version": 1,
+  "loader_version": "postgres-baseline-backfill-v1",
+  "generated_at": "2026-08-26T04:26:21.131713+00:00",
+  "status": "passed",
+  "outcome": "loaded",
+  "loader_run_id": "0c7bccb8-3c8a-594d-9c59-c5b36b1ba50a",
+  "source": {
+    "duckdb_path": "data/processed/market_engine_phase2.duckdb",
+    "physical_sha256": "44cd3e2b79be86dde11f5df4d2e2388737d54971d0c12438d479ff595bfac90c",
+    "semantic_sha256": "1409d853640b32f40a8957a2c780911fc60eba1baeb02466f59a415028144246",
+    "row_counts": {
+      "activation_mapping": 90,
+      "archetype": 1440,
+      "archetype_estimate": 1440,
+      "archetype_hierarchy": 402,
+      "archetype_representative": 1440,
+      "baseline_cell": 16,
+      "category": 18,
+      "cluster_definition": 90,
+      "cluster_representative": 450,
+      "data_source": 8,
+      "domain_association": 276,
+      "domain_behavior_template": 240,
+      "domain_coverage_audit": 24,
+      "domain_dimension": 384,
+      "domain_feature": 480,
+      "domain_feature_source": 760,
+      "domain_profile_summary": 24,
+      "domain_registry": 24,
+      "domain_tag": 192,
+      "feature_definition": 26,
+      "latent_dimension": 24,
+      "parent_decomposition_decision": 1440,
+      "phase2_acceptance_result": 46,
+      "phase2_parent_estimate": 120,
+      "pipeline_run": 1,
+      "posterior_update": 1,
+      "probability_model": 2,
+      "required_parent_case": 10,
+      "required_parent_case_allocation": 47,
+      "segment_observation": 1,
+      "segmentation_model": 24,
+      "source_release": 12,
+      "subtype_allocation": 450,
+      "subtype_confidence": 90,
+      "subtype_definition": 90,
+      "subtype_membership_summary": 90,
+      "subtype_profile": 90,
+      "subtype_tag_allocation": 720,
+      "minor_population_cells": 19,
+      "population_history": 5
+    },
+    "model_versions": [
+      "kr-v0.1.0",
+      "kr-v0.2.0",
+      "kr-v0.2.1"
+    ]
+  },
+  "target": {
+    "database": "market_engine_phase3r_production",
+    "host": "/Users/woocheolshin/Projects/Market-sizing-engine/data/local/socket",
+    "port": 55432,
+    "user": "woocheolshin",
+    "semantic_sha256": "d620fa2a0b31a2aad195187e5570ccfba1e4b38265612862fcae54d7c66a29d3",
+    "canonical_tables": [
+      "data_source",
+      "source_release",
+      "geography",
+      "time_period",
+      "feature_definition",
+      "evidence",
+      "category",
+      "population_cell",
+      "minor_population_cell",
+      "household_cell",
+      "business_cell",
+      "archetype",
+      "archetype_rule",
+      "archetype_profile",
+      "archetype_representative",
+      "estimate",
+      "estimate_component",
+      "assumption",
+      "estimate_assumption",
+      "confidence_assessment",
+      "validation_gap",
+      "domain_registry",
+      "domain_dimension",
+      "domain_feature",
+      "domain_feature_source",
+      "domain_behavior_template",
+      "domain_tag",
+      "domain_profile_summary",
+      "domain_association",
+      "domain_coverage_audit",
+      "archetype_hierarchy",
+      "latent_dimension",
+      "segmentation_model",
+      "cluster_definition",
+      "cluster_representative",
+      "subtype_definition",
+      "parent_decomposition_decision",
+      "phase2_parent_estimate",
+      "subtype_allocation",
+      "required_parent_case",
+      "required_parent_case_allocation",
+      "subtype_membership_summary",
+      "subtype_profile",
+      "subtype_confidence",
+      "subtype_tag_allocation",
+      "activation_mapping",
+      "segment_observation",
+      "posterior_update",
+      "phase2_acceptance_result"
+    ]
+  },
+  "transaction": {
+    "atomic": true,
+    "advisory_lock": true,
+    "idempotency_key": "postgres-baseline:kr-v0.2.1",
+    "uuid_strategy": "UUIDv5 for fresh UUID-backed records; natural-key adoption preserves canonical IDs"
+  },
+  "verification": {
+    "status": "passed",
+    "checks": {
+      "expected_counts": true,
+      "canonical_counts": true,
+      "source_ids_preserved": true,
+      "parent_share_reconciles": true,
+      "parent_count_reconciles": true,
+      "required_parent_share_reconciles": true,
+      "required_parent_count_reconciles": true,
+      "intervals_ordered": true,
+      "estimate_lineage_complete": true,
+      "missing_evidence_not_zero": true,
+      "nemotron_rows_1m": true,
+      "fixed_shards_9": true
+    },
+    "counts": {
+      "domain": 24,
+      "axis": 384,
+      "feature": 480,
+      "behavior": 240,
+      "segmentation_model": 24,
+      "primary_subtype": 90,
+      "parent_allocation": 450,
+      "archetype": 1440,
+      "activation_json": 90
+    },
+    "expected_counts": {
+      "domain": 24,
+      "axis": 384,
+      "feature": 480,
+      "behavior": 240,
+      "segmentation_model": 24,
+      "primary_subtype": 90,
+      "parent_allocation": 450,
+      "archetype": 1440,
+      "activation_json": 90
+    },
+    "canonical_counts": {
+      "data_source": {
+        "expected": 8,
+        "actual": 8
+      },
+      "source_release": {
+        "expected": 12,
+        "actual": 12
+      },
+      "category": {
+        "expected": 18,
+        "actual": 18
+      },
+      "feature_definition": {
+        "expected": 26,
+        "actual": 26
+      },
+      "archetype_rule": {
+        "expected": 1440,
+        "actual": 1440
+      },
+      "archetype_profile": {
+        "expected": 1440,
+        "actual": 1440
+      },
+      "archetype_representative": {
+        "expected": 1440,
+        "actual": 1440
+      },
+      "archetype_estimate": {
+        "expected": 1440,
+        "actual": 1440
+      },
+      "control_estimate": {
+        "expected": 16,
+        "actual": 16
+      },
+      "evidence": {
+        "expected": 19,
+        "actual": 19
+      },
+      "population_cell": {
+        "expected": 13,
+        "actual": 13
+      },
+      "minor_population_cell": {
+        "expected": 19,
+        "actual": 19
+      },
+      "household_cell": {
+        "expected": 7,
+        "actual": 7
+      },
+      "business_cell": {
+        "expected": 4,
+        "actual": 4
+      },
+      "assumption": {
+        "expected": 2,
+        "actual": 2
+      },
+      "domain_feature_source": {
+        "expected": 760,
+        "actual": 760
+      },
+      "domain_tag": {
+        "expected": 192,
+        "actual": 192
+      },
+      "domain_association": {
+        "expected": 276,
+        "actual": 276
+      },
+      "archetype_hierarchy": {
+        "expected": 402,
+        "actual": 402
+      },
+      "cluster_definition": {
+        "expected": 90,
+        "actual": 90
+      },
+      "cluster_representative": {
+        "expected": 450,
+        "actual": 450
+      },
+      "subtype_profile": {
+        "expected": 90,
+        "actual": 90
+      },
+      "subtype_confidence": {
+        "expected": 90,
+        "actual": 90
+      },
+      "required_parent_case": {
+        "expected": 10,
+        "actual": 10
+      },
+      "required_parent_case_allocation": {
+        "expected": 47,
+        "actual": 47
+      }
+    },
+    "id_reconciliation": {
+      "domain": {
+        "source": 24,
+        "target": 24,
+        "missing": 0,
+        "unexpected": 0
+      },
+      "axis": {
+        "source": 384,
+        "target": 384,
+        "missing": 0,
+        "unexpected": 0
+      },
+      "feature": {
+        "source": 480,
+        "target": 480,
+        "missing": 0,
+        "unexpected": 0
+      },
+      "behavior": {
+        "source": 240,
+        "target": 240,
+        "missing": 0,
+        "unexpected": 0
+      },
+      "segmentation_model": {
+        "source": 24,
+        "target": 24,
+        "missing": 0,
+        "unexpected": 0
+      },
+      "primary_subtype": {
+        "source": 90,
+        "target": 90,
+        "missing": 0,
+        "unexpected": 0
+      },
+      "archetype": {
+        "source": 1440,
+        "target": 1440,
+        "missing": 0,
+        "unexpected": 0
+      },
+      "activation_json": {
+        "source": 90,
+        "target": 90,
+        "missing": 0,
+        "unexpected": 0
+      }
+    },
+    "reconciliation": {
+      "parent_base_share_max_error": 1.7e-16,
+      "parent_base_count_max_relative_error": 1.5865301475102847e-16,
+      "required_parent_base_share_max_error": 2.5664811766793585e-16,
+      "required_parent_base_count_max_relative_error": 6.92265218238653e-17,
+      "tolerance": 1e-12
+    },
+    "lineage": {
+      "incomplete_estimates": 0,
+      "not_estimable_non_null_count_violations": 0,
+      "interval_order_violations": 0
+    },
+    "large_immutable_inputs": {
+      "nemotron_rows": 1000000,
+      "nemotron_fixed_shards": 9,
+      "storage_policy": "Parquet remains authoritative; large feature marts are not copied into PostgreSQL."
+    }
+  }
+}

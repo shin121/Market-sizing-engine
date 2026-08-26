@@ -1,0 +1,215 @@
+[
+  {
+    "query_id": "QRY-fc5c219e8424ca1c",
+    "name": "음식점 홈페이지 구축·운영 서비스 3년 시나리오",
+    "market_unit": "enterprise",
+    "currency": "KRW",
+    "horizon_months": 36,
+    "horizon_years": 3.0,
+    "audience_model_version": "kr-v0.1.0",
+    "tam_entities": {
+      "low": 130000,
+      "base": 170000,
+      "high": 210000
+    },
+    "sam_entities": {
+      "low": 58500,
+      "base": 110500,
+      "high": 168000
+    },
+    "som_entities": {
+      "low": 290,
+      "base": 1660,
+      "high": 5040
+    },
+    "tam_revenue": {
+      "low": 234000000000,
+      "base": 612000000000,
+      "high": 1512000000000
+    },
+    "sam_revenue": {
+      "low": 105300000000,
+      "base": 397800000000,
+      "high": 1209600000000
+    },
+    "som_revenue": {
+      "low": 526000000,
+      "base": 5967000000,
+      "high": 27000000000
+    },
+    "formula": "TAM revenue=N×annual spend×(horizon_months/12); SAM revenue=TAM revenue×serviceability; SOM revenue=min(SAM revenue×attainable share, operational capacity×realized ARPU×(horizon_months/12))",
+    "assumptions": {
+      "market_unit": "enterprise",
+      "currency": "KRW",
+      "horizon_months": 36,
+      "annual_addressable_spend_per_entity": {
+        "low": 600000,
+        "base": 1200000,
+        "high": 2400000
+      },
+      "serviceability_rate": {
+        "low": 0.45,
+        "base": 0.65,
+        "high": 0.8
+      },
+      "attainable_share": {
+        "low": 0.005,
+        "base": 0.015,
+        "high": 0.03
+      },
+      "operational_capacity_entities": {
+        "low": 800,
+        "base": 2500,
+        "high": 6000
+      },
+      "realized_arpu": {
+        "low": 500000,
+        "base": 900000,
+        "high": 1500000
+      }
+    },
+    "warning": "Revenue assumptions are scenario inputs, not population statistics."
+  },
+  {
+    "query_id": "QRY-fc5c219e8424ca1c",
+    "name": "음식점 홈페이지·주문 통합관리 3년",
+    "market_unit": "enterprise",
+    "currency": "KRW",
+    "horizon_months": 36,
+    "horizon_years": 3.0,
+    "audience_model_version": "kr-v0.1.0",
+    "tam_entities": {
+      "low": 130000,
+      "base": 170000,
+      "high": 210000
+    },
+    "sam_entities": {
+      "low": 26000,
+      "base": 68000,
+      "high": 126000
+    },
+    "som_entities": {
+      "low": 50,
+      "base": 540,
+      "high": 2500
+    },
+    "tam_revenue": {
+      "low": 468000000000,
+      "base": 1224000000000,
+      "high": 3024000000000
+    },
+    "sam_revenue": {
+      "low": 93600000000,
+      "base": 489600000000,
+      "high": 1814400000000
+    },
+    "som_revenue": {
+      "low": 187000000,
+      "base": 3917000000,
+      "high": 24000000000
+    },
+    "formula": "TAM revenue=N×annual spend×(horizon_months/12); SAM revenue=TAM revenue×serviceability; SOM revenue=min(SAM revenue×attainable share, operational capacity×realized ARPU×(horizon_months/12))",
+    "assumptions": {
+      "market_unit": "enterprise",
+      "currency": "KRW",
+      "horizon_months": 36,
+      "annual_addressable_spend_per_entity": {
+        "low": 1200000,
+        "base": 2400000,
+        "high": 4800000
+      },
+      "serviceability_rate": {
+        "low": 0.2,
+        "base": 0.4,
+        "high": 0.6
+      },
+      "attainable_share": {
+        "low": 0.002,
+        "base": 0.008,
+        "high": 0.02
+      },
+      "operational_capacity_entities": {
+        "low": 200,
+        "base": 800,
+        "high": 2500
+      },
+      "realized_arpu": {
+        "low": 1000000,
+        "base": 1800000,
+        "high": 3200000
+      }
+    },
+    "warning": "Revenue assumptions are scenario inputs, not population statistics."
+  },
+  {
+    "query_id": "QRY-fc5c219e8424ca1c",
+    "name": "음식점 홈페이지 스타터 패키지 1년",
+    "market_unit": "enterprise",
+    "currency": "KRW",
+    "horizon_months": 12,
+    "horizon_years": 1.0,
+    "audience_model_version": "kr-v0.1.0",
+    "tam_entities": {
+      "low": 130000,
+      "base": 170000,
+      "high": 210000
+    },
+    "sam_entities": {
+      "low": 39000,
+      "base": 85000,
+      "high": 147000
+    },
+    "som_entities": {
+      "low": 120,
+      "base": 850,
+      "high": 2940
+    },
+    "tam_revenue": {
+      "low": 39000000000,
+      "base": 102000000000,
+      "high": 252000000000
+    },
+    "sam_revenue": {
+      "low": 11700000000,
+      "base": 51000000000,
+      "high": 176400000000
+    },
+    "som_revenue": {
+      "low": 35000000,
+      "base": 510000000,
+      "high": 3150000000
+    },
+    "formula": "TAM revenue=N×annual spend×(horizon_months/12); SAM revenue=TAM revenue×serviceability; SOM revenue=min(SAM revenue×attainable share, operational capacity×realized ARPU×(horizon_months/12))",
+    "assumptions": {
+      "market_unit": "enterprise",
+      "currency": "KRW",
+      "horizon_months": 12,
+      "annual_addressable_spend_per_entity": {
+        "low": 300000,
+        "base": 600000,
+        "high": 1200000
+      },
+      "serviceability_rate": {
+        "low": 0.3,
+        "base": 0.5,
+        "high": 0.7
+      },
+      "attainable_share": {
+        "low": 0.003,
+        "base": 0.01,
+        "high": 0.02
+      },
+      "operational_capacity_entities": {
+        "low": 300,
+        "base": 1200,
+        "high": 3500
+      },
+      "realized_arpu": {
+        "low": 250000,
+        "base": 500000,
+        "high": 900000
+      }
+    },
+    "warning": "Revenue assumptions are scenario inputs, not population statistics."
+  }
+]

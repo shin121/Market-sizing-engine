@@ -1,0 +1,32 @@
+{
+  "version":"features-v1",
+  "features":[
+    {"feature_code":"industry_code","label_ko":"한국표준산업분류 코드","entity_unit":"enterprise","data_type":"string","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"owner_age","label_ko":"대표자 만 나이","entity_unit":"enterprise","data_type":"integer","queryable":true,"sensitive_class":"restricted_targeting"},
+    {"feature_code":"has_website","label_ko":"자체 홈페이지 보유 여부","entity_unit":"enterprise","data_type":"boolean","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"age","label_ko":"만 나이","entity_unit":"all","data_type":"integer","queryable":true,"sensitive_class":"restricted_targeting"},
+    {"feature_code":"age_band","label_ko":"연령대","entity_unit":"person","data_type":"string","queryable":true,"sensitive_class":"restricted_targeting"},
+    {"feature_code":"household_type","label_ko":"가구 유형","entity_unit":"household","data_type":"string","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"school_stage","label_ko":"학교급","entity_unit":"child_person","data_type":"string","queryable":true,"sensitive_class":"minor_protected"},
+    {"feature_code":"geography_code","label_ko":"행정구역 코드","entity_unit":"all","data_type":"string","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"pet_household","label_ko":"반려동물 양육 가구","entity_unit":"household","data_type":"boolean","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"dual_income","label_ko":"맞벌이 여부","entity_unit":"household","data_type":"boolean","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"private_education_use","label_ko":"사교육 이용 여부","entity_unit":"child_person","data_type":"boolean","queryable":true,"sensitive_class":"minor_protected"},
+    {"feature_code":"children_age","label_ko":"가구 내 자녀 연령","entity_unit":"household","data_type":"integer","queryable":true,"sensitive_class":"minor_protected"},
+    {"feature_code":"household_size","label_ko":"가구원 수","entity_unit":"household","data_type":"integer","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"travel_frequency","label_ko":"여행 빈도","entity_unit":"person","data_type":"category","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"domestic_travel","label_ko":"국내여행 여부","entity_unit":"person","data_type":"boolean","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"mobile_use_level","label_ko":"모바일 이용 수준","entity_unit":"enterprise","data_type":"category","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"has_online_sales","label_ko":"온라인 판매채널 보유","entity_unit":"enterprise","data_type":"boolean","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"region_type","label_ko":"지역 유형","entity_unit":"all","data_type":"category","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"care_burden","label_ko":"가족 돌봄 부담","entity_unit":"household","data_type":"boolean","queryable":true,"sensitive_class":"restricted_targeting"},
+    {"feature_code":"householder_age","label_ko":"가구주 연령","entity_unit":"household","data_type":"integer","queryable":true,"sensitive_class":"restricted_targeting"},
+    {"feature_code":"retirement_status","label_ko":"은퇴 상태","entity_unit":"household","data_type":"category","queryable":true,"sensitive_class":"restricted_targeting"},
+    {"feature_code":"childcare_need","label_ko":"보육 서비스 필요","entity_unit":"household","data_type":"boolean","queryable":true,"sensitive_class":"minor_protected"},
+    {"feature_code":"guardian_household","label_ko":"보호자 가구 연결 존재","entity_unit":"child_person","data_type":"boolean","queryable":true,"sensitive_class":"minor_protected"},
+    {"feature_code":"income_band","label_ko":"소득 구간","entity_unit":"household","data_type":"category","queryable":true,"sensitive_class":"restricted_targeting"},
+    {"feature_code":"home_ownership","label_ko":"주택 점유형태","entity_unit":"household","data_type":"category","queryable":true,"sensitive_class":"none"},
+    {"feature_code":"digital_adoption_probability","label_ko":"디지털 수용 확률","entity_unit":"enterprise","data_type":"number","queryable":true,"sensitive_class":"none"}
+  ],
+  "blocked_uses":["credit","employment","insurance","housing_eligibility","education_opportunity","harmful_minor_ads"]
+}

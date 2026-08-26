@@ -1,0 +1,4926 @@
+{
+  "summary": {
+    "executed_at": "2026-08-24T17:06:46.467384+00:00",
+    "model_version": "kr-v0.2.1",
+    "domain": {
+      "total": 24,
+      "passed": 24,
+      "failed": 0
+    },
+    "parent": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "semantic_query_definitions": 10,
+      "exploratory_population_cases": 9
+    },
+    "cross_domain": {
+      "total": 10,
+      "estimated_passed": 10,
+      "safely_not_estimable": 0,
+      "failed": 0
+    },
+    "activation": {
+      "payloads": 90,
+      "failures": [],
+      "schema": "contracts/phase2_activation_payload.schema.json",
+      "schema_draft": "2020-12",
+      "schema_valid": true
+    },
+    "feedback": {
+      "observation_id": "3b65fff6-30aa-4eec-84d3-9a06f1e69167",
+      "posterior_update_id": "8e20a786-5369-4c49-9d4b-fe9febb5c949",
+      "update_status": "held_for_review",
+      "diagnostics": {
+        "prior_strength_capped": 20.0,
+        "aggregate_count": 240,
+        "bias_flags": [
+          "synthetic_to_campaign_transport"
+        ],
+        "published_model_unchanged": true,
+        "requires_human_review": true
+      }
+    },
+    "segmentation_validation": "passed",
+    "status": "passed",
+    "limitations": [
+      "parent cases 2–10 are exact semantic query definitions but use disclosed E-grade scenario parent prevalence until official joint evidence exists",
+      "cross-domain semantics not jointly observed in Nemotron use explicit Low/Base/High scenario overlays and documented household/enterprise decision-maker bridges"
+    ]
+  },
+  "domain_cases": [
+    {
+      "case_id": "DOMAIN-DOM-01",
+      "domain_code": "music_audio",
+      "status": "passed",
+      "query": {
+        "domain_code": "music_audio",
+        "conditions": [
+          {
+            "feature_code": "music_audio.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-14-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-01",
+          "domain_code": "music_audio",
+          "name_ko": "음악·오디오",
+          "description": "대한민국 음악·오디오의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "leisure_culture",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "music_audio.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.28851773566815686,
+          "base": 0.3785948498010784,
+          "high": 0.4686719639339999
+        },
+        "count": {
+          "low": 446211.2927980745,
+          "base": 1301158.5808886383,
+          "high": 3221473.022229778
+        },
+        "denominator": {
+          "definition": "music_audio keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.054925261572
+        },
+        "positive_hard_support": 754,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-01-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/music_audio.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-14-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-02",
+      "domain_code": "video_ott",
+      "status": "passed",
+      "query": {
+        "domain_code": "video_ott",
+        "conditions": [
+          {
+            "feature_code": "video_ott.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-10-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-02",
+          "domain_code": "video_ott",
+          "name_ko": "영상·OTT",
+          "description": "대한민국 영상·OTT의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "digital_media",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "video_ott.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.2908480913065316,
+          "base": 0.3809615057934702,
+          "high": 0.4710749202804088
+        },
+        "count": {
+          "low": 411098.94409997395,
+          "base": 1196599.2439627473,
+          "high": 2959290.5576288826
+        },
+        "denominator": {
+          "definition": "video_ott keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0584319116192
+        },
+        "positive_hard_support": 763,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-02-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/video_ott.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-10-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-03",
+      "domain_code": "gaming_esports",
+      "status": "passed",
+      "query": {
+        "domain_code": "gaming_esports",
+        "conditions": [
+          {
+            "feature_code": "gaming_esports.object",
+            "value": "모바일 게임"
+          }
+        ],
+        "parent_archetype_id": "ARC-14-006"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-03",
+          "domain_code": "gaming_esports",
+          "name_ko": "게임·e스포츠",
+          "description": "대한민국 게임·e스포츠의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "leisure_culture",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "gaming_esports.object",
+            "value": "모바일 게임"
+          }
+        ],
+        "share": {
+          "low": 0.49350510603851977,
+          "base": 0.5840692538291857,
+          "high": 0.6746334016198516
+        },
+        "count": {
+          "low": 701110.8294290636,
+          "base": 1843940.3000905304,
+          "high": 4259713.069566282
+        },
+        "denominator": {
+          "definition": "gaming_esports keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0171203734313
+        },
+        "positive_hard_support": 991,
+        "formula": "Σ calibration_weight × (axis_001) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-03-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/gaming_esports.parquet",
+          "used_axis_columns": [
+            "axis_001"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-14-006",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-04",
+      "domain_code": "reading_webtoon",
+      "status": "passed",
+      "query": {
+        "domain_code": "reading_webtoon",
+        "conditions": [
+          {
+            "feature_code": "reading_webtoon.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-14-011"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-04",
+          "domain_code": "reading_webtoon",
+          "name_ko": "독서·웹툰",
+          "description": "대한민국 독서·웹툰의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "leisure_culture",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "reading_webtoon.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.2985840411504145,
+          "base": 0.3888125522774058,
+          "high": 0.4790410634043971
+        },
+        "count": {
+          "low": 373655.7534545118,
+          "base": 1081266.7431106467,
+          "high": 2664374.7348669795
+        },
+        "denominator": {
+          "definition": "reading_webtoon keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0640508980406
+        },
+        "positive_hard_support": 771,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-04-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/reading_webtoon.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-14-011",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-05",
+      "domain_code": "culture_events",
+      "status": "passed",
+      "query": {
+        "domain_code": "culture_events",
+        "conditions": [
+          {
+            "feature_code": "culture_events.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-14-016"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-05",
+          "domain_code": "culture_events",
+          "name_ko": "문화예술·행사",
+          "description": "대한민국 문화예술·행사의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "leisure_culture",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "culture_events.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.28590255921132324,
+          "base": 0.37593825370492057,
+          "high": 0.4659739481985179
+        },
+        "count": {
+          "low": 400776.1064045253,
+          "base": 1171083.2917185137,
+          "high": 2903106.027298387
+        },
+        "denominator": {
+          "definition": "culture_events keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0353782646731
+        },
+        "positive_hard_support": 752,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-05-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/culture_events.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-14-016",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-06",
+      "domain_code": "grocery_home_meals",
+      "status": "passed",
+      "query": {
+        "domain_code": "grocery_home_meals",
+        "conditions": [
+          {
+            "feature_code": "grocery_home_meals.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-12-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-06",
+          "domain_code": "grocery_home_meals",
+          "name_ko": "식료품·가정식",
+          "description": "대한민국 식료품·가정식의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "food_dining",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "grocery_home_meals.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.2880703038206372,
+          "base": 0.3781404813390225,
+          "high": 0.4682106588574078
+        },
+        "count": {
+          "low": 277626.89628149313,
+          "base": 809848.3583901502,
+          "high": 2005496.1167539647
+        },
+        "denominator": {
+          "definition": "grocery_home_meals keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.046304902523
+        },
+        "positive_hard_support": 758,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-06-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/grocery_home_meals.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-12-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-07",
+      "domain_code": "dining_delivery_cafe",
+      "status": "passed",
+      "query": {
+        "domain_code": "dining_delivery_cafe",
+        "conditions": [
+          {
+            "feature_code": "dining_delivery_cafe.object",
+            "value": "배달 음식"
+          }
+        ],
+        "parent_archetype_id": "ARC-12-006"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-07",
+          "domain_code": "dining_delivery_cafe",
+          "name_ko": "외식·배달·카페",
+          "description": "대한민국 외식·배달·카페의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "food_dining",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "dining_delivery_cafe.object",
+            "value": "배달 음식"
+          }
+        ],
+        "share": {
+          "low": 0.5047258162923857,
+          "base": 0.5951639179144835,
+          "high": 0.6856020195365814
+        },
+        "count": {
+          "low": 537377.0386166888,
+          "base": 1408145.938410588,
+          "high": 3244241.3597904025
+        },
+        "denominator": {
+          "definition": "dining_delivery_cafe keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0628834247243
+        },
+        "positive_hard_support": 773,
+        "formula": "Σ calibration_weight × (axis_002) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-07-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/dining_delivery_cafe.parquet",
+          "used_axis_columns": [
+            "axis_002"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-12-006",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-08",
+      "domain_code": "fashion_resale",
+      "status": "passed",
+      "query": {
+        "domain_code": "fashion_resale",
+        "conditions": [
+          {
+            "feature_code": "fashion_resale.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-11-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-08",
+          "domain_code": "fashion_resale",
+          "name_ko": "패션·리셀",
+          "description": "대한민국 패션·리셀의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "commerce_payment",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "fashion_resale.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.2802203932067578,
+          "base": 0.370315830014904,
+          "high": 0.46041126682305017
+        },
+        "count": {
+          "low": 393072.19561599183,
+          "base": 1154336.2923063848,
+          "high": 2870357.6331544644
+        },
+        "denominator": {
+          "definition": "fashion_resale keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 990,
+          "effective_sample_size": 989.0218658672896
+        },
+        "positive_hard_support": 734,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-08-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/fashion_resale.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-11-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-09",
+      "domain_code": "beauty_personal_care",
+      "status": "passed",
+      "query": {
+        "domain_code": "beauty_personal_care",
+        "conditions": [
+          {
+            "feature_code": "beauty_personal_care.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-11-006"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-09",
+          "domain_code": "beauty_personal_care",
+          "name_ko": "뷰티·개인관리",
+          "description": "대한민국 뷰티·개인관리의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "commerce_payment",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "beauty_personal_care.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.27424065355155897,
+          "base": 0.3640783754475982,
+          "high": 0.4539160973436374
+        },
+        "count": {
+          "low": 351183.4243169451,
+          "base": 1036059.1364118145,
+          "high": 2583421.3264608355
+        },
+        "denominator": {
+          "definition": "beauty_personal_care keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0317651691178
+        },
+        "positive_hard_support": 727,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-09-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/beauty_personal_care.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-11-006",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-10",
+      "domain_code": "travel_hospitality",
+      "status": "passed",
+      "query": {
+        "domain_code": "travel_hospitality",
+        "conditions": [
+          {
+            "feature_code": "travel_hospitality.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-15-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-10",
+          "domain_code": "travel_hospitality",
+          "name_ko": "여행·숙박",
+          "description": "대한민국 여행·숙박의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "travel",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "travel_hospitality.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.29237751431432196,
+          "base": 0.3825143508336081,
+          "high": 0.4726511873528942
+        },
+        "count": {
+          "low": 386950.5237095334,
+          "base": 1124984.8883336606,
+          "high": 2780159.4479589383
+        },
+        "denominator": {
+          "definition": "travel_hospitality keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0596527167241
+        },
+        "positive_hard_support": 758,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-10-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/travel_hospitality.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-15-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-11",
+      "domain_code": "sports_outdoor",
+      "status": "passed",
+      "query": {
+        "domain_code": "sports_outdoor",
+        "conditions": [
+          {
+            "feature_code": "sports_outdoor.consumption_mode",
+            "value": "사회 운동"
+          }
+        ],
+        "parent_archetype_id": "ARC-14-021"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-11",
+          "domain_code": "sports_outdoor",
+          "name_ko": "스포츠·아웃도어",
+          "description": "대한민국 스포츠·아웃도어의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "leisure_culture",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "sports_outdoor.consumption_mode",
+            "value": "사회 운동"
+          }
+        ],
+        "share": {
+          "low": 0.3264461601914565,
+          "base": 0.41702117974889746,
+          "high": 0.5075961993063385
+        },
+        "count": {
+          "low": 513545.8375839636,
+          "base": 1457851.3645850571,
+          "high": 3548979.5135226133
+        },
+        "denominator": {
+          "definition": "sports_outdoor keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.055339584178
+        },
+        "positive_hard_support": 823,
+        "formula": "Σ calibration_weight × (axis_031) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-11-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/sports_outdoor.parquet",
+          "used_axis_columns": [
+            "axis_031"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-14-021",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-12",
+      "domain_code": "hobbies_creation",
+      "status": "passed",
+      "query": {
+        "domain_code": "hobbies_creation",
+        "conditions": [
+          {
+            "feature_code": "hobbies_creation.object",
+            "value": "사진·영상"
+          }
+        ],
+        "parent_archetype_id": "ARC-14-026"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-12",
+          "domain_code": "hobbies_creation",
+          "name_ko": "취미·창작",
+          "description": "대한민국 취미·창작의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "leisure_culture",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "hobbies_creation.object",
+            "value": "사진·영상"
+          }
+        ],
+        "share": {
+          "low": 0.2902201905864892,
+          "base": 0.3803240459611692,
+          "high": 0.4704279013358492
+        },
+        "count": {
+          "low": 386328.1071375905,
+          "base": 1125045.1556811733,
+          "high": 2783166.8132242914
+        },
+        "denominator": {
+          "definition": "hobbies_creation keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.047951303084
+        },
+        "positive_hard_support": 719,
+        "formula": "Σ calibration_weight × (axis_002) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-12-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/hobbies_creation.parquet",
+          "used_axis_columns": [
+            "axis_002"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-14-026",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-13",
+      "domain_code": "pets",
+      "status": "passed",
+      "query": {
+        "domain_code": "pets",
+        "conditions": [
+          {
+            "feature_code": "pets.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-17-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-13",
+          "domain_code": "pets",
+          "name_ko": "반려동물",
+          "description": "대한민국 반려동물의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "household",
+          "category_code": "pets",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "pets.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.2949090891733085,
+          "base": 0.3850840145832074,
+          "high": 0.4752589399931063
+        },
+        "count": {
+          "low": 178628.3476502617,
+          "base": 518328.63268964726,
+          "high": 1279410.7634240927
+        },
+        "denominator": {
+          "definition": "pets keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0587002510591
+        },
+        "positive_hard_support": 769,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-13-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/pets.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-17-001",
+        "primary_unit": "household"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-14",
+      "domain_code": "housing_home_services",
+      "status": "passed",
+      "query": {
+        "domain_code": "housing_home_services",
+        "conditions": [
+          {
+            "feature_code": "housing_home_services.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-08-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-14",
+          "domain_code": "housing_home_services",
+          "name_ko": "주거·홈서비스",
+          "description": "대한민국 주거·홈서비스의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "household",
+          "category_code": "home_services",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "housing_home_services.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.29660547437211665,
+          "base": 0.3868056005050903,
+          "high": 0.4770057266380639
+        },
+        "count": {
+          "low": 165382.841138411,
+          "base": 479282.44911266246,
+          "high": 1182094.9469466012
+        },
+        "denominator": {
+          "definition": "housing_home_services keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0461770186397
+        },
+        "positive_hard_support": 771,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-14-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/housing_home_services.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-08-001",
+        "primary_unit": "household"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-15",
+      "domain_code": "mobility_automotive",
+      "status": "passed",
+      "query": {
+        "domain_code": "mobility_automotive",
+        "conditions": [
+          {
+            "feature_code": "mobility_automotive.consumption_mode",
+            "value": "직접 운전"
+          }
+        ],
+        "parent_archetype_id": "ARC-09-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-15",
+          "domain_code": "mobility_automotive",
+          "name_ko": "모빌리티·자동차",
+          "description": "대한민국 모빌리티·자동차의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "mobility",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "mobility_automotive.consumption_mode",
+            "value": "직접 운전"
+          }
+        ],
+        "share": {
+          "low": 0.3103663328121731,
+          "base": 0.40075437075357384,
+          "high": 0.4911424086949746
+        },
+        "count": {
+          "low": 481086.87949012854,
+          "base": 1380430.8671194536,
+          "high": 3383559.559632799
+        },
+        "denominator": {
+          "definition": "mobility_automotive keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0563060972817
+        },
+        "positive_hard_support": 764,
+        "formula": "Σ calibration_weight × (axis_029) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-15-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/mobility_automotive.parquet",
+          "used_axis_columns": [
+            "axis_029"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-09-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-16",
+      "domain_code": "education_learning",
+      "status": "passed",
+      "query": {
+        "domain_code": "education_learning",
+        "conditions": [
+          {
+            "feature_code": "education_learning.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-16-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-16",
+          "domain_code": "education_learning",
+          "name_ko": "교육·학습",
+          "description": "대한민국 교육·학습의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "household",
+          "category_code": "children_education",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "education_learning.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.30208130556870716,
+          "base": 0.3923593466500093,
+          "high": 0.4826373877313115
+        },
+        "count": {
+          "low": 207731.58455595083,
+          "base": 599584.1906167872,
+          "high": 1475085.2755518116
+        },
+        "denominator": {
+          "definition": "education_learning keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0504497054162
+        },
+        "positive_hard_support": 775,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-16-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/education_learning.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-16-001",
+        "primary_unit": "household"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-17",
+      "domain_code": "parenting_childcare",
+      "status": "passed",
+      "query": {
+        "domain_code": "parenting_childcare",
+        "conditions": [
+          {
+            "feature_code": "parenting_childcare.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-16-006"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-17",
+          "domain_code": "parenting_childcare",
+          "name_ko": "양육·보육",
+          "description": "대한민국 양육·보육의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "household",
+          "category_code": "parenting_private_education",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": true,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "parenting_childcare.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.30061813116015534,
+          "base": 0.39087577965442794,
+          "high": 0.4811334281487005
+        },
+        "count": {
+          "low": 195712.4955868514,
+          "base": 565496.1218694873,
+          "high": 1392151.1737586097
+        },
+        "denominator": {
+          "definition": "parenting_childcare keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0481618012259
+        },
+        "positive_hard_support": 766,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-17-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/parenting_childcare.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-16-006",
+        "primary_unit": "household"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-18",
+      "domain_code": "health_wellness_care",
+      "status": "passed",
+      "query": {
+        "domain_code": "health_wellness_care",
+        "conditions": [
+          {
+            "feature_code": "health_wellness_care.object",
+            "value": "예방 건강"
+          }
+        ],
+        "parent_archetype_id": "ARC-13-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-18",
+          "domain_code": "health_wellness_care",
+          "name_ko": "건강·웰니스·돌봄",
+          "description": "대한민국 건강·웰니스·돌봄의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "health_care",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "health_wellness_care.object",
+            "value": "예방 건강"
+          }
+        ],
+        "share": {
+          "low": 0.38106711735767923,
+          "base": 0.47202353425416815,
+          "high": 0.562979951150657
+        },
+        "count": {
+          "low": 357036.0391164714,
+          "base": 982792.242353816,
+          "high": 2344342.1288976134
+        },
+        "denominator": {
+          "definition": "health_wellness_care keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0540530924449
+        },
+        "positive_hard_support": 944,
+        "formula": "Σ calibration_weight × (axis_001) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-18-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/health_wellness_care.parquet",
+          "used_axis_columns": [
+            "axis_001"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-13-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-19",
+      "domain_code": "finance_insurance",
+      "status": "passed",
+      "query": {
+        "domain_code": "finance_insurance",
+        "conditions": [
+          {
+            "feature_code": "finance_insurance.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-07-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-19",
+          "domain_code": "finance_insurance",
+          "name_ko": "금융·보험",
+          "description": "대한민국 금융·보험의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "household",
+          "category_code": "financial_capacity",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "finance_insurance.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.3125937017488297,
+          "base": 0.40354785923947933,
+          "high": 0.49450201673012895
+        },
+        "count": {
+          "low": 220492.3388388623,
+          "base": 632551.3905062897,
+          "high": 1550239.611630215
+        },
+        "denominator": {
+          "definition": "finance_insurance keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 966,
+          "effective_sample_size": 965.038892436564
+        },
+        "positive_hard_support": 752,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-19-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/finance_insurance.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-07-001",
+        "primary_unit": "household"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-20",
+      "domain_code": "senior_retirement_care",
+      "status": "passed",
+      "query": {
+        "domain_code": "senior_retirement_care",
+        "conditions": [
+          {
+            "feature_code": "senior_retirement_care.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-18-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-20",
+          "domain_code": "senior_retirement_care",
+          "name_ko": "시니어·은퇴·돌봄",
+          "description": "대한민국 시니어·은퇴·돌봄의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "senior_retirement_care",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "senior_retirement_care.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.31276592267594916,
+          "base": 0.40318410735501986,
+          "high": 0.49360229203409056
+        },
+        "count": {
+          "low": 458848.942641969,
+          "base": 1314441.3046243577,
+          "high": 3218436.5845331238
+        },
+        "denominator": {
+          "definition": "senior_retirement_care keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0548728046381
+        },
+        "positive_hard_support": 795,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-20-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/senior_retirement_care.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-18-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-21",
+      "domain_code": "digital_devices_ai",
+      "status": "passed",
+      "query": {
+        "domain_code": "digital_devices_ai",
+        "conditions": [
+          {
+            "feature_code": "digital_devices_ai.object",
+            "value": "스마트폰"
+          }
+        ],
+        "parent_archetype_id": "ARC-10-006"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-21",
+          "domain_code": "digital_devices_ai",
+          "name_ko": "디지털기기·AI",
+          "description": "대한민국 디지털기기·AI의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "digital_media",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "digital_devices_ai.object",
+            "value": "스마트폰"
+          }
+        ],
+        "share": {
+          "low": 0.6124300428746723,
+          "base": 0.7008243267794505,
+          "high": 0.7892186106842287
+        },
+        "count": {
+          "low": 985997.0962478133,
+          "base": 2507354.864350787,
+          "high": 5647210.1407462
+        },
+        "denominator": {
+          "definition": "digital_devices_ai keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0466029765482
+        },
+        "positive_hard_support": 705,
+        "formula": "Σ calibration_weight × (axis_001) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-21-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/digital_devices_ai.parquet",
+          "used_axis_columns": [
+            "axis_001"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-10-006",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-22",
+      "domain_code": "social_creator",
+      "status": "passed",
+      "query": {
+        "domain_code": "social_creator",
+        "conditions": [
+          {
+            "feature_code": "social_creator.object",
+            "value": "관심 커뮤니티"
+          }
+        ],
+        "parent_archetype_id": "ARC-10-011"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-22",
+          "domain_code": "social_creator",
+          "name_ko": "소셜·크리에이터",
+          "description": "대한민국 소셜·크리에이터의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "digital_media",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "social_creator.object",
+            "value": "관심 커뮤니티"
+          }
+        ],
+        "share": {
+          "low": 0.33927662048688434,
+          "base": 0.4315631498532594,
+          "high": 0.5238496792196344
+        },
+        "count": {
+          "low": 422443.9419013773,
+          "base": 1194117.3085107238,
+          "high": 2898940.6033701072
+        },
+        "denominator": {
+          "definition": "social_creator keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 905,
+          "effective_sample_size": 904.0573782268444
+        },
+        "positive_hard_support": 771,
+        "formula": "Σ calibration_weight × (axis_002) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-22-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/social_creator.parquet",
+          "used_axis_columns": [
+            "axis_002"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-10-011",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-23",
+      "domain_code": "career_professional",
+      "status": "passed",
+      "query": {
+        "domain_code": "career_professional",
+        "conditions": [
+          {
+            "feature_code": "career_professional.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-05-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-23",
+          "domain_code": "career_professional",
+          "name_ko": "경력·전문활동",
+          "description": "대한민국 경력·전문활동의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "person",
+          "category_code": "work_career",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "career_professional.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.30109673189781355,
+          "base": 0.3913612513948066,
+          "high": 0.48162577089179964
+        },
+        "count": {
+          "low": 367675.00820618763,
+          "base": 1061997.218643595,
+          "high": 2613877.7269913233
+        },
+        "denominator": {
+          "definition": "career_professional keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.037979067006
+        },
+        "positive_hard_support": 765,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-23-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/career_professional.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "exploratory_estimate"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-05-001",
+        "primary_unit": "person"
+      }
+    },
+    {
+      "case_id": "DOMAIN-DOM-24",
+      "domain_code": "small_business_digital",
+      "status": "passed",
+      "query": {
+        "domain_code": "small_business_digital",
+        "conditions": [
+          {
+            "feature_code": "small_business_digital.location",
+            "value": "직장·학교"
+          }
+        ],
+        "parent_archetype_id": "ARC-06-001"
+      },
+      "result": {
+        "status": "exploratory_parent_conditional_estimate",
+        "domain": {
+          "domain_id": "DOM-24",
+          "domain_code": "small_business_digital",
+          "name_ko": "소상공인·디지털 운영",
+          "description": "대한민국 소상공인·디지털 운영의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+          "primary_entity_unit": "enterprise",
+          "category_code": "small_business",
+          "coverage_status": "complete_with_evidence_constraints",
+          "active": true,
+          "minor_guardrail": false,
+          "version": "phase2-taxonomy-2026-08-25-v1"
+        },
+        "conditions": [
+          {
+            "feature_code": "small_business_digital.location",
+            "value": "직장·학교"
+          }
+        ],
+        "share": {
+          "low": 0.2912336005553788,
+          "base": 0.3813531889377219,
+          "high": 0.47147277732006504
+        },
+        "count": {
+          "low": 37860.36807219924,
+          "base": 64830.04211941273,
+          "high": 99009.28323721366
+        },
+        "denominator": {
+          "definition": "small_business_digital keyword-relevant calibrated synthetic adult decision-maker sample",
+          "sample_size": 1000,
+          "effective_sample_size": 999.0431325493179
+        },
+        "positive_hard_support": 761,
+        "formula": "Σ calibration_weight × (axis_014) / Σ calibration_weight",
+        "feature_lineage": {
+          "model_id": "DOM-24-MODEL-01",
+          "extractor": "normalized lexical axis token match",
+          "membership_uri": "data/processed/phase2/memberships/small_business_digital.parquet",
+          "used_axis_columns": [
+            "axis_014"
+          ]
+        },
+        "confidence": {
+          "population": {
+            "grade": "D",
+            "reason": "estimated"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "lexical axis scores are exploratory"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "합성 내러티브 기반 조건부 비율이며 실재 개인 관측이 아님",
+          "공식 universe 없이는 인구 count를 산출하지 않음"
+        ],
+        "parent_archetype_id": "ARC-06-001",
+        "primary_unit": "enterprise"
+      }
+    }
+  ],
+  "parent_cases": [
+    {
+      "case_id": "PARENT-01",
+      "description": "홈페이지가 없는 60대 음식점 사장 또는 사업체",
+      "status": "passed",
+      "query": {
+        "required_case": "홈페이지가 없는 60대 음식점 사장 또는 사업체",
+        "query_parent_case_id": "PARENT-01",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "phase1_evidence_linked_query_parent",
+        "linked_phase1_parent": "ARC-06-001"
+      },
+      "result": {
+        "case_id": "PARENT-01",
+        "name_ko": "홈페이지가 없는 60대 음식점 사장 또는 사업체",
+        "domain_code": "small_business_digital",
+        "linked_phase1_archetype_id": "ARC-06-001",
+        "entity_unit": "enterprise",
+        "rule": {
+          "and": [
+            "restaurant_or_bar_enterprise",
+            "owner_age_60_69_proxy",
+            "website_absence_scenario"
+          ]
+        },
+        "count_low": 130000.0,
+        "count_base": 170000.0,
+        "count_high": 210000.0,
+        "share_low": 0.17445074852790407,
+        "share_base": 0.22812790192110532,
+        "share_high": 0.28180505531430655,
+        "denominator": {
+          "definition": "2023 음식점 및 주점업 소상공인 기업체 745,196개",
+          "linked_phase1_parent": "ARC-06-001"
+        },
+        "method_code": "phase1_official_baseline_times_proxy_scenario",
+        "formula": "745196 × P(owner age 60–69 | I56) × P(no own website | owner age 60–69, I56)",
+        "source_release_ids": [
+          "REL-MSS-SB-2023",
+          "REL-KOSTAT-REA-2024"
+        ],
+        "population_confidence_grade": "D",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "business_web_presence_unobserved",
+          "owner_attribute_unobserved",
+          "missing_joint_distribution"
+        ],
+        "conditioning_feature": "small_business_digital.consumption_mode",
+        "conditioning_value": "대표자 직접",
+        "conditioning_hard_support": 128,
+        "conditioning_effective_sample_size": 127.8625501852597,
+        "required_overlapping_tags": [],
+        "evidence_status": "phase1_evidence_linked_query_parent",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-24-SUB-01",
+            "name_ko": "신규 고객 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 0.007468546451985907,
+            "share_high": 0.07370478245226397,
+            "count_low": 0.0,
+            "count_base": 1269.6528968376042,
+            "count_high": 15478.004314975435,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "d72e0db1849a46fea76852c9e357de72",
+            "representative_summary": "합성 성인; age_band=60-69, sex=female, province=제주; cluster_terms=주일, 일주, 일주일, 단골"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-02",
+            "name_ko": "운영 효율 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 0.018409593944803467,
+            "share_high": 0.09302304026483446,
+            "count_low": 0.0,
+            "count_base": 3129.6309706165894,
+            "count_high": 19534.838455615238,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "a5991467895548c58d4f2feb9b160dfb",
+            "representative_summary": "합성 성인; age_band=90+, sex=female, province=세종; cluster_terms=크림, 식당에서, 당에서, 짜장면"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-03",
+            "name_ko": "매출 안정 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 0.04569886662309334,
+            "share_high": 0.13320907321174555,
+            "count_low": 0.0,
+            "count_base": 7768.807325925867,
+            "count_high": 27973.905374466565,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "8c0c41e22e994e6bb1e54f4b4d6bda20",
+            "representative_summary": "합성 성인; age_band=90+, sex=female, province=세종; cluster_terms=번은, 지글, 맛을, 밥을"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-04",
+            "name_ko": "승계 가능성 중심 소상공인·디지털 운영",
+            "share_low": 0.42287155696107814,
+            "share_base": 0.560220393247457,
+            "share_high": 0.6975692295338358,
+            "count_low": 54973.30240494016,
+            "count_base": 95237.4668520677,
+            "count_high": 146489.53820210553,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "bba7ce2cae80481f8775d5c73b899507",
+            "representative_summary": "합성 성인; age_band=20-29, sex=male, province=충청북; cluster_terms=음식, 배달, 직접, 분위"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-05",
+            "name_ko": "신규 고객 중심 소상공인·디지털 운영",
+            "share_low": 0.23328798450768135,
+            "share_base": 0.3682025997326604,
+            "share_high": 0.5031172149576395,
+            "count_low": 30327.437985998575,
+            "count_base": 62594.44195455224,
+            "count_high": 105654.6151411043,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "a396e029830540d3a91cdef691d43165",
+            "representative_summary": "합성 성인; age_band=30-39, sex=female, province=인천; cluster_terms=사업, 운영, 하는, 적인"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 1.0,
+          "count_base_sum": 170000.0,
+          "parent_count_base": 170000.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "D",
+            "reason": "phase1_evidence_linked_query_parent"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-02",
+      "description": "초등학생 자녀가 있는 수도권 맞벌이 가구",
+      "status": "passed",
+      "query": {
+        "required_case": "초등학생 자녀가 있는 수도권 맞벌이 가구",
+        "query_parent_case_id": "PARENT-02",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-02",
+        "name_ko": "초등학생 자녀가 있는 수도권 맞벌이 가구",
+        "domain_code": "education_learning",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "household",
+        "rule": {
+          "and": [
+            "capital_region",
+            "elementary_child",
+            "dual_income_household"
+          ]
+        },
+        "count_low": 271020.0,
+        "count_base": 542040.0,
+        "count_high": 993740.0,
+        "share_low": 0.06,
+        "share_base": 0.12,
+        "share_high": 0.22,
+        "denominator": {
+          "control_id": "CTL-HH-CHILD18-2024",
+          "count_base": 4517000.0,
+          "dimensions": {
+            "children_age_max": 18
+          },
+          "entity_unit": "household",
+          "period": "2024-11-01"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-HH-CHILD18-2024 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-KOSTAT-CENSUS-2024",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "education_learning.decision_unit",
+        "conditioning_value": "보호자·가족",
+        "conditioning_hard_support": 152,
+        "conditioning_effective_sample_size": 151.88300904334778,
+        "required_overlapping_tags": [],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-16-SUB-01",
+            "name_ko": "성취 중심 교육·학습",
+            "share_low": 0.0,
+            "share_base": 0.0807544320472,
+            "share_high": 0.1698105393999938,
+            "count_low": 0.0,
+            "count_base": 43772.13234686429,
+            "count_high": 168747.52542334984,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_043·P(k|x)/Σw·axis_043",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "e96d4b8b22cb41f8837b5a7a74d4d4d1",
+            "representative_summary": "합성 성인; age_band=30-39, sex=male, province=대구; cluster_terms=격증, 자격증, 자격, 격증을"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-02",
+            "name_ko": "진학·경력 중심 교육·학습",
+            "share_low": 0.0,
+            "share_base": 0.07630301056514957,
+            "share_high": 0.1642497786513417,
+            "count_low": 0.0,
+            "count_base": 41359.28384673367,
+            "count_high": 163221.5750369843,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_043·P(k|x)/Σw·axis_043",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "90ce8f8d1dc54440bfd71ce1ea14f7c8",
+            "representative_summary": "합성 성인; age_band=50-59, sex=female, province=충청남; cluster_terms=고등학교, 고등, 고등학, 들과"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-03",
+            "name_ko": "자기효능 중심 교육·학습",
+            "share_low": 0.3163050054589742,
+            "share_base": 0.4409933675575629,
+            "share_high": 0.5656817296561516,
+            "count_low": 85724.98257949119,
+            "count_base": 239036.04495090139,
+            "count_high": 562140.5620285041,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_043·P(k|x)/Σw·axis_043",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "5ed7207aad8b4568b92f59b04642921a",
+            "representative_summary": "합성 성인; age_band=40-49, sex=female, province=서울; cluster_terms=시간, 시간을, 간을, 아이"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-04",
+            "name_ko": "사회 참여 중심 교육·학습",
+            "share_low": 0.005217044565936385,
+            "share_base": 0.0982883019309164,
+            "share_high": 0.1913595592958964,
+            "count_low": 1413.9234182600792,
+            "count_base": 53276.19117863392,
+            "count_high": 190161.6484547041,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_043·P(k|x)/Σw·axis_043",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "5d6d91bc0e264c82a7b629cb6ef845dc",
+            "representative_summary": "합성 성인; age_band=30-39, sex=female, province=광주; cluster_terms=가정, 성취, 정을, 감을"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-05",
+            "name_ko": "성취 중심 교육·학습",
+            "share_low": 0.0009295776836926867,
+            "share_base": 0.09279969294309894,
+            "share_high": 0.18466980820250517,
+            "count_low": 251.93414383439193,
+            "count_base": 50301.14556287735,
+            "count_high": 183513.77520315748,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_043·P(k|x)/Σw·axis_043",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "3de4f18618a943a3a8e05b2bc14ba4f8",
+            "representative_summary": "합성 성인; age_band=80-89, sex=female, province=충청북; cluster_terms=받지, 못했, 정규, 못했지"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-06",
+            "name_ko": "진학·경력 중심 교육·학습",
+            "share_low": 0.10026138821068345,
+            "share_base": 0.21086119495607217,
+            "share_high": 0.32146100170146086,
+            "count_low": 27172.84143285943,
+            "count_base": 114295.20211398936,
+            "count_high": 319448.65583080973,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_043·P(k|x)/Σw·axis_043",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "2b915670769249ae99db622a41a3c317",
+            "representative_summary": "합성 성인; age_band=70-79, sex=female, province=광주; cluster_terms=졸업, 중학교, 중학, 학교"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 1.0,
+          "count_base_sum": 542040.0,
+          "parent_count_base": 542040.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-03",
+      "description": "반려동물을 키우면서 국내여행 빈도가 높은 30~40대 가구",
+      "status": "passed",
+      "query": {
+        "required_case": "반려동물을 키우면서 국내여행 빈도가 높은 30~40대 가구",
+        "query_parent_case_id": "PARENT-03",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-03",
+        "name_ko": "반려동물을 키우면서 국내여행 빈도가 높은 30~40대 가구",
+        "domain_code": "pets",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "household",
+        "rule": {
+          "and": [
+            "pet_household",
+            "frequent_domestic_travel",
+            "adult_age_30_49"
+          ]
+        },
+        "count_low": 68991.0,
+        "count_base": 229970.0,
+        "count_high": 574925.0,
+        "share_low": 0.003,
+        "share_base": 0.01,
+        "share_high": 0.025,
+        "denominator": {
+          "control_id": "CTL-HH-TOTAL-2024",
+          "count_base": 22997000.0,
+          "dimensions": {
+            "household_scope": "total"
+          },
+          "entity_unit": "household",
+          "period": "2024-11-01"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-HH-TOTAL-2024 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-KOSTAT-CENSUS-2024",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "pets.occasion",
+        "conditioning_value": "외출·여행",
+        "conditioning_hard_support": 51,
+        "conditioning_effective_sample_size": 50.955093732012934,
+        "required_overlapping_tags": [],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-13-SUB-01",
+            "name_ko": "동반자 관계 중심 반려동물",
+            "share_low": 0.376209760674891,
+            "share_base": 0.5682192742455446,
+            "share_high": 0.7602287878161983,
+            "count_low": 25955.087598721402,
+            "count_base": 130673.3864982479,
+            "count_high": 437074.5358352278,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_011·P(k|x)/Σw·axis_011",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "7c7a82ea69f74254b702f4b3d9e7e661",
+            "representative_summary": "합성 성인; age_band=70-79, sex=male, province=세종; cluster_terms=매일, 일상, 계절, 건강"
+          },
+          {
+            "subtype_id": "DOM-13-SUB-02",
+            "name_ko": "건강 보호 중심 반려동물",
+            "share_low": 0.0,
+            "share_base": 0.10633610858496412,
+            "share_high": 0.24698430963913676,
+            "count_low": 0.0,
+            "count_base": 24454.114891284196,
+            "count_high": 141997.4542192807,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_011·P(k|x)/Σw·axis_011",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "ed2da3d643aa416d98280682e1b0649a",
+            "representative_summary": "합성 성인; age_band=20-29, sex=male, province=광주; cluster_terms=격렬, 렬한, 격렬한, 정리"
+          },
+          {
+            "subtype_id": "DOM-13-SUB-03",
+            "name_ko": "양육 편의 중심 반려동물",
+            "share_low": 0.10597973888776135,
+            "share_base": 0.2860725053343804,
+            "share_high": 0.4661652717809994,
+            "count_low": 7311.648165605544,
+            "count_base": 65788.09405174745,
+            "count_high": 268010.0688786911,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_011·P(k|x)/Σw·axis_011",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "fffd85832af14b1cb5cb6a7b04442e9a",
+            "representative_summary": "합성 성인; age_band=30-39, sex=male, province=제주; cluster_terms=주말, 말이면, 주말이, 주말이면"
+          },
+          {
+            "subtype_id": "DOM-13-SUB-04",
+            "name_ko": "즐거운 활동 중심 반려동물",
+            "share_low": 0.0,
+            "share_base": 0.03937211183511091,
+            "share_high": 0.1487766993285533,
+            "count_low": 0.0,
+            "count_base": 9054.404558720456,
+            "count_high": 85535.4438614685,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_011·P(k|x)/Σw·axis_011",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "2735dceb54f4430a8490b8a3c0a79ca2",
+            "representative_summary": "합성 성인; age_band=90+, sex=female, province=강원; cluster_terms=매일, 아침, 유지, 유지하"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 1.0,
+          "count_base_sum": 229970.0,
+          "parent_count_base": 229970.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-04",
+      "description": "직원 5명 미만이고 온라인 판매채널이 없는 지방 식품 소매업체",
+      "status": "passed",
+      "query": {
+        "required_case": "직원 5명 미만이고 온라인 판매채널이 없는 지방 식품 소매업체",
+        "query_parent_case_id": "PARENT-04",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-04",
+        "name_ko": "직원 5명 미만이고 온라인 판매채널이 없는 지방 식품 소매업체",
+        "domain_code": "small_business_digital",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "enterprise",
+        "rule": {
+          "and": [
+            "non_capital_region",
+            "food_retail",
+            "employees_under_5",
+            "no_online_sales_channel"
+          ]
+        },
+        "count_low": 7641.5,
+        "count_base": 30568.0,
+        "count_high": 91709.988,
+        "share_low": 0.001,
+        "share_base": 0.004,
+        "share_high": 0.012,
+        "denominator": {
+          "control_id": "CTL-ENT-ALL-2024",
+          "count_base": 7642000.0,
+          "dimensions": {
+            "enterprise_status": "active",
+            "preliminary": true
+          },
+          "entity_unit": "enterprise",
+          "period": "2024-12-31"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-ENT-ALL-2024 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-KOSTAT-BD-2024-P",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "small_business_digital.consumption_mode",
+        "conditioning_value": "대표자 직접",
+        "conditioning_hard_support": 128,
+        "conditioning_effective_sample_size": 127.8625501852597,
+        "required_overlapping_tags": [],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-24-SUB-01",
+            "name_ko": "신규 고객 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 0.007468546451985907,
+            "share_high": 0.07370478245226397,
+            "count_low": 0.0,
+            "count_base": 228.29852794430522,
+            "count_high": 6759.464714239739,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "d72e0db1849a46fea76852c9e357de72",
+            "representative_summary": "합성 성인; age_band=60-69, sex=female, province=제주; cluster_terms=주일, 일주, 일주일, 단골"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-02",
+            "name_ko": "운영 효율 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 0.018409593944803467,
+            "share_high": 0.09302304026483446,
+            "count_low": 0.0,
+            "count_base": 562.7444677047523,
+            "count_high": 8531.141906411485,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "a5991467895548c58d4f2feb9b160dfb",
+            "representative_summary": "합성 성인; age_band=90+, sex=female, province=세종; cluster_terms=크림, 식당에서, 당에서, 짜장면"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-03",
+            "name_ko": "매출 안정 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 0.04569886662309334,
+            "share_high": 0.13320907321174555,
+            "count_low": 0.0,
+            "count_base": 1396.9229549347172,
+            "count_high": 12216.602505740306,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "8c0c41e22e994e6bb1e54f4b4d6bda20",
+            "representative_summary": "합성 성인; age_band=90+, sex=female, province=세종; cluster_terms=번은, 지글, 맛을, 밥을"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-04",
+            "name_ko": "승계 가능성 중심 소상공인·디지털 운영",
+            "share_low": 0.42287155696107814,
+            "share_base": 0.560220393247457,
+            "share_high": 0.6975692295338358,
+            "count_low": 3231.3730025180785,
+            "count_base": 17124.816980788266,
+            "count_high": 63974.065669717325,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "bba7ce2cae80481f8775d5c73b899507",
+            "representative_summary": "합성 성인; age_band=20-29, sex=male, province=충청북; cluster_terms=음식, 배달, 직접, 분위"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-05",
+            "name_ko": "신규 고객 중심 소상공인·디지털 운영",
+            "share_low": 0.23328798450768135,
+            "share_base": 0.3682025997326604,
+            "share_high": 0.5031172149576395,
+            "count_low": 1782.670133615447,
+            "count_base": 11255.217068627959,
+            "count_high": 46140.873746358535,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_029·P(k|x)/Σw·axis_029",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "a396e029830540d3a91cdef691d43165",
+            "representative_summary": "합성 성인; age_band=30-39, sex=female, province=인천; cluster_terms=사업, 운영, 하는, 적인"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 1.0,
+          "count_base_sum": 30568.0,
+          "parent_count_base": 30568.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-05",
+      "description": "사교육을 이용하지만 현재 서비스에 불만이 있는 중학생 보호자 가구",
+      "status": "passed",
+      "query": {
+        "required_case": "사교육을 이용하지만 현재 서비스에 불만이 있는 중학생 보호자 가구",
+        "query_parent_case_id": "PARENT-05",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-05",
+        "name_ko": "사교육을 이용하지만 현재 서비스에 불만이 있는 중학생 보호자 가구",
+        "domain_code": "education_learning",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "household",
+        "rule": {
+          "and": [
+            "middle_school_child",
+            "private_education_use",
+            "current_service_dissatisfaction"
+          ]
+        },
+        "count_low": 67755.0,
+        "count_base": 271020.0,
+        "count_high": 632380.0000000001,
+        "share_low": 0.015,
+        "share_base": 0.06,
+        "share_high": 0.14,
+        "denominator": {
+          "control_id": "CTL-HH-CHILD18-2024",
+          "count_base": 4517000.0,
+          "dimensions": {
+            "children_age_max": 18
+          },
+          "entity_unit": "household",
+          "period": "2024-11-01"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-HH-CHILD18-2024 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-KOSTAT-CENSUS-2024",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "education_learning.barrier_risk_trust",
+        "conditioning_value": "학습 품질",
+        "conditioning_hard_support": 58,
+        "conditioning_effective_sample_size": 57.94604979907495,
+        "required_overlapping_tags": [],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-16-SUB-01",
+            "name_ko": "성취 중심 교육·학습",
+            "share_low": 0.0,
+            "share_base": 0.07151341538301147,
+            "share_high": 0.18358602951823083,
+            "count_low": 0.0,
+            "count_base": 19381.565837103768,
+            "count_high": 116096.13334673883,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_055·P(k|x)/Σw·axis_055",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "e96d4b8b22cb41f8837b5a7a74d4d4d1",
+            "representative_summary": "합성 성인; age_band=30-39, sex=male, province=대구; cluster_terms=격증, 자격증, 자격, 격증을"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-02",
+            "name_ko": "진학·경력 중심 교육·학습",
+            "share_low": 0.0,
+            "share_base": 0.009157664526583773,
+            "share_high": 0.0794092821143276,
+            "count_low": 0.0,
+            "count_base": 2481.910239994734,
+            "count_high": 50216.8418234585,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_055·P(k|x)/Σw·axis_055",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "90ce8f8d1dc54440bfd71ce1ea14f7c8",
+            "representative_summary": "합성 성인; age_band=50-59, sex=female, province=충청남; cluster_terms=고등학교, 고등, 고등학, 들과"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-03",
+            "name_ko": "자기효능 중심 교육·학습",
+            "share_low": 0.6481876560287878,
+            "share_base": 0.797402898265505,
+            "share_high": 0.9466181405022223,
+            "count_low": 43917.95463423052,
+            "count_base": 216112.13348791716,
+            "count_high": 598622.3796907954,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_055·P(k|x)/Σw·axis_055",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "5ed7207aad8b4568b92f59b04642921a",
+            "representative_summary": "합성 성인; age_band=40-49, sex=female, province=서울; cluster_terms=시간, 시간을, 간을, 아이"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-04",
+            "name_ko": "사회 참여 중심 교육·학습",
+            "share_low": 0.0,
+            "share_base": 0.12192601581205074,
+            "share_high": 0.2518986219095326,
+            "count_low": 0.0,
+            "count_base": 33044.38880538199,
+            "count_high": 159295.65052315025,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_055·P(k|x)/Σw·axis_055",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "5d6d91bc0e264c82a7b629cb6ef845dc",
+            "representative_summary": "합성 성인; age_band=30-39, sex=female, province=광주; cluster_terms=가정, 성취, 정을, 감을"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-05",
+            "name_ko": "성취 중심 교육·학습",
+            "share_low": 0.0,
+            "share_base": 1.5332064153494682e-23,
+            "share_high": 0.04573307808450833,
+            "count_low": 0.0,
+            "count_base": 4.155296026880129e-18,
+            "count_high": 28920.68391908138,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_055·P(k|x)/Σw·axis_055",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "3de4f18618a943a3a8e05b2bc14ba4f8",
+            "representative_summary": "합성 성인; age_band=80-89, sex=female, province=충청북; cluster_terms=받지, 못했, 정규, 못했지"
+          },
+          {
+            "subtype_id": "DOM-16-SUB-06",
+            "name_ko": "진학·경력 중심 교육·학습",
+            "share_low": 0.0,
+            "share_base": 6.012848760351867e-09,
+            "share_high": 0.04574490754115802,
+            "count_low": 0.0,
+            "count_base": 0.0016296023292382239,
+            "count_high": 28928.164630877516,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_055·P(k|x)/Σw·axis_055",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "2b915670769249ae99db622a41a3c317",
+            "representative_summary": "합성 성인; age_band=70-79, sex=female, province=광주; cluster_terms=졸업, 중학교, 중학, 학교"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 0.9999999999999998,
+          "count_base_sum": 271020.0,
+          "parent_count_base": 271020.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-06",
+      "description": "모바일 사용은 높지만 사업 디지털화가 낮은 소상공인",
+      "status": "passed",
+      "query": {
+        "required_case": "모바일 사용은 높지만 사업 디지털화가 낮은 소상공인",
+        "query_parent_case_id": "PARENT-06",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-06",
+        "name_ko": "모바일 사용은 높지만 사업 디지털화가 낮은 소상공인",
+        "domain_code": "small_business_digital",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "enterprise",
+        "rule": {
+          "and": [
+            "small_business",
+            "high_mobile_use",
+            "low_business_digitization"
+          ]
+        },
+        "count_low": 191037.5,
+        "count_base": 611360.0,
+        "count_high": 1375649.82,
+        "share_low": 0.025,
+        "share_base": 0.08,
+        "share_high": 0.18,
+        "denominator": {
+          "control_id": "CTL-ENT-ALL-2024",
+          "count_base": 7642000.0,
+          "dimensions": {
+            "enterprise_status": "active",
+            "preliminary": true
+          },
+          "entity_unit": "enterprise",
+          "period": "2024-12-31"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-ENT-ALL-2024 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-KOSTAT-BD-2024-P",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "small_business_digital.barrier_risk_trust",
+        "conditioning_value": "디지털 학습 부담",
+        "conditioning_hard_support": 4,
+        "conditioning_effective_sample_size": 3.997524382184714,
+        "required_overlapping_tags": [],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-24-SUB-01",
+            "name_ko": "신규 고객 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 0.009771602885356452,
+            "share_high": 0.15751396937831885,
+            "count_low": 0.0,
+            "count_base": 5973.9671399915205,
+            "count_high": 216684.06362276984,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_053·P(k|x)/Σw·axis_053",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "d72e0db1849a46fea76852c9e357de72",
+            "representative_summary": "합성 성인; age_band=60-69, sex=female, province=제주; cluster_terms=주일, 일주, 일주일, 단골"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-02",
+            "name_ko": "운영 효율 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 2.5795703138774254e-06,
+            "share_high": 0.05288964940795351,
+            "count_low": 0.0,
+            "count_base": 1.5770461070921027,
+            "count_high": 72757.63668791436,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_053·P(k|x)/Σw·axis_053",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "a5991467895548c58d4f2feb9b160dfb",
+            "representative_summary": "합성 성인; age_band=90+, sex=female, province=세종; cluster_terms=크림, 식당에서, 당에서, 짜장면"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-03",
+            "name_ko": "매출 안정 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 8.505451477948875e-12,
+            "share_high": 0.051343602496165736,
+            "count_low": 0.0,
+            "count_base": 5.199892815558824e-06,
+            "count_high": 70630.81753200195,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_053·P(k|x)/Σw·axis_053",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "8c0c41e22e994e6bb1e54f4b4d6bda20",
+            "representative_summary": "합성 성인; age_band=90+, sex=female, province=세종; cluster_terms=번은, 지글, 맛을, 밥을"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-04",
+            "name_ko": "승계 가능성 중심 소상공인·디지털 운영",
+            "share_low": 0.47743969827366356,
+            "share_base": 0.7774396982736635,
+            "share_high": 1.0,
+            "count_low": 91208.886358955,
+            "count_base": 475295.53393658693,
+            "count_high": 1375649.82,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_053·P(k|x)/Σw·axis_053",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "bba7ce2cae80481f8775d5c73b899507",
+            "representative_summary": "합성 성인; age_band=20-29, sex=male, province=충청북; cluster_terms=음식, 배달, 직접, 분위"
+          },
+          {
+            "subtype_id": "DOM-24-SUB-05",
+            "name_ko": "신규 고객 중심 소상공인·디지털 운영",
+            "share_low": 0.0,
+            "share_base": 0.21278611926216073,
+            "share_high": 0.5127861192621608,
+            "count_low": 0.0,
+            "count_base": 130088.92187211459,
+            "count_high": 705414.13266149,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_053·P(k|x)/Σw·axis_053",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "a396e029830540d3a91cdef691d43165",
+            "representative_summary": "합성 성인; age_band=30-39, sex=female, province=인천; cluster_terms=사업, 운영, 하는, 적인"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 1.0,
+          "count_base_sum": 611360.0,
+          "parent_count_base": 611360.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "E",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-07",
+      "description": "은퇴 전후 부모·배우자 돌봄 부담이 있는 50~60대 가구",
+      "status": "passed",
+      "query": {
+        "required_case": "은퇴 전후 부모·배우자 돌봄 부담이 있는 50~60대 가구",
+        "query_parent_case_id": "PARENT-07",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-07",
+        "name_ko": "은퇴 전후 부모·배우자 돌봄 부담이 있는 50~60대 가구",
+        "domain_code": "senior_retirement_care",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "household",
+        "rule": {
+          "and": [
+            "adult_age_50_69",
+            "near_retirement",
+            "parent_or_spouse_care_burden"
+          ]
+        },
+        "count_low": 459940.0,
+        "count_base": 1379820.0,
+        "count_high": 2989610.0,
+        "share_low": 0.02,
+        "share_base": 0.06,
+        "share_high": 0.13,
+        "denominator": {
+          "control_id": "CTL-HH-TOTAL-2024",
+          "count_base": 22997000.0,
+          "dimensions": {
+            "household_scope": "total"
+          },
+          "entity_unit": "household",
+          "period": "2024-11-01"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-HH-TOTAL-2024 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-KOSTAT-CENSUS-2024",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "senior_retirement_care.object",
+        "conditioning_value": "건강·요양",
+        "conditioning_hard_support": 245,
+        "conditioning_effective_sample_size": 240.12455680861322,
+        "required_overlapping_tags": [],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-20-SUB-01",
+            "name_ko": "자립 중심 시니어·은퇴·돌봄",
+            "share_low": 0.04916600310367365,
+            "share_base": 0.12367582641417625,
+            "share_high": 0.19818564972467884,
+            "count_low": 22613.411467503658,
+            "count_base": 170650.37880280867,
+            "count_high": 592497.8002733971,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_002·P(k|x)/Σw·axis_002",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "6a8a5a23a4ad4d1ea5c3c666fcb50a6d",
+            "representative_summary": "합성 성인; age_band=20-29, sex=male, province=충청남; cluster_terms=노후, 시니어, 시니, 니어"
+          },
+          {
+            "subtype_id": "DOM-20-SUB-02",
+            "name_ko": "안정 중심 시니어·은퇴·돌봄",
+            "share_low": 0.6061957590285777,
+            "share_base": 0.6971821947441139,
+            "share_high": 0.7881686304596501,
+            "count_low": 278813.677407604,
+            "count_base": 961985.9359518233,
+            "count_high": 2356316.8193084747,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_002·P(k|x)/Σw·axis_002",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "6ef6281a51614db49e5d3b06b46035ba",
+            "representative_summary": "합성 성인; age_band=80-89, sex=male, province=충청남; cluster_terms=은퇴, 후에, 후에도, 건강"
+          },
+          {
+            "subtype_id": "DOM-20-SUB-03",
+            "name_ko": "관계 유지 중심 시니어·은퇴·돌봄",
+            "share_low": 0.0977691237912474,
+            "share_base": 0.17914197884171,
+            "share_high": 0.26051483389217256,
+            "count_low": 44967.93079654633,
+            "count_base": 247183.68524536805,
+            "count_high": 778837.752552378,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_002·P(k|x)/Σw·axis_002",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "114912d0a7db48e08987b429013cf2e6",
+            "representative_summary": "합성 성인; age_band=70-79, sex=female, province=광주; cluster_terms=보내, 노후를, 평온, 온한"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 1.0000000000000002,
+          "count_base_sum": 1379820.0,
+          "parent_count_base": 1379820.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-08",
+      "description": "영유아 자녀를 둔 맞벌이 보호자 가구",
+      "status": "passed",
+      "query": {
+        "required_case": "영유아 자녀를 둔 맞벌이 보호자 가구",
+        "query_parent_case_id": "PARENT-08",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-08",
+        "name_ko": "영유아 자녀를 둔 맞벌이 보호자 가구",
+        "domain_code": "parenting_childcare",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "household",
+        "rule": {
+          "and": [
+            "child_age_0_5",
+            "dual_income_household",
+            "guardian_decision_unit"
+          ]
+        },
+        "count_low": 180680.0,
+        "count_base": 542040.0,
+        "count_high": 1084080.0,
+        "share_low": 0.04,
+        "share_base": 0.12,
+        "share_high": 0.24,
+        "denominator": {
+          "control_id": "CTL-HH-CHILD18-2024",
+          "count_base": 4517000.0,
+          "dimensions": {
+            "children_age_max": 18
+          },
+          "entity_unit": "household",
+          "period": "2024-11-01"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-HH-CHILD18-2024 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-KOSTAT-CENSUS-2024",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "parenting_childcare.motivation_job",
+        "conditioning_value": "일·가정 양립",
+        "conditioning_hard_support": 41,
+        "conditioning_effective_sample_size": 40.97039498249695,
+        "required_overlapping_tags": [],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-17-SUB-01",
+            "name_ko": "안전 중심 양육·보육",
+            "share_low": 0.0,
+            "share_base": 0.04984740573260289,
+            "share_high": 0.16735048500779637,
+            "count_low": 0.0,
+            "count_base": 27019.28780330007,
+            "count_high": 181421.3137872519,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_051·P(k|x)/Σw·axis_051",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "2eb6c839befe4f529bedb970d8710017",
+            "representative_summary": "합성 성인; age_band=80-89, sex=male, province=세종; cluster_terms=손주, 손주들, 주들, 녀들"
+          },
+          {
+            "subtype_id": "DOM-17-SUB-02",
+            "name_ko": "발달 지원 중심 양육·보육",
+            "share_low": 0.6673085579143199,
+            "share_base": 0.8325132861892868,
+            "share_high": 0.9977180144642537,
+            "count_low": 120569.31024395932,
+            "count_base": 451255.501646041,
+            "count_high": 1081606.1451204082,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_051·P(k|x)/Σw·axis_051",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "de49b031989142b2b7c6ca0ff4e72b7a",
+            "representative_summary": "합성 성인; age_band=50-59, sex=male, province=경상북; cluster_terms=가족, 가족들, 족들, 족의"
+          },
+          {
+            "subtype_id": "DOM-17-SUB-03",
+            "name_ko": "일·가정 양립 중심 양육·보육",
+            "share_low": 0.0,
+            "share_base": 0.11763930807811036,
+            "share_high": 0.26715705167025233,
+            "count_low": 0.0,
+            "count_base": 63765.21055065894,
+            "count_high": 289619.6165746871,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_051·P(k|x)/Σw·axis_051",
+            "interpretation_confidence_grade": "D",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "b240ec1214f54e739281f7e24e30b968",
+            "representative_summary": "합성 성인; age_band=20-29, sex=male, province=경상북; cluster_terms=부모님, 모님, 부모, 부모님과"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 1.0,
+          "count_base_sum": 542040.0,
+          "parent_count_base": 542040.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-09",
+      "description": "고빈도 국내여행 1인 가구",
+      "status": "passed",
+      "query": {
+        "required_case": "고빈도 국내여행 1인 가구",
+        "query_parent_case_id": "PARENT-09",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-09",
+        "name_ko": "고빈도 국내여행 1인 가구",
+        "domain_code": "travel_hospitality",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "household",
+        "rule": {
+          "and": [
+            "one_person_household",
+            "frequent_domestic_travel"
+          ]
+        },
+        "count_low": 120675.0,
+        "count_base": 482700.0,
+        "count_high": 1126300.0,
+        "share_low": 0.015,
+        "share_base": 0.06,
+        "share_high": 0.14,
+        "denominator": {
+          "control_id": "CTL-HH-GENERAL-SIZE1-2024",
+          "count_base": 8045000.0,
+          "dimensions": {
+            "household_scope": "general",
+            "household_size": 1
+          },
+          "entity_unit": "household",
+          "period": "2024-11-01"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-HH-GENERAL-SIZE1-2024 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-KOSTAT-CENSUS-2024",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "travel_hospitality.object",
+        "conditioning_value": "국내 단기여행",
+        "conditioning_hard_support": 11,
+        "conditioning_effective_sample_size": 10.993465003789154,
+        "required_overlapping_tags": [],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-10-SUB-01",
+            "name_ko": "일상 탈출 중심 여행·숙박",
+            "share_low": 0.508627684613958,
+            "share_base": 0.8079523038060534,
+            "share_high": 1.0,
+            "count_low": 61378.64584078938,
+            "count_base": 389998.577047182,
+            "count_high": 1126300.0,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_001·P(k|x)/Σw·axis_001",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "2e58a6d3807046a3802110c8cf6660ab",
+            "representative_summary": "합성 성인; age_band=50-59, sex=female, province=전라남; cluster_terms=자연, 가족, 천천, 천히"
+          },
+          {
+            "subtype_id": "DOM-10-SUB-02",
+            "name_ko": "관계 강화 중심 여행·숙박",
+            "share_low": 0.0,
+            "share_base": 0.0003069620849815088,
+            "share_high": 0.07713159304517282,
+            "count_low": 0.0,
+            "count_base": 148.1705984205743,
+            "count_high": 86873.31324677815,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_001·P(k|x)/Σw·axis_001",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "c69ad83d88fc4abe8b75a497554a27a1",
+            "representative_summary": "합성 성인; age_band=80-89, sex=female, province=울산; cluster_terms=들이, 타고, 기를, 도란"
+          },
+          {
+            "subtype_id": "DOM-10-SUB-03",
+            "name_ko": "문화 탐색 중심 여행·숙박",
+            "share_low": 0.0,
+            "share_base": 0.17880447077079809,
+            "share_high": 0.4717909916969866,
+            "count_low": 0.0,
+            "count_base": 86308.91804106423,
+            "count_high": 531378.1939483159,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_001·P(k|x)/Σw·axis_001",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "6b1be450f2034240820a1d87458be0b1",
+            "representative_summary": "합성 성인; age_band=20-29, sex=male, province=세종; cluster_terms=친구, 구와, 친구와, 연인"
+          },
+          {
+            "subtype_id": "DOM-10-SUB-04",
+            "name_ko": "휴식 중심 여행·숙박",
+            "share_low": 0.0,
+            "share_base": 2.0293786666513075e-08,
+            "share_high": 0.06655351988915782,
+            "count_low": 0.0,
+            "count_base": 0.009795810823925862,
+            "count_high": 74959.22945115846,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_001·P(k|x)/Σw·axis_001",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "6e3d973f80a3489e8de55cb6dfe09dc5",
+            "representative_summary": "합성 성인; age_band=30-39, sex=male, province=광주; cluster_terms=현지, 지인, 지인들, 인들"
+          },
+          {
+            "subtype_id": "DOM-10-SUB-05",
+            "name_ko": "일상 탈출 중심 여행·숙박",
+            "share_low": 0.0,
+            "share_base": 0.01293624304438027,
+            "share_high": 0.1462038387969453,
+            "count_low": 0.0,
+            "count_base": 6244.3245175223565,
+            "count_high": 164669.38363699947,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_001·P(k|x)/Σw·axis_001",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "91f2d387f6e64704b7e18b1877bb983b",
+            "representative_summary": "합성 성인; age_band=60-69, sex=male, province=대구; cluster_terms=휴식, 이동, 휴식을, 휴양"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 1.0,
+          "count_base_sum": 482700.0,
+          "parent_count_base": 482700.0,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "E",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    },
+    {
+      "case_id": "PARENT-10",
+      "description": "비용민감도와 편의중시가 동시에 높은 중복 tag 사례",
+      "status": "passed",
+      "query": {
+        "required_case": "비용민감도와 편의중시가 동시에 높은 중복 tag 사례",
+        "query_parent_case_id": "PARENT-10",
+        "semantic_mapping": "exact_query_definition",
+        "population_evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "linked_phase1_parent": null
+      },
+      "result": {
+        "case_id": "PARENT-10",
+        "name_ko": "비용민감도와 편의중시가 동시에 높은 중복 tag 사례",
+        "domain_code": "dining_delivery_cafe",
+        "linked_phase1_archetype_id": null,
+        "entity_unit": "person",
+        "rule": {
+          "and": [
+            "price_sensitive_tag",
+            "convenience_orientation_tag"
+          ]
+        },
+        "count_low": 1097308.7,
+        "count_base": 3950311.32,
+        "count_high": 8778469.6,
+        "share_low": 0.025,
+        "share_base": 0.09,
+        "share_high": 0.2,
+        "denominator": {
+          "control_id": "CTL-ADULT-19P-RESIDENT-2024-12",
+          "count_base": 43892348.0,
+          "dimensions": {
+            "age_min": 19,
+            "universe": "resident_registration_excludes_foreigners"
+          },
+          "entity_unit": "person",
+          "period": "2024-12-31"
+        },
+        "method_code": "explicit_exploratory_joint_scenario_E",
+        "formula": "CTL-ADULT-19P-RESIDENT-2024-12 × explicit Low/Base/High query prevalence scenario; no unsupported marginal multiplication",
+        "source_release_ids": [
+          "REL-MOIS-AGE-2024-12",
+          "REL-NVIDIA-NPK-1.0"
+        ],
+        "population_confidence_grade": "E",
+        "assumptions": [
+          "Cases 2–10 are explicit scenario priors over an official entity-unit control, not official joint prevalence.",
+          "Subtype shares are conditioned on an actual stored domain-axis score in the revision-pinned weighted Nemotron sample.",
+          "Household and enterprise cases use an adult decision-maker/owner-operator proxy; no one-person-to-one-entity claim is made."
+        ],
+        "validation_gaps": [
+          "missing_joint_distribution",
+          "query_prevalence_requires_external_validation",
+          "synthetic_decision_maker_proxy"
+        ],
+        "conditioning_feature": "dining_delivery_cafe.motivation_job",
+        "conditioning_value": "편의",
+        "conditioning_hard_support": 5,
+        "conditioning_effective_sample_size": 4.998338834198056,
+        "required_overlapping_tags": [
+          "편의",
+          "배달비·가격"
+        ],
+        "evidence_status": "query_defined_exploratory_parent_not_official_prevalence",
+        "model_version": "kr-v0.2.1",
+        "subtypes": [
+          {
+            "subtype_id": "DOM-07-SUB-01",
+            "name_ko": "편의 중심 외식·배달·카페",
+            "share_low": 0.0,
+            "share_base": 4.514714963263994e-08,
+            "share_high": 0.05063131160862159,
+            "count_low": 0.0,
+            "count_base": 0.1783452962595514,
+            "count_high": 444465.4297644117,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_049·P(k|x)/Σw·axis_049",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "c3ee93b918b740e8aa566e1aaaf1912c",
+            "representative_summary": "합성 성인; age_band=90+, sex=male, province=세종; cluster_terms=들이, 손주, 주는, 맛을"
+          },
+          {
+            "subtype_id": "DOM-07-SUB-02",
+            "name_ko": "맛 탐색 중심 외식·배달·카페",
+            "share_low": 0.12480137203506164,
+            "share_base": 0.42480137203506163,
+            "share_high": 0.7248013720350617,
+            "count_low": 136945.63130600983,
+            "count_base": 1678097.6687016354,
+            "count_high": 6362646.810448078,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_049·P(k|x)/Σw·axis_049",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "77d1d5f3a3454b61a3eb438dd078b8d6",
+            "representative_summary": "합성 성인; age_band=20-29, sex=male, province=세종; cluster_terms=음식, 음식은, 식은, 배달"
+          },
+          {
+            "subtype_id": "DOM-07-SUB-03",
+            "name_ko": "사회적 교류 중심 외식·배달·카페",
+            "share_low": 0.0,
+            "share_base": 7.1904615773845825e-06,
+            "share_high": 0.052803003922605084,
+            "count_low": 0.0,
+            "count_base": 28.404561765167372,
+            "count_high": 463529.56472326943,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_049·P(k|x)/Σw·axis_049",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "37ed95c3cd4a4f6eb90c2c9454edecad",
+            "representative_summary": "합성 성인; age_band=80-89, sex=female, province=경기; cluster_terms=달에, 손주, 손주들, 주들"
+          },
+          {
+            "subtype_id": "DOM-07-SUB-04",
+            "name_ko": "보상·기분전환 중심 외식·배달·카페",
+            "share_low": 0.254837498690692,
+            "share_base": 0.554837498690692,
+            "share_high": 0.8548374986906919,
+            "count_low": 279635.4043995349,
+            "count_base": 2191780.8518383256,
+            "count_high": 7504164.995196278,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_049·P(k|x)/Σw·axis_049",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "b4fb165266e049639afce1c5cf44038d",
+            "representative_summary": "합성 성인; age_band=60-69, sex=male, province=세종; cluster_terms=앱으, 앱으로, 먹으며, 배달시"
+          },
+          {
+            "subtype_id": "DOM-07-SUB-05",
+            "name_ko": "편의 중심 외식·배달·카페",
+            "share_low": 0.0,
+            "share_base": 0.020353893665519273,
+            "share_high": 0.19459345008377127,
+            "count_low": 0.0,
+            "count_base": 80404.21655297754,
+            "count_high": 1708232.6859195034,
+            "assignment_method": "weighted soft cluster allocation conditional on stored domain-axis score",
+            "formula": "N(case,k)=N(case)×Σw·axis_049·P(k|x)/Σw·axis_049",
+            "interpretation_confidence_grade": "E",
+            "targetability_confidence_grade": "E",
+            "representative_persona_key": "c702c698b4374232ab9b3ec8d324c881",
+            "representative_summary": "합성 성인; age_band=50-59, sex=male, province=울산; cluster_terms=카페, 여행, 하는, 정도"
+          }
+        ],
+        "reconciliation": {
+          "share_base_sum": 0.9999999999999999,
+          "count_base_sum": 3950311.32,
+          "parent_count_base": 3950311.32,
+          "relative_error": 0.0
+        },
+        "confidence_assessments": {
+          "population": {
+            "grade": "E",
+            "reason": "query_defined_exploratory_parent_not_official_prevalence"
+          },
+          "interpretation": {
+            "grade": "E",
+            "reason": "conditioned semantic/axis cluster allocation"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warning": "Cases 2–10 are exploratory query-defined parent universes; do not present them as official joint prevalence."
+      }
+    }
+  ],
+  "cross_domain_cases": [
+    {
+      "case_id": "CROSS-01",
+      "description": "반려동물을 키우고 국내여행이 잦으며 차량 이동을 선호하는 30~40대 가구",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "pets",
+          "travel_hospitality",
+          "mobility_automotive"
+        ],
+        "constraints": {
+          "age_min": 30,
+          "age_max": 49
+        },
+        "output_unit": "household",
+        "semantic_conditions": [
+          "pet ownership proxy",
+          "frequent domestic travel",
+          "vehicle preference"
+        ],
+        "scenario_overlay": {
+          "low": 0.05,
+          "base": 0.2,
+          "high": 0.5
+        }
+      },
+      "result": {
+        "status": "exploratory_household_decision_maker_proxy",
+        "domains": [
+          {
+            "domain_id": "DOM-13",
+            "domain_code": "pets",
+            "name_ko": "반려동물",
+            "description": "대한민국 반려동물의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "household",
+            "category_code": "pets",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-10",
+            "domain_code": "travel_hospitality",
+            "name_ko": "여행·숙박",
+            "description": "대한민국 여행·숙박의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "travel",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-15",
+            "domain_code": "mobility_automotive",
+            "name_ko": "모빌리티·자동차",
+            "description": "대한민국 모빌리티·자동차의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "mobility",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {
+          "age_min": 30,
+          "age_max": 49
+        },
+        "primary_unit": "household",
+        "count": {
+          "low": 0.0,
+          "base": 56550.04905553308,
+          "high": 733831.0558813674
+        },
+        "share": {
+          "low": 0.0,
+          "base": 0.0024590185265701216,
+          "high": 0.031909860237481734
+        },
+        "joint_support": {
+          "hard": 241,
+          "weighted": 10959.944480888857,
+          "effective_sample_size": 20069.819496594315
+        },
+        "observed_domain_joint_share": {
+          "low": 0.0,
+          "base": 0.012295092632850608,
+          "high": 0.06381972047496347
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "pet ownership proxy",
+            "frequent domestic travel",
+            "vehicle preference"
+          ],
+          "overlay": {
+            "low": 0.05,
+            "base": 0.2,
+            "high": 0.5
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-HH-TOTAL-2024",
+          "count_base": 22997000.0,
+          "period": "2024-11-01",
+          "release_id": "REL-KOSTAT-CENSUS-2024"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-HH-TOTAL-2024 × Σw·I(pets AND travel_hospitality AND mobility_automotive and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-02",
+      "description": "음악 숏폼 발견 비중이 높고 OTT 광고형을 이용하는 10~20대",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "music_audio",
+          "video_ott"
+        ],
+        "constraints": {
+          "age_min": 20,
+          "age_max": 29
+        },
+        "output_unit": "person",
+        "semantic_conditions": [
+          "short-form music discovery",
+          "ad-supported OTT"
+        ],
+        "scenario_overlay": {
+          "low": 0.08,
+          "base": 0.25,
+          "high": 0.55
+        }
+      },
+      "result": {
+        "status": "exploratory_joint_estimate",
+        "domains": [
+          {
+            "domain_id": "DOM-01",
+            "domain_code": "music_audio",
+            "name_ko": "음악·오디오",
+            "description": "대한민국 음악·오디오의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "leisure_culture",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-02",
+            "domain_code": "video_ott",
+            "name_ko": "영상·OTT",
+            "description": "대한민국 영상·OTT의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "digital_media",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {
+          "age_min": 20,
+          "age_max": 29
+        },
+        "primary_unit": "person",
+        "count": {
+          "low": 0.0,
+          "base": 359740.485992818,
+          "high": 2057942.7351478613
+        },
+        "share": {
+          "low": 0.0,
+          "base": 0.00819597270104616,
+          "high": 0.04688613913176532
+        },
+        "joint_support": {
+          "hard": 626,
+          "weighted": 29223.823993108104,
+          "effective_sample_size": 20069.819496594308
+        },
+        "observed_domain_joint_share": {
+          "low": 0.0,
+          "base": 0.03278389080418464,
+          "high": 0.08524752569411875
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "short-form music discovery",
+            "ad-supported OTT"
+          ],
+          "overlay": {
+            "low": 0.08,
+            "base": 0.25,
+            "high": 0.55
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-ADULT-19P-RESIDENT-2024-12",
+          "count_base": 43892348.0,
+          "period": "2024-12-31",
+          "release_id": "REL-MOIS-AGE-2024-12"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-ADULT-19P-RESIDENT-2024-12 × Σw·I(music_audio AND video_ott and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult entity; no unit bridge",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult entity; no unit bridge"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult entity; no unit bridge",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-03",
+      "description": "홈트레이닝과 건강식품 정기구매가 결합된 1인 가구",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "sports_outdoor",
+          "grocery_home_meals"
+        ],
+        "constraints": {
+          "family_type_contains": "혼자"
+        },
+        "output_unit": "household",
+        "semantic_conditions": [
+          "home training",
+          "recurring online health-food purchase"
+        ],
+        "scenario_overlay": {
+          "low": 0.04,
+          "base": 0.15,
+          "high": 0.4
+        }
+      },
+      "result": {
+        "status": "exploratory_household_decision_maker_proxy",
+        "domains": [
+          {
+            "domain_id": "DOM-11",
+            "domain_code": "sports_outdoor",
+            "name_ko": "스포츠·아웃도어",
+            "description": "대한민국 스포츠·아웃도어의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "leisure_culture",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-06",
+            "domain_code": "grocery_home_meals",
+            "name_ko": "식료품·가정식",
+            "description": "대한민국 식료품·가정식의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "food_dining",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {
+          "family_type_contains": "혼자"
+        },
+        "primary_unit": "household",
+        "count": {
+          "low": 0.0,
+          "base": 155858.64129815734,
+          "high": 901996.8656015507
+        },
+        "share": {
+          "low": 0.0,
+          "base": 0.0067773466668764335,
+          "high": 0.03922237098758754
+        },
+        "joint_support": {
+          "hard": 910,
+          "weighted": 40275.87559513503,
+          "effective_sample_size": 20069.819496594308
+        },
+        "observed_domain_joint_share": {
+          "low": 0.0,
+          "base": 0.04518231111250956,
+          "high": 0.09805592746896884
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "home training",
+            "recurring online health-food purchase"
+          ],
+          "overlay": {
+            "low": 0.04,
+            "base": 0.15,
+            "high": 0.4
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-HH-TOTAL-2024",
+          "count_base": 22997000.0,
+          "period": "2024-11-01",
+          "release_id": "REL-KOSTAT-CENSUS-2024"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-HH-TOTAL-2024 × Σw·I(sports_outdoor AND grocery_home_meals and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-04",
+      "description": "자녀 교육·문화·여행 지출이 모두 높은 수도권 맞벌이 가구",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "education_learning",
+          "culture_events",
+          "travel_hospitality"
+        ],
+        "constraints": {
+          "province": "경기",
+          "family_type_contains": "자녀"
+        },
+        "output_unit": "household",
+        "semantic_conditions": [
+          "dual income",
+          "high education/culture/travel spend"
+        ],
+        "scenario_overlay": {
+          "low": 0.03,
+          "base": 0.12,
+          "high": 0.35
+        }
+      },
+      "result": {
+        "status": "exploratory_household_decision_maker_proxy",
+        "domains": [
+          {
+            "domain_id": "DOM-16",
+            "domain_code": "education_learning",
+            "name_ko": "교육·학습",
+            "description": "대한민국 교육·학습의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "household",
+            "category_code": "children_education",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-05",
+            "domain_code": "culture_events",
+            "name_ko": "문화예술·행사",
+            "description": "대한민국 문화예술·행사의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "leisure_culture",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-10",
+            "domain_code": "travel_hospitality",
+            "name_ko": "여행·숙박",
+            "description": "대한민국 여행·숙박의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "travel",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {
+          "province": "경기",
+          "family_type_contains": "자녀"
+        },
+        "primary_unit": "household",
+        "count": {
+          "low": 0.0,
+          "base": 4396.007067733593,
+          "high": 419710.18305052427
+        },
+        "share": {
+          "low": 0.0,
+          "base": 0.000191155675424342,
+          "high": 0.018250649347763808
+        },
+        "joint_support": {
+          "hard": 32,
+          "weighted": 1419.9808902211455,
+          "effective_sample_size": 20069.819496594308
+        },
+        "observed_domain_joint_share": {
+          "low": 0.0,
+          "base": 0.0015929639618695167,
+          "high": 0.05214471242218231
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "dual income",
+            "high education/culture/travel spend"
+          ],
+          "overlay": {
+            "low": 0.03,
+            "base": 0.12,
+            "high": 0.35
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-HH-TOTAL-2024",
+          "count_base": 22997000.0,
+          "period": "2024-11-01",
+          "release_id": "REL-KOSTAT-CENSUS-2024"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-HH-TOTAL-2024 × Σw·I(education_learning AND culture_events AND travel_hospitality and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-05",
+      "description": "온라인 장보기와 배달외식 빈도가 모두 높은 영유아 가구",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "grocery_home_meals",
+          "dining_delivery_cafe"
+        ],
+        "constraints": {
+          "family_type_contains": "자녀"
+        },
+        "output_unit": "household",
+        "semantic_conditions": [
+          "young child household",
+          "high online grocery and delivery frequency"
+        ],
+        "scenario_overlay": {
+          "low": 0.04,
+          "base": 0.16,
+          "high": 0.42
+        }
+      },
+      "result": {
+        "status": "exploratory_household_decision_maker_proxy",
+        "domains": [
+          {
+            "domain_id": "DOM-06",
+            "domain_code": "grocery_home_meals",
+            "name_ko": "식료품·가정식",
+            "description": "대한민국 식료품·가정식의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "food_dining",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-07",
+            "domain_code": "dining_delivery_cafe",
+            "name_ko": "외식·배달·카페",
+            "description": "대한민국 외식·배달·카페의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "food_dining",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {
+          "family_type_contains": "자녀"
+        },
+        "primary_unit": "household",
+        "count": {
+          "low": 44487.44409823606,
+          "base": 377370.01237638656,
+          "high": 1514074.4019445502
+        },
+        "share": {
+          "low": 0.001934489024578687,
+          "base": 0.016409532216218922,
+          "high": 0.06583790937707311
+        },
+        "joint_support": {
+          "hard": 2061,
+          "weighted": 91422.43140089852,
+          "effective_sample_size": 20069.8194965943
+        },
+        "observed_domain_joint_share": {
+          "low": 0.04836222561446717,
+          "base": 0.10255957635136825,
+          "high": 0.15675692708826933
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "young child household",
+            "high online grocery and delivery frequency"
+          ],
+          "overlay": {
+            "low": 0.04,
+            "base": 0.16,
+            "high": 0.42
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-HH-TOTAL-2024",
+          "count_base": 22997000.0,
+          "period": "2024-11-01",
+          "release_id": "REL-KOSTAT-CENSUS-2024"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-HH-TOTAL-2024 × Σw·I(grocery_home_meals AND dining_delivery_cafe and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-06",
+      "description": "공연·음반·굿즈 지출이 높은 아티스트 팬덤",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "music_audio",
+          "social_creator"
+        ],
+        "constraints": {},
+        "output_unit": "person",
+        "semantic_conditions": [
+          "artist fandom",
+          "high concert/album/merchandise spend"
+        ],
+        "scenario_overlay": {
+          "low": 0.03,
+          "base": 0.12,
+          "high": 0.32
+        }
+      },
+      "result": {
+        "status": "exploratory_joint_estimate",
+        "domains": [
+          {
+            "domain_id": "DOM-01",
+            "domain_code": "music_audio",
+            "name_ko": "음악·오디오",
+            "description": "대한민국 음악·오디오의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "leisure_culture",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-22",
+            "domain_code": "social_creator",
+            "name_ko": "소셜·크리에이터",
+            "description": "대한민국 소셜·크리에이터의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "digital_media",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {},
+        "primary_unit": "person",
+        "count": {
+          "low": 0.0,
+          "base": 80064.46690577817,
+          "high": 939558.4317435346
+        },
+        "share": {
+          "low": 0.0,
+          "base": 0.001824109908765377,
+          "high": 0.021405973354251512
+        },
+        "joint_support": {
+          "hard": 297,
+          "weighted": 13550.218722828635,
+          "effective_sample_size": 20069.81949659431
+        },
+        "observed_domain_joint_share": {
+          "low": 0.0,
+          "base": 0.015200915906378142,
+          "high": 0.06689366673203598
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "artist fandom",
+            "high concert/album/merchandise spend"
+          ],
+          "overlay": {
+            "low": 0.03,
+            "base": 0.12,
+            "high": 0.32
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-ADULT-19P-RESIDENT-2024-12",
+          "count_base": 43892348.0,
+          "period": "2024-12-31",
+          "release_id": "REL-MOIS-AGE-2024-12"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-ADULT-19P-RESIDENT-2024-12 × Σw·I(music_audio AND social_creator and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult entity; no unit bridge",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult entity; no unit bridge"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult entity; no unit bridge",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-07",
+      "description": "아웃도어 활동과 국내 숙박여행·장비구매가 결합된 가구",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "sports_outdoor",
+          "travel_hospitality",
+          "fashion_resale"
+        ],
+        "constraints": {},
+        "output_unit": "household",
+        "semantic_conditions": [
+          "outdoor participation",
+          "domestic overnight travel",
+          "equipment purchase"
+        ],
+        "scenario_overlay": {
+          "low": 0.04,
+          "base": 0.16,
+          "high": 0.4
+        }
+      },
+      "result": {
+        "status": "exploratory_household_decision_maker_proxy",
+        "domains": [
+          {
+            "domain_id": "DOM-11",
+            "domain_code": "sports_outdoor",
+            "name_ko": "스포츠·아웃도어",
+            "description": "대한민국 스포츠·아웃도어의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "leisure_culture",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-10",
+            "domain_code": "travel_hospitality",
+            "name_ko": "여행·숙박",
+            "description": "대한민국 여행·숙박의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "travel",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-08",
+            "domain_code": "fashion_resale",
+            "name_ko": "패션·리셀",
+            "description": "대한민국 패션·리셀의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "commerce_payment",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {},
+        "primary_unit": "household",
+        "count": {
+          "low": 0.0,
+          "base": 95434.07573210531,
+          "high": 718753.7642849267
+        },
+        "share": {
+          "low": 0.0,
+          "base": 0.004149848925168731,
+          "high": 0.03125424030460176
+        },
+        "joint_support": {
+          "hard": 513,
+          "weighted": 23120.054471165757,
+          "effective_sample_size": 20069.81949659431
+        },
+        "observed_domain_joint_share": {
+          "low": 0.0,
+          "base": 0.02593655578230457,
+          "high": 0.0781356007615044
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "outdoor participation",
+            "domestic overnight travel",
+            "equipment purchase"
+          ],
+          "overlay": {
+            "low": 0.04,
+            "base": 0.16,
+            "high": 0.4
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-HH-TOTAL-2024",
+          "count_base": 22997000.0,
+          "period": "2024-11-01",
+          "release_id": "REL-KOSTAT-CENSUS-2024"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-HH-TOTAL-2024 × Σw·I(sports_outdoor AND travel_hospitality AND fashion_resale and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-08",
+      "description": "디지털기기 도입은 빠르지만 개인정보 우려가 높은 소비자",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "digital_devices_ai",
+          "social_creator"
+        ],
+        "constraints": {},
+        "output_unit": "person",
+        "semantic_conditions": [
+          "early device adoption",
+          "high privacy concern"
+        ],
+        "scenario_overlay": {
+          "low": 0.08,
+          "base": 0.25,
+          "high": 0.55
+        }
+      },
+      "result": {
+        "status": "exploratory_joint_estimate",
+        "domains": [
+          {
+            "domain_id": "DOM-21",
+            "domain_code": "digital_devices_ai",
+            "name_ko": "디지털기기·AI",
+            "description": "대한민국 디지털기기·AI의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "digital_media",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-22",
+            "domain_code": "social_creator",
+            "name_ko": "소셜·크리에이터",
+            "description": "대한민국 소셜·크리에이터의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "digital_media",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {},
+        "primary_unit": "person",
+        "count": {
+          "low": 0.0,
+          "base": 163929.22116808692,
+          "high": 1608200.2831290928
+        },
+        "share": {
+          "low": 0.0,
+          "base": 0.0037348018193988377,
+          "high": 0.03663965033561414
+        },
+        "joint_support": {
+          "hard": 293,
+          "weighted": 13316.929545814608,
+          "effective_sample_size": 20069.819496594308
+        },
+        "observed_domain_joint_share": {
+          "low": 0.0,
+          "base": 0.01493920727759535,
+          "high": 0.06661754606475298
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "early device adoption",
+            "high privacy concern"
+          ],
+          "overlay": {
+            "low": 0.08,
+            "base": 0.25,
+            "high": 0.55
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-ADULT-19P-RESIDENT-2024-12",
+          "count_base": 43892348.0,
+          "period": "2024-12-31",
+          "release_id": "REL-MOIS-AGE-2024-12"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-ADULT-19P-RESIDENT-2024-12 × Σw·I(digital_devices_ai AND social_creator and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult entity; no unit bridge",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult entity; no unit bridge"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult entity; no unit bridge",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-09",
+      "description": "네이버 플레이스는 있지만 CRM·홈페이지·온라인 판매가 없는 지방 소형 사업체",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "small_business_digital",
+          "career_professional"
+        ],
+        "constraints": {},
+        "output_unit": "enterprise",
+        "semantic_conditions": [
+          "local small enterprise",
+          "Naver Place present",
+          "CRM/website/online sales absent"
+        ],
+        "scenario_overlay": {
+          "low": 0.01,
+          "base": 0.06,
+          "high": 0.2
+        }
+      },
+      "result": {
+        "status": "exploratory_enterprise_owner_operator_proxy",
+        "domains": [
+          {
+            "domain_id": "DOM-24",
+            "domain_code": "small_business_digital",
+            "name_ko": "소상공인·디지털 운영",
+            "description": "대한민국 소상공인·디지털 운영의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "enterprise",
+            "category_code": "small_business",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-23",
+            "domain_code": "career_professional",
+            "name_ko": "경력·전문활동",
+            "description": "대한민국 경력·전문활동의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "work_career",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {},
+        "primary_unit": "enterprise",
+        "count": {
+          "low": 12019.858820888294,
+          "base": 97646.98553233688,
+          "high": 410593.8062306819
+        },
+        "share": {
+          "low": 0.0015729711209694817,
+          "base": 0.01277767410786926,
+          "high": 0.0537250716330721
+        },
+        "joint_support": {
+          "hard": 4213,
+          "weighted": 189835.35816418022,
+          "effective_sample_size": 20069.81949659431
+        },
+        "observed_domain_joint_share": {
+          "low": 0.15729711209694816,
+          "base": 0.21296123513115434,
+          "high": 0.2686253581653605
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "local small enterprise",
+            "Naver Place present",
+            "CRM/website/online sales absent"
+          ],
+          "overlay": {
+            "low": 0.01,
+            "base": 0.06,
+            "high": 0.2
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-ENT-ALL-2024",
+          "count_base": 7642000.0,
+          "period": "2024-12-31",
+          "release_id": "REL-KOSTAT-BD-2024-P"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-ENT-ALL-2024 × Σw·I(small_business_digital AND career_professional and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult is an owner/operator decision-maker proxy; official enterprise control supplies the denominator and no one-owner-to-one-enterprise count conversion is asserted",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult is an owner/operator decision-maker proxy; official enterprise control supplies the denominator and no one-owner-to-one-enterprise count conversion is asserted"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult is an owner/operator decision-maker proxy; official enterprise control supplies the denominator and no one-owner-to-one-enterprise count conversion is asserted",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    },
+    {
+      "case_id": "CROSS-10",
+      "description": "은퇴 준비 금융행동과 가족돌봄·건강관리 부담이 결합된 50~60대 가구",
+      "status": "passed",
+      "query": {
+        "domains": [
+          "finance_insurance",
+          "senior_retirement_care",
+          "health_wellness_care"
+        ],
+        "constraints": {
+          "age_min": 50,
+          "age_max": 69
+        },
+        "output_unit": "household",
+        "semantic_conditions": [
+          "retirement financial preparation",
+          "family care burden",
+          "health-management burden"
+        ],
+        "scenario_overlay": {
+          "low": 0.04,
+          "base": 0.15,
+          "high": 0.4
+        }
+      },
+      "result": {
+        "status": "exploratory_household_decision_maker_proxy",
+        "domains": [
+          {
+            "domain_id": "DOM-19",
+            "domain_code": "finance_insurance",
+            "name_ko": "금융·보험",
+            "description": "대한민국 금융·보험의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "household",
+            "category_code": "financial_capacity",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-20",
+            "domain_code": "senior_retirement_care",
+            "name_ko": "시니어·은퇴·돌봄",
+            "description": "대한민국 시니어·은퇴·돌봄의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "senior_retirement_care",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          },
+          {
+            "domain_id": "DOM-18",
+            "domain_code": "health_wellness_care",
+            "name_ko": "건강·웰니스·돌봄",
+            "description": "대한민국 건강·웰니스·돌봄의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인",
+            "primary_entity_unit": "person",
+            "category_code": "health_care",
+            "coverage_status": "complete_with_evidence_constraints",
+            "active": true,
+            "minor_guardrail": false,
+            "version": "phase2-taxonomy-2026-08-25-v1"
+          }
+        ],
+        "constraints": {
+          "age_min": 50,
+          "age_max": 69
+        },
+        "primary_unit": "household",
+        "count": {
+          "low": 0.0,
+          "base": 9299.455293213336,
+          "high": 491337.5282057437
+        },
+        "share": {
+          "low": 0.0,
+          "base": 0.00040437688799466605,
+          "high": 0.02136528800303273
+        },
+        "joint_support": {
+          "hard": 55,
+          "weighted": 2403.0987398092266,
+          "effective_sample_size": 20069.8194965943
+        },
+        "observed_domain_joint_share": {
+          "low": 0.0,
+          "base": 0.0026958459199644402,
+          "high": 0.05341322000758182
+        },
+        "semantic_scenario": {
+          "conditions": [
+            "retirement financial preparation",
+            "family care burden",
+            "health-management burden"
+          ],
+          "overlay": {
+            "low": 0.04,
+            "base": 0.15,
+            "high": 0.4
+          },
+          "direct_joint_observation": false
+        },
+        "denominator": {
+          "control_id": "CTL-HH-TOTAL-2024",
+          "count_base": 22997000.0,
+          "period": "2024-11-01",
+          "release_id": "REL-KOSTAT-CENSUS-2024"
+        },
+        "method": "same-synthetic-adult weighted domain joint × explicit semantic scenario overlay; official output-unit control",
+        "formula": "CTL-HH-TOTAL-2024 × Σw·I(finance_insurance AND senior_retirement_care AND health_wellness_care and constraints)/Σw × semantic_scenario_[low/base/high]",
+        "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+        "independence_assumed": false,
+        "dependence_assumptions": {
+          "domain_presence": "measured jointly on the same synthetic adult",
+          "unobserved_semantic_conjunction": "explicit sensitivity scenario, not an estimated independent marginal product",
+          "unit_bridge": "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted"
+        },
+        "confidence": {
+          "population": {
+            "grade": "E",
+            "reason": "synthetic domain-presence proxy"
+          },
+          "interpretation": {
+            "grade": "D",
+            "reason": "joint observed on same synthetic entity"
+          },
+          "targetability": {
+            "grade": "E",
+            "reason": "platform availability unverified"
+          }
+        },
+        "warnings": [
+          "synthetic narratives are hypotheses, not real-person observations",
+          "minors are excluded from the calibrated joint sample",
+          "same synthetic adult is a household decision-maker proxy; official household control supplies the denominator and no one-person-to-one-household count conversion is asserted",
+          "semantic overlay is an E-grade sensitivity assumption requiring a probability sample or first-party validation"
+        ]
+      }
+    }
+  ]
+}

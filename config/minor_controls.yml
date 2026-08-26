@@ -1,0 +1,10 @@
+{
+  "version":"minor-controls-2024-12-v1",
+  "source_release_id":"REL-MOIS-AGE-2024-12",
+  "reference_period":"2024-12-31",
+  "universe":"주민등록 인구(외국인 제외)",
+  "exact_age_counts":[235337,234405,254654,267456,279924,309988,334145,365050,413851,445308,441402,442088,490336,476596,473881,448184,468559,495166,448543],
+  "households_with_children_18_or_younger":4517000,
+  "household_source_release_id":"REL-KOSTAT-CENSUS-2024",
+  "household_reference_period":"2024-11-01"
+}

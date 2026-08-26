@@ -1,0 +1,25 @@
+{
+  "version":"adult-calibration-2024-v1",
+  "source_release_id":"REL-KOSTAT-CENSUS-2024",
+  "reference_period":"2024-11-01",
+  "target_unit":"person",
+  "uncontrolled_ages":[19],
+  "controls":[
+    {"age_band":"20-29","sex":"male","count":3334000},
+    {"age_band":"20-29","sex":"female","count":2968000},
+    {"age_band":"30-39","sex":"male","count":3702000},
+    {"age_band":"30-39","sex":"female","count":3246000},
+    {"age_band":"40-49","sex":"male","count":3998000},
+    {"age_band":"40-49","sex":"female","count":3811000},
+    {"age_band":"50-59","sex":"male","count":4377000},
+    {"age_band":"50-59","sex":"female","count":4336000},
+    {"age_band":"60-69","sex":"male","count":3821000},
+    {"age_band":"60-69","sex":"female","count":3969000},
+    {"age_band":"70-79","sex":"male","count":1900000},
+    {"age_band":"70-79","sex":"female","count":2233000},
+    {"age_band":"80-89","sex":"male","count":768000},
+    {"age_band":"80-89","sex":"female","count":1315000},
+    {"age_band":"90+","sex":"male","count":76000},
+    {"age_band":"90+","sex":"female","count":251000}
+  ]
+}

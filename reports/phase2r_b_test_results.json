@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-26T09:41:00+09:00",
+  "status": "passed",
+  "python": {
+    "command": "MARKET_ENGINE_PHASE2R_DATABASE_URL=<working-db> .venv/bin/python -m pytest -q",
+    "collected": 82,
+    "passed": 80,
+    "skipped": 2,
+    "failed": 0,
+    "phase2r_b_new_tests": 9,
+    "phase2r_b_new_tests_passed": 9
+  },
+  "combined_validation": {
+    "command": ".venv/bin/market-engine validate",
+    "passed": 46,
+    "total": 46
+  },
+  "nemotron_integrity": {
+    "command": ".venv/bin/market-engine verify-nemotron",
+    "rows": 1000000,
+    "shards": 9,
+    "checksums_passed": 9,
+    "download_bytes": 1982395106
+  },
+  "web": {
+    "unit_tests_passed": 261,
+    "integration_tests_passed": 3,
+    "integration_tests_skipped": 43,
+    "lint": "passed",
+    "typecheck": "passed",
+    "production_build": "passed"
+  },
+  "artifact_reproducibility": "19_of_19_identical",
+  "migration_reapply": "passed",
+  "backfill_idempotency": "passed",
+  "production_fixture_rows": 0,
+  "notes": [
+    "Two Python tests and 43 web integration tests are intentionally environment-gated and skipped.",
+    "The complete Python suite includes the Phase 2R-A and Phase 2R-B PostgreSQL integration tests against the isolated working database.",
+    "The original market_engine database was not modified."
+  ]
+}

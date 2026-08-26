@@ -1,0 +1,62 @@
+{
+  "name": "market-intelligence-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <27"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "vitest run --config vitest.unit.config.ts",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:production-readonly": "playwright test tests/e2e/production-readonly.spec.ts",
+    "verify:deployment-env": "tsx scripts/verify-deployment-env.mts",
+    "worker": "tsx --env-file=.env.local src/worker/research-worker.ts",
+    "worker:once": "tsx --env-file=.env.local src/worker/research-once.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "@tanstack/react-table": "^9.1.2",
+    "@tanstack/react-virtual": "^3.14.10",
+    "decimal.js": "^10.6.0",
+    "lucide-react": "^1.34.0",
+    "next": "^16.3.2",
+    "openai": "^7.5.0",
+    "pg": "^8.23.0",
+    "pretendard": "^1.3.9",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "recharts": "^3.10.1",
+    "server-only": "^0.0.1",
+    "ws": "^8.21.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.6",
+    "@types/node": "^20.19.43",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^6.1.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.2",
+    "jsdom": "^30.0.1",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  }
+}

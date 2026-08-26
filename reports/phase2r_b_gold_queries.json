@@ -1,0 +1,990 @@
+{
+  "version": "phase2r-b-2026-08-26-v1",
+  "random_seed": 20260826,
+  "query_count": 10,
+  "status": "passed",
+  "queries": [
+    {
+      "query_id": "GOLD-01",
+      "display_name_ko": "홈페이지가 없는 60대 음식점 사업체",
+      "structured_conditions": {
+        "industry": "restaurant",
+        "owner_age": "60s",
+        "website": false
+      },
+      "parent_universe": "UNIV-KR-SMALL-BUSINESS-2023",
+      "unit": "enterprise",
+      "geography": "KR",
+      "count_low": 145810,
+      "count_base": 169010,
+      "count_high": 186935,
+      "share_low": 0.19566667483480413,
+      "share_base": 0.2268,
+      "share_high": 0.2508541179013696,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3",
+      "factors": [
+        {
+          "label": "60대 음식점 대표자 비중",
+          "low": 0.216,
+          "base": 0.252,
+          "high": 0.288,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "PDF p.130: restaurant owner-age distribution",
+          "directness": "survey_applied"
+        },
+        {
+          "label": "홈페이지 미보유율",
+          "low": 0.785,
+          "base": 0.9,
+          "high": 0.97,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "PDF p.202: restaurant digital-system non-use and observed adoption",
+          "directness": "bounded_inference"
+        },
+        {
+          "label": "업종×연령 디지털 격차 보정",
+          "low": 0.96,
+          "base": 1.0,
+          "high": 1.04,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "conditional dependency correction",
+          "directness": "proxy"
+        }
+      ],
+      "sources": [
+        "REL-MSS-SB-2023"
+      ],
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 63.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 65,
+        "estimate_grade": "D",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "60대 음식점 대표자 비중",
+      "spend": {
+        "metric": "monthly_software_budget_krw",
+        "low": 20000,
+        "base": 50000,
+        "high": 120000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 169010.4528,
+          "spend_metric": "monthly_software_budget_krw",
+          "spend_base": 50000
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "43ea2b831b16b1521a29164d045311846538e2a5a58d47d5f5655a75936441d1"
+    },
+    {
+      "query_id": "GOLD-02",
+      "display_name_ko": "수도권 초등학생 자녀 맞벌이 가구",
+      "structured_conditions": {
+        "region": "capital",
+        "child_stage": "elementary",
+        "dual_income": true
+      },
+      "parent_universe": "UNIV-KR-HOUSEHOLD-2024",
+      "unit": "household",
+      "geography": "capital_region",
+      "count_low": 319938,
+      "count_base": 429539,
+      "count_high": 519620,
+      "share_low": 0.07082970046281466,
+      "share_base": 0.09509378399999999,
+      "share_high": 0.1150365099350136,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3 × factor_4",
+      "factors": [
+        {
+          "label": "수도권 자녀가구 비중",
+          "low": 0.48,
+          "base": 0.493,
+          "high": 0.51,
+          "source_release_id": "REL-KOSTAT-CENSUS-2024",
+          "locator": "province household distribution transported to child households",
+          "directness": "calibrated"
+        },
+        {
+          "label": "초등학생 자녀 조건부 비중",
+          "low": 0.31,
+          "base": 0.38,
+          "high": 0.45,
+          "source_release_id": "REL-MOIS-AGE-2024-12",
+          "locator": "exact-age child distribution household transport",
+          "directness": "proxy"
+        },
+        {
+          "label": "맞벌이 조건부 비중",
+          "low": 0.35,
+          "base": 0.47,
+          "high": 0.58,
+          "source_release_id": "REL-KOSTAT-CENSUS-2024",
+          "locator": "household synthetic proxy pending direct joint table",
+          "directness": "proxy"
+        },
+        {
+          "label": "수도권×학령×맞벌이 의존성",
+          "low": 0.85,
+          "base": 1.08,
+          "high": 1.22,
+          "source_release_id": "REL-KOSTAT-CENSUS-2024",
+          "locator": "bounded conditional correction",
+          "directness": "bounded_inference"
+        }
+      ],
+      "sources": [
+        "REL-KOSTAT-CENSUS-2024",
+        "REL-MOIS-AGE-2024-12"
+      ],
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 48.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 50,
+        "estimate_grade": "E",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "맞벌이 조건부 비중",
+      "spend": {
+        "metric": "monthly_child_service_budget_krw",
+        "low": 100000,
+        "base": 350000,
+        "high": 800000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 429538.62232799997,
+          "spend_metric": "monthly_child_service_budget_krw",
+          "spend_base": 350000
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "50e57d481a0f72438e526e735d583d2772bd9176315cd1e3808fc5af39a2f709"
+    },
+    {
+      "query_id": "GOLD-03",
+      "display_name_ko": "유료 음악서비스 전환 가능성이 높은 무료 이용자",
+      "structured_conditions": {
+        "domain": "music_audio",
+        "paid": false,
+        "conversion_propensity": "high"
+      },
+      "parent_universe": "UNIV-KR-ADULT-19P-2024",
+      "unit": "person",
+      "geography": "KR",
+      "count_low": 977429,
+      "count_base": 1459371,
+      "count_high": 1981579,
+      "share_low": 0.02226877039726228,
+      "share_base": 0.03324888,
+      "share_high": 0.04514634299850481,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3 × factor_4",
+      "factors": [
+        {
+          "label": "최근 음악서비스 이용",
+          "low": 0.7,
+          "base": 0.733,
+          "high": 0.76,
+          "source_release_id": "REL-KOCCA-MUSIC-2024",
+          "locator": "PDF p.148: digital music service users n=2,567 within music users",
+          "directness": "survey_applied"
+        },
+        {
+          "label": "현재 무료 이용",
+          "low": 0.115,
+          "base": 0.135,
+          "high": 0.155,
+          "source_release_id": "REL-KOCCA-MUSIC-2024",
+          "locator": "PDF p.148: never-paid users 13.5%",
+          "directness": "direct"
+        },
+        {
+          "label": "고전환 가능성 조건부 비중",
+          "low": 0.18,
+          "base": 0.32,
+          "high": 0.48,
+          "source_release_id": "REL-KOCCA-MUSIC-2024",
+          "locator": "PDF pp.207,209: online intent and willingness-to-pay bands",
+          "directness": "bounded_inference"
+        },
+        {
+          "label": "무료이용×전환의향 보정",
+          "low": 0.85,
+          "base": 1.05,
+          "high": 1.18,
+          "source_release_id": "REL-KOCCA-MUSIC-2024",
+          "locator": "negative dependence adjusted conditional chain",
+          "directness": "proxy"
+        }
+      ],
+      "sources": [
+        "REL-KOCCA-MUSIC-2024"
+      ],
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 63.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 65,
+        "estimate_grade": "D",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "고전환 가능성 조건부 비중",
+      "spend": {
+        "metric": "monthly_willingness_to_pay_krw",
+        "low": 3000,
+        "base": 6900,
+        "high": 12000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 1459371.41157024,
+          "spend_metric": "monthly_willingness_to_pay_krw",
+          "spend_base": 6900
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "0e87b96f21749b44c0ba4a2a4331b5e5b3ccf8ef64d078bf6481bf10c9bb5218"
+    },
+    {
+      "query_id": "GOLD-04",
+      "display_name_ko": "온라인 판매채널이 없는 지방의 직원 5명 미만 식품 소매업체",
+      "structured_conditions": {
+        "industry": "food_retail",
+        "region": "noncapital",
+        "employees_lt": 5,
+        "online_sales": false
+      },
+      "parent_universe": "UNIV-KR-SMALL-BUSINESS-2023",
+      "unit": "enterprise",
+      "geography": "noncapital",
+      "count_low": 507692,
+      "count_base": 547821,
+      "count_high": 585744,
+      "share_low": 0.36903511970549707,
+      "share_base": 0.3982042624,
+      "share_high": 0.4257700141374571,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3 × factor_4",
+      "factors": [
+        {
+          "label": "비수도권 사업체 비중",
+          "low": 0.45,
+          "base": 0.469,
+          "high": 0.49,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "PDF p.201 regional digital table",
+          "directness": "survey_applied"
+        },
+        {
+          "label": "종사자 5명 미만",
+          "low": 0.88,
+          "base": 0.92,
+          "high": 0.95,
+          "source_release_id": "REL-KOSTAT-BD-2024-P",
+          "locator": "business-demography employee bands transported to small business",
+          "directness": "calibrated"
+        },
+        {
+          "label": "온라인 판매채널 미보유",
+          "low": 0.875,
+          "base": 0.896,
+          "high": 0.915,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "PDF p.202: retail online sales 10.4%",
+          "directness": "direct"
+        },
+        {
+          "label": "지역×규모×채널 보정",
+          "low": 0.94,
+          "base": 1.03,
+          "high": 1.12,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "bounded conditional correction",
+          "directness": "proxy"
+        }
+      ],
+      "sources": [
+        "REL-MSS-SB-2023",
+        "REL-KOSTAT-BD-2024-P"
+      ],
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 63.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 65,
+        "estimate_grade": "D",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "지역×규모×채널 보정",
+      "spend": {
+        "metric": "monthly_channel_budget_krw",
+        "low": 30000,
+        "base": 90000,
+        "high": 250000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 547821.1517072896,
+          "spend_metric": "monthly_channel_budget_krw",
+          "spend_base": 90000
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "38718e8890fe987620317ee9449ccd31ddea0a7861c13f0dd0dcd126003487b4"
+    },
+    {
+      "query_id": "GOLD-05",
+      "display_name_ko": "부모 돌봄 부담이 있는 50대 직장인",
+      "structured_conditions": {
+        "age": "50s",
+        "employment": "employed",
+        "parental_care_burden": true
+      },
+      "parent_universe": "UNIV-KR-PERSON-2024",
+      "unit": "person",
+      "geography": "KR",
+      "count_low": 639585,
+      "count_base": 893013,
+      "count_high": 1245832,
+      "share_low": 0.07340581676950997,
+      "share_base": 0.10249200000000001,
+      "share_high": 0.14298539703176263,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3",
+      "factors": [
+        {
+          "label": "50대 취업 비중",
+          "low": 0.64,
+          "base": 0.73,
+          "high": 0.79,
+          "source_release_id": "REL-KOSTAT-REA-2024",
+          "locator": "employment prior transported to calibrated 50s population",
+          "directness": "survey_applied"
+        },
+        {
+          "label": "부모 돌봄 부담 조건부 비중",
+          "low": 0.08,
+          "base": 0.13,
+          "high": 0.2,
+          "source_release_id": "REL-KOSTAT-CENSUS-2024",
+          "locator": "synthetic care narrative proxy",
+          "directness": "proxy"
+        },
+        {
+          "label": "취업×돌봄 의존성",
+          "low": 0.9,
+          "base": 1.08,
+          "high": 1.25,
+          "source_release_id": "REL-KOSTAT-REA-2024",
+          "locator": "bounded dependency correction",
+          "directness": "bounded_inference"
+        }
+      ],
+      "sources": [
+        "REL-KOSTAT-REA-2024",
+        "REL-KOSTAT-CENSUS-2024"
+      ],
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 48.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 50,
+        "estimate_grade": "E",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "부모 돌봄 부담 조건부 비중",
+      "spend": {
+        "metric": "monthly_care_budget_krw",
+        "low": 100000,
+        "base": 350000,
+        "high": 900000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 893012.7960000001,
+          "spend_metric": "monthly_care_budget_krw",
+          "spend_base": 350000
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "dd5b180a04943f6c800d39765e3701384cd3d6b0e975c01abad0efa79ed098a8"
+    },
+    {
+      "query_id": "GOLD-06",
+      "display_name_ko": "반려동물을 키우며 국내여행 빈도가 높은 30~40대 가구",
+      "structured_conditions": {
+        "head_age": "30_49",
+        "pet": true,
+        "domestic_travel_frequency": "high"
+      },
+      "parent_universe": "UNIV-KR-HOUSEHOLD-2024",
+      "unit": "household",
+      "geography": "KR",
+      "count_low": 206423,
+      "count_base": 314716,
+      "count_high": 499395,
+      "share_low": 0.008976030951631138,
+      "share_base": 0.013685000000000003,
+      "share_high": 0.021715549858006663,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3 × factor_4",
+      "factors": [
+        {
+          "label": "30~40대 가구주 비중",
+          "low": 0.27,
+          "base": 0.34,
+          "high": 0.41,
+          "source_release_id": "REL-KOSTAT-CENSUS-2024",
+          "locator": "calibrated household-head proxy",
+          "directness": "calibrated"
+        },
+        {
+          "label": "반려동물 양육 조건부 비중",
+          "low": 0.18,
+          "base": 0.25,
+          "high": 0.34,
+          "source_release_id": "REL-KOSTAT-CENSUS-2024",
+          "locator": "bounded household proxy",
+          "directness": "proxy"
+        },
+        {
+          "label": "국내여행 고빈도 조건부 비중",
+          "low": 0.08,
+          "base": 0.14,
+          "high": 0.22,
+          "source_release_id": "REL-NVIDIA-NPK-1.0",
+          "locator": "calibrated synthetic travel signal",
+          "directness": "proxy"
+        },
+        {
+          "label": "펫×여행 의존성",
+          "low": 0.9,
+          "base": 1.15,
+          "high": 1.4,
+          "source_release_id": "REL-NVIDIA-NPK-1.0",
+          "locator": "positive dependency correction",
+          "directness": "bounded_inference"
+        }
+      ],
+      "sources": [
+        "REL-KOSTAT-CENSUS-2024",
+        "REL-NVIDIA-NPK-1.0"
+      ],
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 48.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 50,
+        "estimate_grade": "E",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "국내여행 고빈도 조건부 비중",
+      "spend": {
+        "metric": "annual_pet_travel_spend_krw",
+        "low": 200000,
+        "base": 600000,
+        "high": 1500000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 314715.58720000007,
+          "spend_metric": "annual_pet_travel_spend_krw",
+          "spend_base": 600000
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "a24ae991a64cf14a1f300ba9c275bcfefd5543e8ff405541e4b657c72c23494e"
+    },
+    {
+      "query_id": "GOLD-07",
+      "display_name_ko": "사교육을 이용하지만 현재 서비스에 불만이 있는 중학생 보호자 가구",
+      "structured_conditions": {
+        "child_stage": "middle",
+        "private_education": true,
+        "satisfaction": "dissatisfied"
+      },
+      "parent_universe": "UNIV-KR-HOUSEHOLD-2024",
+      "unit": "household",
+      "geography": "KR",
+      "count_low": 138543,
+      "count_base": 200338,
+      "count_high": 282707,
+      "share_low": 0.030671396281023822,
+      "share_base": 0.044352,
+      "share_high": 0.06258733679384568,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3 × factor_4",
+      "factors": [
+        {
+          "label": "중학생 자녀 조건부 비중",
+          "low": 0.17,
+          "base": 0.22,
+          "high": 0.28,
+          "source_release_id": "REL-MOIS-AGE-2024-12",
+          "locator": "exact-age population transported to child households",
+          "directness": "proxy"
+        },
+        {
+          "label": "사교육 이용 조건부 비중",
+          "low": 0.65,
+          "base": 0.75,
+          "high": 0.84,
+          "source_release_id": "REL-NVIDIA-NPK-1.0",
+          "locator": "synthetic education signal with bounded official frame",
+          "directness": "proxy"
+        },
+        {
+          "label": "현 서비스 불만 비중",
+          "low": 0.15,
+          "base": 0.24,
+          "high": 0.34,
+          "source_release_id": "REL-NVIDIA-NPK-1.0",
+          "locator": "barrier narrative proxy",
+          "directness": "proxy"
+        },
+        {
+          "label": "사교육×불만 의존성",
+          "low": 0.9,
+          "base": 1.12,
+          "high": 1.35,
+          "source_release_id": "REL-NVIDIA-NPK-1.0",
+          "locator": "positive dependency correction",
+          "directness": "bounded_inference"
+        }
+      ],
+      "sources": [
+        "REL-MOIS-AGE-2024-12",
+        "REL-NVIDIA-NPK-1.0"
+      ],
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 48.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 50,
+        "estimate_grade": "E",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "현 서비스 불만 비중",
+      "spend": {
+        "metric": "monthly_private_education_spend_krw",
+        "low": 250000,
+        "base": 550000,
+        "high": 1200000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 200337.984,
+          "spend_metric": "monthly_private_education_spend_krw",
+          "spend_base": 550000
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "6fc10bf308dc3b967cca824a8cfa9d3e2d457a352f41894c4e6c58d2694d917c"
+    },
+    {
+      "query_id": "GOLD-08",
+      "display_name_ko": "네이버 플레이스는 있지만 디지털 관리가 어려운 고령 음식점 사업체",
+      "structured_conditions": {
+        "industry": "restaurant",
+        "owner_age": "60_plus",
+        "naver_place": true,
+        "digital_management": "difficult"
+      },
+      "parent_universe": "UNIV-KR-SMALL-BUSINESS-2023",
+      "unit": "enterprise",
+      "geography": "KR",
+      "count_low": 86105,
+      "count_base": 116429,
+      "count_high": 150291,
+      "share_low": 0.11554705966117593,
+      "share_base": 0.15624000000000002,
+      "share_high": 0.2016801615341687,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3 × factor_4",
+      "factors": [
+        {
+          "label": "60세 이상 음식점 대표자",
+          "low": 0.36,
+          "base": 0.375,
+          "high": 0.4,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "PDF p.130: restaurant owner 60+ 37.5%",
+          "directness": "direct"
+        },
+        {
+          "label": "네이버 플레이스 보유",
+          "low": 0.45,
+          "base": 0.62,
+          "high": 0.78,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "digital presence bounded proxy; platform-specific validation pending",
+          "directness": "proxy"
+        },
+        {
+          "label": "디지털 관리 어려움",
+          "low": 0.45,
+          "base": 0.6,
+          "high": 0.75,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "PDF p.202 digital non-adoption plus management burden proxy",
+          "directness": "bounded_inference"
+        },
+        {
+          "label": "고령×플레이스×관리부담 보정",
+          "low": 0.92,
+          "base": 1.12,
+          "high": 1.3,
+          "source_release_id": "REL-MSS-SB-2023",
+          "locator": "positive dependency correction",
+          "directness": "bounded_inference"
+        }
+      ],
+      "sources": [
+        "REL-MSS-SB-2023"
+      ],
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 63.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 65,
+        "estimate_grade": "D",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "네이버 플레이스 보유",
+      "spend": {
+        "metric": "monthly_management_service_budget_krw",
+        "low": 30000,
+        "base": 80000,
+        "high": 180000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 116429.42304000001,
+          "spend_metric": "monthly_management_service_budget_krw",
+          "spend_base": 80000
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "0f138233d9049c57cc9788b01dc2024c94dfcba7dd7b8edd13d4403ad58b8dbe"
+    },
+    {
+      "query_id": "GOLD-09",
+      "display_name_ko": "은퇴를 앞두고 건강 관련 지출이 높은 50대",
+      "structured_conditions": {
+        "age": "50s",
+        "retirement_stage": "pre_retirement",
+        "health_spend": "high"
+      },
+      "parent_universe": "UNIV-KR-PERSON-2024",
+      "unit": "person",
+      "geography": "KR",
+      "count_low": 927695,
+      "count_base": 1317406,
+      "count_high": 1821801,
+      "share_low": 0.10647251553889414,
+      "share_base": 0.1512,
+      "share_high": 0.2090899270156406,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3",
+      "factors": [
+        {
+          "label": "은퇴 전환 준비 비중",
+          "low": 0.58,
+          "base": 0.7,
+          "high": 0.8,
+          "source_release_id": "REL-KOSTAT-REA-2024",
+          "locator": "50s economic-activity transition proxy",
+          "directness": "proxy"
+        },
+        {
+          "label": "건강 고지출 조건부 비중",
+          "low": 0.12,
+          "base": 0.2,
+          "high": 0.3,
+          "source_release_id": "REL-KOSTAT-CENSUS-2024",
+          "locator": "health-spend band proxy pending expenditure microdata",
+          "directness": "proxy"
+        },
+        {
+          "label": "은퇴준비×건강지출 보정",
+          "low": 0.9,
+          "base": 1.08,
+          "high": 1.25,
+          "source_release_id": "REL-KOSTAT-REA-2024",
+          "locator": "positive dependency correction",
+          "directness": "bounded_inference"
+        }
+      ],
+      "sources": [
+        "REL-KOSTAT-REA-2024",
+        "REL-KOSTAT-CENSUS-2024"
+      ],
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 48.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 50,
+        "estimate_grade": "E",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "건강 고지출 조건부 비중",
+      "spend": {
+        "metric": "monthly_health_spend_krw",
+        "low": 150000,
+        "base": 350000,
+        "high": 800000
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 1317405.6,
+          "spend_metric": "monthly_health_spend_krw",
+          "spend_base": 350000
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "55e9c9a1f27a83110f8ff09441fbca00179a17ddfc0599fa4fc657bc8c8231a7"
+    },
+    {
+      "query_id": "GOLD-10",
+      "display_name_ko": "무료 콘텐츠 이용이 많지만 소액 구독 의향이 있는 20~30대 음악 소비자",
+      "structured_conditions": {
+        "age": "20_39",
+        "domain": "music_audio",
+        "free_content_use": "high",
+        "subscription_intent": "small_amount"
+      },
+      "parent_universe": "UNIV-KR-ADULT-19P-2024",
+      "unit": "person",
+      "geography": "KR",
+      "count_low": 1366962,
+      "count_base": 1849100,
+      "count_high": 2405979,
+      "share_low": 0.10395147214075759,
+      "share_base": 0.14061600000000002,
+      "share_high": 0.18296419561325242,
+      "formula": "parent_count × factor_1 × factor_2 × factor_3 × factor_4",
+      "factors": [
+        {
+          "label": "20~30대 음악 소비자",
+          "low": 0.35,
+          "base": 0.42,
+          "high": 0.5,
+          "source_release_id": "REL-KOCCA-MUSIC-2024",
+          "locator": "music-user survey transported to calibrated 20-39 population",
+          "directness": "survey_applied"
+        },
+        {
+          "label": "무료 콘텐츠 고이용",
+          "low": 0.52,
+          "base": 0.62,
+          "high": 0.72,
+          "source_release_id": "REL-KOCCA-MUSIC-2024",
+          "locator": "PDF p.148 never-paid and free-service use context",
+          "directness": "bounded_inference"
+        },
+        {
+          "label": "소액 구독 의향",
+          "low": 0.35,
+          "base": 0.5,
+          "high": 0.65,
+          "source_release_id": "REL-KOCCA-MUSIC-2024",
+          "locator": "PDF pp.207,209 online intent and willingness-to-pay bins",
+          "directness": "survey_applied"
+        },
+        {
+          "label": "무료고이용×소액의향 보정",
+          "low": 0.9,
+          "base": 1.08,
+          "high": 1.24,
+          "source_release_id": "REL-KOCCA-MUSIC-2024",
+          "locator": "conditional dependency correction",
+          "directness": "bounded_inference"
+        }
+      ],
+      "sources": [
+        "REL-KOCCA-MUSIC-2024"
+      ],
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "confidence_components": {
+        "source_quality": 68.0,
+        "recency": 91.0,
+        "definition_match": 67.0,
+        "geography_match": 98.0,
+        "direct_observation": 45.0,
+        "calibration_fit": 99.0,
+        "mapping_coverage": 99.0,
+        "effective_sample_size_score": 98.0,
+        "dependency_risk_score": 63.0,
+        "proxy_retention_score": 54.0,
+        "model_stability": 94.0,
+        "confidence_score": 65,
+        "estimate_grade": "D",
+        "formula_version": "phase2r-b-confidence-v1"
+      },
+      "most_uncertain_variable": "소액 구독 의향",
+      "spend": {
+        "metric": "monthly_willingness_to_pay_krw",
+        "low": 1000,
+        "base": 4900,
+        "high": 7900
+      },
+      "tam_sam_som_basis": {
+        "tam": {
+          "population": 1849100.4000000001,
+          "spend_metric": "monthly_willingness_to_pay_krw",
+          "spend_base": 4900
+        },
+        "sam": "apply product eligibility, geography, and reachable-channel constraints",
+        "som": "apply validated conversion rate, capacity, and acquisition constraints"
+      },
+      "validation_items": [
+        "direct joint distribution",
+        "product-specific conversion",
+        "current expenditure microdata"
+      ],
+      "snapshot_hash": "9d26ffae47bfa5ff1769c8b827c57968d225ed04edefee4448bea5b1b2bd4205"
+    }
+  ]
+}

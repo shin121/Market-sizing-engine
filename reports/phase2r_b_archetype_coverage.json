@@ -1,0 +1,10 @@
+{
+  "version": "phase2r-b-2026-08-26-v1",
+  "status": "passed",
+  "expected_archetypes": 1440,
+  "covered_archetypes": 1440,
+  "context_rows": 2400,
+  "numeric_interval_rows": 2400,
+  "unit_complete": 2400,
+  "allocation_semantics": "overlapping_membership"
+}

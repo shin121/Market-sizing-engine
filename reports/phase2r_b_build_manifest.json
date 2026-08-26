@@ -1,0 +1,295 @@
+{
+  "version": "phase2r-b-2026-08-26-v1",
+  "calibration_version": "kr-unit-calibration-2024-v1",
+  "random_seed": 20260826,
+  "artifacts": {
+    "allocation_model": {
+      "path": "data/processed/phase2r_b/allocation_model.parquet",
+      "sha256": "702f3ed04d8ed7551457e6f794e64d0aba1736edefe2518832ccc393484470d7",
+      "bytes": 8764
+    },
+    "archetype_market_summary": {
+      "path": "data/processed/phase2r_b/archetype_market_summary.parquet",
+      "sha256": "8387d8ea073559b9ef14af9c4eee51525c4e1cc628a68fc2aae70edb3e628b78",
+      "bytes": 113174
+    },
+    "axis_distribution": {
+      "path": "data/processed/phase2r_b/axis_distribution.parquet",
+      "sha256": "a7415977064b8b066fe85c7f622fbf337650d84e0d88e5226f6f5b881328b2e6",
+      "bytes": 82136
+    },
+    "behavior_prevalence": {
+      "path": "data/processed/phase2r_b/behavior_prevalence.parquet",
+      "sha256": "df719ea7c2099be626132d71637fa64ebeb1ceeea9e9267c1078af6d9978473b",
+      "bytes": 15946
+    },
+    "calibration_control_result": {
+      "path": "data/processed/phase2r_b/calibration_control_result.parquet",
+      "sha256": "71abe166e0c6bc33b77a760f5e6acdd69bc315418ee7824db61d476439cfa1fe",
+      "bytes": 6762
+    },
+    "calibration_field_mapping": {
+      "path": "data/processed/phase2r_b/calibration_field_mapping.parquet",
+      "sha256": "0dfed53de26b6b1c59da92a124ca232e0e5f225c7bd18533fe56ca4f405b36b4",
+      "bytes": 82730
+    },
+    "calibration_run": {
+      "path": "data/processed/phase2r_b/calibration_run.parquet",
+      "sha256": "70da1fc4b53ef739255e7b6a20ba11111c95cbe2755482e5d916b0a77aa83ec4",
+      "bytes": 6727
+    },
+    "confidence_breakdown": {
+      "path": "data/processed/phase2r_b/confidence_breakdown.parquet",
+      "sha256": "a120c0e0cf4d24400ee955f1ba1d1f8b995b6ee0ced7308f78e7610f2cae6533",
+      "bytes": 8766
+    },
+    "domain_market_summary": {
+      "path": "data/processed/phase2r_b/domain_market_summary.parquet",
+      "sha256": "96aebf53877c07f49f5a733cb6929d5e32be79e691fd618e9cef7c6984862115",
+      "bytes": 7918
+    },
+    "enterprise_weights": {
+      "path": "data/processed/phase2r_b/enterprise_weights.parquet",
+      "sha256": "5109ff0e211734a7b98612b1266bbe07621ed54332fb4c3c2e1bdf7391fa2cb7",
+      "bytes": 87409
+    },
+    "establishment_weights": {
+      "path": "data/processed/phase2r_b/establishment_weights.parquet",
+      "sha256": "0fac70f0fe276bf0b3b075dee9d9484d4d08d93573438d1950fda0ad01863381",
+      "bytes": 86348
+    },
+    "estimate_factor_lineage": {
+      "path": "data/processed/phase2r_b/estimate_factor_lineage.parquet",
+      "sha256": "229cb98f00a874caf1a87d05cba7f46de67d185c5a0dc18e61c6da305b7655ae",
+      "bytes": 7109
+    },
+    "feature_prevalence": {
+      "path": "data/processed/phase2r_b/feature_prevalence.parquet",
+      "sha256": "14895aa82c4c613af1b4924cc7b1f4e575b57a577ec6667933d2b5609c799514",
+      "bytes": 75022
+    },
+    "geography_distribution": {
+      "path": "data/processed/phase2r_b/geography_distribution.parquet",
+      "sha256": "a310793333a328ec6bc4b055fe436f366af0de0e185930812bdadae02b1a7856",
+      "bytes": 14712
+    },
+    "gold_query_result": {
+      "path": "data/processed/phase2r_b/gold_query_result.parquet",
+      "sha256": "c3c4b9e0457ac7a18ed358405d76170c506ce0fee69c9c53338288a8b9275ddb",
+      "bytes": 16186
+    },
+    "household_weights": {
+      "path": "data/processed/phase2r_b/household_weights.parquet",
+      "sha256": "089ab561e98ac01a3fddc3a71f97a68965bf25732d9ed628b6f5e02bb6705fb7",
+      "bytes": 5682645
+    },
+    "person_weights": {
+      "path": "data/processed/phase2r_b/person_weights.parquet",
+      "sha256": "f8abbe4973b8045f5bd775cd6e38569184c8a8e309d755cb07c9963946f5d0f3",
+      "bytes": 25355804
+    },
+    "subtype_market_summary": {
+      "path": "data/processed/phase2r_b/subtype_market_summary.parquet",
+      "sha256": "a6d44046c04840d916b5f85c2df6c81a25bcb9ec89bb5c148bc3d69ab1a2ffbd",
+      "bytes": 19362
+    },
+    "trend_spend_summary": {
+      "path": "data/processed/phase2r_b/trend_spend_summary.parquet",
+      "sha256": "61eb42f5a2472d9dffd9169e8a80de593ca0cc30934c23b23b60d89cfd7c6277",
+      "bytes": 4549
+    }
+  },
+  "counts": {
+    "calibration_runs": 4,
+    "archetype_context_rows": 2400,
+    "archetypes": 1440,
+    "subtypes": 90,
+    "axis_dimensions": 384,
+    "axis_distribution_rows": 1536,
+    "features": 480,
+    "behaviors": 240,
+    "gold_queries": 10,
+    "geography_rows": 408,
+    "trend_spend_rows": 34
+  },
+  "archetype": {
+    "version": "phase2r-b-2026-08-26-v1",
+    "status": "passed",
+    "expected_archetypes": 1440,
+    "covered_archetypes": 1440,
+    "context_rows": 2400,
+    "numeric_interval_rows": 2400,
+    "unit_complete": 2400,
+    "allocation_semantics": "overlapping_membership"
+  },
+  "subtype": {
+    "version": "phase2r-b-2026-08-26-v1",
+    "status": "passed",
+    "expected_subtypes": 90,
+    "covered_subtypes": 90,
+    "human_readable_names": 90,
+    "numeric_intervals": 90,
+    "confidence_complete": 90,
+    "exclusive_parent_reconciliation": [
+      {
+        "domain_id": "DOM-01",
+        "share_sum": 1.0,
+        "count_sum": 30945362.033288676
+      },
+      {
+        "domain_id": "DOM-02",
+        "share_sum": 1.0,
+        "count_sum": 31781433.68675562
+      },
+      {
+        "domain_id": "DOM-03",
+        "share_sum": 1.0,
+        "count_sum": 11000547.00729295
+      },
+      {
+        "domain_id": "DOM-04",
+        "share_sum": 1.0,
+        "count_sum": 29963818.173961386
+      },
+      {
+        "domain_id": "DOM-05",
+        "share_sum": 1.0,
+        "count_sum": 18261227.984945726
+      },
+      {
+        "domain_id": "DOM-06",
+        "share_sum": 1.0,
+        "count_sum": 33613495.70769122
+      },
+      {
+        "domain_id": "DOM-07",
+        "share_sum": 1.0,
+        "count_sum": 44093732.154591575
+      },
+      {
+        "domain_id": "DOM-08",
+        "share_sum": 1.0,
+        "count_sum": 9746213.113348996
+      },
+      {
+        "domain_id": "DOM-09",
+        "share_sum": 1.0000000000000002,
+        "count_sum": 17536601.755022217
+      },
+      {
+        "domain_id": "DOM-10",
+        "share_sum": 1.0,
+        "count_sum": 39537678.12966567
+      },
+      {
+        "domain_id": "DOM-11",
+        "share_sum": 1.0,
+        "count_sum": 30535512.051717028
+      },
+      {
+        "domain_id": "DOM-12",
+        "share_sum": 1.0,
+        "count_sum": 18962495.048957836
+      },
+      {
+        "domain_id": "DOM-13",
+        "share_sum": 1.0,
+        "count_sum": 9813879.948480528
+      },
+      {
+        "domain_id": "DOM-14",
+        "share_sum": 1.0,
+        "count_sum": 6924921.4946114225
+      },
+      {
+        "domain_id": "DOM-15",
+        "share_sum": 1.0,
+        "count_sum": 25626088.24655105
+      },
+      {
+        "domain_id": "DOM-16",
+        "share_sum": 1.0,
+        "count_sum": 2291986.3839246603
+      },
+      {
+        "domain_id": "DOM-17",
+        "share_sum": 1.0,
+        "count_sum": 3060154.6075802604
+      },
+      {
+        "domain_id": "DOM-18",
+        "share_sum": 0.9999999999999999,
+        "count_sum": 29053017.63984508
+      },
+      {
+        "domain_id": "DOM-19",
+        "share_sum": 1.0,
+        "count_sum": 10338281.124052461
+      },
+      {
+        "domain_id": "DOM-20",
+        "share_sum": 1.0,
+        "count_sum": 4582411.438507193
+      },
+      {
+        "domain_id": "DOM-21",
+        "share_sum": 1.0,
+        "count_sum": 27789178.3836562
+      },
+      {
+        "domain_id": "DOM-22",
+        "share_sum": 1.0,
+        "count_sum": 18871743.410549097
+      },
+      {
+        "domain_id": "DOM-23",
+        "share_sum": 1.0,
+        "count_sum": 21763999.44171174
+      },
+      {
+        "domain_id": "DOM-24",
+        "share_sum": 1.0,
+        "count_sum": 1958925.1441682135
+      }
+    ],
+    "max_share_sum_error": 2.220446049250313e-16
+  },
+  "axis_feature_behavior": {
+    "version": "phase2r-b-2026-08-26-v1",
+    "status": "passed",
+    "axis": {
+      "expected": 384,
+      "covered_dimensions": 384,
+      "distribution_rows": 1536,
+      "unit_complete": 1536
+    },
+    "feature": {
+      "expected": 480,
+      "covered": 480,
+      "numeric": 480,
+      "not_estimable": 0
+    },
+    "behavior": {
+      "expected": 240,
+      "covered": 240,
+      "numeric": 240,
+      "not_estimable": 0
+    },
+    "overlap_sum_not_forced": true
+  },
+  "artifact_dod_checks": {
+    "calibration_success": true,
+    "person_household_business_weights": true,
+    "archetype_1440": true,
+    "archetype_numeric": true,
+    "subtype_90": true,
+    "subtype_reconciled": true,
+    "axis_384": true,
+    "feature_480": true,
+    "behavior_240": true,
+    "primary_not_estimable_zero": true,
+    "gold_query_10_numeric": true,
+    "production_data_mart_artifacts": true
+  },
+  "artifact_dod_passed": true
+}

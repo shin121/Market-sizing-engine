@@ -1,0 +1,1336 @@
+{
+  "generated_at": "2026-08-25T10:45:04.769315+00:00",
+  "status": "failed",
+  "phase2_model_version": "kr-v0.2.1",
+  "checks": {
+    "phase2_dod_30_of_30": false,
+    "existing_tests_minimum_18_passed": true,
+    "combined_validation_46_of_46": true,
+    "postgres_phase1_30_additive_58_idempotent": true,
+    "fixed_shard_checksums_9_of_9": true,
+    "nemotron_rows_1m": true,
+    "activation_schema_90_of_90": true,
+    "parent_base_share_within_phase2_tolerance": true,
+    "parent_count_within_phase2_tolerance": true,
+    "metric_phase1_archetypes": true,
+    "metric_domains": true,
+    "metric_axes": true,
+    "metric_features": true,
+    "metric_behaviors": true,
+    "metric_segmentation_models": true,
+    "metric_primary_subtypes": true,
+    "metric_parent_allocations": true,
+    "metric_activation_payloads": true
+  },
+  "phase2_dod": {
+    "status": "failed",
+    "passed": 29,
+    "failed": 0,
+    "unavailable": 1,
+    "total": 30,
+    "model_version": "kr-v0.2.1",
+    "items": [
+      {
+        "id": 1,
+        "title": "Phase 1 engine and tests preserved",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine.duckdb",
+          "data/processed/market_engine_phase2.duckdb",
+          "reports/acceptance_queries.json",
+          "reports/market_scenarios.json"
+        ],
+        "proofs": [
+          {
+            "name": "phase1_tables_present",
+            "status": "passed",
+            "expected": [
+              "archetype",
+              "archetype_estimate",
+              "archetype_representative",
+              "baseline_cell",
+              "category",
+              "data_source",
+              "feature_definition",
+              "pipeline_run",
+              "probability_model",
+              "source_release"
+            ],
+            "actual": []
+          },
+          {
+            "name": "phase1_canonical_rows_preserved",
+            "status": "passed",
+            "expected": "zero source rows missing or changed",
+            "actual": {
+              "archetype": 0,
+              "archetype_estimate": 0,
+              "archetype_representative": 0,
+              "baseline_cell": 0,
+              "category": 0,
+              "data_source": 0,
+              "feature_definition": 0,
+              "probability_model": 0,
+              "source_release": 0
+            }
+          },
+          {
+            "name": "phase1_pipeline_semantics_preserved",
+            "status": "passed",
+            "expected": "same manifests, quality metrics, model version, and seed",
+            "actual": true,
+            "reason": "run IDs/timestamps are intentionally excluded from the live semantic comparison"
+          },
+          {
+            "name": "phase1_archetypes",
+            "status": "passed",
+            "expected": 1440,
+            "actual": 1440
+          },
+          {
+            "name": "phase1_acceptance_payload",
+            "status": "passed",
+            "expected": ">=20 all passed",
+            "actual": {
+              "passed": 20,
+              "total": 20
+            }
+          },
+          {
+            "name": "phase1_market_scenarios",
+            "status": "passed",
+            "expected": ">=3",
+            "actual": 3
+          },
+          {
+            "name": "current_python_test_suite",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/pytest",
+              "exit_code": 0,
+              "passed": true
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Nemotron accessed without user file provision",
+        "status": "unavailable",
+        "passed": false,
+        "evidence": [
+          "config/nemotron_manifest.yml",
+          "config/sources.yml",
+          "scripts/fetch_sources.sh"
+        ],
+        "proofs": [
+          {
+            "name": "pinned_public_dataset",
+            "status": "passed",
+            "expected": "nvidia/Nemotron-Personas-Korea",
+            "actual": "nvidia/Nemotron-Personas-Korea"
+          },
+          {
+            "name": "registered_remote_source",
+            "status": "passed",
+            "expected": "registered Hugging Face dataset URL",
+            "actual": "https://huggingface.co/datasets/nvidia/Nemotron-Personas-Korea"
+          },
+          {
+            "name": "no_user_file_fetch_path",
+            "status": "passed",
+            "expected": "nine direct remote shard downloads",
+            "actual": true
+          },
+          {
+            "name": "direct_acquisition_execution",
+            "status": "unavailable",
+            "expected": "caller-supplied successful direct acquisition command/result",
+            "reason": "current files, manifests, and a no-input fetch script cannot establish who supplied the historical files; no acquisition execution result was supplied"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Raw/canonical revision and checksums stored",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "config/nemotron_manifest.yml",
+          "config/sources.yml",
+          "data/raw/nemotron/",
+          "data/processed/nemotron_feature_mart.parquet"
+        ],
+        "proofs": [
+          {
+            "name": "manifest_revision",
+            "status": "passed",
+            "expected": "dataset/version/license",
+            "actual": {
+              "dataset": "nvidia/Nemotron-Personas-Korea",
+              "version": "1.0",
+              "license": "CC BY 4.0"
+            }
+          },
+          {
+            "name": "nine_raw_shards_present",
+            "status": "passed",
+            "expected": 9,
+            "actual": 9
+          },
+          {
+            "name": "current_shard_checksum_command",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/market-engine verify-nemotron",
+              "exit_code": 0,
+              "passed": true
+            }
+          },
+          {
+            "name": "nine_shard_checksums_match",
+            "status": "passed",
+            "expected": [
+              "train-00000-of-00009.parquet",
+              "train-00001-of-00009.parquet",
+              "train-00002-of-00009.parquet",
+              "train-00003-of-00009.parquet",
+              "train-00004-of-00009.parquet",
+              "train-00005-of-00009.parquet",
+              "train-00006-of-00009.parquet",
+              "train-00007-of-00009.parquet",
+              "train-00008-of-00009.parquet"
+            ],
+            "actual": [
+              "train-00000-of-00009.parquet",
+              "train-00001-of-00009.parquet",
+              "train-00002-of-00009.parquet",
+              "train-00003-of-00009.parquet",
+              "train-00004-of-00009.parquet",
+              "train-00005-of-00009.parquet",
+              "train-00006-of-00009.parquet",
+              "train-00007-of-00009.parquet",
+              "train-00008-of-00009.parquet"
+            ]
+          },
+          {
+            "name": "raw_rows_unique",
+            "status": "passed",
+            "expected": {
+              "rows": 1000000,
+              "unique_ids": 1000000
+            },
+            "actual": {
+              "rows": 1000000,
+              "unique_ids": 1000000
+            }
+          },
+          {
+            "name": "canonical_mart",
+            "status": "passed",
+            "expected": 1000000,
+            "actual": 1000000
+          },
+          {
+            "name": "registered_release_checksum",
+            "status": "passed",
+            "expected": "registered release checksum matches canonical local artifact",
+            "actual": {
+              "expected_checksum": "4dafe7971490a3693cff1abb4a31110f7f151c818ef7ad7181a6c49a95ffc77e",
+              "actual_checksum": "4dafe7971490a3693cff1abb4a31110f7f151c818ef7ad7181a6c49a95ffc77e",
+              "local_uri": "data/raw/nemotron_README.md"
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "18–25 domains and required-area mapping",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:domain_registry"
+        ],
+        "proofs": [
+          {
+            "name": "active_domain_count",
+            "status": "passed",
+            "expected": "18..25",
+            "actual": 24
+          },
+          {
+            "name": "mandatory_domain_mapping",
+            "status": "passed",
+            "expected": [
+              "beauty_personal_care",
+              "career_professional",
+              "culture_events",
+              "digital_devices_ai",
+              "dining_delivery_cafe",
+              "education_learning",
+              "fashion_resale",
+              "finance_insurance",
+              "gaming_esports",
+              "grocery_home_meals",
+              "health_wellness_care",
+              "hobbies_creation",
+              "housing_home_services",
+              "mobility_automotive",
+              "music_audio",
+              "parenting_childcare",
+              "pets",
+              "reading_webtoon",
+              "senior_retirement_care",
+              "small_business_digital",
+              "social_creator",
+              "sports_outdoor",
+              "travel_hospitality",
+              "video_ott"
+            ],
+            "actual": {
+              "missing": []
+            }
+          },
+          {
+            "name": "phase1_category_mapping",
+            "status": "passed",
+            "expected": "every active domain mapped",
+            "actual": []
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "All domains have 16 common-axis decisions",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:domain_dimension"
+        ],
+        "proofs": [
+          {
+            "name": "sixteen_axis_decisions_per_domain",
+            "status": "passed",
+            "expected": "exact 16-code axis set",
+            "actual": []
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "All domains have taxonomy, features, behaviors, and source maps",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:domain_feature",
+          "data/processed/market_engine_phase2.duckdb:domain_behavior_template",
+          "data/processed/market_engine_phase2.duckdb:domain_feature_source"
+        ],
+        "proofs": [
+          {
+            "name": "domain_taxonomy_depth",
+            "status": "passed",
+            "expected": "20 features, 10 behaviors, 20..40 source links, explicit unit",
+            "actual": []
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Every domain meets minimum depth or an explicit evidence constraint",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:domain_coverage_audit",
+          "data/processed/market_engine_phase2.duckdb:domain_profile_summary"
+        ],
+        "proofs": [
+          {
+            "name": "minimum_depth_and_evidence_boundary",
+            "status": "passed",
+            "expected": "16/20/10/8/8 plus complete_with_evidence_constraints",
+            "actual": []
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "No demographic-only domain is marked complete",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:domain_registry",
+          "data/processed/market_engine_phase2.duckdb:phase2_acceptance_result"
+        ],
+        "proofs": [
+          {
+            "name": "no_plain_complete_domain",
+            "status": "passed",
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "name": "domain_axis_acceptance_queries",
+            "status": "passed",
+            "expected": "24 domain-prefixed condition queries",
+            "actual": {
+              "cases": 24,
+              "invalid": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Latent dimensions and segmentation model registry exist",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:segmentation_model",
+          "data/processed/phase2/models/",
+          "data/processed/phase2/memberships/",
+          "data/processed/phase2/embeddings/"
+        ],
+        "proofs": [
+          {
+            "name": "one_selected_model_per_domain",
+            "status": "passed",
+            "expected": 24,
+            "actual": 24
+          },
+          {
+            "name": "single_model_version",
+            "status": "passed",
+            "expected": "one model version",
+            "actual": "kr-v0.2.1"
+          },
+          {
+            "name": "latent_dimension_per_domain",
+            "status": "passed",
+            "expected": 24,
+            "actual": 24
+          },
+          {
+            "name": "model_search_and_fixed_seeds",
+            "status": "passed",
+            "expected": "candidate k 3..6 and seeds 20260825..20260827",
+            "actual": []
+          },
+          {
+            "name": "model_artifact_checksums",
+            "status": "passed",
+            "expected": "model/membership/embedding hashes match",
+            "actual": []
+          },
+          {
+            "name": "clusters_and_subtypes",
+            "status": "passed",
+            "expected": {
+              "clusters": 90,
+              "primary_subtypes": 90
+            },
+            "actual": {
+              "clusters": 90,
+              "primary_subtypes": 90
+            }
+          },
+          {
+            "name": "five_representatives_per_cluster",
+            "status": "passed",
+            "expected": 0,
+            "actual": 0
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Music/audio and small-business vertical slices work",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/exports/phase2_domains.csv",
+          "src/market_engine/api/app.py",
+          "src/market_engine/cli/main.py",
+          "tests/integration/test_phase2.py"
+        ],
+        "proofs": [
+          {
+            "name": "vertical_slice_rows",
+            "status": "passed",
+            "expected": [
+              "music_audio",
+              "small_business_digital"
+            ],
+            "actual": {
+              "db": [
+                "music_audio",
+                "small_business_digital"
+              ],
+              "export": [
+                "music_audio",
+                "small_business_digital"
+              ],
+              "ARC-06-001": 1
+            }
+          },
+          {
+            "name": "rest_and_cli_paths",
+            "status": "passed",
+            "expected": "v2 REST and CLI domain/creative paths",
+            "actual": true
+          },
+          {
+            "name": "vertical_slice_integration_coverage",
+            "status": "passed",
+            "expected": "vertical-slice integration test",
+            "actual": true
+          },
+          {
+            "name": "executed_vertical_slice_test_suite",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/pytest",
+              "exit_code": 0,
+              "passed": true
+            }
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Additive migration passes clean/existing/idempotent paths",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "migrations/001_core.sql",
+          "migrations/002_phase2_domains_subtypes.sql",
+          "scripts/test_postgres.sh"
+        ],
+        "proofs": [
+          {
+            "name": "postgres_migration_test",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/scripts/test_postgres.sh",
+              "exit_code": 0,
+              "passed": true
+            }
+          },
+          {
+            "name": "postgres_clean_additive_idempotent",
+            "status": "passed",
+            "expected": {
+              "phase1_tables": 30,
+              "additive_total": 58,
+              "idempotent": true
+            },
+            "actual": {
+              "counts": [
+                "30",
+                "58"
+              ],
+              "script_checks_idempotence": true
+            }
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Eligibility is stored for every Phase 1 parent",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:parent_decomposition_decision"
+        ],
+        "proofs": [
+          {
+            "name": "decision_set_matches_phase1_parents",
+            "status": "passed",
+            "expected": {
+              "parents": 1440,
+              "missing": 0,
+              "orphan": 0
+            },
+            "actual": {
+              "parents": 1440,
+              "decisions": 1440,
+              "missing": 0,
+              "orphan": 0
+            }
+          },
+          {
+            "name": "decision_lineage_complete",
+            "status": "passed",
+            "expected": 0,
+            "actual": 0
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Eligible parents have 3–8 primary subtypes or an exception",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:subtype_allocation"
+        ],
+        "proofs": [
+          {
+            "name": "eligible_parent_count",
+            "status": "passed",
+            "expected": 120,
+            "actual": 120
+          },
+          {
+            "name": "three_to_eight_primary_allocations",
+            "status": "passed",
+            "expected": "3..8 primary subtypes",
+            "actual": {
+              "invalid": [],
+              "non_primary": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "Primary Base allocations reconcile to parents",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:subtype_allocation",
+          "data/processed/market_engine_phase2.duckdb:phase2_parent_estimate"
+        ],
+        "proofs": [
+          {
+            "name": "base_share_reconciliation",
+            "status": "passed",
+            "expected": "<=0.001",
+            "actual": 2.220446049250313e-16
+          },
+          {
+            "name": "base_count_reconciliation",
+            "status": "passed",
+            "expected": "<=0.005",
+            "actual": 2.1284771478206205e-16
+          },
+          {
+            "name": "allocation_intervals_ordered",
+            "status": "passed",
+            "expected": 0,
+            "actual": 0
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "Overlapping tags are separate and non-additive",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:domain_tag",
+          "data/processed/market_engine_phase2.duckdb:subtype_tag_allocation"
+        ],
+        "proofs": [
+          {
+            "name": "non_additive_tag_registry",
+            "status": "passed",
+            "expected": {
+              "tags": 192,
+              "invalid": 0
+            },
+            "actual": {
+              "tags": 192,
+              "invalid": 0
+            }
+          },
+          {
+            "name": "separate_tag_allocations",
+            "status": "passed",
+            "expected": {
+              "allocations": 720,
+              "per_subtype": 8,
+              "warning_errors": 0
+            },
+            "actual": {
+              "allocations": 720,
+              "per_subtype_errors": 0,
+              "warning_errors": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "title": "Every subtype has Low/Base/High and an explicit unit",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:subtype_membership_summary",
+          "data/processed/market_engine_phase2.duckdb:domain_registry"
+        ],
+        "proofs": [
+          {
+            "name": "subtype_interval_and_unit",
+            "status": "passed",
+            "expected": {
+              "subtypes": 90,
+              "invalid": 0,
+              "missing": 0
+            },
+            "actual": {
+              "subtypes": 90,
+              "invalid": 0,
+              "missing": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "title": "Every subtype has three confidence assessments",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:subtype_confidence"
+        ],
+        "proofs": [
+          {
+            "name": "three_confidence_dimensions",
+            "status": "passed",
+            "expected": {
+              "rows": 90,
+              "invalid": 0,
+              "missing": 0
+            },
+            "actual": {
+              "rows": 90,
+              "invalid": 0,
+              "missing": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "title": "Every subtype has evidence, assumptions, gaps, and disclosure",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:subtype_profile",
+          "data/processed/market_engine_phase2.duckdb:subtype_confidence"
+        ],
+        "proofs": [
+          {
+            "name": "profile_evidence_disclosure",
+            "status": "passed",
+            "expected": "90 complete disclosed profiles",
+            "actual": {
+              "rows": 90,
+              "invalid": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "title": "Every active subtype has an activation profile",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:activation_mapping",
+          "contracts/phase2_activation_payload.schema.json"
+        ],
+        "proofs": [
+          {
+            "name": "activation_profile_per_subtype",
+            "status": "passed",
+            "expected": {
+              "profiles": 90,
+              "missing": 0
+            },
+            "actual": {
+              "profiles": 90,
+              "missing": 0
+            }
+          },
+          {
+            "name": "activation_payload_schema",
+            "status": "passed",
+            "expected": "all schema valid",
+            "actual": []
+          },
+          {
+            "name": "activation_guard_fields",
+            "status": "passed",
+            "expected": 0,
+            "actual": 0
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "title": "At least one end-to-end acceptance case passes per domain",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:phase2_acceptance_result",
+          "reports/phase2_acceptance_results.json"
+        ],
+        "proofs": [
+          {
+            "name": "domain_acceptance_per_active_domain",
+            "status": "passed",
+            "expected": "24 domains, >=1 all-passed case each",
+            "actual": {
+              "domains": 24,
+              "invalid": []
+            }
+          },
+          {
+            "name": "acceptance_report_matches_db",
+            "status": "passed",
+            "expected": {
+              "listed_cases": 44,
+              "mismatches": []
+            },
+            "actual": {
+              "listed_cases": 44,
+              "mismatches": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "title": "At least ten parent decomposition acceptance cases pass",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:required_parent_case",
+          "data/processed/market_engine_phase2.duckdb:required_parent_case_allocation",
+          "reports/phase2_acceptance_results.json"
+        ],
+        "proofs": [
+          {
+            "name": "required_parent_case_count",
+            "status": "passed",
+            "expected": ">=10",
+            "actual": 10
+          },
+          {
+            "name": "parent_case_intervals_and_disclosure",
+            "status": "passed",
+            "expected": "ordered intervals; cases 2..10 explicit E-grade exploratory",
+            "actual": {
+              "invalid_intervals": [],
+              "undisclosed": []
+            }
+          },
+          {
+            "name": "parent_case_reconciliation",
+            "status": "passed",
+            "expected": "3..8; share <=0.001; count <=0.005",
+            "actual": []
+          },
+          {
+            "name": "parent_acceptance_rows",
+            "status": "passed",
+            "expected": ">=10 passed",
+            "actual": {
+              "count": 10,
+              "not_passed": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "title": "At least ten cross-domain acceptance cases pass safely",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:phase2_acceptance_result",
+          "reports/phase2_acceptance_results.json"
+        ],
+        "proofs": [
+          {
+            "name": "cross_domain_acceptance",
+            "status": "passed",
+            "expected": ">=10 passed or safely not_estimable without independence",
+            "actual": {
+              "count": 10,
+              "invalid": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "title": "Cross-domain joint support and dependence assumptions are stored",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:domain_association",
+          "data/processed/phase2/cross_domain_joint_sample.parquet"
+        ],
+        "proofs": [
+          {
+            "name": "complete_guarded_pair_registry",
+            "status": "passed",
+            "expected": {
+              "pairs": 276,
+              "invalid": 0,
+              "duplicates": 0
+            },
+            "actual": {
+              "pairs": 276,
+              "invalid": 0,
+              "duplicates": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "title": "Activation contract and creative brief work",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "contracts/phase2_activation_payload.schema.json",
+          "data/processed/market_engine_phase2.duckdb:activation_mapping",
+          "tests/integration/test_phase2.py"
+        ],
+        "proofs": [
+          {
+            "name": "draft_2020_12_schema",
+            "status": "passed",
+            "expected": "Draft 2020-12",
+            "actual": "https://json-schema.org/draft/2020-12/schema"
+          },
+          {
+            "name": "all_activation_payloads_validate",
+            "status": "passed",
+            "expected": {
+              "valid": 90,
+              "failures": []
+            },
+            "actual": {
+              "total": 90,
+              "failures": []
+            }
+          },
+          {
+            "name": "creative_brief_payloads",
+            "status": "passed",
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "name": "creative_brief_api_cli",
+            "status": "passed",
+            "expected": "REST and CLI creative-brief paths",
+            "actual": true
+          },
+          {
+            "name": "executed_creative_brief_test_suite",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/pytest",
+              "exit_code": 0,
+              "passed": true
+            }
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "title": "Aggregate observation and posterior example executed safely",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "data/processed/market_engine_phase2.duckdb:segment_observation",
+          "data/processed/market_engine_phase2.duckdb:posterior_update",
+          "reports/phase2_acceptance_results.json"
+        ],
+        "proofs": [
+          {
+            "name": "aggregate_posterior_rows",
+            "status": "passed",
+            "expected": ">=1 safe held-for-review update",
+            "actual": {
+              "count": 1,
+              "invalid": []
+            }
+          },
+          {
+            "name": "acceptance_feedback_matches_db",
+            "status": "passed",
+            "expected": "latest IDs match",
+            "actual": {
+              "report_observation": "3b65fff6-30aa-4eec-84d3-9a06f1e69167",
+              "report_update": "8e20a786-5369-4c49-9d4b-fe9febb5c949",
+              "db_observation": "3b65fff6-30aa-4eec-84d3-9a06f1e69167",
+              "db_update": "8e20a786-5369-4c49-9d4b-fe9febb5c949"
+            }
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "title": "Required machine-readable Phase 2 exports exist",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "reports/phase2_output_manifest.json",
+          "reports/phase2_build_checkpoint.json",
+          "data/exports/",
+          "data/processed/phase2/tables/"
+        ],
+        "proofs": [
+          {
+            "name": "declared_exports_present",
+            "status": "passed",
+            "expected": [
+              "phase2_acceptance_results.csv",
+              "phase2_activation_profiles.jsonl",
+              "phase2_behaviors.csv",
+              "phase2_dimensions.csv",
+              "phase2_domain_associations.csv",
+              "phase2_domains.csv",
+              "phase2_features.csv",
+              "phase2_model_registry.csv",
+              "phase2_models.jsonl",
+              "phase2_parent_allocations.csv",
+              "phase2_required_parent_case_allocations.csv",
+              "phase2_required_parent_cases.csv",
+              "phase2_subtype_confidence.csv",
+              "phase2_subtype_profiles.jsonl",
+              "phase2_subtypes.csv"
+            ],
+            "actual": {
+              "missing_keys": [],
+              "bad_files": []
+            }
+          },
+          {
+            "name": "exports_machine_readable",
+            "status": "passed",
+            "expected": "all CSV/JSONL parse",
+            "actual": []
+          },
+          {
+            "name": "parquet_snapshots_match_current_tables",
+            "status": "passed",
+            "expected": "28 exact table snapshots",
+            "actual": []
+          },
+          {
+            "name": "domain_registry_json_matches_db",
+            "status": "passed",
+            "expected": [
+              "beauty_personal_care",
+              "career_professional",
+              "culture_events",
+              "digital_devices_ai",
+              "dining_delivery_cafe",
+              "education_learning",
+              "fashion_resale",
+              "finance_insurance",
+              "gaming_esports",
+              "grocery_home_meals",
+              "health_wellness_care",
+              "hobbies_creation",
+              "housing_home_services",
+              "mobility_automotive",
+              "music_audio",
+              "parenting_childcare",
+              "pets",
+              "reading_webtoon",
+              "senior_retirement_care",
+              "small_business_digital",
+              "social_creator",
+              "sports_outdoor",
+              "travel_hospitality",
+              "video_ott"
+            ],
+            "actual": [
+              "beauty_personal_care",
+              "career_professional",
+              "culture_events",
+              "digital_devices_ai",
+              "dining_delivery_cafe",
+              "education_learning",
+              "fashion_resale",
+              "finance_insurance",
+              "gaming_esports",
+              "grocery_home_meals",
+              "health_wellness_care",
+              "hobbies_creation",
+              "housing_home_services",
+              "mobility_automotive",
+              "music_audio",
+              "parenting_childcare",
+              "pets",
+              "reading_webtoon",
+              "senior_retirement_care",
+              "small_business_digital",
+              "social_creator",
+              "sports_outdoor",
+              "travel_hospitality",
+              "video_ott"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "title": "Coverage and association reports match current rows",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "reports/domain_coverage_matrix.md",
+          "reports/cross_domain_association_report.md"
+        ],
+        "proofs": [
+          {
+            "name": "coverage_report_matches_current_rows",
+            "status": "passed",
+            "expected": "24 exact current coverage lines",
+            "actual": {
+              "rows": 24,
+              "missing": []
+            }
+          },
+          {
+            "name": "association_report_matches_current_rows",
+            "status": "passed",
+            "expected": {
+              "pairs": 276,
+              "same_unit": 163,
+              "guarded": 113,
+              "top_rows": 30
+            },
+            "actual": {
+              "counts_match": true,
+              "top_rows": 30,
+              "missing": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "title": "Required test and validation classes pass",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "tests/",
+          "scripts/test_postgres.sh",
+          "src/market_engine/validation.py",
+          "src/market_engine/phase2_services.py"
+        ],
+        "proofs": [
+          {
+            "name": "full_python_test_suite",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/pytest",
+              "exit_code": 0,
+              "passed": true
+            }
+          },
+          {
+            "name": "combined_model_validation_command",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/market-engine validate",
+              "exit_code": 0,
+              "passed": true
+            }
+          },
+          {
+            "name": "combined_validation_payload",
+            "status": "passed",
+            "expected": ">=46 all passed",
+            "actual": {
+              "status": "passed",
+              "passed": 46,
+              "total": 46
+            }
+          },
+          {
+            "name": "artifact_checksum_command",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/market-engine verify-nemotron",
+              "exit_code": 0,
+              "passed": true
+            }
+          },
+          {
+            "name": "postgres_migration_test",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/scripts/test_postgres.sh",
+              "exit_code": 0,
+              "passed": true
+            }
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "title": "Operator documentation covers required workflows",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "README.md",
+          "docs/12_phase2_api_cli.md",
+          "docs/13_phase2_operations_retraining.md"
+        ],
+        "proofs": [
+          {
+            "name": "operator_documents_present",
+            "status": "passed",
+            "expected": [
+              "README.md",
+              "docs/12_phase2_api_cli.md",
+              "docs/13_phase2_operations_retraining.md"
+            ],
+            "actual": []
+          },
+          {
+            "name": "required_workflows_documented",
+            "status": "passed",
+            "expected": [
+              "build",
+              "cross_query",
+              "domain",
+              "feedback",
+              "promotion",
+              "recluster",
+              "rollback",
+              "validate"
+            ],
+            "actual": []
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "title": "No placeholder-only Phase 2 feature or data remains",
+        "status": "passed",
+        "passed": true,
+        "evidence": [
+          "src/market_engine/phase2.py",
+          "src/market_engine/phase2_services.py",
+          "tests/integration/test_phase2.py",
+          "data/processed/market_engine_phase2.duckdb"
+        ],
+        "proofs": [
+          {
+            "name": "no_stub_markers",
+            "status": "passed",
+            "expected": [],
+            "actual": []
+          },
+          {
+            "name": "all_phase2_tables_materialized",
+            "status": "passed",
+            "expected": [],
+            "actual": []
+          },
+          {
+            "name": "missing_evidence_not_zero",
+            "status": "passed",
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "name": "exploratory_values_disclosed",
+            "status": "passed",
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "name": "service_paths_exercised",
+            "status": "passed",
+            "expected": "DB/API/service integration coverage",
+            "actual": true
+          },
+          {
+            "name": "executed_phase2_implementation_tests",
+            "status": "passed",
+            "expected": "exit_code=0",
+            "actual": {
+              "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/pytest",
+              "exit_code": 0,
+              "passed": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "phase1_archetypes": 1440,
+    "domains": 24,
+    "axes": 384,
+    "features": 480,
+    "behaviors": 240,
+    "segmentation_models": 24,
+    "primary_subtypes": 90,
+    "parent_allocations": 450,
+    "activation_payloads": 90,
+    "max_parent_share_error": 2.220446049250313e-16,
+    "max_parent_count_relative_error": 2.1284771478206205e-16,
+    "nemotron_rows": 1000000,
+    "nemotron_unique_ids": 1000000
+  },
+  "activation_schema": {
+    "total": 90,
+    "valid": 90,
+    "failures": []
+  },
+  "commands": {
+    "pytest": {
+      "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/pytest",
+      "exit_code": 0,
+      "stdout": ".............ss.............................................             [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.13/site-packages/fastapi/testclient.py:1\n  /Users/woocheolshin/Projects/Market-sizing-engine/.venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n58 passed, 2 skipped, 1 warning in 29.59s",
+      "stderr": "",
+      "passed": true
+    },
+    "combined_validation": {
+      "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/market-engine validate",
+      "exit_code": 0,
+      "stdout": "{\n  \"requested_model_version\": \"latest\",\n  \"resolved_model_version\": \"kr-v0.2.1\",\n  \"status\": \"passed\",\n  \"checks\": {\n    \"sources_registered\": true,\n    \"source_release_history_registered\": true,\n    \"all_baselines_have_lineage\": true,\n    \"all_baselines_have_period\": true,\n    \"probability_intervals_ordered\": true,\n    \"probabilities_in_unit_interval\": true,\n    \"required_units_present\": true,\n    \"categories_in_range\": true,\n    \"archetype_minimum_met\": true,\n    \"archetype_rules_unique\": true,\n    \"archetype_category_floor\": true,\n    \"every_archetype_has_estimate_status\": true,\n    \"inferred_needs_disclosed\": true,\n    \"estimated_archetypes_complete\": true,\n    \"not_estimable_is_null_not_zero\": true,\n    \"overlap_non_additivity_disclosed\": true,\n    \"representatives_complete\": true,\n    \"minor_exact_age_cells_present\": true,\n    \"minor_links_have_no_orphans\": true,\n    \"minor_artifact_has_no_direct_pii_columns\": true,\n    \"reconciliation_threshold_met\": true,\n    \"calibration_aggregation_check_present\": true,\n    \"acceptance_twenty_passed\": true,\n    \"three_market_scenarios_present\": true,\n    \"phase2_active_domains_18_to_25\": true,\n    \"phase2_all_domains_have_16_axes\": true,\n    \"phase2_all_domains_meet_feature_floor\": true,\n    \"phase2_all_domains_meet_behavior_floor\": true,\n    \"phase2_all_domains_meet_tag_floor\": true,\n    \"phase2_all_domains_meet_archetype_floor\": true,\n    \"phase2_all_parent_decisions_present\": true,\n    \"phase2_five_allocated_parents_per_domain\": true,\n    \"phase2_primary_base_shares_reconcile\": true,\n    \"phase2_child_base_counts_reconcile\": true,\n    \"phase2_subtype_intervals_and_units_complete\": true,\n    \"phase2_subtype_three_confidences_persisted\": true,\n    \"phase2_subtype_assumptions_and_gaps_complete\": true,\n    \"phase2_all_domains_have_acceptance\": true,\n    \"phase2_ten_parent_acceptance_cases\": true,\n    \"phase2_required_parent_semantic_cases_materialized\": true,\n    \"phase2_required_parent_case_allocations_reconcile\": true,\n    \"phase2_ten_cross_domain_acceptance_cases\": true,\n    \"phase2_all_pair_associations_stored\": true,\n    \"phase2_activation_profiles_complete\": true,\n    \"phase2_feedback_example_present\": true,\n    \"phase2_segmentation_artifacts_validate\": true\n  },\n  \"passed\": 46,\n  \"total\": 46,\n  \"phase2\": {\n    \"status\": \"passed\",\n    \"checks\": {\n      \"active_domains_18_to_25\": true,\n      \"all_domains_have_16_axes\": true,\n      \"all_domains_meet_feature_floor\": true,\n      \"all_domains_meet_behavior_floor\": true,\n      \"all_domains_meet_tag_floor\": true,\n      \"all_domains_meet_archetype_floor\": true,\n      \"all_parent_decisions_present\": true,\n      \"five_allocated_parents_per_domain\": true,\n      \"primary_base_shares_reconcile\": true,\n      \"child_base_counts_reconcile\": true,\n      \"subtype_intervals_and_units_complete\": true,\n      \"subtype_three_confidences_persisted\": true,\n      \"subtype_assumptions_and_gaps_complete\": true,\n      \"all_domains_have_acceptance\": true,\n      \"ten_parent_acceptance_cases\": true,\n      \"required_parent_semantic_cases_materialized\": true,\n      \"required_parent_case_allocations_reconcile\": true,\n      \"ten_cross_domain_acceptance_cases\": true,\n      \"all_pair_associations_stored\": true,\n      \"activation_profiles_complete\": true,\n      \"feedback_example_present\": true,\n      \"segmentation_artifacts_validate\": true\n    },\n    \"segmentation_models\": 24\n  }\n}",
+      "stderr": "",
+      "passed": true
+    },
+    "nemotron_checksums": {
+      "command": "/Users/woocheolshin/Projects/Market-sizing-engine/.venv/bin/market-engine verify-nemotron",
+      "exit_code": 0,
+      "stdout": "{\n  \"dataset\": \"nvidia/Nemotron-Personas-Korea\",\n  \"version\": \"1.0\",\n  \"license\": \"CC BY 4.0\",\n  \"files\": [\n    {\n      \"file\": \"train-00000-of-00009.parquet\",\n      \"sha256\": \"5f447553b9e30ac98631af17f2274780586fbd5e2705125b8f3a49fe2af037b2\",\n      \"actual\": \"5f447553b9e30ac98631af17f2274780586fbd5e2705125b8f3a49fe2af037b2\",\n      \"ok\": true,\n      \"bytes\": 220263908\n    },\n    {\n      \"file\": \"train-00001-of-00009.parquet\",\n      \"sha256\": \"332ade7365bd842838de6295e15f4457d0050b4792b33a8330b3b8a39a6dfc3b\",\n      \"actual\": \"332ade7365bd842838de6295e15f4457d0050b4792b33a8330b3b8a39a6dfc3b\",\n      \"ok\": true,\n      \"bytes\": 220182609\n    },\n    {\n      \"file\": \"train-00002-of-00009.parquet\",\n      \"sha256\": \"65d4860663fab1ff4166f5db4eb96fc39e84ccc952391ab36437d0373bc6d5f1\",\n      \"actual\": \"65d4860663fab1ff4166f5db4eb96fc39e84ccc952391ab36437d0373bc6d5f1\",\n      \"ok\": true,\n      \"bytes\": 220265631\n    },\n    {\n      \"file\": \"train-00003-of-00009.parquet\",\n      \"sha256\": \"d94a0f221edd1e70e28d7e19acf9b9f4cfa315b630f51607b28b06498a28591b\",\n      \"actual\": \"d94a0f221edd1e70e28d7e19acf9b9f4cfa315b630f51607b28b06498a28591b\",\n      \"ok\": true,\n      \"bytes\": 220283830\n    },\n    {\n      \"file\": \"train-00004-of-00009.parquet\",\n      \"sha256\": \"c31efb3b3f0ef6405956683a9a6fb99276dea2c16b22efe883555a31ff05b3ed\",\n      \"actual\": \"c31efb3b3f0ef6405956683a9a6fb99276dea2c16b22efe883555a31ff05b3ed\",\n      \"ok\": true,\n      \"bytes\": 220304978\n    },\n    {\n      \"file\": \"train-00005-of-00009.parquet\",\n      \"sha256\": \"e95979de298ffecac1db437401baf19e3bdae16355fcd5a54320c63290c3e07f\",\n      \"actual\": \"e95979de298ffecac1db437401baf19e3bdae16355fcd5a54320c63290c3e07f\",\n      \"ok\": true,\n      \"bytes\": 220183836\n    },\n    {\n      \"file\": \"train-00006-of-00009.parquet\",\n      \"sha256\": \"5b0fc5fd097bd9c82be9f6c9ff57eddee314226eabe820f83e2426bed34e40ff\",\n      \"actual\": \"5b0fc5fd097bd9c82be9f6c9ff57eddee314226eabe820f83e2426bed34e40ff\",\n      \"ok\": true,\n      \"bytes\": 220384182\n    },\n    {\n      \"file\": \"train-00007-of-00009.parquet\",\n      \"sha256\": \"73a4178828b9d08cd44b141c3c0da2d69521a8fa9cd22194868d07c36f0a6680\",\n      \"actual\": \"73a4178828b9d08cd44b141c3c0da2d69521a8fa9cd22194868d07c36f0a6680\",\n      \"ok\": true,\n      \"bytes\": 220272087\n    },\n    {\n      \"file\": \"train-00008-of-00009.parquet\",\n      \"sha256\": \"e32faf2717f7b9634ff38d62b175f9d9817b1eee797c043032b3dc2d8d055fe6\",\n      \"actual\": \"e32faf2717f7b9634ff38d62b175f9d9817b1eee797c043032b3dc2d8d055fe6\",\n      \"ok\": true,\n      \"bytes\": 220254045\n    }\n  ],\n  \"all_checksums_ok\": true,\n  \"download_bytes\": 1982395106\n}",
+      "stderr": "",
+      "passed": true
+    },
+    "postgres_migrations": {
+      "command": "/Users/woocheolshin/Projects/Market-sizing-engine/scripts/test_postgres.sh",
+      "exit_code": 0,
+      "stdout": "PostgreSQL migrations passed: Phase 1=30 tables (0d8ada47d18bcc350edf28a5d96f812b), additive total=58 tables, workbench total=90 tables/12 views",
+      "stderr": "psql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:23: NOTICE:  column \"coverage_status\" of relation \"domain_registry\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:227: NOTICE:  column \"artifact_sha256\" of relation \"segmentation_model\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:228: NOTICE:  column \"membership_uri\" of relation \"segmentation_model\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:229: NOTICE:  column \"membership_sha256\" of relation \"segmentation_model\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:441: NOTICE:  column \"assumptions_json\" of relation \"subtype_profile\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:468: NOTICE:  column \"population_confidence_score\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:469: NOTICE:  column \"population_confidence_grade\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:470: NOTICE:  column \"interpretation_confidence_score\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:471: NOTICE:  column \"interpretation_confidence_grade\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:472: NOTICE:  column \"targetability_confidence_score\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:473: NOTICE:  column \"targetability_confidence_grade\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:21: NOTICE:  relation \"domain_registry\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:23: NOTICE:  column \"coverage_status\" of relation \"domain_registry\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:39: NOTICE:  relation \"domain_dimension\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:57: NOTICE:  relation \"domain_feature\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:70: NOTICE:  relation \"domain_feature_source\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:85: NOTICE:  relation \"domain_behavior_template\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:100: NOTICE:  relation \"domain_tag\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:114: NOTICE:  relation \"domain_profile_summary\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:141: NOTICE:  relation \"domain_association\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:163: NOTICE:  relation \"domain_coverage_audit\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:181: NOTICE:  relation \"archetype_hierarchy\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:197: NOTICE:  relation \"latent_dimension\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:225: NOTICE:  relation \"segmentation_model\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:227: NOTICE:  column \"artifact_sha256\" of relation \"segmentation_model\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:228: NOTICE:  column \"membership_uri\" of relation \"segmentation_model\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:229: NOTICE:  column \"membership_sha256\" of relation \"segmentation_model\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:246: NOTICE:  relation \"cluster_definition\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:262: NOTICE:  relation \"cluster_representative\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:279: NOTICE:  relation \"subtype_definition\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:294: NOTICE:  relation \"parent_decomposition_decision\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:322: NOTICE:  relation \"phase2_parent_estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:345: NOTICE:  relation \"subtype_allocation\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:381: NOTICE:  relation \"required_parent_case\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:405: NOTICE:  relation \"required_parent_case_allocation\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:423: NOTICE:  relation \"subtype_membership_summary\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:439: NOTICE:  relation \"subtype_profile\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:441: NOTICE:  column \"assumptions_json\" of relation \"subtype_profile\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:466: NOTICE:  relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:468: NOTICE:  column \"population_confidence_score\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:469: NOTICE:  column \"population_confidence_grade\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:470: NOTICE:  column \"interpretation_confidence_score\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:471: NOTICE:  column \"interpretation_confidence_grade\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:472: NOTICE:  column \"targetability_confidence_score\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:473: NOTICE:  column \"targetability_confidence_grade\" of relation \"subtype_confidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:489: NOTICE:  relation \"subtype_tag_allocation\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:505: NOTICE:  relation \"activation_mapping\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:524: NOTICE:  relation \"segment_observation\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:545: NOTICE:  relation \"posterior_update\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:563: NOTICE:  relation \"phase2_acceptance_result\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:565: NOTICE:  relation \"domain_feature_domain_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:566: NOTICE:  relation \"domain_feature_allowed_values_gin\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:567: NOTICE:  relation \"domain_behavior_rule_gin\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:568: NOTICE:  relation \"domain_tag_domain_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:569: NOTICE:  relation \"domain_association_pair_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:570: NOTICE:  relation \"hierarchy_parent_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:571: NOTICE:  relation \"segmentation_model_domain_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:572: NOTICE:  relation \"cluster_model_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:573: NOTICE:  relation \"subtype_domain_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:574: NOTICE:  relation \"parent_decision_domain_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:575: NOTICE:  relation \"phase2_parent_estimate_status_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:576: NOTICE:  relation \"subtype_allocation_parent_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:577: NOTICE:  relation \"required_parent_case_domain_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:578: NOTICE:  relation \"required_parent_case_allocation_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:579: NOTICE:  relation \"activation_subtype_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:580: NOTICE:  relation \"observation_subtype_time_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:581: NOTICE:  relation \"posterior_subtype_time_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/002_phase2_domains_subtypes.sql:582: NOTICE:  relation \"phase2_acceptance_type_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:637: NOTICE:  trigger \"comparison_member_limit_trigger\" for relation \"comparison_member\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:808: NOTICE:  trigger \"audit_event_append_only_trigger\" for relation \"audit_event\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:813: NOTICE:  trigger \"research_job_event_append_only_trigger\" for relation \"research_job_event\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:818: NOTICE:  trigger \"review_decision_append_only_trigger\" for relation \"review_decision\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:823: NOTICE:  trigger \"saved_segment_version_append_only_trigger\" for relation \"saved_segment_version\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:828: NOTICE:  trigger \"opportunity_score_version_append_only_trigger\" for relation \"opportunity_score_version\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:833: NOTICE:  trigger \"opportunity_score_component_append_only_trigger\" for relation \"opportunity_score_component\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:838: NOTICE:  trigger \"opportunity_content_version_append_only_trigger\" for relation \"opportunity_content_version\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:843: NOTICE:  trigger \"research_job_artifact_append_only_trigger\" for relation \"research_job_artifact\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/004_workbench_read_models.sql:974: NOTICE:  view \"v_global_search\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:24: NOTICE:  policy \"estimate_select_policy\" for relation \"estimate\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:25: NOTICE:  policy \"estimate_insert_policy\" for relation \"estimate\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:37: NOTICE:  policy \"market_scenario_select_policy\" for relation \"market_scenario\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:38: NOTICE:  policy \"market_scenario_insert_policy\" for relation \"market_scenario\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:56: NOTICE:  policy \"estimate_component_select_policy\" for relation \"estimate_component\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:57: NOTICE:  policy \"estimate_component_insert_policy\" for relation \"estimate_component\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:74: NOTICE:  policy \"estimate_assumption_select_policy\" for relation \"estimate_assumption\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:83: NOTICE:  policy \"estimate_dependency_select_policy\" for relation \"estimate_dependency\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:84: NOTICE:  policy \"estimate_dependency_insert_policy\" for relation \"estimate_dependency\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:101: NOTICE:  policy \"estimate_sensitivity_result_select_policy\" for relation \"estimate_sensitivity_result\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:102: NOTICE:  policy \"estimate_sensitivity_result_insert_policy\" for relation \"estimate_sensitivity_result\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:119: NOTICE:  policy \"confidence_assessment_select_policy\" for relation \"confidence_assessment\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:120: NOTICE:  policy \"confidence_assessment_insert_policy\" for relation \"confidence_assessment\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:137: NOTICE:  policy \"validation_gap_select_policy\" for relation \"validation_gap\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:138: NOTICE:  policy \"validation_gap_insert_policy\" for relation \"validation_gap\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:165: NOTICE:  policy \"market_estimate_select_policy\" for relation \"market_estimate\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:166: NOTICE:  policy \"market_estimate_insert_policy\" for relation \"market_estimate\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:182: NOTICE:  policy \"scenario_factor_override_select_policy\" for relation \"scenario_factor_override\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:183: NOTICE:  policy \"scenario_factor_override_insert_policy\" for relation \"scenario_factor_override\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:204: NOTICE:  policy \"segment_query_result_select_policy\" for relation \"segment_query_result\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:205: NOTICE:  policy \"segment_query_result_insert_policy\" for relation \"segment_query_result\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:206: NOTICE:  policy \"segment_query_result_update_policy\" for relation \"segment_query_result\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:237: NOTICE:  trigger \"segment_query_append_only_trigger\" for relation \"segment_query\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:242: NOTICE:  trigger \"segment_condition_group_append_only_trigger\" for relation \"segment_condition_group\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:247: NOTICE:  trigger \"segment_condition_append_only_trigger\" for relation \"segment_condition\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:274: NOTICE:  trigger \"segment_query_result_guard_trigger\" for relation \"segment_query_result\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:89: NOTICE:  policy \"segment_query_select_policy\" for relation \"segment_query\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:90: NOTICE:  policy \"segment_query_insert_policy\" for relation \"segment_query\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:101: NOTICE:  policy \"segment_condition_group_select_policy\" for relation \"segment_condition_group\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:102: NOTICE:  policy \"segment_condition_group_insert_policy\" for relation \"segment_condition_group\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:118: NOTICE:  policy \"segment_condition_select_policy\" for relation \"segment_condition\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:119: NOTICE:  policy \"segment_condition_insert_policy\" for relation \"segment_condition\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:153: NOTICE:  trigger \"saved_segment_version_workspace_guard_trigger\" for relation \"saved_segment_version\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:223: NOTICE:  policy \"data_release_version_select_policy\" for relation \"data_release_version\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:224: NOTICE:  policy \"data_release_version_insert_policy\" for relation \"data_release_version\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:82: NOTICE:  policy \"approved_research_factor_select_policy\" for relation \"approved_research_factor\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:83: NOTICE:  policy \"approved_research_factor_insert_policy\" for relation \"approved_research_factor\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:100: NOTICE:  policy \"approved_research_factor_source_select_policy\" for relation \"approved_research_factor_source\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:101: NOTICE:  policy \"approved_research_factor_source_insert_policy\" for relation \"approved_research_factor_source\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:117: NOTICE:  trigger \"approved_research_factor_append_only_trigger\" for relation \"approved_research_factor\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:122: NOTICE:  trigger \"approved_research_factor_source_append_only_trigger\" for relation \"approved_research_factor_source\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/010_reproducible_workbench_snapshots.sql:101: NOTICE:  trigger \"market_scenario_revision_guard_trigger\" for relation \"market_scenario\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/010_reproducible_workbench_snapshots.sql:160: NOTICE:  trigger \"market_scenario_revision_guard_trigger\" for relation \"market_scenario\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/010_reproducible_workbench_snapshots.sql:165: NOTICE:  policy \"market_scenario_update_policy\" for relation \"market_scenario\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/011_lineage_integrity_guards.sql:221: NOTICE:  trigger \"segment_query_result_lineage_guard_trigger\" for relation \"segment_query_result\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/012_approved_research_factor_snapshot_hardening.sql:207: NOTICE:  trigger \"approved_research_factor_provenance_guard_trigger\" for relation \"approved_research_factor\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/012_approved_research_factor_snapshot_hardening.sql:213: NOTICE:  trigger \"data_release_version_factor_workspace_guard_trigger\" for relation \"data_release_version\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/012_approved_research_factor_snapshot_hardening.sql:302: NOTICE:  trigger \"approved_research_factor_source_insert_guard_trigger\" for relation \"approved_research_factor_source\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/012_approved_research_factor_snapshot_hardening.sql:308: NOTICE:  trigger \"approved_research_factor_source_snapshot_trigger\" for relation \"approved_research_factor\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:8: NOTICE:  extension \"pg_trgm\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:17: NOTICE:  relation \"workspace\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:26: NOTICE:  relation \"workspace_member\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:43: NOTICE:  relation \"data_release_version\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:47: NOTICE:  column \"external_run_key\" of relation \"pipeline_run\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:49: NOTICE:  relation \"pipeline_run_external_run_key_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:51: NOTICE:  column \"external_evidence_key\" of relation \"evidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:52: NOTICE:  column \"source_treatment\" of relation \"evidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:53: NOTICE:  column \"usage_context\" of relation \"evidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:54: NOTICE:  column \"confidence_score\" of relation \"evidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:55: NOTICE:  column \"review_due_at\" of relation \"evidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:57: NOTICE:  relation \"evidence_external_evidence_key_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:77: NOTICE:  column \"source_record_key\" of relation \"population_cell\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:78: NOTICE:  column \"source_content_hash\" of relation \"population_cell\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:79: NOTICE:  column \"source_record_key\" of relation \"minor_population_cell\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:80: NOTICE:  column \"source_content_hash\" of relation \"minor_population_cell\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:81: NOTICE:  column \"source_record_key\" of relation \"household_cell\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:82: NOTICE:  column \"source_content_hash\" of relation \"household_cell\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:83: NOTICE:  column \"source_record_key\" of relation \"business_cell\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:84: NOTICE:  column \"source_content_hash\" of relation \"business_cell\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:87: NOTICE:  relation \"population_cell_source_record_key_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:89: NOTICE:  relation \"minor_population_cell_source_record_key_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:91: NOTICE:  relation \"household_cell_source_record_key_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:93: NOTICE:  relation \"business_cell_source_record_key_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:95: NOTICE:  column \"raw_cluster_number\" of relation \"cluster_definition\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:99: NOTICE:  column \"external_estimate_key\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:100: NOTICE:  column \"workspace_id\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:101: NOTICE:  column \"data_layer\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:102: NOTICE:  column \"approval_status\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:103: NOTICE:  column \"supersedes_estimate_id\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:104: NOTICE:  column \"calculation_input_hash\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:105: NOTICE:  column \"dependency_fingerprint\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:106: NOTICE:  column \"publication_version_id\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:107: NOTICE:  column \"created_by_actor_id\" of relation \"estimate\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:117: NOTICE:  relation \"estimate_external_estimate_key_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:119: NOTICE:  relation \"estimate_workspace_created_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:121: NOTICE:  relation \"estimate_dependency_fingerprint_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:148: NOTICE:  column \"component_code\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:149: NOTICE:  column \"denominator_definition\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:150: NOTICE:  column \"conditional_probability\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:151: NOTICE:  column \"reference_period_id\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:152: NOTICE:  column \"directness_class\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:153: NOTICE:  column \"dependency_group\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:154: NOTICE:  column \"model_version_id\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:155: NOTICE:  column \"adjustment_reason\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:156: NOTICE:  column \"metadata_json\" of relation \"estimate_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:159: NOTICE:  relation \"estimate_component_code_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:161: NOTICE:  relation \"estimate_component_dependency_group_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:181: NOTICE:  column \"rule_version\" of relation \"confidence_assessment\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:182: NOTICE:  column \"components_json\" of relation \"confidence_assessment\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:183: NOTICE:  column \"penalties_json\" of relation \"confidence_assessment\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:184: NOTICE:  column \"validation_gap_reviewed_at\" of relation \"confidence_assessment\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:186: NOTICE:  column \"result_hash\" of relation \"segment_query_result\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:187: NOTICE:  column \"dependency_fingerprint\" of relation \"segment_query_result\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:188: NOTICE:  column \"cache_status\" of relation \"segment_query_result\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:189: NOTICE:  column \"invalidated_at\" of relation \"segment_query_result\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:191: NOTICE:  relation \"segment_query_result_hash_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:193: NOTICE:  relation \"segment_query_result_latest_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:195: NOTICE:  relation \"segment_query_result_dependency_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:208: NOTICE:  column \"workspace_id\" of relation \"market_scenario\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:209: NOTICE:  column \"base_query_result_id\" of relation \"market_scenario\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:210: NOTICE:  column \"scenario_hash\" of relation \"market_scenario\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:211: NOTICE:  column \"status\" of relation \"market_scenario\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:212: NOTICE:  column \"created_by_actor_id\" of relation \"market_scenario\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:213: NOTICE:  column \"supersedes_scenario_id\" of relation \"market_scenario\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:215: NOTICE:  relation \"market_scenario_workspace_hash_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:279: NOTICE:  relation \"entity_unit_bridge\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:282: NOTICE:  relation \"entity_unit_bridge_lookup_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:295: NOTICE:  relation \"saved_segment\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:309: NOTICE:  relation \"saved_segment_version\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:323: NOTICE:  relation \"segment_condition_group\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:326: NOTICE:  relation \"segment_condition_group_one_root_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:328: NOTICE:  relation \"segment_condition_group_parent_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:357: NOTICE:  relation \"segment_condition\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:360: NOTICE:  relation \"segment_condition_source_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:362: NOTICE:  relation \"segment_condition_group_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:364: NOTICE:  relation \"segment_condition_value_gin\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:382: NOTICE:  relation \"estimate_dependency\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:385: NOTICE:  relation \"estimate_dependency_reverse_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:406: NOTICE:  relation \"estimate_sensitivity_result\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:425: NOTICE:  relation \"scenario_factor_override\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:457: NOTICE:  relation \"research_job\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:460: NOTICE:  relation \"research_job_idempotency_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:463: NOTICE:  relation \"research_job_queue_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:465: NOTICE:  relation \"research_job_workspace_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:482: NOTICE:  relation \"research_job_step\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:492: NOTICE:  relation \"research_job_event\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:495: NOTICE:  relation \"research_job_event_job_time_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:511: NOTICE:  relation \"research_job_artifact\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:514: NOTICE:  relation \"research_job_artifact_job_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:538: NOTICE:  relation \"proposed_revision\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:542: NOTICE:  relation \"proposed_revision_job_target_hash_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:544: NOTICE:  relation \"proposed_revision_workspace_status_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:552: NOTICE:  relation \"proposed_revision_evidence\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:567: NOTICE:  relation \"review_item\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:570: NOTICE:  relation \"review_item_revision_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:572: NOTICE:  relation \"review_item_posterior_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:575: NOTICE:  relation \"review_item_queue_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:588: NOTICE:  relation \"review_decision\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:599: NOTICE:  relation \"comparison_workspace\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:612: NOTICE:  relation \"comparison_member\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:643: NOTICE:  relation \"comparison_workspace_recent_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:654: NOTICE:  relation \"opportunity_board\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:680: NOTICE:  relation \"opportunity\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:683: NOTICE:  relation \"opportunity_board_recent_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:685: NOTICE:  relation \"opportunity_status_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:700: NOTICE:  relation \"opportunity_segment_link\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:703: NOTICE:  relation \"opportunity_segment_link_result_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:714: NOTICE:  relation \"opportunity_score_version\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:733: NOTICE:  relation \"opportunity_score_component\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:751: NOTICE:  relation \"opportunity_content_version\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:775: NOTICE:  relation \"opportunity_experiment\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:791: NOTICE:  relation \"audit_event\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:794: NOTICE:  relation \"audit_event_aggregate_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:796: NOTICE:  relation \"audit_event_workspace_actor_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:798: NOTICE:  relation \"audit_event_occurred_brin\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:851: NOTICE:  relation \"domain_registry_search_trgm_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:853: NOTICE:  relation \"subtype_definition_search_trgm_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:855: NOTICE:  relation \"archetype_search_trgm_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:857: NOTICE:  relation \"saved_segment_search_trgm_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:859: NOTICE:  relation \"opportunity_search_trgm_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/003_workbench.sql:861: NOTICE:  relation \"saved_segment_recent_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/005_workbench_operations.sql:15: NOTICE:  relation \"baseline_import_manifest\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/006_workbench_performance.sql:18: NOTICE:  relation \"validation_gap_estimate_lineage_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/006_workbench_performance.sql:34: NOTICE:  relation \"validation_gap_archetype_lineage_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/006_workbench_performance.sql:39: NOTICE:  relation \"estimate_updated_page_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/006_workbench_performance.sql:43: NOTICE:  relation \"estimate_status_updated_page_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/006_workbench_performance.sql:48: NOTICE:  relation \"subtype_allocation_subtype_count_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/007_workbench_governance_hardening.sql:6: NOTICE:  column \"reference_year\" of relation \"segment_condition\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:6: NOTICE:  column \"workspace_id\" of relation \"segment_query\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:7: NOTICE:  column \"created_by_actor_id\" of relation \"segment_query\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:73: NOTICE:  constraint \"segment_query_query_hash_key\" of relation \"segment_query\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/008_requirement_completion_hardening.sql:75: NOTICE:  relation \"segment_query_workspace_hash_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:37: NOTICE:  relation \"approved_research_factor\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:40: NOTICE:  relation \"approved_research_factor_lookup_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:42: NOTICE:  relation \"approved_research_factor_release_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:61: NOTICE:  relation \"approved_research_factor_source\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/009_approved_research_factor.sql:63: NOTICE:  column \"materialized_factor_id\" of relation \"proposed_revision\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/010_reproducible_workbench_snapshots.sql:7: NOTICE:  column \"saved_segment_id\" of relation \"market_scenario\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/010_reproducible_workbench_snapshots.sql:9: NOTICE:  column \"saved_segment_version_no\" of relation \"market_scenario\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/010_reproducible_workbench_snapshots.sql:36: NOTICE:  relation \"market_scenario_saved_segment_version_idx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/010_reproducible_workbench_snapshots.sql:39: NOTICE:  relation \"market_scenario_one_direct_revision_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/010_reproducible_workbench_snapshots.sql:160: NOTICE:  trigger \"market_scenario_revision_guard_trigger\" for relation \"market_scenario\" does not exist, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/012_approved_research_factor_snapshot_hardening.sql:11: NOTICE:  column \"source_count\" of relation \"approved_research_factor\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/012_approved_research_factor_snapshot_hardening.sql:13: NOTICE:  column \"materialization_txid\" of relation \"approved_research_factor\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/012_approved_research_factor_snapshot_hardening.sql:115: NOTICE:  relation \"proposed_revision_workspace_id_uidx\" already exists, skipping\npsql:/Users/woocheolshin/Projects/Market-sizing-engine/migrations/012_approved_research_factor_snapshot_hardening.sql:117: NOTICE:  relation \"approved_research_factor_workspace_id_uidx\" already exists, skipping",
+      "passed": true
+    }
+  }
+}

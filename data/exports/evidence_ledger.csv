@@ -1,0 +1,17 @@
+evidence_id,release_id,evidence_locator,entity_unit,geography_code,period,value,method_code
+CTL-ADULT-19P-RESIDENT-2024-12,REL-MOIS-AGE-2024-12,"national total 51,217,221 minus exact ages 0–18 total 7,324,873",person,KR,2024-12-31,43892348.0,official_derived_difference
+CTL-CHILD-0-14-2024,REL-KOSTAT-CENSUS-2024,"p.17–19: age 0–14 population 5,421 thousand",child_person,KR,2024-11-01,5421000.0,official_direct
+CTL-ENT-ALL-2024,REL-KOSTAT-BD-2024-P,"p.4 table 2: all-industry active enterprises 7,642 thousand",enterprise,KR,2024-12-31,7642000.0,official_rounded_thousand
+CTL-ENT-I56-2023,REL-MSS-SB-2023,p.201 table 38: restaurant and bar enterprises,enterprise,KR,2023-12-31,745196.0,official_cross_tab
+CTL-EST-ALL-2024,REL-KOSTAT-EST-2024-P,p.4–5: all establishments,establishment,KR,2024-12-31,6353673.0,official_direct
+CTL-EST-I-2024,REL-KOSTAT-EST-2024-P,p.5 table: accommodation and food services,establishment,KR,2024-12-31,858373.0,official_direct
+CTL-HH-CHILD18-2024,REL-KOSTAT-CENSUS-2024,"p.99: households with children age 18 or younger 4,517 thousand",household,KR,2024-11-01,4517000.0,official_direct
+CTL-HH-GENERAL-2024,REL-KOSTAT-CENSUS-2024,"p.47: general households 22,294 thousand",household,KR,2024-11-01,22294000.0,official_direct
+CTL-HH-GENERAL-SIZE1-2024,REL-KOSTAT-CENSUS-2024,"p.47: one-person general households 8,045 thousand",household,KR,2024-11-01,8045000.0,official_direct
+CTL-HH-GENERAL-SIZE2-2024,REL-KOSTAT-CENSUS-2024,"p.47: two-person general households 6,476 thousand",household,KR,2024-11-01,6476000.0,official_direct
+CTL-HH-GENERAL-SIZE3-2024,REL-KOSTAT-CENSUS-2024,"p.47: three-person general households 4,202 thousand",household,KR,2024-11-01,4202000.0,official_direct
+CTL-HH-GENERAL-SIZE4P-2024,REL-KOSTAT-CENSUS-2024,"p.47: four-or-more-person general households 3,571 thousand",household,KR,2024-11-01,3571000.0,official_direct
+CTL-HH-TOTAL-2024,REL-KOSTAT-CENSUS-2024,"p.47: total households 22,997 thousand",household,KR,2024-11-01,22997000.0,official_direct
+CTL-MINOR-0-18-2024-12,REL-MOIS-AGE-2024-12,"national row: age-range population, exact ages 0–18",child_person,KR,2024-12-31,7324873.0,official_direct
+CTL-POP-2024,REL-KOSTAT-CENSUS-2024,"p.9, p.15 lines: total population 51,806 thousand",person,KR,2024-11-01,51806000.0,official_direct
+CTL-POP-RESIDENT-2024-12,REL-MOIS-AGE-2024-12,national row: total resident-registration population,person,KR,2024-12-31,51217221.0,official_direct

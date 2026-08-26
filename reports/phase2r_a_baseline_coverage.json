@@ -1,0 +1,206 @@
+{
+  "generated_at": "2026-08-25T22:56:30.407756+00:00",
+  "status": "passed",
+  "scope_disclosure": "Domain counts are official potential eligible-universe frames, not observed product participation or purchase-intent prevalence.",
+  "counts": {
+    "universes": 7,
+    "universe_dimensions": 77,
+    "observations": 164,
+    "citations": 155,
+    "source_documents": 5,
+    "production_sources": 5,
+    "domain_mappings": 24,
+    "display_labels": 3564,
+    "province_geographies": 17,
+    "production_saved_segments": 0,
+    "production_tables": 9,
+    "production_views": 8
+  },
+  "universe_coverage": [
+    {
+      "universe_id": "UNIV-KR-ADULT-19P-2024",
+      "universe_code": "kr_adult_19_plus_2024",
+      "display_name_ko": "대한민국 19세 이상 주민등록 인구",
+      "entity_unit": "person",
+      "denominator_definition": "외국인을 제외한 주민등록 인구 중 19세 이상",
+      "status": "active",
+      "source_release_id": "REL-MOIS-AGE-2024-12",
+      "dimension_count": 10,
+      "observed_dimension_count": 2,
+      "observation_count": 1
+    },
+    {
+      "universe_id": "UNIV-KR-CHILD-0-18-2024",
+      "universe_code": "kr_child_0_18_2024",
+      "display_name_ko": "대한민국 0–18세 주민등록 인구",
+      "entity_unit": "child_person",
+      "denominator_definition": "외국인을 제외한 주민등록 인구 중 0–18세",
+      "status": "active",
+      "source_release_id": "REL-MOIS-AGE-2024-12",
+      "dimension_count": 10,
+      "observed_dimension_count": 2,
+      "observation_count": 20
+    },
+    {
+      "universe_id": "UNIV-KR-ENTERPRISE-2024",
+      "universe_code": "kr_active_enterprise_2024",
+      "display_name_ko": "대한민국 활동기업",
+      "entity_unit": "enterprise",
+      "denominator_definition": "영리기업 중 매출액 또는 상용근로자가 있는 활동기업",
+      "status": "active",
+      "source_release_id": "REL-KOSTAT-BD-2024-P",
+      "dimension_count": 12,
+      "observed_dimension_count": 7,
+      "observation_count": 40
+    },
+    {
+      "universe_id": "UNIV-KR-ESTABLISHMENT-2024",
+      "universe_code": "kr_establishment_total_2024",
+      "display_name_ko": "대한민국 전체 사업체",
+      "entity_unit": "establishment",
+      "denominator_definition": "국내에서 산업활동을 수행하는 조사대상 사업체",
+      "status": "active",
+      "source_release_id": "REL-KOSTAT-EST-2024-P",
+      "dimension_count": 12,
+      "observed_dimension_count": 6,
+      "observation_count": 50
+    },
+    {
+      "universe_id": "UNIV-KR-HOUSEHOLD-2024",
+      "universe_code": "kr_household_total_2024",
+      "display_name_ko": "대한민국 전체 가구",
+      "entity_unit": "household",
+      "denominator_definition": "2024 인구주택총조사의 대한민국 총가구",
+      "status": "active",
+      "source_release_id": "REL-KOSTAT-CENSUS-2024",
+      "dimension_count": 11,
+      "observed_dimension_count": 5,
+      "observation_count": 26
+    },
+    {
+      "universe_id": "UNIV-KR-PERSON-2024",
+      "universe_code": "kr_person_total_2024",
+      "display_name_ko": "대한민국 전체 인구",
+      "entity_unit": "person",
+      "denominator_definition": "대한민국 영토 내 3개월 이상 상주하는 내·외국인",
+      "status": "active",
+      "source_release_id": "REL-KOSTAT-CENSUS-2024",
+      "dimension_count": 10,
+      "observed_dimension_count": 5,
+      "observation_count": 26
+    },
+    {
+      "universe_id": "UNIV-KR-SMALL-BUSINESS-2023",
+      "universe_code": "kr_small_business_11_industries_2023",
+      "display_name_ko": "대한민국 11개 주요 산업 소상공인",
+      "entity_unit": "enterprise",
+      "denominator_definition": "중소벤처기업부 소상공인실태조사 11개 주요 산업의 소상공인 기업체",
+      "status": "active",
+      "source_release_id": "REL-MSS-SB-2023",
+      "dimension_count": 12,
+      "observed_dimension_count": 1,
+      "observation_count": 1
+    }
+  ],
+  "partition_checks": [
+    {
+      "name": "person_province",
+      "expected": 51805547,
+      "actual": 51805547,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "person_sex",
+      "expected": 51805547,
+      "actual": 51805547,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "person_age_0_14_15_64_65_plus",
+      "expected": 51805547,
+      "actual": 51805547,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "household_province",
+      "expected": 22997120,
+      "actual": 22997120,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "general_household_size",
+      "expected": 22294419,
+      "actual": 22294419,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "establishment_province",
+      "expected": 6353673,
+      "actual": 6353673,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "establishment_industry",
+      "expected": 6353673,
+      "actual": 6353673,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "enterprise_employee_band",
+      "expected": 7641749,
+      "actual": 7641749,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "enterprise_owner_sex",
+      "expected": 7641749,
+      "actual": 7641749,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "enterprise_owner_age",
+      "expected": 7641749,
+      "actual": 7641749,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "enterprise_legal_form",
+      "expected": 7641749,
+      "actual": 7641749,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "enterprise_sales_band",
+      "expected": 7641749,
+      "actual": 7641749,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "enterprise_business_age",
+      "expected": 7641749,
+      "actual": 7641749,
+      "delta": 0,
+      "passed": true
+    }
+  ],
+  "failures": {
+    "domain_missing_interval_or_lineage": 0,
+    "not_estimable_domains": 0,
+    "fixture_rows_in_production": 0,
+    "blank_display_labels": 0,
+    "unlinked_domain_sources": 0,
+    "invalid_grade_confidence": 0
+  }
+}
