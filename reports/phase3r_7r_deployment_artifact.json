@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-26T13:27:03Z",
+  "sourceDatabase": "market_engine_phase3r_production",
+  "migrationBoundary": "001-024",
+  "artifact": {
+    "path": "data/backups/phase3r/market_engine_phase3r_production_20260826_v2.dump",
+    "format": "PostgreSQL custom archive",
+    "compression": "gzip",
+    "sizeBytes": 7174521,
+    "sha256": "b2388405d476415a9ee2515c43e183ef4cdb8e2857e60dd8d9aaf28ee4b8a3c3",
+    "tocEntries": 1069,
+    "sourcePostgresVersion": "17.11",
+    "pgDumpVersion": "17.11"
+  },
+  "restoreVerification": {
+    "database": "market_engine_phase3r_fresh_restore_test",
+    "status": "passed",
+    "freshPostgresCluster": true,
+    "transport": "TCP/TLS; psql sslmode=require and Node verify-full with an isolated test CA",
+    "deploymentOwner": "market_engine_deployer: LOGIN, NOSUPERUSER, CREATEROLE, database owner",
+    "archiveAclStrategy": "pg_restore --no-owner --no-acl; target-owner grants reapplied from scripts/grant_phase3r_runtime_privileges.sql",
+    "runtimeRoles": {
+      "market_engine_app": "NOLOGIN, NOINHERIT, SET permitted to deployment owner",
+      "market_engine_worker": "NOLOGIN, NOINHERIT, SET permitted to deployment owner",
+      "appRoleProductDodRead": "passed"
+    },
+    "baseTablesScanned": 116,
+    "fixtureLikeRows": 0,
+    "nonzeroFixtureTables": [],
+    "productDod": {
+      "domains": 24,
+      "primarySubtypes": 90,
+      "archetypes": 1440,
+      "axisValues": 1536,
+      "features": 480,
+      "behaviors": 240,
+      "goldQueries": 10,
+      "primaryNotEstimable": 0,
+      "fixtureCount": 0,
+      "missingDisplayNameCount": 0
+    },
+    "workflowRows": {
+      "savedSegments": 1,
+      "segmentQueries": 1,
+      "opportunities": 1,
+      "researchJobs": 1
+    },
+    "weightedJointMart": {
+      "cellCount": 91091,
+      "sampleRows": 1650000,
+      "queryableCalibrationDimensions": 253,
+      "queryableConditionCatalogRows": 4086,
+      "runtimeRawPersonaReads": 0
+    },
+    "postgresIntegration": "8 files, 51/51 passed"
+  },
+  "restore": {
+    "prerequisite": "Create an empty PostgreSQL 17+ database and use its direct TLS connection URL.",
+    "preflightCommand": "MARKET_ENGINE_TARGET_DATABASE_URL=... scripts/deploy_phase3r_database.sh preflight",
+    "roleBootstrapCommand": "psql --dbname=TARGET_DATABASE --file=scripts/bootstrap_phase3r_runtime_roles.sql",
+    "runtimePrivilegeCommand": "psql --dbname=TARGET_DATABASE --file=scripts/grant_phase3r_runtime_privileges.sql (automatically run by restore mode)",
+    "command": "MARKET_ENGINE_TARGET_DATABASE_URL=... scripts/deploy_phase3r_database.sh restore",
+    "verifyCommand": "MARKET_ENGINE_TARGET_DATABASE_URL=... scripts/deploy_phase3r_database.sh verify",
+    "freshClusterTestCommand": "MARKET_ENGINE_RUN_DEPLOYMENT_INTEGRATION=1 scripts/test_phase3r_deployment_restore.sh"
+  },
+  "runtimeReadiness": {
+    "canonicalDatabaseModule": "web/src/server/db/*",
+    "managedConnectionVariables": [
+      "MARKET_ENGINE_DATABASE_URL",
+      "DATABASE_URL",
+      "POSTGRES_URL"
+    ],
+    "serverlessPoolDefault": 5,
+    "statementTimeoutMsDefault": 15000,
+    "tlsAndRemoteUrlDeploymentAudit": "passed with isolated managed-style configuration"
+  },
+  "targetDiscovery": {
+    "vercelCliVersion": "59.5.0",
+    "authentication": "authenticated_as_sshin121-1943",
+    "repositoryLink": "woochul-shins-projects/market-sizing-engine",
+    "projectId": "prj_qQCE1NFwULGKfyPYGH8zZJpdAnB4",
+    "managedPostgres": "Neon market-sizing-engine-db in sin1",
+    "managedPostgresResourceId": "store_1E8cDOAk6f2OYokX",
+    "productionUrl": "https://market-sizing-engine.vercel.app",
+    "productionDeploymentId": "dpl_7inrX79nUFuP7KaRvuj5mYTRdDMR",
+    "result": "Archive restored to managed Neon and authenticated Vercel Production health passed."
+  },
+  "limitations": [
+    "The archive contains no application secrets or OpenAI credentials.",
+    "Application and provider secrets remain server-only in Vercel and are not present in this archive or repository.",
+    "The deployment owner must own the empty target database and be able to create the two fixed NOLOGIN policy roles, or an administrator must bootstrap them first.",
+    "The managed pooler runtime uses market_engine_app_login with inherited_market_engine_app because the pooler rejects SET ROLE startup options.",
+    "Live Research remains unapproved: the first three attempts failed and no provider result changed the baseline."
+  ]
+}

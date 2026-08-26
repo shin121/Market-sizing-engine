@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-26T08:10:00Z",
+  "status": "passed",
+  "migration": "024_phase3r_weighted_joint_read_model.sql",
+  "backfill": "scripts/backfill_phase3r_weighted_joint.py",
+  "version": "phase3r-weighted-joint-2024-v1",
+  "privacyBoundary": {
+    "rawPersonaRuntimeRead": false,
+    "syntheticRecordIdentifiersStored": false,
+    "storedShape": "identifier-free calibrated aggregate cells",
+    "humanOutputSuppression": "person/household weighted Base below 10 is suppressed"
+  },
+  "coverage": {
+    "cellCount": 91091,
+    "sampleRowsRepresented": 1650000,
+    "weightedTotal": 80884889.99997753,
+    "calibrationCatalogRows": 254,
+    "queryableCalibrationCatalogRows": 253,
+    "selectedControlRows": 146,
+    "syntheticProxyRows": 108,
+    "completeConditionCatalogRows": 4286,
+    "queryableCompleteConditionCatalogRows": 4086,
+    "registeredGoldQueries": 10
+  },
+  "units": {
+    "person": {
+      "cellCount": 69449,
+      "sampleRows": 1000000,
+      "weightedTotal": 43892347.99998328,
+      "catalogRows": 82,
+      "artifactChecksum": "f8abbe4973b8045f5bd775cd6e38569184c8a8e309d755cb07c9963946f5d0f3"
+    },
+    "household": {
+      "cellCount": 19188,
+      "sampleRows": 250000,
+      "weightedTotal": 22997119.999994177,
+      "catalogRows": 82,
+      "artifactChecksum": "089ab561e98ac01a3fddc3a71f97a68965bf25732d9ed628b6f5e02bb6705fb7"
+    },
+    "establishment": {
+      "cellCount": 1342,
+      "sampleRows": 200000,
+      "weightedTotal": 6353673.0,
+      "catalogRows": 51,
+      "artifactChecksum": "0fac70f0fe276bf0b3b075dee9d9484d4d08d93573438d1950fda0ad01863381"
+    },
+    "enterprise": {
+      "cellCount": 1112,
+      "sampleRows": 200000,
+      "weightedTotal": 7641749.000000065,
+      "catalogRows": 39,
+      "artifactChecksum": "5109ff0e211734a7b98612b1266bbe07621ed54332fb4c3c2e1bdf7391fa2cb7"
+    }
+  },
+  "calculationContracts": [
+    "registered_gold_query_snapshot",
+    "weighted_synthetic_joint",
+    "weighted_synthetic_joint_with_proxy_fields",
+    "weighted_synthetic_joint_with_conditional_proxy"
+  ],
+  "uncertainty": {
+    "selectedControlJointGrade": "D",
+    "proxyJointGrade": "E",
+    "method": "sampling plus grade floor plus calibration, mapping, dependency, and stability propagation",
+    "marginalIndependenceDefault": false
+  },
+  "idempotency": {
+    "migrationAppliedTwice": true,
+    "backfillAppliedTwice": true,
+    "contentFingerprintBefore": "fd2536e810777599387ea7372b2ccd90",
+    "contentFingerprintAfter": "fd2536e810777599387ea7372b2ccd90",
+    "passed": true
+  },
+  "verification": {
+    "migrationSchema": "001-024 applied twice in a fresh _test database",
+    "postgresIntegration": "8 files, 51/51 passed in disposable clone and fresh TLS restore",
+    "nestedLogic": "AND + nested OR + NOT result equals the direct weighted-cell sum",
+    "naturalLanguageGoldQuery": "structured confirmation to numeric immutable snapshot passed on desktop, tablet, and mobile",
+    "productionFixtureLikeRows": 0,
+    "productionBaseTablesScanned": 116
+  }
+}

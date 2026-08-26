@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-26T08:13:51.377Z",
+  "status": "passed",
+  "mode": "authenticated loopback Production runtime; one warm-up plus repeated read-only requests",
+  "safety": {
+    "loopbackOnly": true,
+    "methods": [
+      "GET"
+    ],
+    "workflowMutation": false,
+    "credentialsPersisted": false
+  },
+  "runtime": {
+    "baseUrl": "http://localhost:3000",
+    "sampleCount": 5,
+    "modelVersion": "kr-v0.2.1",
+    "migrationBoundary": "001-024"
+  },
+  "productionDataMart": {
+    "database_time": "2026-08-26T08:13:50.651Z",
+    "domain_count": 24,
+    "subtype_count": 90,
+    "archetype_count": 1440,
+    "axis_value_count": 1536,
+    "feature_count": 480,
+    "behavior_count": 240,
+    "gold_query_count": 10,
+    "primary_not_estimable_count": 0,
+    "fixture_count": 0,
+    "missing_display_name_count": 0
+  },
+  "measurements": [
+    {
+      "id": "health",
+      "path": "/api/health",
+      "kind": "api",
+      "p95LimitMs": 500,
+      "samplesMs": [
+        7.14,
+        7.546,
+        9.216,
+        8.744,
+        7.725
+      ],
+      "minMs": 7.14,
+      "averageMs": 8.074,
+      "p50Ms": 7.725,
+      "p95Ms": 9.216,
+      "maxMs": 9.216,
+      "responseBytes": 295,
+      "contentType": "application/json; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "domain_directory",
+      "path": "/api/markets/domains",
+      "kind": "api",
+      "p95LimitMs": 750,
+      "samplesMs": [
+        4.537,
+        5.263,
+        5.716,
+        4.689,
+        6.526
+      ],
+      "minMs": 4.537,
+      "averageMs": 5.346,
+      "p50Ms": 5.263,
+      "p95Ms": 6.526,
+      "maxMs": 6.526,
+      "responseBytes": 60581,
+      "contentType": "application/json; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "archetype_cursor_page",
+      "path": "/api/markets/archetypes?limit=50",
+      "kind": "api",
+      "p95LimitMs": 1000,
+      "samplesMs": [
+        11.242,
+        10.456,
+        10.83,
+        10.846,
+        10.408
+      ],
+      "minMs": 10.408,
+      "averageMs": 10.756,
+      "p50Ms": 10.83,
+      "p95Ms": 11.242,
+      "maxMs": 11.242,
+      "responseBytes": 70936,
+      "contentType": "application/json; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "subtype_directory",
+      "path": "/api/markets/subtypes?limit=90",
+      "kind": "api",
+      "p95LimitMs": 750,
+      "samplesMs": [
+        5.727,
+        5.6,
+        5.354,
+        5.09,
+        5.571
+      ],
+      "minMs": 5.09,
+      "averageMs": 5.468,
+      "p50Ms": 5.571,
+      "p95Ms": 5.727,
+      "maxMs": 5.727,
+      "responseBytes": 227953,
+      "contentType": "application/json; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "estimate_directory",
+      "path": "/api/estimate?status=estimated",
+      "kind": "api",
+      "p95LimitMs": 1000,
+      "samplesMs": [
+        7.937,
+        7.06,
+        6.501,
+        6.56,
+        6.164
+      ],
+      "minMs": 6.164,
+      "averageMs": 6.844,
+      "p50Ms": 6.56,
+      "p95Ms": 7.937,
+      "maxMs": 7.937,
+      "responseBytes": 105181,
+      "contentType": "application/json; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "global_search",
+      "path": "/api/search?q=%EC%9D%8C%EC%95%85&limit=30",
+      "kind": "api",
+      "p95LimitMs": 1000,
+      "samplesMs": [
+        13.705,
+        14.105,
+        13.935,
+        14.411,
+        14.335
+      ],
+      "minMs": 13.705,
+      "averageMs": 14.098,
+      "p50Ms": 14.105,
+      "p95Ms": 14.411,
+      "maxMs": 14.411,
+      "responseBytes": 11529,
+      "contentType": "application/json; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "explorer_ssr",
+      "path": "/explore",
+      "kind": "ssr",
+      "p95LimitMs": 1500,
+      "samplesMs": [
+        15.397,
+        14.138,
+        12.519,
+        11.476,
+        11.595
+      ],
+      "minMs": 11.476,
+      "averageMs": 13.025,
+      "p50Ms": 12.519,
+      "p95Ms": 15.397,
+      "maxMs": 15.397,
+      "responseBytes": 90028,
+      "contentType": "text/html; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "archetype_ssr",
+      "path": "/archetypes",
+      "kind": "ssr",
+      "p95LimitMs": 1500,
+      "samplesMs": [
+        27.045,
+        26.128,
+        25.94,
+        31.311,
+        24.501
+      ],
+      "minMs": 24.501,
+      "averageMs": 26.985,
+      "p50Ms": 26.128,
+      "p95Ms": 31.311,
+      "maxMs": 31.311,
+      "responseBytes": 249231,
+      "contentType": "text/html; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "sizing_ssr",
+      "path": "/sizing",
+      "kind": "ssr",
+      "p95LimitMs": 1500,
+      "samplesMs": [
+        15.92,
+        15.808,
+        14.983,
+        13.449,
+        13.449
+      ],
+      "minMs": 13.449,
+      "averageMs": 14.722,
+      "p50Ms": 14.983,
+      "p95Ms": 15.92,
+      "maxMs": 15.92,
+      "responseBytes": 106139,
+      "contentType": "text/html; charset=utf-8",
+      "status": "passed"
+    },
+    {
+      "id": "research_ssr",
+      "path": "/research",
+      "kind": "ssr",
+      "p95LimitMs": 1500,
+      "samplesMs": [
+        8.224,
+        8.311,
+        8.215,
+        7.505,
+        8.175
+      ],
+      "minMs": 7.505,
+      "averageMs": 8.086,
+      "p50Ms": 8.215,
+      "p95Ms": 8.311,
+      "maxMs": 8.311,
+      "responseBytes": 34600,
+      "contentType": "text/html; charset=utf-8",
+      "status": "passed"
+    }
+  ]
+}

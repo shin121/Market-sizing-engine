@@ -1,0 +1,672 @@
+{
+  "generated_at": "2026-08-26T00:45:47.694686+00:00",
+  "version": "phase2r-b-2026-08-26-v1",
+  "status": "passed",
+  "passed": 33,
+  "total": 33,
+  "checks": [
+    {
+      "name": "phase2r_a_dod_24_24",
+      "status": "passed"
+    },
+    {
+      "name": "phase2_dod_30_30",
+      "status": "passed"
+    },
+    {
+      "name": "legacy_tests_18_18_certificate",
+      "status": "passed"
+    },
+    {
+      "name": "combined_validation_46_46",
+      "status": "passed"
+    },
+    {
+      "name": "nemotron_1000000_preserved",
+      "status": "passed"
+    },
+    {
+      "name": "nemotron_9_shards_checksums",
+      "status": "passed"
+    },
+    {
+      "name": "calibration_4_units_passed",
+      "status": "passed"
+    },
+    {
+      "name": "calibration_error_within_tolerance",
+      "status": "passed"
+    },
+    {
+      "name": "universe_total_reconciliation",
+      "status": "passed"
+    },
+    {
+      "name": "age_reconciliation",
+      "status": "passed"
+    },
+    {
+      "name": "region_reconciliation",
+      "status": "passed"
+    },
+    {
+      "name": "household_reconciliation",
+      "status": "passed"
+    },
+    {
+      "name": "business_industry_reconciliation",
+      "status": "passed"
+    },
+    {
+      "name": "effective_sample_size_threshold",
+      "status": "passed"
+    },
+    {
+      "name": "extreme_weight_share_threshold",
+      "status": "passed"
+    },
+    {
+      "name": "person_household_business_weights",
+      "status": "passed"
+    },
+    {
+      "name": "archetype_1440_numeric_contextual",
+      "status": "passed"
+    },
+    {
+      "name": "subtype_90_numeric_confident_sourced",
+      "status": "passed"
+    },
+    {
+      "name": "subtype_parent_reconciliation",
+      "status": "passed"
+    },
+    {
+      "name": "axis_384_distribution_status",
+      "status": "passed"
+    },
+    {
+      "name": "feature_480_numeric",
+      "status": "passed"
+    },
+    {
+      "name": "behavior_240_numeric",
+      "status": "passed"
+    },
+    {
+      "name": "overlap_sum_not_forced",
+      "status": "passed"
+    },
+    {
+      "name": "all_intervals_ordered",
+      "status": "passed"
+    },
+    {
+      "name": "source_lineage_nonempty",
+      "status": "passed"
+    },
+    {
+      "name": "reference_year_complete",
+      "status": "passed"
+    },
+    {
+      "name": "primary_explorer_not_estimable_zero",
+      "status": "passed"
+    },
+    {
+      "name": "gold_query_10_numeric_formula_source",
+      "status": "passed"
+    },
+    {
+      "name": "production_data_mart_13_views",
+      "status": "passed"
+    },
+    {
+      "name": "production_fixture_zero",
+      "status": "passed"
+    },
+    {
+      "name": "new_tests_passed",
+      "status": "passed"
+    },
+    {
+      "name": "artifact_reproducibility",
+      "status": "passed"
+    },
+    {
+      "name": "migration_and_backfill_reapply_safe",
+      "status": "passed"
+    }
+  ],
+  "prerequisites": {
+    "phase2": {
+      "passed": 30,
+      "total": 30
+    },
+    "phase2r_a": {
+      "passed": 24,
+      "total": 24
+    }
+  },
+  "calibration": [
+    {
+      "calibration_run_id": "CAL-ENTERPRISE-2024-V1",
+      "target_unit": "enterprise",
+      "iterations": 3,
+      "sample_size": 200000,
+      "total_weight": "7641748.99999982",
+      "effective_sample_size": "199999.964404269",
+      "effective_sample_size_ratio": "0.999999822021347",
+      "weight_min": "37.7469770508941",
+      "weight_mean": "38.2087449999991",
+      "weight_max": "38.8518519793662",
+      "weight_cv": "0.00042187511997311",
+      "extreme_weight_share": "0",
+      "max_control_relative_error": "4.13282696003581E-9",
+      "status": "passed"
+    },
+    {
+      "calibration_run_id": "CAL-ESTABLISHMENT-2024-V1",
+      "target_unit": "establishment",
+      "iterations": 3,
+      "sample_size": 200000,
+      "total_weight": "6353672.99999925",
+      "effective_sample_size": "199999.991031678",
+      "effective_sample_size_ratio": "0.999999955158389",
+      "weight_min": "31.749117508071",
+      "weight_mean": "31.7683649999962",
+      "weight_max": "32.0698841684514",
+      "weight_cv": "0.000211757335700546",
+      "extreme_weight_share": "0",
+      "max_control_relative_error": "1.1631733812531E-8",
+      "status": "passed"
+    },
+    {
+      "calibration_run_id": "CAL-HOUSEHOLD-2024-V1",
+      "target_unit": "household",
+      "iterations": 20,
+      "sample_size": 250000,
+      "total_weight": "22997119.9999855",
+      "effective_sample_size": "177396.132710292",
+      "effective_sample_size_ratio": "0.709584530841169",
+      "weight_min": "13.7814931406437",
+      "weight_mean": "91.9884799999421",
+      "weight_max": "214.617298729794",
+      "weight_cv": "0.639746330064669",
+      "extreme_weight_share": "0.117272",
+      "max_control_relative_error": "7.63793039238615E-8",
+      "status": "passed"
+    },
+    {
+      "calibration_run_id": "CAL-PERSON-2024-V1",
+      "target_unit": "person",
+      "iterations": 3,
+      "sample_size": 1000000,
+      "total_weight": "43892347.9999721",
+      "effective_sample_size": "998462.623045677",
+      "effective_sample_size_ratio": "0.998462623045677",
+      "weight_min": "40.4282964122363",
+      "weight_mean": "43.8923479999721",
+      "weight_max": "50.1915509733361",
+      "weight_cv": "0.0392395734244252",
+      "extreme_weight_share": "0",
+      "max_control_relative_error": "6.26715407506515E-8",
+      "status": "passed"
+    }
+  ],
+  "calibration_control_status": {
+    "age_sex": {
+      "control_dimension": "age_sex",
+      "cell_count": 18,
+      "failed_cells": 0,
+      "max_relative_error": "6.26715407506515E-8"
+    },
+    "business_age": {
+      "control_dimension": "business_age",
+      "cell_count": 5,
+      "failed_cells": 0,
+      "max_relative_error": "1.76054464525701E-13"
+    },
+    "children_presence": {
+      "control_dimension": "children_presence",
+      "cell_count": 2,
+      "failed_cells": 0,
+      "max_relative_error": "5.17103612383356E-13"
+    },
+    "employee_band": {
+      "control_dimension": "employee_band",
+      "cell_count": 14,
+      "failed_cells": 0,
+      "max_relative_error": "4.13282696003581E-9"
+    },
+    "household_size_band": {
+      "control_dimension": "household_size_band",
+      "cell_count": 5,
+      "failed_cells": 0,
+      "max_relative_error": "7.63793039238615E-8"
+    },
+    "industry_code": {
+      "control_dimension": "industry_code",
+      "cell_count": 19,
+      "failed_cells": 0,
+      "max_relative_error": "7.53636649289383E-11"
+    },
+    "legal_form": {
+      "control_dimension": "legal_form",
+      "cell_count": 6,
+      "failed_cells": 0,
+      "max_relative_error": "5.97163281770538E-13"
+    },
+    "owner_age": {
+      "control_dimension": "owner_age",
+      "cell_count": 12,
+      "failed_cells": 0,
+      "max_relative_error": "1.26307742223972E-11"
+    },
+    "owner_sex": {
+      "control_dimension": "owner_sex",
+      "cell_count": 2,
+      "failed_cells": 0,
+      "max_relative_error": "3.07342156095379E-13"
+    },
+    "region_code": {
+      "control_dimension": "region_code",
+      "cell_count": 51,
+      "failed_cells": 0,
+      "max_relative_error": "1.19612367922921E-8"
+    },
+    "sales_band": {
+      "control_dimension": "sales_band",
+      "cell_count": 13,
+      "failed_cells": 0,
+      "max_relative_error": "2.06856266750135E-10"
+    }
+  },
+  "mapping_coverage": {
+    "fields": [
+      {
+        "nemotron_field": "sex",
+        "universe_dimension": "sex",
+        "target_unit": "person",
+        "distinct_categories": 2,
+        "mapping_coverage": 1.0,
+        "selected_as_control": true
+      },
+      {
+        "nemotron_field": "age_band",
+        "universe_dimension": "age",
+        "target_unit": "person",
+        "distinct_categories": 9,
+        "mapping_coverage": 1.0,
+        "selected_as_control": true
+      },
+      {
+        "nemotron_field": "province",
+        "universe_dimension": "region",
+        "target_unit": "person",
+        "distinct_categories": 17,
+        "mapping_coverage": 1.0,
+        "selected_as_control": true
+      },
+      {
+        "nemotron_field": "district",
+        "universe_dimension": "subregion",
+        "target_unit": "person",
+        "distinct_categories": 252,
+        "mapping_coverage": 1.0,
+        "selected_as_control": false
+      },
+      {
+        "nemotron_field": "marital_status",
+        "universe_dimension": "marital_status",
+        "target_unit": "person",
+        "distinct_categories": 4,
+        "mapping_coverage": 1.0,
+        "selected_as_control": false
+      },
+      {
+        "nemotron_field": "family_type",
+        "universe_dimension": "household_composition_proxy",
+        "target_unit": "household",
+        "distinct_categories": 39,
+        "mapping_coverage": 1.0,
+        "selected_as_control": false
+      },
+      {
+        "nemotron_field": "housing_type",
+        "universe_dimension": "housing_tenure_proxy",
+        "target_unit": "household",
+        "distinct_categories": 6,
+        "mapping_coverage": 1.0,
+        "selected_as_control": false
+      },
+      {
+        "nemotron_field": "education_level",
+        "universe_dimension": "education",
+        "target_unit": "person",
+        "distinct_categories": 7,
+        "mapping_coverage": 1.0,
+        "selected_as_control": false
+      },
+      {
+        "nemotron_field": "bachelors_field",
+        "universe_dimension": "education_field",
+        "target_unit": "person",
+        "distinct_categories": 11,
+        "mapping_coverage": 1.0,
+        "selected_as_control": false
+      },
+      {
+        "nemotron_field": "occupation",
+        "universe_dimension": "occupation_text",
+        "target_unit": "person",
+        "distinct_categories": 2120,
+        "mapping_coverage": 1.0,
+        "selected_as_control": false
+      }
+    ],
+    "row_count": 2477
+  },
+  "market_mart_counts": {
+    "domain_market_summary": 24,
+    "archetype_market_summary": 2400,
+    "subtype_market_summary": 90,
+    "axis_distribution": 1536,
+    "feature_prevalence": 480,
+    "behavior_prevalence": 240,
+    "gold_query_result": 10,
+    "estimate_factor_lineage": 47,
+    "confidence_breakdown": 3628,
+    "geography_distribution": 408,
+    "trend_spend_summary": 34
+  },
+  "database_snapshot": {
+    "axes": 384,
+    "features": 480,
+    "subtypes": 90,
+    "behaviors": 240,
+    "archetypes": 1440,
+    "fixture_rows": 0,
+    "gold_queries": 10,
+    "calibration_runs": 4,
+    "max_calibration_error": 7.63793039238615e-08,
+    "primary_not_estimable": 0,
+    "archetype_context_rows": 2400
+  },
+  "read_models": [
+    "v_archetype_market_summary",
+    "v_axis_distribution",
+    "v_behavior_prevalence",
+    "v_confidence_breakdown",
+    "v_domain_market_summary",
+    "v_estimate_factor_lineage",
+    "v_feature_prevalence",
+    "v_geography_distribution",
+    "v_gold_query_result",
+    "v_primary_explorer",
+    "v_source_coverage",
+    "v_subtype_market_summary",
+    "v_trend_spend_summary"
+  ],
+  "gold_queries": [
+    {
+      "query_id": "GOLD-01",
+      "display_name_ko": "홈페이지가 없는 60대 음식점 사업체",
+      "count_low": "145810",
+      "count_base": "169010",
+      "count_high": "186935",
+      "entity_unit": "enterprise",
+      "geography_scope": "KR",
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "most_uncertain_variable": "60대 음식점 대표자 비중",
+      "snapshot_hash": "43ea2b831b16b1521a29164d045311846538e2a5a58d47d5f5655a75936441d1"
+    },
+    {
+      "query_id": "GOLD-02",
+      "display_name_ko": "수도권 초등학생 자녀 맞벌이 가구",
+      "count_low": "319938",
+      "count_base": "429539",
+      "count_high": "519620",
+      "entity_unit": "household",
+      "geography_scope": "capital_region",
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "most_uncertain_variable": "맞벌이 조건부 비중",
+      "snapshot_hash": "50e57d481a0f72438e526e735d583d2772bd9176315cd1e3808fc5af39a2f709"
+    },
+    {
+      "query_id": "GOLD-03",
+      "display_name_ko": "유료 음악서비스 전환 가능성이 높은 무료 이용자",
+      "count_low": "977429",
+      "count_base": "1459371",
+      "count_high": "1981579",
+      "entity_unit": "person",
+      "geography_scope": "KR",
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "most_uncertain_variable": "고전환 가능성 조건부 비중",
+      "snapshot_hash": "0e87b96f21749b44c0ba4a2a4331b5e5b3ccf8ef64d078bf6481bf10c9bb5218"
+    },
+    {
+      "query_id": "GOLD-04",
+      "display_name_ko": "온라인 판매채널이 없는 지방의 직원 5명 미만 식품 소매업체",
+      "count_low": "507692",
+      "count_base": "547821",
+      "count_high": "585744",
+      "entity_unit": "enterprise",
+      "geography_scope": "noncapital",
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "most_uncertain_variable": "지역×규모×채널 보정",
+      "snapshot_hash": "38718e8890fe987620317ee9449ccd31ddea0a7861c13f0dd0dcd126003487b4"
+    },
+    {
+      "query_id": "GOLD-05",
+      "display_name_ko": "부모 돌봄 부담이 있는 50대 직장인",
+      "count_low": "639585",
+      "count_base": "893013",
+      "count_high": "1245832",
+      "entity_unit": "person",
+      "geography_scope": "KR",
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "most_uncertain_variable": "부모 돌봄 부담 조건부 비중",
+      "snapshot_hash": "dd5b180a04943f6c800d39765e3701384cd3d6b0e975c01abad0efa79ed098a8"
+    },
+    {
+      "query_id": "GOLD-06",
+      "display_name_ko": "반려동물을 키우며 국내여행 빈도가 높은 30~40대 가구",
+      "count_low": "206423",
+      "count_base": "314716",
+      "count_high": "499395",
+      "entity_unit": "household",
+      "geography_scope": "KR",
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "most_uncertain_variable": "국내여행 고빈도 조건부 비중",
+      "snapshot_hash": "a24ae991a64cf14a1f300ba9c275bcfefd5543e8ff405541e4b657c72c23494e"
+    },
+    {
+      "query_id": "GOLD-07",
+      "display_name_ko": "사교육을 이용하지만 현재 서비스에 불만이 있는 중학생 보호자 가구",
+      "count_low": "138543",
+      "count_base": "200338",
+      "count_high": "282707",
+      "entity_unit": "household",
+      "geography_scope": "KR",
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "most_uncertain_variable": "현 서비스 불만 비중",
+      "snapshot_hash": "6fc10bf308dc3b967cca824a8cfa9d3e2d457a352f41894c4e6c58d2694d917c"
+    },
+    {
+      "query_id": "GOLD-08",
+      "display_name_ko": "네이버 플레이스는 있지만 디지털 관리가 어려운 고령 음식점 사업체",
+      "count_low": "86105",
+      "count_base": "116429",
+      "count_high": "150291",
+      "entity_unit": "enterprise",
+      "geography_scope": "KR",
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "most_uncertain_variable": "네이버 플레이스 보유",
+      "snapshot_hash": "0f138233d9049c57cc9788b01dc2024c94dfcba7dd7b8edd13d4403ad58b8dbe"
+    },
+    {
+      "query_id": "GOLD-09",
+      "display_name_ko": "은퇴를 앞두고 건강 관련 지출이 높은 50대",
+      "count_low": "927695",
+      "count_base": "1317406",
+      "count_high": "1821801",
+      "entity_unit": "person",
+      "geography_scope": "KR",
+      "estimate_grade": "E",
+      "confidence_score": 50,
+      "most_uncertain_variable": "건강 고지출 조건부 비중",
+      "snapshot_hash": "55e9c9a1f27a83110f8ff09441fbca00179a17ddfc0599fa4fc657bc8c8231a7"
+    },
+    {
+      "query_id": "GOLD-10",
+      "display_name_ko": "무료 콘텐츠 이용이 많지만 소액 구독 의향이 있는 20~30대 음악 소비자",
+      "count_low": "1366962",
+      "count_base": "1849100",
+      "count_high": "2405979",
+      "entity_unit": "person",
+      "geography_scope": "KR",
+      "estimate_grade": "D",
+      "confidence_score": 65,
+      "most_uncertain_variable": "소액 구독 의향",
+      "snapshot_hash": "9d26ffae47bfa5ff1769c8b827c57968d225ed04edefee4448bea5b1b2bd4205"
+    }
+  ],
+  "estimate_grade_distribution": [
+    {
+      "estimate_grade": "C",
+      "row_count": 205
+    },
+    {
+      "estimate_grade": "D",
+      "row_count": 2066
+    },
+    {
+      "estimate_grade": "E",
+      "row_count": 2509
+    }
+  ],
+  "source_coverage": [
+    {
+      "source_release_id": "REL-MSS-SB-2023",
+      "publisher": "중소벤처기업부·소상공인시장진흥공단",
+      "dataset_title": "소상공인실태조사",
+      "factor_count": 13,
+      "subject_count": 3,
+      "direct_factor_count": 7,
+      "proxy_factor_count": 6
+    },
+    {
+      "source_release_id": "REL-KOCCA-MUSIC-2024",
+      "publisher": "문화체육관광부·한국콘텐츠진흥원",
+      "dataset_title": "2024 음악산업백서 — 음악 이용자 조사",
+      "factor_count": 10,
+      "subject_count": 2,
+      "direct_factor_count": 6,
+      "proxy_factor_count": 4
+    },
+    {
+      "source_release_id": "REL-KOSTAT-CENSUS-2024",
+      "publisher": "국가데이터처(구 통계청)",
+      "dataset_title": "인구주택총조사",
+      "factor_count": 9,
+      "subject_count": 4,
+      "direct_factor_count": 2,
+      "proxy_factor_count": 5
+    },
+    {
+      "source_release_id": "REL-KOSTAT-REA-2024",
+      "publisher": "국가데이터처 동남지방통계청",
+      "dataset_title": "상반기 지역별고용조사 50+ 분석",
+      "factor_count": 6,
+      "subject_count": 2,
+      "direct_factor_count": 3,
+      "proxy_factor_count": 3
+    },
+    {
+      "source_release_id": "REL-NVIDIA-NPK-1.0",
+      "publisher": "NVIDIA Corporation",
+      "dataset_title": "Nemotron-Personas-Korea",
+      "factor_count": 5,
+      "subject_count": 2,
+      "direct_factor_count": 0,
+      "proxy_factor_count": 5
+    },
+    {
+      "source_release_id": "REL-MOIS-AGE-2024-12",
+      "publisher": "행정안전부",
+      "dataset_title": "주민등록 인구통계 행정동별 연령별 인구현황",
+      "factor_count": 3,
+      "subject_count": 2,
+      "direct_factor_count": 1,
+      "proxy_factor_count": 2
+    },
+    {
+      "source_release_id": "REL-KOSTAT-BD-2024-P",
+      "publisher": "국가데이터처",
+      "dataset_title": "기업생멸행정통계",
+      "factor_count": 1,
+      "subject_count": 1,
+      "direct_factor_count": 0,
+      "proxy_factor_count": 0
+    }
+  ],
+  "test_results": {
+    "generated_at": "2026-08-26T09:41:00+09:00",
+    "status": "passed",
+    "python": {
+      "command": "MARKET_ENGINE_PHASE2R_DATABASE_URL=<working-db> .venv/bin/python -m pytest -q",
+      "collected": 82,
+      "passed": 80,
+      "skipped": 2,
+      "failed": 0,
+      "phase2r_b_new_tests": 9,
+      "phase2r_b_new_tests_passed": 9
+    },
+    "combined_validation": {
+      "command": ".venv/bin/market-engine validate",
+      "passed": 46,
+      "total": 46
+    },
+    "nemotron_integrity": {
+      "command": ".venv/bin/market-engine verify-nemotron",
+      "rows": 1000000,
+      "shards": 9,
+      "checksums_passed": 9,
+      "download_bytes": 1982395106
+    },
+    "web": {
+      "unit_tests_passed": 261,
+      "integration_tests_passed": 3,
+      "integration_tests_skipped": 43,
+      "lint": "passed",
+      "typecheck": "passed",
+      "production_build": "passed"
+    },
+    "artifact_reproducibility": "19_of_19_identical",
+    "migration_reapply": "passed",
+    "backfill_idempotency": "passed",
+    "production_fixture_rows": 0,
+    "notes": [
+      "Two Python tests and 43 web integration tests are intentionally environment-gated and skipped.",
+      "The complete Python suite includes the Phase 2R-A and Phase 2R-B PostgreSQL integration tests against the isolated working database.",
+      "The original market_engine database was not modified."
+    ]
+  },
+  "unresolved_variables": [
+    "직업·경제활동·소득의 정의 일치 joint calibration control",
+    "가구주 연령×자녀 연령×맞벌이 직접 joint distribution",
+    "플랫폼별 무료 이용×유료 전환 실제 패널",
+    "네이버 플레이스 보유 여부의 공식 모집단 통계",
+    "반려동물×여행, 부모돌봄×취업, 사교육×불만 직접 joint distribution",
+    "제품별 전환율·도달가능률·운영 capacity for SOM"
+  ]
+}

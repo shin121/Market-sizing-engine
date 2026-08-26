@@ -1,0 +1,23 @@
+{
+  "version": "taxonomy-2026-08-24-v1",
+  "categories": [
+    {"code":"life_stage","name_ko":"생애주기·핵심 인구통계","entity_units":["person"]},
+    {"code":"household_family","name_ko":"가구구성·가족관계","entity_units":["household","person"]},
+    {"code":"children_education","name_ko":"아동·청소년·교육","entity_units":["child_person","household"]},
+    {"code":"geography_housing","name_ko":"지역·주거지·생활권","entity_units":["person","household"]},
+    {"code":"work_career","name_ko":"직업·고용·경력","entity_units":["person"]},
+    {"code":"small_business","name_ko":"자영업·소상공인·사업 운영","entity_units":["enterprise","establishment","person"]},
+    {"code":"financial_capacity","name_ko":"소득·자산·부채·소비여력","entity_units":["household","person"]},
+    {"code":"home_services","name_ko":"주택·이사·홈서비스","entity_units":["household"]},
+    {"code":"mobility","name_ko":"이동·교통·차량","entity_units":["person","household"]},
+    {"code":"digital_media","name_ko":"디지털 이용·미디어·기술수용","entity_units":["person","enterprise"]},
+    {"code":"commerce_payment","name_ko":"쇼핑·이커머스·결제","entity_units":["person","household","enterprise"]},
+    {"code":"food_dining","name_ko":"음식·외식·식생활","entity_units":["person","household","enterprise","establishment"]},
+    {"code":"health_care","name_ko":"건강·웰빙·돌봄","entity_units":["person","household"]},
+    {"code":"leisure_culture","name_ko":"여가·문화·스포츠","entity_units":["person","household"]},
+    {"code":"travel","name_ko":"여행·관광","entity_units":["person","household"]},
+    {"code":"parenting_private_education","name_ko":"양육·보육·사교육","entity_units":["child_person","household"]},
+    {"code":"pets","name_ko":"반려동물","entity_units":["household"]},
+    {"code":"senior_retirement_care","name_ko":"시니어·은퇴·가족돌봄","entity_units":["person","household"]}
+  ]
+}

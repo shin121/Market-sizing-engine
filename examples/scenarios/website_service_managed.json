@@ -1,0 +1,11 @@
+{
+  "name":"음식점 홈페이지·주문 통합관리 3년",
+  "query":"examples/queries/website_less_restaurant_owner_60s.json",
+  "product_definition":"홈페이지·예약·주문·콘텐츠 통합 운영",
+  "market_unit":"enterprise","currency":"KRW","horizon_months":36,
+  "annual_addressable_spend_per_entity":{"low":1200000,"base":2400000,"high":4800000},
+  "serviceability_rate":{"low":0.20,"base":0.40,"high":0.60},
+  "attainable_share":{"low":0.002,"base":0.008,"high":0.020},
+  "operational_capacity_entities":{"low":200,"base":800,"high":2500},
+  "realized_arpu":{"low":1000000,"base":1800000,"high":3200000}
+}

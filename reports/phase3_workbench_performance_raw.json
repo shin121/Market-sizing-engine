@@ -1,0 +1,1463 @@
+{
+  "generatedAt": "2026-08-24T23:56:26.417Z",
+  "mode": "read-only warm-cache local baseline",
+  "command": "NODE_PATH=web/node_modules node scripts/audit_workbench_performance.cjs",
+  "explainOptions": "ANALYZE, BUFFERS, FORMAT JSON, TIMING TRUE, SUMMARY TRUE",
+  "transaction": {
+    "readOnly": true,
+    "role": "market_engine_app",
+    "workspaceId": "9f693300-49ad-5bd5-ad98-af4e225661ea",
+    "actorId": "314126eb-26a2-55fa-a613-28180096cbac"
+  },
+  "server": {
+    "database": "market_engine",
+    "session_user": "woocheolshin",
+    "server_version": "17.11 (Homebrew)",
+    "block_size_bytes": 8192,
+    "shared_buffers": "128MB",
+    "work_mem": "4MB",
+    "effective_cache_size": "4GB"
+  },
+  "tableCounts": [
+    {
+      "table_name": "domain_registry",
+      "exact_row_count": "24"
+    },
+    {
+      "table_name": "domain_dimension",
+      "exact_row_count": "384"
+    },
+    {
+      "table_name": "domain_feature",
+      "exact_row_count": "480"
+    },
+    {
+      "table_name": "subtype_definition",
+      "exact_row_count": "90"
+    },
+    {
+      "table_name": "subtype_allocation",
+      "exact_row_count": "450"
+    },
+    {
+      "table_name": "archetype",
+      "exact_row_count": "1440"
+    },
+    {
+      "table_name": "estimate",
+      "exact_row_count": "1456"
+    },
+    {
+      "table_name": "segment_query_result",
+      "exact_row_count": "2"
+    },
+    {
+      "table_name": "comparison_workspace",
+      "exact_row_count": "0"
+    },
+    {
+      "table_name": "comparison_member",
+      "exact_row_count": "0"
+    },
+    {
+      "table_name": "saved_segment",
+      "exact_row_count": "1"
+    },
+    {
+      "table_name": "market_estimate",
+      "exact_row_count": "0"
+    }
+  ],
+  "queries": [
+    {
+      "id": "WB-PERF-01",
+      "name": "explorer_domain_list",
+      "source": "web/src/server/repositories/catalog.ts:listDomains",
+      "scope": "explorer/domain",
+      "params": [
+        false
+      ],
+      "metrics": {
+        "planningTimeMs": 1.302,
+        "executionTimeMs": 1.081,
+        "resultRows": 24,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 384,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 64,
+        "nodeCounts": {
+          "Sort": 6,
+          "Nested Loop": 4,
+          "Hash Join": 8,
+          "Merge Join": 4,
+          "Seq Scan": 9,
+          "Hash": 8,
+          "Subquery Scan": 4,
+          "Aggregate": 8,
+          "Index Only Scan": 4,
+          "Limit": 3,
+          "Index Scan": 3,
+          "Memoize": 1,
+          "Bitmap Heap Scan": 1,
+          "Bitmap Index Scan": 1
+        },
+        "scanNodeCount": 22,
+        "seqScans": [
+          {
+            "relation": "domain_registry",
+            "actualRowsPerLoop": 24,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 24,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.008,
+            "sharedHitBlocks": 4
+          },
+          {
+            "relation": "category",
+            "actualRowsPerLoop": 18,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 18,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.003,
+            "sharedHitBlocks": 2
+          },
+          {
+            "relation": "domain_behavior_template",
+            "actualRowsPerLoop": 240,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 240,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.01,
+            "sharedHitBlocks": 25
+          },
+          {
+            "relation": "subtype_definition",
+            "actualRowsPerLoop": 90,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 90,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.005,
+            "sharedHitBlocks": 11
+          },
+          {
+            "relation": "subtype_confidence",
+            "actualRowsPerLoop": 90,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 90,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.009,
+            "sharedHitBlocks": 10
+          },
+          {
+            "relation": "archetype_hierarchy",
+            "actualRowsPerLoop": 402,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 402,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.017,
+            "sharedHitBlocks": 52
+          },
+          {
+            "relation": "domain_feature_source",
+            "actualRowsPerLoop": 760,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 760,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.028,
+            "sharedHitBlocks": 46
+          },
+          {
+            "relation": "domain_feature",
+            "actualRowsPerLoop": 480,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 480,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.03,
+            "sharedHitBlocks": 38
+          },
+          {
+            "relation": "subtype_definition",
+            "actualRowsPerLoop": 90,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 90,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.006,
+            "sharedHitBlocks": 11
+          }
+        ],
+        "indexesUsed": [
+          "domain_coverage_audit_pkey",
+          "domain_dimension_domain_id_sort_order_key",
+          "domain_feature_domain_idx",
+          "domain_profile_summary_pkey",
+          "model_version_pkey",
+          "parent_decision_domain_idx",
+          "segmentation_model_domain_idx",
+          "subtype_allocation_subtype_count_idx"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Subquery Scan",
+            "relation": null,
+            "index": null,
+            "actualRowsPerLoop": 24,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 24,
+            "approximateTotalTimeMs": 0.11,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 17,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Subquery Scan",
+            "relation": null,
+            "index": null,
+            "actualRowsPerLoop": 24,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 24,
+            "approximateTotalTimeMs": 0.064,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 52,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Subquery Scan",
+            "relation": null,
+            "index": null,
+            "actualRowsPerLoop": 24,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 24,
+            "approximateTotalTimeMs": 0.055,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 21,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 6,
+          "methods": [
+            "quicksort"
+          ],
+          "maxSpaceUsedKb": 60,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-02",
+      "name": "catalog_global_search",
+      "source": "web/src/server/repositories/catalog.ts:searchCatalog",
+      "scope": "search",
+      "params": [
+        "교육",
+        30,
+        0
+      ],
+      "metrics": {
+        "planningTimeMs": 0.587,
+        "executionTimeMs": 1.462,
+        "resultRows": 30,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 147,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 35,
+        "nodeCounts": {
+          "Limit": 3,
+          "Sort": 3,
+          "Result": 1,
+          "Append": 1,
+          "Seq Scan": 6,
+          "Hash Join": 1,
+          "Hash": 1,
+          "Nested Loop": 5,
+          "Materialize": 1,
+          "Bitmap Heap Scan": 3,
+          "Bitmap Index Scan": 3,
+          "Index Scan": 4,
+          "Memoize": 2,
+          "Subquery Scan": 1
+        },
+        "scanNodeCount": 17,
+        "seqScans": [
+          {
+            "relation": "domain_registry",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1,
+            "rowsRemovedByFilter": 23,
+            "approximateTotalTimeMs": 0.023,
+            "sharedHitBlocks": 4
+          },
+          {
+            "relation": "subtype_definition",
+            "actualRowsPerLoop": 90,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 90,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.007,
+            "sharedHitBlocks": 11
+          },
+          {
+            "relation": "domain_registry",
+            "actualRowsPerLoop": 24,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 24,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.003,
+            "sharedHitBlocks": 4
+          },
+          {
+            "relation": "archetype",
+            "actualRowsPerLoop": 180,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 180,
+            "rowsRemovedByFilter": 1260,
+            "approximateTotalTimeMs": 0.895,
+            "sharedHitBlocks": 116
+          },
+          {
+            "relation": "saved_segment",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.002,
+            "sharedHitBlocks": 1
+          },
+          {
+            "relation": "saved_segment",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.001,
+            "sharedHitBlocks": 1
+          }
+        ],
+        "indexesUsed": [
+          "opportunity_board_recent_idx",
+          "opportunity_status_idx",
+          "saved_segment_pkey",
+          "saved_segment_version_pkey",
+          "segment_query_pkey",
+          "segment_query_result_latest_idx"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Seq Scan",
+            "relation": "archetype",
+            "index": null,
+            "actualRowsPerLoop": 180,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 180,
+            "approximateTotalTimeMs": 0.895,
+            "rowsRemovedByFilter": 1260,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 116,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Seq Scan",
+            "relation": "domain_registry",
+            "index": null,
+            "actualRowsPerLoop": 1,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1,
+            "approximateTotalTimeMs": 0.023,
+            "rowsRemovedByFilter": 23,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 4,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Bitmap Heap Scan",
+            "relation": "saved_segment_version",
+            "index": null,
+            "actualRowsPerLoop": 1,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1,
+            "approximateTotalTimeMs": 0.009,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 4,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 3,
+          "methods": [
+            "quicksort",
+            "top-N heapsort"
+          ],
+          "maxSpaceUsedKb": 34,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-03",
+      "name": "subtype_list_by_domain",
+      "source": "web/src/server/repositories/catalog.ts:listSubtypes",
+      "scope": "subtype explorer",
+      "params": [
+        "education_learning",
+        100,
+        0
+      ],
+      "metrics": {
+        "planningTimeMs": 0.877,
+        "executionTimeMs": 0.478,
+        "resultRows": 6,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 149,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 31,
+        "nodeCounts": {
+          "Limit": 2,
+          "Sort": 2,
+          "Nested Loop": 9,
+          "Hash Join": 2,
+          "Seq Scan": 2,
+          "Hash": 2,
+          "Index Scan": 8,
+          "Aggregate": 2,
+          "Index Only Scan": 2
+        },
+        "scanNodeCount": 12,
+        "seqScans": [
+          {
+            "relation": "subtype_definition",
+            "actualRowsPerLoop": 90,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 90,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.005,
+            "sharedHitBlocks": 11
+          },
+          {
+            "relation": "cluster_representative",
+            "actualRowsPerLoop": 450,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 450,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.015,
+            "sharedHitBlocks": 25
+          }
+        ],
+        "indexesUsed": [
+          "activation_subtype_idx",
+          "cluster_definition_pkey",
+          "domain_registry_domain_code_key",
+          "model_version_pkey",
+          "segmentation_model_pkey",
+          "subtype_allocation_subtype_count_idx",
+          "subtype_confidence_pkey",
+          "subtype_definition_pkey",
+          "subtype_membership_summary_pkey"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Index Only Scan",
+            "relation": "subtype_allocation",
+            "index": "subtype_allocation_subtype_count_idx",
+            "actualRowsPerLoop": 298,
+            "actualLoops": 6,
+            "approximateRowsProcessed": 1788,
+            "approximateTotalTimeMs": 0.084,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 25,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Seq Scan",
+            "relation": "cluster_representative",
+            "index": null,
+            "actualRowsPerLoop": 450,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 450,
+            "approximateTotalTimeMs": 0.015,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 25,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Index Scan",
+            "relation": "cluster_definition",
+            "index": "cluster_definition_pkey",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 6,
+            "approximateRowsProcessed": 6,
+            "approximateTotalTimeMs": 0.006,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 12,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 2,
+          "methods": [
+            "quicksort"
+          ],
+          "maxSpaceUsedKb": 31,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-04",
+      "name": "archetype_list_by_domain",
+      "source": "web/src/server/repositories/catalog.ts:listArchetypes",
+      "scope": "archetype explorer",
+      "params": [
+        "education_learning",
+        100,
+        0
+      ],
+      "metrics": {
+        "planningTimeMs": 0.584,
+        "executionTimeMs": 0.234,
+        "resultRows": 5,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 223,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 48,
+        "nodeCounts": {
+          "Nested Loop": 11,
+          "Limit": 5,
+          "Sort": 6,
+          "Unique": 1,
+          "Hash Join": 2,
+          "Seq Scan": 2,
+          "Hash": 2,
+          "Index Scan": 7,
+          "Index Only Scan": 4,
+          "CTE Scan": 1,
+          "Aggregate": 2,
+          "Bitmap Heap Scan": 1,
+          "BitmapOr": 1,
+          "Bitmap Index Scan": 2,
+          "Memoize": 1
+        },
+        "scanNodeCount": 17,
+        "seqScans": [
+          {
+            "relation": "subtype_definition",
+            "actualRowsPerLoop": 90,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 90,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.006,
+            "sharedHitBlocks": 11
+          },
+          {
+            "relation": "subtype_definition",
+            "actualRowsPerLoop": 90,
+            "actualLoops": 5,
+            "approximateRowsProcessed": 450,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.02,
+            "sharedHitBlocks": 55
+          }
+        ],
+        "indexesUsed": [
+          "archetype_pkey",
+          "archetype_representative_archetype_id_source_kind_rank_key",
+          "archetype_rule_archetype_id_rule_version_key",
+          "category_pkey",
+          "confidence_assessment_estimate_id_key",
+          "domain_registry_domain_code_key",
+          "estimate_subject_idx",
+          "subtype_allocation_pkey",
+          "subtype_allocation_subtype_count_idx",
+          "validation_gap_archetype_lineage_idx",
+          "validation_gap_estimate_lineage_idx"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "CTE Scan",
+            "relation": null,
+            "index": null,
+            "actualRowsPerLoop": 5,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 5,
+            "approximateTotalTimeMs": 0.038,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 51,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Seq Scan",
+            "relation": "subtype_definition",
+            "index": null,
+            "actualRowsPerLoop": 90,
+            "actualLoops": 5,
+            "approximateRowsProcessed": 450,
+            "approximateTotalTimeMs": 0.02,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 55,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Bitmap Heap Scan",
+            "relation": "validation_gap",
+            "index": null,
+            "actualRowsPerLoop": 1,
+            "actualLoops": 5,
+            "approximateRowsProcessed": 5,
+            "approximateTotalTimeMs": 0.01,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 25,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 6,
+          "methods": [
+            "quicksort"
+          ],
+          "maxSpaceUsedKb": 25,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-05",
+      "name": "subtype_parent_allocation_lineage",
+      "source": "web/src/server/repositories/catalog.ts:getSubtype allocation query",
+      "scope": "subtype/archetype lineage",
+      "params": [
+        "DOM-16-SUB-01"
+      ],
+      "metrics": {
+        "planningTimeMs": 0.093,
+        "executionTimeMs": 0.032,
+        "resultRows": 5,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 22,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 7,
+        "nodeCounts": {
+          "Incremental Sort": 1,
+          "Nested Loop": 2,
+          "Index Scan": 3,
+          "Memoize": 1
+        },
+        "scanNodeCount": 3,
+        "seqScans": [],
+        "indexesUsed": [
+          "archetype_pkey",
+          "model_version_pkey",
+          "subtype_allocation_subtype_count_idx"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Index Scan",
+            "relation": "archetype",
+            "index": "archetype_pkey",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 5,
+            "approximateRowsProcessed": 5,
+            "approximateTotalTimeMs": 0.01,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 15,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Index Scan",
+            "relation": "subtype_allocation",
+            "index": "subtype_allocation_subtype_count_idx",
+            "actualRowsPerLoop": 5,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 5,
+            "approximateTotalTimeMs": 0.002,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 5,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Index Scan",
+            "relation": "model_version",
+            "index": "model_version_pkey",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1,
+            "approximateTotalTimeMs": 0.001,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 2,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 1,
+          "methods": [],
+          "maxSpaceUsedKb": 0,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-06",
+      "name": "archetype_subtype_lineage",
+      "source": "web/src/server/repositories/catalog.ts:getArchetype subtype query",
+      "scope": "subtype/archetype lineage",
+      "params": [
+        "ARC-16-001"
+      ],
+      "metrics": {
+        "planningTimeMs": 0.144,
+        "executionTimeMs": 0.047,
+        "resultRows": 6,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 28,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 11,
+        "nodeCounts": {
+          "Sort": 1,
+          "Nested Loop": 2,
+          "Hash Join": 1,
+          "Bitmap Heap Scan": 1,
+          "Bitmap Index Scan": 1,
+          "Hash": 1,
+          "Seq Scan": 1,
+          "Index Scan": 2,
+          "Memoize": 1
+        },
+        "scanNodeCount": 5,
+        "seqScans": [
+          {
+            "relation": "subtype_definition",
+            "actualRowsPerLoop": 90,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 90,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.008,
+            "sharedHitBlocks": 11
+          }
+        ],
+        "indexesUsed": [
+          "domain_registry_pkey",
+          "model_version_pkey",
+          "subtype_allocation_parent_idx"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Seq Scan",
+            "relation": "subtype_definition",
+            "index": null,
+            "actualRowsPerLoop": 90,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 90,
+            "approximateTotalTimeMs": 0.008,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 11,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Bitmap Heap Scan",
+            "relation": "subtype_allocation",
+            "index": null,
+            "actualRowsPerLoop": 6,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 6,
+            "approximateTotalTimeMs": 0.003,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 3,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Bitmap Index Scan",
+            "relation": null,
+            "index": "subtype_allocation_parent_idx",
+            "actualRowsPerLoop": 6,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 6,
+            "approximateTotalTimeMs": 0.002,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 2,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 1,
+          "methods": [
+            "quicksort"
+          ],
+          "maxSpaceUsedKb": 26,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-07",
+      "name": "comparison_resolve_two_query_results",
+      "source": "web/src/server/repositories/workbench.ts:compareSegments",
+      "scope": "comparison",
+      "params": [
+        [
+          "4e356807-46ca-43a0-81e9-e5ece6837bd3",
+          "5694fcd3-c6bc-4e00-8bfc-19f8f6631276"
+        ]
+      ],
+      "metrics": {
+        "planningTimeMs": 1.49,
+        "executionTimeMs": 0.457,
+        "resultRows": 2,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 175,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 62,
+        "nodeCounts": {
+          "Sort": 8,
+          "Nested Loop": 15,
+          "Function Scan": 1,
+          "Limit": 7,
+          "Append": 1,
+          "Hash Join": 2,
+          "Seq Scan": 3,
+          "Bitmap Heap Scan": 1,
+          "Bitmap Index Scan": 1,
+          "Index Scan": 12,
+          "Memoize": 1,
+          "Subquery Scan": 2,
+          "Hash": 2,
+          "Index Only Scan": 4,
+          "Aggregate": 2
+        },
+        "scanNodeCount": 24,
+        "seqScans": [
+          {
+            "relation": "saved_segment",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 2,
+            "approximateRowsProcessed": 2,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.002,
+            "sharedHitBlocks": 2
+          },
+          {
+            "relation": "segment_query_result",
+            "actualRowsPerLoop": 2,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 2,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.002,
+            "sharedHitBlocks": 1
+          },
+          {
+            "relation": "estimate",
+            "actualRowsPerLoop": 1456,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1456,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.202,
+            "sharedHitBlocks": 152
+          }
+        ],
+        "indexesUsed": [
+          "activation_subtype_idx",
+          "archetype_pkey",
+          "archetype_representative_archetype_id_source_kind_rank_key",
+          "archetype_rule_archetype_id_rule_version_key",
+          "category_pkey",
+          "cluster_definition_pkey",
+          "domain_registry_pkey",
+          "estimate_subject_idx",
+          "saved_segment_pkey",
+          "saved_segment_version_pkey",
+          "segment_query_pkey",
+          "segment_query_result_latest_idx",
+          "segmentation_model_pkey",
+          "subtype_allocation_subtype_count_idx",
+          "subtype_definition_pkey",
+          "subtype_membership_summary_pkey",
+          "subtype_tag_allocation_pkey"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Seq Scan",
+            "relation": "estimate",
+            "index": null,
+            "actualRowsPerLoop": 1456,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1456,
+            "approximateTotalTimeMs": 0.202,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 152,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Bitmap Heap Scan",
+            "relation": "saved_segment_version",
+            "index": null,
+            "actualRowsPerLoop": 1,
+            "actualLoops": 2,
+            "approximateRowsProcessed": 2,
+            "approximateTotalTimeMs": 0.01,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 8,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Subquery Scan",
+            "relation": null,
+            "index": null,
+            "actualRowsPerLoop": 1,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1,
+            "approximateTotalTimeMs": 0.005,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 2,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 8,
+          "methods": [
+            "quicksort"
+          ],
+          "maxSpaceUsedKb": 25,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-08",
+      "name": "persisted_comparison_detail_empty_baseline",
+      "source": "web/src/server/repositories/workbench.ts:getComparison",
+      "scope": "comparison",
+      "params": [
+        "00000000-0000-0000-0000-000000000000"
+      ],
+      "metrics": {
+        "planningTimeMs": 0.31,
+        "executionTimeMs": 0.029,
+        "resultRows": 0,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 2,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 15,
+        "nodeCounts": {
+          "Sort": 1,
+          "Nested Loop": 5,
+          "Index Scan": 5,
+          "Bitmap Heap Scan": 2,
+          "Bitmap Index Scan": 2
+        },
+        "scanNodeCount": 9,
+        "seqScans": [],
+        "indexesUsed": [
+          "comparison_member_comparison_id_query_result_id_key",
+          "comparison_workspace_pkey",
+          "comparison_workspace_recent_idx",
+          "estimate_pkey",
+          "market_estimate_pkey",
+          "segment_query_pkey",
+          "segment_query_result_pkey"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Index Scan",
+            "relation": "comparison_workspace",
+            "index": "comparison_workspace_pkey",
+            "actualRowsPerLoop": 0,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 0,
+            "approximateTotalTimeMs": 0.001,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 2,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 1,
+          "methods": [
+            "quicksort"
+          ],
+          "maxSpaceUsedKb": 25,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-09",
+      "name": "estimate_lineage_list_default",
+      "source": "web/src/server/repositories/workbench.ts:listEstimates",
+      "scope": "estimate list",
+      "params": [
+        null,
+        50,
+        0
+      ],
+      "metrics": {
+        "planningTimeMs": 1.81,
+        "executionTimeMs": 1.511,
+        "resultRows": 50,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 762,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 50,
+        "nodeCounts": {
+          "Limit": 1,
+          "Nested Loop": 15,
+          "Index Scan": 13,
+          "Memoize": 4,
+          "Aggregate": 5,
+          "Sort": 3,
+          "Hash Join": 1,
+          "Seq Scan": 1,
+          "Hash": 1,
+          "Bitmap Heap Scan": 2,
+          "Bitmap Index Scan": 2,
+          "Index Only Scan": 1,
+          "Unique": 1
+        },
+        "scanNodeCount": 19,
+        "seqScans": [
+          {
+            "relation": "assumption",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 1,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.002,
+            "sharedHitBlocks": 1
+          }
+        ],
+        "indexesUsed": [
+          "confidence_assessment_estimate_id_key",
+          "data_source_pkey",
+          "estimate_assumption_pkey",
+          "estimate_component_estimate_id_sequence_key",
+          "estimate_dependency_estimate_id_dependency_kind_dependency__key",
+          "estimate_updated_page_idx",
+          "evidence_pkey",
+          "geography_pkey",
+          "model_version_pkey",
+          "pipeline_run_pkey",
+          "source_release_pkey",
+          "time_period_pkey",
+          "validation_gap_estimate_lineage_idx"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Index Scan",
+            "relation": "confidence_assessment",
+            "index": "confidence_assessment_estimate_id_key",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 50,
+            "approximateRowsProcessed": 50,
+            "approximateTotalTimeMs": 0.2,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 150,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Index Scan",
+            "relation": "estimate_component",
+            "index": "estimate_component_estimate_id_sequence_key",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 50,
+            "approximateRowsProcessed": 50,
+            "approximateTotalTimeMs": 0.05,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 150,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Index Scan",
+            "relation": "estimate_component",
+            "index": "estimate_component_estimate_id_sequence_key",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 50,
+            "approximateRowsProcessed": 50,
+            "approximateTotalTimeMs": 0.05,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 150,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 3,
+          "methods": [
+            "quicksort"
+          ],
+          "maxSpaceUsedKb": 25,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    },
+    {
+      "id": "WB-PERF-10",
+      "name": "estimate_lineage_list_estimated_status",
+      "source": "web/src/server/repositories/workbench.ts:listEstimates",
+      "scope": "estimate list",
+      "params": [
+        "estimated",
+        50,
+        0
+      ],
+      "metrics": {
+        "planningTimeMs": 1.5,
+        "executionTimeMs": 0.828,
+        "resultRows": 17,
+        "rootActualLoops": 1,
+        "buffers": {
+          "sharedHitBlocks": 454,
+          "sharedReadBlocks": 0,
+          "sharedDirtiedBlocks": 0,
+          "sharedWrittenBlocks": 0,
+          "localHitBlocks": 0,
+          "localReadBlocks": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        },
+        "nodeCount": 50,
+        "nodeCounts": {
+          "Limit": 1,
+          "Nested Loop": 15,
+          "Index Scan": 13,
+          "Memoize": 4,
+          "Aggregate": 5,
+          "Sort": 3,
+          "Hash Join": 1,
+          "Seq Scan": 1,
+          "Hash": 1,
+          "Bitmap Heap Scan": 2,
+          "Bitmap Index Scan": 2,
+          "Index Only Scan": 1,
+          "Unique": 1
+        },
+        "scanNodeCount": 19,
+        "seqScans": [
+          {
+            "relation": "assumption",
+            "actualRowsPerLoop": 2,
+            "actualLoops": 1,
+            "approximateRowsProcessed": 2,
+            "rowsRemovedByFilter": 0,
+            "approximateTotalTimeMs": 0.002,
+            "sharedHitBlocks": 1
+          }
+        ],
+        "indexesUsed": [
+          "confidence_assessment_estimate_id_key",
+          "data_source_pkey",
+          "estimate_assumption_pkey",
+          "estimate_component_estimate_id_sequence_key",
+          "estimate_dependency_estimate_id_dependency_kind_dependency__key",
+          "estimate_status_updated_page_idx",
+          "evidence_pkey",
+          "geography_pkey",
+          "model_version_pkey",
+          "pipeline_run_pkey",
+          "source_release_pkey",
+          "time_period_pkey",
+          "validation_gap_estimate_lineage_idx"
+        ],
+        "scanHotspots": [
+          {
+            "nodeType": "Index Scan",
+            "relation": "confidence_assessment",
+            "index": "confidence_assessment_estimate_id_key",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 17,
+            "approximateRowsProcessed": 17,
+            "approximateTotalTimeMs": 0.085,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 51,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Index Scan",
+            "relation": "estimate_component",
+            "index": "estimate_component_estimate_id_sequence_key",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 17,
+            "approximateRowsProcessed": 17,
+            "approximateTotalTimeMs": 0.017,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 51,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          },
+          {
+            "nodeType": "Index Scan",
+            "relation": "estimate_component",
+            "index": "estimate_component_estimate_id_sequence_key",
+            "actualRowsPerLoop": 1,
+            "actualLoops": 17,
+            "approximateRowsProcessed": 17,
+            "approximateTotalTimeMs": 0.017,
+            "rowsRemovedByFilter": 0,
+            "rowsRemovedByJoinFilter": 0,
+            "sharedHitBlocks": 51,
+            "sharedReadBlocks": 0,
+            "tempReadBlocks": 0,
+            "tempWrittenBlocks": 0,
+            "sortMethod": null,
+            "sortSpaceUsedKb": null,
+            "sortSpaceType": null
+          }
+        ],
+        "sorts": {
+          "count": 3,
+          "methods": [
+            "quicksort"
+          ],
+          "maxSpaceUsedKb": 25,
+          "diskSpillCount": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0
+        }
+      }
+    }
+  ]
+}

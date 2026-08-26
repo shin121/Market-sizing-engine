@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-25T13:50:49.812Z",
+  "overallStatus": "implementation_verified_through_001_018_on_disposable_clone_with_baseline_provenance_gap_and_live_research_pending",
+  "statusVocabulary": {
+    "PROVED": "Implementation evidence exists and the latest verification requirement records the current combined matrix.",
+    "PROVED_NOT_ESTIMABLE": "Missing evidence is represented as null or unavailable with an explicit reason, not as zero or fabricated data.",
+    "PENDING_EXTERNAL": "An explicitly authorized external provider or network action is required.",
+    "GAP": "Evidence is incomplete or a required acceptance item remains unavailable."
+  },
+  "summary": {
+    "PROVED": 23,
+    "PROVED_NOT_ESTIMABLE": 4,
+    "PENDING_EXTERNAL": 1,
+    "GAP": 2
+  },
+  "referenceDesign": {
+    "path": "/Users/woocheolshin/Downloads/Market_Atlas_Final.html",
+    "sha256": "1e0614ae23c7413ab7d6c4dcf9a5771a1826fcb864f23b65ba6bf75aba0470a5",
+    "usage": "Visual concept and navigation flow only; hardcoded markets, random bars, mixed units, and in-memory calculations are excluded."
+  },
+  "schemaBoundary": {
+    "sourceMigrations": "001-018",
+    "phase2BaseTables": 58,
+    "expectedFinalBaseTables": 90,
+    "expectedWorkbenchViews": 17,
+    "latestCleanReapplyVerified": true,
+    "verificationState": "passed",
+    "cleanReapply": "Initial application and full reapplication through 018 passed at 90 base tables/17 views, including the stateful 010 fixture, 017 Opportunity snapshot fixture, and 018 release-boundary fixture.",
+    "originalPopulatedDatabase": {
+      "name": "market_engine",
+      "migration": "016",
+      "baseTables": 90,
+      "views": 12,
+      "migrations017And018Applied": false,
+      "untouched": true
+    },
+    "verificationClone": {
+      "name": "market_engine_goal_verify_018",
+      "migration": "018",
+      "baseTables": 90,
+      "views": 17,
+      "opportunityLinks": 109,
+      "rawComparisonFingerprintPreserved": true,
+      "legacyHumanBaseBelow10ProjectedSuppressed": 2,
+      "protectedOrMinorQueryableConditions": 0
+    },
+    "migration017": {
+      "name": "017_opportunity_snapshot_invariants.sql",
+      "addsTables": 0,
+      "addsViews": 0,
+      "contract": "At most one primary target, exact pinned query/result/saved-version/market-scenario lineage, append-only primary links, and restricted runtime privileges."
+    },
+    "migration018": {
+      "name": "018_release_safe_read_boundary.sql",
+      "addsTables": 0,
+      "addsViews": 5,
+      "finalViews": 17,
+      "contract": "Five canonical release-safe projections and seven downstream view replacements suppress unsafe human Base below 10 and fail closed on protected, minor, invalid, or unclassifiable release data without changing base rows."
+    }
+  },
+  "baselineEvidenceGap": {
+    "baselineVerifier": "17/18 FAILED",
+    "phase2DefinitionOfDone": {
+      "passed": 29,
+      "failed": 0,
+      "unavailable": 1,
+      "total": 30
+    },
+    "onlyUnavailableItem": "Historical Nemotron direct-acquisition execution provenance cannot be established from current files, manifests, checksums, and the no-input fetch path.",
+    "integrityBoundary": "This does not contradict the verified 1,000,000 rows, nine fixed shards, checksums, catalog counts, or 46/46 engine validation."
+  },
+  "requirements": [
+    {"id":"BASE-01","phase":"baseline","status":"GAP","claim":"Phase 1-2 rows, checksums, model outputs, and counts remain preserved through additive migration source 018; the original populated database remains untouched at 016. The live Phase 2 DoD audit is 29 passed/0 failed/1 unavailable because historical Nemotron direct-acquisition execution provenance is not established.","evidence":["reports/phase3_baseline_verification.json","src/market_engine/phase2_dod_verifier.py","migrations/017_opportunity_snapshot_invariants.sql","migrations/018_release_safe_read_boundary.sql"]},
+    {"id":"DATA-01","phase":"explorer","status":"PROVED","claim":"The PostgreSQL registry exposes 24/384/480/240/24/90/450/1440/90 catalog objects from database rows.","evidence":["migrations/004_workbench_read_models.sql","web/tests/integration/postgres-baseline.test.ts","web/tests/e2e/workbench.spec.ts"]},
+    {"id":"DATA-02","phase":"explorer","status":"PROVED_NOT_ESTIMABLE","claim":"Missing distributions, evidence-limited metrics, unsupported axis-to-subtype relationships, and withheld release values remain null with explicit reasons.","evidence":["web/src/components/workbench-views.tsx","migrations/018_release_safe_read_boundary.sql","web/tests/e2e/workbench.spec.ts"]},
+    {"id":"UI-01","phase":"ui","status":"PROVED","claim":"The reference HTML concept is reimplemented in React without importing its fake values.","evidence":["web/src/components/catalog-views.tsx","web/src/components/workbench-views.tsx","web/src/app/globals.css"]},
+    {"id":"UI-02","phase":"ui","status":"PROVED","claim":"Current typecheck, zero-warning lint, 44 unit files/261 tests, production build, and three-profile Playwright 22 passed/5 intended skips all passed; mobile navigation and search retain accessible explicit controls.","evidence":["web/tests/e2e/workbench.spec.ts","web/tests/unit","web/src/components/shell.tsx"]},
+    {"id":"DB-01","phase":"database","status":"PROVED","claim":"Migration tooling clean-applies and fully reapplies additive migrations 001-018 at 90 tables/17 views, including the stateful 010, Opportunity 017, and release-boundary 018 fixtures.","evidence":["scripts/test_postgres.sh","migrations/017_opportunity_snapshot_invariants.sql","migrations/018_release_safe_read_boundary.sql"]},
+    {"id":"DB-02","phase":"database","status":"PROVED","claim":"A populated disposable clone reached 018/90/17 with 109 Opportunity links and its raw comparison fingerprint preserved. The original populated market_engine database remains deliberately untouched at 016/90/12.","evidence":["scripts/test_postgres.sh","tests/fixtures/postgres_017_opportunity_snapshot_invariants.sql","tests/fixtures/postgres_018_release_safe_read_boundary.sql"]},
+    {"id":"SEC-01","phase":"security","status":"PROVED","claim":"Workspace isolation, guarded condition enforcement, Opportunity link privileges, and canonical release-safe projections are enforced. The projection is a trusted-application read boundary, not denial of every raw-table SELECT.","evidence":["migrations/008_requirement_completion_hardening.sql","migrations/017_opportunity_snapshot_invariants.sql","migrations/018_release_safe_read_boundary.sql","web/tests/integration/repos.db.test.ts"]},
+    {"id":"SEC-02","phase":"security","status":"PROVED","claim":"Approved factor/source rows form a reviewer-scoped, RLS-protected, atomic immutable snapshot; the resulting release remains unpublished without a governed publication transaction.","evidence":["migrations/009_approved_research_factor.sql","migrations/012_approved_research_factor_snapshot_hardening.sql"]},
+    {"id":"BLD-01","phase":"builder","status":"PROVED","claim":"Persisted AND/OR/NOT snapshots use ancestor-aware effective enabled state, reject malformed or unknown tokens and empty enabled groups, and restrict exact reuse to matching supported references.","evidence":["web/src/domain/segment.ts","web/src/server/services/segment-workflow.ts","web/tests/integration/workbench-durable-workflow.test.ts"]},
+    {"id":"SIZ-01","phase":"sizing","status":"PROVED","claim":"Ordered unit-safe Low/Base/High TAM/SAM/SOM supports entity-only scenarios and exact explicit scenario selection by active scenario ID and positive safe version. JSON/CSV/print preserve scenario ID, version, and selection mode.","evidence":["web/src/domain/market-sizing.ts","web/src/domain/market-scenario-selection.ts","web/src/server/repositories/workbench.ts","web/tests/unit/market-scenario-selection.test.ts"]},
+    {"id":"SIZ-02","phase":"sizing","status":"PROVED_NOT_ESTIMABLE","claim":"Unsupported joints and invalid, inactive, cross-estimate, cross-workspace, or malformed explicit scenarios fail closed with structured gaps and no fallback.","evidence":["web/src/server/services/segment-workflow.ts","web/src/domain/market-scenario-selection.ts","web/tests/e2e/workbench.spec.ts"]},
+    {"id":"CACHE-01","phase":"cache","status":"PROVED","claim":"Only valid result hashes are unique/reusable and invalidation permits a fresh immutable snapshot.","evidence":["migrations/008_requirement_completion_hardening.sql","web/tests/integration/workbench-durable-workflow.test.ts"]},
+    {"id":"CACHE-02","phase":"cache","status":"PROVED","claim":"Approval invalidation requires a materialized calculation dependency and affected segments; the current standalone approved factor remains unpublished and does not trigger replacement estimates.","evidence":["web/src/server/services/research-workflow.ts"]},
+    {"id":"RES-01","phase":"research","status":"PROVED","claim":"Durable queue states and truthful configuration_required behavior exist while the provider gate is disabled.","evidence":["web/src/server/services/research-workflow.ts","web/src/worker/research-worker.ts","web/tests/e2e/workbench.spec.ts"]},
+    {"id":"RES-02","phase":"research","status":"PROVED","claim":"Research output has strict source indexes and deterministic 12-component confidence, with accepted URLs bound to completed web-search call provenance inside the hashed artifact.","evidence":["web/src/contracts/research.ts","web/src/domain/confidence.ts","web/src/server/ai/openai-research-adapter.ts","web/src/server/services/research-workflow.ts"]},
+    {"id":"RES-03","phase":"research","status":"PROVED","claim":"Provider output is capped at 12000 tokens, input at 128 KiB, output at 256 KiB, with bounded schema strings and arrays.","evidence":["web/src/server/ai/openai-research-adapter.ts","web/src/contracts/research.ts","web/tests/unit/research-contract.test.ts"]},
+    {"id":"REV-01","phase":"review","status":"PROVED","claim":"Human approval creates an approved unpublished workspace release without baseline overwrite.","evidence":["web/src/server/services/research-workflow.ts","migrations/008_requirement_completion_hardening.sql"]},
+    {"id":"REV-02","phase":"review","status":"PROVED","claim":"Reviewed numeric research is materialized as an atomic typed factor/source snapshot, never as an estimate count.","evidence":["web/src/server/services/research-materialization.ts","migrations/009_approved_research_factor.sql","migrations/012_approved_research_factor_snapshot_hardening.sql"]},
+    {"id":"REV-03","phase":"review","status":"PROVED","claim":"Current populated-clone integration passed 6 files/44 tests. The separately retained post-016 gated review/materialization browser case passed 1/1 without an external provider call.","evidence":["web/tests/integration/workbench-durable-workflow.test.ts","web/tests/integration/repos.db.test.ts","web/tests/e2e/workbench.spec.ts"]},
+    {"id":"REV-04","phase":"review","status":"PROVED_NOT_ESTIMABLE","claim":"Without a governed publication and reviewed calculation dependency target, a standalone prevalence factor intentionally creates neither replacement estimate counts nor invalidation.","evidence":["web/src/server/services/research-materialization.ts","web/src/server/services/research-workflow.ts"]},
+    {"id":"LIVE-01","phase":"research","status":"PENDING_EXTERNAL","claim":"One credentialed Research Job E2E is required, but no external call has been made and the exact approval phrase has not been received.","required":"Receive exactly `위 payload 그대로 외부 호출 승인.`, run exactly one sanitized provider job to needs_review, complete human review/materialization, and verify baseline isolation."},
+    {"id":"CMP-01","phase":"comparison","status":"PROVED","claim":"Two to five unique segments are compared without unit mixing through release-safe reads. Comparison behavior remains exact-one-active-scenario; zero or multiple active scenarios fail closed even though estimate detail/export now supports explicit scenario selection.","evidence":["web/src/server/repositories/workbench.ts","migrations/018_release_safe_read_boundary.sql","web/tests/unit/comparison-view.test.tsx"]},
+    {"id":"CMP-02","phase":"comparison","status":"PROVED_NOT_ESTIMABLE","claim":"Unsupported or withheld comparison variables remain null with metric-specific explanations.","evidence":["web/src/server/services/workbench-mutations.ts","web/tests/e2e/workbench.spec.ts"]},
+    {"id":"OPP-01","phase":"opportunity","status":"PROVED","claim":"Opportunities pin canonical snapshots, enforce at most one immutable primary target and exact lineage, use optimistic expected-version locking, and require enabled feature/behavior provenance for AI hypotheses.","evidence":["migrations/017_opportunity_snapshot_invariants.sql","web/src/server/services/workbench-mutations.ts","web/src/server/services/research-workflow.ts","web/tests/integration/workbench-durable-workflow.test.ts"]},
+    {"id":"EXPORT-01","phase":"export","status":"PROVED","claim":"Bounded JSON, semantic CSV, and printable outputs preserve provenance and explicit scenario metadata while consuming release-safe projections and neutralizing spreadsheet formulas.","evidence":["migrations/018_release_safe_read_boundary.sql","web/src/app/api/exports/[snapshotId]/route.ts","web/tests/unit/export-response-limits.test.ts"]},
+    {"id":"PERF-01","phase":"performance","status":"PROVED","claim":"The final read-only warm-cache audit on the populated 018 clone measured 10 queries, 8 under 3 ms, maximum 24.128 ms, and zero over-50-ms, physical-read, or temp-spill cases. WB-PERF-09 improved from the immediate pre-fix 53.005 ms/51,819 hits to 2.362 ms/1,849 hits.","evidence":["scripts/audit_workbench_performance.cjs","reports/phase3_workbench_performance.json"]},
+    {"id":"REPRO-01","phase":"reproducibility","status":"PROVED","claim":"Saved results and scenarios retain immutable revisions and exact lineage; explicit scenario selection pins ID/version, and Opportunity primary links are append-only under migration 017.","evidence":["migrations/010_reproducible_workbench_snapshots.sql","migrations/011_lineage_integrity_guards.sql","migrations/017_opportunity_snapshot_invariants.sql","web/src/domain/market-scenario-selection.ts"]},
+    {"id":"VERIFY-01","phase":"verification","status":"GAP","claim":"Current implementation gates passed through source/clone 018: Python 67, CLI 46/46, SQL initial/full reapply 90/17, integration 6 files/44, typecheck/lint, unit 44 files/261, build, E2E 22/5 intended skips, and performance max 24.128 ms. The combined matrix remains GAP solely because the baseline verifier is 17/18 FAILED from unavailable historical acquisition provenance; live research is separately pending.","evidence":["docs/21_workbench_verification.md","reports/phase3_workbench_verification.json","reports/phase3_workbench_performance.json"]},
+    {"id":"DOC-01","phase":"documentation","status":"PROVED","claim":"The handoff distinguishes source and clone 018/90/17 from the untouched original populated database at 016/90/12, preserves historical snapshots, and discloses privacy, holdout, publication, deployment, and live-provider limits.","evidence":["docs/16_workbench_architecture.md","docs/18_workbench_data_dictionary.md","docs/19_research_workflow.md","docs/20_workbench_operations.md","docs/21_workbench_verification.md","docs/22_workbench_risks_phase8.md","PLANS.md"]}
+  ],
+  "externalResearch": {
+    "liveRun": false,
+    "authorizationRequired": true,
+    "exactApprovalPhrase": "위 payload 그대로 외부 호출 승인.",
+    "approvalPhraseReceived": false,
+    "postApprovalAcceptance": "Exactly one credentialed Research Job must reach needs_review, be human-reviewed/materialized, and verify baseline isolation.",
+    "payload": {
+      "researchQuestion": "대한민국 소상공인 중 온라인 판매채널 보유율의 최신 공공 근거와 Low/Base/High 범위를 조사해줘",
+      "targetSegment": "대한민국 소상공인",
+      "targetVariable": "online_sales_channel_prevalence",
+      "baseline": {}
+    }
+  },
+  "requiredCommands": [
+    ".venv/bin/python -m pytest",
+    ".venv/bin/python -m market_engine.cli.main validate",
+    "./scripts/test_postgres.sh",
+    "cd web && npm run typecheck",
+    "cd web && npm run lint",
+    "cd web && npm run test:unit",
+    "cd web && RUN_DATABASE_INTEGRATION=1 npm run test:integration",
+    "cd web && npm run test:e2e",
+    "cd web && npm run build",
+    "NODE_PATH=web/node_modules node scripts/audit_workbench_performance.cjs"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "reconciliation_max_relative_error": 2.5937624477797446e-14,
+  "calibration_aggregation_mape": 0.00045946054247458123,
+  "calibration_aggregation_tolerance_coverage": 1.0,
+  "calibration_aggregation_tolerance_persons": 1000,
+  "calibration_aggregation_max_absolute_error": 1000,
+  "calibration_aggregation_rows": 8,
+  "independent_holdout_status": "not_available",
+  "independent_holdout_reason": "Age-band totals are deterministic sums of the same age-band × sex calibration controls; no observations were separated for out-of-sample evaluation.",
+  "reconciliation_rows": 10
+}

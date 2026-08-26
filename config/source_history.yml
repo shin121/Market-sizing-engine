@@ -1,0 +1,11 @@
+{
+  "source_id":"SRC-MOIS-RESIDENT-AGE",
+  "universe":"resident_registration_excludes_foreigners",
+  "releases":[
+    {"year":2020,"period":"2020-12-31","file":"data/raw/mois_age_2020_12_0_18.html","sha256":"6ba04968de0abf4cd5e69e01359a4f3a378565a219a8f9cb6822949e2af53952"},
+    {"year":2021,"period":"2021-12-31","file":"data/raw/mois_age_2021_12_0_18.html","sha256":"6a2637e13090670562f7610cdca30883e0917dbf2830c20173239c441b635b8b"},
+    {"year":2022,"period":"2022-12-31","file":"data/raw/mois_age_2022_12_0_18.html","sha256":"9b159fc3ac269c59e26a952780f046a2676a8309e7c740db1ee59a1882fc8155"},
+    {"year":2023,"period":"2023-12-31","file":"data/raw/mois_age_2023_12_0_18.html","sha256":"40349dcb704df651f0eaf862dd9efdc92079c7ae5819adb2b8fd559ef70fa273"},
+    {"year":2024,"period":"2024-12-31","file":"data/raw/mois_age_2024_12_0_18.html","sha256":"5538925fb74e1a7fcd5a4156b86e013e7924293438e4711650df4d91bdf34509"}
+  ]
+}

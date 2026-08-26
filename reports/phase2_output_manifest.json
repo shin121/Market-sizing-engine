@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-08-24T17:13:58.098707+00:00",
+  "model_version": "kr-v0.2.1",
+  "outputs": {
+    "phase2_domains.csv": "data/exports/phase2_domains.csv",
+    "phase2_dimensions.csv": "data/exports/phase2_dimensions.csv",
+    "phase2_features.csv": "data/exports/phase2_features.csv",
+    "phase2_behaviors.csv": "data/exports/phase2_behaviors.csv",
+    "phase2_model_registry.csv": "data/exports/phase2_model_registry.csv",
+    "phase2_subtypes.csv": "data/exports/phase2_subtypes.csv",
+    "phase2_parent_allocations.csv": "data/exports/phase2_parent_allocations.csv",
+    "phase2_required_parent_cases.csv": "data/exports/phase2_required_parent_cases.csv",
+    "phase2_required_parent_case_allocations.csv": "data/exports/phase2_required_parent_case_allocations.csv",
+    "phase2_subtype_confidence.csv": "data/exports/phase2_subtype_confidence.csv",
+    "phase2_domain_associations.csv": "data/exports/phase2_domain_associations.csv",
+    "phase2_acceptance_results.csv": "data/exports/phase2_acceptance_results.csv",
+    "phase2_subtype_profiles.jsonl": "data/exports/phase2_subtype_profiles.jsonl",
+    "phase2_activation_profiles.jsonl": "data/exports/phase2_activation_profiles.jsonl",
+    "phase2_models.jsonl": "data/exports/phase2_models.jsonl",
+    "domain_coverage_matrix.md": "reports/domain_coverage_matrix.md",
+    "cross_domain_association_report.md": "reports/cross_domain_association_report.md",
+    "phase2_model_cards.md": "reports/phase2_model_cards.md",
+    "phase2_summary.md": "reports/phase2_summary.md",
+    "phase2_dod_audit.json": "reports/phase2_dod_audit.json",
+    "15_phase2_dod_audit.md": "docs/15_phase2_dod_audit.md",
+    "phase2_output_manifest.json": "reports/phase2_output_manifest.json"
+  }
+}

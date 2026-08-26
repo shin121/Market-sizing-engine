@@ -1,0 +1,17 @@
+{
+  "dataset":"nvidia/Nemotron-Personas-Korea",
+  "version":"1.0",
+  "license":"CC BY 4.0",
+  "expected_rows":1000000,
+  "shards":[
+    {"file":"train-00000-of-00009.parquet","sha256":"5f447553b9e30ac98631af17f2274780586fbd5e2705125b8f3a49fe2af037b2"},
+    {"file":"train-00001-of-00009.parquet","sha256":"332ade7365bd842838de6295e15f4457d0050b4792b33a8330b3b8a39a6dfc3b"},
+    {"file":"train-00002-of-00009.parquet","sha256":"65d4860663fab1ff4166f5db4eb96fc39e84ccc952391ab36437d0373bc6d5f1"},
+    {"file":"train-00003-of-00009.parquet","sha256":"d94a0f221edd1e70e28d7e19acf9b9f4cfa315b630f51607b28b06498a28591b"},
+    {"file":"train-00004-of-00009.parquet","sha256":"c31efb3b3f0ef6405956683a9a6fb99276dea2c16b22efe883555a31ff05b3ed"},
+    {"file":"train-00005-of-00009.parquet","sha256":"e95979de298ffecac1db437401baf19e3bdae16355fcd5a54320c63290c3e07f"},
+    {"file":"train-00006-of-00009.parquet","sha256":"5b0fc5fd097bd9c82be9f6c9ff57eddee314226eabe820f83e2426bed34e40ff"},
+    {"file":"train-00007-of-00009.parquet","sha256":"73a4178828b9d08cd44b141c3c0da2d69521a8fa9cd22194868d07c36f0a6680"},
+    {"file":"train-00008-of-00009.parquet","sha256":"e32faf2717f7b9634ff38d62b175f9d9817b1eee797c043032b3dc2d8d055fe6"}
+  ]
+}

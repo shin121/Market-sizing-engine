@@ -1,0 +1,15 @@
+{
+  "name":"대한민국 홈페이지 미보유 60대 음식점 소상공인 기업체",
+  "entity_unit":"enterprise",
+  "geography":{"level":"country","codes":["KR"]},
+  "as_of":"latest",
+  "where":{"and":[
+    {"feature":"industry_code","op":"in","value":["I56"]},
+    {"feature":"owner_age","op":"between","value":[60,69]},
+    {"feature":"has_website","op":"eq","value":false}
+  ]},
+  "return_related_units":["person","establishment"],
+  "uncertainty":true,
+  "explain":true
+}
+

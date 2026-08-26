@@ -1,0 +1,481 @@
+domain_feature_id,domain_id,dimension_id,feature_code,label_ko,data_type,allowed_values_json,observable_status,targetability_class,queryable
+DOM-01-FEAT-01,DOM-01,DOM-01-DIM-01,music_audio.object,음악·오디오 object,category,"[""대중음악"",""인디·장르음악"",""팟캐스트·토크"",""아티스트·팬덤""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-02,DOM-01,DOM-01-DIM-02,music_audio.format,음악·오디오 format,category,"[""스트리밍"",""뮤직비디오·숏폼"",""피지컬 음반"",""공연·라이브""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-03,DOM-01,DOM-01-DIM-03,music_audio.occasion,음악·오디오 occasion,category,"[""이동·통근"",""집중·업무"",""휴식·기분전환"",""팬 활동""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-04,DOM-01,DOM-01-DIM-04,music_audio.location,음악·오디오 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-05,DOM-01,DOM-01-DIM-05,music_audio.frequency_intensity,음악·오디오 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-06,DOM-01,DOM-01-DIM-06,music_audio.discovery,음악·오디오 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-07,DOM-01,DOM-01-DIM-07,music_audio.acquisition_access,음악·오디오 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-08,DOM-01,DOM-01-DIM-08,music_audio.consumption_mode,음악·오디오 consumption_mode,category,"[""배경 청취"",""능동 탐색"",""소셜 공유"",""창작·연주""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-09,DOM-01,DOM-01-DIM-09,music_audio.device_channel_platform,음악·오디오 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-10,DOM-01,DOM-01-DIM-10,music_audio.payment_monetization,음악·오디오 payment_monetization,category,"[""무료·광고형"",""구독"",""곡·앨범 구매"",""공연·굿즈""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-11,DOM-01,DOM-01-DIM-11,music_audio.decision_unit,음악·오디오 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-12,DOM-01,DOM-01-DIM-12,music_audio.engagement_participation,음악·오디오 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-13,DOM-01,DOM-01-DIM-13,music_audio.motivation_job,음악·오디오 motivation_job,category,"[""기분 조절"",""새 음악 발견"",""정체성 표현"",""아티스트 지지""]",inferred_hypothesis,contextual_only,true
+DOM-01-FEAT-14,DOM-01,DOM-01-DIM-14,music_audio.barrier_risk_trust,음악·오디오 barrier_risk_trust,category,"[""구독 피로"",""추천 편향"",""가격 부담"",""티켓·권리 신뢰""]",inferred_hypothesis,contextual_only,true
+DOM-01-FEAT-15,DOM-01,DOM-01-DIM-15,music_audio.loyalty_switching,음악·오디오 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-16,DOM-01,DOM-01-DIM-16,music_audio.spending_value,음악·오디오 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-01-FEAT-17,DOM-01,,music_audio.recency,음악·오디오 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-01-FEAT-18,DOM-01,,music_audio.lifecycle_stage,음악·오디오 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-01-FEAT-19,DOM-01,,music_audio.need_state,음악·오디오 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-01-FEAT-20,DOM-01,,music_audio.evidence_strength,음악·오디오 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-02-FEAT-01,DOM-02,DOM-02-DIM-01,video_ott.object,영상·OTT object,category,"[""드라마"",""영화"",""예능"",""다큐·정보""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-02,DOM-02,DOM-02-DIM-02,video_ott.format,영상·OTT format,category,"[""장편 VOD"",""숏폼"",""라이브"",""클립·하이라이트""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-03,DOM-02,DOM-02-DIM-03,video_ott.occasion,영상·OTT occasion,category,"[""퇴근 후"",""주말 몰아보기"",""이동 중"",""가족 공동시청""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-04,DOM-02,DOM-02-DIM-04,video_ott.location,영상·OTT location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-05,DOM-02,DOM-02-DIM-05,video_ott.frequency_intensity,영상·OTT frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-06,DOM-02,DOM-02-DIM-06,video_ott.discovery,영상·OTT discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-07,DOM-02,DOM-02-DIM-07,video_ott.acquisition_access,영상·OTT acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-08,DOM-02,DOM-02-DIM-08,video_ott.consumption_mode,영상·OTT consumption_mode,category,"[""몰입 시청"",""배경 재생"",""동시 시청"",""리뷰·공유""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-09,DOM-02,DOM-02-DIM-09,video_ott.device_channel_platform,영상·OTT device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-10,DOM-02,DOM-02-DIM-10,video_ott.payment_monetization,영상·OTT payment_monetization,category,"[""무료·광고형"",""단일 구독"",""묶음 구독"",""건별 대여·구매""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-11,DOM-02,DOM-02-DIM-11,video_ott.decision_unit,영상·OTT decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-12,DOM-02,DOM-02-DIM-12,video_ott.engagement_participation,영상·OTT engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-13,DOM-02,DOM-02-DIM-13,video_ott.motivation_job,영상·OTT motivation_job,category,"[""서사 몰입"",""휴식"",""화제 참여"",""정보 습득""]",inferred_hypothesis,contextual_only,true
+DOM-02-FEAT-14,DOM-02,DOM-02-DIM-14,video_ott.barrier_risk_trust,영상·OTT barrier_risk_trust,category,"[""구독 중복"",""탐색 피로"",""스포일러"",""콘텐츠 신뢰""]",inferred_hypothesis,contextual_only,true
+DOM-02-FEAT-15,DOM-02,DOM-02-DIM-15,video_ott.loyalty_switching,영상·OTT loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-16,DOM-02,DOM-02-DIM-16,video_ott.spending_value,영상·OTT spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-02-FEAT-17,DOM-02,,video_ott.recency,영상·OTT 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-02-FEAT-18,DOM-02,,video_ott.lifecycle_stage,영상·OTT 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-02-FEAT-19,DOM-02,,video_ott.need_state,영상·OTT 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-02-FEAT-20,DOM-02,,video_ott.evidence_strength,영상·OTT 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-03-FEAT-01,DOM-03,DOM-03-DIM-01,gaming_esports.object,게임·e스포츠 object,category,"[""모바일 게임"",""PC·콘솔 게임"",""e스포츠"",""보드·소셜 게임""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-02,DOM-03,DOM-03-DIM-02,gaming_esports.format,게임·e스포츠 format,category,"[""짧은 세션"",""장기 캠페인"",""경쟁전"",""관전·스트리밍""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-03,DOM-03,DOM-03-DIM-03,gaming_esports.occasion,게임·e스포츠 occasion,category,"[""틈새 시간"",""저녁 여가"",""친구 모임"",""대회·시즌""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-04,DOM-03,DOM-03-DIM-04,gaming_esports.location,게임·e스포츠 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-05,DOM-03,DOM-03-DIM-05,gaming_esports.frequency_intensity,게임·e스포츠 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-06,DOM-03,DOM-03-DIM-06,gaming_esports.discovery,게임·e스포츠 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-07,DOM-03,DOM-03-DIM-07,gaming_esports.acquisition_access,게임·e스포츠 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-08,DOM-03,DOM-03-DIM-08,gaming_esports.consumption_mode,게임·e스포츠 consumption_mode,category,"[""솔로 플레이"",""협동"",""경쟁"",""관전·커뮤니티""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-09,DOM-03,DOM-03-DIM-09,gaming_esports.device_channel_platform,게임·e스포츠 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-10,DOM-03,DOM-03-DIM-10,gaming_esports.payment_monetization,게임·e스포츠 payment_monetization,category,"[""무료 플레이"",""패키지 구매"",""시즌패스·구독"",""아이템·후원""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-11,DOM-03,DOM-03-DIM-11,gaming_esports.decision_unit,게임·e스포츠 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-12,DOM-03,DOM-03-DIM-12,gaming_esports.engagement_participation,게임·e스포츠 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-13,DOM-03,DOM-03-DIM-13,gaming_esports.motivation_job,게임·e스포츠 motivation_job,category,"[""성취"",""사회적 연결"",""도피·휴식"",""숙련·경쟁""]",inferred_hypothesis,contextual_only,true
+DOM-03-FEAT-14,DOM-03,DOM-03-DIM-14,gaming_esports.barrier_risk_trust,게임·e스포츠 barrier_risk_trust,category,"[""시간 부족"",""과금 불신"",""유해행동"",""기기 비용""]",inferred_hypothesis,contextual_only,true
+DOM-03-FEAT-15,DOM-03,DOM-03-DIM-15,gaming_esports.loyalty_switching,게임·e스포츠 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-16,DOM-03,DOM-03-DIM-16,gaming_esports.spending_value,게임·e스포츠 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-03-FEAT-17,DOM-03,,gaming_esports.recency,게임·e스포츠 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-03-FEAT-18,DOM-03,,gaming_esports.lifecycle_stage,게임·e스포츠 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-03-FEAT-19,DOM-03,,gaming_esports.need_state,게임·e스포츠 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-03-FEAT-20,DOM-03,,gaming_esports.evidence_strength,게임·e스포츠 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-04-FEAT-01,DOM-04,DOM-04-DIM-01,reading_webtoon.object,독서·웹툰 object,category,"[""단행본"",""전자책"",""웹툰·웹소설"",""전문·학습서""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-02,DOM-04,DOM-04-DIM-02,reading_webtoon.format,독서·웹툰 format,category,"[""종이책"",""앱 연재"",""오디오북"",""요약·리뷰""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-03,DOM-04,DOM-04-DIM-03,reading_webtoon.occasion,독서·웹툰 occasion,category,"[""취침 전"",""이동 중"",""학습·업무"",""주말 몰입""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-04,DOM-04,DOM-04-DIM-04,reading_webtoon.location,독서·웹툰 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-05,DOM-04,DOM-04-DIM-05,reading_webtoon.frequency_intensity,독서·웹툰 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-06,DOM-04,DOM-04-DIM-06,reading_webtoon.discovery,독서·웹툰 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-07,DOM-04,DOM-04-DIM-07,reading_webtoon.acquisition_access,독서·웹툰 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-08,DOM-04,DOM-04-DIM-08,reading_webtoon.consumption_mode,독서·웹툰 consumption_mode,category,"[""정독"",""연재 추적"",""듣기"",""토론·리뷰""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-09,DOM-04,DOM-04-DIM-09,reading_webtoon.device_channel_platform,독서·웹툰 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-10,DOM-04,DOM-04-DIM-10,reading_webtoon.payment_monetization,독서·웹툰 payment_monetization,category,"[""도서관·무료"",""구독"",""권·회차 구매"",""소장 구매""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-11,DOM-04,DOM-04-DIM-11,reading_webtoon.decision_unit,독서·웹툰 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-12,DOM-04,DOM-04-DIM-12,reading_webtoon.engagement_participation,독서·웹툰 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-13,DOM-04,DOM-04-DIM-13,reading_webtoon.motivation_job,독서·웹툰 motivation_job,category,"[""지식 습득"",""서사 몰입"",""자기계발"",""취향 탐색""]",inferred_hypothesis,contextual_only,true
+DOM-04-FEAT-14,DOM-04,DOM-04-DIM-14,reading_webtoon.barrier_risk_trust,독서·웹툰 barrier_risk_trust,category,"[""시간 부족"",""완독 부담"",""플랫폼 잠금"",""가격 부담""]",inferred_hypothesis,contextual_only,true
+DOM-04-FEAT-15,DOM-04,DOM-04-DIM-15,reading_webtoon.loyalty_switching,독서·웹툰 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-16,DOM-04,DOM-04-DIM-16,reading_webtoon.spending_value,독서·웹툰 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-04-FEAT-17,DOM-04,,reading_webtoon.recency,독서·웹툰 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-04-FEAT-18,DOM-04,,reading_webtoon.lifecycle_stage,독서·웹툰 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-04-FEAT-19,DOM-04,,reading_webtoon.need_state,독서·웹툰 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-04-FEAT-20,DOM-04,,reading_webtoon.evidence_strength,독서·웹툰 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-05-FEAT-01,DOM-05,DOM-05-DIM-01,culture_events.object,문화예술·행사 object,category,"[""공연예술"",""전시·박물관"",""지역축제"",""체험 행사""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-02,DOM-05,DOM-05-DIM-02,culture_events.format,문화예술·행사 format,category,"[""현장 관람"",""도슨트·가이드"",""온라인 중계"",""워크숍""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-03,DOM-05,DOM-05-DIM-03,culture_events.occasion,문화예술·행사 occasion,category,"[""주말 나들이"",""데이트"",""가족 활동"",""여행 연계""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-04,DOM-05,DOM-05-DIM-04,culture_events.location,문화예술·행사 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-05,DOM-05,DOM-05-DIM-05,culture_events.frequency_intensity,문화예술·행사 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-06,DOM-05,DOM-05-DIM-06,culture_events.discovery,문화예술·행사 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-07,DOM-05,DOM-05-DIM-07,culture_events.acquisition_access,문화예술·행사 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-08,DOM-05,DOM-05-DIM-08,culture_events.consumption_mode,문화예술·행사 consumption_mode,category,"[""개인 관람"",""동반 관람"",""참여 체험"",""후기 공유""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-09,DOM-05,DOM-05-DIM-09,culture_events.device_channel_platform,문화예술·행사 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-10,DOM-05,DOM-05-DIM-10,culture_events.payment_monetization,문화예술·행사 payment_monetization,category,"[""무료 행사"",""일반 입장권"",""멤버십"",""프리미엄 좌석""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-11,DOM-05,DOM-05-DIM-11,culture_events.decision_unit,문화예술·행사 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-12,DOM-05,DOM-05-DIM-12,culture_events.engagement_participation,문화예술·행사 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-13,DOM-05,DOM-05-DIM-13,culture_events.motivation_job,문화예술·행사 motivation_job,category,"[""문화 향유"",""새로움"",""사회적 교류"",""지역 소속감""]",inferred_hypothesis,contextual_only,true
+DOM-05-FEAT-14,DOM-05,DOM-05-DIM-14,culture_events.barrier_risk_trust,문화예술·행사 barrier_risk_trust,category,"[""거리·시간"",""티켓 가격"",""정보 부족"",""혼잡·접근성""]",inferred_hypothesis,contextual_only,true
+DOM-05-FEAT-15,DOM-05,DOM-05-DIM-15,culture_events.loyalty_switching,문화예술·행사 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-16,DOM-05,DOM-05-DIM-16,culture_events.spending_value,문화예술·행사 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-05-FEAT-17,DOM-05,,culture_events.recency,문화예술·행사 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-05-FEAT-18,DOM-05,,culture_events.lifecycle_stage,문화예술·행사 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-05-FEAT-19,DOM-05,,culture_events.need_state,문화예술·행사 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-05-FEAT-20,DOM-05,,culture_events.evidence_strength,문화예술·행사 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-06-FEAT-01,DOM-06,DOM-06-DIM-01,grocery_home_meals.object,식료품·가정식 object,category,"[""신선식품"",""가공식품"",""밀키트·간편식"",""건강·특수식""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-02,DOM-06,DOM-06-DIM-02,grocery_home_meals.format,식료품·가정식 format,category,"[""주간 장보기"",""소량 수시구매"",""정기배송"",""직접 조리""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-03,DOM-06,DOM-06-DIM-03,grocery_home_meals.occasion,식료품·가정식 occasion,category,"[""평일 식사"",""주말 가족식"",""손님맞이"",""비상 비축""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-04,DOM-06,DOM-06-DIM-04,grocery_home_meals.location,식료품·가정식 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-05,DOM-06,DOM-06-DIM-05,grocery_home_meals.frequency_intensity,식료품·가정식 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-06,DOM-06,DOM-06-DIM-06,grocery_home_meals.discovery,식료품·가정식 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-07,DOM-06,DOM-06-DIM-07,grocery_home_meals.acquisition_access,식료품·가정식 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-08,DOM-06,DOM-06-DIM-08,grocery_home_meals.consumption_mode,식료품·가정식 consumption_mode,category,"[""계획 구매"",""즉흥 구매"",""공동 조리"",""간편 조리""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-09,DOM-06,DOM-06-DIM-09,grocery_home_meals.device_channel_platform,식료품·가정식 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-10,DOM-06,DOM-06-DIM-10,grocery_home_meals.payment_monetization,식료품·가정식 payment_monetization,category,"[""현장 결제"",""온라인 주문"",""정기구독"",""할인·포인트""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-11,DOM-06,DOM-06-DIM-11,grocery_home_meals.decision_unit,식료품·가정식 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-12,DOM-06,DOM-06-DIM-12,grocery_home_meals.engagement_participation,식료품·가정식 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-13,DOM-06,DOM-06-DIM-13,grocery_home_meals.motivation_job,식료품·가정식 motivation_job,category,"[""가족 건강"",""예산 관리"",""조리 편의"",""신선도·품질""]",inferred_hypothesis,contextual_only,true
+DOM-06-FEAT-14,DOM-06,DOM-06-DIM-14,grocery_home_meals.barrier_risk_trust,식료품·가정식 barrier_risk_trust,category,"[""물가 부담"",""품질 불확실"",""배송 신뢰"",""조리 시간""]",inferred_hypothesis,contextual_only,true
+DOM-06-FEAT-15,DOM-06,DOM-06-DIM-15,grocery_home_meals.loyalty_switching,식료품·가정식 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-16,DOM-06,DOM-06-DIM-16,grocery_home_meals.spending_value,식료품·가정식 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-06-FEAT-17,DOM-06,,grocery_home_meals.recency,식료품·가정식 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-06-FEAT-18,DOM-06,,grocery_home_meals.lifecycle_stage,식료품·가정식 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-06-FEAT-19,DOM-06,,grocery_home_meals.need_state,식료품·가정식 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-06-FEAT-20,DOM-06,,grocery_home_meals.evidence_strength,식료품·가정식 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-07-FEAT-01,DOM-07,DOM-07-DIM-01,dining_delivery_cafe.object,외식·배달·카페 object,category,"[""한식·일상식"",""배달 음식"",""카페·디저트"",""특별 외식""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-02,DOM-07,DOM-07-DIM-02,dining_delivery_cafe.format,외식·배달·카페 format,category,"[""매장 식사"",""포장"",""배달앱"",""예약 코스""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-03,DOM-07,DOM-07-DIM-03,dining_delivery_cafe.occasion,외식·배달·카페 occasion,category,"[""혼밥"",""업무 중 식사"",""친교 모임"",""기념일""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-04,DOM-07,DOM-07-DIM-04,dining_delivery_cafe.location,외식·배달·카페 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-05,DOM-07,DOM-07-DIM-05,dining_delivery_cafe.frequency_intensity,외식·배달·카페 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-06,DOM-07,DOM-07-DIM-06,dining_delivery_cafe.discovery,외식·배달·카페 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-07,DOM-07,DOM-07-DIM-07,dining_delivery_cafe.acquisition_access,외식·배달·카페 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-08,DOM-07,DOM-07-DIM-08,dining_delivery_cafe.consumption_mode,외식·배달·카페 consumption_mode,category,"[""빠른 해결"",""탐색 방문"",""반복 주문"",""후기·공유""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-09,DOM-07,DOM-07-DIM-09,dining_delivery_cafe.device_channel_platform,외식·배달·카페 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-10,DOM-07,DOM-07-DIM-10,dining_delivery_cafe.payment_monetization,외식·배달·카페 payment_monetization,category,"[""현장 결제"",""앱 결제"",""쿠폰·멤버십"",""단체 정산""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-11,DOM-07,DOM-07-DIM-11,dining_delivery_cafe.decision_unit,외식·배달·카페 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-12,DOM-07,DOM-07-DIM-12,dining_delivery_cafe.engagement_participation,외식·배달·카페 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-13,DOM-07,DOM-07-DIM-13,dining_delivery_cafe.motivation_job,외식·배달·카페 motivation_job,category,"[""편의"",""맛 탐색"",""사회적 교류"",""보상·기분전환""]",inferred_hypothesis,contextual_only,true
+DOM-07-FEAT-14,DOM-07,DOM-07-DIM-14,dining_delivery_cafe.barrier_risk_trust,외식·배달·카페 barrier_risk_trust,category,"[""배달비·가격"",""위생 신뢰"",""대기 시간"",""후기 조작 우려""]",inferred_hypothesis,contextual_only,true
+DOM-07-FEAT-15,DOM-07,DOM-07-DIM-15,dining_delivery_cafe.loyalty_switching,외식·배달·카페 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-16,DOM-07,DOM-07-DIM-16,dining_delivery_cafe.spending_value,외식·배달·카페 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-07-FEAT-17,DOM-07,,dining_delivery_cafe.recency,외식·배달·카페 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-07-FEAT-18,DOM-07,,dining_delivery_cafe.lifecycle_stage,외식·배달·카페 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-07-FEAT-19,DOM-07,,dining_delivery_cafe.need_state,외식·배달·카페 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-07-FEAT-20,DOM-07,,dining_delivery_cafe.evidence_strength,외식·배달·카페 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-08-FEAT-01,DOM-08,DOM-08-DIM-01,fashion_resale.object,패션·리셀 object,category,"[""일상 의류"",""스포츠·아웃도어웨어"",""명품·디자이너"",""리셀·빈티지""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-02,DOM-08,DOM-08-DIM-02,fashion_resale.format,패션·리셀 format,category,"[""매장 구매"",""온라인몰"",""라이브커머스"",""중고 거래""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-03,DOM-08,DOM-08-DIM-03,fashion_resale.occasion,패션·리셀 occasion,category,"[""계절 교체"",""출근·행사"",""여행"",""취향 컬렉션""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-04,DOM-08,DOM-08-DIM-04,fashion_resale.location,패션·리셀 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-05,DOM-08,DOM-08-DIM-05,fashion_resale.frequency_intensity,패션·리셀 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-06,DOM-08,DOM-08-DIM-06,fashion_resale.discovery,패션·리셀 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-07,DOM-08,DOM-08-DIM-07,fashion_resale.acquisition_access,패션·리셀 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-08,DOM-08,DOM-08-DIM-08,fashion_resale.consumption_mode,패션·리셀 consumption_mode,category,"[""목적 구매"",""탐색 쇼핑"",""코디 공유"",""재판매""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-09,DOM-08,DOM-08-DIM-09,fashion_resale.device_channel_platform,패션·리셀 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-10,DOM-08,DOM-08-DIM-10,fashion_resale.payment_monetization,패션·리셀 payment_monetization,category,"[""정가"",""할인·쿠폰"",""할부"",""판매대금 상계""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-11,DOM-08,DOM-08-DIM-11,fashion_resale.decision_unit,패션·리셀 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-12,DOM-08,DOM-08-DIM-12,fashion_resale.engagement_participation,패션·리셀 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-13,DOM-08,DOM-08-DIM-13,fashion_resale.motivation_job,패션·리셀 motivation_job,category,"[""자기표현"",""기능성"",""희소성"",""가치 소비""]",inferred_hypothesis,contextual_only,true
+DOM-08-FEAT-14,DOM-08,DOM-08-DIM-14,fashion_resale.barrier_risk_trust,패션·리셀 barrier_risk_trust,category,"[""사이즈 불확실"",""정품 신뢰"",""반품 번거로움"",""충동구매""]",inferred_hypothesis,contextual_only,true
+DOM-08-FEAT-15,DOM-08,DOM-08-DIM-15,fashion_resale.loyalty_switching,패션·리셀 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-16,DOM-08,DOM-08-DIM-16,fashion_resale.spending_value,패션·리셀 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-08-FEAT-17,DOM-08,,fashion_resale.recency,패션·리셀 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-08-FEAT-18,DOM-08,,fashion_resale.lifecycle_stage,패션·리셀 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-08-FEAT-19,DOM-08,,fashion_resale.need_state,패션·리셀 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-08-FEAT-20,DOM-08,,fashion_resale.evidence_strength,패션·리셀 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-09-FEAT-01,DOM-09,DOM-09-DIM-01,beauty_personal_care.object,뷰티·개인관리 object,category,"[""스킨케어"",""메이크업"",""헤어·바디"",""미용 서비스""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-02,DOM-09,DOM-09-DIM-02,beauty_personal_care.format,뷰티·개인관리 format,category,"[""데일리 루틴"",""집중 케어"",""매장 시술"",""샘플·체험""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-03,DOM-09,DOM-09-DIM-03,beauty_personal_care.occasion,뷰티·개인관리 occasion,category,"[""아침 준비"",""저녁 관리"",""계절 변화"",""행사 전""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-04,DOM-09,DOM-09-DIM-04,beauty_personal_care.location,뷰티·개인관리 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-05,DOM-09,DOM-09-DIM-05,beauty_personal_care.frequency_intensity,뷰티·개인관리 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-06,DOM-09,DOM-09-DIM-06,beauty_personal_care.discovery,뷰티·개인관리 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-07,DOM-09,DOM-09-DIM-07,beauty_personal_care.acquisition_access,뷰티·개인관리 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-08,DOM-09,DOM-09-DIM-08,beauty_personal_care.consumption_mode,뷰티·개인관리 consumption_mode,category,"[""셀프케어"",""전문가 상담"",""리뷰 탐색"",""루틴 공유""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-09,DOM-09,DOM-09-DIM-09,beauty_personal_care.device_channel_platform,뷰티·개인관리 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-10,DOM-09,DOM-09-DIM-10,beauty_personal_care.payment_monetization,뷰티·개인관리 payment_monetization,category,"[""단품 구매"",""정기 구매"",""시술 패키지"",""샘플·증정""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-11,DOM-09,DOM-09-DIM-11,beauty_personal_care.decision_unit,뷰티·개인관리 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-12,DOM-09,DOM-09-DIM-12,beauty_personal_care.engagement_participation,뷰티·개인관리 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-13,DOM-09,DOM-09-DIM-13,beauty_personal_care.motivation_job,뷰티·개인관리 motivation_job,category,"[""건강한 외관"",""자기표현"",""문제 해결"",""휴식·돌봄""]",inferred_hypothesis,contextual_only,true
+DOM-09-FEAT-14,DOM-09,DOM-09-DIM-14,beauty_personal_care.barrier_risk_trust,뷰티·개인관리 barrier_risk_trust,category,"[""효능 불확실"",""성분 우려"",""피부 부작용"",""과장 광고""]",inferred_hypothesis,contextual_only,true
+DOM-09-FEAT-15,DOM-09,DOM-09-DIM-15,beauty_personal_care.loyalty_switching,뷰티·개인관리 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-16,DOM-09,DOM-09-DIM-16,beauty_personal_care.spending_value,뷰티·개인관리 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-09-FEAT-17,DOM-09,,beauty_personal_care.recency,뷰티·개인관리 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-09-FEAT-18,DOM-09,,beauty_personal_care.lifecycle_stage,뷰티·개인관리 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-09-FEAT-19,DOM-09,,beauty_personal_care.need_state,뷰티·개인관리 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-09-FEAT-20,DOM-09,,beauty_personal_care.evidence_strength,뷰티·개인관리 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-10-FEAT-01,DOM-10,DOM-10-DIM-01,travel_hospitality.object,여행·숙박 object,category,"[""국내 단기여행"",""해외여행"",""호캉스·휴양"",""캠핑·체류""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-02,DOM-10,DOM-10-DIM-02,travel_hospitality.format,여행·숙박 format,category,"[""자유여행"",""패키지"",""당일치기"",""장기 체류""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-03,DOM-10,DOM-10-DIM-03,travel_hospitality.occasion,여행·숙박 occasion,category,"[""연휴"",""가족 휴가"",""기념일"",""업무 연계""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-04,DOM-10,DOM-10-DIM-04,travel_hospitality.location,여행·숙박 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-05,DOM-10,DOM-10-DIM-05,travel_hospitality.frequency_intensity,여행·숙박 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-06,DOM-10,DOM-10-DIM-06,travel_hospitality.discovery,여행·숙박 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-07,DOM-10,DOM-10-DIM-07,travel_hospitality.acquisition_access,여행·숙박 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-08,DOM-10,DOM-10-DIM-08,travel_hospitality.consumption_mode,여행·숙박 consumption_mode,category,"[""계획형"",""즉흥형"",""현지 몰입"",""안전·편의형""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-09,DOM-10,DOM-10-DIM-09,travel_hospitality.device_channel_platform,여행·숙박 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-10,DOM-10,DOM-10-DIM-10,travel_hospitality.payment_monetization,여행·숙박 payment_monetization,category,"[""개별 예약"",""패키지 선결제"",""포인트·마일리지"",""현지 결제""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-11,DOM-10,DOM-10-DIM-11,travel_hospitality.decision_unit,여행·숙박 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-12,DOM-10,DOM-10-DIM-12,travel_hospitality.engagement_participation,여행·숙박 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-13,DOM-10,DOM-10-DIM-13,travel_hospitality.motivation_job,여행·숙박 motivation_job,category,"[""일상 탈출"",""관계 강화"",""문화 탐색"",""휴식""]",inferred_hypothesis,contextual_only,true
+DOM-10-FEAT-14,DOM-10,DOM-10-DIM-14,travel_hospitality.barrier_risk_trust,여행·숙박 barrier_risk_trust,category,"[""비용"",""일정 조율"",""안전·건강"",""예약 신뢰""]",inferred_hypothesis,contextual_only,true
+DOM-10-FEAT-15,DOM-10,DOM-10-DIM-15,travel_hospitality.loyalty_switching,여행·숙박 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-16,DOM-10,DOM-10-DIM-16,travel_hospitality.spending_value,여행·숙박 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-10-FEAT-17,DOM-10,,travel_hospitality.recency,여행·숙박 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-10-FEAT-18,DOM-10,,travel_hospitality.lifecycle_stage,여행·숙박 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-10-FEAT-19,DOM-10,,travel_hospitality.need_state,여행·숙박 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-10-FEAT-20,DOM-10,,travel_hospitality.evidence_strength,여행·숙박 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-11-FEAT-01,DOM-11,DOM-11-DIM-01,sports_outdoor.object,스포츠·아웃도어 object,category,"[""걷기·러닝"",""구기·라켓"",""등산·캠핑"",""피트니스""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-02,DOM-11,DOM-11-DIM-02,sports_outdoor.format,스포츠·아웃도어 format,category,"[""개인 운동"",""클래스"",""동호회"",""경기 관람""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-03,DOM-11,DOM-11-DIM-03,sports_outdoor.occasion,스포츠·아웃도어 occasion,category,"[""출근 전후"",""주말 야외"",""친교 모임"",""대회 준비""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-04,DOM-11,DOM-11-DIM-04,sports_outdoor.location,스포츠·아웃도어 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-05,DOM-11,DOM-11-DIM-05,sports_outdoor.frequency_intensity,스포츠·아웃도어 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-06,DOM-11,DOM-11-DIM-06,sports_outdoor.discovery,스포츠·아웃도어 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-07,DOM-11,DOM-11-DIM-07,sports_outdoor.acquisition_access,스포츠·아웃도어 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-08,DOM-11,DOM-11-DIM-08,sports_outdoor.consumption_mode,스포츠·아웃도어 consumption_mode,category,"[""건강 유지"",""기록 향상"",""사회 운동"",""관전·응원""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-09,DOM-11,DOM-11-DIM-09,sports_outdoor.device_channel_platform,스포츠·아웃도어 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-10,DOM-11,DOM-11-DIM-10,sports_outdoor.payment_monetization,스포츠·아웃도어 payment_monetization,category,"[""무료 공공시설"",""월회비"",""장비 구매"",""대회·레슨비""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-11,DOM-11,DOM-11-DIM-11,sports_outdoor.decision_unit,스포츠·아웃도어 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-12,DOM-11,DOM-11-DIM-12,sports_outdoor.engagement_participation,스포츠·아웃도어 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-13,DOM-11,DOM-11-DIM-13,sports_outdoor.motivation_job,스포츠·아웃도어 motivation_job,category,"[""건강"",""성취"",""사회적 연결"",""야외 회복""]",inferred_hypothesis,contextual_only,true
+DOM-11-FEAT-14,DOM-11,DOM-11-DIM-14,sports_outdoor.barrier_risk_trust,스포츠·아웃도어 barrier_risk_trust,category,"[""부상 위험"",""시간 부족"",""장비 비용"",""날씨·접근성""]",inferred_hypothesis,contextual_only,true
+DOM-11-FEAT-15,DOM-11,DOM-11-DIM-15,sports_outdoor.loyalty_switching,스포츠·아웃도어 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-16,DOM-11,DOM-11-DIM-16,sports_outdoor.spending_value,스포츠·아웃도어 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-11-FEAT-17,DOM-11,,sports_outdoor.recency,스포츠·아웃도어 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-11-FEAT-18,DOM-11,,sports_outdoor.lifecycle_stage,스포츠·아웃도어 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-11-FEAT-19,DOM-11,,sports_outdoor.need_state,스포츠·아웃도어 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-11-FEAT-20,DOM-11,,sports_outdoor.evidence_strength,스포츠·아웃도어 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-12-FEAT-01,DOM-12,DOM-12-DIM-01,hobbies_creation.object,취미·창작 object,category,"[""미술·공예"",""사진·영상"",""악기·공연"",""메이커·DIY""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-02,DOM-12,DOM-12-DIM-02,hobbies_creation.format,취미·창작 format,category,"[""독학"",""온라인 강좌"",""오프라인 공방"",""프로젝트·전시""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-03,DOM-12,DOM-12-DIM-03,hobbies_creation.occasion,취미·창작 occasion,category,"[""저녁 여가"",""주말 몰입"",""선물 제작"",""커뮤니티 행사""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-04,DOM-12,DOM-12-DIM-04,hobbies_creation.location,취미·창작 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-05,DOM-12,DOM-12-DIM-05,hobbies_creation.frequency_intensity,취미·창작 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-06,DOM-12,DOM-12-DIM-06,hobbies_creation.discovery,취미·창작 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-07,DOM-12,DOM-12-DIM-07,hobbies_creation.acquisition_access,취미·창작 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-08,DOM-12,DOM-12-DIM-08,hobbies_creation.consumption_mode,취미·창작 consumption_mode,category,"[""개인 창작"",""공동 제작"",""학습"",""판매·공유""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-09,DOM-12,DOM-12-DIM-09,hobbies_creation.device_channel_platform,취미·창작 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-10,DOM-12,DOM-12-DIM-10,hobbies_creation.payment_monetization,취미·창작 payment_monetization,category,"[""무료 자료"",""재료 구매"",""수강료"",""작품 판매 재투자""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-11,DOM-12,DOM-12-DIM-11,hobbies_creation.decision_unit,취미·창작 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-12,DOM-12,DOM-12-DIM-12,hobbies_creation.engagement_participation,취미·창작 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-13,DOM-12,DOM-12-DIM-13,hobbies_creation.motivation_job,취미·창작 motivation_job,category,"[""자기표현"",""숙련"",""몰입·회복"",""사회적 인정""]",inferred_hypothesis,contextual_only,true
+DOM-12-FEAT-14,DOM-12,DOM-12-DIM-14,hobbies_creation.barrier_risk_trust,취미·창작 barrier_risk_trust,category,"[""시간 부족"",""재료 비용"",""실력 불안"",""공간 부족""]",inferred_hypothesis,contextual_only,true
+DOM-12-FEAT-15,DOM-12,DOM-12-DIM-15,hobbies_creation.loyalty_switching,취미·창작 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-16,DOM-12,DOM-12-DIM-16,hobbies_creation.spending_value,취미·창작 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-12-FEAT-17,DOM-12,,hobbies_creation.recency,취미·창작 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-12-FEAT-18,DOM-12,,hobbies_creation.lifecycle_stage,취미·창작 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-12-FEAT-19,DOM-12,,hobbies_creation.need_state,취미·창작 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-12-FEAT-20,DOM-12,,hobbies_creation.evidence_strength,취미·창작 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-13-FEAT-01,DOM-13,DOM-13-DIM-01,pets.object,반려동물 object,category,"[""사료·간식"",""건강·의료"",""미용·돌봄"",""놀이·동반여행""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-02,DOM-13,DOM-13-DIM-02,pets.format,반려동물 format,category,"[""일상 양육"",""정기 관리"",""전문 서비스"",""커뮤니티 정보""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-03,DOM-13,DOM-13-DIM-03,pets.occasion,반려동물 occasion,category,"[""매일 돌봄"",""건강 이상"",""외출·여행"",""생애주기 변화""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-04,DOM-13,DOM-13-DIM-04,pets.location,반려동물 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-05,DOM-13,DOM-13-DIM-05,pets.frequency_intensity,반려동물 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-06,DOM-13,DOM-13-DIM-06,pets.discovery,반려동물 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-07,DOM-13,DOM-13-DIM-07,pets.acquisition_access,반려동물 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-08,DOM-13,DOM-13-DIM-08,pets.consumption_mode,반려동물 consumption_mode,category,"[""가족 공동 돌봄"",""주양육자 중심"",""전문가 위탁"",""정보 공유""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-09,DOM-13,DOM-13-DIM-09,pets.device_channel_platform,반려동물 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-10,DOM-13,DOM-13-DIM-10,pets.payment_monetization,반려동물 payment_monetization,category,"[""일상 구매"",""정기배송"",""보험·적립"",""고액 진료""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-11,DOM-13,DOM-13-DIM-11,pets.decision_unit,반려동물 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-12,DOM-13,DOM-13-DIM-12,pets.engagement_participation,반려동물 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-13,DOM-13,DOM-13-DIM-13,pets.motivation_job,반려동물 motivation_job,category,"[""동반자 관계"",""건강 보호"",""양육 편의"",""즐거운 활동""]",inferred_hypothesis,contextual_only,true
+DOM-13-FEAT-14,DOM-13,DOM-13-DIM-14,pets.barrier_risk_trust,반려동물 barrier_risk_trust,category,"[""진료비 부담"",""품질 신뢰"",""돌봄 공백"",""이동 제약""]",inferred_hypothesis,contextual_only,true
+DOM-13-FEAT-15,DOM-13,DOM-13-DIM-15,pets.loyalty_switching,반려동물 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-16,DOM-13,DOM-13-DIM-16,pets.spending_value,반려동물 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-13-FEAT-17,DOM-13,,pets.recency,반려동물 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-13-FEAT-18,DOM-13,,pets.lifecycle_stage,반려동물 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-13-FEAT-19,DOM-13,,pets.need_state,반려동물 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-13-FEAT-20,DOM-13,,pets.evidence_strength,반려동물 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-14-FEAT-01,DOM-14,DOM-14-DIM-01,housing_home_services.object,주거·홈서비스 object,category,"[""이사"",""청소·정리"",""수리·설비"",""인테리어·가구""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-02,DOM-14,DOM-14-DIM-02,housing_home_services.format,주거·홈서비스 format,category,"[""직접 수행"",""단건 전문가"",""정기 서비스"",""통합 공사""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-03,DOM-14,DOM-14-DIM-03,housing_home_services.occasion,주거·홈서비스 occasion,category,"[""입주·이사"",""고장 발생"",""계절 관리"",""가족 변화""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-04,DOM-14,DOM-14-DIM-04,housing_home_services.location,주거·홈서비스 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-05,DOM-14,DOM-14-DIM-05,housing_home_services.frequency_intensity,주거·홈서비스 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-06,DOM-14,DOM-14-DIM-06,housing_home_services.discovery,주거·홈서비스 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-07,DOM-14,DOM-14-DIM-07,housing_home_services.acquisition_access,주거·홈서비스 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-08,DOM-14,DOM-14-DIM-08,housing_home_services.consumption_mode,주거·홈서비스 consumption_mode,category,"[""견적 비교"",""신뢰업체 반복"",""플랫폼 중개"",""지인 추천""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-09,DOM-14,DOM-14-DIM-09,housing_home_services.device_channel_platform,주거·홈서비스 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-10,DOM-14,DOM-14-DIM-10,housing_home_services.payment_monetization,주거·홈서비스 payment_monetization,category,"[""건별 결제"",""계약금·잔금"",""정기 결제"",""보험·보증 연계""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-11,DOM-14,DOM-14-DIM-11,housing_home_services.decision_unit,주거·홈서비스 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-12,DOM-14,DOM-14-DIM-12,housing_home_services.engagement_participation,주거·홈서비스 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-13,DOM-14,DOM-14-DIM-13,housing_home_services.motivation_job,주거·홈서비스 motivation_job,category,"[""안전"",""편의"",""공간 개선"",""자산 가치""]",inferred_hypothesis,contextual_only,true
+DOM-14-FEAT-14,DOM-14,DOM-14-DIM-14,housing_home_services.barrier_risk_trust,주거·홈서비스 barrier_risk_trust,category,"[""업체 신뢰"",""가격 불투명"",""공사 지연"",""개인정보·출입 우려""]",inferred_hypothesis,contextual_only,true
+DOM-14-FEAT-15,DOM-14,DOM-14-DIM-15,housing_home_services.loyalty_switching,주거·홈서비스 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-16,DOM-14,DOM-14-DIM-16,housing_home_services.spending_value,주거·홈서비스 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-14-FEAT-17,DOM-14,,housing_home_services.recency,주거·홈서비스 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-14-FEAT-18,DOM-14,,housing_home_services.lifecycle_stage,주거·홈서비스 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-14-FEAT-19,DOM-14,,housing_home_services.need_state,주거·홈서비스 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-14-FEAT-20,DOM-14,,housing_home_services.evidence_strength,주거·홈서비스 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-15-FEAT-01,DOM-15,DOM-15-DIM-01,mobility_automotive.object,모빌리티·자동차 object,category,"[""대중교통"",""승용차"",""택시·호출"",""자전거·퍼스널모빌리티""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-02,DOM-15,DOM-15-DIM-02,mobility_automotive.format,모빌리티·자동차 format,category,"[""일상 통근"",""단거리 이동"",""장거리 운전"",""공유·대여""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-03,DOM-15,DOM-15-DIM-03,mobility_automotive.occasion,모빌리티·자동차 occasion,category,"[""출퇴근"",""장보기·돌봄"",""주말 이동"",""여행""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-04,DOM-15,DOM-15-DIM-04,mobility_automotive.location,모빌리티·자동차 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-05,DOM-15,DOM-15-DIM-05,mobility_automotive.frequency_intensity,모빌리티·자동차 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-06,DOM-15,DOM-15-DIM-06,mobility_automotive.discovery,모빌리티·자동차 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-07,DOM-15,DOM-15-DIM-07,mobility_automotive.acquisition_access,모빌리티·자동차 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-08,DOM-15,DOM-15-DIM-08,mobility_automotive.consumption_mode,모빌리티·자동차 consumption_mode,category,"[""직접 운전"",""환승"",""호출"",""공유""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-09,DOM-15,DOM-15-DIM-09,mobility_automotive.device_channel_platform,모빌리티·자동차 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-10,DOM-15,DOM-15-DIM-10,mobility_automotive.payment_monetization,모빌리티·자동차 payment_monetization,category,"[""교통카드"",""유류·충전"",""월 구독·리스"",""건별 호출""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-11,DOM-15,DOM-15-DIM-11,mobility_automotive.decision_unit,모빌리티·자동차 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-12,DOM-15,DOM-15-DIM-12,mobility_automotive.engagement_participation,모빌리티·자동차 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-13,DOM-15,DOM-15-DIM-13,mobility_automotive.motivation_job,모빌리티·자동차 motivation_job,category,"[""시간 절약"",""비용 절감"",""접근성"",""친환경""]",inferred_hypothesis,contextual_only,true
+DOM-15-FEAT-14,DOM-15,DOM-15-DIM-14,mobility_automotive.barrier_risk_trust,모빌리티·자동차 barrier_risk_trust,category,"[""교통비"",""안전"",""주차·충전"",""배차·환승 불확실""]",inferred_hypothesis,contextual_only,true
+DOM-15-FEAT-15,DOM-15,DOM-15-DIM-15,mobility_automotive.loyalty_switching,모빌리티·자동차 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-16,DOM-15,DOM-15-DIM-16,mobility_automotive.spending_value,모빌리티·자동차 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-15-FEAT-17,DOM-15,,mobility_automotive.recency,모빌리티·자동차 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-15-FEAT-18,DOM-15,,mobility_automotive.lifecycle_stage,모빌리티·자동차 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-15-FEAT-19,DOM-15,,mobility_automotive.need_state,모빌리티·자동차 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-15-FEAT-20,DOM-15,,mobility_automotive.evidence_strength,모빌리티·자동차 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-16-FEAT-01,DOM-16,DOM-16-DIM-01,education_learning.object,교육·학습 object,category,"[""학교교육"",""직무·자격 학습"",""언어 학습"",""취미·교양 학습""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-02,DOM-16,DOM-16-DIM-02,education_learning.format,교육·학습 format,category,"[""교실 수업"",""온라인 강의"",""개별 지도"",""자율 학습""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-03,DOM-16,DOM-16-DIM-03,education_learning.occasion,교육·학습 occasion,category,"[""정규 학기"",""시험 준비"",""전직 준비"",""방학·여가""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-04,DOM-16,DOM-16-DIM-04,education_learning.location,교육·학습 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-05,DOM-16,DOM-16-DIM-05,education_learning.frequency_intensity,교육·학습 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-06,DOM-16,DOM-16-DIM-06,education_learning.discovery,교육·학습 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-07,DOM-16,DOM-16-DIM-07,education_learning.acquisition_access,교육·학습 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-08,DOM-16,DOM-16-DIM-08,education_learning.consumption_mode,교육·학습 consumption_mode,category,"[""학습자 주도"",""교사 지도"",""부모 지원"",""동료 학습""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-09,DOM-16,DOM-16-DIM-09,education_learning.device_channel_platform,교육·학습 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-10,DOM-16,DOM-16-DIM-10,education_learning.payment_monetization,교육·학습 payment_monetization,category,"[""공교육·무료"",""월 수강료"",""단과 구매"",""기업·정부 지원""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-11,DOM-16,DOM-16-DIM-11,education_learning.decision_unit,교육·학습 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,first_party_data_required,true
+DOM-16-FEAT-12,DOM-16,DOM-16-DIM-12,education_learning.engagement_participation,교육·학습 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,first_party_data_required,true
+DOM-16-FEAT-13,DOM-16,DOM-16-DIM-13,education_learning.motivation_job,교육·학습 motivation_job,category,"[""성취"",""진학·경력"",""자기효능"",""사회 참여""]",inferred_hypothesis,contextual_only,true
+DOM-16-FEAT-14,DOM-16,DOM-16-DIM-14,education_learning.barrier_risk_trust,교육·학습 barrier_risk_trust,category,"[""비용"",""시간"",""학습 품질"",""중도 이탈""]",inferred_hypothesis,contextual_only,true
+DOM-16-FEAT-15,DOM-16,DOM-16-DIM-15,education_learning.loyalty_switching,교육·학습 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-16,DOM-16,DOM-16-DIM-16,education_learning.spending_value,교육·학습 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,contextual_only,true
+DOM-16-FEAT-17,DOM-16,,education_learning.recency,교육·학습 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-16-FEAT-18,DOM-16,,education_learning.lifecycle_stage,교육·학습 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-16-FEAT-19,DOM-16,,education_learning.need_state,교육·학습 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-16-FEAT-20,DOM-16,,education_learning.evidence_strength,교육·학습 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-17-FEAT-01,DOM-17,DOM-17-DIM-01,parenting_childcare.object,양육·보육 object,category,"[""보육"",""생활 돌봄"",""놀이·발달"",""교육 의사결정""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-02,DOM-17,DOM-17-DIM-02,parenting_childcare.format,양육·보육 format,category,"[""가정 돌봄"",""공공기관"",""민간 서비스"",""가족 분담""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-03,DOM-17,DOM-17-DIM-03,parenting_childcare.occasion,양육·보육 occasion,category,"[""평일 일과"",""등하원"",""방학"",""긴급 돌봄""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-04,DOM-17,DOM-17-DIM-04,parenting_childcare.location,양육·보육 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-05,DOM-17,DOM-17-DIM-05,parenting_childcare.frequency_intensity,양육·보육 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-06,DOM-17,DOM-17-DIM-06,parenting_childcare.discovery,양육·보육 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-07,DOM-17,DOM-17-DIM-07,parenting_childcare.acquisition_access,양육·보육 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-08,DOM-17,DOM-17-DIM-08,parenting_childcare.consumption_mode,양육·보육 consumption_mode,category,"[""보호자 직접"",""기관 위탁"",""가족 지원"",""공동육아""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-09,DOM-17,DOM-17-DIM-09,parenting_childcare.device_channel_platform,양육·보육 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-10,DOM-17,DOM-17-DIM-10,parenting_childcare.payment_monetization,양육·보육 payment_monetization,category,"[""공공 지원"",""월 이용료"",""건별 돌봄"",""교육·용품 구매""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-11,DOM-17,DOM-17-DIM-11,parenting_childcare.decision_unit,양육·보육 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,first_party_data_required,true
+DOM-17-FEAT-12,DOM-17,DOM-17-DIM-12,parenting_childcare.engagement_participation,양육·보육 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,first_party_data_required,true
+DOM-17-FEAT-13,DOM-17,DOM-17-DIM-13,parenting_childcare.motivation_job,양육·보육 motivation_job,category,"[""안전"",""발달 지원"",""일·가정 양립"",""부모 부담 완화""]",inferred_hypothesis,contextual_only,true
+DOM-17-FEAT-14,DOM-17,DOM-17-DIM-14,parenting_childcare.barrier_risk_trust,양육·보육 barrier_risk_trust,category,"[""안전 신뢰"",""비용"",""대기·공급 부족"",""정보 비대칭""]",inferred_hypothesis,contextual_only,true
+DOM-17-FEAT-15,DOM-17,DOM-17-DIM-15,parenting_childcare.loyalty_switching,양육·보육 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-16,DOM-17,DOM-17-DIM-16,parenting_childcare.spending_value,양육·보육 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,contextual_only,true
+DOM-17-FEAT-17,DOM-17,,parenting_childcare.recency,양육·보육 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-17-FEAT-18,DOM-17,,parenting_childcare.lifecycle_stage,양육·보육 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-17-FEAT-19,DOM-17,,parenting_childcare.need_state,양육·보육 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-17-FEAT-20,DOM-17,,parenting_childcare.evidence_strength,양육·보육 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-18-FEAT-01,DOM-18,DOM-18-DIM-01,health_wellness_care.object,건강·웰니스·돌봄 object,category,"[""예방 건강"",""만성 관리"",""정신 웰니스"",""가족 돌봄""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-02,DOM-18,DOM-18-DIM-02,health_wellness_care.format,건강·웰니스·돌봄 format,category,"[""자가 관리"",""의료기관"",""디지털 모니터링"",""방문·재가 돌봄""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-03,DOM-18,DOM-18-DIM-03,health_wellness_care.occasion,건강·웰니스·돌봄 occasion,category,"[""정기 관리"",""증상 발생"",""회복기"",""돌봄 공백""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-04,DOM-18,DOM-18-DIM-04,health_wellness_care.location,건강·웰니스·돌봄 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-05,DOM-18,DOM-18-DIM-05,health_wellness_care.frequency_intensity,건강·웰니스·돌봄 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-06,DOM-18,DOM-18-DIM-06,health_wellness_care.discovery,건강·웰니스·돌봄 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-07,DOM-18,DOM-18-DIM-07,health_wellness_care.acquisition_access,건강·웰니스·돌봄 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-08,DOM-18,DOM-18-DIM-08,health_wellness_care.consumption_mode,건강·웰니스·돌봄 consumption_mode,category,"[""개인 결정"",""가족 공동결정"",""전문가 지도"",""보호자 대리""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-09,DOM-18,DOM-18-DIM-09,health_wellness_care.device_channel_platform,건강·웰니스·돌봄 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-10,DOM-18,DOM-18-DIM-10,health_wellness_care.payment_monetization,건강·웰니스·돌봄 payment_monetization,category,"[""건강보험"",""본인부담"",""민간보험"",""구독·프로그램""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-11,DOM-18,DOM-18-DIM-11,health_wellness_care.decision_unit,건강·웰니스·돌봄 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-12,DOM-18,DOM-18-DIM-12,health_wellness_care.engagement_participation,건강·웰니스·돌봄 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-13,DOM-18,DOM-18-DIM-13,health_wellness_care.motivation_job,건강·웰니스·돌봄 motivation_job,category,"[""예방"",""증상 완화"",""자립 유지"",""돌봄 부담 완화""]",inferred_hypothesis,contextual_only,true
+DOM-18-FEAT-14,DOM-18,DOM-18-DIM-14,health_wellness_care.barrier_risk_trust,건강·웰니스·돌봄 barrier_risk_trust,category,"[""의료정보 신뢰"",""비용"",""접근성"",""민감정보 우려""]",inferred_hypothesis,contextual_only,true
+DOM-18-FEAT-15,DOM-18,DOM-18-DIM-15,health_wellness_care.loyalty_switching,건강·웰니스·돌봄 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-16,DOM-18,DOM-18-DIM-16,health_wellness_care.spending_value,건강·웰니스·돌봄 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-18-FEAT-17,DOM-18,,health_wellness_care.recency,건강·웰니스·돌봄 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-18-FEAT-18,DOM-18,,health_wellness_care.lifecycle_stage,건강·웰니스·돌봄 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-18-FEAT-19,DOM-18,,health_wellness_care.need_state,건강·웰니스·돌봄 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-18-FEAT-20,DOM-18,,health_wellness_care.evidence_strength,건강·웰니스·돌봄 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-19-FEAT-01,DOM-19,DOM-19-DIM-01,finance_insurance.object,금융·보험 object,category,"[""저축·예금"",""투자"",""신용·대출"",""보험·보장""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-02,DOM-19,DOM-19-DIM-02,finance_insurance.format,금융·보험 format,category,"[""정기 관리"",""목표 기반"",""상담"",""자동화""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-03,DOM-19,DOM-19-DIM-03,finance_insurance.occasion,금융·보험 occasion,category,"[""급여일"",""목돈 계획"",""위험 사건"",""생애 전환""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-04,DOM-19,DOM-19-DIM-04,finance_insurance.location,금융·보험 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-05,DOM-19,DOM-19-DIM-05,finance_insurance.frequency_intensity,금융·보험 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-06,DOM-19,DOM-19-DIM-06,finance_insurance.discovery,금융·보험 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-07,DOM-19,DOM-19-DIM-07,finance_insurance.acquisition_access,금융·보험 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-08,DOM-19,DOM-19-DIM-08,finance_insurance.consumption_mode,금융·보험 consumption_mode,category,"[""개인 결정"",""가구 공동결정"",""전문가 자문"",""디지털 자기관리""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-09,DOM-19,DOM-19-DIM-09,finance_insurance.device_channel_platform,금융·보험 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-10,DOM-19,DOM-19-DIM-10,finance_insurance.payment_monetization,금융·보험 payment_monetization,category,"[""수수료 없음"",""정액 수수료"",""거래 수수료"",""보험료·이자""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-11,DOM-19,DOM-19-DIM-11,finance_insurance.decision_unit,금융·보험 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-12,DOM-19,DOM-19-DIM-12,finance_insurance.engagement_participation,금융·보험 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-13,DOM-19,DOM-19-DIM-13,finance_insurance.motivation_job,금융·보험 motivation_job,category,"[""안전성"",""수익 추구"",""현금흐름 관리"",""위험 보호""]",inferred_hypothesis,contextual_only,true
+DOM-19-FEAT-14,DOM-19,DOM-19-DIM-14,finance_insurance.barrier_risk_trust,금융·보험 barrier_risk_trust,category,"[""손실 위험"",""복잡성"",""기관 신뢰"",""개인정보 우려""]",inferred_hypothesis,contextual_only,true
+DOM-19-FEAT-15,DOM-19,DOM-19-DIM-15,finance_insurance.loyalty_switching,금융·보험 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-16,DOM-19,DOM-19-DIM-16,finance_insurance.spending_value,금융·보험 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-19-FEAT-17,DOM-19,,finance_insurance.recency,금융·보험 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-19-FEAT-18,DOM-19,,finance_insurance.lifecycle_stage,금융·보험 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-19-FEAT-19,DOM-19,,finance_insurance.need_state,금융·보험 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-19-FEAT-20,DOM-19,,finance_insurance.evidence_strength,금융·보험 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-20-FEAT-01,DOM-20,DOM-20-DIM-01,senior_retirement_care.object,시니어·은퇴·돌봄 object,category,"[""노후소득"",""건강·요양"",""주거 전환"",""사회 참여""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-02,DOM-20,DOM-20-DIM-02,senior_retirement_care.format,시니어·은퇴·돌봄 format,category,"[""자가 계획"",""가족 협의"",""전문 상담"",""지역 서비스""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-03,DOM-20,DOM-20-DIM-03,senior_retirement_care.occasion,시니어·은퇴·돌봄 occasion,category,"[""은퇴 전"",""은퇴 직후"",""건강 변화"",""돌봄 전환""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-04,DOM-20,DOM-20-DIM-04,senior_retirement_care.location,시니어·은퇴·돌봄 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-05,DOM-20,DOM-20-DIM-05,senior_retirement_care.frequency_intensity,시니어·은퇴·돌봄 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-06,DOM-20,DOM-20-DIM-06,senior_retirement_care.discovery,시니어·은퇴·돌봄 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-07,DOM-20,DOM-20-DIM-07,senior_retirement_care.acquisition_access,시니어·은퇴·돌봄 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-08,DOM-20,DOM-20-DIM-08,senior_retirement_care.consumption_mode,시니어·은퇴·돌봄 consumption_mode,category,"[""본인 주도"",""부부 공동"",""자녀 지원"",""전문가 위임""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-09,DOM-20,DOM-20-DIM-09,senior_retirement_care.device_channel_platform,시니어·은퇴·돌봄 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-10,DOM-20,DOM-20-DIM-10,senior_retirement_care.payment_monetization,시니어·은퇴·돌봄 payment_monetization,category,"[""공적 급여"",""개인 자산"",""보험"",""가족 분담""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-11,DOM-20,DOM-20-DIM-11,senior_retirement_care.decision_unit,시니어·은퇴·돌봄 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-12,DOM-20,DOM-20-DIM-12,senior_retirement_care.engagement_participation,시니어·은퇴·돌봄 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-13,DOM-20,DOM-20-DIM-13,senior_retirement_care.motivation_job,시니어·은퇴·돌봄 motivation_job,category,"[""자립"",""안정"",""관계 유지"",""존엄한 돌봄""]",inferred_hypothesis,contextual_only,true
+DOM-20-FEAT-14,DOM-20,DOM-20-DIM-14,senior_retirement_care.barrier_risk_trust,시니어·은퇴·돌봄 barrier_risk_trust,category,"[""디지털 접근"",""소득 불안"",""서비스 신뢰"",""가족 조율""]",inferred_hypothesis,contextual_only,true
+DOM-20-FEAT-15,DOM-20,DOM-20-DIM-15,senior_retirement_care.loyalty_switching,시니어·은퇴·돌봄 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-16,DOM-20,DOM-20-DIM-16,senior_retirement_care.spending_value,시니어·은퇴·돌봄 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-20-FEAT-17,DOM-20,,senior_retirement_care.recency,시니어·은퇴·돌봄 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-20-FEAT-18,DOM-20,,senior_retirement_care.lifecycle_stage,시니어·은퇴·돌봄 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-20-FEAT-19,DOM-20,,senior_retirement_care.need_state,시니어·은퇴·돌봄 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-20-FEAT-20,DOM-20,,senior_retirement_care.evidence_strength,시니어·은퇴·돌봄 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-21-FEAT-01,DOM-21,DOM-21-DIM-01,digital_devices_ai.object,디지털기기·AI object,category,"[""스마트폰"",""PC·태블릿"",""웨어러블·스마트홈"",""생성형 AI""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-02,DOM-21,DOM-21-DIM-02,digital_devices_ai.format,디지털기기·AI format,category,"[""일상 도구"",""업무 도구"",""창작 도구"",""자동화""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-03,DOM-21,DOM-21-DIM-03,digital_devices_ai.occasion,디지털기기·AI occasion,category,"[""업무"",""학습"",""생활 관리"",""여가·창작""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-04,DOM-21,DOM-21-DIM-04,digital_devices_ai.location,디지털기기·AI location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-05,DOM-21,DOM-21-DIM-05,digital_devices_ai.frequency_intensity,디지털기기·AI frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-06,DOM-21,DOM-21-DIM-06,digital_devices_ai.discovery,디지털기기·AI discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-07,DOM-21,DOM-21-DIM-07,digital_devices_ai.acquisition_access,디지털기기·AI acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-08,DOM-21,DOM-21-DIM-08,digital_devices_ai.consumption_mode,디지털기기·AI consumption_mode,category,"[""수동 사용"",""추천 활용"",""대화형 보조"",""자동 실행""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-09,DOM-21,DOM-21-DIM-09,digital_devices_ai.device_channel_platform,디지털기기·AI device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-10,DOM-21,DOM-21-DIM-10,digital_devices_ai.payment_monetization,디지털기기·AI payment_monetization,category,"[""기기 구매"",""소프트웨어 구독"",""무료 서비스"",""기업 제공""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-11,DOM-21,DOM-21-DIM-11,digital_devices_ai.decision_unit,디지털기기·AI decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-12,DOM-21,DOM-21-DIM-12,digital_devices_ai.engagement_participation,디지털기기·AI engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-13,DOM-21,DOM-21-DIM-13,digital_devices_ai.motivation_job,디지털기기·AI motivation_job,category,"[""생산성"",""편의"",""창작"",""새 기술 탐색""]",inferred_hypothesis,contextual_only,true
+DOM-21-FEAT-14,DOM-21,DOM-21-DIM-14,digital_devices_ai.barrier_risk_trust,디지털기기·AI barrier_risk_trust,category,"[""개인정보"",""정확성"",""학습 부담"",""기기·구독 비용""]",inferred_hypothesis,contextual_only,true
+DOM-21-FEAT-15,DOM-21,DOM-21-DIM-15,digital_devices_ai.loyalty_switching,디지털기기·AI loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-16,DOM-21,DOM-21-DIM-16,digital_devices_ai.spending_value,디지털기기·AI spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-21-FEAT-17,DOM-21,,digital_devices_ai.recency,디지털기기·AI 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-21-FEAT-18,DOM-21,,digital_devices_ai.lifecycle_stage,디지털기기·AI 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-21-FEAT-19,DOM-21,,digital_devices_ai.need_state,디지털기기·AI 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-21-FEAT-20,DOM-21,,digital_devices_ai.evidence_strength,디지털기기·AI 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-22-FEAT-01,DOM-22,DOM-22-DIM-01,social_creator.object,소셜·크리에이터 object,category,"[""친구 네트워크"",""관심 커뮤니티"",""크리에이터 콘텐츠"",""직접 제작""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-02,DOM-22,DOM-22-DIM-02,social_creator.format,소셜·크리에이터 format,category,"[""피드"",""숏폼"",""라이브"",""게시물·뉴스레터""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-03,DOM-22,DOM-22-DIM-03,social_creator.occasion,소셜·크리에이터 occasion,category,"[""틈새 시간"",""정보 탐색"",""관계 유지"",""창작·홍보""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-04,DOM-22,DOM-22-DIM-04,social_creator.location,소셜·크리에이터 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-05,DOM-22,DOM-22-DIM-05,social_creator.frequency_intensity,소셜·크리에이터 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-06,DOM-22,DOM-22-DIM-06,social_creator.discovery,소셜·크리에이터 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-07,DOM-22,DOM-22-DIM-07,social_creator.acquisition_access,소셜·크리에이터 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-08,DOM-22,DOM-22-DIM-08,social_creator.consumption_mode,소셜·크리에이터 consumption_mode,category,"[""수동 열람"",""댓글·공유"",""커뮤니티 참여"",""제작·수익화""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-09,DOM-22,DOM-22-DIM-09,social_creator.device_channel_platform,소셜·크리에이터 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-10,DOM-22,DOM-22-DIM-10,social_creator.payment_monetization,소셜·크리에이터 payment_monetization,category,"[""무료·광고형"",""구독·멤버십"",""후원"",""브랜드 협업""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-11,DOM-22,DOM-22-DIM-11,social_creator.decision_unit,소셜·크리에이터 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-12,DOM-22,DOM-22-DIM-12,social_creator.engagement_participation,소셜·크리에이터 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-13,DOM-22,DOM-22-DIM-13,social_creator.motivation_job,소셜·크리에이터 motivation_job,category,"[""관계"",""정보 발견"",""자기표현"",""인정·수익""]",inferred_hypothesis,contextual_only,true
+DOM-22-FEAT-14,DOM-22,DOM-22-DIM-14,social_creator.barrier_risk_trust,소셜·크리에이터 barrier_risk_trust,category,"[""피로·중독"",""허위정보"",""괴롭힘"",""개인정보""]",inferred_hypothesis,contextual_only,true
+DOM-22-FEAT-15,DOM-22,DOM-22-DIM-15,social_creator.loyalty_switching,소셜·크리에이터 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-16,DOM-22,DOM-22-DIM-16,social_creator.spending_value,소셜·크리에이터 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-22-FEAT-17,DOM-22,,social_creator.recency,소셜·크리에이터 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-22-FEAT-18,DOM-22,,social_creator.lifecycle_stage,소셜·크리에이터 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-22-FEAT-19,DOM-22,,social_creator.need_state,소셜·크리에이터 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-22-FEAT-20,DOM-22,,social_creator.evidence_strength,소셜·크리에이터 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-23-FEAT-01,DOM-23,DOM-23-DIM-01,career_professional.object,경력·전문활동 object,category,"[""구직·이직"",""직무 수행"",""전문성 개발"",""네트워킹""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-02,DOM-23,DOM-23-DIM-02,career_professional.format,경력·전문활동 format,category,"[""채용 플랫폼"",""업무 도구"",""교육·자격"",""행사·커뮤니티""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-03,DOM-23,DOM-23-DIM-03,career_professional.occasion,경력·전문활동 occasion,category,"[""취업 전환"",""성과 주기"",""프로젝트"",""승진·전직""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-04,DOM-23,DOM-23-DIM-04,career_professional.location,경력·전문활동 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-05,DOM-23,DOM-23-DIM-05,career_professional.frequency_intensity,경력·전문활동 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-06,DOM-23,DOM-23-DIM-06,career_professional.discovery,경력·전문활동 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-07,DOM-23,DOM-23-DIM-07,career_professional.acquisition_access,경력·전문활동 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-08,DOM-23,DOM-23-DIM-08,career_professional.consumption_mode,경력·전문활동 consumption_mode,category,"[""개인 탐색"",""조직 지원"",""멘토링"",""전문가 협업""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-09,DOM-23,DOM-23-DIM-09,career_professional.device_channel_platform,경력·전문활동 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-10,DOM-23,DOM-23-DIM-10,career_professional.payment_monetization,경력·전문활동 payment_monetization,category,"[""무료"",""개인 결제"",""회사 지원"",""성과 연계""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-11,DOM-23,DOM-23-DIM-11,career_professional.decision_unit,경력·전문활동 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-12,DOM-23,DOM-23-DIM-12,career_professional.engagement_participation,경력·전문활동 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-13,DOM-23,DOM-23-DIM-13,career_professional.motivation_job,경력·전문활동 motivation_job,category,"[""성장"",""안정"",""의미"",""보상""]",inferred_hypothesis,contextual_only,true
+DOM-23-FEAT-14,DOM-23,DOM-23-DIM-14,career_professional.barrier_risk_trust,경력·전문활동 barrier_risk_trust,category,"[""시간 부족"",""정보 비대칭"",""비용"",""차별·프라이버시""]",inferred_hypothesis,contextual_only,true
+DOM-23-FEAT-15,DOM-23,DOM-23-DIM-15,career_professional.loyalty_switching,경력·전문활동 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-16,DOM-23,DOM-23-DIM-16,career_professional.spending_value,경력·전문활동 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-23-FEAT-17,DOM-23,,career_professional.recency,경력·전문활동 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-23-FEAT-18,DOM-23,,career_professional.lifecycle_stage,경력·전문활동 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-23-FEAT-19,DOM-23,,career_professional.need_state,경력·전문활동 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-23-FEAT-20,DOM-23,,career_professional.evidence_strength,경력·전문활동 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true
+DOM-24-FEAT-01,DOM-24,DOM-24-DIM-01,small_business_digital.object,소상공인·디지털 운영 object,category,"[""매장 운영"",""온라인 존재"",""주문·결제"",""고객 관리""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-02,DOM-24,DOM-24-DIM-02,small_business_digital.format,소상공인·디지털 운영 format,category,"[""오프라인 수기"",""플랫폼 입점"",""자체 웹·예약"",""운영 자동화""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-03,DOM-24,DOM-24-DIM-03,small_business_digital.occasion,소상공인·디지털 운영 occasion,category,"[""창업"",""일상 영업"",""매출 부진"",""승계·전환""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-04,DOM-24,DOM-24-DIM-04,small_business_digital.location,소상공인·디지털 운영 location,category,"[""가정"",""직장·학교"",""이동 중"",""상업·공공 장소""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-05,DOM-24,DOM-24-DIM-05,small_business_digital.frequency_intensity,소상공인·디지털 운영 frequency_intensity,category,"[""거의 매일"",""주 1–4회"",""월 1–3회"",""비정기·휴면""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-06,DOM-24,DOM-24-DIM-06,small_business_digital.discovery,소상공인·디지털 운영 discovery,category,"[""직접 검색"",""알고리즘 추천"",""지인·커뮤니티"",""오프라인 노출""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-07,DOM-24,DOM-24-DIM-07,small_business_digital.acquisition_access,소상공인·디지털 운영 acquisition_access,category,"[""직접 보유·구매"",""구독·회원권"",""플랫폼 중개"",""공공·공유 접근""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-08,DOM-24,DOM-24-DIM-08,small_business_digital.consumption_mode,소상공인·디지털 운영 consumption_mode,category,"[""대표자 직접"",""가족 지원"",""직원 담당"",""외부 대행""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-09,DOM-24,DOM-24-DIM-09,small_business_digital.device_channel_platform,소상공인·디지털 운영 device_channel_platform,category,"[""모바일"",""PC·웹"",""오프라인 매장·시설"",""전문가·중개 채널""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-10,DOM-24,DOM-24-DIM-10,small_business_digital.payment_monetization,소상공인·디지털 운영 payment_monetization,category,"[""무료 도구"",""건별 수수료"",""월 구독"",""구축 프로젝트""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-11,DOM-24,DOM-24-DIM-11,small_business_digital.decision_unit,소상공인·디지털 운영 decision_unit,category,"[""개인"",""가구 공동"",""보호자·가족"",""조직·사업체""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-12,DOM-24,DOM-24-DIM-12,small_business_digital.engagement_participation,소상공인·디지털 운영 engagement_participation,category,"[""열람·이용"",""저장·반복"",""평가·공유"",""제작·참여""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-13,DOM-24,DOM-24-DIM-13,small_business_digital.motivation_job,소상공인·디지털 운영 motivation_job,category,"[""신규 고객"",""운영 효율"",""매출 안정"",""승계 가능성""]",inferred_hypothesis,contextual_only,true
+DOM-24-FEAT-14,DOM-24,DOM-24-DIM-14,small_business_digital.barrier_risk_trust,소상공인·디지털 운영 barrier_risk_trust,category,"[""디지털 학습 부담"",""수수료·비용"",""플랫폼 종속"",""개인·사업정보 보안""]",inferred_hypothesis,contextual_only,true
+DOM-24-FEAT-15,DOM-24,DOM-24-DIM-15,small_business_digital.loyalty_switching,소상공인·디지털 운영 loyalty_switching,category,"[""단일 선호"",""복수 병행"",""가격·혜택 전환"",""휴면·이탈""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-16,DOM-24,DOM-24-DIM-16,small_business_digital.spending_value,소상공인·디지털 운영 spending_value,category,"[""무지출"",""저가·가성비"",""중간 지출"",""프리미엄·고액""]",observable_or_declared,proxy_targetable,true
+DOM-24-FEAT-17,DOM-24,,small_business_digital.recency,소상공인·디지털 운영 최근 이용 시점,category,"[""7일 이내"",""30일 이내"",""12개월 이내"",""12개월 초과""]",derived,contextual_only,true
+DOM-24-FEAT-18,DOM-24,,small_business_digital.lifecycle_stage,소상공인·디지털 운영 도메인 생애주기,category,"[""잠재"",""신규"",""활성"",""휴면·이탈""]",derived,contextual_only,true
+DOM-24-FEAT-19,DOM-24,,small_business_digital.need_state,소상공인·디지털 운영 미충족 필요 상태,category,"[""충족"",""부분 충족"",""대안 탐색"",""접근 불가""]",derived,contextual_only,true
+DOM-24-FEAT-20,DOM-24,,small_business_digital.evidence_strength,소상공인·디지털 운영 근거 강도,category,"[""직접 관측"",""공식 사전분포"",""합성 프록시"",""탐색적 가설""]",derived,contextual_only,true

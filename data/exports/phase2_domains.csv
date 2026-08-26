@@ -1,0 +1,25 @@
+domain_id,domain_code,name_ko,description,primary_entity_unit,category_code,coverage_status,active,minor_guardrail,version
+DOM-01,music_audio,음악·오디오,대한민국 음악·오디오의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,leisure_culture,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-02,video_ott,영상·OTT,대한민국 영상·OTT의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,digital_media,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-03,gaming_esports,게임·e스포츠,대한민국 게임·e스포츠의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,leisure_culture,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-04,reading_webtoon,독서·웹툰,대한민국 독서·웹툰의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,leisure_culture,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-05,culture_events,문화예술·행사,대한민국 문화예술·행사의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,leisure_culture,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-06,grocery_home_meals,식료품·가정식,대한민국 식료품·가정식의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,food_dining,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-07,dining_delivery_cafe,외식·배달·카페,대한민국 외식·배달·카페의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,food_dining,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-08,fashion_resale,패션·리셀,대한민국 패션·리셀의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,commerce_payment,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-09,beauty_personal_care,뷰티·개인관리,대한민국 뷰티·개인관리의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,commerce_payment,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-10,travel_hospitality,여행·숙박,대한민국 여행·숙박의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,travel,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-11,sports_outdoor,스포츠·아웃도어,대한민국 스포츠·아웃도어의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,leisure_culture,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-12,hobbies_creation,취미·창작,대한민국 취미·창작의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,leisure_culture,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-13,pets,반려동물,대한민국 반려동물의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,household,pets,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-14,housing_home_services,주거·홈서비스,대한민국 주거·홈서비스의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,household,home_services,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-15,mobility_automotive,모빌리티·자동차,대한민국 모빌리티·자동차의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,mobility,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-16,education_learning,교육·학습,대한민국 교육·학습의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,household,children_education,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-17,parenting_childcare,양육·보육,대한민국 양육·보육의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,household,parenting_private_education,complete_with_evidence_constraints,true,true,phase2-taxonomy-2026-08-25-v1
+DOM-18,health_wellness_care,건강·웰니스·돌봄,대한민국 건강·웰니스·돌봄의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,health_care,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-19,finance_insurance,금융·보험,대한민국 금융·보험의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,household,financial_capacity,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-20,senior_retirement_care,시니어·은퇴·돌봄,대한민국 시니어·은퇴·돌봄의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,senior_retirement_care,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-21,digital_devices_ai,디지털기기·AI,대한민국 디지털기기·AI의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,digital_media,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-22,social_creator,소셜·크리에이터,대한민국 소셜·크리에이터의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,digital_media,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-23,career_professional,경력·전문활동,대한민국 경력·전문활동의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,person,work_career,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1
+DOM-24,small_business_digital,소상공인·디지털 운영,대한민국 소상공인·디지털 운영의 대상·형식·상황·행동·동기·장벽을 분리해 질의하는 Phase 2 도메인,enterprise,small_business,complete_with_evidence_constraints,true,false,phase2-taxonomy-2026-08-25-v1

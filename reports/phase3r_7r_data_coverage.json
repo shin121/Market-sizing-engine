@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-26T08:10:00.000Z",
+  "database": "market_engine_phase3r_production",
+  "modelVersion": "kr-v0.2.1",
+  "migrationSourceBoundary": "001-024",
+  "productionDataMart": {
+    "publicBaseTables": 90,
+    "productionBaseTables": 26,
+    "productionViews": 31,
+    "domains": 24,
+    "primarySubtypes": 90,
+    "archetypes": 1440,
+    "axes": 384,
+    "axisValues": 1536,
+    "features": 480,
+    "behaviors": 240,
+    "goldQueries": 10,
+    "primaryNotEstimable": 0,
+    "fixtureCount": 0,
+    "missingDisplayNameCount": 0,
+    "weightedJointCells": 91091,
+    "weightedJointSampleRows": 1650000,
+    "queryableCalibrationDimensions": 253,
+    "queryableWorkbenchConditions": 4086
+  },
+  "coverage": {
+    "domainNumericCoverage": "24/24",
+    "subtypeLowBaseHighCoverage": "90/90",
+    "archetypeWeightAndCountCoverage": "1440/1440",
+    "goldQueryNumericCoverage": "10/10",
+    "goldQueryRelatedSpendCoverage": "10/10",
+    "axisDistributionCoverage": "384/384",
+    "featureCoverageStatus": "480/480",
+    "behaviorCoverageStatus": "240/240",
+    "weightedJointUnitCoverage": "person/household/establishment/enterprise 4/4",
+    "weightedJointRuntimeRawPersonaReads": 0
+  },
+  "productionExamples": {
+    "estimateId": "684658b0-dcd6-4725-9636-8be6b713644d",
+    "countLow": 1738042,
+    "countBase": 4289457,
+    "countHigh": 7394115,
+    "scenarioId": "bc9aa64a-6d49-4541-84b4-2b7c5fc52445",
+    "tam": 4289457,
+    "sam": 1286837,
+    "som": 64342,
+    "savedSegmentId": "228eaebe-6a4c-4f2b-91a2-d5a653a4cb10",
+    "opportunityId": "4468beac-264f-4589-9d93-3d2c7db36d3e",
+    "researchJobId": "a2c6e72d-0bd7-4aff-bc2e-47995b26ad02"
+  },
+  "fixtureBoundary": {
+    "publishedReadModels": "0 fixtures",
+    "wholeProductionDatabase": "0 fixture-like rows across 116 public+production base tables",
+    "workflowRows": { "savedSegment": 1, "segmentQuery": 1, "opportunity": 1, "researchJob": 1 },
+    "integrationTests": "51/51 executed only in disposable market_engine_phase3r_integration_test; clone removed on exit",
+    "weightedJointBackfillIdempotency": "fd2536e810777599387ea7372b2ccd90 before and after second run"
+  }
+}

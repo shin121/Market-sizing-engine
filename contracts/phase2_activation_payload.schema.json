@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://market-sizing-engine.local/contracts/phase2_activation_payload.schema.json",
+  "title": "Phase 2 guarded subtype activation payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "subtype_id",
+    "domain_code",
+    "entity_unit",
+    "targetability_class",
+    "platform_claim_status",
+    "audience_definition",
+    "creative",
+    "measurement",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "subtype_id": {"type": "string", "pattern": "^DOM-[0-9]{2}-SUB-[0-9]{2}$"},
+    "domain_code": {"type": "string", "minLength": 3},
+    "entity_unit": {
+      "enum": ["person", "child_person", "household", "establishment", "enterprise"]
+    },
+    "targetability_class": {
+      "enum": [
+        "directly_targetable",
+        "proxy_targetable",
+        "contextual_only",
+        "first_party_data_required",
+        "creative_only",
+        "not_allowed"
+      ]
+    },
+    "platform_claim_status": {
+      "enum": ["verified", "unverified_do_not_claim", "not_applicable"]
+    },
+    "audience_definition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["include_contexts", "exclude_sensitive_inference"],
+      "properties": {
+        "include_contexts": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "exclude_sensitive_inference": {"const": true}
+      }
+    },
+    "creative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["job", "barrier", "proof_needed"],
+      "properties": {
+        "job": {"type": "string", "minLength": 1},
+        "barrier": {"type": "string", "minLength": 1},
+        "proof_needed": {"const": true}
+      }
+    },
+    "measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "secondary", "requires_holdout"],
+      "properties": {
+        "primary": {"type": "string", "minLength": 1},
+        "secondary": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "requires_holdout": {"const": true}
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "minItems": 3,
+      "contains": {"const": "platform availability unverified"},
+      "items": {"type": "string"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"entity_unit": {"const": "child_person"}}, "required": ["entity_unit"]},
+      "then": {"properties": {"targetability_class": {"enum": ["first_party_data_required", "contextual_only", "creative_only", "not_allowed"]}}}
+    },
+    {
+      "if": {"properties": {"platform_claim_status": {"const": "verified"}}, "required": ["platform_claim_status"]},
+      "then": {"description": "A verified status requires external platform evidence; the current build emits unverified_do_not_claim only."}
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "version": "phase2r-b-2026-08-26-v1",
+  "status": "passed",
+  "expected_subtypes": 90,
+  "covered_subtypes": 90,
+  "human_readable_names": 90,
+  "numeric_intervals": 90,
+  "confidence_complete": 90,
+  "exclusive_parent_reconciliation": [
+    {
+      "domain_id": "DOM-01",
+      "share_sum": 1.0,
+      "count_sum": 30945362.033288676
+    },
+    {
+      "domain_id": "DOM-02",
+      "share_sum": 1.0,
+      "count_sum": 31781433.68675562
+    },
+    {
+      "domain_id": "DOM-03",
+      "share_sum": 1.0,
+      "count_sum": 11000547.00729295
+    },
+    {
+      "domain_id": "DOM-04",
+      "share_sum": 1.0,
+      "count_sum": 29963818.173961386
+    },
+    {
+      "domain_id": "DOM-05",
+      "share_sum": 1.0,
+      "count_sum": 18261227.984945726
+    },
+    {
+      "domain_id": "DOM-06",
+      "share_sum": 1.0,
+      "count_sum": 33613495.70769122
+    },
+    {
+      "domain_id": "DOM-07",
+      "share_sum": 1.0,
+      "count_sum": 44093732.154591575
+    },
+    {
+      "domain_id": "DOM-08",
+      "share_sum": 1.0,
+      "count_sum": 9746213.113348996
+    },
+    {
+      "domain_id": "DOM-09",
+      "share_sum": 1.0000000000000002,
+      "count_sum": 17536601.755022217
+    },
+    {
+      "domain_id": "DOM-10",
+      "share_sum": 1.0,
+      "count_sum": 39537678.12966567
+    },
+    {
+      "domain_id": "DOM-11",
+      "share_sum": 1.0,
+      "count_sum": 30535512.051717028
+    },
+    {
+      "domain_id": "DOM-12",
+      "share_sum": 1.0,
+      "count_sum": 18962495.048957836
+    },
+    {
+      "domain_id": "DOM-13",
+      "share_sum": 1.0,
+      "count_sum": 9813879.948480528
+    },
+    {
+      "domain_id": "DOM-14",
+      "share_sum": 1.0,
+      "count_sum": 6924921.4946114225
+    },
+    {
+      "domain_id": "DOM-15",
+      "share_sum": 1.0,
+      "count_sum": 25626088.24655105
+    },
+    {
+      "domain_id": "DOM-16",
+      "share_sum": 1.0,
+      "count_sum": 2291986.3839246603
+    },
+    {
+      "domain_id": "DOM-17",
+      "share_sum": 1.0,
+      "count_sum": 3060154.6075802604
+    },
+    {
+      "domain_id": "DOM-18",
+      "share_sum": 0.9999999999999999,
+      "count_sum": 29053017.63984508
+    },
+    {
+      "domain_id": "DOM-19",
+      "share_sum": 1.0,
+      "count_sum": 10338281.124052461
+    },
+    {
+      "domain_id": "DOM-20",
+      "share_sum": 1.0,
+      "count_sum": 4582411.438507193
+    },
+    {
+      "domain_id": "DOM-21",
+      "share_sum": 1.0,
+      "count_sum": 27789178.3836562
+    },
+    {
+      "domain_id": "DOM-22",
+      "share_sum": 1.0,
+      "count_sum": 18871743.410549097
+    },
+    {
+      "domain_id": "DOM-23",
+      "share_sum": 1.0,
+      "count_sum": 21763999.44171174
+    },
+    {
+      "domain_id": "DOM-24",
+      "share_sum": 1.0,
+      "count_sum": 1958925.1441682135
+    }
+  ],
+  "max_share_sum_error": 2.220446049250313e-16
+}

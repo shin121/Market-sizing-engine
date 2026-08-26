@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-08-25T13:50:49.812Z",
+  "status": "implementation_verified_through_001_018_on_disposable_clone_with_baseline_provenance_gap_and_live_openai_pending",
+  "referenceDesign": {
+    "path": "/Users/woocheolshin/Downloads/Market_Atlas_Final.html",
+    "sha256": "1e0614ae23c7413ab7d6c4dcf9a5771a1826fcb864f23b65ba6bf75aba0470a5",
+    "implementedConcept": "four-level Market Atlas navigation, representative radial hub with the full 24-domain registry, dense white analytical surfaces, dark emerald navigation, restrained purple state, explicit mobile navigation, and task-oriented search",
+    "excluded": "hardcoded market values, random display bars, mixed-unit arithmetic, and in-memory fake calculations",
+    "knownConceptGaps": [
+      "The source data has no direct axis-to-subtype relationship, so Level 3 to Level 4 is not fabricated.",
+      "Mobile comparison remains a horizontally scrollable table."
+    ]
+  },
+  "baseline": {
+    "modelVersion": "kr-v0.2.1",
+    "phase2DefinitionOfDone": {
+      "status": "failed",
+      "passed": 29,
+      "failed": 0,
+      "unavailable": 1,
+      "total": 30,
+      "onlyUnavailableItem": "Historical Nemotron direct-acquisition execution provenance"
+    },
+    "combinedValidation": "46/46",
+    "baselineVerificationChecks": "17/18 FAILED",
+    "pythonPytest": {
+      "databaseEnabled": true,
+      "passed": 67,
+      "failed": 0
+    },
+    "postgresBackfillOutcome": "already_current",
+    "sourceSemanticSha256": "1409d853640b32f40a8957a2c780911fc60eba1baeb02466f59a415028144246",
+    "targetSemanticSha256": "6900c66716ef9cb9620df4a84daf5fb92462917db4ca94f119f5c380edc48501",
+    "nemotronRows": 1000000,
+    "fixedShards": 9,
+    "historicalAcquisitionProvenance": {
+      "status": "unavailable",
+      "reason": "Current files, manifests, checksums, and the no-input fetch path cannot establish who executed the historical direct acquisition.",
+      "integrityBoundary": "The current 1,000,000 rows, nine fixed shards, checksums, catalog counts, and 46/46 validation remain verified."
+    },
+    "independentHoldout": {
+      "status": "not_available",
+      "reason": "Calibration aggregation is same-input diagnostic evidence, not an out-of-sample holdout."
+    }
+  },
+  "postgres": {
+    "sourceTree": {
+      "migrationTarget": "001-018",
+      "baseTables": 90,
+      "workbenchViews": 17,
+      "verification": "Initial application and full reapplication passed, including stateful 010, Opportunity 017, and release-boundary 018 fixtures."
+    },
+    "originalPopulatedDatabase": {
+      "name": "market_engine",
+      "migration": "016",
+      "baseTables": 90,
+      "workbenchViews": 12,
+      "migrations017And018Applied": false,
+      "untouched": true
+    },
+    "verificationClone": {
+      "name": "market_engine_goal_verify_018",
+      "migration": "018",
+      "baseTables": 90,
+      "workbenchViews": 17,
+      "opportunityLinks": 109,
+      "rawComparisonFingerprintPreserved": true,
+      "legacyHumanBaseBelow10Rows": 2,
+      "legacyHumanBaseBelow10ProjectedSuppressed": 2,
+      "protectedOrMinorQueryableConditions": 0
+    },
+    "catalogCounts": {
+      "domains": 24,
+      "axes": 384,
+      "features": 480,
+      "behaviors": 240,
+      "segmentationModels": 24,
+      "primarySubtypes": 90,
+      "parentAllocations": 450,
+      "archetypes": 1440,
+      "activationPayloads": 90
+    },
+    "migration017": {
+      "name": "017_opportunity_snapshot_invariants.sql",
+      "addsTables": 0,
+      "addsViews": 0,
+      "contract": "At most one primary target, exact query/result/saved-version/market-scenario lineage, append-only primary links, and restricted runtime privileges.",
+      "status": "passed_on_harness_and_clone"
+    },
+    "migration018": {
+      "name": "018_release_safe_read_boundary.sql",
+      "addsTables": 0,
+      "addsViews": 5,
+      "finalViews": 17,
+      "canonicalReleaseViews": [
+        "v_estimate_release_boundary",
+        "v_estimate_component_release_boundary",
+        "v_estimate_assumption_release_boundary",
+        "v_estimate_sensitivity_release_boundary",
+        "v_segment_query_result_release_boundary"
+      ],
+      "contract": "Release-safe projections and seven downstream view replacements fail closed on unsafe human Base below 10, protected/minor catalog rows, and invalid or unclassifiable release data without changing base rows.",
+      "status": "passed_on_harness_and_clone",
+      "securityBoundary": "Trusted-application projection; runtime raw-table SELECT remains a disclosed residual rather than a hard database confidentiality boundary.",
+      "subtypeResidual": "No current human subtype allocation has Base below 10, but future raw subtype rows remain outside a subtype-specific release projection."
+    }
+  },
+  "verification": {
+    "currentFocused": {
+      "pythonPytest": "67 passed with database integration enabled",
+      "engineValidation": "46/46 passed",
+      "livePhase2DefinitionOfDone": "29 passed, 0 failed, 1 unavailable; only historical Nemotron direct-acquisition execution provenance is unavailable",
+      "phase3BaselineVerifier": "17/18 FAILED",
+      "migration001To018": "90 tables/17 views initial application and full reapplication passed",
+      "originalDatabaseBoundary": "market_engine remains untouched at 016/90/12",
+      "populatedCloneIntegration": "6 files/44 tests passed on market_engine_goal_verify_018",
+      "typecheck": "passed",
+      "eslintZeroWarnings": "passed",
+      "webUnit": "44 files/261 tests passed",
+      "productionBuild": "passed",
+      "fullMultiProfilePlaywright": "22 passed/5 intended skips"
+    },
+    "retainedHistoricalEvidence": {
+      "mutatingReviewMaterializationE2E": "post-016 populated original database case passed 1/1; no external provider call",
+      "productionAuthSmoke": {
+        "boundary": "post-016 local shared-secret smoke; not rerun as a target-deployment certificate",
+        "unauthenticatedPageRedirect": 307,
+        "unauthenticatedApi": 401,
+        "bearerHealth": 200,
+        "loginRedirect": 303,
+        "cookieAuthenticatedExplorer": 200
+      }
+    },
+    "finalCloseout": {
+      "baselineHistoricalAcquisitionProvenance": "GAP",
+      "liveCredentialedResearch": "PENDING_EXTERNAL"
+    },
+    "performance": {
+      "evidenceGeneratedAt": "2026-08-25T13:50:49.812Z",
+      "sourceReport": "reports/phase3_workbench_performance.json",
+      "database": "market_engine_goal_verify_018",
+      "queries": 10,
+      "queriesUnder3Ms": 8,
+      "queriesOver50Ms": 0,
+      "maximumExecutionTimeMs": 24.128,
+      "physicalReads": 0,
+      "temporarySpills": 0,
+      "wbPerf02ExecutionTimeMs": 24.128,
+      "wbPerf07ExecutionTimeMs": 18.54,
+      "wbPerf09ImmediatePreFix": {
+        "executionTimeMs": 53.005,
+        "sharedHitBlocks": 51819
+      },
+      "wbPerf09Final": {
+        "executionTimeMs": 2.362,
+        "sharedHitBlocks": 1849
+      },
+      "status": "remediated_with_remaining_risks"
+    }
+  },
+  "currentHardening": [
+    "Migration 017 enforces one primary Opportunity target, exact pinned snapshot lineage, append-only primary links, and restricted runtime privileges.",
+    "Opportunity updates use an expected positive version, row locking, conditional update, and a visible conflict path.",
+    "Opportunity research ideas require exact enabled feature and behavior provenance from the pinned result and current catalog.",
+    "Migration 018 defines five canonical release-safe views and rewrites seven downstream projections.",
+    "Derived person, child_person, and household outputs with weighted Base below 10 withhold values and unsafe lineage details while retaining safe suppression reason and provenance.",
+    "Python persistence and load paths sanitize suppressed payloads, including legacy persisted records.",
+    "Explicit estimate scenario selection requires an exact active scenario ID and positive safe version in the current workspace and preserves ID/version/mode through JSON, CSV, and print.",
+    "Comparison behavior remains exact-one-active-scenario and does not silently adopt explicit estimate selection.",
+    "Main JSON and export responses remain bounded at 512 KiB and 5 MiB respectively.",
+    "The provider gate remains disabled and configuration_required remains truthful without fabricated output."
+  ],
+  "openaiResearch": {
+    "apiKeyPresent": true,
+    "keyFileMode": "0600",
+    "keyPrintedOrCommitted": false,
+    "providerEnabled": false,
+    "configurationRequiredPathVerified": true,
+    "liveCredentialedRun": false,
+    "status": "PENDING_EXTERNAL",
+    "exactApprovalPhrase": "위 payload 그대로 외부 호출 승인.",
+    "approvalPhraseReceived": false,
+    "reason": "The exact external research approval phrase has not been received; no provider call has been made.",
+    "requiredAcceptance": "After approval, exactly one credentialed Research Job must reach needs_review, be human-reviewed/materialized, and verify baseline isolation.",
+    "proposedPayload": {
+      "researchQuestion": "대한민국 소상공인 중 온라인 판매채널 보유율의 최신 공공 근거와 Low/Base/High 범위를 조사해줘",
+      "targetSegment": "대한민국 소상공인",
+      "targetVariable": "online_sales_channel_prevalence",
+      "baseline": {}
+    }
+  },
+  "explicitLimitations": [
+    "Historical Nemotron direct-acquisition execution provenance is unavailable.",
+    "No genuine independent holdout exists.",
+    "The approved factor/source release remains unpublished without a governed publication and dependency transaction.",
+    "Migration 018 is a trusted-app projection rather than a hard raw-table confidentiality boundary.",
+    "Future raw subtype Base-below-10 rows remain outside a subtype-specific release view.",
+    "No live provider request or public/cloud deployment occurred."
+  ],
+  "requirementsAudit": "reports/phase3_requirements_audit.json"
+}

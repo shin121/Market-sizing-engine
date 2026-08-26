@@ -1,0 +1,23 @@
+{
+  "version": "phase2r-b-2026-08-26-v1",
+  "status": "passed",
+  "axis": {
+    "expected": 384,
+    "covered_dimensions": 384,
+    "distribution_rows": 1536,
+    "unit_complete": 1536
+  },
+  "feature": {
+    "expected": 480,
+    "covered": 480,
+    "numeric": 480,
+    "not_estimable": 0
+  },
+  "behavior": {
+    "expected": 240,
+    "covered": 240,
+    "numeric": 240,
+    "not_estimable": 0
+  },
+  "overlap_sum_not_forced": true
+}

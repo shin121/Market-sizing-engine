@@ -1,0 +1,1 @@
+{"entity_unit":"enterprise","geography":{"level":"country","codes":["KR"]},"as_of":"2024-12-31","where":{"feature":"geography_code","op":"eq","value":"KR"},"uncertainty":true,"explain":true}

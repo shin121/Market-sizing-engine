@@ -1,0 +1,14 @@
+{
+  "name":"음식점 홈페이지 구축·운영 서비스 3년 시나리오",
+  "query":"examples/queries/website_less_restaurant_owner_60s.json",
+  "product_definition":"자체 홈페이지 구축과 1년 유지관리",
+  "market_unit":"enterprise",
+  "currency":"KRW",
+  "horizon_months":36,
+  "annual_addressable_spend_per_entity":{"low":600000,"base":1200000,"high":2400000},
+  "serviceability_rate":{"low":0.45,"base":0.65,"high":0.80},
+  "attainable_share":{"low":0.005,"base":0.015,"high":0.03},
+  "operational_capacity_entities":{"low":800,"base":2500,"high":6000},
+  "realized_arpu":{"low":500000,"base":900000,"high":1500000}
+}
+

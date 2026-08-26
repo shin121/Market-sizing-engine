@@ -1,0 +1,8 @@
+release_id,publisher,reference_period,entity_unit,tier,status,primary_role
+REL-KOSTAT-CENSUS-2024,국가데이터처,2024-11-01,"person;household",1,verified,"population;age-sex;household controls"
+REL-MOIS-AGE-2024-12,행정안전부,2024-12-31,person,1,verified,"exact ages 0-18; resident total"
+REL-KOSTAT-EST-2024-P,국가데이터처,2024-12-31,establishment,1,verified,"establishment controls"
+REL-MSS-SB-2023,중소벤처기업부·소상공인시장진흥공단,2023,enterprise,1,verified,"I56 small-business and digital controls"
+REL-KOSTAT-REA-2024,국가데이터처,2024-H1,person,1,verified,"non-wage age proxy"
+REL-NVIDIA-NPK-1.0,NVIDIA,2026-04-20,synthetic_person_record,3,verified,"synthetic adult frame and representatives"
+REL-KOSTAT-BD-2024-P,국가데이터처,2024,enterprise,1,verified,"all active-enterprise control"

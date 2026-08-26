@@ -1,0 +1,18 @@
+{
+  "version": "confidence-v1",
+  "weights": {
+    "source_quality": 30,
+    "recency": 15,
+    "directness": 20,
+    "joint_observation": 20,
+    "model_reliance": 15
+  },
+  "grade_thresholds": {"A":85,"B":75,"C":60,"D":40,"E":0},
+  "precision": [
+    {"min_score":85,"round_to":100},
+    {"min_score":75,"round_to":1000},
+    {"min_score":60,"round_to":5000},
+    {"min_score":40,"round_to":10000},
+    {"min_score":0,"round_to":null}
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "generated_at": "2026-08-25T22:56:30.407756+00:00",
+  "status": "passed",
+  "passed": 24,
+  "total": 24,
+  "items": [
+    {
+      "id": 1,
+      "name": "preserved_phase2_dod",
+      "status": "passed",
+      "evidence": "reports/phase2_dod_audit.json"
+    },
+    {
+      "id": 2,
+      "name": "preserved_phase2_test_18_of_18",
+      "status": "passed",
+      "evidence": "reports/phase2_dod_audit.json"
+    },
+    {
+      "id": 3,
+      "name": "preserved_combined_validation_46_of_46",
+      "status": "passed",
+      "evidence": "reports/phase2_dod_audit.json"
+    },
+    {
+      "id": 4,
+      "name": "preserved_archetypes_1440",
+      "status": "passed",
+      "evidence": "original market_engine database"
+    },
+    {
+      "id": 5,
+      "name": "preserved_nemotron_rows_1000000",
+      "status": "passed",
+      "evidence": "config/nemotron_manifest.yml"
+    },
+    {
+      "id": 6,
+      "name": "preserved_nemotron_shards_9",
+      "status": "passed",
+      "evidence": "config/nemotron_manifest.yml"
+    },
+    {
+      "id": 7,
+      "name": "preserved_phase1_phase2_tables_58",
+      "status": "passed",
+      "evidence": "scripts/test_postgres.sh"
+    },
+    {
+      "id": 8,
+      "name": "production_test_separated",
+      "status": "passed",
+      "evidence": "production schema and isolated clone"
+    },
+    {
+      "id": 9,
+      "name": "production_read_fixture_rows_zero",
+      "status": "passed",
+      "evidence": "production read views"
+    },
+    {
+      "id": 10,
+      "name": "production_saved_segment_fixture_rows_zero",
+      "status": "passed",
+      "evidence": "production.v_saved_segment"
+    },
+    {
+      "id": 11,
+      "name": "person_universe_complete",
+      "status": "passed",
+      "evidence": "production.universe"
+    },
+    {
+      "id": 12,
+      "name": "household_universe_complete",
+      "status": "passed",
+      "evidence": "production.universe"
+    },
+    {
+      "id": 13,
+      "name": "business_universe_complete",
+      "status": "passed",
+      "evidence": "production.universe"
+    },
+    {
+      "id": 14,
+      "name": "domain_base_population_24_of_24",
+      "status": "passed",
+      "evidence": "production.v_domain_summary"
+    },
+    {
+      "id": 15,
+      "name": "domain_unit_24_of_24",
+      "status": "passed",
+      "evidence": "production.v_domain_summary"
+    },
+    {
+      "id": 16,
+      "name": "domain_reference_year_24_of_24",
+      "status": "passed",
+      "evidence": "production.v_domain_summary"
+    },
+    {
+      "id": 17,
+      "name": "domain_source_24_of_24",
+      "status": "passed",
+      "evidence": "production.v_domain_summary"
+    },
+    {
+      "id": 18,
+      "name": "domain_interval_24_of_24",
+      "status": "passed",
+      "evidence": "production.v_domain_summary"
+    },
+    {
+      "id": 19,
+      "name": "domain_grade_24_of_24",
+      "status": "passed",
+      "evidence": "production.v_domain_summary"
+    },
+    {
+      "id": 20,
+      "name": "domain_confidence_24_of_24",
+      "status": "passed",
+      "evidence": "production.v_domain_summary"
+    },
+    {
+      "id": 21,
+      "name": "primary_domain_not_estimable_zero",
+      "status": "passed",
+      "evidence": "production.v_domain_summary"
+    },
+    {
+      "id": 22,
+      "name": "estimate_display_name_missing_zero",
+      "status": "passed",
+      "evidence": "production.v_estimate_summary"
+    },
+    {
+      "id": 23,
+      "name": "localized_status_mapping_ready",
+      "status": "passed",
+      "evidence": "web/src/components/ui.tsx"
+    },
+    {
+      "id": 24,
+      "name": "migration_and_backfill_reapply_safe",
+      "status": "passed",
+      "evidence": "migrations/019-020 and Phase 2R-A integration tests"
+    }
+  ],
+  "current_regression": {
+    "python": {
+      "collected": 73,
+      "passed": 65,
+      "skipped": 8
+    },
+    "web_unit": {
+      "files": 44,
+      "passed": 261
+    },
+    "web_integration": {
+      "files": 7,
+      "passed": 46
+    },
+    "phase2r_database": {
+      "passed": 6
+    },
+    "combined_model_validation": {
+      "passed": 46,
+      "total": 46
+    },
+    "nemotron_checksum_verification": {
+      "shards": 9,
+      "all_checksums_ok": true,
+      "rows": 1000000
+    },
+    "web_typecheck": "passed",
+    "web_lint": "passed",
+    "web_build": "passed",
+    "browser": {
+      "domain_population_visible": true,
+      "estimate_cards": 24,
+      "unnamed": 0,
+      "not_estimable": 0,
+      "console_errors_or_warnings": 0
+    }
+  },
+  "historical_evidence_note": "The retained Phase 2 certificate records 30/30. The separate live forensic verifier still classifies direct-acquisition execution provenance as unavailable; Phase 2R-A does not rewrite that historical evidence boundary.",
+  "scope_disclosure": "Domain counts are official potential eligible-universe frames, not observed product participation or purchase-intent prevalence."
+}

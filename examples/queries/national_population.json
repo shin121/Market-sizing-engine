@@ -1,0 +1,1 @@
+{"entity_unit":"person","geography":{"level":"country","codes":["KR"]},"as_of":"latest","where":{"feature":"geography_code","op":"eq","value":"KR"},"uncertainty":true,"explain":true}

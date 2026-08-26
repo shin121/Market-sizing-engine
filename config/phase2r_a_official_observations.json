@@ -1,0 +1,71 @@
+{
+  "version": "phase2r-a-official-observations-2026-08-26-v1",
+  "province_rows": [
+    {"code":"11","name_ko":"서울특별시","person":9335444,"household":4319073,"establishment":1170152},
+    {"code":"26","name_ko":"부산광역시","person":3257256,"household":1491579,"establishment":401560},
+    {"code":"27","name_ko":"대구광역시","person":2369335,"household":1059084,"establishment":286296},
+    {"code":"28","name_ko":"인천광역시","person":3058033,"household":1310880,"establishment":328477},
+    {"code":"29","name_ko":"광주광역시","person":1444171,"household":641029,"establishment":175028},
+    {"code":"30","name_ko":"대전광역시","person":1467093,"household":670971,"establishment":171989},
+    {"code":"31","name_ko":"울산광역시","person":1106895,"household":473979,"establishment":116735},
+    {"code":"36","name_ko":"세종특별자치시","person":390156,"household":161309,"establishment":36120},
+    {"code":"41","name_ko":"경기도","person":13914479,"household":5827597,"establishment":1600917},
+    {"code":"51","name_ko":"강원특별자치도","person":1522881,"household":714657,"establishment":214806},
+    {"code":"43","name_ko":"충청북도","person":1646328,"household":750756,"establishment":208146},
+    {"code":"44","name_ko":"충청남도","person":2238243,"household":1007652,"establishment":287862},
+    {"code":"52","name_ko":"전북특별자치도","person":1758836,"household":805961,"establishment":252865},
+    {"code":"46","name_ko":"전라남도","person":1778338,"household":817003,"establishment":253720},
+    {"code":"47","name_ko":"경상북도","person":2578999,"household":1204317,"establishment":344806},
+    {"code":"48","name_ko":"경상남도","person":3264243,"household":1452638,"establishment":404026},
+    {"code":"50","name_ko":"제주특별자치도","person":674817,"household":288635,"establishment":100168}
+  ],
+  "person_observations": [
+    {"dimension_code":"sex","values":{"sex":"male"},"count":25930817,"locator":"appendix table 2, PDF p.114 (printed p.105)"},
+    {"dimension_code":"sex","values":{"sex":"female"},"count":25874730,"locator":"appendix table 2, PDF p.114 (printed p.105)"},
+    {"dimension_code":"age","values":{"age_min":0,"age_max":14},"count":5420798,"locator":"appendix table 3, PDF pp.124-125 (printed pp.115-116)"},
+    {"dimension_code":"age","values":{"age_min":15,"age_max":64},"count":36263029,"locator":"appendix table 3, PDF pp.124-125 (printed pp.115-116)"},
+    {"dimension_code":"age","values":{"age_min":65},"count":10121720,"locator":"appendix table 3, PDF pp.124-125 (printed pp.115-116)"},
+    {"dimension_code":"marital_status","values":{"marital_status":"never_married","population_scope":"korean_nationals_age_18_plus"},"count_low":12735500,"count":12736000,"count_high":12736499,"locator":"summary table, PDF p.14 (printed p.5); unit thousand persons"},
+    {"dimension_code":"marital_status","values":{"marital_status":"married","population_scope":"korean_nationals_age_18_plus"},"count_low":24307500,"count":24308000,"count_high":24308499,"locator":"summary table, PDF p.14 (printed p.5); unit thousand persons"},
+    {"dimension_code":"marital_status","values":{"marital_status":"widowed_or_divorced","population_scope":"korean_nationals_age_18_plus"},"count_low":6021500,"count":6022000,"count_high":6022499,"locator":"summary table, PDF p.14 (printed p.5); unit thousand persons"}
+  ],
+  "household_observations": [
+    {"dimension_code":"total_households","values":{"household_scope":"general"},"count":22294419,"locator":"appendix table 7, PDF p.130 (printed p.121)"},
+    {"dimension_code":"household_size","values":{"household_scope":"general","household_size":1},"count":8044948,"locator":"appendix table 7, PDF p.130 (printed p.121)"},
+    {"dimension_code":"household_size","values":{"household_scope":"general","household_size":2},"count":6476024,"locator":"appendix table 7, PDF p.130 (printed p.121)"},
+    {"dimension_code":"household_size","values":{"household_scope":"general","household_size":3},"count":4202129,"locator":"appendix table 7, PDF p.130 (printed p.121)"},
+    {"dimension_code":"household_size","values":{"household_scope":"general","household_size":4},"count":2838504,"locator":"appendix table 7, PDF p.130 (printed p.121)"},
+    {"dimension_code":"household_size","values":{"household_scope":"general","household_size_min":5},"count":732814,"locator":"appendix table 7, PDF p.130 (printed p.121)"},
+    {"dimension_code":"single_person","values":{"household_scope":"general","single_person":true},"count":8044948,"locator":"appendix table 7, PDF p.130 (printed p.121)"},
+    {"dimension_code":"children_presence","values":{"children_age_max":18,"children_present":true},"count_low":4516500,"count":4517000,"count_high":4517499,"locator":"topic table 77, PDF p.108 (printed p.99); unit thousand households"}
+  ],
+  "establishment_observations": {
+    "industry": [
+      ["A",11876],["B",1892],["C",504728],["D",147040],["E",13621],["F",504985],["G",1612825],["H",673324],["I",858373],["J",135207],["K",69013],["L",277819],["M",243418],["N",134859],["O",13161],["P",279558],["Q",170056],["R",153557],["S",548361]
+    ],
+    "employee_band": [["1_4",5547339],["5_99",784593],["100_299",16738],["300_plus",5003]],
+    "legal_form": [["individual",5023036],["company_corporation",928082],["other_corporation",277020],["unincorporated_association",125535]],
+    "owner_age": [["under_30",255510],["30s",882777],["40s",1591058],["50s",1958184],["60_plus",1666144]]
+  },
+  "enterprise_observations": {
+    "employee_band": [["1",6103536],["2_4",925222],["5_9",347191],["10_49",230124],["50_99",20329],["100_149",6152],["150_199",2687],["200_249",1541],["250_299",1049],["300_plus",3918]],
+    "owner_sex": [["male",4596351],["female",3045398]],
+    "owner_age": [["under_30",223698],["30s",898434],["40s",1692173],["50s",2281675],["60s",1815567],["70_plus",719144],["unknown",11058]],
+    "legal_form": [["individual",6751081],["corporation",890668]],
+    "sales_band": [["under_50m_krw",3685476],["50m_to_100m_krw",1141270],["100m_to_500m_krw",1850448],["500m_to_1b_krw",430374],["1b_to_5b_krw",412773],["5b_to_10b_krw",63204],["10b_to_20b_krw",30637],["20b_to_40b_krw",14297],["40b_to_60b_krw",4611],["60b_to_80b_krw",2114],["80b_to_100b_krw",1298],["100b_to_150b_krw",1735],["150b_plus_krw",3512]],
+    "business_age": [["0_3",2539486],["4_6",1511442],["7_9",1033436],["10_19",1596248],["20_plus",961137]]
+  },
+  "source_locators": {
+    "province_person_household":"2024 Population and Housing Census appendix table 1, PDF p.113 (printed p.104)",
+    "province_establishment":"2024 Census on Establishments appendix table 4, PDF p.24 (printed p.20)",
+    "establishment_industry":"2024 Census on Establishments industry table, PDF p.6 (printed p.2)",
+    "establishment_employee_band":"2024 Census on Establishments employee-size table, PDF p.11 (printed p.7)",
+    "establishment_legal_form":"2024 Census on Establishments legal-form table, PDF p.10 (printed p.6)",
+    "establishment_owner_age":"2024 Census on Establishments representative-age table, PDF p.13 (printed p.9)",
+    "enterprise_employee_band":"2024 Business Demography statistical table 1.3, PDF p.43 (printed p.37)",
+    "enterprise_owner_sex_age":"2024 Business Demography statistical table 1.4, PDF p.44 (printed p.38)",
+    "enterprise_legal_form":"2024 Business Demography statistical table 1.5, PDF p.45 (printed p.39)",
+    "enterprise_sales_band":"2024 Business Demography statistical table 1.2, PDF p.43 (printed p.37)",
+    "enterprise_business_age":"2024 Business Demography statistical table 1.9, PDF p.49 (printed p.43)"
+  }
+}

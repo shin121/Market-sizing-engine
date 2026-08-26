@@ -1,0 +1,37 @@
+{
+  "version":"probability-models-v1",
+  "models":[
+    {
+      "model_code":"restaurant_owner_age_60_69",
+      "entity_unit":"enterprise",
+      "applies_when":{"industry_code":"I56","small_business":true},
+      "feature":"owner_age",
+      "operator":"between",
+      "value":[60,69],
+      "probability":{"low":0.216,"base":0.25194,"high":0.288},
+      "formula":"P(owner 60+) × P(age 60–69 | non-wage worker age 60+)",
+      "components":[
+        {"label":"P(owner 60+ | restaurant small business)","low":0.36,"base":0.38,"high":0.40,"release_id":"REL-MSS-SB-2023","locator":"p.47 table 2-4"},
+        {"label":"P(age 60–69 | non-wage worker age 60+)","low":0.60,"base":0.663,"high":0.72,"release_id":"REL-KOSTAT-REA-2024","locator":"p.13 and p.20 tables II-3-1 and II-5-1"}
+      ],
+      "method_code":"proxy_based",
+      "validation_gaps":["owner_attribute_unobserved","missing_joint_distribution"]
+    },
+    {
+      "model_code":"website_absence_restaurant_owner_60_69",
+      "entity_unit":"enterprise",
+      "applies_when":{"industry_code":"I56","owner_age":[60,69]},
+      "feature":"has_website",
+      "operator":"eq",
+      "value":false,
+      "probability":{"low":0.785,"base":0.90,"high":0.97},
+      "formula":"scenario P(no own website | restaurant, owner 60–69); lower anchor is no listed digital/system activity",
+      "components":[
+        {"label":"No listed digital/system activity among restaurant/bar small businesses","low":0.785,"base":0.785,"high":0.785,"release_id":"REL-MSS-SB-2023","locator":"p.201 table 38"},
+        {"label":"Unobserved own-website scenario uplift","low":0.00,"base":0.115,"high":0.185,"release_id":null,"locator":"explicit expert scenario, not an observed statistic"}
+      ],
+      "method_code":"expert_assumption",
+      "validation_gaps":["business_web_presence_unobserved","missing_joint_distribution"]
+    }
+  ]
+}

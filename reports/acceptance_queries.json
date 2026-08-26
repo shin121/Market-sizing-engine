@@ -1,0 +1,334 @@
+{
+  "passed": 20,
+  "total": 20,
+  "results": [
+    {
+      "name": "홈페이지가 없는 60대 음식점 사업체",
+      "expected_status": "estimated",
+      "passed": true,
+      "query_id": "QRY-e038a399fe810929",
+      "estimate_id": "EST-724ab5967dcae2b2",
+      "unit": "enterprise",
+      "status": "estimated",
+      "count": {
+        "low": 130000,
+        "base": 170000,
+        "high": 210000
+      },
+      "confidence_grade": "D",
+      "gap_types": [
+        "business_web_presence_unobserved",
+        "missing_joint_distribution",
+        "owner_attribute_unobserved",
+        "unknown_unit_conversion"
+      ]
+    },
+    {
+      "name": "초등 자녀·반려동물·수도권 맞벌이 가구",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-52072b9d0c56ee7e",
+      "estimate_id": "EST-315c0ee56088c235",
+      "unit": "household",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "사교육 이용 중학생",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-77768869fb42ba55",
+      "estimate_id": "EST-ae63ed62cd773898",
+      "unit": "child_person",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "1인가구 30대 고빈도 국내여행자",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-aa3b73f9978107c6",
+      "estimate_id": "EST-b49dbaa4b4b8f30f",
+      "unit": "person",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "모바일 고이용·온라인판매 없는 지방 소상공인",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-0d0850dc476bf84d",
+      "estimate_id": "EST-a747452a4c71d439",
+      "unit": "enterprise",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "은퇴 전후 돌봄 부담 50~60대 가구",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-beaf430525c8c4e6",
+      "estimate_id": "EST-70bd642633cf6708",
+      "unit": "household",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "영유아 자녀 맞벌이 보육시장",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-df10bc677c5cd4fb",
+      "estimate_id": "EST-808286f820381b0c",
+      "unit": "household",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "두 여행 세그먼트 OR 합집합",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-f2d459e6b66c595e",
+      "estimate_id": "EST-fad11b4c15129610",
+      "unit": "person",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "사람을 사업체로 변환하려는 잘못된 질의",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-06fff4dca9c4ab62",
+      "estimate_id": "EST-f32d9f8127d24afc",
+      "unit": "person",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "unknown_unit_conversion"
+      ]
+    },
+    {
+      "name": "근거 부족 확률 조건",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-9c7a2f3bfa457520",
+      "estimate_id": "EST-375296b68573ac1b",
+      "unit": "enterprise",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "반려동물 1인가구",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-ff76384b051ec08a",
+      "estimate_id": "EST-7f04ffc48bb66d1c",
+      "unit": "household",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "고소득 자가 가구",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-96081c0087aed9aa",
+      "estimate_id": "EST-4976502b45dae4ed",
+      "unit": "household",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "사교육 미이용 초등학생",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-2496cc00b62be74b",
+      "estimate_id": "EST-1ff47d8c6b702174",
+      "unit": "child_person",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "고령 1인가구",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-b48f9dae5e8e76f2",
+      "estimate_id": "EST-d242d12935973811",
+      "unit": "household",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "온라인 판매 보유 음식점",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-53403fb57cbd103c",
+      "estimate_id": "EST-e0bf575e80c45130",
+      "unit": "enterprise",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "홈페이지 보유 음식점 NOT",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-96813b0a8d3a96c6",
+      "estimate_id": "EST-555f4a735bdbb772",
+      "unit": "enterprise",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "수도권 20대",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-f80247fe22b2b55a",
+      "estimate_id": "EST-942d19e09cab32fe",
+      "unit": "person",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "지방 고령 모바일 사업자",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-a77ad38853b59834",
+      "estimate_id": "EST-8c86afb04748affb",
+      "unit": "enterprise",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "보호자가 연결된 18세",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-891211df919be6b7",
+      "estimate_id": "EST-ab88087b90919609",
+      "unit": "child_person",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    },
+    {
+      "name": "가구 돌봄 부담 부정 조건",
+      "expected_status": "not_estimable",
+      "passed": true,
+      "query_id": "QRY-a0746c26e923961f",
+      "estimate_id": "EST-0553ab7c1d55d166",
+      "unit": "household",
+      "status": "not_estimable",
+      "count": null,
+      "confidence_grade": "E",
+      "gap_types": [
+        "missing_joint_distribution"
+      ]
+    }
+  ],
+  "overlap_comparison": {
+    "segments": [
+      {
+        "query_id": "QRY-e038a399fe810929",
+        "unit": "enterprise",
+        "status": "estimated",
+        "count": {
+          "low": 130000,
+          "base": 170000,
+          "high": 210000
+        }
+      },
+      {
+        "query_id": "QRY-e038a399fe810929",
+        "unit": "enterprise",
+        "status": "estimated",
+        "count": {
+          "low": 130000,
+          "base": 170000,
+          "high": 210000
+        }
+      }
+    ],
+    "comparison": {
+      "status": "bounded",
+      "intersection": {
+        "low": 130000,
+        "base": 170000,
+        "high": 210000
+      },
+      "union": {
+        "low": 130000,
+        "base": 170000,
+        "high": 210000
+      },
+      "method": "identical segment identity"
+    },
+    "unit_compatible": true,
+    "overlap_warning": "비상호배타 세그먼트는 단순 합산할 수 없습니다. 공동분포가 없으면 교집합·합집합의 Base를 산출하지 않습니다.",
+    "validation_gaps": []
+  }
+}

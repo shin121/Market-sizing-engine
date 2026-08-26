@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["sin1"],
+  "crons": [
+    {
+      "path": "/api/internal/research/run-once",
+      "schedule": "17 3 * * *"
+    }
+  ],
+  "functions": {
+    "src/app/api/internal/research/run-once/route.ts": {
+      "maxDuration": 300
+    }
+  }
+}

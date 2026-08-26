@@ -1,0 +1,11 @@
+{
+  "name":"음식점 홈페이지 스타터 패키지 1년",
+  "query":"examples/queries/website_less_restaurant_owner_60s.json",
+  "product_definition":"템플릿 홈페이지와 기본 유지관리",
+  "market_unit":"enterprise","currency":"KRW","horizon_months":12,
+  "annual_addressable_spend_per_entity":{"low":300000,"base":600000,"high":1200000},
+  "serviceability_rate":{"low":0.30,"base":0.50,"high":0.70},
+  "attainable_share":{"low":0.003,"base":0.010,"high":0.020},
+  "operational_capacity_entities":{"low":300,"base":1200,"high":3500},
+  "realized_arpu":{"low":250000,"base":500000,"high":900000}
+}

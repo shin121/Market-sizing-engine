@@ -1,0 +1,47 @@
+case_id,case_type,domain_id,phase1_archetype_id,description,status,executed_at,model_version
+ACTIVATION-01,activation,,,all subtype activation payload contract validation,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-01,cross_domain,DOM-13,,반려동물을 키우고 국내여행이 잦으며 차량 이동을 선호하는 30~40대 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-02,cross_domain,DOM-01,,음악 숏폼 발견 비중이 높고 OTT 광고형을 이용하는 10~20대,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-03,cross_domain,DOM-11,,홈트레이닝과 건강식품 정기구매가 결합된 1인 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-04,cross_domain,DOM-16,,자녀 교육·문화·여행 지출이 모두 높은 수도권 맞벌이 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-05,cross_domain,DOM-06,,온라인 장보기와 배달외식 빈도가 모두 높은 영유아 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-06,cross_domain,DOM-01,,공연·음반·굿즈 지출이 높은 아티스트 팬덤,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-07,cross_domain,DOM-11,,아웃도어 활동과 국내 숙박여행·장비구매가 결합된 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-08,cross_domain,DOM-21,,디지털기기 도입은 빠르지만 개인정보 우려가 높은 소비자,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-09,cross_domain,DOM-24,,네이버 플레이스는 있지만 CRM·홈페이지·온라인 판매가 없는 지방 소형 사업체,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+CROSS-10,cross_domain,DOM-19,,은퇴 준비 금융행동과 가족돌봄·건강관리 부담이 결합된 50~60대 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-01,domain,DOM-01,ARC-14-001,music_audio domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-02,domain,DOM-02,ARC-10-001,video_ott domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-03,domain,DOM-03,ARC-14-006,gaming_esports domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-04,domain,DOM-04,ARC-14-011,reading_webtoon domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-05,domain,DOM-05,ARC-14-016,culture_events domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-06,domain,DOM-06,ARC-12-001,grocery_home_meals domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-07,domain,DOM-07,ARC-12-006,dining_delivery_cafe domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-08,domain,DOM-08,ARC-11-001,fashion_resale domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-09,domain,DOM-09,ARC-11-006,beauty_personal_care domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-10,domain,DOM-10,ARC-15-001,travel_hospitality domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-11,domain,DOM-11,ARC-14-021,sports_outdoor domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-12,domain,DOM-12,ARC-14-026,hobbies_creation domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-13,domain,DOM-13,ARC-17-001,pets domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-14,domain,DOM-14,ARC-08-001,housing_home_services domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-15,domain,DOM-15,ARC-09-001,mobility_automotive domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-16,domain,DOM-16,ARC-16-001,education_learning domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-17,domain,DOM-17,ARC-16-006,parenting_childcare domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-18,domain,DOM-18,ARC-13-001,health_wellness_care domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-19,domain,DOM-19,ARC-07-001,finance_insurance domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-20,domain,DOM-20,ARC-18-001,senior_retirement_care domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-21,domain,DOM-21,ARC-10-006,digital_devices_ai domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-22,domain,DOM-22,ARC-10-011,social_creator domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-23,domain,DOM-23,ARC-05-001,career_professional domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+DOMAIN-DOM-24,domain,DOM-24,ARC-06-001,small_business_digital domain-specific axis acceptance,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+FEEDBACK-01,feedback,DOM-01,,aggregate observation and conservative posterior update,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-01,parent,DOM-24,ARC-06-001,홈페이지가 없는 60대 음식점 사장 또는 사업체,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-02,parent,DOM-16,,초등학생 자녀가 있는 수도권 맞벌이 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-03,parent,DOM-13,,반려동물을 키우면서 국내여행 빈도가 높은 30~40대 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-04,parent,DOM-24,,직원 5명 미만이고 온라인 판매채널이 없는 지방 식품 소매업체,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-05,parent,DOM-16,,사교육을 이용하지만 현재 서비스에 불만이 있는 중학생 보호자 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-06,parent,DOM-24,,모바일 사용은 높지만 사업 디지털화가 낮은 소상공인,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-07,parent,DOM-20,,은퇴 전후 부모·배우자 돌봄 부담이 있는 50~60대 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-08,parent,DOM-17,,영유아 자녀를 둔 맞벌이 보호자 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-09,parent,DOM-10,,고빈도 국내여행 1인 가구,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1
+PARENT-10,parent,DOM-07,,비용민감도와 편의중시가 동시에 높은 중복 tag 사례,passed,2026-08-24T17:06:46.467384+00:00,kr-v0.2.1

@@ -1,0 +1,725 @@
+{
+  "generated_at": "2026-08-25T22:04:39.844102+00:00",
+  "audit_version": "phase2r-a-initial-v1",
+  "baseline": {
+    "workspace_git_status": "unavailable_not_a_git_repository",
+    "database": "market_engine",
+    "server_version": 170011,
+    "public_base_tables": 90,
+    "public_views": 12,
+    "backup": {
+      "schema_dump": "data/backups/phase2r_a/engine_prototype_schema_20260826.sql",
+      "schema_dump_sha256": "9be424ef250a922773d4d1c737616bfcb582a0e2e679c34d3ce28b9d8bc8ae02",
+      "full_dump": "data/backups/phase2r_a/engine_prototype_full_20260826.dump",
+      "full_dump_sha256": "d8b29afe6ea7a39a408155dbf049b588445e7f45a1066a39cbafe787884c7952"
+    },
+    "phase2_dod": {
+      "historical_status": "passed",
+      "historical_passed": 30,
+      "historical_total": 30,
+      "nemotron_rows": 1000000,
+      "nemotron_shards": 9
+    }
+  },
+  "exact_row_counts": {
+    "archetype": 1440,
+    "domain_registry": 24,
+    "domain_dimension": 384,
+    "domain_feature": 480,
+    "domain_behavior_template": 240,
+    "segmentation_model": 24,
+    "subtype_definition": 90,
+    "estimate": 1787,
+    "saved_segment": 628,
+    "opportunity": 123,
+    "research_job": 68
+  },
+  "table_row_estimates": [
+    {
+      "table_name": "activation_mapping",
+      "estimated_rows": 90
+    },
+    {
+      "table_name": "approved_research_factor",
+      "estimated_rows": 93
+    },
+    {
+      "table_name": "approved_research_factor_source",
+      "estimated_rows": 93
+    },
+    {
+      "table_name": "archetype",
+      "estimated_rows": 1440
+    },
+    {
+      "table_name": "archetype_hierarchy",
+      "estimated_rows": 402
+    },
+    {
+      "table_name": "archetype_overlap",
+      "estimated_rows": 0
+    },
+    {
+      "table_name": "archetype_profile",
+      "estimated_rows": 1440
+    },
+    {
+      "table_name": "archetype_representative",
+      "estimated_rows": 1440
+    },
+    {
+      "table_name": "archetype_rule",
+      "estimated_rows": 1440
+    },
+    {
+      "table_name": "assumption",
+      "estimated_rows": 2
+    },
+    {
+      "table_name": "audit_event",
+      "estimated_rows": 2825
+    },
+    {
+      "table_name": "baseline_import_manifest",
+      "estimated_rows": 1
+    },
+    {
+      "table_name": "business_cell",
+      "estimated_rows": 4
+    },
+    {
+      "table_name": "category",
+      "estimated_rows": 18
+    },
+    {
+      "table_name": "cluster_definition",
+      "estimated_rows": 90
+    },
+    {
+      "table_name": "cluster_representative",
+      "estimated_rows": 450
+    },
+    {
+      "table_name": "comparison_member",
+      "estimated_rows": 146
+    },
+    {
+      "table_name": "comparison_workspace",
+      "estimated_rows": 73
+    },
+    {
+      "table_name": "confidence_assessment",
+      "estimated_rows": 1735
+    },
+    {
+      "table_name": "data_release_version",
+      "estimated_rows": 153
+    },
+    {
+      "table_name": "data_source",
+      "estimated_rows": 8
+    },
+    {
+      "table_name": "domain_association",
+      "estimated_rows": 276
+    },
+    {
+      "table_name": "domain_behavior_template",
+      "estimated_rows": 240
+    },
+    {
+      "table_name": "domain_coverage_audit",
+      "estimated_rows": 24
+    },
+    {
+      "table_name": "domain_dimension",
+      "estimated_rows": 384
+    },
+    {
+      "table_name": "domain_feature",
+      "estimated_rows": 480
+    },
+    {
+      "table_name": "domain_feature_source",
+      "estimated_rows": 760
+    },
+    {
+      "table_name": "domain_profile_summary",
+      "estimated_rows": 24
+    },
+    {
+      "table_name": "domain_registry",
+      "estimated_rows": 24
+    },
+    {
+      "table_name": "domain_tag",
+      "estimated_rows": 192
+    },
+    {
+      "table_name": "entity_unit_bridge",
+      "estimated_rows": 0
+    },
+    {
+      "table_name": "estimate",
+      "estimated_rows": 1787
+    },
+    {
+      "table_name": "estimate_assumption",
+      "estimated_rows": 2
+    },
+    {
+      "table_name": "estimate_component",
+      "estimated_rows": 1815
+    },
+    {
+      "table_name": "estimate_dependency",
+      "estimated_rows": 458
+    },
+    {
+      "table_name": "estimate_sensitivity_result",
+      "estimated_rows": 0
+    },
+    {
+      "table_name": "evidence",
+      "estimated_rows": 19
+    },
+    {
+      "table_name": "feature_definition",
+      "estimated_rows": 26
+    },
+    {
+      "table_name": "geography",
+      "estimated_rows": 1
+    },
+    {
+      "table_name": "household_cell",
+      "estimated_rows": 7
+    },
+    {
+      "table_name": "latent_dimension",
+      "estimated_rows": 24
+    },
+    {
+      "table_name": "market_estimate",
+      "estimated_rows": 227
+    },
+    {
+      "table_name": "market_scenario",
+      "estimated_rows": 242
+    },
+    {
+      "table_name": "minor_population_cell",
+      "estimated_rows": 19
+    },
+    {
+      "table_name": "model_version",
+      "estimated_rows": 3
+    },
+    {
+      "table_name": "opportunity",
+      "estimated_rows": 123
+    },
+    {
+      "table_name": "opportunity_board",
+      "estimated_rows": 2
+    },
+    {
+      "table_name": "opportunity_content_version",
+      "estimated_rows": 91
+    },
+    {
+      "table_name": "opportunity_experiment",
+      "estimated_rows": 92
+    },
+    {
+      "table_name": "opportunity_score_component",
+      "estimated_rows": 732
+    },
+    {
+      "table_name": "opportunity_score_version",
+      "estimated_rows": 92
+    },
+    {
+      "table_name": "opportunity_segment_link",
+      "estimated_rows": 109
+    },
+    {
+      "table_name": "parent_decomposition_decision",
+      "estimated_rows": 1440
+    },
+    {
+      "table_name": "phase2_acceptance_result",
+      "estimated_rows": 46
+    },
+    {
+      "table_name": "phase2_parent_estimate",
+      "estimated_rows": 120
+    },
+    {
+      "table_name": "pipeline_run",
+      "estimated_rows": 5
+    },
+    {
+      "table_name": "population_cell",
+      "estimated_rows": 13
+    },
+    {
+      "table_name": "posterior_update",
+      "estimated_rows": 1
+    },
+    {
+      "table_name": "proposed_revision",
+      "estimated_rows": 239
+    },
+    {
+      "table_name": "proposed_revision_evidence",
+      "estimated_rows": 0
+    },
+    {
+      "table_name": "required_parent_case",
+      "estimated_rows": 10
+    },
+    {
+      "table_name": "required_parent_case_allocation",
+      "estimated_rows": 47
+    },
+    {
+      "table_name": "research_job",
+      "estimated_rows": 68
+    },
+    {
+      "table_name": "research_job_artifact",
+      "estimated_rows": 0
+    },
+    {
+      "table_name": "research_job_event",
+      "estimated_rows": 108
+    },
+    {
+      "table_name": "research_job_step",
+      "estimated_rows": 68
+    },
+    {
+      "table_name": "review_decision",
+      "estimated_rows": 186
+    },
+    {
+      "table_name": "review_item",
+      "estimated_rows": 162
+    },
+    {
+      "table_name": "saved_segment",
+      "estimated_rows": 628
+    },
+    {
+      "table_name": "saved_segment_version",
+      "estimated_rows": 1209
+    },
+    {
+      "table_name": "scenario_factor_override",
+      "estimated_rows": 596
+    },
+    {
+      "table_name": "segment_condition",
+      "estimated_rows": 886
+    },
+    {
+      "table_name": "segment_condition_group",
+      "estimated_rows": 692
+    },
+    {
+      "table_name": "segment_observation",
+      "estimated_rows": 1
+    },
+    {
+      "table_name": "segment_query",
+      "estimated_rows": 661
+    },
+    {
+      "table_name": "segment_query_result",
+      "estimated_rows": 653
+    },
+    {
+      "table_name": "segmentation_model",
+      "estimated_rows": 24
+    },
+    {
+      "table_name": "source_release",
+      "estimated_rows": 12
+    },
+    {
+      "table_name": "source_variable",
+      "estimated_rows": 0
+    },
+    {
+      "table_name": "subtype_allocation",
+      "estimated_rows": 450
+    },
+    {
+      "table_name": "subtype_confidence",
+      "estimated_rows": 90
+    },
+    {
+      "table_name": "subtype_definition",
+      "estimated_rows": 90
+    },
+    {
+      "table_name": "subtype_membership_summary",
+      "estimated_rows": 90
+    },
+    {
+      "table_name": "subtype_profile",
+      "estimated_rows": 90
+    },
+    {
+      "table_name": "subtype_tag_allocation",
+      "estimated_rows": 720
+    },
+    {
+      "table_name": "synthetic_household_link",
+      "estimated_rows": 0
+    },
+    {
+      "table_name": "time_period",
+      "estimated_rows": 11
+    },
+    {
+      "table_name": "validation_gap",
+      "estimated_rows": 1906
+    },
+    {
+      "table_name": "workspace",
+      "estimated_rows": 66
+    },
+    {
+      "table_name": "workspace_member",
+      "estimated_rows": 42
+    }
+  ],
+  "fixture_distribution": {
+    "saved_segment": [
+      {
+        "fixture_class": "e2e_exact_snapshot",
+        "row_count": 39
+      },
+      {
+        "fixture_class": "integration",
+        "row_count": 567
+      },
+      {
+        "fixture_class": "restricted_role_fixture",
+        "row_count": 20
+      },
+      {
+        "fixture_class": "unclassified",
+        "row_count": 2
+      }
+    ],
+    "note": "Existing records are inventoried, not deleted. Separation is a Phase 2R-A implementation task."
+  },
+  "estimate_distribution": [
+    {
+      "data_layer": "baseline",
+      "status": "estimated",
+      "row_count": 17,
+      "with_count_base": 17,
+      "with_share_base": 1
+    },
+    {
+      "data_layer": "baseline",
+      "status": "not_estimable",
+      "row_count": 1439,
+      "with_count_base": 0,
+      "with_share_base": 0
+    },
+    {
+      "data_layer": "derived_estimate",
+      "status": "estimated",
+      "row_count": 86,
+      "with_count_base": 86,
+      "with_share_base": 86
+    },
+    {
+      "data_layer": "derived_estimate",
+      "status": "not_estimable",
+      "row_count": 185,
+      "with_count_base": 0,
+      "with_share_base": 0
+    },
+    {
+      "data_layer": "derived_estimate",
+      "status": "suppressed",
+      "row_count": 7,
+      "with_count_base": 0,
+      "with_share_base": 0
+    },
+    {
+      "data_layer": "proposed_revision",
+      "status": "estimated",
+      "row_count": 1,
+      "with_count_base": 1,
+      "with_share_base": 1
+    },
+    {
+      "data_layer": "user_scenario",
+      "status": "estimated",
+      "row_count": 52,
+      "with_count_base": 52,
+      "with_share_base": 0
+    }
+  ],
+  "domain_population_summary": [
+    {
+      "status": "not_estimable",
+      "domain_count": 24,
+      "with_base_population": 0
+    }
+  ],
+  "domain_population": [
+    {
+      "domain_code": "beauty_personal_care",
+      "name_ko": "뷰티·개인관리",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "career_professional",
+      "name_ko": "경력·전문활동",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "culture_events",
+      "name_ko": "문화예술·행사",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "digital_devices_ai",
+      "name_ko": "디지털기기·AI",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "dining_delivery_cafe",
+      "name_ko": "외식·배달·카페",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "education_learning",
+      "name_ko": "교육·학습",
+      "primary_entity_unit": "household",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "fashion_resale",
+      "name_ko": "패션·리셀",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "finance_insurance",
+      "name_ko": "금융·보험",
+      "primary_entity_unit": "household",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "gaming_esports",
+      "name_ko": "게임·e스포츠",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "grocery_home_meals",
+      "name_ko": "식료품·가정식",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "health_wellness_care",
+      "name_ko": "건강·웰니스·돌봄",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "hobbies_creation",
+      "name_ko": "취미·창작",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "housing_home_services",
+      "name_ko": "주거·홈서비스",
+      "primary_entity_unit": "household",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "mobility_automotive",
+      "name_ko": "모빌리티·자동차",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "music_audio",
+      "name_ko": "음악·오디오",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "parenting_childcare",
+      "name_ko": "양육·보육",
+      "primary_entity_unit": "household",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "pets",
+      "name_ko": "반려동물",
+      "primary_entity_unit": "household",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "reading_webtoon",
+      "name_ko": "독서·웹툰",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "senior_retirement_care",
+      "name_ko": "시니어·은퇴·돌봄",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "small_business_digital",
+      "name_ko": "소상공인·디지털 운영",
+      "primary_entity_unit": "enterprise",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "social_creator",
+      "name_ko": "소셜·크리에이터",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "sports_outdoor",
+      "name_ko": "스포츠·아웃도어",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "travel_hospitality",
+      "name_ko": "여행·숙박",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    },
+    {
+      "domain_code": "video_ott",
+      "name_ko": "영상·OTT",
+      "primary_entity_unit": "person",
+      "domain_population_status": "not_estimable",
+      "count_low": null,
+      "count_base": null,
+      "count_high": null,
+      "count_status_reason": "No canonical whole-domain population estimate is stored; parent/subtype context is required."
+    }
+  ],
+  "estimate_read_model": {
+    "row_count": 1787,
+    "has_display_name": false,
+    "rows_missing_display_name_by_contract": 1787
+  }
+}
