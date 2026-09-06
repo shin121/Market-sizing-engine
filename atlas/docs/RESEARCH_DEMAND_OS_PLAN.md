@@ -88,8 +88,8 @@ stay explicit rather than reverting to synthetic prevalence. GitHub and Vercel
 publication were authorized earlier; verify the production alias and old beauty
 link after the release. This release is not completion of the broader goal.
 
-Release `624757b` reached GitHub main and Vercel production on 2026-09-07 KST,
-deployment `dpl_FfDr85H69GEHF6mv9JBFZydWFPWq` (Ready, 49s remote rebuild).
+Release `59bc7e6` reached GitHub main and Vercel production on 2026-09-07 KST,
+deployment `dpl_Fqswjoc2ovY9gFHv3ETQPibHSrJ4` (Ready, 23s remote rebuild).
 The production alias and legacy beauty URL were verified in Chrome; skin care
 16.60m and online cosmetics 12.99m are separate, explicitly scoped populations.
 Beauty advertising problems → age 30 → Matrix → Opportunity preserved the 0.28m
