@@ -1,0 +1,8 @@
+atlas/work
+atlas/node_modules
+atlas/.next
+atlas/docs/screenshots
+node_modules
+.git
+__pycache__
+*.pyc
