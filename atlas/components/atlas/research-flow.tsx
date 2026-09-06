@@ -79,6 +79,8 @@ export function ResearchFlow({
       : (branch?.children.find((p) => p.id === node) ??
         branch?.profile ??
         data.root);
+  const headline = selected.id === data.root.id ? data.root : selected;
+  const headlineIsRoot = headline.id === data.root.id;
   const selectedProblemMeasured =
     branch?.evidenceType === 'consumer_problem' ||
     selected.observations.some((o) =>
@@ -299,24 +301,26 @@ export function ResearchFlow({
         <div className="research-scope-strip">
           <div>
             <small>
-              확보한 수요 범위 ·{' '}
+              {headlineIsRoot ? '확보한 수요 범위' : '선택 집단 · 관련'}{' '}
               {data.market.unit === 'household' ? '가구' : '인구'}
             </small>
             <strong>
-              {data.root.estimate.status === 'estimated' ? '≈ ' : ''}
-              {people(data.root)}
+              {headline.estimate.status === 'estimated' ? '≈ ' : ''}
+              {people(headline)}
             </strong>
           </div>
           <div className="research-scope-money">
-            <small>연간 관련 소비금액</small>
+            <small>
+              {headlineIsRoot ? '연간 관련 소비금액' : '선택 집단 연간 소비금액'}
+            </small>
             <strong>
-              {data.root.marketValue.status === 'estimated'
-                ? formatKRW(data.root.marketValue.annualValue)
+              {headline.marketValue.status === 'estimated'
+                ? formatKRW(headline.marketValue.annualValue)
                 : '근거 연결 중'}
             </strong>
             <span>
-              {data.root.marketValue.status === 'estimated'
-                ? `${formatKRW(data.root.marketValue.annualSpendPerUnit)} / ${unitLabel(data.root.marketValue.populationUnit)}·년`
+              {headline.marketValue.status === 'estimated'
+                ? `${formatKRW(headline.marketValue.annualSpendPerUnit)} / ${unitLabel(headline.marketValue.populationUnit)}·년`
                 : '같은 품목·채널·구매 주체의 기준 필요'}
             </span>
           </div>
