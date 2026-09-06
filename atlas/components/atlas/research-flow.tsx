@@ -23,7 +23,12 @@ import type {
 } from '@/lib/research-explorer';
 import { researchHref } from '@/lib/research-explorer';
 import { candidateKey, researchWorkspaceHref } from '@/lib/research-workspace';
-import { formatKRW, unitLabel, type MoneyMetric } from '@/lib/market-value';
+import {
+  formatKRW,
+  SPEND_METHOD_LABELS,
+  unitLabel,
+  type MoneyMetric,
+} from '@/lib/market-value';
 import {
   ResearchIdeas,
   readResearchIdeas,
@@ -632,6 +637,13 @@ export function ResearchFlow({
                     <br />
                     {formatKRW(selected.marketValue.annualSpendPerUnit)} /{' '}
                     {unitLabel(selected.marketValue.populationUnit)}·년
+                  </p>
+                  <p className="research-money-meta">
+                    {selected.marketValue.method
+                      ? SPEND_METHOD_LABELS[selected.marketValue.method]
+                      : '산출 방식'}{' '}
+                    · {selected.marketValue.confidence} confidence · 근거 충족{' '}
+                    {(selected.marketValue.completeness * 100).toFixed(0)}%
                   </p>
                   {ranges && (
                     <p>
