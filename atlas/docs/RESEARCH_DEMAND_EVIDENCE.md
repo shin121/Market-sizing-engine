@@ -1,9 +1,10 @@
 # Research demand evidence — working revision, 2026-09-06
 
-Release checkpoint: the research model is now extended from `50af956` on GitHub main and deployed to the public
-Vercel alias `https://nemotron-market-atlas.vercel.app` (Ready, 49s rebuild).
-Deployment: `dpl_Fqswjoc2ovY9gFHv3ETQPibHSrJ4` at
-`https://nemotron-market-atlas-cveg2pe9a-woochul-shins-projects.vercel.app`.
+Release checkpoint: the research model is now extended through `574c1e1` on GitHub
+main and deployed to the public Vercel alias
+`https://nemotron-market-atlas.vercel.app` (`READY`). Deployment:
+`dpl_C5Nsbv8M6HV919t6xuKnT5vMEBAt` at
+`https://nemotron-market-atlas-ikoykaoqz-woochul-shins-projects.vercel.app`.
 The earlier local-only status below records the development chronology. Current
 production uses `research-demand-2026-09-06-v3`; broader coverage work is ongoing.
 Chrome verified the old skin/beauty URL redirects to the care-experience profile;

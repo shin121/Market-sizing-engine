@@ -8,14 +8,22 @@
 
 ## 최신 운영 검증
 
-`4e811bf`가 GitHub `main`에 반영됐고 Vercel production 배포
-`dpl_7MvRWQdob89jV8qYieyfb69pDynP`가 `READY` 상태다. 음악 감상 프로필은
+`574c1e1`이 GitHub `main`에 반영됐고 Vercel production 배포
+`dpl_C5Nsbv8M6HV919t6xuKnT5vMEBAt`가 `READY` 상태다. 음악 감상 프로필은
 전체 감상 인구와 분리된 약 1,170만 명의 지출 관련 유료 참여자, 약 1.1조원
 연간 지출 풀, 약 9.2만원/명·년을 표시한다. 피부·헤어·뷰티 관리 프로필은
 약 1,660만 명의 미용 활동 cohort로 유지하며 화장품 전체 사용자나 금액으로
 확장하지 않는다. 유료 콘텐츠 프로필은 약 2,060만 명의 유료 OTT cohort와
 약 2.7조원/년, 약 13만원/명·년의 혼합 콘텐츠 서비스 proxy를 표시한다.
+게임 모바일 플레이는 KOCCA 2025 플랫폼 연간 총비용 평균을 적용해 약
+7,900억원/년의 별도 플랫폼 지출 풀을 표시하며, PC·모바일 중복으로 합산하지
+않는다. 피부뷰티는 `피부·헤어·뷰티 관리 경험자`와 온라인 화장품 구매 cohort를
+분리한다. 운영 alias는 [nemotron-market-atlas.vercel.app/atlas](https://nemotron-market-atlas.vercel.app/atlas)이며 배포
+검증 페이지는 [Vercel deployment](https://vercel.com/woochul-shins-projects/nemotron-market-atlas/C5Nsbv8M6HV919t6xuKnT5vMEBAt)다.
 두 production URL 모두 브라우저 error 로그가 없었다.
+
+Vercel 프로젝트 Root Directory가 `atlas`이므로 CLI 배포는 저장소 루트에서
+실행한다. `atlas/` 내부에서 실행하면 `atlas/atlas`를 찾는 오류가 발생한다.
 
 초기 Vercel production 배포는 `READY`를 확인했다. GitHub 구현 commit `fe7160aea5d8bfbacd2c8f8233bc1fc67afc1048`에서 빌드했으며, 운영 API도 HTTP 200으로 52개 유형·20개 산업·금액 객체를 반환했다. 이후 `main` push는 연결된 Vercel 프로젝트에서 자동 배포된다.
 
