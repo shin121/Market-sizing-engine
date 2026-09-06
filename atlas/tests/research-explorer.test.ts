@@ -120,6 +120,16 @@ void test('beauty scope fixes the reported order of magnitude without equating c
     ),
   );
   const online = data.branches.find((b) => b.id === 'cosmetics')!.profile;
+  const skinBranch = data.branches.find((b) => b.id === 'skin')!;
+  const cosmeticsBranch = data.branches.find((b) => b.id === 'cosmetics')!;
+  assert.deepEqual(
+    skinBranch.children.map((c) => c.label),
+    ['관리 경험자 중 온라인 화장품 구매', '관리 중 뷰티 선택·이용 불편', '관리 제품 후기 검토'],
+  );
+  assert.deepEqual(
+    cosmeticsBranch.children.map((c) => c.label),
+    ['모바일에서 화장품 구매', '화장품 선택·이용 불편 경험', '화장품 구매 전 후기 검토'],
+  );
   assert.equal(online.estimate.status, 'estimated');
   assert.equal(data.root.estimate.status, 'estimated');
   if (
@@ -131,5 +141,43 @@ void test('beauty scope fixes the reported order of magnitude without equating c
       data.root.estimate.base,
       skin.estimate.base + online.estimate.base,
     );
+  }
+});
+
+void test('every experience branch exposes market-specific lower discovery paths', () => {
+  const generic = new Set(['온라인 구매 가능층', '사전 정보 검토형', '후기 참고 가능층']);
+  for (const market of [
+    'music',
+    'travel',
+    'fitness',
+    'content',
+    'gaming',
+    'beauty',
+    'garden',
+    'education',
+    'home',
+    'photo',
+    'collect',
+    'community',
+    'wellness',
+    'commerce',
+    'mobility',
+    'food',
+    'pet',
+    'family',
+    'delivery',
+    'finance',
+  ]) {
+    const data = getResearchExplorer(market)!;
+    for (const branch of data.branches) {
+      assert.ok(branch.children.length, `${market}/${branch.id} has lower paths`);
+      if (!['problem_'].some((prefix) => branch.id.startsWith(prefix)))
+        assert.ok(
+          branch.children.some((child) => !generic.has(child.label)),
+          `${market}/${branch.id} should expose a market-specific label`,
+        );
+      for (const child of branch.children)
+        assert.equal(child.estimate.status, 'estimated', `${market}/${child.id}`);
+    }
   }
 });

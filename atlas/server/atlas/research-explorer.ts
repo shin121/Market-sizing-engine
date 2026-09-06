@@ -48,8 +48,11 @@ function profile(
   unionModel:
     | 'conditional_independence'
     | 'overlap_bounds' = 'conditional_independence',
+  marketId = '',
 ): ResearchProfile {
-  const cacheKey = [id, unit, unionModel, JSON.stringify(groups)].join(':');
+  const cacheKey = [id, marketId, unit, unionModel, JSON.stringify(groups)].join(
+    ':',
+  );
   const previous = profiles.get(cacheKey);
   if (previous) return previous;
   const estimate =
@@ -114,7 +117,7 @@ function profile(
             ?.definition
         : undefined,
     estimate,
-    marketValue: researchMarketValue(estimate),
+    marketValue: researchMarketValue(estimate, marketId),
     factors,
     ages: [],
     sexes: [],
@@ -162,7 +165,7 @@ export function getResearchExplorer(
       return {
         ...p,
         estimate,
-        marketValue: researchMarketValue(estimate),
+        marketValue: researchMarketValue(estimate, market.id),
         householdProfile:
           estimate.status === 'estimated' ? p.householdProfile : undefined,
         ages: [],
@@ -174,7 +177,7 @@ export function getResearchExplorer(
     return {
       ...p,
       estimate,
-      marketValue: researchMarketValue(estimate),
+      marketValue: researchMarketValue(estimate, market.id),
       ages: [20, 30, 40, 50, 60, 70].map((min) => ({
         label:
           estimate.populationScope &&
@@ -215,6 +218,7 @@ export function getResearchExplorer(
       roots(market),
       market.unit,
       market.unionModel,
+      market.id,
     ),
   );
   return {
@@ -222,7 +226,7 @@ export function getResearchExplorer(
     market,
     root,
     markets: researchMarkets.map((m) => {
-      const p = profile(m.id, m.label, roots(m), m.unit, m.unionModel);
+      const p = profile(m.id, m.label, roots(m), m.unit, m.unionModel, m.id);
       return {
         id: m.id,
         label: m.label,
@@ -234,7 +238,14 @@ export function getResearchExplorer(
     branches: market.branches.map((branch) => ({
       ...branch,
       profile: filter(
-        profile(branch.id, branch.label, [branch.factors], market.unit),
+        profile(
+          branch.id,
+          branch.label,
+          [branch.factors],
+          market.unit,
+          'conditional_independence',
+          market.id,
+        ),
       ),
       children: branch.children
         ? branch.children.map((c) =>
@@ -244,6 +255,8 @@ export function getResearchExplorer(
                 c.label,
                 [[...branch.factors, ...c.factors]],
                 market.unit,
+                'conditional_independence',
+                market.id,
               ),
             ),
           )
@@ -254,18 +267,24 @@ export function getResearchExplorer(
                 '온라인 구매 가능층',
                 [[...branch.factors, 'commerce']],
                 market.unit,
+                'conditional_independence',
+                market.id,
               ),
               profile(
                 branch.id + '~presearch',
                 '사전 정보 검토형',
                 [[...branch.factors, 'research_presearch']],
                 market.unit,
+                'conditional_independence',
+                market.id,
               ),
               profile(
                 branch.id + '~review',
                 '후기 참고 가능층',
                 [[...branch.factors, 'research_review']],
                 market.unit,
+                'conditional_independence',
+                market.id,
               ),
             ].map(filter)
           : [],

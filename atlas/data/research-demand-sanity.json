@@ -1,7 +1,7 @@
 {
   "version": "research-demand-2026-09-06-v3",
-  "generatedAt": "2026-09-06T15:48:45.160Z",
-  "status": "in_progress_not_production",
+  "generatedAt": "2026-09-06T16:58:12.185Z",
+  "status": "in_progress_not_full_goal",
   "factorCount": 195,
   "marketCount": 20,
   "unsupportedFactors": [
@@ -95,19 +95,18 @@
           "validationQuestion": "추천 결과를 바꾸기 위해 실제로 지출하거나 시간을 쓰는 순간은?",
           "children": [
             {
-              "id": "listen~online",
-              "label": "온라인 구매 가능층",
+              "id": "listen~video",
+              "label": "음악 감상 중 영상·콘텐츠 병행",
               "status": "estimated",
-              "population": 16008927.974110372,
+              "population": 14110917.967777789,
               "unit": "person",
-              "low": 11211612.93315812,
-              "high": 20546962.941360295,
+              "low": 7937391.356875006,
+              "high": 21377370.618073717,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
-                "digital",
+                "leisure_G75",
                 "leisure_G77"
               ],
               "evidenceGrade": "C",
@@ -119,28 +118,26 @@
               "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
                 "CENSUS-2024",
                 "MCST-LEISURE-2024"
               ]
             },
             {
-              "id": "listen~presearch",
-              "label": "사전 정보 검토형",
+              "id": "listen~radio",
+              "label": "음악 감상 중 라디오·팟캐스트 병행",
               "status": "estimated",
-              "population": 12700212.330000002,
+              "population": 2782795.12062152,
               "unit": "person",
-              "low": 6037072.7625,
-              "high": 19229194.724999998,
+              "low": 1565322.2553496053,
+              "high": 4348117.3759711245,
               "methods": [
-                "survey_transfer",
-                "research_scenario"
+                "survey_transfer"
               ],
               "factors": [
-                "leisure_G77",
-                "research_presearch"
+                "leisure_G76",
+                "leisure_G77"
               ],
-              "evidenceGrade": "D",
+              "evidenceGrade": "C",
               "annualValue": null,
               "spendPerUnit": null,
               "spendScope": "선택 집단의 관련 소비",
@@ -150,13 +147,12 @@
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
+                "MCST-LEISURE-2024"
               ]
             },
             {
               "id": "listen~review",
-              "label": "후기 참고 가능층",
+              "label": "음악 발견 전 후기 검토",
               "status": "estimated",
               "population": 9067951.60362,
               "unit": "person",
@@ -217,19 +213,18 @@
           "validationQuestion": "연습 중단 이유와 최근 레슨·장비 지출을 확인하기",
           "children": [
             {
-              "id": "play~online",
-              "label": "온라인 구매 가능층",
+              "id": "play~live",
+              "label": "연주·학습과 라이브 공연 병행",
               "status": "estimated",
-              "population": 994362.6924174372,
+              "population": 102086.9926226392,
               "unit": "person",
-              "low": 690974.7705799693,
-              "high": 1296528.6140071491,
+              "low": 57423.93335023455,
+              "high": 159510.92597287375,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
-                "digital",
+                "leisure_A8",
                 "leisure_B12"
               ],
               "evidenceGrade": "C",
@@ -241,14 +236,41 @@
               "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "play~club",
+              "label": "연주·학습 동호회 참여",
+              "status": "estimated",
+              "population": 92111.82623131739,
+              "unit": "person",
+              "low": 51812.902255116045,
+              "high": 143924.72848643348,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_B12",
+                "leisure_H86"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
                 "CENSUS-2024",
                 "MCST-LEISURE-2024"
               ]
             },
             {
               "id": "play~presearch",
-              "label": "사전 정보 검토형",
+              "label": "악기·레슨 선택 전 정보 검토",
               "status": "estimated",
               "population": 846708.3700000001,
               "unit": "person",
@@ -261,37 +283,6 @@
               "factors": [
                 "leisure_B12",
                 "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "play~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 604549.77618,
-              "unit": "person",
-              "low": 160993.84500000006,
-              "high": 1128149.4620000003,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_B12",
-                "research_presearch",
-                "research_review"
               ],
               "evidenceGrade": "D",
               "annualValue": null,
@@ -339,19 +330,18 @@
           "validationQuestion": "연간 유료 관람 횟수와 예매 실패 경험은?",
           "children": [
             {
-              "id": "live~online",
-              "label": "온라인 구매 가능층",
+              "id": "live~theater",
+              "label": "공연 관람 중 연극·뮤지컬 선택",
               "status": "estimated",
-              "population": 2769399.442963369,
+              "population": 248389.6261068227,
               "unit": "person",
-              "low": 1943011.4678056324,
-              "high": 3540195.598634247,
+              "low": 139719.16468508774,
+              "high": 388108.7907919105,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
-                "digital",
+                "leisure_A5",
                 "leisure_A8"
               ],
               "evidenceGrade": "C",
@@ -363,14 +353,41 @@
               "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "live~concert",
+              "label": "공연 관람 중 음악회 선택",
+              "status": "estimated",
+              "population": 122330.27269413011,
+              "unit": "person",
+              "low": 68783.65369750485,
+              "high": 191186.2589061505,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_A3",
+                "leisure_A8"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
                 "CENSUS-2024",
                 "MCST-LEISURE-2024"
               ]
             },
             {
               "id": "live~presearch",
-              "label": "사전 정보 검토형",
+              "label": "공연 예매 전 정보 검토",
               "status": "estimated",
               "population": 2175232.6799999997,
               "unit": "person",
@@ -383,37 +400,6 @@
               "factors": [
                 "leisure_A8",
                 "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "live~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 1553116.1335199997,
-              "unit": "person",
-              "low": 413600.57999999996,
-              "high": 2898267.7679999997,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_A8",
-                "research_presearch",
-                "research_review"
               ],
               "evidenceGrade": "D",
               "annualValue": null,
@@ -489,10 +475,10 @@
             "leisure_E39"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 18068653192816.742,
+          "spendPerUnit": 806936.5629048462,
+          "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -504,8 +490,64 @@
           "validationQuestion": "숙소보다 이동·장비·체험에 돈을 쓰는 집단은 누구인가?",
           "children": [
             {
-              "id": "nature~online",
-              "label": "온라인 구매 가능층",
+              "id": "nature~camp",
+              "label": "자연·휴양 중 캠핑·장비 이용",
+              "status": "estimated",
+              "population": 4202671.393802203,
+              "unit": "person",
+              "low": 2364002.659013739,
+              "high": 6566674.052815944,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E39",
+                "leisure_E41"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 3391289209533.269,
+              "spendPerUnit": 806936.5629048462,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "nature~drive",
+              "label": "자연·휴양 중 드라이브 연결",
+              "status": "estimated",
+              "population": 8036607.011171118,
+              "unit": "person",
+              "low": 4520591.443783754,
+              "high": 12557198.45495487,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E39",
+                "leisure_E48"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 6485032039011.41,
+              "spendPerUnit": 806936.562904846,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "nature~gear",
+              "label": "자연·휴양 중 온라인 장비 탐색",
               "status": "estimated",
               "population": 16614596.872314118,
               "unit": "person",
@@ -520,10 +562,10 @@
                 "leisure_E39"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 13406925694194.762,
+              "spendPerUnit": 806936.5629048462,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -531,67 +573,6 @@
                 "NIA-2024",
                 "CENSUS-2024",
                 "MCST-LEISURE-2024"
-              ]
-            },
-            {
-              "id": "nature~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 13765783.879999999,
-              "unit": "person",
-              "low": 6543594.45,
-              "high": 20842560.099999998,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_E39",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "nature~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 9828769.69032,
-              "unit": "person",
-              "low": 2617437.7800000003,
-              "high": 18341452.888,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_E39",
-                "research_presearch",
-                "research_review"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
               ]
             }
           ]
@@ -611,10 +592,10 @@
             "leisure_E38"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 10311450166191.457,
+          "spendPerUnit": 806936.562904846,
+          "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -626,38 +607,63 @@
           "validationQuestion": "무료 해설로 해결되지 않는 경험과 유료 전환 계기는?",
           "children": [
             {
-              "id": "culture~online",
-              "label": "온라인 구매 가능층",
+              "id": "culture~museum",
+              "label": "문화 탐방 중 박물관 관람",
               "status": "estimated",
-              "population": 9370667.155453345,
+              "population": 967586.7328447963,
               "unit": "person",
-              "low": 6530459.552243672,
-              "high": 12160636.468536496,
+              "low": 544267.5372251981,
+              "high": 1511854.2700699943,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
-                "digital",
+                "leisure_A2",
                 "leisure_E38"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 780781112514.1095,
+              "spendPerUnit": 806936.5629048462,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "culture~heritage",
+              "label": "문화 탐방 중 유적지 방문",
+              "status": "estimated",
+              "population": 12778514.000000002,
+              "unit": "person",
+              "low": 9583885.500000002,
+              "high": 15973142.500000006,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E38"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 10311450166191.457,
+              "spendPerUnit": 806936.562904846,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
                 "CENSUS-2024",
                 "MCST-LEISURE-2024"
               ]
             },
             {
               "id": "culture~presearch",
-              "label": "사전 정보 검토형",
+              "label": "문화 여행 전 정보 검토",
               "status": "estimated",
               "population": 7855616.08,
               "unit": "person",
@@ -672,41 +678,10 @@
                 "research_presearch"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "culture~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 5608909.88112,
-              "unit": "person",
-              "low": 1493673.4800000004,
-              "high": 10466778.608000003,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_E38",
-                "research_presearch",
-                "research_review"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 6338983839095.241,
+              "spendPerUnit": 806936.5629048462,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -733,10 +708,10 @@
             "leisure_E41"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 6749750797204.213,
+          "spendPerUnit": 806936.5629048462,
+          "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -748,8 +723,64 @@
           "validationQuestion": "장비 보유량, 연간 출정 횟수, 대여 가격 수용 범위는?",
           "children": [
             {
-              "id": "camp~online",
-              "label": "온라인 구매 가능층",
+              "id": "camp~drive",
+              "label": "캠핑 중 자동차 드라이브 연결",
+              "status": "estimated",
+              "population": 3275682.0418759356,
+              "unit": "person",
+              "low": 1842571.1485552136,
+              "high": 5118253.19043115,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E41",
+                "leisure_E48"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 2643267608040.4956,
+              "spendPerUnit": 806936.562904846,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "camp~hiking",
+              "label": "캠핑 중 등산·트레킹 연결",
+              "status": "estimated",
+              "population": 1868483.548863216,
+              "unit": "person",
+              "low": 1051021.996235559,
+              "high": 2919505.545098775,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E41",
+                "leisure_F55"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 1507747692763.9329,
+              "spendPerUnit": 806936.5629048463,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "camp~gear",
+              "label": "캠핑 장비를 온라인으로 탐색",
               "status": "estimated",
               "population": 7643432.662463136,
               "unit": "person",
@@ -764,10 +795,10 @@
                 "leisure_E41"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 6167765281442.64,
+              "spendPerUnit": 806936.5629048462,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -775,67 +806,6 @@
                 "NIA-2024",
                 "CENSUS-2024",
                 "MCST-LEISURE-2024"
-              ]
-            },
-            {
-              "id": "camp~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 5794897.879999999,
-              "unit": "person",
-              "low": 2754616.9500000007,
-              "high": 8773965.100000001,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_E41",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "camp~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 4137557.08632,
-              "unit": "person",
-              "low": 1101846.7800000003,
-              "high": 7721089.288000002,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_E41",
-                "research_presearch",
-                "research_review"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
               ]
             }
           ]
@@ -855,10 +825,10 @@
             "leisure_E42"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 5821734209972.059,
+          "spendPerUnit": 806936.5629048462,
+          "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -871,7 +841,7 @@
           "children": [
             {
               "id": "overseas~online",
-              "label": "온라인 구매 가능층",
+              "label": "해외여행 예약을 온라인으로 탐색",
               "status": "estimated",
               "population": 6136615.010254635,
               "unit": "person",
@@ -886,10 +856,10 @@
                 "leisure_E42"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 4951859024245.162,
+              "spendPerUnit": 806936.5629048462,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -900,38 +870,8 @@
               ]
             },
             {
-              "id": "overseas~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 4876161.430000002,
-              "unit": "person",
-              "low": 2317893.6375000007,
-              "high": 7382920.475000001,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_E42",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "overseas~review",
-              "label": "후기 참고 가능층",
+              "label": "해외여행 예약 전 후기 검토",
               "status": "estimated",
               "population": 3481579.26102,
               "unit": "person",
@@ -947,10 +887,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 2809413602368.2734,
+              "spendPerUnit": 806936.5629048463,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -958,6 +898,34 @@
                 "CENSUS-2024",
                 "MCST-LEISURE-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            },
+            {
+              "id": "overseas~camp",
+              "label": "해외여행과 캠핑 경험 연결",
+              "status": "estimated",
+              "population": 1640220.1043366685,
+              "unit": "person",
+              "low": 922623.8086893759,
+              "high": 2562843.913026043,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E41",
+                "leisure_E42"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 1323553573400.8596,
+              "spendPerUnit": 806936.5629048463,
+              "spendScope": "온라인 여행·교통서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
               ]
             }
           ]
@@ -1131,10 +1099,10 @@
             "need_fitness_weight"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 2638545499999.9995,
+          "spendPerUnit": 189741.6927890065,
+          "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -1146,8 +1114,66 @@
           "validationQuestion": "현재 대안의 중단률과 최근 유료 이용액은?",
           "children": [
             {
+              "id": "weight~gym",
+              "label": "체형 관리 중 헬스·개인 운동",
+              "status": "estimated",
+              "population": 2433547.7127499995,
+              "unit": "person",
+              "low": 1315125.4697499997,
+              "high": 3898133.989349999,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "fitness",
+                "int_fitness_gym",
+                "need_fitness_weight"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 461745462499.9999,
+              "spendPerUnit": 189741.6927890065,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "SPORT-2025",
+                "CENSUS-2024"
+              ]
+            },
+            {
+              "id": "weight~health",
+              "label": "체형 관리와 건강 목적 운동",
+              "status": "estimated",
+              "population": 11110883.55707,
+              "unit": "person",
+              "low": 8451110.627350003,
+              "high": 14248923.81639,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "fitness",
+                "need_fitness_health",
+                "need_fitness_weight"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 2108197854500,
+              "spendPerUnit": 189741.6927890065,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "SPORT-2025",
+                "CENSUS-2024"
+              ]
+            },
+            {
               "id": "weight~online",
-              "label": "온라인 구매 가능층",
+              "label": "운동 프로그램을 온라인으로 탐색",
               "status": "estimated",
               "population": 10424346.822022382,
               "unit": "person",
@@ -1163,10 +1189,10 @@
                 "need_fitness_weight"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1977933212230.2273,
+              "spendPerUnit": 189741.6927890065,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -1174,69 +1200,6 @@
                 "NIA-2024",
                 "SPORT-2025",
                 "CENSUS-2024"
-              ]
-            },
-            {
-              "id": "weight~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 8532666.900549999,
-              "unit": "person",
-              "low": 4451644.58625,
-              "high": 12318154.517099999,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "fitness",
-                "need_fitness_weight",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "SPORT-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "weight~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 6092324.1669927,
-              "unit": "person",
-              "low": 1780657.8345,
-              "high": 10839975.975048,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "fitness",
-                "need_fitness_weight",
-                "research_presearch",
-                "research_review"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "SPORT-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
               ]
             }
           ]
@@ -1257,10 +1220,10 @@
             "need_fitness_stress"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 2241403600000,
+          "spendPerUnit": 189741.69278900654,
+          "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -1272,8 +1235,68 @@
           "validationQuestion": "스트레스 해소 목적이 서비스 선택과 지불로 이어지는가?",
           "children": [
             {
+              "id": "stress~yoga",
+              "label": "스트레스 해소 중 요가·필라테스",
+              "status": "estimated",
+              "population": 861834.1993720002,
+              "unit": "person",
+              "low": 515350.80149480863,
+              "high": 1314265.1718671555,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "fitness",
+                "leisure_D30",
+                "need_fitness_stress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 163525879892.30145,
+              "spendPerUnit": 189741.6927890065,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "SPORT-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "stress~walk",
+              "label": "스트레스 해소 중 산책·걷기",
+              "status": "estimated",
+              "population": 9218121.266528001,
+              "unit": "person",
+              "low": 5542509.198336,
+              "high": 13546032.05955719,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "fitness",
+                "leisure_G71",
+                "need_fitness_stress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 1749061933445.3638,
+              "spendPerUnit": 189741.69278900654,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "SPORT-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "stress~online",
-              "label": "온라인 구매 가능층",
+              "label": "회복 운동을 온라인으로 탐색",
               "status": "estimated",
               "population": 8855321.424068492,
               "unit": "person",
@@ -1289,10 +1312,10 @@
                 "need_fitness_stress"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1680223677193.5117,
+              "spendPerUnit": 189741.69278900654,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -1300,69 +1323,6 @@
                 "NIA-2024",
                 "SPORT-2025",
                 "CENSUS-2024"
-              ]
-            },
-            {
-              "id": "stress~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 7248368.58356,
-              "unit": "person",
-              "low": 3687009.1632,
-              "high": 10668199.87536,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "fitness",
-                "need_fitness_stress",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "SPORT-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "stress~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 5175335.168661839,
-              "unit": "person",
-              "low": 1474803.6652800003,
-              "high": 9388015.890316801,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "fitness",
-                "need_fitness_stress",
-                "research_presearch",
-                "research_review"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "SPORT-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
               ]
             }
           ]
@@ -1383,10 +1343,10 @@
             "int_fitness_hiking"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 930291300000.0001,
+          "spendPerUnit": 189741.69278900654,
+          "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -1398,8 +1358,68 @@
           "validationQuestion": "산행 빈도와 장비 교체·가이드 지출은?",
           "children": [
             {
+              "id": "hiking~nature",
+              "label": "등산·트레킹 중 자연·풍경 경험",
+              "status": "estimated",
+              "population": 2491836.562611,
+              "unit": "person",
+              "low": 1138566.71366325,
+              "high": 4466330.207088751,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "fitness",
+                "int_fitness_hiking",
+                "leisure_E39"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 472805287543.3504,
+              "spendPerUnit": 189741.6927890065,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "SPORT-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "hiking~drive",
+              "label": "등산·트레킹 중 드라이브 연결",
+              "status": "estimated",
+              "population": 1759480.338042,
+              "unit": "person",
+              "low": 804333.5764515001,
+              "high": 3152299.0023525003,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "fitness",
+                "int_fitness_hiking",
+                "leisure_E48"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 333846777769.0625,
+              "spendPerUnit": 189741.6927890065,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "SPORT-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "hiking~online",
-              "label": "온라인 구매 가능층",
+              "label": "장비·코스 선택을 온라인으로 탐색",
               "status": "estimated",
               "population": 3675388.2609604695,
               "unit": "person",
@@ -1415,10 +1435,10 @@
                 "int_fitness_hiking"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 697374390291.4824,
+              "spendPerUnit": 189741.69278900654,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -1426,69 +1446,6 @@
                 "NIA-2024",
                 "SPORT-2025",
                 "CENSUS-2024"
-              ]
-            },
-            {
-              "id": "hiking~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 3008424.82473,
-              "unit": "person",
-              "low": 1162664.82135,
-              "high": 5221089.34578,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "fitness",
-                "int_fitness_hiking",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "SPORT-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "hiking~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 2148015.32485722,
-              "unit": "person",
-              "low": 465065.9285400001,
-              "high": 4594558.6242864,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "fitness",
-                "int_fitness_hiking",
-                "research_presearch",
-                "research_review"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "SPORT-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
               ]
             }
           ]
@@ -1509,10 +1466,10 @@
             "int_fitness_gym"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 952052500000,
+          "spendPerUnit": 189741.69278900654,
+          "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -1524,70 +1481,67 @@
           "validationQuestion": "기존 회원권 미사용 이유와 지속 의향은?",
           "children": [
             {
-              "id": "gym~online",
-              "label": "온라인 구매 가능층",
+              "id": "gym~yoga",
+              "label": "헬스 이용 중 요가·필라테스 병행",
               "status": "estimated",
-              "population": 3761362.2553689,
+              "population": 366070.35167500004,
               "unit": "person",
-              "low": 2159895.8582144193,
-              "high": 5544065.355021362,
+              "low": 168367.44935199711,
+              "high": 654348.1258236896,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
-                "digital",
                 "fitness",
-                "int_fitness_gym"
+                "int_fitness_gym",
+                "leisure_D30"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 69458808206.68144,
+              "spendPerUnit": 189741.69278900654,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "SPORT-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "gym~weight",
+              "label": "헬스 이용 중 체중·체형 관리",
+              "status": "estimated",
+              "population": 2433547.7127499995,
+              "unit": "person",
+              "low": 1315125.4697499997,
+              "high": 3898133.989349999,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "fitness",
+                "int_fitness_gym",
+                "need_fitness_weight"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 461745462499.9999,
+              "spendPerUnit": 189741.6927890065,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
                 "SPORT-2025",
                 "CENSUS-2024"
               ]
             },
             {
-              "id": "gym~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 3078797.33525,
-              "unit": "person",
-              "low": 1204562.65275,
-              "high": 5311497.8193,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "fitness",
-                "int_fitness_gym",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "SPORT-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "gym~review",
-              "label": "후기 참고 가능층",
+              "label": "운동시설 선택 전 후기 검토",
               "status": "estimated",
               "population": 2198261.2973684995,
               "unit": "person",
@@ -1604,10 +1558,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 417101819755.2567,
+              "spendPerUnit": 189741.6927890065,
+              "spendScope": "온라인 스포츠·레저용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -1801,20 +1755,19 @@
           "validationQuestion": "작품 탐색과 다중 구독에 드는 비용은?",
           "children": [
             {
-              "id": "paid~online",
-              "label": "온라인 구매 가능층",
+              "id": "paid~price",
+              "label": "유료 콘텐츠 중 요금 효용 불만",
               "status": "estimated",
-              "population": 17167201.925794255,
+              "population": 8225467.7604,
               "unit": "person",
-              "low": 13520934.391327474,
-              "high": 20559734.077318955,
+              "low": 5168192.301299999,
+              "high": 12041889.280500002,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
                 "content",
-                "digital",
+                "need_ott_price",
                 "ott_paid"
               ],
               "evidenceGrade": "C",
@@ -1826,47 +1779,14 @@
               "hasRegion": false,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
                 "KCC-OTT-2024",
                 "KISDI-OTT-2024",
                 "CENSUS-2024"
               ]
             },
             {
-              "id": "paid~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 13846101.03534,
-              "unit": "person",
-              "low": 7392491.826299999,
-              "high": 19541305.73064,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "content",
-                "ott_paid",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KCC-OTT-2024",
-                "KISDI-OTT-2024",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "paid~review",
-              "label": "후기 참고 가능층",
+              "label": "유료 콘텐츠 선택 전 후기 검토",
               "status": "estimated",
               "population": 9886116.139232757,
               "unit": "person",
@@ -1895,6 +1815,38 @@
                 "KISDI-OTT-2024",
                 "CENSUS-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            },
+            {
+              "id": "paid~online",
+              "label": "유료 콘텐츠를 온라인으로 탐색",
+              "status": "estimated",
+              "population": 17167201.925794255,
+              "unit": "person",
+              "low": 13520934.391327474,
+              "high": 20559734.077318955,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "content",
+                "digital",
+                "ott_paid"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "KCC-OTT-2024",
+                "KISDI-OTT-2024",
+                "CENSUS-2024"
               ]
             }
           ]
@@ -1932,20 +1884,18 @@
           "validationQuestion": "비용 증가가 불만·해지·대안 구매로 이어지는 비율은?",
           "children": [
             {
-              "id": "price~online",
-              "label": "온라인 구매 가능층",
+              "id": "price~paid",
+              "label": "요금 증가 경험 중 유료 이용 유지",
               "status": "estimated",
-              "population": 6866880.7703177035,
+              "population": 8225467.7604,
               "unit": "person",
-              "low": 4056280.317398243,
-              "high": 10279867.038659478,
+              "low": 5168192.301299999,
+              "high": 12041889.280500002,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
                 "content",
-                "digital",
                 "need_ott_price",
                 "ott_paid"
               ],
@@ -1958,48 +1908,14 @@
               "hasRegion": false,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
                 "KCC-OTT-2024",
                 "KISDI-OTT-2024",
                 "CENSUS-2024"
               ]
             },
             {
-              "id": "price~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 5538440.414135999,
-              "unit": "person",
-              "low": 2217747.54789,
-              "high": 9770652.86532,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "content",
-                "need_ott_price",
-                "ott_paid",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KCC-OTT-2024",
-                "KISDI-OTT-2024",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "price~review",
-              "label": "후기 참고 가능층",
+              "label": "요금 변경 전 대안 후기 검토",
               "status": "estimated",
               "population": 3954446.455693104,
               "unit": "person",
@@ -2029,6 +1945,39 @@
                 "KISDI-OTT-2024",
                 "CENSUS-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            },
+            {
+              "id": "price~online",
+              "label": "구독 대안을 온라인으로 탐색",
+              "status": "estimated",
+              "population": 6866880.7703177035,
+              "unit": "person",
+              "low": 4056280.317398243,
+              "high": 10279867.038659478,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "content",
+                "digital",
+                "need_ott_price",
+                "ott_paid"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "KCC-OTT-2024",
+                "KISDI-OTT-2024",
+                "CENSUS-2024"
               ]
             }
           ]
@@ -2065,21 +2014,20 @@
           "validationQuestion": "반복되는 재탐색 문제에 유료 수요가 있는가?",
           "children": [
             {
-              "id": "short~online",
-              "label": "온라인 구매 가능층",
+              "id": "short~video",
+              "label": "짧은 영상과 온라인 동영상 병행",
               "status": "estimated",
-              "population": 20262457.03094582,
+              "population": 17720671.355135005,
               "unit": "person",
-              "low": 16281351.998630624,
-              "high": 23878794.287110344,
+              "low": 11408060.832918752,
+              "high": 24743522.12084553,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
                 "content",
-                "digital",
-                "int_content_short"
+                "int_content_short",
+                "leisure_G75"
               ],
               "evidenceGrade": "C",
               "annualValue": null,
@@ -2087,50 +2035,18 @@
               "spendScope": "선택 집단의 관련 소비",
               "moneyStatus": "missing_calibration_anchor",
               "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "NIA-2024",
-                "KCC-OTT-2024",
-                "KISDI-OTT-2024",
-                "CENSUS-2024"
-              ]
-            },
-            {
-              "id": "short~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 16342559.986619998,
-              "unit": "person",
-              "low": 8901734.0139,
-              "high": 22695955.983119998,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "content",
-                "int_content_short",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
+              "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "KCC-OTT-2024",
                 "KISDI-OTT-2024",
                 "CENSUS-2024",
-                "KCA-PURCHASE-2024"
+                "MCST-LEISURE-2024"
               ]
             },
             {
               "id": "short~review",
-              "label": "후기 참고 가능층",
+              "label": "짧은 영상에서 본 정보 후기 검토",
               "status": "estimated",
               "population": 11668587.83044668,
               "unit": "person",
@@ -2159,6 +2075,38 @@
                 "KISDI-OTT-2024",
                 "CENSUS-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            },
+            {
+              "id": "short~online",
+              "label": "짧은 영상 콘텐츠를 온라인으로 탐색",
+              "status": "estimated",
+              "population": 20262457.03094582,
+              "unit": "person",
+              "low": 16281351.998630624,
+              "high": 23878794.287110344,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "content",
+                "digital",
+                "int_content_short"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "KCC-OTT-2024",
+                "KISDI-OTT-2024",
+                "CENSUS-2024"
               ]
             }
           ]
@@ -2231,8 +2179,39 @@
           "validationQuestion": "장르별 결제율과 과금 유지 기간은?",
           "children": [
             {
+              "id": "mobile~mobile_shop",
+              "label": "모바일 게임 중 모바일 쇼핑 접점",
+              "status": "estimated",
+              "population": 14154756.364245273,
+              "unit": "person",
+              "low": 8552716.621975783,
+              "high": 18723669.0887707,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "gaming",
+                "int_gaming_mobile",
+                "kca_channel_mobile"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "KOCCA-GAME-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
               "id": "mobile~online",
-              "label": "온라인 구매 가능층",
+              "label": "모바일 게임 상품을 온라인으로 탐색",
               "status": "estimated",
               "population": 15483003.560009511,
               "unit": "person",
@@ -2263,40 +2242,8 @@
               ]
             },
             {
-              "id": "mobile~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 11928572.603640001,
-              "unit": "person",
-              "low": 5998873.0158,
-              "high": 17691300.837840002,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "gaming",
-                "int_gaming_mobile",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KOCCA-GAME-2025",
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "mobile~review",
-              "label": "후기 참고 가능층",
+              "label": "게임 선택 전 후기 검토",
               "status": "estimated",
               "population": 8517000.838998958,
               "unit": "person",
@@ -2361,8 +2308,38 @@
           "validationQuestion": "피해 빈도·미해결률과 게임사 도입 의향은?",
           "children": [
             {
+              "id": "safety~unresolved",
+              "label": "사이버폭력 경험 후 별도 대응 없음",
+              "status": "estimated",
+              "population": 5013315.400128,
+              "unit": "person",
+              "low": 3078961.7976880004,
+              "high": 7623003.712968,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "arc_gaming_unresolved",
+                "gaming",
+                "need_gaming_safety"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "KOCCA-GAME-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "safety~online",
-              "label": "온라인 구매 가능층",
+              "label": "안전한 게임 정보를 온라인으로 탐색",
               "status": "estimated",
               "population": 8062978.284898329,
               "unit": "person",
@@ -2393,40 +2370,8 @@
               ]
             },
             {
-              "id": "safety~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 6211961.49056,
-              "unit": "person",
-              "low": 2810411.3772,
-              "high": 10039484.21616,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "gaming",
-                "need_gaming_safety",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KOCCA-GAME-2025",
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "safety~review",
-              "label": "후기 참고 가능층",
+              "label": "게임 커뮤니티 후기·신고 정보 검토",
               "status": "estimated",
               "population": 4435340.504259841,
               "unit": "person",
@@ -2492,8 +2437,38 @@
           "validationQuestion": "대응하지 않은 이유를 인터뷰로 구분하기",
           "children": [
             {
+              "id": "unresolved~safety",
+              "label": "대응하지 않은 사이버폭력 경험",
+              "status": "estimated",
+              "population": 5013315.400128,
+              "unit": "person",
+              "low": 3078961.7976880004,
+              "high": 7623003.712968,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "arc_gaming_unresolved",
+                "gaming",
+                "need_gaming_safety"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "KOCCA-GAME-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "unresolved~online",
-              "label": "온라인 구매 가능층",
+              "label": "게임 안전 대안을 온라인으로 탐색",
               "status": "estimated",
               "population": 4620086.557246742,
               "unit": "person",
@@ -2525,41 +2500,8 @@
               ]
             },
             {
-              "id": "unresolved~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 3559453.93409088,
-              "unit": "person",
-              "low": 1385532.8089596,
-              "high": 6555783.19315248,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "arc_gaming_unresolved",
-                "gaming",
-                "need_gaming_safety",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KOCCA-GAME-2025",
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "unresolved~review",
-              "label": "후기 참고 가능층",
+              "label": "대응 방법 후기 검토",
               "status": "estimated",
               "population": 2541450.108940888,
               "unit": "person",
@@ -2625,8 +2567,38 @@
           "validationQuestion": "연간 게임 구입 횟수와 장비 교체 주기는?",
           "children": [
             {
+              "id": "console~pc",
+              "label": "콘솔과 PC 게임 병행",
+              "status": "estimated",
+              "population": 3133246.700584,
+              "unit": "person",
+              "low": 1986404.4678239997,
+              "high": 4634899.585344001,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "gaming",
+                "gaming_console",
+                "gaming_pc"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "KOCCA-GAME-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "console~online",
-              "label": "온라인 구매 가능층",
+              "label": "콘솔 게임·장비를 온라인으로 탐색",
               "status": "estimated",
               "population": 4969852.994570953,
               "unit": "person",
@@ -2657,40 +2629,8 @@
               ]
             },
             {
-              "id": "console~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 3828924.5394399995,
-              "unit": "person",
-              "low": 1683393.6168000002,
-              "high": 6316978.83264,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "gaming",
-                "gaming_console",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KOCCA-GAME-2025",
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "console~review",
-              "label": "후기 참고 가능층",
+              "label": "신작·장비 선택 전 후기 검토",
               "status": "estimated",
               "population": 2733852.12116016,
               "unit": "person",
@@ -2729,7 +2669,7 @@
       "id": "beauty",
       "label": "뷰티·패션",
       "scope": "온라인 화장품 구매 또는 미용 활동 경험. 전체 화장품 사용률은 아님 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
-      "gap": null,
+      "gap": "미용 활동과 온라인 화장품 구매의 분모는 확보했지만, 전체 화장품 사용률·오프라인 구매·품목별 지출은 별도 근거가 필요합니다. 두 코호트를 더해 전체 사용자 수로 해석하지 않습니다.",
       "root": {
         "id": "_root",
         "label": "뷰티·패션",
@@ -2796,19 +2736,49 @@
           "validationQuestion": "피부·헤어·네일별 최근 결제 경험과 불만 강도를 분리하기",
           "children": [
             {
-              "id": "skin~online",
-              "label": "온라인 구매 가능층",
+              "id": "skin~cosmetics",
+              "label": "관리 경험자 중 온라인 화장품 구매",
               "status": "estimated",
-              "population": 12948379.86080823,
+              "population": 5947866.265536008,
               "unit": "person",
-              "low": 9049793.559636593,
-              "high": 16695962.331162244,
+              "low": 3626680.2882023687,
+              "high": 8630139.77762672,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
                 "commerce",
+                "cosmetics_online_buyers",
                 "digital",
+                "leisure_F67"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 6323978808021.507,
+              "spendPerUnit": 1063234.8687233983,
+              "spendScope": "온라인 화장품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "skin~problem",
+              "label": "관리 중 뷰티 선택·이용 불편",
+              "status": "estimated",
+              "population": 1580008.8601779758,
+              "unit": "person",
+              "low": 829504.6515934372,
+              "high": 2567514.3977892105,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_beauty",
                 "leisure_F67"
               ],
               "evidenceGrade": "C",
@@ -2820,44 +2790,14 @@
               "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
-                "CENSUS-2024",
-                "MCST-LEISURE-2024"
-              ]
-            },
-            {
-              "id": "skin~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 10444195.14,
-              "unit": "person",
-              "low": 4964670.225,
-              "high": 15813394.05,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_F67",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
                 "CENSUS-2024",
                 "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
+                "KCA-CONSUMPTION-2025"
               ]
             },
             {
               "id": "skin~review",
-              "label": "후기 참고 가능층",
+              "label": "관리 제품 후기 검토",
               "status": "estimated",
               "population": 7457155.32996,
               "unit": "person",
@@ -2905,10 +2845,10 @@
             "digital"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 13815300000000,
+          "spendPerUnit": 1063234.8687233983,
+          "spendScope": "온라인 화장품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -2920,69 +2860,70 @@
           "validationQuestion": "성별·품목별 구매 주기와 실패 구매 비용은?",
           "children": [
             {
-              "id": "cosmetics~online",
-              "label": "온라인 구매 가능층",
+              "id": "cosmetics~mobile",
+              "label": "모바일에서 화장품 구매",
               "status": "estimated",
-              "population": 12993648.35221,
+              "population": 10694919.684928138,
               "unit": "person",
-              "low": 10306075.017649999,
-              "high": 15402045.197334,
+              "low": 6425117.229934158,
+              "high": 13864482.64266419,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
                 "commerce",
                 "cosmetics_online_buyers",
-                "digital"
+                "digital",
+                "kca_channel_mobile"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 11371211527211.855,
+              "spendPerUnit": 1063234.868723398,
+              "spendScope": "온라인 화장품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
-              "hasRegion": false,
+              "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "NIA-2024",
-                "CENSUS-2024"
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             },
             {
-              "id": "cosmetics~presearch",
-              "label": "사전 정보 검토형",
+              "id": "cosmetics~problem",
+              "label": "화장품 선택·이용 불편 경험",
               "status": "estimated",
-              "population": 9108614.71541666,
+              "population": 1390045.9513011195,
               "unit": "person",
-              "low": 4598288.6511267,
-              "high": 13015327.700331802,
+              "low": 795158.8046337169,
+              "high": 2085298.5931303117,
               "methods": [
-                "survey_transfer",
-                "research_scenario"
+                "survey_transfer"
               ],
               "factors": [
                 "commerce",
                 "cosmetics_online_buyers",
                 "digital",
-                "research_presearch"
+                "kca_beauty"
               ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "evidenceGrade": "C",
+              "annualValue": 1477945324551.1372,
+              "spendPerUnit": 1063234.8687233983,
+              "spendScope": "온라인 화장품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
-              "hasRegion": false,
+              "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "NIA-2024",
                 "CENSUS-2024",
-                "KCA-PURCHASE-2024"
+                "KCA-CONSUMPTION-2025"
               ]
             },
             {
               "id": "cosmetics~review",
-              "label": "후기 참고 가능층",
+              "label": "화장품 구매 전 후기 검토",
               "status": "estimated",
               "population": 6503550.906807494,
               "unit": "person",
@@ -3000,10 +2941,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 6914802094635.403,
+              "spendPerUnit": 1063234.868723398,
+              "spendScope": "온라인 화장품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -3310,8 +3251,36 @@
           "validationQuestion": "최근 식물 손실과 관리용품·상담 지출을 확인하기",
           "children": [
             {
+              "id": "plants~craft",
+              "label": "식물 생활과 생활공예 병행",
+              "status": "estimated",
+              "population": 220139.10549364687,
+              "unit": "person",
+              "low": 121236.00002011594,
+              "high": 348778.34510159964,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_F50",
+                "leisure_F70"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "plants~online",
-              "label": "온라인 구매 가능층",
+              "label": "식물·관리용품을 온라인으로 탐색",
               "status": "estimated",
               "population": 4352689.770969889,
               "unit": "person",
@@ -3340,38 +3309,8 @@
               ]
             },
             {
-              "id": "plants~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 3833275.8000000003,
-              "unit": "person",
-              "low": 1822155.7500000002,
-              "high": 5803903.5,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_F70",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "plants~review",
-              "label": "후기 참고 가능층",
+              "label": "식물 관리 제품 후기 검토",
               "status": "estimated",
               "population": 2736958.9211999997,
               "unit": "person",
@@ -3433,8 +3372,37 @@
           "validationQuestion": "두 활동의 실제 교집합과 유료 모임 참여 여부를 확인하기",
           "children": [
             {
+              "id": "club~cooking",
+              "label": "원예 모임과 요리 취미 병행",
+              "status": "estimated",
+              "population": 56000.23114190433,
+              "unit": "person",
+              "low": 23625.097512990887,
+              "high": 109375.4514490319,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_F51",
+                "leisure_F70",
+                "leisure_H86"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "club~online",
-              "label": "온라인 구매 가능층",
+              "label": "원예 용품을 온라인으로 탐색",
               "status": "estimated",
               "population": 289660.9065694547,
               "unit": "person",
@@ -3464,39 +3432,8 @@
               ]
             },
             {
-              "id": "club~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 270625.74221921054,
-              "unit": "person",
-              "low": 96481.88873132067,
-              "high": 512187.80437614676,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_F70",
-                "leisure_H86",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "club~review",
-              "label": "후기 참고 가능층",
+              "label": "모임·용품 선택 전 후기 검토",
               "status": "estimated",
               "population": 193226.7799445163,
               "unit": "person",
@@ -3582,10 +3519,10 @@
             "int_education_career"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 2019630563798.2192,
+          "spendPerUnit": 361365.884362917,
+          "spendScope": "온라인 서적·문구 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -3598,7 +3535,7 @@
           "children": [
             {
               "id": "career~online",
-              "label": "온라인 구매 가능층",
+              "label": "직업 학습을 온라인으로 탐색",
               "status": "estimated",
               "population": 4231495.26478,
               "unit": "person",
@@ -3614,10 +3551,10 @@
                 "int_education_career"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1529118028534.7205,
+              "spendPerUnit": 361365.88436291704,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -3628,39 +3565,8 @@
               ]
             },
             {
-              "id": "career~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 3542612.449999999,
-              "unit": "person",
-              "low": 1656879.0816364984,
-              "high": 5581346.753316912,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "education",
-                "int_education_career",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KEDI-LEARN-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "career~review",
-              "label": "후기 참고 가능층",
+              "label": "직무 과정 선택 전 후기 검토",
               "status": "estimated",
               "population": 2529425.2892999994,
               "unit": "person",
@@ -3677,10 +3583,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 914048006597.8215,
+              "spendPerUnit": 361365.88436291704,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -3688,6 +3594,36 @@
                 "KEDI-LEARN-2025",
                 "CENSUS-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            },
+            {
+              "id": "career~digital",
+              "label": "직업 학습과 디지털 콘텐츠 병행",
+              "status": "estimated",
+              "population": 2747426.7522463407,
+              "unit": "person",
+              "low": 1520548.9003033533,
+              "high": 4466953.1083796285,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "education",
+                "int_education_career",
+                "leisure_F58"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 992826298047.8358,
+              "spendPerUnit": 361365.884362917,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "KEDI-LEARN-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
               ]
             }
           ]
@@ -3708,10 +3644,10 @@
             "learn_hobby"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 2214629376854.5996,
+          "spendPerUnit": 361365.88436291704,
+          "spendScope": "온라인 서적·문구 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -3723,8 +3659,38 @@
           "validationQuestion": "재등록률·수업 외 실천 빈도·실제 지출은?",
           "children": [
             {
+              "id": "hobby~fitness",
+              "label": "취미 학습과 운동 경험 병행",
+              "status": "estimated",
+              "population": 439562.9699133831,
+              "unit": "person",
+              "low": 245753.72660461982,
+              "high": 708745.3490239053,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "education",
+                "learn_hobby",
+                "leisure_D30"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 158843061355.93994,
+              "spendPerUnit": 361365.884362917,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "KEDI-LEARN-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "hobby~online",
-              "label": "온라인 구매 가능층",
+              "label": "취미 강좌를 온라인으로 탐색",
               "status": "estimated",
               "population": 4640053.428276,
               "unit": "person",
@@ -3740,10 +3706,10 @@
                 "learn_hobby"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1676757010600.1416,
+              "spendPerUnit": 361365.88436291704,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -3754,39 +3720,8 @@
               ]
             },
             {
-              "id": "hobby~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 3884657.79,
-              "unit": "person",
-              "low": 1847936.7139807125,
-              "high": 6044831.269281306,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "education",
-                "learn_hobby",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KEDI-LEARN-2025",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "hobby~review",
-              "label": "후기 참고 가능층",
+              "label": "수업 선택 전 후기 검토",
               "status": "estimated",
               "population": 2773645.6620599995,
               "unit": "person",
@@ -3803,10 +3738,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1002300917579.6802,
+              "spendPerUnit": 361365.884362917,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -3834,10 +3769,10 @@
             "leisure_F65"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 847412699480.9651,
+          "spendPerUnit": 361365.884362917,
+          "spendScope": "온라인 서적·문구 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -3850,8 +3785,38 @@
           "validationQuestion": "독서·학습의 실제 교집합과 유료 모임 수요는?",
           "children": [
             {
+              "id": "reading~club",
+              "label": "독서 학습과 동호회 병행",
+              "status": "estimated",
+              "population": 166413.17797121053,
+              "unit": "person",
+              "low": 82496.74048906637,
+              "high": 290883.5686904042,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "education",
+                "leisure_F65",
+                "leisure_H86"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 60136045227.20999,
+              "spendPerUnit": 361365.884362917,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "KEDI-LEARN-2025",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "reading~online",
-              "label": "온라인 구매 가능층",
+              "label": "독서·학습 자료를 온라인으로 탐색",
               "status": "estimated",
               "population": 1991615.186497695,
               "unit": "person",
@@ -3867,10 +3832,10 @@
                 "leisure_F65"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 719701783179.3555,
+              "spendPerUnit": 361365.884362917,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -3882,40 +3847,8 @@
               ]
             },
             {
-              "id": "reading~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 1594422.0633800002,
-              "unit": "person",
-              "low": 667952.0273250003,
-              "high": 2700628.585850001,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "education",
-                "leisure_F65",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "KEDI-LEARN-2025",
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "reading~review",
-              "label": "후기 참고 가능층",
+              "label": "책·강좌 선택 전 후기 검토",
               "status": "estimated",
               "population": 1138417.35325332,
               "unit": "person",
@@ -3932,10 +3865,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 411385193632.4773,
+              "spendPerUnit": 361365.884362917,
+              "spendScope": "온라인 서적·문구 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -4133,8 +4066,36 @@
           "validationQuestion": "최근 공간 변경 예산과 실패·재작업 비용은?",
           "children": [
             {
+              "id": "decor~craft",
+              "label": "공간 꾸미기와 생활공예 병행",
+              "status": "estimated",
+              "population": 68877.87181924285,
+              "unit": "person",
+              "low": 37793.39494720894,
+              "high": 109243.68315307974,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_F50",
+                "leisure_F54"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "decor~online",
-              "label": "온라인 구매 가능층",
+              "label": "인테리어 용품을 온라인으로 탐색",
               "status": "estimated",
               "population": 1812272.647788838,
               "unit": "person",
@@ -4163,38 +4124,8 @@
               ]
             },
             {
-              "id": "decor~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 1404997.7,
-              "unit": "person",
-              "low": 667868.625,
-              "high": 2127285.2500000005,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_F54",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "decor~review",
-              "label": "후기 참고 가능층",
+              "label": "가구·시공 선택 전 후기 검토",
               "status": "estimated",
               "population": 1003168.3578000001,
               "unit": "person",
@@ -4255,8 +4186,36 @@
           "validationQuestion": "도구 보유와 반복 재료 구매 규모를 확인하기",
           "children": [
             {
+              "id": "craft~decor",
+              "label": "생활 제작과 공간 꾸미기 병행",
+              "status": "estimated",
+              "population": 68877.87181924285,
+              "unit": "person",
+              "low": 37793.39494720894,
+              "high": 109243.68315307974,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_F50",
+                "leisure_F54"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "craft~online",
-              "label": "온라인 구매 가능층",
+              "label": "재료·도구를 온라인으로 탐색",
               "status": "estimated",
               "population": 898922.859207999,
               "unit": "person",
@@ -4285,38 +4244,8 @@
               ]
             },
             {
-              "id": "craft~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 715604.0300000003,
-              "unit": "person",
-              "low": 325971.97374243475,
-              "high": 1110607.2990700142,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_F50",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "craft~review",
-              "label": "후기 참고 가능층",
+              "label": "공방·키트 선택 전 후기 검토",
               "status": "estimated",
               "population": 510941.27742000006,
               "unit": "person",
@@ -4644,8 +4573,36 @@
           "validationQuestion": "장비 지출과 촬영·편집 서비스 지출을 분리하기",
           "children": [
             {
+              "id": "camera~editing",
+              "label": "카메라 촬영과 영상·편집 병행",
+              "status": "estimated",
+              "population": 3101826.486,
+              "unit": "person",
+              "low": 1744777.3983750003,
+              "high": 4846603.884375,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_B14",
+                "leisure_F58"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "camera~online",
-              "label": "온라인 구매 가능층",
+              "label": "카메라·장비를 온라인으로 탐색",
               "status": "estimated",
               "population": 4882115.093889999,
               "unit": "person",
@@ -4674,38 +4631,8 @@
               ]
             },
             {
-              "id": "camera~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 3840864.99,
-              "unit": "person",
-              "low": 1825763.2874999999,
-              "high": 5815394.175000001,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_B14",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "camera~review",
-              "label": "후기 참고 가능층",
+              "label": "장비 선택 전 후기 검토",
               "status": "estimated",
               "population": 2742377.60286,
               "unit": "person",
@@ -4766,20 +4693,19 @@
           "validationQuestion": "재료비·수강료·전시 참여 지출과 지속 빈도는?",
           "children": [
             {
-              "id": "art~online",
-              "label": "온라인 구매 가능층",
+              "id": "art~craft",
+              "label": "미술 창작과 생활공예 병행",
               "status": "estimated",
-              "population": 839634.6231865537,
+              "population": 36595.25117586881,
               "unit": "person",
-              "low": 586195.4803363085,
-              "high": 1082092.1698857995,
+              "low": 20171.56208642165,
+              "high": 57912.42374643807,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
-                "commerce",
-                "digital",
-                "leisure_B11"
+                "leisure_B11",
+                "leisure_F50"
               ],
               "evidenceGrade": "C",
               "annualValue": null,
@@ -4790,28 +4716,26 @@
               "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
-                "NIA-2024",
                 "CENSUS-2024",
                 "MCST-LEISURE-2024"
               ]
             },
             {
-              "id": "art~presearch",
-              "label": "사전 정보 검토형",
+              "id": "art~club",
+              "label": "미술 창작과 동호회 병행",
               "status": "estimated",
-              "population": 662138.1900000002,
+              "population": 63404.407580755265,
               "unit": "person",
-              "low": 314748.7875000001,
-              "high": 1002533.1750000002,
+              "low": 35664.97926417483,
+              "high": 99069.38684493011,
               "methods": [
-                "survey_transfer",
-                "research_scenario"
+                "survey_transfer"
               ],
               "factors": [
                 "leisure_B11",
-                "research_presearch"
+                "leisure_H86"
               ],
-              "evidenceGrade": "D",
+              "evidenceGrade": "C",
               "annualValue": null,
               "spendPerUnit": null,
               "spendScope": "선택 집단의 관련 소비",
@@ -4821,13 +4745,12 @@
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
+                "MCST-LEISURE-2024"
               ]
             },
             {
               "id": "art~review",
-              "label": "후기 참고 가능층",
+              "label": "재료·수업 선택 전 후기 검토",
               "status": "estimated",
               "population": 472766.66766000004,
               "unit": "person",
@@ -4927,7 +4850,7 @@
           "children": [
             {
               "id": "objects~online",
-              "label": "온라인 구매 가능층",
+              "label": "수집품을 온라인으로 탐색·거래",
               "status": "estimated",
               "population": 405487.99335799995,
               "unit": "person",
@@ -4956,22 +4879,21 @@
               ]
             },
             {
-              "id": "objects~presearch",
-              "label": "사전 정보 검토형",
+              "id": "objects~club",
+              "label": "수집품과 동호회 활동 병행",
               "status": "estimated",
-              "population": 302125.59,
+              "population": 28169.718000000004,
               "unit": "person",
-              "low": 125454.82500000003,
-              "high": 492151.77,
+              "low": 12877.367625000003,
+              "high": 48962.015625000015,
               "methods": [
-                "survey_transfer",
-                "research_scenario"
+                "survey_transfer"
               ],
               "factors": [
                 "leisure_F49",
-                "research_presearch"
+                "leisure_H86"
               ],
-              "evidenceGrade": "D",
+              "evidenceGrade": "C",
               "annualValue": null,
               "spendPerUnit": null,
               "spendScope": "선택 집단의 관련 소비",
@@ -4981,13 +4903,12 @@
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
+                "MCST-LEISURE-2024"
               ]
             },
             {
               "id": "objects~review",
-              "label": "후기 참고 가능층",
+              "label": "진품·상태 선택 전 후기 검토",
               "status": "estimated",
               "population": 215717.67126,
               "unit": "person",
@@ -5048,8 +4969,64 @@
           "validationQuestion": "출조 횟수와 장비·교통·선비 지출을 구분하기",
           "children": [
             {
+              "id": "fishing~nature",
+              "label": "낚시와 자연·풍경 경험 병행",
+              "status": "estimated",
+              "population": 1663053.5365848783,
+              "unit": "person",
+              "low": 933884.2566069819,
+              "high": 2601160.0804505595,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E39",
+                "leisure_F56"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
+              "id": "fishing~drive",
+              "label": "낚시와 자동차 드라이브 연결",
+              "status": "estimated",
+              "population": 1267777.6983280024,
+              "unit": "person",
+              "low": 712149.2270662329,
+              "high": 1982528.867376284,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E48",
+                "leisure_F56"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "fishing~online",
-              "label": "온라인 구매 가능층",
+              "label": "낚시 장비를 온라인으로 탐색",
               "status": "estimated",
               "population": 2461532.228993789,
               "unit": "person",
@@ -5076,73 +5053,12 @@
                 "CENSUS-2024",
                 "MCST-LEISURE-2024"
               ]
-            },
-            {
-              "id": "fishing~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 2104229.13,
-              "unit": "person",
-              "low": 998231.6641447095,
-              "high": 3189837.535190111,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_F56",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "fishing~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 1502419.5988199995,
-              "unit": "person",
-              "low": 399292.66565788386,
-              "high": 2807057.0309672975,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_F56",
-                "research_presearch",
-                "research_review"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
             }
           ]
         },
         {
           "id": "craft",
-          "label": "생활 속 직접 제작",
+          "label": "공예·제작 취미",
           "status": "estimated",
           "population": 1092952.0000000005,
           "unit": "person",
@@ -5170,8 +5086,36 @@
           "validationQuestion": "키트 재구매와 도구 공유에 대한 실제 수요는?",
           "children": [
             {
+              "id": "craft~decor",
+              "label": "공예와 공간 꾸미기 병행",
+              "status": "estimated",
+              "population": 68877.87181924285,
+              "unit": "person",
+              "low": 37793.39494720894,
+              "high": 109243.68315307974,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_F50",
+                "leisure_F54"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "craft~online",
-              "label": "온라인 구매 가능층",
+              "label": "공예 재료·도구를 온라인으로 탐색",
               "status": "estimated",
               "population": 898922.859207999,
               "unit": "person",
@@ -5200,38 +5144,8 @@
               ]
             },
             {
-              "id": "craft~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 715604.0300000003,
-              "unit": "person",
-              "low": 325971.97374243475,
-              "high": 1110607.2990700142,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_F50",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "craft~review",
-              "label": "후기 참고 가능층",
+              "label": "공방·키트 선택 전 후기 검토",
               "status": "estimated",
               "population": 510941.27742000006,
               "unit": "person",
@@ -5315,10 +5229,10 @@
             "leisure_H86"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 229369512572.27072,
+          "spendPerUnit": 74744.36004988097,
+          "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -5331,7 +5245,7 @@
           "children": [
             {
               "id": "club~online",
-              "label": "온라인 구매 가능층",
+              "label": "취향 모임을 온라인으로 탐색",
               "status": "estimated",
               "population": 2419472.9941617968,
               "unit": "person",
@@ -5346,10 +5260,10 @@
                 "leisure_H86"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 180841960606.59286,
+              "spendPerUnit": 74744.36004988095,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -5360,38 +5274,8 @@
               ]
             },
             {
-              "id": "club~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 2062652.9500000002,
-              "unit": "person",
-              "low": 980486.4375000002,
-              "high": 3123030.8750000005,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_H86",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "club~review",
-              "label": "후기 참고 가능층",
+              "label": "모임 선택 전 후기 검토",
               "status": "estimated",
               "population": 1472734.2063000002,
               "unit": "person",
@@ -5407,10 +5291,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 110078575773.46289,
+              "spendPerUnit": 74744.36004988097,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -5418,6 +5302,34 @@
                 "CENSUS-2024",
                 "MCST-LEISURE-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            },
+            {
+              "id": "club~volunteer",
+              "label": "취향 모임과 봉사활동 병행",
+              "status": "estimated",
+              "population": 144892.78639959154,
+              "unit": "person",
+              "low": 81502.19234977024,
+              "high": 226394.97874936182,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_H80",
+                "leisure_H86"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 10829918595.281565,
+              "spendPerUnit": 74744.36004988095,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
               ]
             }
           ]
@@ -5437,10 +5349,10 @@
             "leisure_H82"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 1246421102387.4846,
+          "spendPerUnit": 74744.36004988097,
+          "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -5452,8 +5364,36 @@
           "validationQuestion": "주최자와 참석자 중 누가 비용을 지불하는가?",
           "children": [
             {
+              "id": "social~friends",
+              "label": "사교 모임과 친구 만남 병행",
+              "status": "estimated",
+              "population": 12622326.884024635,
+              "unit": "person",
+              "low": 7100058.872263855,
+              "high": 19513150.02660243,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_H82",
+                "leisure_H84"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 943447745286.8295,
+              "spendPerUnit": 74744.36004988097,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "social~online",
-              "label": "온라인 구매 가능층",
+              "label": "모임 장소·일정을 온라인으로 탐색",
               "status": "estimated",
               "population": 11813472.195910193,
               "unit": "person",
@@ -5468,10 +5408,10 @@
                 "leisure_H82"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 882990419250.3694,
+              "spendPerUnit": 74744.36004988097,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -5482,38 +5422,8 @@
               ]
             },
             {
-              "id": "social~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 10181355.27,
-              "unit": "person",
-              "low": 4839728.737500001,
-              "high": 15415432.275,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_H82",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "social~review",
-              "label": "후기 참고 가능층",
+              "label": "모임 장소 선택 전 후기 검토",
               "status": "estimated",
               "population": 7269487.66278,
               "unit": "person",
@@ -5529,10 +5439,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 543353203244.996,
+              "spendPerUnit": 74744.36004988097,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -5559,10 +5469,10 @@
             "leisure_H80"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 144633700192.7219,
+          "spendPerUnit": 74744.36004988097,
+          "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -5574,8 +5484,36 @@
           "validationQuestion": "참여 중단 이유와 기관의 운영 예산은?",
           "children": [
             {
+              "id": "volunteer~club",
+              "label": "봉사활동과 동호회 병행",
+              "status": "estimated",
+              "population": 144892.78639959154,
+              "unit": "person",
+              "low": 81502.19234977024,
+              "high": 226394.97874936182,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_H80",
+                "leisure_H86"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 10829918595.281565,
+              "spendPerUnit": 74744.36004988095,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "volunteer~online",
-              "label": "온라인 구매 가능층",
+              "label": "봉사 정보를 온라인으로 탐색",
               "status": "estimated",
               "population": 1422782.6968534803,
               "unit": "person",
@@ -5590,10 +5528,10 @@
                 "leisure_H80"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 106344982166.35716,
+              "spendPerUnit": 74744.36004988095,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -5604,38 +5542,8 @@
               ]
             },
             {
-              "id": "volunteer~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 1253098.1700000002,
-              "unit": "person",
-              "low": 595662.8625000002,
-              "high": 1897296.5250000001,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_H80",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "volunteer~review",
-              "label": "후기 참고 가능층",
+              "label": "기관·활동 선택 전 후기 검토",
               "status": "estimated",
               "population": 894712.09338,
               "unit": "person",
@@ -5651,10 +5559,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 66874682848.577446,
+              "spendPerUnit": 74744.36004988097,
+              "spendScope": "온라인 문화·레저서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -5735,8 +5643,36 @@
           "validationQuestion": "무료 산책을 넘어서 지불하는 편익은 무엇인가?",
           "children": [
             {
+              "id": "walk~spa",
+              "label": "산책과 목욕·사우나 병행",
+              "status": "estimated",
+              "population": 16391345.679456817,
+              "unit": "person",
+              "low": 9220131.944694458,
+              "high": 24630311.483676154,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_G71",
+                "leisure_G72"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "walk~online",
-              "label": "온라인 구매 가능층",
+              "label": "휴식 장소를 온라인으로 탐색",
               "status": "estimated",
               "population": 24552913.523429982,
               "unit": "person",
@@ -5765,38 +5701,8 @@
               ]
             },
             {
-              "id": "walk~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 20369581.92,
-              "unit": "person",
-              "low": 9682723.8,
-              "high": 30173580.571036402,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_G71",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "walk~review",
-              "label": "후기 참고 가능층",
+              "label": "휴식 장소 선택 전 후기 검토",
               "status": "estimated",
               "population": 14543881.490880001,
               "unit": "person",
@@ -5857,8 +5763,36 @@
           "validationQuestion": "방문 주기와 회당 결제액, 선택 기준은?",
           "children": [
             {
+              "id": "spa~walk",
+              "label": "목욕·사우나와 산책 병행",
+              "status": "estimated",
+              "population": 16391345.679456817,
+              "unit": "person",
+              "low": 9220131.944694458,
+              "high": 24630311.483676154,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_G71",
+                "leisure_G72"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "spa~online",
-              "label": "온라인 구매 가능층",
+              "label": "스파·휴식 시설을 온라인으로 탐색",
               "status": "estimated",
               "population": 14823483.73216317,
               "unit": "person",
@@ -5887,38 +5821,8 @@
               ]
             },
             {
-              "id": "spa~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 12418839.330000002,
-              "unit": "person",
-              "low": 5903321.512500001,
-              "high": 18803172.225,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_G72",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "spa~review",
-              "label": "후기 참고 가능층",
+              "label": "시설 선택 전 후기 검토",
               "status": "estimated",
               "population": 8867051.28162,
               "unit": "person",
@@ -6087,10 +5991,10 @@
           "digital"
         ],
         "evidenceGrade": "C",
-        "annualValue": null,
-        "spendPerUnit": null,
-        "spendScope": "선택 집단의 관련 소비",
-        "moneyStatus": "missing_calibration_anchor",
+        "annualValue": 260446500000000,
+        "spendPerUnit": 7984663.931788656,
+        "spendScope": "온라인 상품·서비스 거래액 · 2025",
+        "moneyStatus": "estimated",
         "hasAge": true,
         "hasRegion": false,
         "hasHouseholdProfile": false,
@@ -6116,10 +6020,10 @@
             "digital"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 260446500000000,
+          "spendPerUnit": 7984663.931788656,
+          "spendScope": "온라인 상품·서비스 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -6147,10 +6051,10 @@
                 "kca_channel_pc"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 121244110686189.58,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6177,10 +6081,10 @@
                 "kca_channel_mobile"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 207515272503842.56,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6207,10 +6111,10 @@
                 "kca_channel_sns"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 51457470732454.87,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6237,10 +6141,10 @@
                 "kca_channel_c2c"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 61814548719194.26,
+              "spendPerUnit": 7984663.931788657,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6268,10 +6172,10 @@
                 "kca_channel_pc_quality"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 5898947857277.765,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6299,10 +6203,10 @@
                 "kca_channel_pc_delivery"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 4112494007423.8438,
+              "spendPerUnit": 7984663.931788655,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6330,10 +6234,10 @@
                 "kca_channel_pc_price"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 2347031892071.3516,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6361,10 +6265,10 @@
                 "kca_channel_mobile_quality"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 9590273103507.213,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6392,10 +6296,10 @@
                 "kca_channel_mobile_delivery"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 11333965517603.283,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6423,10 +6327,10 @@
                 "kca_channel_mobile_price"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 4503514036840.699,
+              "spendPerUnit": 7984663.931788657,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6454,10 +6358,10 @@
                 "kca_channel_sns_quality"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1240759351410.0457,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6485,10 +6389,10 @@
                 "kca_channel_sns_price"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 599980724446.2753,
+              "spendPerUnit": 7984663.931788657,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6516,10 +6420,10 @@
                 "kca_channel_sns_redress"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 597042942039.9603,
+              "spendPerUnit": 7984663.931788655,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6547,10 +6451,10 @@
                 "kca_channel_c2c_redress"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 2497627659569.809,
+              "spendPerUnit": 7984663.931788655,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6578,10 +6482,10 @@
                 "kca_channel_c2c_quality"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1695116489019.901,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6609,10 +6513,10 @@
                 "kca_channel_c2c_price"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 504742308648.1304,
+              "spendPerUnit": 7984663.931788656,
+              "spendScope": "온라인 상품·서비스 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6641,10 +6545,10 @@
             "digital"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 13815300000000,
+          "spendPerUnit": 1063234.8687233983,
+          "spendScope": "온라인 화장품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -6656,69 +6560,70 @@
           "validationQuestion": "실패 구매 경험과 재구매 품목은?",
           "children": [
             {
-              "id": "cosmetics~online",
-              "label": "온라인 구매 가능층",
+              "id": "cosmetics~mobile",
+              "label": "온라인 화장품 구매 중 모바일 이용",
               "status": "estimated",
-              "population": 12993648.35221,
+              "population": 10694919.684928138,
               "unit": "person",
-              "low": 10306075.017649999,
-              "high": 15402045.197334,
+              "low": 6425117.229934158,
+              "high": 13864482.64266419,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
                 "commerce",
                 "cosmetics_online_buyers",
-                "digital"
+                "digital",
+                "kca_channel_mobile"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 11371211527211.855,
+              "spendPerUnit": 1063234.868723398,
+              "spendScope": "온라인 화장품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
-              "hasRegion": false,
+              "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "NIA-2024",
-                "CENSUS-2024"
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             },
             {
-              "id": "cosmetics~presearch",
-              "label": "사전 정보 검토형",
+              "id": "cosmetics~problem",
+              "label": "온라인 화장품 선택·이용 불편",
               "status": "estimated",
-              "population": 9108614.71541666,
+              "population": 1390045.9513011195,
               "unit": "person",
-              "low": 4598288.6511267,
-              "high": 13015327.700331802,
+              "low": 795158.8046337169,
+              "high": 2085298.5931303117,
               "methods": [
-                "survey_transfer",
-                "research_scenario"
+                "survey_transfer"
               ],
               "factors": [
                 "commerce",
                 "cosmetics_online_buyers",
                 "digital",
-                "research_presearch"
+                "kca_beauty"
               ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "evidenceGrade": "C",
+              "annualValue": 1477945324551.1372,
+              "spendPerUnit": 1063234.8687233983,
+              "spendScope": "온라인 화장품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
-              "hasRegion": false,
+              "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "NIA-2024",
                 "CENSUS-2024",
-                "KCA-PURCHASE-2024"
+                "KCA-CONSUMPTION-2025"
               ]
             },
             {
               "id": "cosmetics~review",
-              "label": "후기 참고 가능층",
+              "label": "온라인 화장품 구매 전 후기 검토",
               "status": "estimated",
               "population": 6503550.906807494,
               "unit": "person",
@@ -6736,10 +6641,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 6914802094635.403,
+              "spendPerUnit": 1063234.868723398,
+              "spendScope": "온라인 화장품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -6784,19 +6689,20 @@
           "validationQuestion": "두 행동의 실제 연결과 구매 전환 경로를 확인하기",
           "children": [
             {
-              "id": "offline~online",
-              "label": "온라인 구매 가능층",
+              "id": "offline~mobile",
+              "label": "오프라인 경험과 모바일 구매 연결",
               "status": "estimated",
-              "population": 25769753.79646908,
+              "population": 20652001.55637844,
               "unit": "person",
-              "low": 17987385.938774146,
-              "high": 32655643.114481162,
+              "low": 10879255.45711315,
+              "high": 28786756.795385696,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
                 "commerce",
                 "digital",
+                "kca_channel_mobile",
                 "leisure_F63"
               ],
               "evidenceGrade": "C",
@@ -6810,17 +6716,18 @@
               "sourceIds": [
                 "NIA-2024",
                 "CENSUS-2024",
-                "MCST-LEISURE-2024"
+                "MCST-LEISURE-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             },
             {
-              "id": "offline~presearch",
-              "label": "사전 정보 검토형",
+              "id": "offline~review",
+              "label": "매장·상품 선택 전 후기 검토",
               "status": "estimated",
-              "population": 17911378.49663769,
+              "population": 12788724.246599311,
               "unit": "person",
-              "low": 7955611.127978997,
-              "high": 27351848.767546255,
+              "low": 3182244.4511915985,
+              "high": 24069626.915440705,
               "methods": [
                 "survey_transfer",
                 "research_scenario"
@@ -6829,7 +6736,8 @@
                 "commerce",
                 "digital",
                 "leisure_F63",
-                "research_presearch"
+                "research_presearch",
+                "research_review"
               ],
               "evidenceGrade": "D",
               "annualValue": null,
@@ -6847,13 +6755,13 @@
               ]
             },
             {
-              "id": "offline~review",
-              "label": "후기 참고 가능층",
+              "id": "offline~presearch",
+              "label": "쇼핑·외식 전 정보 검토",
               "status": "estimated",
-              "population": 12788724.246599311,
+              "population": 17911378.49663769,
               "unit": "person",
-              "low": 3182244.4511915985,
-              "high": 24069626.915440705,
+              "low": 7955611.127978997,
+              "high": 27351848.767546255,
               "methods": [
                 "survey_transfer",
                 "research_scenario"
@@ -6862,8 +6770,7 @@
                 "commerce",
                 "digital",
                 "leisure_F63",
-                "research_presearch",
-                "research_review"
+                "research_presearch"
               ],
               "evidenceGrade": "D",
               "annualValue": null,
@@ -6904,10 +6811,10 @@
           "leisure_E48"
         ],
         "evidenceGrade": "C",
-        "annualValue": null,
-        "spendPerUnit": null,
-        "spendScope": "선택 집단의 관련 소비",
-        "moneyStatus": "missing_calibration_anchor",
+        "annualValue": 7575100000000,
+        "spendPerUnit": 482725.56703255395,
+        "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+        "moneyStatus": "estimated",
         "hasAge": true,
         "hasRegion": false,
         "hasHouseholdProfile": false,
@@ -6932,10 +6839,10 @@
             "leisure_E48"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 7575100000000,
+          "spendPerUnit": 482725.56703255395,
+          "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -6947,8 +6854,37 @@
           "validationQuestion": "운전자·동승자 비중과 여행 중 부대 지출은?",
           "children": [
             {
+              "id": "drive~travel",
+              "label": "드라이브와 국내여행 병행",
+              "status": "estimated",
+              "population": 14970504.762,
+              "unit": "person",
+              "low": 10757107.981499996,
+              "high": 19497748.602500003,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E48",
+                "travel_domestic"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 7226645399999.999,
+              "spendPerUnit": 482725.56703255395,
+              "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "TOUR-2024",
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "drive~online",
-              "label": "온라인 구매 가능층",
+              "label": "차량·경로를 온라인으로 탐색",
               "status": "estimated",
               "population": 12633899.673682354,
               "unit": "person",
@@ -6963,10 +6899,10 @@
                 "leisure_E48"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 6098706383810.713,
+              "spendPerUnit": 482725.56703255395,
+              "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -6977,38 +6913,8 @@
               ]
             },
             {
-              "id": "drive~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 10323957.35,
-              "unit": "person",
-              "low": 4907514.9375,
-              "high": 15631343.875000002,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_E48",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "drive~review",
-              "label": "후기 참고 가능층",
+              "label": "차량·장소 선택 전 후기 검토",
               "status": "estimated",
               "population": 7371305.547900001,
               "unit": "person",
@@ -7024,10 +6930,10 @@
                 "research_review"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 3558317650380.239,
+              "spendPerUnit": 482725.56703255395,
+              "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -7055,10 +6961,10 @@
             "leisure_E48"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 1581255471082.9153,
+          "spendPerUnit": 482725.567032554,
+          "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": true,
           "hasHouseholdProfile": false,
@@ -7070,8 +6976,36 @@
           "validationQuestion": "두 활동의 실제 교집합과 차량·장비 이용 형태는?",
           "children": [
             {
+              "id": "camp~outdoor",
+              "label": "드라이브·캠핑과 국내캠핑 경험",
+              "status": "estimated",
+              "population": 3275682.0418759356,
+              "unit": "person",
+              "low": 1842571.1485552136,
+              "high": 5118253.19043115,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "leisure_E41",
+                "leisure_E48"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 1581255471082.9153,
+              "spendPerUnit": 482725.567032554,
+              "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024"
+              ]
+            },
+            {
               "id": "camp~online",
-              "label": "온라인 구매 가능층",
+              "label": "차량·캠핑 장비를 온라인으로 탐색",
               "status": "estimated",
               "population": 3044224.7871139757,
               "unit": "person",
@@ -7087,10 +7021,10 @@
                 "leisure_E48"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1469525136534.15,
+              "spendPerUnit": 482725.567032554,
+              "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -7102,7 +7036,7 @@
             },
             {
               "id": "camp~presearch",
-              "label": "사전 정보 검토형",
+              "label": "출발 전 경로·장비 정보 검토",
               "status": "estimated",
               "population": 2300294.8887638184,
               "unit": "person",
@@ -7118,42 +7052,10 @@
                 "research_presearch"
               ],
               "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
-              "id": "camp~review",
-              "label": "후기 참고 가능층",
-              "status": "estimated",
-              "population": 1642410.5505773663,
-              "unit": "person",
-              "low": 328035.01054554456,
-              "high": 3831124.93797636,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "leisure_E41",
-                "leisure_E48",
-                "research_presearch",
-                "research_review"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1110411154520.5999,
+              "spendPerUnit": 482725.56703255395,
+              "spendScope": "온라인 자동차·자동차용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": true,
               "hasHouseholdProfile": false,
@@ -7543,8 +7445,38 @@
           "validationQuestion": "취미 요리 경험과 일상 집밥·외식 소비를 구분해 조사하기",
           "children": [
             {
+              "id": "cook~taste",
+              "label": "요리 취미와 맛 중심 외식 병행",
+              "status": "estimated",
+              "population": 1768612.3563939175,
+              "unit": "person",
+              "low": 746133.337853684,
+              "high": 3329859.4806209826,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "food_dining",
+                "food_dining_taste",
+                "leisure_F51"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 3083500141833.136,
+              "spendPerUnit": 1743457.3102950538,
+              "spendScope": "개인 외식 · 음식점에서의 식사",
+              "moneyStatus": "estimated",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "MCST-LEISURE-2024",
+                "KREI-FOOD-2024"
+              ]
+            },
+            {
               "id": "cook~online",
-              "label": "온라인 구매 가능층",
+              "label": "재료·레시피를 온라인으로 탐색",
               "status": "estimated",
               "population": 3542469.4664400946,
               "unit": "person",
@@ -7575,40 +7507,8 @@
               ]
             },
             {
-              "id": "cook~presearch",
-              "label": "사전 정보 검토형",
-              "status": "estimated",
-              "population": 2849515.3095384077,
-              "unit": "person",
-              "low": 1015892.341868887,
-              "high": 5171477.723816596,
-              "methods": [
-                "survey_transfer",
-                "research_scenario"
-              ],
-              "factors": [
-                "food_dining",
-                "leisure_F51",
-                "research_presearch"
-              ],
-              "evidenceGrade": "D",
-              "annualValue": 5066896330601.134,
-              "spendPerUnit": 1778160.767777001,
-              "spendScope": "개인 외식 · 음식점에서의 식사",
-              "moneyStatus": "estimated",
-              "hasAge": true,
-              "hasRegion": true,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "CENSUS-2024",
-                "MCST-LEISURE-2024",
-                "KREI-FOOD-2024",
-                "KCA-PURCHASE-2024"
-              ]
-            },
-            {
               "id": "cook~review",
-              "label": "후기 참고 가능층",
+              "label": "식재료·클래스 선택 전 후기 검토",
               "status": "estimated",
               "population": 2034553.9310104235,
               "unit": "person",
@@ -7663,10 +7563,10 @@
           "pet_household"
         ],
         "evidenceGrade": "B",
-        "annualValue": null,
-        "spendPerUnit": null,
-        "spendScope": "선택 집단의 관련 소비",
-        "moneyStatus": "missing_calibration_anchor",
+        "annualValue": 2954700000000,
+        "spendPerUnit": 453873.0350604049,
+        "spendScope": "온라인 반려용품 거래액 · 2025",
+        "moneyStatus": "estimated",
         "hasAge": false,
         "hasRegion": false,
         "hasHouseholdProfile": false,
@@ -7692,10 +7592,10 @@
             "pet_household"
           ],
           "evidenceGrade": "B",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 2378533500000,
+          "spendPerUnit": 453873.03506040486,
+          "spendScope": "온라인 반려용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": false,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -7705,7 +7605,68 @@
           ],
           "job": "반려견의 건강한 일상",
           "validationQuestion": "가구당 양육비와 개체별 나이·건강·돌봄 공백을 확인하기",
-          "children": []
+          "children": [
+            {
+              "id": "dog~children",
+              "label": "반려견 가구 중 자녀 동거",
+              "status": "estimated",
+              "population": 1061766.02,
+              "unit": "household",
+              "low": 861422.8414500001,
+              "high": 1285558.3006499999,
+              "methods": [
+                "survey_rate"
+              ],
+              "factors": [
+                "family_children",
+                "pet_dog_household",
+                "pet_household"
+              ],
+              "evidenceGrade": "B",
+              "annualValue": 481906966021.40656,
+              "spendPerUnit": 453873.03506040486,
+              "spendScope": "온라인 반려용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": false,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "MAFRA-PET-2025",
+                "CENSUS-2024"
+              ]
+            },
+            {
+              "id": "dog~delivery",
+              "label": "반려견 가구 중 가족 배달 식사",
+              "status": "estimated",
+              "population": 3610722.5036664605,
+              "unit": "household",
+              "low": 2567017.7110454473,
+              "high": 4881099.748535215,
+              "methods": [
+                "survey_transfer",
+                "survey_rate"
+              ],
+              "factors": [
+                "food_delivery_household",
+                "pet_dog_household",
+                "pet_household"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 4019157034400.3994,
+              "spendPerUnit": 1113117.1199999999,
+              "spendScope": "가족 배달·포장 식사",
+              "moneyStatus": "estimated",
+              "hasAge": false,
+              "hasRegion": true,
+              "hasHouseholdProfile": true,
+              "sourceIds": [
+                "MAFRA-PET-2025",
+                "CENSUS-2024",
+                "KREI-FOOD-2024"
+              ]
+            }
+          ]
         },
         {
           "id": "cat",
@@ -7723,10 +7684,10 @@
             "pet_household"
           ],
           "evidenceGrade": "B",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 425476799999.99994,
+          "spendPerUnit": 453873.0350604049,
+          "spendScope": "온라인 반려용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": false,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -7736,7 +7697,68 @@
           ],
           "job": "반려묘에 맞는 생활환경",
           "validationQuestion": "소모품 구매 주기와 건강관리 비용은?",
-          "children": []
+          "children": [
+            {
+              "id": "cat~children",
+              "label": "반려묘 가구 중 자녀 동거",
+              "status": "estimated",
+              "population": 189930.816,
+              "unit": "household",
+              "low": 117108.46471999997,
+              "high": 279932.22167999996,
+              "methods": [
+                "survey_rate"
+              ],
+              "factors": [
+                "family_children",
+                "pet_cat_household",
+                "pet_household"
+              ],
+              "evidenceGrade": "B",
+              "annualValue": 86204475909.41931,
+              "spendPerUnit": 453873.0350604049,
+              "spendScope": "온라인 반려용품 거래액 · 2025",
+              "moneyStatus": "estimated",
+              "hasAge": false,
+              "hasRegion": false,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "MAFRA-PET-2025",
+                "CENSUS-2024"
+              ]
+            },
+            {
+              "id": "cat~delivery",
+              "label": "반려묘 가구 중 가족 배달 식사",
+              "status": "estimated",
+              "population": 645893.2180471679,
+              "unit": "household",
+              "low": 348980.18555389077,
+              "high": 1062866.690805301,
+              "methods": [
+                "survey_transfer",
+                "survey_rate"
+              ],
+              "factors": [
+                "food_delivery_household",
+                "pet_cat_household",
+                "pet_household"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": 718954798700.1956,
+              "spendPerUnit": 1113117.12,
+              "spendScope": "가족 배달·포장 식사",
+              "moneyStatus": "estimated",
+              "hasAge": false,
+              "hasRegion": true,
+              "hasHouseholdProfile": true,
+              "sourceIds": [
+                "MAFRA-PET-2025",
+                "CENSUS-2024",
+                "KREI-FOOD-2024"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -7789,10 +7811,10 @@
             "family_children"
           ],
           "evidenceGrade": "B",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 5451500000000,
+          "spendPerUnit": 1206885.1007305733,
+          "spendScope": "온라인 아동·유아용품 거래액 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": false,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -7818,10 +7840,10 @@
                 "family_preschool"
               ],
               "evidenceGrade": "B",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1549640469338.0562,
+              "spendPerUnit": 1206885.1007305733,
+              "spendScope": "온라인 아동·유아용품 거래액 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": false,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -8418,39 +8440,8 @@
           "validationQuestion": "사용 경험·문제 발생·추가 지불 의향을 분리해 조사하기",
           "children": [
             {
-              "id": "mobile~online",
-              "label": "온라인 구매 가능층",
-              "status": "estimated",
-              "population": 29195154.183808006,
-              "unit": "person",
-              "low": 24039896.936750855,
-              "high": 32359483.56616,
-              "methods": [
-                "survey_transfer",
-                "survey_rate"
-              ],
-              "factors": [
-                "commerce",
-                "digital",
-                "finance_banking",
-                "finance_mobile"
-              ],
-              "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
-              "hasAge": true,
-              "hasRegion": false,
-              "hasHouseholdProfile": false,
-              "sourceIds": [
-                "NIA-2024",
-                "CENSUS-2024"
-              ]
-            },
-            {
               "id": "mobile~presearch",
-              "label": "사전 정보 검토형",
+              "label": "모바일 금융상품 선택 전 정보 검토",
               "status": "estimated",
               "population": 23423019.002389997,
               "unit": "person",
@@ -8482,26 +8473,56 @@
               ]
             },
             {
-              "id": "mobile~review",
-              "label": "후기 참고 가능층",
+              "id": "mobile~channel",
+              "label": "모바일 금융과 모바일 쇼핑 접점",
               "status": "estimated",
-              "population": 16724035.567706458,
+              "population": 25794811.72048783,
               "unit": "person",
-              "low": 5131338.041811241,
-              "high": 27186135.292873923,
+              "low": 16716626.220153103,
+              "high": 31335081.589446727,
               "methods": [
                 "survey_transfer",
-                "survey_rate",
-                "research_scenario"
+                "survey_rate"
               ],
               "factors": [
                 "digital",
                 "finance_banking",
                 "finance_mobile",
-                "research_presearch",
-                "research_review"
+                "kca_channel_mobile"
               ],
-              "evidenceGrade": "D",
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "mobile~online",
+              "label": "금융상품을 온라인으로 비교",
+              "status": "estimated",
+              "population": 29195154.183808006,
+              "unit": "person",
+              "low": 24039896.936750855,
+              "high": 32359483.56616,
+              "methods": [
+                "survey_transfer",
+                "survey_rate"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "finance_banking",
+                "finance_mobile"
+              ],
+              "evidenceGrade": "C",
               "annualValue": null,
               "spendPerUnit": null,
               "spendScope": "선택 집단의 관련 소비",
@@ -8511,8 +8532,7 @@
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "NIA-2024",
-                "CENSUS-2024",
-                "KCA-PURCHASE-2024"
+                "CENSUS-2024"
               ]
             }
           ]

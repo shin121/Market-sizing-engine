@@ -1,6 +1,6 @@
 # Research demand evidence — working revision, 2026-09-06
 
-Release checkpoint: `624757b` was pushed to GitHub main and deployed to the public
+Release checkpoint: the research model is now extended from `50af956` on GitHub main and deployed to the public
 Vercel alias `https://nemotron-market-atlas.vercel.app` (Ready, 49s rebuild).
 Deployment: `dpl_FfDr85H69GEHF6mv9JBFZydWFPWq` at
 `https://nemotron-market-atlas-iwhgtjhge-woochul-shins-projects.vercel.app`.
@@ -10,8 +10,10 @@ Chrome verified the old skin/beauty URL redirects to the care-experience profile
 online cosmetics is a separate profile. Production API populations reconcile with
 local output: 16,601,061 care-experience adults; 12,993,648.35 online-cosmetics buyers;
 280,357.09 adults in their thirties with beauty advertising problems. These exact
-values are QA diagnostics; the UI rounds and labels modeled estimates. All three
-return missing monetary anchors, preventing old fashion-spend inheritance. The
+values are QA diagnostics; the UI rounds and labels modeled estimates. The skin
+care activity and beauty advertising cohorts retain missing monetary anchors;
+online cosmetics now use a separately labeled online category baseline rather
+than inheriting fashion spend. The
 problem subtype → age filter → Matrix → Opportunity flow was verified on production.
 No browser errors were logged, and the deployment error-log scan had no entries.
 The follow-up market label is `뷰티·패션`, matching the newly connected clothing
@@ -53,10 +55,16 @@ reproducible with the respective Python scripts and the official PDFs.
 - 195 registered external factors. Four rare leisure activities lack an age rate
   and return `not_estimable`; missing table dashes are never converted to zero.
 - All 20 markets now have a **defined, sourced partial demand scope**, covering
-  56 industry/experience branches. This does not mean complete industry coverage.
-- 19 profiles across personal dining and household delivery currently have
-  externally anchored annual spend. The new flow does not inherit the old
+  66 industry/experience branches. This does not mean complete industry coverage.
+- Personal dining and household delivery retain direct/weighted spend anchors;
+  reviewed online category baselines now cover matching profiles in beauty,
+  commerce, travel, fitness, education, pet, family, mobility and community.
+  These are online transaction allocations with low confidence, not direct
+  respondent spend fields. The new flow does not inherit the old
   narrative-weighted online category allocation.
+  The regenerated sanity ledger has 120 profiles with a monetary baseline;
+  these remain partial online or category allocations rather than complete
+  market-size measurements.
 - Household delivery/HMR profiles include household-head age/sex, household size
   and regional distributions, using KREI weighted margins and conditional rates.
   They do not describe every household member. Other household profile dimensions
@@ -73,9 +81,22 @@ channel parents and twelve problem cohorts). The channel observations preserve
 monthly frequency—PC 3.1, mobile 5.1, SNS 1.9, C2C 1.8 uses per month—and the
 channel-user problem denominator. Frequency is visible in the selected profile but
 does not become spend without item-level ticket size or category calibration. The
-new channel profiles are person-based `survey_transfer` estimates, overlap-aware,
-and currently have no market value anchor. The public production route was checked
-with the mobile quality cohort after deployment.
+new channel profiles are person-based `survey_transfer` estimates, overlap-aware.
+
+The latest increment adds reviewed category baselines to the same central money
+engine. Online cosmetics buyers now use the published 2025 online cosmetics
+transaction total (KRW 13.8153tn) divided by the externally estimated 12.99m
+adult buyer denominator, yielding approximately KRW 1.06m per online buyer/year.
+The baseline is online-only and low-confidence; it does not price the broader
+skin/hair/beauty activity cohort. Matching baselines are also connected for
+online commerce, travel/transport, sports/leisure goods, books/stationery,
+pet supplies (household), children's goods (household), automobiles and online
+culture/leisure. Mixed union roots remain unpriced to prevent double counting.
+The public production route was checked with the mobile quality cohort after
+deployment.
+
+The anchor inventory, category scopes and allocation formula are documented in
+`MARKET_VALUE_BASELINES.md`.
 
 ## Scope and aggregation controls
 
@@ -88,7 +109,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
 
 ## Verification, including limits
 
-- Atlas: 72 domain/integration tests passed; lint/typecheck passed. `next build --webpack`
+- Atlas: 74 domain/integration tests passed; lint/typecheck passed. `next build --webpack`
   passed, including TypeScript and route generation. Default Turbopack build was
   attempted twice and failed to bind its internal CSS-worker port with EPERM in
   this execution environment; the supported Webpack build validated production
@@ -122,9 +143,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
    interest, including household pet/care, finance investment and paid behavior.
    Existing new job statements are hypotheses; pain prevalence is only measured
    for explicitly sourced experience/purpose questions.
-3. Connect category-matched money anchors beyond dining/delivery. MAFF pet
-   monthly spend is **per animal**, so cannot multiply household count without
-   a documented pet-count mapping. Cosmetics spend must exclude clothing.
+3. Extend category-matched money anchors beyond the online baselines now connected. Offline category spend, item-level ticket size/frequency and household purchase-owner mapping remain open. The skin-care activity cohort still has no cosmetics-use or spend anchor, and cosmetics spend is kept separate from clothing.
 4. Connect further regional/demographic household cross-tabs and validate all
    detailed combinations, saved comparison, Matrix rank inversion and opportunity
    navigation under the same new model, then GitHub/Vercel release and live QA.
@@ -137,8 +156,8 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   listed explicitly. No national total is synthesized by adding overlapping markets.
 - One URL context carries market, branch/subtype, age, metric and up to three
   comparison references through flow → Matrix → Opportunity → comparison.
-- 226 addressable profiles: 20 roots, 56 purpose/experience branches, 150 lower
-  buying/usage scenarios. `_root` is separate from branch IDs, fixing the collision
+- 283 addressable profiles: 20 roots, 66 purpose/experience branches, 197 lower
+  buying/usage/problem scenarios. `_root` is separate from branch IDs, fixing the collision
   between delivery's aggregate and its delivery/takeout branch.
 - Matrix age cells consume the same external profiles and money engine as the
   inspector. Personal dining age cells reconcile to their parent; all cell ordering
@@ -177,9 +196,10 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   all-respondent denominator within every age/sex/region stratum. Full details:
   `CONSUMER_PROBLEM_DATA_AUDIT.md`.
 - Ten product-problem cohorts and thirty specific subtypes added across seven
-  markets. Total 195 factors / 282 profiles (20 roots, 66 branches, 196 lower
-  profiles). The same four unused rare leisure factors remain unavailable; money
-  coverage remains 19 profiles. Generic branches and legacy mapping gaps remain.
+  markets. Total 195 factors / 283 profiles (20 roots, 66 branches, 197 lower
+  profiles). The same four unused rare leisure factors remain unavailable; direct
+  item-level spend coverage remains partial even where category baselines are
+  available. Generic branches and legacy mapping gaps remain.
 - Parent/child factors preserve each age's observed all-respondent rate and apply
   parent participation once. Regional missingness is kept in the source data and
   any profile imputation explicitly names its parent/nationwide basis.
@@ -194,7 +214,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   three-column flow and linked profile/range/age/sex/region modules. Measured
   problem experience and unmeasured need severity/payment intent have separate
   UI wording. Nested definitions no longer repeat the parent paragraph.
-- Atlas 72/72 tests passed, lint passed, typecheck passed after build, production
+- Atlas 74/74 tests passed, lint passed, typecheck passed after build, production
   `npm run build -- --webpack` passed. A concurrent typecheck initially raced with
   Next regenerating `.next/types`; the sequential final typecheck passed. No new
   default-Turbopack success is claimed. Numeric sanity ledger regenerated.

@@ -54,21 +54,22 @@ Opportunity, comparisons, saved ideas and drill-through must continue to work.
   calibrated broad beauty (~1.90m), not a cosmetics user population.
 - Broad beauty calibration covers online fashion/sports OR cosmetics. Its
   descendants still use uncalibrated lexical interest membership.
-- Skin/beauty money inherits all online clothing/accessories/cosmetics (~3.1tn
-  allocated), so the default category scope does not match its label.
+- Skin/beauty money previously inherited all online clothing/accessories/cosmetics
+  (~3.1tn allocated), so the default category scope did not match its label.
 - Generic pain co-occurrence is not proof of a problem experienced in that market.
 - Prior green technical tests did not certify real market prevalence.
 
 ## Current checkpoint
 
-The external model covers 20 explicitly scoped markets, 66 branches, 196 lower
+The external model covers 20 explicitly scoped markets, 66 branches, 197 lower
 scenarios and 195 factors. Four unused rare leisure factors correctly remain
-unavailable. Dining/delivery have 19 monetary profiles; other matching anchors
-remain work in progress. All 20 market journeys were opened in Chrome in the
+unavailable. Dining/delivery retain direct or weighted anchors; reviewed online
+category baselines now also cover matching beauty, commerce, travel, fitness,
+education, pet, family, mobility and community cohorts. All 20 market journeys were opened in Chrome in the
 preceding phases.
 
 Local primary Atlas, search/API, Matrix, Opportunity, comparison, source inspection
-and saved ideas now use the external model. The 72-test suite, lint/typecheck and
+and saved ideas now use the external model. The 74-test suite, lint/typecheck and
 Webpack production build passed. Matrix/flow/comparison navigation, separate units,
 money-vs-population rank inversion and 390px overflow were checked in real UI.
 

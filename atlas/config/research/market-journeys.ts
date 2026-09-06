@@ -24,6 +24,11 @@ const b = (
   painMeasured,
   ...(children ? { children } : {}),
 });
+const s = (id: string, label: string, factors: string[]) => ({
+  id,
+  label,
+  factors,
+});
 
 /** Editorial jobs and proposed alternatives are product hypotheses. Population
  * comes exclusively from each explicit external factor, not these descriptions. */
@@ -252,6 +257,24 @@ const experienceMarkets: ResearchMarket[] = [
         '제품·서비스 선택에서 효과 확인이 어려운가?',
         '뷰티 매장, 미용 서비스, 리뷰 콘텐츠',
         '피부·헤어·네일별 최근 결제 경험과 불만 강도를 분리하기',
+        false,
+        [
+          {
+            id: 'cosmetics',
+            label: '관리 경험자 중 온라인 화장품 구매',
+            factors: ['cosmetics_online_buyers'],
+          },
+          {
+            id: 'problem',
+            label: '관리 중 뷰티 선택·이용 불편',
+            factors: ['kca_beauty'],
+          },
+          {
+            id: 'review',
+            label: '관리 제품 후기 검토',
+            factors: ['research_review'],
+          },
+        ],
       ),
       b(
         'cosmetics',
@@ -261,6 +284,24 @@ const experienceMarkets: ResearchMarket[] = [
         '반복 구매와 새 제품 탐색을 다르게 도와야 하는가?',
         '온라인몰, 브랜드몰, 뷰티 커뮤니티',
         '성별·품목별 구매 주기와 실패 구매 비용은?',
+        false,
+        [
+          {
+            id: 'mobile',
+            label: '모바일에서 화장품 구매',
+            factors: ['kca_channel_mobile'],
+          },
+          {
+            id: 'problem',
+            label: '화장품 선택·이용 불편 경험',
+            factors: ['kca_beauty'],
+          },
+          {
+            id: 'review',
+            label: '화장품 구매 전 후기 검토',
+            factors: ['research_review'],
+          },
+        ],
       ),
     ],
     gap: '미용 활동과 온라인 화장품 구매의 분모는 확보했지만, 전체 화장품 사용률·오프라인 구매·품목별 지출은 별도 근거가 필요합니다. 두 코호트를 더해 전체 사용자 수로 해석하지 않습니다.',
@@ -903,9 +944,279 @@ const experienceMarkets: ResearchMarket[] = [
   },
 ];
 
+/**
+ * Lower-level filters use a market's own adjacent behaviour or problem signal.
+ * They replace the former one-size-fits-all purchase/review children wherever
+ * the evidence registry contains a meaningful combination. These are modeled
+ * intersections (not new prevalence observations) and remain labeled as such
+ * by the estimator's assumptions and confidence grade.
+ */
+const marketSpecificChildren: Record<
+  string,
+  Record<string, { id: string; label: string; factors: string[] }[]>
+> = {
+  music: {
+    listen: [
+      s('video', '음악 감상 중 영상·콘텐츠 병행', ['leisure_G75']),
+      s('radio', '음악 감상 중 라디오·팟캐스트 병행', ['leisure_G76']),
+      s('review', '음악 발견 전 후기 검토', ['research_review']),
+    ],
+    play: [
+      s('live', '연주·학습과 라이브 공연 병행', ['leisure_A8']),
+      s('club', '연주·학습 동호회 참여', ['leisure_H86']),
+      s('presearch', '악기·레슨 선택 전 정보 검토', ['research_presearch']),
+    ],
+    live: [
+      s('theater', '공연 관람 중 연극·뮤지컬 선택', ['leisure_A5']),
+      s('concert', '공연 관람 중 음악회 선택', ['leisure_A3']),
+      s('presearch', '공연 예매 전 정보 검토', ['research_presearch']),
+    ],
+  },
+  travel: {
+    nature: [
+      s('camp', '자연·휴양 중 캠핑·장비 이용', ['leisure_E41']),
+      s('drive', '자연·휴양 중 드라이브 연결', ['leisure_E48']),
+      s('gear', '자연·휴양 중 온라인 장비 탐색', ['commerce']),
+    ],
+    culture: [
+      s('museum', '문화 탐방 중 박물관 관람', ['leisure_A2']),
+      s('heritage', '문화 탐방 중 유적지 방문', ['leisure_E38']),
+      s('presearch', '문화 여행 전 정보 검토', ['research_presearch']),
+    ],
+    camp: [
+      s('drive', '캠핑 중 자동차 드라이브 연결', ['leisure_E48']),
+      s('hiking', '캠핑 중 등산·트레킹 연결', ['leisure_F55']),
+      s('gear', '캠핑 장비를 온라인으로 탐색', ['commerce']),
+    ],
+    overseas: [
+      s('online', '해외여행 예약을 온라인으로 탐색', ['commerce']),
+      s('review', '해외여행 예약 전 후기 검토', ['research_review']),
+      s('camp', '해외여행과 캠핑 경험 연결', ['leisure_E41']),
+    ],
+  },
+  fitness: {
+    weight: [
+      s('gym', '체형 관리 중 헬스·개인 운동', ['int_fitness_gym']),
+      s('health', '체형 관리와 건강 목적 운동', ['need_fitness_health']),
+      s('online', '운동 프로그램을 온라인으로 탐색', ['commerce']),
+    ],
+    stress: [
+      s('yoga', '스트레스 해소 중 요가·필라테스', ['leisure_D30']),
+      s('walk', '스트레스 해소 중 산책·걷기', ['leisure_G71']),
+      s('online', '회복 운동을 온라인으로 탐색', ['commerce']),
+    ],
+    hiking: [
+      s('nature', '등산·트레킹 중 자연·풍경 경험', ['leisure_E39']),
+      s('drive', '등산·트레킹 중 드라이브 연결', ['leisure_E48']),
+      s('online', '장비·코스 선택을 온라인으로 탐색', ['commerce']),
+    ],
+    gym: [
+      s('yoga', '헬스 이용 중 요가·필라테스 병행', ['leisure_D30']),
+      s('weight', '헬스 이용 중 체중·체형 관리', ['need_fitness_weight']),
+      s('review', '운동시설 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  content: {
+    paid: [
+      s('price', '유료 콘텐츠 중 요금 효용 불만', ['need_ott_price']),
+      s('review', '유료 콘텐츠 선택 전 후기 검토', ['research_review']),
+      s('online', '유료 콘텐츠를 온라인으로 탐색', ['commerce']),
+    ],
+    price: [
+      s('paid', '요금 증가 경험 중 유료 이용 유지', ['ott_paid']),
+      s('review', '요금 변경 전 대안 후기 검토', ['research_review']),
+      s('online', '구독 대안을 온라인으로 탐색', ['commerce']),
+    ],
+    short: [
+      s('video', '짧은 영상과 온라인 동영상 병행', ['leisure_G75']),
+      s('review', '짧은 영상에서 본 정보 후기 검토', ['research_review']),
+      s('online', '짧은 영상 콘텐츠를 온라인으로 탐색', ['commerce']),
+    ],
+  },
+  gaming: {
+    mobile: [
+      s('mobile_shop', '모바일 게임 중 모바일 쇼핑 접점', ['kca_channel_mobile']),
+      s('online', '모바일 게임 상품을 온라인으로 탐색', ['commerce']),
+      s('review', '게임 선택 전 후기 검토', ['research_review']),
+    ],
+    safety: [
+      s('unresolved', '사이버폭력 경험 후 별도 대응 없음', ['arc_gaming_unresolved']),
+      s('online', '안전한 게임 정보를 온라인으로 탐색', ['commerce']),
+      s('review', '게임 커뮤니티 후기·신고 정보 검토', ['research_review']),
+    ],
+    unresolved: [
+      s('safety', '대응하지 않은 사이버폭력 경험', ['need_gaming_safety']),
+      s('online', '게임 안전 대안을 온라인으로 탐색', ['commerce']),
+      s('review', '대응 방법 후기 검토', ['research_review']),
+    ],
+    console: [
+      s('pc', '콘솔과 PC 게임 병행', ['gaming_pc']),
+      s('online', '콘솔 게임·장비를 온라인으로 탐색', ['commerce']),
+      s('review', '신작·장비 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  garden: {
+    plants: [
+      s('craft', '식물 생활과 생활공예 병행', ['leisure_F50']),
+      s('online', '식물·관리용품을 온라인으로 탐색', ['commerce']),
+      s('review', '식물 관리 제품 후기 검토', ['research_review']),
+    ],
+    club: [
+      s('cooking', '원예 모임과 요리 취미 병행', ['leisure_F51']),
+      s('online', '원예 용품을 온라인으로 탐색', ['commerce']),
+      s('review', '모임·용품 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  education: {
+    career: [
+      s('online', '직업 학습을 온라인으로 탐색', ['commerce']),
+      s('review', '직무 과정 선택 전 후기 검토', ['research_review']),
+      s('digital', '직업 학습과 디지털 콘텐츠 병행', ['leisure_F58']),
+    ],
+    hobby: [
+      s('fitness', '취미 학습과 운동 경험 병행', ['leisure_D30']),
+      s('online', '취미 강좌를 온라인으로 탐색', ['commerce']),
+      s('review', '수업 선택 전 후기 검토', ['research_review']),
+    ],
+    reading: [
+      s('club', '독서 학습과 동호회 병행', ['leisure_H86']),
+      s('online', '독서·학습 자료를 온라인으로 탐색', ['commerce']),
+      s('review', '책·강좌 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  home: {
+    decor: [
+      s('craft', '공간 꾸미기와 생활공예 병행', ['leisure_F50']),
+      s('online', '인테리어 용품을 온라인으로 탐색', ['commerce']),
+      s('review', '가구·시공 선택 전 후기 검토', ['research_review']),
+    ],
+    craft: [
+      s('decor', '생활 제작과 공간 꾸미기 병행', ['leisure_F54']),
+      s('online', '재료·도구를 온라인으로 탐색', ['commerce']),
+      s('review', '공방·키트 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  photo: {
+    camera: [
+      s('editing', '카메라 촬영과 영상·편집 병행', ['leisure_F58']),
+      s('online', '카메라·장비를 온라인으로 탐색', ['commerce']),
+      s('review', '장비 선택 전 후기 검토', ['research_review']),
+    ],
+    art: [
+      s('craft', '미술 창작과 생활공예 병행', ['leisure_F50']),
+      s('club', '미술 창작과 동호회 병행', ['leisure_H86']),
+      s('review', '재료·수업 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  collect: {
+    objects: [
+      s('online', '수집품을 온라인으로 탐색·거래', ['commerce']),
+      s('club', '수집품과 동호회 활동 병행', ['leisure_H86']),
+      s('review', '진품·상태 선택 전 후기 검토', ['research_review']),
+    ],
+    fishing: [
+      s('nature', '낚시와 자연·풍경 경험 병행', ['leisure_E39']),
+      s('drive', '낚시와 자동차 드라이브 연결', ['leisure_E48']),
+      s('online', '낚시 장비를 온라인으로 탐색', ['commerce']),
+    ],
+    craft: [
+      s('decor', '공예와 공간 꾸미기 병행', ['leisure_F54']),
+      s('online', '공예 재료·도구를 온라인으로 탐색', ['commerce']),
+      s('review', '공방·키트 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  community: {
+    club: [
+      s('online', '취향 모임을 온라인으로 탐색', ['commerce']),
+      s('review', '모임 선택 전 후기 검토', ['research_review']),
+      s('volunteer', '취향 모임과 봉사활동 병행', ['leisure_H80']),
+    ],
+    social: [
+      s('friends', '사교 모임과 친구 만남 병행', ['leisure_H84']),
+      s('online', '모임 장소·일정을 온라인으로 탐색', ['commerce']),
+      s('review', '모임 장소 선택 전 후기 검토', ['research_review']),
+    ],
+    volunteer: [
+      s('club', '봉사활동과 동호회 병행', ['leisure_H86']),
+      s('online', '봉사 정보를 온라인으로 탐색', ['commerce']),
+      s('review', '기관·활동 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  wellness: {
+    walk: [
+      s('spa', '산책과 목욕·사우나 병행', ['leisure_G72']),
+      s('online', '휴식 장소를 온라인으로 탐색', ['commerce']),
+      s('review', '휴식 장소 선택 전 후기 검토', ['research_review']),
+    ],
+    spa: [
+      s('walk', '목욕·사우나와 산책 병행', ['leisure_G71']),
+      s('online', '스파·휴식 시설을 온라인으로 탐색', ['commerce']),
+      s('review', '시설 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  commerce: {
+    cosmetics: [
+      s('mobile', '온라인 화장품 구매 중 모바일 이용', ['kca_channel_mobile']),
+      s('problem', '온라인 화장품 선택·이용 불편', ['kca_beauty']),
+      s('review', '온라인 화장품 구매 전 후기 검토', ['research_review']),
+    ],
+    offline: [
+      s('mobile', '오프라인 경험과 모바일 구매 연결', ['kca_channel_mobile']),
+      s('review', '매장·상품 선택 전 후기 검토', ['research_review']),
+      s('presearch', '쇼핑·외식 전 정보 검토', ['research_presearch']),
+    ],
+  },
+  mobility: {
+    drive: [
+      s('travel', '드라이브와 국내여행 병행', ['travel_domestic']),
+      s('online', '차량·경로를 온라인으로 탐색', ['commerce']),
+      s('review', '차량·장소 선택 전 후기 검토', ['research_review']),
+    ],
+    camp: [
+      s('outdoor', '드라이브·캠핑과 국내캠핑 경험', ['leisure_E41']),
+      s('online', '차량·캠핑 장비를 온라인으로 탐색', ['commerce']),
+      s('presearch', '출발 전 경로·장비 정보 검토', ['research_presearch']),
+    ],
+  },
+  food: {
+    cook: [
+      s('taste', '요리 취미와 맛 중심 외식 병행', ['food_dining_taste']),
+      s('online', '재료·레시피를 온라인으로 탐색', ['commerce']),
+      s('review', '식재료·클래스 선택 전 후기 검토', ['research_review']),
+    ],
+  },
+  pet: {
+    dog: [
+      s('children', '반려견 가구 중 자녀 동거', ['family_children']),
+      s('delivery', '반려견 가구 중 가족 배달 식사', ['food_delivery_household']),
+    ],
+    cat: [
+      s('children', '반려묘 가구 중 자녀 동거', ['family_children']),
+      s('delivery', '반려묘 가구 중 가족 배달 식사', ['food_delivery_household']),
+    ],
+  },
+  finance: {
+    mobile: [
+      s('presearch', '모바일 금융상품 선택 전 정보 검토', ['research_presearch']),
+      s('channel', '모바일 금융과 모바일 쇼핑 접점', ['kca_channel_mobile']),
+      s('online', '금융상품을 온라인으로 비교', ['commerce']),
+    ],
+  },
+};
+
+const enrichedExperienceMarkets = experienceMarkets.map((market) => ({
+  ...market,
+  branches: market.branches.map((branch) => ({
+    ...branch,
+    ...(branch.children || !marketSpecificChildren[market.id]?.[branch.id]
+      ? {}
+      : { children: marketSpecificChildren[market.id][branch.id] }),
+  })),
+}));
+
 /** A problem cohort is its own observed branch, never an arbitrary problem
  * rate applied to the market's other activity cohorts. The root is their OR. */
-export const researchMarkets: ResearchMarket[] = experienceMarkets.map(
+export const researchMarkets: ResearchMarket[] = enrichedExperienceMarkets.map(
   (market) => {
     const journeys = consumerJourneys.filter((j) => j.market === market.id);
     if (!journeys.length) return market;

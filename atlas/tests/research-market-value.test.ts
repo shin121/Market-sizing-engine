@@ -59,3 +59,31 @@ void test('age-specific dining spending changes economic density and reconciles 
   assert.deepEqual(outside.ages, []);
   assert.equal(outside.marketValue.annualValue, null);
 });
+
+void test('reviewed online category baselines connect only matching research cohorts', () => {
+  const beauty = getResearchExplorer('beauty')!;
+  const skin = beauty.branches.find((b) => b.id === 'skin')!.profile;
+  const cosmetics = beauty.branches.find((b) => b.id === 'cosmetics')!.profile;
+  assert.equal(skin.marketValue.annualValue, null);
+  assert.equal(skin.marketValue.status, 'missing_calibration_anchor');
+  assert.equal(cosmetics.marketValue.status, 'estimated');
+  assert.ok(
+    Math.abs(cosmetics.marketValue.annualValue! - 13_815_300_000_000) < 1,
+    'the online cosmetics buyer cohort is the published category denominator',
+  );
+  assert.ok(cosmetics.marketValue.annualSpendPerUnit! > 900_000);
+  assert.equal(
+    cosmetics.marketValue.low,
+    cosmetics.marketValue.base,
+    'published national category total is fixed for the full buyer cohort',
+  );
+  assert.equal(cosmetics.marketValue.high, cosmetics.marketValue.base);
+  assert.equal(cosmetics.marketValue.populationUnit, 'person');
+  assert.ok(cosmetics.marketValue.sourceBasis.some((s) => s.id === 'NDO-ONLINE-2025'));
+
+  const pet = getResearchExplorer('pet')!.root.marketValue;
+  assert.equal(pet.status, 'estimated');
+  assert.equal(pet.populationUnit, 'household');
+  assert.ok(pet.annualValue! > 2_000_000_000_000);
+  assert.equal(pet.scopeLabel, '온라인 반려용품 거래액 · 2025');
+});
