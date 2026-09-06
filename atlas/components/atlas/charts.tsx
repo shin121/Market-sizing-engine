@@ -145,8 +145,12 @@ export function MarketMap({
                 )}
                 {h > 110 && w > 140 && (
                   <small>
-                    Opportunity {s.metrics.opportunity} ·{' '}
-                    {s.metrics.crossIndustryBreadth}개 산업
+                    {context.lens === 'markets'
+                      ? s.marketValue?.base == null
+                        ? '연간 지출 기준 미확보'
+                        : formatKRW(s.marketValue.base, false) +
+                          ' / 년 · 확보 범위'
+                      : `Opportunity ${s.metrics.opportunity} · ${s.metrics.crossIndustryBreadth}개 산업`}
                   </small>
                 )}
               </>
@@ -165,8 +169,10 @@ export function MarketMap({
           {hover
             ? `${hover.entity.label} · 약 ${shortPopulation(hover.estimate.population)}명 · 전체 ${pct(hover.estimate.share)}`
             : monetary
-              ? '면적 = 확보 범위의 연간 소비액 · 유형은 중복되며, 전체 소비시장 합계가 아닙니다.'
-              : '면적 = 유형별 추정 인구 / 유형 합계 · 유형과 시장은 서로 중복되며, 전체 인구의 분할이 아닙니다.'}
+              ? '면적 = 확보 범위의 연간 소비액 · 서로 중복될 수 있으며 전체 소비시장 합계가 아닙니다.'
+              : context.lens === 'markets'
+                ? '면적 = 시장별 관련 인구 · 시장 사이 관심이 중복되므로 전체 인구의 분할이 아닙니다.'
+                : '면적 = 유형별 추정 인구 · 중복 소속 가능한 집단이며 전체 인구의 분할이 아닙니다.'}
         </span>
         <span>
           {available.length}/{items.length}개 항목
