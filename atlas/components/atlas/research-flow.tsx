@@ -361,7 +361,6 @@ export function ResearchFlow({
             <div className="research-column-labels">
               <span>탐색 시장</span>
               <span>경험 · 니즈를 검증할 집단</span>
-              <span>행동 · 문제 · 구매 방식</span>
             </div>
             {data.branches.length ? (
               <div className="research-canvas-scroll">
@@ -391,16 +390,6 @@ export function ResearchFlow({
                         strokeWidth={i === selectedIndex ? 43 : 25}
                         fill="none"
                         className={i === selectedIndex ? 'flow-current' : ''}
-                      />
-                    ))}
-                    {branch.children.map((p, i) => (
-                      <path
-                        key={p.id}
-                        d={`M 485 ${y(selectedIndex) + 41} C 530 ${y(selectedIndex) + 41}, 530 ${130 + i * 125 + 36}, 592 ${130 + i * 125 + 36}`}
-                        stroke={color}
-                        opacity={p.id === selected.id ? '.4' : '.15'}
-                        strokeWidth={p.id === selected.id ? 30 : 18}
-                        fill="none"
                       />
                     ))}
                   </svg>
@@ -445,43 +434,6 @@ export function ResearchFlow({
                       <span className="research-node-dot" />
                     </button>
                   ))}
-                  {branch.children.map((p, i) => (
-                    <button
-                      key={p.id}
-                      className={
-                        'research-leaf-node ' +
-                        (selected.id === p.id ? 'selected' : '')
-                      }
-                      style={
-                        {
-                          top: 130 + i * 125,
-                          '--node-color': color,
-                        } as CSSProperties
-                      }
-                      onClick={() => choose(p.id)}
-                      aria-pressed={selected.id === p.id}
-                    >
-                      <small>
-                        {branch.evidenceType === 'consumer_problem'
-                          ? '유형별 조사 · 분모 보정'
-                          : p.evidenceGrade === 'D'
-                            ? '전이 시나리오'
-                            : '조건부 모형'}
-                      </small>
-                      <b>{p.label}</b>
-                      <strong>{people(p)}</strong>
-                      <ChevronRight size={13} />
-                    </button>
-                  ))}
-                  {!branch.children.length && (
-                    <div className="research-unit-gap" style={{ top: 170 }}>
-                      <b>가구 기준의 하위 행동 조사</b>
-                      <p>
-                        개인 구매 성향을 가구 비율로 바꾸지 않습니다. 가구별
-                        구매·관리 조사와 연결할 영역입니다.
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
             ) : (
@@ -505,6 +457,57 @@ export function ResearchFlow({
               </span>
               <span>연결은 중복 가능한 집단 관계 · 두께는 선택 강조</span>
             </div>
+            {branch.children.length ? (
+              <section className="research-subtypes" aria-label="선택한 경험의 하위 유형">
+                <div className="research-subtypes-head">
+                  <div>
+                    <small>LOWER TYPES · 선택한 경험 안에서만 비교</small>
+                    <h3>{branch.label}의 하위 행동·구매 방식</h3>
+                    <p>
+                      후기 확인·온라인 탐색·장비 구매 같은 유형은 상위 시장이
+                      아니라, 이 경험 집단 안에서 추가로 확인하는 조건입니다.
+                    </p>
+                  </div>
+                  <span>{branch.children.length}개 유형</span>
+                </div>
+                <div className="research-subtype-grid">
+                  {branch.children.map((p, i) => (
+                    <button
+                      key={p.id}
+                      className={
+                        'research-subtype-card ' +
+                        (selected.id === p.id ? 'selected' : '')
+                      }
+                      style={{ '--node-color': color } as CSSProperties}
+                      onClick={() => choose(p.id)}
+                      aria-pressed={selected.id === p.id}
+                    >
+                      <span className="research-subtype-index">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span className="research-subtype-label">{p.label}</span>
+                      <strong>{people(p)}</strong>
+                      <small>
+                        {p.marketValue.status === 'estimated'
+                          ? `${formatKRW(p.marketValue.annualValue)} / 년`
+                          : p.evidenceGrade === 'D'
+                            ? '전이 시나리오 · 금액 근거 미확보'
+                            : '지출 기준 미확보'}
+                      </small>
+                      <ChevronRight size={14} />
+                    </button>
+                  ))}
+                </div>
+              </section>
+            ) : (
+              <div className="research-unit-gap research-unit-gap-inline">
+                <b>이 경험의 하위 행동 조사</b>
+                <p>
+                  개인 구매 성향을 가구 비율로 바꾸지 않습니다. 같은 구매 단위의
+                  행동·관리 조사와 연결할 영역입니다.
+                </p>
+              </div>
+            )}
             {branch && (
               <div className="research-job-panel">
                 <div>
