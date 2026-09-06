@@ -302,6 +302,19 @@ export function ResearchFlow({
               {people(data.root)}
             </strong>
           </div>
+          <div className="research-scope-money">
+            <small>연간 관련 소비금액</small>
+            <strong>
+              {data.root.marketValue.status === 'estimated'
+                ? formatKRW(data.root.marketValue.annualValue)
+                : '근거 연결 중'}
+            </strong>
+            <span>
+              {data.root.marketValue.status === 'estimated'
+                ? `${formatKRW(data.root.marketValue.annualSpendPerUnit)} / ${unitLabel(data.root.marketValue.populationUnit)}·년`
+                : '같은 품목·채널·구매 주체의 기준 필요'}
+            </span>
+          </div>
           <p>
             {data.market.scope}
             <span>

@@ -239,7 +239,7 @@
 }
 .research-scope-strip {
   display: grid;
-  grid-template-columns: 210px 1fr 180px;
+  grid-template-columns: 185px 185px 1fr 180px;
   gap: 22px;
   padding: 20px 0 23px;
   align-items: center;
@@ -254,6 +254,28 @@
   font-size: 26px;
   letter-spacing: -0.8px;
   font-weight: 680;
+}
+.research-scope-money {
+  border-left: 1px solid #dfe5ed;
+  padding-left: 22px;
+  min-width: 0;
+}
+.research-scope-money strong {
+  display: block;
+  color: #087c6d;
+  font-size: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.research-scope-money span {
+  display: block;
+  color: #8593a8;
+  font-size: 9px;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .research-scope-strip p {
   font-size: 11px;
@@ -1047,7 +1069,7 @@
     font-size: 24px;
   }
   .research-scope-strip {
-    grid-template-columns: 185px 1fr 150px;
+    grid-template-columns: 170px 165px 1fr 150px;
     gap: 12px;
   }
   .research-scope-strip strong {
@@ -1103,7 +1125,7 @@
     grid-column: 1/-1;
   }
   .research-scope-strip {
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 180px 180px 1fr;
   }
   .research-scope-strip > div:last-child {
     display: none;
@@ -1187,6 +1209,13 @@
   .research-scope-strip {
     display: block;
     padding: 17px 0;
+  }
+  .research-scope-money {
+    border-left: 0;
+    padding: 12px 0 0;
+  }
+  .research-scope-money strong {
+    font-size: 22px;
   }
   .research-scope-strip p {
     border: 0;
