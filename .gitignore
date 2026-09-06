@@ -27,3 +27,5 @@ web/coverage/
 
 # Local verification logs and deployment scratch
 /work/
+.vercel
+.env*

@@ -1,8 +1,9 @@
 # Research demand evidence — working revision, 2026-09-06
 
-Release checkpoint: `b903e4f` was pushed to GitHub main and deployed to the public
-Vercel alias `https://nemotron-market-atlas.vercel.app` (Ready, 34s build).
-Deployment: `https://nemotron-market-atlas-asihetqi7-woochul-shins-projects.vercel.app`.
+Release checkpoint: `624757b` was pushed to GitHub main and deployed to the public
+Vercel alias `https://nemotron-market-atlas.vercel.app` (Ready, 49s rebuild).
+Deployment: `dpl_FfDr85H69GEHF6mv9JBFZydWFPWq` at
+`https://nemotron-market-atlas-iwhgtjhge-woochul-shins-projects.vercel.app`.
 The earlier local-only status below records the development chronology. Current
 production uses `research-demand-2026-09-06-v3`; broader coverage work is ongoing.
 Chrome verified the old skin/beauty URL redirects to the care-experience profile;
@@ -18,8 +19,8 @@ problem branch without relabeling the narrower skin-care cohort as all cosmetics
 
 This is an in-progress replacement of the population model. It is served locally
 at `/atlas/research/[market]` and now powers the local primary `/atlas`, Matrix,
-Opportunity, comparison, source and search/API routes. Production still uses its
-prior model. Neither this document nor the passing checks certifies
+Opportunity, comparison, source and search/API routes. Production now uses this
+model. Neither this document nor the passing checks certifies
 completion of the full Demand OS goal.
 
 ## Correcting the beauty interpretation
@@ -65,7 +66,7 @@ reproducible with the respective Python scripts and the official PDFs.
   an assumption. The new shape preserves the level and has higher twenties than
   sixties participation. It is not the actual KOCCA age cross-tab.
 
-The local follow-up increment also registers KCA's online transaction-channel
+The follow-up release also registers KCA's online transaction-channel
 tables: PC, mobile, SNS and C2C use cohorts plus three most-serious problem
 subtypes per channel. The commerce journey exposes sixteen lower profiles (four
 channel parents and twelve problem cohorts). The channel observations preserve
@@ -73,8 +74,8 @@ monthly frequency—PC 3.1, mobile 5.1, SNS 1.9, C2C 1.8 uses per month—and th
 channel-user problem denominator. Frequency is visible in the selected profile but
 does not become spend without item-level ticket size or category calibration. The
 new channel profiles are person-based `survey_transfer` estimates, overlap-aware,
-and currently have no market value anchor. This increment is local until the
-release checkpoint below is updated after live deployment.
+and currently have no market value anchor. The public production route was checked
+with the mobile quality cohort after deployment.
 
 ## Scope and aggregation controls
 
@@ -87,7 +88,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
 
 ## Verification, including limits
 
-- Atlas: 68 domain/integration tests passed; lint/typecheck passed. `next build --webpack`
+- Atlas: 72 domain/integration tests passed; lint/typecheck passed. `next build --webpack`
   passed, including TypeScript and route generation. Default Turbopack build was
   attempted twice and failed to bind its internal CSS-worker port with EPERM in
   this execution environment; the supported Webpack build validated production
@@ -98,6 +99,9 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   Game 70+ shows outside scope with no stale demographic chart. No browser error
   logs were returned. 390px viewport has document width 390px; flow canvas scrolls
   internally, mobile title wraps by word, navigation hint present. Viewport reset.
+  The production commerce route also exposed the sixteen channel/problem profiles;
+  mobile quality showed 1.20m modeled adults, 67.1% channel use and 5.1 monthly
+  uses, with no browser console errors.
 - `data/research-demand-sanity.json` records every served root, branch and child,
   source IDs, units, monetary coverage and gaps. Regenerate after `npm test` with
   `node scripts/audit-research-demand.mjs`.
@@ -198,7 +202,6 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   collection errors (missing duckdb/fastapi/psycopg), and CLI validate cannot import
   duckdb. Original Python implementation and ignored source/database inputs are
   unchanged. These do not certify a full repository pass.
-- KCA channel use/frequency/problem numeric tables are integrated locally; the same
-  PDF also contains repairability, service-use and other useful items. Continue the
-  remaining all-industry data, taxonomy and discovery work before final deployment.
-  No active-goal completion or production release is claimed for this follow-up.
+- KCA channel use/frequency/problem numeric tables are integrated in production; the
+  same PDF also contains repairability, service-use and other useful items. Continue
+  the remaining all-industry data, taxonomy and discovery work before goal completion.

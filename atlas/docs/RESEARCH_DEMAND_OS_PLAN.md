@@ -79,20 +79,23 @@ saved notes are preserved. The verified migration was published to production at
 the release checkpoint below. No goal completion is claimed.
 See `RESEARCH_DEMAND_EVIDENCE.md` and `data/research-demand-sanity.json`.
 
-The release checkpoint publishes the verified external-model migration and
-consumer-problem increment before further coverage expansion. This directly fixes
+The release checkpoint publishes the verified external-model migration,
+consumer-problem increment and commerce channel increment before further coverage
+expansion. This directly fixes
 the production skin/beauty 1.90m misinterpretation. Remaining unsupported conditions
 stay explicit rather than reverting to synthetic prevalence. GitHub and Vercel
 publication were authorized earlier; verify the production alias and old beauty
 link after the release. This release is not completion of the broader goal.
 
-Release `b903e4f` reached GitHub main and Vercel production on 2026-09-06 KST,
-deployment `dpl_DkApqbw7SNysnX2Y7GTBGZDymSWP` (Ready, 34s remote build).
+Release `624757b` reached GitHub main and Vercel production on 2026-09-07 KST,
+deployment `dpl_FfDr85H69GEHF6mv9JBFZydWFPWq` (Ready, 49s remote rebuild).
 The production alias and legacy beauty URL were verified in Chrome; skin care
 16.60m and online cosmetics 12.99m are separate, explicitly scoped populations.
 Beauty advertising problems → age 30 → Matrix → Opportunity preserved the 0.28m
 segment. Browser error logs were empty; the new deployment error-log query returned
-no entries. The follow-up label aligns the market title with its clothing branch:
+no entries. The production commerce channel flow also shows mobile quality at
+1.20m modeled adults with its 67.1% use and 5.1 monthly frequency observation. The
+follow-up label aligns the market title with its clothing branch:
 `뷰티·패션`, while the skin-care profile remains narrowly defined.
 
 KCA 2025 consumer-life evidence adds ten product-problem parents and thirty
