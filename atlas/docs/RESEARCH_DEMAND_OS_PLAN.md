@@ -50,8 +50,10 @@ Opportunity, comparisons, saved ideas and drill-through must continue to work.
 
 ## Verified starting defects
 
-- Skin/beauty uses 45,697 lexical matches (~2.06m projected) intersected with
-  calibrated broad beauty (~1.90m), not a cosmetics user population.
+- Historical skin/beauty sizing used 45,697 lexical matches (~2.06m projected)
+  intersected with calibrated broad beauty (~1.90m). That figure was not a
+  cosmetics user population and is no longer used by the production research
+  flow.
 - Broad beauty calibration covers online fashion/sports OR cosmetics. Its
   descendants still use uncalibrated lexical interest membership.
 - Skin/beauty money previously inherited all online clothing/accessories/cosmetics
@@ -92,6 +94,10 @@ Release `59bc7e6` reached GitHub main and Vercel production on 2026-09-07 KST,
 deployment `dpl_Fqswjoc2ovY9gFHv3ETQPibHSrJ4` (Ready, 23s remote rebuild).
 The production alias and legacy beauty URL were verified in Chrome; skin care
 16.60m and online cosmetics 12.99m are separate, explicitly scoped populations.
+The skin-care figure is a 2024 국민여가활동조사 미용 활동 cohort (not cosmetics
+use); the online-cosmetics figure is an NIA conditional model (internet user →
+annual online shopper → cosmetics item buyer). An all-channel cosmetics-user
+population is not yet identified from an official nationwide source.
 Beauty advertising problems → age 30 → Matrix → Opportunity preserved the 0.28m
 segment. Browser error logs were empty; the new deployment error-log query returned
 no entries. The production commerce channel flow also shows mobile quality at

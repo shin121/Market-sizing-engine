@@ -62,7 +62,7 @@ reproducible with the respective Python scripts and the official PDFs.
   These are online transaction allocations with low confidence, not direct
   respondent spend fields. The new flow does not inherit the old
   narrative-weighted online category allocation.
-  The regenerated sanity ledger has 120 profiles with a monetary baseline;
+  The regenerated sanity ledger has 95 profiles with a monetary baseline;
   these remain partial online or category allocations rather than complete
   market-size measurements.
 - Household delivery/HMR profiles include household-head age/sex, household size

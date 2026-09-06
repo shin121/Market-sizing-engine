@@ -87,3 +87,23 @@ void test('reviewed online category baselines connect only matching research coh
   assert.ok(pet.annualValue! > 2_000_000_000_000);
   assert.equal(pet.scopeLabel, '온라인 반려용품 거래액 · 2025');
 });
+
+void test('generic lower discovery paths do not inherit a parent market spend pool', () => {
+  const travel = getResearchExplorer('travel')!;
+  const nature = travel.branches.find((b) => b.id === 'nature')!;
+  const gear = nature.children.find((c) => c.id === 'nature~gear')!;
+  assert.equal(nature.profile.marketValue.status, 'estimated');
+  assert.equal(gear.marketValue.annualValue, null);
+  assert.equal(gear.marketValue.status, 'missing_calibration_anchor');
+
+  const mobility = getResearchExplorer('mobility')!;
+  const drive = mobility.branches.find((b) => b.id === 'drive')!;
+  const online = drive.children.find((c) => c.id === 'drive~online')!;
+  assert.equal(drive.profile.marketValue.status, 'estimated');
+  assert.equal(online.marketValue.annualValue, null);
+
+  const education = getResearchExplorer('education')!;
+  const career = education.branches.find((b) => b.id === 'career')!;
+  const careerOnline = career.children.find((c) => c.id === 'career~online')!;
+  assert.equal(careerOnline.marketValue.annualValue, null);
+});

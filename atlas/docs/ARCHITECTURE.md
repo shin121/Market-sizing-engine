@@ -53,7 +53,7 @@ Vinext/React builds a Cloudflare Worker plus browser assets through the existing
 
 The verification layers are lexical regressions, independent SQL oracle, domain tests, compilation/lint, browser journey and responsive screenshots, browser aggregate boundary, and built-Worker/production smoke. The Sites audience remains owner-only.
 
-## Market Value layer (v0.3)
+## Market Value layer (v0.4)
 
 ```text
 Nemotron → Population Engine → Spend Signal Engine
@@ -61,10 +61,10 @@ Nemotron → Population Engine → Spend Signal Engine
   → Analysis Service → shared Money UI
 ```
 
-`server/atlas/spend-methods.ts` provides six amount calculation paths with period, range and unit guards. `server/atlas/market-value.ts` supplies the active calibrated music adapter. Existing calibrated population bitmaps produce per-stratum linear signal moments; no raw Parquet is loaded for page requests. Additional caches hold 512 moment contexts and 2,048 estimates. A single scoped monetary component is evaluated directly against each population, not summed across overlapping archetypes.
+`server/atlas/spend-methods.ts` provides six amount calculation paths with period, range and unit guards. `server/atlas/market-value.ts` supplies the legacy music adapter and `server/atlas/research-market-value.ts` supplies the current food, delivery and reviewed online-category adapters. Existing calibrated population bitmaps produce per-stratum moments; no raw Parquet is loaded for page requests. A single scoped monetary component is evaluated directly against each population, not summed across overlapping archetypes.
 
 `lib/market-value.ts` defines the central MarketValueEstimate and KRW/unit formatters. `server/atlas/market-value-service.ts` enriches existing summaries without mutating the population summary cache, adds separate economic score inputs, monetary Radar, industry/contribution tables, Matrix values and highlights. `components/atlas/money.tsx` renders those objects. It never supplies monetary assumptions or multiplies arbitrary spend by population.
 
 URL context adds `metric=population|index|marketValue|spendPerUnit`, `spend=covered|market_id`, `x/y=population|annualValue|spendPerUnit|opportunity|distinctiveness`. Entity, Matrix, Relationship, search, comparison and history retain these selections. A market-name navigation switches the monetary scope to that industry; an explicit **+** adds a population condition. Missing household mapping remains null with separate person category-population metadata.
 
-The active source is the existing 2024 KOCCA digital music expenditure table. Method adapters for direct/weighted/frequency/consumption/heuristic inputs are tested, but only the calibrated music adapter is connected to serving data. Additional components require a reviewed overlap/additivity mapping. See [Market Value methods](MARKET_VALUE_METHODS.md), [audit](MARKET_VALUE_DATA_AUDIT.md), and [verification](MARKET_VALUE_REPORT.md).
+Active sources are reviewed food/delivery survey anchors and selected 2025 online category totals; the 2024 KOCCA music adapter remains available to the legacy service. Method adapters for direct/weighted/frequency/consumption/heuristic inputs are tested, while unsupported category scopes stay explicit. Additional components require a reviewed overlap/additivity mapping. See [Market Value methods](MARKET_VALUE_METHODS.md), [audit](MARKET_VALUE_DATA_AUDIT.md), and [verification](MARKET_VALUE_REPORT.md).

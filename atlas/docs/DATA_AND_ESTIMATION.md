@@ -1,6 +1,6 @@
 # Data, membership and estimation
 
-> 이 문서의 수치·지출 범위는 v0.3 구현 기록입니다. v0.4 현재 산식·외부 인구 보정·14/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
+> 이 문서는 v0.4 현재 산식·외부 인구 보정·11/20개 산업 범위를 기준으로 합니다. 전수 검증은 [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
 
 ## Semantic families and extraction
 
@@ -61,10 +61,10 @@ All raw and record-level intermediate data remains outside deployment. `atlas_bu
 
 `atlas_oracle.py` independently builds calibration weights in DuckDB and evaluates row predicates for 70 contexts, including every type, cross-type overlap, structural zeros and three-way joints. It never reads serving bitmaps or cubes. Tests compare population, unweighted support and sum of squared weights, plus central metric parity and runtime routes. Floating-point comparisons use tolerance appropriate to weighted summation.
 
-## Monetary estimates (v0.3)
+## Monetary estimates (current)
 
-The original missing-direct-spend finding remains valid. A separate economic layer now combines the existing population calibration with a verified existing KOCCA monthly paid streaming/download spending distribution. Its supported scope is digital music, ages 20–69, with modeled paid participation and disclosed behavior-allocation assumptions. It does not convert Affinity into spending or infer company revenue.
+The original missing-direct-spend finding remains valid. A separate economic layer now combines the existing population calibration with reviewed external baselines: observed food/delivery spending and selected 2025 online category transaction totals. It does not convert Affinity into spending or infer company revenue. The skin-care beauty activity cohort remains unpriced until an all-channel category denominator is available.
 
-Population, relevant paid-participant population, annual spend per participant and annual spend pool are separate fields. Each estimate carries a unit, period, scope, Low/Base/High, method, confidence, population/anchor/direct-spend coverage and non-additivity metadata. Other markets stay explicitly unavailable until a compatible monetary baseline and, where necessary, a household mapping are connected. The 1/20 market coverage is not the fraction of all household spending observed.
+Population, relevant paid-participant population, annual spend per participant and annual spend pool are separate fields. Each estimate carries a unit, period, scope, Low/Base/High, method, confidence, population/anchor/direct-spend coverage and non-additivity metadata. Other markets stay explicitly unavailable until a compatible monetary baseline and, where necessary, a household mapping are connected. The 11/20 market coverage is not the fraction of all household spending observed.
 
 [Full monetary formulas and limitations](MARKET_VALUE_METHODS.md) define participation, normalization, range sensitivities, age exclusions and the separate opportunity economic component. [Sanity results](MARKET_VALUE_SANITY.md) show actual population/money rank differences without claiming 10 calibrated monetary markets.

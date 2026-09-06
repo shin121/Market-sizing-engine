@@ -14,11 +14,18 @@ cosmetics transaction total of KRW 13.8153tn gives approximately KRW 1.06m per
 online buyer per year. The two cohorts are not added: one describes care activity
 and the other online cosmetics purchases, and their overlap is not observed.
 
+The Ministry of Food and Drug Safety also reports a **2024 cosmetics domestic
+market benchmark of KRW 5.46tn** (production − exports + imports). This is an
+industry value at the production/import/export scope, not a count of users or a
+retail spend pool, so it is recorded separately and is not used to price the
+skin-care cohort or added to the online transaction total.
+
 ## Anchors
 
 | Market / cohort | Published category baseline | Buying unit | Method | Scope |
 | --- | ---: | --- | --- | --- |
 | Beauty / online cosmetics buyers | KRW 13.8153tn (2025) | person | `calibrated_baseline` | online cosmetics only |
+| Beauty / cosmetics industry benchmark | KRW 5.46tn (2024) | industry value | benchmark only | MFDS production − exports + imports; not a user denominator |
 | Commerce / online goods and services | KRW 260.4465tn (2025) | person | `calibrated_baseline` | selected published online components |
 | Travel / domestic travel cohort | KRW 33.9528tn (2025) | person | `calibrated_baseline` | online travel and transport |
 | Fitness / fitness and leisure cohort | KRW 5.4403tn (2025) | person | `calibrated_baseline` | online sports and leisure goods |
@@ -52,6 +59,9 @@ across overlapping types or presented as company revenue.
 
 - All-channel cosmetics penetration and offline cosmetics spend are still
   unobserved; the skin activity cohort cannot be priced from the online anchor.
+- The MFDS industry benchmark is available as a separate scope, but it cannot be
+  converted into people, household spend or an all-channel user count without a
+  retail/consumer denominator bridge.
 - Category-specific ticket size, purchase frequency and willingness to pay are
   needed to move profiles from a low-confidence allocation to direct or weighted
   spend.

@@ -1,8 +1,8 @@
 # Market Value Engine — 계산과 해석
 
-> 이 문서의 수치·지출 범위는 v0.3 구현 기록입니다. v0.4 현재 산식·외부 인구 보정·14/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
+> 이 문서의 수치·지출 범위는 v0.4 현재 구현을 기준으로 합니다. 지원 시장·기준액 목록은 [baselines](MARKET_VALUE_BASELINES.md), 전수 검증은 [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
 
-현재 활성 범위는 **음악 스트리밍·다운로드, 20–69세의 연간 소비액 proxy**다. 기존 프로젝트에 등록된 2024 음악산업백서 PDF의 유료 이용자 지출 구간을 사용했다. 공연·음반·악기와 나머지 19개 산업은 포함하지 않는다. 전체 대한민국 소비 규모나 사업자가 확보할 수 있는 매출이 아니다.
+현재 활성 범위는 **외식·배달 조사 지출과 선별 2025 온라인 카테고리 거래액의 연간 소비액 proxy**다. 품목·채널·구매 주체가 일치하지 않는 cohort에는 금액을 연결하지 않는다. 전체 대한민국 소비 규모나 사업자가 확보할 수 있는 매출이 아니다.
 
 ## 네 객체의 의미
 
@@ -76,7 +76,7 @@ AnnualSpendPerUnit(S) = AnnualValue(S) / RelevantPopulation(S)
 - 원본 빈 교집합은 인구·소비액 0, 단위 지출/Opportunity는 null. 금액 기준 결손은 0이 아닌 null이다.
 - 조사 연령 밖은 `outside_anchor_scope`, 금액 기준 부재는 `missing_calibration_anchor`, 가구 연결 필요는 `unit_mapping_required`다.
 
-Coverage.population = 조사 연령 내 음악 관심 인구 / 선택 전체 인구. Coverage.anchor = 조사 연령 내 음악 관심 인구 / 음악 관심 인구. DirectSpend = 0. Completeness = anchor coverage의 백분율이다. 이것은 전체 가계 소비 중 측정한 비중이 아니다. 별도로 지원 산업 1/20과 `isPartial:true`를 표시한다. 기존 인구·신호 Completeness는 덮어쓰지 않는다.
+Coverage.population = 선택 cohort 인구 / 선택 전체 인구. Coverage.anchor = 선택 cohort 인구 / 기준액 분모. DirectSpend = 0. Completeness = 기준액 연결 충족도의 별도 지표다. 이것은 전체 가계 소비 중 측정한 비중이 아니다. 지원 시장 11/20과 `isPartial:true`를 표시한다. 기존 인구·신호 Completeness는 덮어쓰지 않는다.
 
 ## 합산과 Share
 

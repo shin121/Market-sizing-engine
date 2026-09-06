@@ -77,6 +77,11 @@ const externalAnchors: {
       'leisure_E41',
       'leisure_E42',
     ],
+    // An online-search child is a discovery behavior, not evidence that the
+    // person purchased travel or transport. Keep the parent activity priced
+    // while leaving those lower paths unpriced until a category buyer anchor
+    // exists.
+    excludeFactorIds: ['commerce', 'research_presearch', 'research_review'],
     baselineFactorIds: ['travel_domestic'],
     componentIds: ['travel-transport'],
     label: '온라인 여행·교통서비스 거래액',
@@ -93,6 +98,7 @@ const externalAnchors: {
       'leisure_D30',
       'leisure_F55',
     ],
+    excludeFactorIds: ['commerce', 'research_presearch', 'research_review'],
     baselineFactorIds: ['fitness'],
     componentIds: ['sports'],
     label: '온라인 스포츠·레저용품 거래액',
@@ -101,6 +107,7 @@ const externalAnchors: {
   {
     marketId: 'education',
     factorId: 'education',
+    excludeFactorIds: ['commerce', 'research_presearch', 'research_review'],
     baselineFactorIds: ['education'],
     componentIds: ['books', 'stationery'],
     label: '온라인 서적·문구 거래액',
@@ -126,6 +133,7 @@ const externalAnchors: {
     marketId: 'mobility',
     factorId: 'leisure_E48',
     matchFactorIds: ['leisure_E48'],
+    excludeFactorIds: ['commerce', 'research_presearch', 'research_review'],
     baselineFactorIds: ['leisure_E48'],
     componentIds: ['automotive'],
     label: '온라인 자동차·자동차용품 거래액',
@@ -141,6 +149,7 @@ const externalAnchors: {
       'leisure_H84',
       'leisure_H85',
     ],
+    excludeFactorIds: ['commerce', 'research_presearch', 'research_review'],
     baselineFactorIds: [],
     componentIds: ['culture-leisure'],
     label: '온라인 문화·레저서비스 거래액',

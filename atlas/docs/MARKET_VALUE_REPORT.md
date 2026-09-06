@@ -1,8 +1,8 @@
 # Market Value Engine — 완료 보고
 
-> 이 문서의 수치·지출 범위는 v0.3 구현 기록입니다. v0.4 현재 산식·외부 인구 보정·14/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
+> 이 문서는 중앙 Market Value Engine의 현재 산출 범위와 한계를 기록합니다. 세부 기준액과 범위는 [baselines](MARKET_VALUE_BASELINES.md), 외부 인구 보정은 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
 
-기존 Atlas에 인구와 경제적 소비액을 구분하는 Lens를 추가했다. **현재 금액을 계산할 수 있는 범위는 음악 스트리밍·다운로드(20–69세), 20개 산업 중 1개 산업의 일부**다. 다른 산업의 임의 기준 금액은 만들지 않았다. 이 범위에서 인구 순위와 소비액 순위가 다른 유형·Matrix 셀이 확인됐다.
+기존 Atlas에 인구와 경제적 소비액을 구분하는 Lens를 추가했다. 현재 금액은 외식·배달의 조사 지출과, 2025 온라인 거래액을 관련 조사 인구에 배분한 부분 범위에서 계산한다. 온라인 화장품 구매와 미용 활동은 별도 코호트이며, **미용 활동 인구를 전체 화장품 사용자 수로 해석하지 않는다.** 산업 전체 소비나 회사 매출을 임의로 합산하지 않는다.
 
 ## 1. Nemotron Monetary Data Audit
 
@@ -18,19 +18,19 @@ paid, premium, paid_subscription, gear_upgrade, repeat_purchase, membership의 �
 
 ## 4. Market Value Method hierarchy
 
-Direct → Weighted → Frequency×Ticket → Calibrated baseline → Consumption proxy → Heuristic range의 여섯 계산 경로를 구현·테스트했다. 실제 활성 데이터 어댑터는 Calibrated baseline 하나다. [산식 문서](MARKET_VALUE_METHODS.md)에 각 경로의 입력 계약과 현재 미사용 이유가 있다.
+Direct → Weighted → Frequency×Ticket → Calibrated baseline → Consumption proxy → Heuristic range의 여섯 계산 경로를 구현·테스트했다. 현재 활성 어댑터는 외식·배달 조사 지출과 온라인 카테고리 기준액 배분이다. [산식 문서](MARKET_VALUE_METHODS.md)에 각 경로의 입력 계약과 미사용 이유가 있다.
 
 ## 5. Spend per Unit 산출 방식
 
-기존 2024 음악산업백서의 연령별 유료 스트리밍·다운로드 월 지출 구간을 중간값으로 근사하고 ×12 한다. 마지막 열린 구간은 Base 월 2.5만원/High 4만원의 가정을 공개한다. 집단 연간 소비액 / 관련 참여 인구가 Annual Spend per Unit이다.
+관련 집단의 기준액을 연간화하고, 선택 집단의 관련 인구로 나눠 Annual Spend per Unit을 산출한다. 온라인 카테고리의 경우 전국 거래액을 인구 비중으로 배분한 값이며 실제 구매자별 지출 평균으로 주장하지 않는다.
 
 ## 6. Participation 산출 방식
 
-선택 집단 중 음악 관심·20–69세 인구에 출처의 연령별 유료 이용 사례 수 / 음악 이용 사례 수를 적용한다. 실제 결제자 관측이 아닌 참여율 이식 proxy다. 전체 유형 인구, 관련 관심 인구, 관련 유료 참여 추정 인구를 분리한다.
+선택 집단의 전체 인구, 관련 활동·구매 인구, 기준액 배분 분모를 별도로 보존한다. 온라인 거래액 배분은 참여율이나 지불의향을 관측한 것이 아니며, 활동 cohort와 구매 cohort를 합치지 않는다.
 
 ## 7. Archetype × Industry Market Value
 
-실제 52개 유형 × 20개 산업을 같은 중앙 엔진으로 평가한다. 음악은 관련 참여 인구·단위 지출·소비액·Affinity를 비교할 수 있다. 예: 휴식·보상 프리미엄선택형은 전체 약 75만 명, 음악 유료 참여 약 19만 명, 연간 참여자당 약 13만원, 음악 소비액 약 240억원이다. 다른 산업은 결손 원인을 표시한다.
+실제 유형 × 산업 조합을 같은 중앙 엔진으로 평가한다. 온라인 화장품 구매 cohort는 약 1,299만 성인, 2025 온라인 화장품 거래액 기준 약 1.06백만원/인·년의 범위로 표시된다. 피부·헤어·뷰티 관리 cohort 약 1,660만 성인은 품목 일치 기준액이 없어 금액을 표시하지 않는다.
 
 ## 8. Segment Market Value
 
@@ -46,7 +46,7 @@ Archetype/Market/Age/Signal의 실제 교집합을 동일 가중치로 계산한
 
 ## 11. Market Value Coverage
 
-Population coverage, Anchor coverage, Direct spend coverage, 지원 산업 수를 별도 제공한다. 직접 관측 지출은 0%, 지원 산업은 1/20이며 음악에서도 전체 지출이 아닌 일부 항목이다. 기존 인구·신호 Completeness를 덮어쓰지 않는다. 현재 monetary confidence는 Low다.
+Population coverage, Anchor coverage, Direct spend coverage, 지원 산업 수를 별도 제공한다. 온라인 기준액은 부분 거래 범위이며 직접 응답자 지출은 아니다. 기존 인구·신호 Completeness를 덮어쓰지 않는다. 기준액 배분의 monetary confidence는 Low다. MFDS 화장품 국내시장규모 5.46조원(2024)은 별도 산업 벤치마크로만 기록한다.
 
 ## 12. Global Atlas 변경
 
@@ -78,7 +78,7 @@ Population Score와 Economic Value Score를 분리했다. 기존 가중 구성�
 
 ## 19. Sanity Test
 
-52개 실제 유형 전체 계산, 12개 유형 상세 표, 네 패턴, 10개 산업 상태 및 35개 Matrix 셀을 검증했다. ‘휴식·보상 유료이용형’은 인구 24위 → 금액 14위다. 10개 산업 중 음악만 금액 유효, 나머지 9개는 결손 처리를 검증한 것이다. **10개 금액 시장 검증은 추가 기준 데이터가 필요하다.** [결과](MARKET_VALUE_SANITY.md).
+52개 실제 유형 전체 계산, 12개 유형 상세 표, 네 패턴, 10개 산업 상태 및 35개 Matrix 셀을 검증했다. Population과 Market Value 정렬이 달라지는 셀을 확인했고, generic 온라인 탐색·후기 하위 경로가 부모의 거래액을 상속하지 않는지 검증했다. 금액이 없는 산업은 결손으로 남긴다. [결과](MARKET_VALUE_SANITY.md).
 
 ## 20. Browser Acceptance Test
 
@@ -90,9 +90,9 @@ Lint, Typecheck, 31 tests, production build 통과. 여섯 산식, 16개 독립 
 
 ## 22. Known Limitations
 
-- 19개 산업은 monetary anchor 미확보이며 일부는 household mapping도 필요하다. Pet/Food/Home의 경제적 규모 비교는 아직 데이터로 뒷받침할 수 없다.
-- 현재 기준은 2024년 상반기 디지털 음악 지출이다. 2026년 현재 관측치, 전체 음악 시장, 전체 가계 소비 규모가 아니다.
-- 합성 서술의 음악 관심 집단에 실제 조사 이용자 비율을 이식했다. 참여율·표본 반올림·공유 요금제·연령 범위 차이와 배분 계수 가정이 존재한다.
+- 다수 산업은 서비스별 monetary anchor가 없으며 일부는 household mapping도 필요하다. 온라인 카테고리 금액은 각 산업의 전체 소비나 오프라인 지출이 아니다.
+- 미용 활동 cohort의 all-channel 화장품 사용률·오프라인 구매·품목별 지출은 아직 관측되지 않았다. MFDS 산업 벤치마크만으로 사용자 수를 역산하지 않는다.
+- 온라인 기준액 배분에는 인구 비중·범위 차이·배분 민감도 가정이 있다. Low/High는 통계적 신뢰구간이 아니다.
 - Low/High는 가정 민감도이고 열린 지출 구간의 High는 엄밀한 상한이 아니다.
 - 직접 지출·Weighted 관측·빈도×객단가 등 추가 어댑터를 활성화하려면 대상·기간·단위가 맞는 자료가 필요하다. 범위별 합산 규칙도 검토해야 한다.
 - SOM, company capture rate, 매출 예측, 가격 시뮬레이터, unit economics는 구현하지 않았다.

@@ -1,6 +1,6 @@
 # Market Value Browser QA
 
-> 이 문서의 수치·지출 범위는 v0.3 구현 기록입니다. v0.4 현재 산식·외부 인구 보정·14/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
+> 이 문서는 v0.4 브라우저 검증 기록입니다. 현재 산식·외부 인구 보정·11/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
 
 실제 Chromium/agent-browser, 1440×900 및 390×844에서 탐색했다. 개발 서버에서 전체 여정 25단계를, 완성된 Cloudflare Worker에서 Matrix 모드·브라우저 history·근거·모바일을 추가 검증했다. 브라우저 uncaught errors는 0개다.
 
