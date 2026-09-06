@@ -44,6 +44,16 @@ export interface AtlasEntity {
   description?: string;
 }
 export interface Estimate {
+  observedPopulation?: number;
+  modelMembers?: number;
+  populationMethod?: 'survey_calibrated_proxy' | 'narrative_projection';
+  calibrationSources?: {
+    id: string;
+    title: string;
+    url: string;
+    locator: string;
+    referencePeriod: string;
+  }[];
   population: number;
   support: number;
   low: number;

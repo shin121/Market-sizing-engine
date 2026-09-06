@@ -1,5 +1,7 @@
 # Market Value Sanity Test
 
+> 이 문서의 수치·지출 범위는 v0.3 구현 기록입니다. v0.4 현재 산식·외부 인구 보정·14/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
+
 52개 실제 추출 유형 전체, 10개 산업, 연령 × 유형 Matrix를 검사했다. 금액 기준은 음악 스트리밍·다운로드(20–69세) 하나다. 아래 금액은 관측 거래 총액이 아니라 소비액 탐색 모델이다.
 
 ## 실제 유형 검증

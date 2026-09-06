@@ -44,7 +44,7 @@ export function MoneyControls({ data }: { data: AtlasPayload }) {
           ['population', '인구 규모'],
           ['index', 'Index'],
           ['marketValue', '시장 규모 ₩'],
-          ['spendPerUnit', '참여자당 지출'],
+          ['spendPerUnit', '관련 인구당 지출'],
         ]
       : [
           ['population', '인구 규모'],
@@ -73,7 +73,7 @@ export function MoneyControls({ data }: { data: AtlasPayload }) {
             value={c.moneyScope}
             onChange={(e) => set('spend', e.target.value)}
           >
-            <option value="covered">확보된 범위 · 음악 일부</option>
+            <option value="covered">확보된 소비 범위 · 중복 제외</option>
             {data.navigation
               .filter((e) => e.kind === 'market')
               .map((e) => (
@@ -109,12 +109,12 @@ export function MoneyMetrics({ value }: { value?: MarketValueEstimate }) {
         </small>
       </div>
       <div>
-        <span>참여자당 연간 지출</span>
+        <span>{value.denominatorLabel ?? '관련 인구당 연간 금액'}</span>
         <strong>{formatKRW(value.annualSpendPerUnit, false)}</strong>
         <small>
           {value.relevantPopulation === null
             ? '단위·대상에 맞는 기준 필요'
-            : `${shortPopulation(value.relevantPopulation)}${unitLabel(value.populationUnit)} 참여 추정 · 전체의 ${pct(value.participationRate ?? 0)}`}
+            : `${shortPopulation(value.relevantPopulation)}${unitLabel(value.populationUnit)} ${value.denominatorBasis === 'adult_profile_allocation' ? '소비 프로필 · 실제 구매자 수 아님' : '참여 추정 · 전체의 ' + pct(value.participationRate ?? 0)}`}
         </small>
       </div>
     </>
@@ -197,7 +197,7 @@ export function MoneyAnalysis({ data }: { data: AtlasPayload }) {
   if (!money) return null;
   const rows = [...money.industries].sort((a, b) =>
     sort === 'affinity'
-      ? (b.affinity ?? -1) - (a.affinity ?? -1)
+      ? b.population - a.population
       : sort === 'population'
         ? b.population - a.population
         : sort === 'unit'
@@ -207,7 +207,7 @@ export function MoneyAnalysis({ data }: { data: AtlasPayload }) {
   );
   const contributions = [...money.contributions].sort((a, b) =>
     typeSort === 'affinity'
-      ? (b.index ?? -1) - (a.index ?? -1)
+      ? b.population - a.population
       : typeSort === 'population'
         ? b.population - a.population
         : (b.estimate.base ?? -1) - (a.estimate.base ?? -1),
@@ -217,7 +217,7 @@ export function MoneyAnalysis({ data }: { data: AtlasPayload }) {
     <div className="money-analysis">
       <Module
         title="산업별 경제적 규모"
-        note="관심·참여 인구·지출을 구분합니다. 기준이 없는 산업은 금액을 만들지 않습니다."
+        note="관심·참여 인구·지출을 구분합니다. 온라인 거래 등 포함 범위의 금액을 비교합니다."
         action={
           <NativeSelect
             aria-label="산업 지출 정렬"
@@ -225,9 +225,9 @@ export function MoneyAnalysis({ data }: { data: AtlasPayload }) {
             onChange={(e) => setSort(e.target.value)}
           >
             <option value="value">연간 소비액순</option>
-            <option value="affinity">관심 Index순</option>
+            <option value="affinity">집단 내 비중순</option>
             <option value="population">관련 인구순</option>
-            <option value="unit">참여자당 지출순</option>
+            <option value="unit">관련 인구당 지출순</option>
           </NativeSelect>
         }
       >
@@ -236,22 +236,41 @@ export function MoneyAnalysis({ data }: { data: AtlasPayload }) {
             <thead>
               <tr>
                 <th>산업 / 포함 지출</th>
-                <th>관심 Index</th>
+                <th>집단 내 비중</th>
                 <th>관련 인구</th>
-                <th>유료 참여 추정</th>
+                <th>지출 배분 대상</th>
                 <th>연간 지출 / 단위</th>
                 <th>연간 소비액</th>
                 <th>기준</th>
               </tr>
             </thead>
             <tbody>
-              {rows.map(({ entity, affinity, population, estimate: v }) => (
+              {rows.map(({ entity, population, estimate: v }) => (
                 <tr key={entity.id} data-money-market={entity.id}>
                   <td>
-                    <Entry entity={entity} context={c} />
+                    <Link
+                      prefetch={false}
+                      href={jointHref(entity.id, {
+                        ...c,
+                        moneyScope: entity.id,
+                      })}
+                    >
+                      {entity.label}
+                    </Link>
                     {v.base !== null && <small>{v.scopeLabel}</small>}
+                    <small>
+                      <Entry entity={entity} context={c}>
+                        전체 시장 ↗
+                      </Entry>
+                    </small>
                   </td>
-                  <td>{indexLabel(affinity)}</td>
+                  <td>
+                    {pct(
+                      data.profile.summary.estimate.population
+                        ? population / data.profile.summary.estimate.population
+                        : 0,
+                    )}
+                  </td>
                   <td>{shortPopulation(population)}명</td>
                   <td>
                     {v.relevantPopulation === null
@@ -297,7 +316,7 @@ export function MoneyAnalysis({ data }: { data: AtlasPayload }) {
             >
               <option value="value">소비액순</option>
               <option value="population">인구순</option>
-              <option value="affinity">관심 Index순</option>
+              <option value="affinity">집단 내 비중순</option>
             </NativeSelect>
           }
         >
@@ -308,20 +327,34 @@ export function MoneyAnalysis({ data }: { data: AtlasPayload }) {
                   <th>소비 유형</th>
                   <th>관련 인구</th>
                   <th>연간 소비액</th>
-                  <th>참여자당 지출</th>
-                  <th>관심 Index</th>
+                  <th>연간 배분액 / 명</th>
+                  <th>집단 내 비중</th>
                 </tr>
               </thead>
               <tbody>
                 {contributions.slice(0, 15).map((r) => (
                   <tr key={r.entity.id}>
                     <td>
-                      <Entry entity={r.entity} context={c} />
+                      <Link prefetch={false} href={jointHref(r.entity.id, c)}>
+                        {r.entity.label}
+                      </Link>
+                      <small>
+                        <Entry entity={r.entity} context={c}>
+                          전체 유형 ↗
+                        </Entry>
+                      </small>
                     </td>
                     <td>{shortPopulation(r.population)}명</td>
                     <td>{formatKRW(r.estimate.base, false)}</td>
                     <td>{formatKRW(r.estimate.annualSpendPerUnit, false)}</td>
-                    <td>{indexLabel(r.index)}</td>
+                    <td>
+                      {pct(
+                        data.profile.summary.estimate.population
+                          ? r.population /
+                              data.profile.summary.estimate.population
+                          : 0,
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -356,7 +389,7 @@ export function MoneyRadar({ data }: { data: AtlasPayload }) {
               </span>
               <strong>
                 {group.id === 'money-niche'
-                  ? indexLabel(s.marketValue?.spendDensityIndex ?? null)
+                  ? formatKRW(s.marketValue?.annualSpendPerUnit, false)
                   : formatKRW(
                       group.id === 'high-spend'
                         ? s.marketValue?.annualSpendPerUnit

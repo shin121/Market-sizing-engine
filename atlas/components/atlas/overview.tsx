@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { MoneyRadar, MoneyBasis } from './money';
+import { ProfileOverview, EvidenceTable } from './economic-profile';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useRouter } from 'next/navigation';
 import {
@@ -10,7 +11,7 @@ import {
   type AtlasPayload,
 } from '@/lib/atlas';
 import { Module, Entry, StatList } from './common';
-import { MarketMap, AgeChart, Composition } from './charts';
+import { MarketMap, AgeChart, Composition, RegionChart } from './charts';
 export function Overview({ data }: { data: AtlasPayload }) {
   const c = data.context,
     router = useRouter();
@@ -46,6 +47,7 @@ export function Overview({ data }: { data: AtlasPayload }) {
             <MoneyBasis value={data.money.summary} />
           )}
         </Module>
+        <ProfileOverview profile={data.profile} context={c} />
         <div className="overview-lower">
           <Module title="전체 소비자 구성" note="연령·성별 기준 인구">
             <AgeChart stats={data.profile.demographics} context={c} />
@@ -63,6 +65,12 @@ export function Overview({ data }: { data: AtlasPayload }) {
           </Module>
         </div>
         <div className="overview-bottom">
+          <Module
+            title="지역별 소비자 구성"
+            note="합성 프로필의 지역 분포 · 지역별 인구는 별도 보정하지 않음"
+          >
+            <RegionChart stats={data.profile.demographics} context={c} />
+          </Module>
           <Module
             title="산업을 넘는 발견"
             note="여러 시장에서 반복되는 소비 패턴"
@@ -116,6 +124,9 @@ export function Overview({ data }: { data: AtlasPayload }) {
             </div>
           </Module>
         </div>
+        <Module title="데이터 출처와 적용 범위">
+          <EvidenceTable profile={data.profile} />
+        </Module>
       </div>
       <aside className="discovery-radar" aria-label="발견 레이더">
         <div className="radar-title">

@@ -1,5 +1,7 @@
 # Data, membership and estimation
 
+> 이 문서의 수치·지출 범위는 v0.3 구현 기록입니다. v0.4 현재 산식·외부 인구 보정·14/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
+
 ## Semantic families and extraction
 
 The complete nine-shard corpus contains one million UUID-unique synthetic personas and 26 fields. There are no structured transactions, spend, income, purchase-frequency, WTP, competition or time-series fields. The source's lifestyle story format itself can create strong co-occurrences; measured lift is evidence of recurring text patterns, not consumer causality.

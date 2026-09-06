@@ -1,5 +1,7 @@
 # GitHub / Vercel 배포
 
+현재 v0.4는 외부 조사 인구 보정과 14/20개 시장의 부분 지출 기준을 추가했습니다. [현재 범위와 산식](EXTERNAL_SPEND_AND_POPULATION.md), [전수 검증](../data/revision-sanity.json)을 참고하세요. 아래 v0.3 항목은 최초 이전 기록입니다.
+
 [운영 Atlas](https://nemotron-market-atlas.vercel.app/atlas) · [Money Lens](https://nemotron-market-atlas.vercel.app/atlas?metric=marketValue)
 
 [운영 환경 25단계 탐색 검증](../data/vercel-production-verification.json)도 통과했으며 검증 중 error/fatal runtime 로그가 없었다.
@@ -25,7 +27,7 @@ Sites/Vinext의 Worker 어댑터·배포 설정을 제거하고 Next.js의 `dev/
 - 구체적인 결과: [Next.js 검증 JSON](../data/vercel-port-verification.json).
 - 원래 저장소의 Python 검사는 raw HTML/집계 입력 및 `data/processed/market_engine.duckdb`가 Git checkout에 없어 완전 통과하지 않는다. 45 passed / 12 skipped / 15 failed / 10 errors였고, CLI validate도 DB 미생성으로 중단된다. 기존 엔진 관련 파일에는 이번 변경이 없다. 이 제한을 새 Atlas의 검증 통과와 혼동하지 않는다.
 
-## 지출 범위
+## 최초 v0.3 배포의 지출 범위
 
 현재 금액은 2024 음악산업백서로 보정한 음악 스트리밍·다운로드(20–69세) proxy다. 19개 산업의 금액 기준은 미확보다. 대한민국 전체 소비액·기업 매출·SOM으로 해석하지 않는다. [금액 계산 문서](MARKET_VALUE_METHODS.md)와 [22항목 기능 보고](MARKET_VALUE_REPORT.md)는 원래 구현의 범위와 근거를 설명한다. 그 문서의 Worker QA는 이전 runtime 기록이고 위 Next.js 검증이 이 배포의 runtime 검증이다.
 

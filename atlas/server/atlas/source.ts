@@ -1,5 +1,6 @@
 import catalogJson from '../data/atlas-catalog.json';
-import cubeJson from '../data/atlas-cubes.json';
+import cubeJson from '../data/atlas-calibrated-cubes.json';
+import calibrationJson from '../data/atlas-calibration.json';
 import type { AtlasEntity, EntityKind } from '../../lib/atlas';
 export interface SourceFeature {
   id: string;
@@ -70,13 +71,48 @@ interface Source {
   unavailable: string[];
 }
 export interface Cube {
+  observedPopulation?: number;
+  modelMembers?: number;
   population: number;
   support: number;
   weightSquareSum: number;
   counts: number[];
   supports: number[];
 }
-export const source = catalogJson as unknown as Source;
+export const observedSource = catalogJson as unknown as Source;
+if (calibrationJson.observedFingerprint !== observedSource.dataFingerprint)
+  throw Error(
+    'Behavior calibration is stale; rebuild it against the current source index.',
+  );
+export const populationCalibration = calibrationJson;
+const calibratedPopulations: Record<string, number> =
+  calibrationJson.populations;
+const calibratedRates: Record<string, number[]> =
+  calibrationJson.archetypeRates;
+export const source: Source = {
+  ...observedSource,
+  version: observedSource.version + '+' + calibrationJson.version,
+  dataFingerprint: calibrationJson.modelFingerprint,
+  overlap: calibrationJson.overlap,
+  features: observedSource.features.map((f) => ({
+    ...f,
+    populationEstimate: calibratedPopulations[f.id],
+    share: calibratedPopulations[f.id] / observedSource.population,
+    ...(f.id === 'planned_purchase'
+      ? {
+          label: '구매 전 정보 검토',
+          sourceFields: ['KCA-PURCHASE-2024', ...f.sourceFields],
+        }
+      : {}),
+    ...(f.id === 'commerce' ? { label: '온라인 쇼핑·소비' } : {}),
+  })),
+  archetypes: observedSource.archetypes.map((a) => ({
+    ...a,
+    populationEstimate: calibratedPopulations[a.id],
+    share: calibratedPopulations[a.id] / observedSource.population,
+    signalRates: calibratedRates[a.id],
+  })),
+};
 export const cubes = cubeJson as unknown as {
   version: string;
   indexDigest: string;

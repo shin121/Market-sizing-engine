@@ -26,7 +26,7 @@
 - Core drill-through uses canonical URL-addressable full dashboards, never a detail drawer. Preserve browser history, breadcrumbs, and URL analysis context.
 - Every entity exposes aggregated underlying datasets and evidence. Never serialize raw narratives or individual identifiers to the browser.
 - Population and economic spend are separate lenses. Use the central MarketValueEstimate; never calculate money in views or equate spend pools with company revenue/SOM.
-- Missing direct spend, income, trend, and competition remain explicitly unavailable. Spend estimates may use verified existing anchors with explicit population unit, period, scope, assumptions and coverage. Never invent KRW baselines or convert affinity directly into spend.
+- Missing direct spend, income, trend, and competition remain explicitly unavailable. Spend estimates may use verified external and existing anchors with explicit population unit, period, scope, assumptions and coverage. Never invent KRW baselines or convert affinity directly into spend.
 - Household expenditure requires a deduplicated household population mapping. Overlapping archetypes and industry components are non-additive; aggregate the population once instead of summing their spend.
 - Missing opportunity metrics are null, never zero. Ranges are heuristic sensitivity bands, not statistical confidence intervals.
 - Run lint, typecheck, tests, build and browser QA before marking complete.

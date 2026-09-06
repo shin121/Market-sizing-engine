@@ -1,5 +1,7 @@
 # Market Value Engine — 완료 보고
 
+> 이 문서의 수치·지출 범위는 v0.3 구현 기록입니다. v0.4 현재 산식·외부 인구 보정·14/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
+
 기존 Atlas에 인구와 경제적 소비액을 구분하는 Lens를 추가했다. **현재 금액을 계산할 수 있는 범위는 음악 스트리밍·다운로드(20–69세), 20개 산업 중 1개 산업의 일부**다. 다른 산업의 임의 기준 금액은 만들지 않았다. 이 범위에서 인구 순위와 소비액 순위가 다른 유형·Matrix 셀이 확인됐다.
 
 ## 1. Nemotron Monetary Data Audit

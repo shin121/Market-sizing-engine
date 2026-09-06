@@ -1,6 +1,11 @@
 'use client';
 import Link from 'next/link';
 import { MoneyAnalysis, MoneyBasis } from './money';
+import {
+  ProfileOverview,
+  EvidenceTable,
+  PopulationCalibrationNote,
+} from './economic-profile';
 import { useState } from 'react';
 import { NativeSelect } from '@/components/ui/native-select';
 import {
@@ -160,6 +165,7 @@ export function EntityDashboard({ data }: { data: AtlasPayload }) {
   return (
     <div className="entity-dashboard">
       <Definitions profile={p} context={c} />
+      <PopulationCalibrationNote profile={p} />
       {data.money && <MoneyBasis value={data.money.summary} />}
       <div className="profile-top">
         <Module title="연령별 분포" note="회색 선 = 전체 소비자 비중">
@@ -182,12 +188,13 @@ export function EntityDashboard({ data }: { data: AtlasPayload }) {
           />
         </Module>
       </div>
+      <ProfileOverview profile={p} context={c} />
       <div className="profile-core">
         <Module
           title={
             isMarket ? '이 시장의 주요 소비 유형' : '이 유형을 구별하는 신호'
           }
-          note="정의에 쓰지 않은 신호 · 전체 소비자 대비 Index"
+          note="현재 집단 내 비중 · 함께 해당하는 추정 인구"
         >
           <StatList
             stats={
@@ -201,7 +208,7 @@ export function EntityDashboard({ data }: { data: AtlasPayload }) {
         </Module>
         <Module
           title={isMarket ? '평균보다 강한 소비 유형' : '산업별 관심 연결'}
-          note="관심 비중 ÷ 전체 비중 · + 버튼으로 조건 결합"
+          note="현재 집단 내 비중·인원 · + 버튼으로 조건 결합"
         >
           <StatList
             stats={
@@ -356,7 +363,7 @@ export function EntityDashboard({ data }: { data: AtlasPayload }) {
                       {s.delta > 0 ? '+' : ''}
                       {(s.delta * 100).toFixed(1)}%p
                     </strong>
-                    <small>{indexLabel(s.index)}</small>
+                    <small>전체 기준과 비교</small>
                   </div>
                 ))}
               </div>
@@ -431,6 +438,7 @@ export function EntityDashboard({ data }: { data: AtlasPayload }) {
         title="산출 근거 · 데이터 범위"
         note="실측 매출과 추세 대신, 관측된 소비 패턴으로 후보를 비교합니다"
       >
+        <EvidenceTable profile={p} />
         <Basis profile={p} />
       </Module>
     </div>

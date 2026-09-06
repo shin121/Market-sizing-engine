@@ -525,3 +525,15 @@ The checked items above include historical implementation milestones. Current ve
 - Monetary scope remains music streaming/download, ages 20–69; missing anchors remain explicit.
 - Repository-required legacy commands were also attempted against this clean checkout: Python pytest returned 45 passed, 12 skipped, 15 failed and 10 errors; model validate requires the absent ignored `data/processed/market_engine.duckdb`. Tests also require absent original source files under `data/raw/`. These are existing-engine input requirements, not Atlas runtime dependencies. No unchanged engine files or model rules were altered to suppress them.
 - Vercel uses `atlas` as the project root with GitHub main integration. See `atlas/docs/DEPLOYMENT_VERCEL.md`.
+
+
+## 2026-09-06 — Atlas v0.4 external spend / population revision checkpoint
+
+- Read-only source review added NDO 2025 annual online-shopping categories and NIA/KCA 2024 population proxies. Registry records exact annual units, source locators/hashes, overlap exclusions and denominator assumptions.
+- 21 online leaf components + existing digital music support partial spend in 14/20 market lenses. Remaining six are explicitly missing after source/scope review. Adult-profile allocations are not observed buyer or household spend.
+- Preserve original lexical indexes/support; calibrated digital, ecommerce/commerce, purchase-review and beauty populations live in separately versioned artifacts with 1,396 materialized cubes. KCA screening bias, imputed joints, incomplete 70+ calibration and uncalibrated fields remain explicit.
+- Dense demographic, regional, consumption breakdown, national comparison, range, subgroup and evidence modules continue across nested dashboards. Primary signal rows use people/shares and preserve current conditions on drill-through.
+- Atlas final checks: lint/typecheck passed; 39/39 tests passed; Next production build passed; actual 29-step browser journey passed with zero browser errors and 390px overflow check. Reports: `atlas/data/revision-sanity.json` and `atlas/data/revision-browser-qa.json`.
+- All 52 archetypes and 20 markets audited; 29 age × archetype cells change rank between population and spend. Example: 40s × digital delivery population rank 18 → spend rank 8. These are model checks, not universal external validity certification.
+- Required root checks rerun with `PYTHONPATH=src`: pytest 45 passed / 12 skipped / 15 failed / 10 errors; CLI validate blocked by missing `data/processed/market_engine.duckdb`. Original source files under `data/raw` are also absent. No original Python or `web/` implementation changed.
+- Release through the existing `shin121/Market-sizing-engine` main branch and Vercel `nemotron-market-atlas` project (root `atlas`, Node 24).

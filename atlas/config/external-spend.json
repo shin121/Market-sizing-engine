@@ -1,0 +1,300 @@
+{
+  "version": "external-spend-2025-v1",
+  "source": {
+    "id": "NDO-ONLINE-2025",
+    "title": "국가데이터처 2025년 12월 및 연간 온라인쇼핑동향",
+    "url": "https://sri.kostat.go.kr/boardDownload.es?bid=241&list_no=443337&seq=1",
+    "referencePeriod": "2025-01–2025-12",
+    "published": "2026-02-02",
+    "locator": "인쇄 p.13 / PDF p.16, 연간 상품군별 온라인쇼핑 거래액 및 구성비",
+    "sha256": "d1c4715fb7996afa51a9078168db3b2e7f0b00905b2d04534f7589ae1e0fc259"
+  },
+  "inputUnit": "100 million KRW",
+  "period": "annual",
+  "onlineTotal2025": 272039800000000,
+  "excludedRows": [
+    {
+      "label": "이쿠폰서비스",
+      "value2025": 6273500000000,
+      "reason": "상품·서비스 사용 시점의 거래와 경제적 중복 가능성"
+    },
+    {
+      "label": "기타서비스",
+      "value2025": 2471700000000,
+      "reason": "디지털 음악 등 기존 항목과 분리가 불명확"
+    },
+    {
+      "label": "기타",
+      "value2025": 2848200000000,
+      "reason": "분석 카테고리 범위 불명확"
+    }
+  ],
+  "components": [
+    {
+      "id": "computers",
+      "label": "컴퓨터 및 주변기기",
+      "allocationMarket": "commerce",
+      "annual2024": 8510800000000,
+      "annual2025": 8554000000000
+    },
+    {
+      "id": "electronics",
+      "label": "가전·전자",
+      "allocationMarket": "commerce",
+      "annual2024": 16301000000000,
+      "annual2025": 16270700000000
+    },
+    {
+      "id": "communications",
+      "label": "통신기기",
+      "allocationMarket": "commerce",
+      "annual2024": 6041800000000,
+      "annual2025": 6672700000000
+    },
+    {
+      "id": "books",
+      "label": "서적",
+      "allocationMarket": "education",
+      "annual2024": 2594000000000,
+      "annual2025": 2565000000000
+    },
+    {
+      "id": "stationery",
+      "label": "사무·문구",
+      "allocationMarket": "education",
+      "annual2024": 2032700000000,
+      "annual2025": 2128900000000
+    },
+    {
+      "id": "clothing",
+      "label": "의복",
+      "allocationMarket": "beauty",
+      "annual2024": 21996100000000,
+      "annual2025": 22259100000000
+    },
+    {
+      "id": "shoes",
+      "label": "신발",
+      "allocationMarket": "beauty",
+      "annual2024": 3793500000000,
+      "annual2025": 3623500000000
+    },
+    {
+      "id": "bags",
+      "label": "가방",
+      "allocationMarket": "beauty",
+      "annual2024": 2716300000000,
+      "annual2025": 2414500000000
+    },
+    {
+      "id": "accessories",
+      "label": "패션용품 및 액세서리",
+      "allocationMarket": "beauty",
+      "annual2024": 4037200000000,
+      "annual2025": 4321900000000
+    },
+    {
+      "id": "sports",
+      "label": "스포츠·레저용품",
+      "allocationMarket": "fitness",
+      "annual2024": 5623500000000,
+      "annual2025": 5440300000000
+    },
+    {
+      "id": "children",
+      "label": "아동·유아용품",
+      "allocationMarket": "family",
+      "annual2024": 5286000000000,
+      "annual2025": 5451500000000
+    },
+    {
+      "id": "cosmetics",
+      "label": "화장품",
+      "allocationMarket": "beauty",
+      "annual2024": 12825000000000,
+      "annual2025": 13815300000000
+    },
+    {
+      "id": "groceries",
+      "label": "음·식료품",
+      "allocationMarket": "commerce",
+      "annual2024": 34526900000000,
+      "annual2025": 37818400000000
+    },
+    {
+      "id": "agriculture",
+      "label": "농축수산물",
+      "allocationMarket": "commerce",
+      "annual2024": 12829400000000,
+      "annual2025": 14478300000000
+    },
+    {
+      "id": "living",
+      "label": "생활용품",
+      "allocationMarket": "home",
+      "annual2024": 18999600000000,
+      "annual2025": 19830400000000
+    },
+    {
+      "id": "automotive",
+      "label": "자동차 및 자동차용품",
+      "allocationMarket": "mobility",
+      "annual2024": 5804600000000,
+      "annual2025": 7575100000000
+    },
+    {
+      "id": "furniture",
+      "label": "가구",
+      "allocationMarket": "home",
+      "annual2024": 5667000000000,
+      "annual2025": 5534600000000
+    },
+    {
+      "id": "pet-supplies",
+      "label": "애완용품",
+      "allocationMarket": "pet",
+      "annual2024": 2780700000000,
+      "annual2025": 2954700000000
+    },
+    {
+      "id": "travel-transport",
+      "label": "여행 및 교통서비스",
+      "allocationMarket": "travel",
+      "annual2024": 32464700000000,
+      "annual2025": 33952800000000
+    },
+    {
+      "id": "culture-leisure",
+      "label": "문화 및 레저서비스",
+      "allocationMarket": "community",
+      "annual2024": 3161700000000,
+      "annual2025": 3296600000000
+    },
+    {
+      "id": "food-services",
+      "label": "음식서비스",
+      "allocationMarket": "delivery_order",
+      "annual2024": 36989100000000,
+      "annual2025": 41488200000000
+    }
+  ],
+  "scopes": {
+    "commerce": {
+      "label": "온라인 상품·여행·문화·음식 거래",
+      "components": [
+        "computers",
+        "electronics",
+        "communications",
+        "books",
+        "stationery",
+        "clothing",
+        "shoes",
+        "bags",
+        "accessories",
+        "sports",
+        "children",
+        "cosmetics",
+        "groceries",
+        "agriculture",
+        "living",
+        "automotive",
+        "furniture",
+        "pet-supplies",
+        "travel-transport",
+        "culture-leisure",
+        "food-services"
+      ]
+    },
+    "delivery": {
+      "label": "온라인 음식서비스 · 배달·포장 주문",
+      "components": [
+        "food-services"
+      ]
+    },
+    "food": {
+      "label": "온라인 음식서비스 · 외식 중 배달·포장 범위",
+      "components": [
+        "food-services"
+      ]
+    },
+    "beauty": {
+      "label": "온라인 의류·잡화·화장품",
+      "components": [
+        "clothing",
+        "shoes",
+        "bags",
+        "accessories",
+        "cosmetics"
+      ]
+    },
+    "fitness": {
+      "label": "온라인 스포츠·레저용품",
+      "components": [
+        "sports"
+      ]
+    },
+    "wellness": {
+      "label": "건강·휴식 중 온라인 스포츠·레저용품",
+      "components": [
+        "sports"
+      ]
+    },
+    "education": {
+      "label": "온라인 서적·문구 · 교육서비스 제외",
+      "components": [
+        "books",
+        "stationery"
+      ]
+    },
+    "family": {
+      "label": "온라인 아동·유아용품",
+      "components": [
+        "children"
+      ]
+    },
+    "home": {
+      "label": "온라인 가구·생활용품",
+      "components": [
+        "furniture",
+        "living"
+      ]
+    },
+    "pet": {
+      "label": "온라인 반려용품 · 진료·오프라인 제외",
+      "components": [
+        "pet-supplies"
+      ]
+    },
+    "mobility": {
+      "label": "온라인 자동차·자동차용품",
+      "components": [
+        "automotive"
+      ]
+    },
+    "community": {
+      "label": "온라인 문화·레저서비스 · 모임 전체 아님",
+      "components": [
+        "culture-leisure"
+      ]
+    },
+    "travel": {
+      "label": "온라인 여행·교통서비스",
+      "components": [
+        "travel-transport"
+      ]
+    }
+  },
+  "allocation": {
+    "basis": "adult_profile_allocation",
+    "lowMultiplier": 0.5,
+    "highMultiplier": 1.7,
+    "assumptions": [
+      "공식 온라인 거래액을 관련 성인 소비 프로필의 구매·유료이용 신호에 따라 배분합니다. 개별 구매자 실측 지출이나 가구당 지출이 아닙니다.",
+      "가구 공동구매·미성년 구매를 성인 소비결정 단위에 귀속시키는 탐색용 가정입니다. 인당 값은 관련 성인당 배분액입니다.",
+      "각 상품군 전체 거래액은 보존합니다. 인구가 많은 유형에 동일한 임의 지출을 곱하지 않습니다.",
+      "모든 유형은 중복 소속 가능하며 같은 상품군을 여러 산업에서 보아도 전체 합계에서는 한 번만 계산합니다.",
+      "온라인 채널의 경상 거래액입니다. 오프라인·직접거래·제외 항목까지 포함하는 대한민국 총소비로 해석하지 않습니다.",
+      "2025년 연간 잠정치이며 Low/High는 배분 가정의 민감도입니다. 공식 통계의 신뢰구간이 아닙니다."
+    ]
+  }
+}

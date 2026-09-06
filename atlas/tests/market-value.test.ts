@@ -6,9 +6,15 @@ import { annualPool, selectSpendMethod } from '../server/atlas/spend-methods';
 import {
   estimateMarketValue,
   assertAdditive,
+  availableSpendMarkets,
 } from '../server/atlas/market-value';
 import { analyzeAtlas, resolveContext, measure } from '../server/atlas/engine';
-import { source, types, markets } from '../server/atlas/source';
+import {
+  source,
+  types,
+  markets,
+  populationCalibration,
+} from '../server/atlas/source';
 import { addEconomicScore } from '../server/atlas/market-value-service';
 import { summarize } from '../server/atlas/engine';
 import oracle from '../data/market-value-oracle.json';
@@ -84,8 +90,10 @@ void test('six spend methods, annualization, ranges and unit guards', () => {
   );
   assert.equal(selectSpendMethod(unit), null);
 });
-void test('independent SQL monetary oracle across whole, age, archetype and multijoint scopes', () => {
+void test('historical independent SQL music oracle remains exact where membership was not recalibrated', () => {
   for (const row of oracle.cases) {
+    if (row.ids.some((id) => populationCalibration.changedIds.includes(id)))
+      continue;
     const v = estimateMarketValue(row.ids, 'music');
     if (
       row.eligible === 0 &&
@@ -127,7 +135,9 @@ void test('same music baseline reconciles disjoint ages and does not sum overlap
   assert.ok(total.coverage.anchor < 1);
 });
 void test('missing monetary anchors, household mapping and multiple-market context stay explicit', () => {
-  for (const m of markets.filter((m) => m.id !== 'music')) {
+  for (const m of markets.filter(
+    (m) => !availableSpendMarkets.includes(m.id),
+  )) {
     const v = estimateMarketValue([m.id], m.id);
     assert.equal(v.base, null);
     assert.equal(v.relevantPopulation, null);
@@ -137,7 +147,11 @@ void test('missing monetary anchors, household mapping and multiple-market conte
       ),
     );
   }
-  assert.equal(estimateMarketValue(['pet'], 'pet').populationUnit, 'household');
+  assert.equal(estimateMarketValue(['pet'], 'pet').populationUnit, 'person');
+  assert.equal(
+    estimateMarketValue(['pet'], 'pet').denominatorBasis,
+    'adult_profile_allocation',
+  );
   assert.equal(estimateMarketValue(['pet'], 'music').populationUnit, 'person');
   assert.throws(() => estimateMarketValue([], 'fake-market'));
 });
@@ -242,11 +256,11 @@ void test('money URL and Opportunity preserve scope; economic signal stays separ
   assert.equal(d.profile.summary.marketValue?.scopeId, 'music');
   assert.ok(d.profile.summary.metrics.components.economicValue !== null);
   assert.ok(d.profile.summary.metrics.components.size !== null);
-  const missing = addEconomicScore(summarize(['pet']), 'pet');
+  const missing = addEconomicScore(summarize(['finance']), 'finance');
   assert.equal(missing.metrics.components.economicValue, null);
   assert.equal(
     missing.metrics.opportunity,
-    summarize(['pet']).metrics.opportunity,
+    summarize(['finance']).metrics.opportunity,
   );
   const zero = addEconomicScore(summarize(['age_20', 'age_70']), 'music');
   assert.equal(zero.metrics.opportunity, null);
@@ -274,7 +288,7 @@ void test('ten-market sanity reports supported scope separately from missing cat
       estimate: estimateMarketValue([id, t.id], id),
     })),
   }));
-  assert.equal(rows.filter((r) => r.estimate.base !== null).length, 1);
+  assert.equal(rows.filter((r) => r.estimate.base !== null).length, 8);
   assert.ok(rows.every((r) => r.population > 0));
   fs.writeFileSync(
     'work/market-value/industry-sanity.json',

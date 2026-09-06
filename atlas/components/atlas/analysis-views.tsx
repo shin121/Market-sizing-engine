@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { formatKRW } from '@/lib/market-value';
 import { MoneyOpportunityChart, MoneyBasis } from './money';
+import { SpendRange, SpendBreakdown, EvidenceTable } from './economic-profile';
 import { useState } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { NativeSelect } from '@/components/ui/native-select';
@@ -53,12 +54,11 @@ export function Relationship({ data }: { data: AtlasPayload }) {
             contextHref('relationship', c.ids, { ...c, focus: s.entity.id }),
           )
         }
-        title={`${s.entity.label}: 동시 언급 ${shortPopulation(s.population)}명, 전체 대비 ${indexLabel(s.index)}`}
+        title={`${s.entity.label}: 관련 인구 ${shortPopulation(s.population)}명 · 현재 집단의 ${pct(s.share)}`}
       >
         <b>{s.entity.label}</b>
         <span>
-          ≈ {shortPopulation(s.population)}명{' '}
-          <strong>{indexLabel(s.index)}</strong>
+          ≈ {shortPopulation(s.population)}명 <strong>{pct(s.share)}</strong>
         </span>
       </button>
     );
@@ -167,6 +167,8 @@ export function Relationship({ data }: { data: AtlasPayload }) {
         <Entry entity={p.summary.entity} context={c} className="primary-link">
           전체 대시보드 열기 ↗
         </Entry>
+        <h4>연간 소비액 · 범위</h4>
+        <SpendRange value={p.summary.marketValue} />
         <h4>소비자 구성 · 연령</h4>
         <AgeChart
           stats={p.demographics}
@@ -178,6 +180,7 @@ export function Relationship({ data }: { data: AtlasPayload }) {
           context={{ ...c, ids: p.summary.ids }}
         />
         <h4>함께 나타나는 신호</h4>
+        <SpendBreakdown value={p.summary.marketValue} limit={4} />
         <StatList
           stats={ranked(
             p.signals.filter((s) =>
@@ -195,6 +198,10 @@ export function Relationship({ data }: { data: AtlasPayload }) {
           {p.summary.metrics.completeness}%<br />
           합성 서술 · 연령/성별 보정 추정
         </div>
+        <details>
+          <summary>연결된 출처 확인</summary>
+          <EvidenceTable profile={p} />
+        </details>
       </aside>
     </div>
   );
@@ -473,7 +480,7 @@ const groups = [
   '여러 산업 연결',
   '검증이 더 필요한 후보',
   '연간 소비액순',
-  '참여자당 지출순',
+  '관련 인구당 지출순',
   '작은 고지출 집단',
 ];
 export function Opportunity({ data }: { data: AtlasPayload }) {
@@ -502,7 +509,7 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
     items = items
       .filter((s) => s.marketValue?.base !== null)
       .sort((a, b) => (b.marketValue?.base ?? 0) - (a.marketValue?.base ?? 0));
-  if (group === '참여자당 지출순')
+  if (group === '관련 인구당 지출순')
     items = items
       .filter((s) => s.marketValue?.annualSpendPerUnit !== null)
       .sort(
@@ -540,8 +547,8 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
             </span>
             <span>점수는 사업 가치나 성공 확률이 아닙니다.</span>
             <span>
-              큰 집단: 전체 인구의 3% 이상 · 고지출: 해당 범위의 참여자당 평균
-              초과
+              큰 집단: 전체 인구의 3% 이상 · 고지출: 해당 범위의 관련 인구당
+              평균 초과
             </span>
             <span>추세·경쟁 미확보 → 남은 입력으로 가중치 재정규화</span>
           </div>
@@ -619,7 +626,7 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
                 <th>추정 규모</th>
                 <th>Opportunity</th>
                 <th>연간 소비액</th>
-                <th>지출 / 참여자</th>
+                <th>연간 금액 / 명</th>
                 <th>소비 관여</th>
                 <th>산업 연결</th>
                 <th>표본 / 입력</th>
@@ -691,7 +698,7 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
                 <dl>
                   <dt>연간 소비액</dt>
                   <dd>{formatKRW(s.marketValue?.base, false)}</dd>
-                  <dt>참여자당 지출</dt>
+                  <dt>관련 인구당 지출</dt>
                   <dd>{formatKRW(s.marketValue?.annualSpendPerUnit, false)}</dd>
                   <dt>지출 범위</dt>
                   <dd>{s.marketValue?.scopeLabel}</dd>

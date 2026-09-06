@@ -9,6 +9,16 @@ import { markets } from './source';
 import config from '../../config/market-value.json';
 import scoring from '../../config/scoring.json';
 import type { MarketValueEstimate } from '../../lib/market-value';
+function compactValue(v: MarketValueEstimate): MarketValueEstimate {
+  // Cards use values only. Full evidence is serialized once for the selected profile.
+  return {
+    ...v,
+    componentBreakdown: undefined,
+    nationalTrend: undefined,
+    sourceBasis: [],
+    assumptions: [],
+  };
+}
 export function addEconomicScore(s: Summary, scope: string): Summary {
   const marketValue = estimateMarketValue(s.ids, scope),
     economic =
@@ -41,7 +51,8 @@ export function addEconomicScore(s: Summary, scope: string): Summary {
           : 'small_low';
   return {
     ...s,
-    marketValue,
+    estimate: { ...s.estimate, calibrationSources: [] },
+    marketValue: compactValue(marketValue),
     moneyQuadrant,
     metrics: {
       ...s.metrics,
@@ -59,7 +70,11 @@ export function enrichMarketValue(
   const withMoney = (s: Summary) => addEconomicScore(s, scope);
   const profile = (p: Profile): Profile => ({
     ...p,
-    summary: withMoney(p.summary),
+    summary: {
+      ...withMoney(p.summary),
+      estimate: p.summary.estimate,
+      marketValue: estimateMarketValue(p.summary.ids, scope),
+    },
     relatedOpportunities: p.relatedOpportunities.map(withMoney),
     microPatterns: p.microPatterns.map(withMoney),
     painPatterns: p.painPatterns.map(withMoney),
@@ -84,14 +99,16 @@ export function enrichMarketValue(
       entity,
       affinity: stat?.index ?? null,
       population: stat?.population ?? 0,
-      estimate: estimateMarketValue(c.ids, entity.id),
+      estimate: compactValue(estimateMarketValue(c.ids, entity.id)),
     };
   });
   const contributions = data.profile.archetypes.map((s) => ({
     entity: s.entity,
     population: s.population,
     index: s.index,
-    estimate: estimateMarketValue(canonicalIds([...c.ids, s.entity.id]), scope),
+    estimate: compactValue(
+      estimateMarketValue(canonicalIds([...c.ids, s.entity.id]), scope),
+    ),
   }));
   const money = {
     summary: estimateMarketValue(c.ids, scope),
@@ -107,14 +124,14 @@ export function enrichMarketValue(
       },
       {
         id: 'high-spend',
-        label: '참여자당 지출이 높은 유형',
+        label: '관련 인구당 지출이 높은 유형',
         metric: '연간 지출 / 명',
         items: pick((s) => s.marketValue!.annualSpendPerUnit!),
       },
       {
         id: 'money-niche',
         label: '작지만 지출이 높은 유형',
-        metric: '평균 대비 지출',
+        metric: '연간 배분액 / 명',
         items: pick(
           (s) => s.marketValue!.base! * s.marketValue!.spendDensityIndex!,
           niche,
@@ -126,7 +143,7 @@ export function enrichMarketValue(
   if (matrix) {
     const cells = matrix.cells.map((cell) => ({
       ...cell,
-      marketValue: estimateMarketValue(cell.ids, scope),
+      marketValue: compactValue(estimateMarketValue(cell.ids, scope)),
     }));
     const valid = cells.filter(
       (cell) =>

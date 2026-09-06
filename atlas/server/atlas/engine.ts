@@ -28,6 +28,8 @@ import {
 } from './source';
 import { statistics, measure, bounded } from './population';
 import { deriveMetrics } from './metrics';
+import calibrationConfig from '../../config/behavior-calibration.json';
+import { populationCalibration } from './source';
 export { measure } from './population';
 const summaries = new Map<string, Summary>(),
   profiles = new Map<string, Profile>();
@@ -48,6 +50,21 @@ export function summarize(input: string[]): Summary {
     stats.population ? n / stats.population : 0,
   );
   const fraction = stats.support >= 1000 ? 0.3 : 0.5;
+  const calibrated = ids.some((id) =>
+    populationCalibration.changedIds.includes(id),
+  );
+  const definingSignals = definitions(ids);
+  const calibrationSources = calibrated
+    ? calibrationConfig.sources.filter((s) =>
+        s.id === 'NIA-INTERNET-2024'
+          ? ['digital', 'ecommerce', 'commerce', 'beauty'].some((id) =>
+              definingSignals.has(id),
+            )
+          : ['review', 'planned_purchase'].some((id) =>
+              definingSignals.has(id),
+            ),
+      )
+    : [];
   return bounded(
     summaries,
     key,
@@ -55,13 +72,26 @@ export function summarize(input: string[]): Summary {
       entity: entityForIds(ids),
       ids,
       estimate: {
+        observedPopulation: stats.observedPopulation,
+        modelMembers: stats.modelMembers,
+        populationMethod: calibrated
+          ? 'survey_calibrated_proxy'
+          : 'narrative_projection',
+        calibrationSources,
         population: stats.population,
         support: stats.support,
         share: stats.population / source.population,
-        low: stats.population * (1 - fraction),
-        high: Math.min(source.population, stats.population * (1 + fraction)),
+        low:
+          stats.population *
+          (1 - (calibrated ? Math.max(0.4, fraction) : fraction)),
+        high: Math.min(
+          source.population,
+          stats.population *
+            (1 + (calibrated ? Math.max(0.4, fraction) : fraction)),
+        ),
         effectiveSampleSize: stats.weightSquareSum
-          ? stats.population ** 2 / stats.weightSquareSum
+          ? (stats.observedPopulation ?? stats.population) ** 2 /
+            stats.weightSquareSum
           : 0,
       },
       metrics: deriveMetrics(ids, stats.population, stats.support, rates),

@@ -1,0 +1,255 @@
+{
+  "startedAt": "2026-09-06T06:37:29.025Z",
+  "completedAt": "2026-09-06T06:37:53.396Z",
+  "base": "http://localhost:3002",
+  "success": true,
+  "steps": [
+    {
+      "label": "Population Atlas",
+      "metrics": "대한민국 20세 이상\n4,410만 명\n2024.11 인구 기준\n소비 유형\n52 개\n중복 소속 가능한 소비 메커니즘\n산업·시장\n20 개\n유형과 구분된 산업 Lens\n연간 소비액 · 확보 범위\n260조원 / 년\n온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)\n관련 성인당 연간 배분액\n590만원\n4,400만명 소비 프로필 · 실제 구매자 수 아님",
+      "moneyScope": "온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)",
+      "title": "한국 소비자 시장을 한눈에",
+      "url": "http://localhost:3002/atlas",
+      "width": 1440
+    },
+    {
+      "label": "Money Atlas",
+      "metrics": "대한민국 20세 이상\n4,410만 명\n2024.11 인구 기준\n소비 유형\n52 개\n중복 소속 가능한 소비 메커니즘\n산업·시장\n20 개\n유형과 구분된 산업 Lens\n연간 소비액 · 확보 범위\n260조원 / 년\n온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)\n관련 성인당 연간 배분액\n590만원\n4,400만명 소비 프로필 · 실제 구매자 수 아님",
+      "moneyScope": "온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)",
+      "title": "한국 소비자 시장을 한눈에",
+      "url": "http://localhost:3002/atlas?metric=marketValue&x=population&y=spendPerUnit",
+      "width": 1440
+    },
+    {
+      "label": "Premium-related actual archetype",
+      "metrics": "관련 소비자 · 서술 기반 추정\n75만 명\n52만–97만명 · 전체 1.7%\n연간 소비액 · 확보 범위\n7.3조원\n온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)\n관련 성인당 연간 배분액\n970만원\n75만명 소비 프로필\nOpportunity\n59 / 100\n탐색 후보의 상대 점수\n소비 관여\n89 / 100\n구매·이용 신호 proxy\n평균과의 차이\n6 / 100\n정의 신호를 제외한 분포\n산업 연결\n6 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)",
+      "title": "휴식·보상 프리미엄선택형",
+      "url": "http://localhost:3002/atlas/archetypes/arc_premium_recovery?metric=marketValue&spend=covered&x=population&y=spendPerUnit",
+      "width": 1440
+    },
+    {
+      "label": "Top supported industry by spend",
+      "metrics": "관련 소비자 · 서술 기반 추정\n2,000만 명\n1,400만–2,500만명 · 전체 44.3%\n연간 소비액 · 확보 범위\n8,600억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n9만원\n950만명 참여 추정\nOpportunity\n54 / 100\n탐색 후보의 상대 점수\n소비 관여\n41 / 100\n구매·이용 신호 proxy\n평균과의 차이\n0 / 100\n정의 신호를 제외한 분포\n산업 연결\n1 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "음악·공연",
+      "url": "http://localhost:3002/atlas/markets/music?trail=arc_premium_recovery&metric=marketValue&spend=music&x=population&y=spendPerUnit",
+      "width": 1440
+    },
+    {
+      "label": "Market to archetype by spend",
+      "metrics": "조사 비율로 보정한 추정 인구\n2,300만 명\n1,100만–3,400만명 · 전체 51.2%\n연간 소비액 · 확보 범위\n5,400억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n9.1만원\n590만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n64 / 100\n구매·이용 신호 proxy\n평균과의 차이\n3 / 100\n정의 신호를 제외한 분포\n산업 연결\n6 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "온라인 탐색 신중구매형",
+      "url": "http://localhost:3002/atlas/archetypes/arc_ecommerce_planned_purchase?trail=arc_premium_recovery%7Cmusic&metric=marketValue&spend=music&x=population&y=spendPerUnit",
+      "width": 1440
+    },
+    {
+      "label": "Context to Matrix",
+      "metrics": "조사 비율로 보정한 추정 인구\n2,300만 명\n1,100만–3,400만명 · 전체 51.2%\n연간 소비액 · 확보 범위\n5,400억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n9.1만원\n590만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n64 / 100\n구매·이용 신호 proxy\n평균과의 차이\n3 / 100\n정의 신호를 제외한 분포\n산업 연결\n6 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "교차분석",
+      "url": "http://localhost:3002/atlas/matrix?q=arc_ecommerce_planned_purchase&metric=marketValue&spend=music&x=population&y=spendPerUnit&row=age&col=market&trail=arc_premium_recovery%7Cmusic&lens=people",
+      "width": 1440
+    },
+    {
+      "label": "Matrix money changes cell values",
+      "metrics": "조사 비율로 보정한 추정 인구\n2,300만 명\n1,100만–3,400만명 · 전체 51.2%\n연간 소비액 · 확보 범위\n5,400억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n9.1만원\n590만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n64 / 100\n구매·이용 신호 proxy\n평균과의 차이\n3 / 100\n정의 신호를 제외한 분포\n산업 연결\n6 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "교차분석",
+      "url": "http://localhost:3002/atlas/matrix?q=arc_ecommerce_planned_purchase&metric=marketValue&spend=music&x=population&y=spendPerUnit&row=age&col=archetype&trail=arc_premium_recovery%7Cmusic&lens=people",
+      "width": 1440
+    },
+    {
+      "label": "Money cell to Segment",
+      "metrics": "조사 비율로 보정한 추정 인구\n250만 명\n120만–370만명 · 전체 5.6%\n연간 소비액 · 확보 범위\n990억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n10만원\n98만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n82 / 100\n구매·이용 신호 proxy\n평균과의 차이\n9 / 100\n정의 신호를 제외한 분포\n산업 연결\n8 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "20대 × 새 경험 온라인구매형 × 온라인 탐색 신중구매형",
+      "url": "http://localhost:3002/atlas/segments/age_20~arc_adventure_ecommerce~arc_ecommerce_planned_purchase?trail=arc_premium_recovery%7Cmusic%7Carc_ecommerce_planned_purchase&metric=marketValue&spend=music&x=population&y=spendPerUnit",
+      "width": 1440
+    },
+    {
+      "label": "Segment to Money Opportunity",
+      "metrics": "조사 비율로 보정한 추정 인구\n250만 명\n120만–370만명 · 전체 5.6%\n연간 소비액 · 확보 범위\n990억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n10만원\n98만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n82 / 100\n구매·이용 신호 proxy\n평균과의 차이\n9 / 100\n정의 신호를 제외한 분포\n산업 연결\n8 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "기회지도",
+      "url": "http://localhost:3002/atlas/opportunity?q=age_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase&metric=marketValue&spend=music&x=population&y=spendPerUnit&row=age&col=market&trail=arc_premium_recovery%7Cmusic%7Carc_ecommerce_planned_purchase&lens=people",
+      "width": 1440
+    },
+    {
+      "label": "Economic axis switching",
+      "metrics": "조사 비율로 보정한 추정 인구\n250만 명\n120만–370만명 · 전체 5.6%\n연간 소비액 · 확보 범위\n990억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n10만원\n98만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n82 / 100\n구매·이용 신호 proxy\n평균과의 차이\n9 / 100\n정의 신호를 제외한 분포\n산업 연결\n8 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "기회지도",
+      "url": "http://localhost:3002/atlas/opportunity?q=age_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase&metric=marketValue&spend=music&x=annualValue&y=distinctiveness&row=age&col=market&trail=arc_premium_recovery%7Cmusic%7Carc_ecommerce_planned_purchase&lens=people",
+      "width": 1440
+    },
+    {
+      "label": "Money axes and comparison survive reload",
+      "metrics": "조사 비율로 보정한 추정 인구\n250만 명\n120만–370만명 · 전체 5.6%\n연간 소비액 · 확보 범위\n990억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n10만원\n98만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n82 / 100\n구매·이용 신호 proxy\n평균과의 차이\n9 / 100\n정의 신호를 제외한 분포\n산업 연결\n8 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "기회지도",
+      "url": "http://localhost:3002/atlas/opportunity?q=age_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase&metric=marketValue&spend=music&x=annualValue&y=distinctiveness&row=age&col=market&trail=arc_premium_recovery%7Cmusic%7Carc_ecommerce_planned_purchase&lens=people&compare=age_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase%7Cage_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase%7Ebeauty",
+      "width": 1440
+    },
+    {
+      "label": "Relationship keeps monetary context",
+      "metrics": "조사 비율로 보정한 추정 인구\n250만 명\n120만–370만명 · 전체 5.6%\n연간 소비액 · 확보 범위\n990억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n10만원\n98만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n82 / 100\n구매·이용 신호 proxy\n평균과의 차이\n9 / 100\n정의 신호를 제외한 분포\n산업 연결\n8 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "관계 탐색",
+      "url": "http://localhost:3002/atlas/relationship?q=age_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase&metric=marketValue&spend=music&x=annualValue&y=distinctiveness&row=age&col=market&trail=arc_premium_recovery%7Cmusic%7Carc_ecommerce_planned_purchase&lens=people&compare=age_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase%7Cage_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase%7Ebeauty",
+      "width": 1440
+    },
+    {
+      "label": "Search includes population and monetary scope",
+      "metrics": "조사 비율로 보정한 추정 인구\n250만 명\n120만–370만명 · 전체 5.6%\n연간 소비액 · 확보 범위\n990억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n10만원\n98만명 참여 추정\nOpportunity\n69 / 100\n탐색 후보의 상대 점수\n소비 관여\n82 / 100\n구매·이용 신호 proxy\n평균과의 차이\n9 / 100\n정의 신호를 제외한 분포\n산업 연결\n8 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "관계 탐색",
+      "url": "http://localhost:3002/atlas/relationship?q=age_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase&metric=marketValue&spend=music&x=annualValue&y=distinctiveness&row=age&col=market&trail=arc_premium_recovery%7Cmusic%7Carc_ecommerce_planned_purchase&lens=people&compare=age_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase%7Cage_20%7Earc_adventure_ecommerce%7Earc_ecommerce_planned_purchase%7Ebeauty",
+      "width": 1440
+    },
+    {
+      "label": "Industry money map states partial coverage",
+      "metrics": "대한민국 20세 이상\n4,410만 명\n2024.11 인구 기준\n소비 유형\n52 개\n중복 소속 가능한 소비 메커니즘\n산업·시장\n20 개\n유형과 구분된 산업 Lens\n연간 소비액 · 확보 범위\n260조원 / 년\n온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)\n관련 성인당 연간 배분액\n590만원\n4,400만명 소비 프로필 · 실제 구매자 수 아님",
+      "moneyScope": "온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)",
+      "title": "한국 소비자 시장을 한눈에",
+      "url": "http://localhost:3002/atlas?lens=markets&metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit pet",
+      "metrics": "관련 소비자 · 서술 기반 추정\n180만 명\n130만–240만명 · 전체 4.1%\n연간 소비액 · 확보 범위\n3조원\n온라인 반려용품 · 진료·오프라인 제외 · 2025\n관련 성인당 연간 배분액\n160만원\n180만명 소비 프로필\nOpportunity\n51 / 100\n탐색 후보의 상대 점수\n소비 관여\n57 / 100\n구매·이용 신호 proxy\n평균과의 차이\n1 / 100\n정의 신호를 제외한 분포\n산업 연결\n2 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 반려용품 · 진료·오프라인 제외 · 2025",
+      "title": "반려동물",
+      "url": "http://localhost:3002/atlas/markets/pet?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit travel",
+      "metrics": "관련 소비자 · 서술 기반 추정\n4,100만 명\n2,900만–4,400만명 · 전체 93.7%\n연간 소비액 · 확보 범위\n34조원\n온라인 여행·교통서비스 · 2025\n관련 성인당 연간 배분액\n82만원\n4,100만명 소비 프로필\nOpportunity\n55 / 100\n탐색 후보의 상대 점수\n소비 관여\n51 / 100\n구매·이용 신호 proxy\n평균과의 차이\n0 / 100\n정의 신호를 제외한 분포\n산업 연결\n0 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 여행·교통서비스 · 2025",
+      "title": "여행·로컬 경험",
+      "url": "http://localhost:3002/atlas/markets/travel?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit education",
+      "metrics": "관련 소비자 · 서술 기반 추정\n260만 명\n180만–330만명 · 전체 5.8%\n연간 소비액 · 확보 범위\n4.7조원\n온라인 서적·문구 · 교육서비스 제외 · 2025\n관련 성인당 연간 배분액\n180만원\n260만명 소비 프로필\nOpportunity\n56 / 100\n탐색 후보의 상대 점수\n소비 관여\n56 / 100\n구매·이용 신호 proxy\n평균과의 차이\n3 / 100\n정의 신호를 제외한 분포\n산업 연결\n4 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 서적·문구 · 교육서비스 제외 · 2025",
+      "title": "배움·자기계발",
+      "url": "http://localhost:3002/atlas/markets/education?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit beauty",
+      "metrics": "조사 비율로 보정한 추정 인구\n2,900만 명\n1,700만–4,100만명 · 전체 65.6%\n연간 소비액 · 확보 범위\n46조원\n온라인 의류·잡화·화장품 · 2025\n관련 성인당 연간 배분액\n160만원\n2,900만명 소비 프로필\nOpportunity\n65 / 100\n탐색 후보의 상대 점수\n소비 관여\n61 / 100\n구매·이용 신호 proxy\n평균과의 차이\n6 / 100\n정의 신호를 제외한 분포\n산업 연결\n4 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 의류·잡화·화장품 · 2025",
+      "title": "뷰티·패션",
+      "url": "http://localhost:3002/atlas/markets/beauty?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit wellness",
+      "metrics": "관련 소비자 · 서술 기반 추정\n2,700만 명\n1,900만–3,500만명 · 전체 61.1%\n연간 소비액 · 확보 범위\n5.4조원\n건강·휴식 중 온라인 스포츠·레저용품 · 2025\n관련 성인당 연간 배분액\n36만원\n1,500만명 소비 프로필\nOpportunity\n57 / 100\n탐색 후보의 상대 점수\n소비 관여\n52 / 100\n구매·이용 신호 proxy\n평균과의 차이\n0 / 100\n정의 신호를 제외한 분포\n산업 연결\n1 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "건강·휴식 중 온라인 스포츠·레저용품 · 2025",
+      "title": "건강·휴식",
+      "url": "http://localhost:3002/atlas/markets/wellness?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit food",
+      "metrics": "관련 소비자 · 서술 기반 추정\n3,500만 명\n2,500만–4,400만명 · 전체 79.6%\n연간 소비액 · 확보 범위\n41조원\n온라인 음식서비스 · 외식 중 배달·포장 범위 · 2025\n관련 성인당 연간 배분액\n230만원\n1,800만명 소비 프로필\nOpportunity\n57 / 100\n탐색 후보의 상대 점수\n소비 관여\n52 / 100\n구매·이용 신호 proxy\n평균과의 차이\n0 / 100\n정의 신호를 제외한 분포\n산업 연결\n1 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 음식서비스 · 외식 중 배달·포장 범위 · 2025",
+      "title": "외식·미식",
+      "url": "http://localhost:3002/atlas/markets/food?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit content",
+      "metrics": "관련 소비자 · 서술 기반 추정\n2,300만 명\n1,600만–2,900만명 · 전체 51.3%\n연간 소비액 · 확보 범위\n—\n지출 기준 미확보\n참여자당 연간 지출\n—\n참여 인구 산정 기준 필요\nOpportunity\n56 / 100\n탐색 후보의 상대 점수\n소비 관여\n64 / 100\n구매·이용 신호 proxy\n평균과의 차이\n1 / 100\n정의 신호를 제외한 분포\n산업 연결\n1 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "영상·콘텐츠",
+      "title": "영상·콘텐츠",
+      "url": "http://localhost:3002/atlas/markets/content?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit finance",
+      "metrics": "관련 소비자 · 서술 기반 추정\n47만 명\n33만–61만명 · 전체 1.1%\n연간 소비액 · 확보 범위\n—\n지출 기준 미확보\n참여자당 연간 지출\n—\n참여 인구 산정 기준 필요\nOpportunity\n42 / 100\n탐색 후보의 상대 점수\n소비 관여\n54 / 100\n구매·이용 신호 proxy\n평균과의 차이\n1 / 100\n정의 신호를 제외한 분포\n산업 연결\n2 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "개인 재테크 관심",
+      "title": "개인 재테크 관심",
+      "url": "http://localhost:3002/atlas/markets/finance?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit home",
+      "metrics": "관련 소비자 · 서술 기반 추정\n680만 명\n480만–890만명 · 전체 15.5%\n연간 소비액 · 확보 범위\n25조원\n온라인 가구·생활용품 · 2025\n관련 성인당 연간 배분액\n370만원\n680만명 소비 프로필\nOpportunity\n67 / 100\n탐색 후보의 상대 점수\n소비 관여\n63 / 100\n구매·이용 신호 proxy\n평균과의 차이\n2 / 100\n정의 신호를 제외한 분포\n산업 연결\n5 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 가구·생활용품 · 2025",
+      "title": "집·인테리어",
+      "url": "http://localhost:3002/atlas/markets/home?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Industry audit music",
+      "metrics": "관련 소비자 · 서술 기반 추정\n2,000만 명\n1,400만–2,500만명 · 전체 44.3%\n연간 소비액 · 확보 범위\n8,600억원\n음악 스트리밍·다운로드 · 20–69세\n참여자당 연간 지출\n9만원\n950만명 참여 추정\nOpportunity\n54 / 100\n탐색 후보의 상대 점수\n소비 관여\n41 / 100\n구매·이용 신호 proxy\n평균과의 차이\n0 / 100\n정의 신호를 제외한 분포\n산업 연결\n1 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "음악 스트리밍·다운로드 · 20–69세",
+      "title": "음악·공연",
+      "url": "http://localhost:3002/atlas/markets/music?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Home dashboard includes dense evidence modules",
+      "metrics": "관련 소비자 · 서술 기반 추정\n680만 명\n480만–890만명 · 전체 15.5%\n연간 소비액 · 확보 범위\n25조원\n온라인 가구·생활용품 · 2025\n관련 성인당 연간 배분액\n370만원\n680만명 소비 프로필\nOpportunity\n67 / 100\n탐색 후보의 상대 점수\n소비 관여\n63 / 100\n구매·이용 신호 proxy\n평균과의 차이\n2 / 100\n정의 신호를 제외한 분포\n산업 연결\n5 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 가구·생활용품 · 2025",
+      "title": "집·인테리어",
+      "url": "http://localhost:3002/atlas/markets/home?metric=marketValue",
+      "width": 1440
+    },
+    {
+      "label": "Home to review type preserves home condition",
+      "metrics": "조사 비율로 보정한 추정 인구\n320만 명\n160만–490만명 · 전체 7.4%\n연간 소비액 · 확보 범위\n12조원\n온라인 가구·생활용품 · 2025\n관련 성인당 연간 배분액\n370만원\n320만명 소비 프로필\nOpportunity\n63 / 100\n탐색 후보의 상대 점수\n소비 관여\n69 / 100\n구매·이용 신호 proxy\n평균과의 차이\n3 / 100\n정의 신호를 제외한 분포\n산업 연결\n5 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 가구·생활용품 · 2025",
+      "title": "후기 확인 신중구매형 × 집·인테리어",
+      "url": "http://localhost:3002/atlas/segments/arc_planned_purchase_review~home?trail=home&metric=marketValue&spend=home&x=population&y=spendPerUnit",
+      "width": 1440
+    },
+    {
+      "label": "Nested online group population equals clicked row",
+      "metrics": "조사 비율로 보정한 추정 인구\n290만 명\n150만–440만명 · 전체 6.6%\n연간 소비액 · 확보 범위\n11조원\n온라인 가구·생활용품 · 2025\n관련 성인당 연간 배분액\n370만원\n290만명 소비 프로필\nOpportunity\n65 / 100\n탐색 후보의 상대 점수\n소비 관여\n72 / 100\n구매·이용 신호 proxy\n평균과의 차이\n3 / 100\n정의 신호를 제외한 분포\n산업 연결\n6 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 가구·생활용품 · 2025",
+      "title": "온라인 탐색 신중구매형 × 후기 확인 신중구매형 × 집·인테리어",
+      "url": "http://localhost:3002/atlas/segments/arc_ecommerce_planned_purchase~arc_planned_purchase_review~home?trail=home%7Carc_planned_purchase_review%7Ehome&metric=marketValue&spend=home&x=population&y=spendPerUnit",
+      "width": 1440
+    },
+    {
+      "label": "Digital delivery uses food service consumer transaction baseline",
+      "metrics": "조사 비율로 보정한 추정 인구\n1,700만 명\n1,000만–2,400만명 · 전체 39.3%\n연간 소비액 · 확보 범위\n40조원\n온라인 음식서비스 · 배달·포장 주문 · 2025\n관련 성인당 연간 배분액\n230만원\n1,700만명 소비 프로필\nOpportunity\n58 / 100\n탐색 후보의 상대 점수\n소비 관여\n53 / 100\n구매·이용 신호 proxy\n평균과의 차이\n0 / 100\n정의 신호를 제외한 분포\n산업 연결\n1 개\n평균보다 연결 비중이 높은 산업",
+      "moneyScope": "온라인 음식서비스 · 배달·포장 주문 · 2025",
+      "title": "디지털 활용 배달주문형",
+      "url": "http://localhost:3002/atlas/archetypes/arc_delivery_order_digital?metric=marketValue&spend=delivery",
+      "width": 1440
+    },
+    {
+      "label": "Mobile money Atlas",
+      "metrics": "대한민국 20세 이상\n4,410만 명\n연간 소비액 · 확보 범위\n260조원 / 년\n관련 성인당 연간 배분액\n590만원",
+      "moneyScope": "온라인 상품·서비스 21개 항목 · 2025 + 디지털 음악(2024)",
+      "title": "한국 소비자 시장을 한눈에",
+      "url": "http://localhost:3002/atlas?metric=marketValue",
+      "width": 390
+    }
+  ],
+  "browserErrors": [],
+  "lint": "passed",
+  "typecheck": "passed",
+  "atlasTests": {
+    "passed": 39,
+    "failed": 0
+  },
+  "productionBuild": "passed",
+  "legacyPython": {
+    "passed": 45,
+    "skipped": 12,
+    "failed": 15,
+    "errors": 10,
+    "reason": "Original data/raw inputs and data/processed/market_engine.duckdb absent from this checkout; original Python code unchanged."
+  }
+}

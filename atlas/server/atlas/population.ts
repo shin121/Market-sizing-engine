@@ -1,14 +1,24 @@
 import { Buffer } from 'node:buffer';
 import { gunzipSync } from 'node:zlib';
 import indexJson from '../data/atlas-index.json';
+import calibratedIndex from '../data/atlas-calibrated-index.json';
 import { conditionKey, canonicalIds } from '../../lib/atlas';
 import { source, cubes, features, assertIds, type Cube } from './source';
-const strings: Record<string, string> = indexJson;
+const strings: Record<string, string> = { ...indexJson, ...calibratedIndex };
+const observedStrings: Record<string, string> = indexJson;
+const observedBitmaps = new Map<string, Uint32Array>();
+const observedMasks = new Map<string, Uint32Array>();
 const bitmaps = new Map<string, Uint32Array>();
 const masks = new Map<string, Uint32Array>();
 const counts = new Map<
   string,
-  { population: number; support: number; weightSquareSum: number }
+  {
+    population: number;
+    support: number;
+    weightSquareSum: number;
+    observedPopulation: number;
+    modelMembers: number;
+  }
 >();
 const statsCache = new Map<string, Cube>();
 export function bounded<T>(
@@ -21,10 +31,11 @@ export function bounded<T>(
   cache.set(key, value);
   return value;
 }
-function bitmap(id: string) {
-  const cached = bitmaps.get(id);
+function bitmap(id: string, observed = false) {
+  const cache = observed ? observedBitmaps : bitmaps;
+  const cached = cache.get(id);
   if (cached) return cached;
-  const text = strings[id];
+  const text = (observed ? observedStrings : strings)[id];
   if (!text) throw new Error('조건 인덱스가 없습니다: ' + id);
   const bytes = gunzipSync(Buffer.from(text, 'base64'));
   const result = new Uint32Array(
@@ -32,19 +43,20 @@ function bitmap(id: string) {
     bytes.byteOffset,
     bytes.byteLength / 4,
   );
-  bitmaps.set(id, result);
+  cache.set(id, result);
   return result;
 }
-function intersect(ids: string[]) {
+function intersect(ids: string[], observed = false) {
   const key = conditionKey(ids);
-  const cached = masks.get(key);
+  const cache = observed ? observedMasks : masks;
+  const cached = cache.get(key);
   if (cached) return cached;
-  const result = new Uint32Array(bitmap('universe'));
+  const result = new Uint32Array(bitmap('universe', observed));
   for (const id of canonicalIds(ids)) {
-    const b = bitmap(id);
+    const b = bitmap(id, observed);
     for (let i = 0; i < result.length; i++) result[i] &= b[i];
   }
-  return bounded(masks, key, result, 32);
+  return bounded(cache, key, result, 32);
 }
 function popcount(x: number) {
   x -= (x >>> 1) & 0x55555555;
@@ -69,7 +81,35 @@ export function measure(ids: string[]) {
   const key = conditionKey(ids);
   const cached = counts.get(key);
   if (cached) return cached;
-  return bounded(counts, key, count(intersect(ids)), 4096);
+  const model = count(intersect(ids)),
+    observed = measureObserved(ids);
+  return bounded(
+    counts,
+    key,
+    {
+      ...model,
+      support: observed.support,
+      observedPopulation: observed.population,
+      weightSquareSum: observed.weightSquareSum,
+      modelMembers: model.support,
+    },
+    4096,
+  );
+}
+export function measureObserved(ids: string[]) {
+  assertIds(ids);
+  return count(intersect(ids, true));
+}
+// A union is counted once; overlapping category audiences cannot be added.
+export function measureUnion(ids: string[], alternatives: string[]) {
+  assertIds(ids);
+  assertIds(alternatives, 100);
+  const union = new Uint32Array(source.wordLength);
+  for (const id of new Set(alternatives)) {
+    const bits = bitmap(id);
+    for (let i = 0; i < union.length; i++) union[i] |= bits[i];
+  }
+  return count(intersect(ids), union);
 }
 export function statistics(ids: string[]): Cube {
   assertIds(ids);
@@ -85,12 +125,13 @@ export function statistics(ids: string[]): Cube {
   )
     return artifact;
   const mask = intersect(ids),
-    base = count(mask),
+    observedMask = intersect(ids, true),
+    base = measure(ids),
     out: Cube = { ...base, counts: [], supports: [] };
   for (const f of features) {
     const joint = count(mask, bitmap(f.id));
     out.counts.push(joint.population);
-    out.supports.push(joint.support);
+    out.supports.push(count(observedMask, bitmap(f.id, true)).support);
   }
   return bounded(statsCache, key, out, 96);
 }
@@ -110,14 +151,17 @@ export function linearMoments(
   const cached = momentCache.get(key);
   if (cached) return cached;
   const mask = intersect(ids),
+    observedMask = intersect(ids, true),
     signals = entries.map(([id, coefficient]) => ({
       bits: bitmap(id),
       coefficient,
     }));
   const result = source.wordRanges.map((r) => {
     let n = 0,
+      observedSupport = 0,
       signalCount = 0;
     for (let i = r.start; i < r.end; i++) {
+      observedSupport += popcount(observedMask[i]);
       const bits = mask[i];
       if (!bits) continue;
       n += popcount(bits);
@@ -126,7 +170,7 @@ export function linearMoments(
     }
     return {
       population: n * r.weight,
-      support: n,
+      support: observedSupport,
       weightedSignalSum: (n + signalCount) * r.weight,
     };
   });

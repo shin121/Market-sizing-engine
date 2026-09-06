@@ -183,7 +183,7 @@ export function AgeChart({
             <em style={{ bottom: (s.baseShare / max) * 90 + '%' }} />
           </span>
           <span>{s.entity.label}</span>
-          <small>{indexLabel(s.index)}</small>
+          <small>{shortPopulation(s.population)}명</small>
         </JointLink>
       ))}
     </div>
@@ -210,7 +210,7 @@ export function RegionChart({
             <em style={{ width: (s.share / max) * 100 + '%' }} />
           </i>
           <b>{pct(s.share)}</b>
-          <small>{indexLabel(s.index)}</small>
+          <small>{shortPopulation(s.population)}명</small>
         </JointLink>
       ))}
     </div>

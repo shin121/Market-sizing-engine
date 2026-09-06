@@ -12,7 +12,6 @@ import {
   population,
   shortPopulation,
   pct,
-  indexLabel,
   type AtlasEntity,
   type AtlasContext,
   type Summary,
@@ -130,7 +129,21 @@ export function StatList({
       {list.map((s, i) => (
         <div className="stat-row" key={s.entity.id}>
           <span className="rank">{String(i + 1).padStart(2, '0')}</span>
-          <Entry entity={s.entity} context={context} className="row-label">
+          <Entry
+            entity={
+              context.ids.length &&
+              join &&
+              !s.defining &&
+              context.ids.length < 8
+                ? segmentEntity(
+                    canonicalIds([...context.ids, s.entity.id]),
+                    s.entity.label,
+                  )
+                : s.entity
+            }
+            context={context}
+            className="row-label"
+          >
             <span>{s.entity.label}</span>
             <span className="micro-track">
               <i style={{ width: Math.min(100, s.share * 100) + '%' }} />
@@ -142,7 +155,7 @@ export function StatList({
               className={s.direction === 'under' ? 'index-under' : 'index-over'}
               title={`전체 ${pct(s.baseShare)} → 현재 ${pct(s.share)} · 원본 ${s.support.toLocaleString()}건`}
             >
-              {indexLabel(s.index)}
+              {shortPopulation(s.population)}명
             </strong>
           )}
           {join &&
@@ -219,7 +232,13 @@ export function PopulationStrip({
   return (
     <div className="population-strip with-money">
       <div className="metric-main">
-        <span>{global ? '대한민국 20세 이상' : '관련 소비자 · 추정 규모'}</span>
+        <span>
+          {global
+            ? '대한민국 20세 이상'
+            : e.populationMethod === 'survey_calibrated_proxy'
+              ? '조사 비율로 보정한 추정 인구'
+              : '관련 소비자 · 서술 기반 추정'}
+        </span>
         <strong>
           {shortPopulation(e.population)}
           <small> 명</small>
@@ -242,7 +261,9 @@ export function PopulationStrip({
             </small>
           </div>
           <div>
-            <span>참여자당 연간 지출</span>
+            <span>
+              {summary.marketValue.denominatorLabel ?? '참여자당 연간 지출'}
+            </span>
             <strong>
               {formatKRW(summary.marketValue.annualSpendPerUnit, false)}
             </strong>
@@ -250,7 +271,10 @@ export function PopulationStrip({
               {summary.marketValue.relevantPopulation === null
                 ? '참여 인구 산정 기준 필요'
                 : shortPopulation(summary.marketValue.relevantPopulation) +
-                  '명 참여 추정'}
+                  (summary.marketValue.denominatorBasis ===
+                  'adult_profile_allocation'
+                    ? '명 소비 프로필'
+                    : '명 참여 추정')}
             </small>
           </div>
         </>
@@ -285,7 +309,7 @@ export function PopulationStrip({
           {m.crossIndustryBreadth}
           <small> 개</small>
         </strong>
-        <small>관심 Index 1.15× 이상</small>
+        <small>평균보다 연결 비중이 높은 산업</small>
       </div>
     </div>
   );
@@ -310,8 +334,13 @@ export function Basis({ profile }: { profile: Profile }) {
           {shortPopulation(s.estimate.low)}–{shortPopulation(s.estimate.high)}명
         </span>
         <small>
-          민감도 ±{s.estimate.support >= 1000 ? '30' : '50'}% · 통계적 신뢰구간
-          아님
+          민감도 ±
+          {s.estimate.support >= 1000
+            ? s.estimate.populationMethod === 'survey_calibrated_proxy'
+              ? '40'
+              : '30'
+            : '50'}
+          % · 통계적 신뢰구간 아님
         </small>
       </div>
       <div>
@@ -319,7 +348,7 @@ export function Basis({ profile }: { profile: Profile }) {
         <span>
           {s.metrics.confidence} · 점수 입력 {s.metrics.completeness}%
         </span>
-        <small>실제 지출·소득·시장 성장·경쟁 데이터 없음</small>
+        <small>개별 지출·소득·경쟁은 미관측 · 외부 소비 기준은 별도 연결</small>
       </div>
       <div>
         <b>출처</b>
@@ -350,7 +379,7 @@ export function Definitions({
   const definitions = profile.signals.filter((s) => s.defining);
   return (
     <div className="definition-line">
-      <span>유형을 정하는 관측 신호</span>
+      <span>유형을 정하는 소비 신호</span>
       {definitions.map((s) => (
         <Entry key={s.entity.id} entity={s.entity} context={context}>
           {s.entity.label}

@@ -1,5 +1,7 @@
 # Commercial Archetype Top 30 — engine sanity check
 
+> 이 문서의 수치·지출 범위는 v0.3 구현 기록입니다. v0.4 현재 산식·외부 인구 보정·14/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
+
 Sizes overlap. All entries are observed signal bundles, not exclusive classes. Market/demographic features are excluded from definitions.
 
 | 유형 | 인구 | 전체 비중 | 비정의 신호 Index | 상위 산업 Index | Distinctiveness | 소비강도 | 산업 수 |

@@ -7,6 +7,7 @@ const cli =
   '/Users/woocheolshin/.npm/_npx/6de2aa2fded2970c/node_modules/agent-browser/bin/agent-browser.js';
 const out = path.resolve('work/market-value'),
   base = process.env.ATLAS_BROWSER_BASE ?? 'http://localhost:3001';
+fs.mkdirSync(out, { recursive: true });
 const report = { startedAt: new Date().toISOString(), steps: [] };
 const bc = (...args) => {
   const r = spawnSync(
@@ -90,13 +91,15 @@ try {
   );
   shot('qa-money-archetype');
   bc('select', 'select[aria-label="산업 지출 정렬"]', 'value');
-  clickHref(observed('[data-money-market="music"] td:first-child a'));
+  clickHref(
+    observed('[data-money-market="music"] td:first-child small:last-child a'),
+  );
   record('Top supported industry by spend');
   assert.ok(ev('document.querySelector("h1").innerText').includes('음악'));
   bc('select', 'select[aria-label="유형 지출 정렬"]', 'value');
   shot('qa-money-market');
   const typeLink = ev(
-    '[...document.querySelectorAll(".money-analysis table")].at(1)?.querySelector("tbody a")?.getAttribute("href")',
+    '[...document.querySelectorAll(".money-analysis table")].at(1)?.querySelector("tbody td:first-child small a")?.getAttribute("href")',
   );
   clickHref(typeLink);
   record('Market to archetype by spend');
@@ -192,7 +195,7 @@ try {
   bc('press', 'Escape');
   open('/atlas?lens=markets&metric=marketValue');
   record('Industry money map states partial coverage');
-  assert.equal(ev('document.querySelectorAll(".map-tile").length'), 1);
+  assert.equal(ev('document.querySelectorAll(".map-tile").length'), 14);
   shot('qa-money-industries');
   for (const id of [
     'pet',
@@ -209,11 +212,80 @@ try {
     open('/atlas/markets/' + id + '?metric=marketValue');
     const s = record('Industry audit ' + id);
     const amount = ev('document.querySelector(".money-main strong").innerText');
-    assert.equal(amount === '—', id !== 'music');
+    assert.equal(amount === '—', ['content', 'finance'].includes(id));
     assert.ok(s.metrics.includes('명'));
   }
   open('/atlas/markets/pet?metric=marketValue');
-  shot('qa-money-missing-household');
+  shot('qa-money-pet-allocation');
+  open('/atlas/markets/home?metric=marketValue');
+  record('Home dashboard includes dense evidence modules');
+  assert.equal(
+    ev(
+      'document.querySelectorAll(".economic-overview .analysis-module").length',
+    ),
+    4,
+  );
+  const reviewLink = observed(
+    '.stat-list .row-label[href*="arc_planned_purchase_review"]',
+  );
+  clickHref(reviewLink);
+  record('Home to review type preserves home condition');
+  assert.ok(ev('location.pathname').includes('home'));
+  assert.ok(
+    ev(
+      'document.querySelector(".population-calibration-note").innerText',
+    ).includes('서술 일치'),
+  );
+  assert.ok(
+    ev('document.querySelector(".population-strip").innerText').includes(
+      '320만',
+    ),
+  );
+  shot('qa-revision-home-review');
+  const onlineLink = observed(
+    '.economic-overview .row-label[href*="arc_ecommerce_planned_purchase"]',
+  );
+  assert.ok(onlineLink);
+  const onlinePopulation = ev(
+    `document.querySelector('.economic-overview .row-label[href*="arc_ecommerce_planned_purchase"]').parentElement.querySelector('strong').innerText`,
+  );
+  clickHref(onlineLink);
+  record('Nested online group population equals clicked row');
+  assert.ok(
+    ev('document.querySelector(".population-strip").innerText')
+      .replace(/\s/g, '')
+      .includes(onlinePopulation.replace(/\s/g, '')),
+  );
+  assert.equal(
+    ev(
+      'document.querySelectorAll(".economic-overview .analysis-module").length',
+    ),
+    4,
+  );
+  assert.ok(
+    ev('document.querySelectorAll(".evidence-table tbody tr").length') >= 4,
+  );
+  shot('qa-revision-nested-online');
+  open(
+    '/atlas/archetypes/arc_delivery_order_digital?metric=marketValue&spend=delivery',
+  );
+  record('Digital delivery uses food service consumer transaction baseline');
+  assert.ok(
+    ev('document.querySelector(".money-main strong").innerText').includes(
+      '40조',
+    ),
+  );
+  assert.ok(
+    ev('document.querySelector(".population-strip").innerText').includes(
+      '관련 성인당 연간 배분액',
+    ),
+  );
+  assert.ok(
+    ev('document.querySelector(".baseline-trend").innerText').includes(
+      '현재 세그먼트 성장률이 아닙니다',
+    ),
+  );
+  shot('qa-revision-delivery');
   open('/atlas?metric=marketValue');
   bc('set', 'viewport', '390', '844');
   record('Mobile money Atlas');

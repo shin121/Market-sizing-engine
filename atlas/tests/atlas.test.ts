@@ -13,20 +13,28 @@ import {
   searchAtlas,
   getSanitySummary,
 } from '../server/atlas/engine';
-import { source, cubes, types, features } from '../server/atlas/source';
-import { statistics } from '../server/atlas/population';
+import {
+  source,
+  observedSource,
+  populationCalibration,
+  cubes,
+  types,
+  features,
+} from '../server/atlas/source';
+import { statistics, measureObserved } from '../server/atlas/population';
 import { deriveMetrics } from '../server/atlas/metrics';
 import oracle from '../data/atlas-oracle.json';
 const close = (a: number, b: number) =>
   assert.ok(Math.abs(a - b) < 0.02, `${a} ≠ ${b}`);
 void test('independent SQL oracle: weighted joints, all memberships, calibration and zeros', () => {
   for (const row of oracle.cases) {
-    const actual = measure(row.ids);
+    const actual = measureObserved(row.ids);
     assert.equal(actual.support, row.support);
     close(actual.population, row.population);
     close(actual.weightSquareSum, row.weightSquareSum);
     const st = statistics(row.ids);
-    close(st.population, row.population);
+    if (!row.ids.some((id) => populationCalibration.changedIds.includes(id)))
+      close(st.population, row.population);
     assert.equal(st.support, row.support);
   }
 });
@@ -54,20 +62,33 @@ void test('artifact fingerprint prevents stale cube reuse', () => {
   const digest = createHash('sha256')
     .update(fs.readFileSync('server/data/atlas-index.json'))
     .digest('hex');
-  assert.equal(source.dataFingerprint, digest);
-  assert.equal(cubes.indexDigest, digest);
+  assert.equal(observedSource.dataFingerprint, digest);
+  assert.notEqual(source.dataFingerprint, digest);
+  assert.equal(
+    source.dataFingerprint,
+    createHash('sha256')
+      .update(fs.readFileSync('server/data/atlas-calibrated-index.json'))
+      .digest('hex'),
+  );
+  assert.equal(cubes.indexDigest, source.dataFingerprint);
   assert.deepEqual(
     cubes.featureKeys,
     features.map((f) => f.id),
   );
 });
-void test('central metric parity with extraction and independent defining-signal exclusion', () => {
+void test('central metric parity with calibrated offline rates and independent defining-signal exclusion', () => {
   for (const a of source.archetypes) {
     const m = summarize([a.id]).metrics;
-    close(m.distinctiveness, a.metrics.distinctiveness);
-    assert.equal(m.consumptionIntensity, a.metrics.consumptionIntensity);
-    assert.equal(m.crossIndustryBreadth, a.metrics.crossIndustryBreadth);
-    assert.equal(m.smallStrongScore, a.metrics.smallStrongScore);
+    const modeled = deriveMetrics(
+      [a.id],
+      a.populationEstimate,
+      a.support,
+      a.signalRates,
+    );
+    close(m.distinctiveness, modeled.distinctiveness);
+    assert.equal(m.consumptionIntensity, modeled.consumptionIntensity);
+    assert.equal(m.crossIndustryBreadth, modeled.crossIndustryBreadth);
+    assert.equal(m.smallStrongScore, modeled.smallStrongScore);
     const rates = features.map((f) => f.share);
     for (const id of a.definition)
       rates[features.findIndex((f) => f.id === id)] = 1;

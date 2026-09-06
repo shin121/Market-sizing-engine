@@ -6,13 +6,24 @@ import type {
   PopulationUnit,
 } from '../../lib/market-value';
 import { canonicalIds, conditionKey } from '../../lib/atlas';
-import { measure, linearMoments, bounded } from './population';
+import { measure, measureUnion, linearMoments, bounded } from './population';
+import {
+  externalPool,
+  externalScopes,
+  externalSource,
+  externalAllocation,
+} from './external-spend';
 import { markets, registry, source } from './source';
 import { annualFactor } from './spend-methods';
 const cache = new Map<string, MarketValueEstimate>();
 const anchors = config.anchors;
 const totalMarkets = markets.length;
-export const availableSpendMarkets = anchors.map((a) => a.marketId);
+export const availableSpendMarkets = [
+  ...new Set([
+    ...anchors.map((a) => a.marketId),
+    ...Object.keys(externalScopes),
+  ]),
+];
 export function inferSpendScope(ids: string[]) {
   return ids.find((id) => registry.get(id)?.kind === 'market') ?? 'covered';
 }
@@ -124,6 +135,119 @@ export function estimateMarketValue(
   if (scope !== 'covered' && registry.get(scope)?.kind !== 'market')
     throw Error('Invalid monetary scope');
   const empty = blank(ids, scope);
+  const external = externalPool(ids, scope);
+  if (external) {
+    const music =
+      scope === 'covered' ? estimateMarketValue(ids, 'music') : null;
+    const allMusic =
+      scope === 'covered' ? estimateMarketValue([], 'music') : null;
+    const relevantPopulation =
+      scope === 'covered'
+        ? measureUnion(ids, [...external.allocationMarkets, 'music']).population
+        : external.relevantPopulation;
+    const baselinePopulation =
+      scope === 'covered'
+        ? measureUnion([], [...external.allocationMarkets, 'music']).population
+        : external.baselinePopulation;
+    const base = external.base + (music?.base ?? 0);
+    const national = external.national + (allMusic?.base ?? 0);
+    const low =
+      external.base * externalAllocation.lowMultiplier + (music?.low ?? 0);
+    const high =
+      external.base * externalAllocation.highMultiplier + (music?.high ?? 0);
+    const density = relevantPopulation ? base / relevantPopulation : null;
+    const result: MarketValueEstimate = {
+      ...empty,
+      base,
+      annualValue: base,
+      low,
+      high,
+      populationUnit: 'person',
+      denominatorBasis: 'adult_profile_allocation',
+      denominatorLabel: '관련 성인당 연간 배분액',
+      scopeLabel: external.scopeLabel + (music ? ' + 디지털 음악(2024)' : ''),
+      categoryPopulation: relevantPopulation,
+      relevantPopulation,
+      annualSpendPerUnit: density,
+      spendPerUnitRange:
+        density !== null
+          ? {
+              low: low / relevantPopulation,
+              base: density,
+              high: high / relevantPopulation,
+            }
+          : null,
+      participationRate: null,
+      participationIndex: null,
+      spendIntensityIndex: null,
+      spendDensity: density,
+      spendDensityIndex:
+        density !== null && baselinePopulation
+          ? density / (national / baselinePopulation)
+          : null,
+      shareOfSpendPool: national ? base / national : null,
+      method: 'calibrated_baseline',
+      confidence: 'Low',
+      status: 'estimated',
+      completeness: Math.round(
+        100 *
+          (scope === 'covered'
+            ? availableSpendMarkets.length / totalMarkets
+            : 1),
+      ),
+      componentIds: [
+        ...external.breakdown.map((v) => v.id),
+        ...(music?.componentIds ?? []),
+      ],
+      componentBreakdown: [
+        ...external.breakdown,
+        ...(music?.base != null
+          ? [
+              {
+                id: 'digital-music-2024',
+                label: '디지털 음악 · 2024',
+                annualValue: music.base,
+                nationalValue: allMusic!.base!,
+                sourceId:
+                  music.sourceBasis.find((s) => s.id !== source.version)?.id ??
+                  'music-2024',
+              },
+            ]
+          : []),
+      ],
+      nationalTrend: external.nationalTrend,
+      additiveForDisjointPopulations: true,
+      coverage: {
+        population: external.inputPopulation
+          ? relevantPopulation / external.inputPopulation
+          : 0,
+        directSpend: 0,
+        anchor: 1,
+        isPartial: true,
+        supportedMarkets:
+          scope === 'covered' ? availableSpendMarkets.length : 1,
+        totalMarkets: scope === 'covered' ? totalMarkets : 1,
+      },
+      sourceBasis: [
+        externalSource,
+        ...(music?.sourceBasis ?? []),
+        {
+          id: source.version,
+          title: 'Nemotron 소비 프로필 · 연령·성별 인구 보정',
+          url: source.sourceUrl,
+        },
+      ].filter((v, i, a) => a.findIndex((s) => s.id === v.id) === i),
+      assumptions: [
+        ...externalAllocation.assumptions,
+        ...(music
+          ? [
+              '디지털 음악은 기타서비스 통계와 중복될 수 있어 온라인 기타서비스를 전체 합산에서 제외했습니다. 2024 음악과 2025 온라인 지출을 결합한 혼합 기준연도이며 추세는 2024–2025 온라인 항목만 비교합니다.',
+            ]
+          : []),
+      ],
+    };
+    return bounded(cache, key, result, 2048);
+  }
   // An explicit disjoint component registry permits future expansion. Never sum overlapping industries or archetypes.
   const selected =
     scope === 'covered' ? anchors : anchors.filter((a) => a.marketId === scope);
@@ -164,6 +288,8 @@ export function estimateMarketValue(
   const result: MarketValueEstimate = {
     ...empty,
     populationUnit: 'person',
+    denominatorBasis: 'modeled_participant',
+    denominatorLabel: '참여자당 연간 지출',
     scopeLabel:
       scope === 'covered'
         ? '확보 범위: ' + anchor.scopeLabel

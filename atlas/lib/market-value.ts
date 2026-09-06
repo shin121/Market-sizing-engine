@@ -23,6 +23,17 @@ export interface MoneyRange {
   high: number;
 }
 export interface MarketValueEstimate {
+  denominatorBasis?: 'modeled_participant' | 'adult_profile_allocation';
+  denominatorLabel?: string;
+  componentBreakdown?: {
+    id: string;
+    label: string;
+    annualValue: number;
+    nationalValue: number;
+    previousNationalValue?: number;
+    sourceId: string;
+  }[];
+  nationalTrend?: { year: number; value: number }[];
   annualValue: number | null;
   low: number | null;
   base: number | null;
@@ -82,7 +93,7 @@ export const SPEND_METHOD_LABELS: Record<SpendMethod, string> = {
 export const MONEY_AXIS_LABELS: Record<MoneyAxis, string> = {
   population: '인구 규모',
   annualValue: '연간 소비액',
-  spendPerUnit: '참여자당 연간 지출',
+  spendPerUnit: '관련 인구당 연간 금액',
   opportunity: 'Opportunity',
   distinctiveness: '차별성',
 };
