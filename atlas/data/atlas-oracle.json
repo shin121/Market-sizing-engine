@@ -1,0 +1,590 @@
+{
+  "method": "Independent DuckDB weighted row predicates; no posting or cube input",
+  "cases": [
+    {
+      "ids": [],
+      "support": 989509,
+      "population": 44105000.00005919,
+      "weightSquareSum": 1967743966.5852268
+    },
+    {
+      "ids": [
+        "age_20",
+        "age_70"
+      ],
+      "support": 0,
+      "population": 0.0,
+      "weightSquareSum": 0.0
+    },
+    {
+      "ids": [
+        "pet"
+      ],
+      "support": 40638,
+      "population": 1818266.95674451,
+      "weightSquareSum": 81426190.82375117
+    },
+    {
+      "ids": [
+        "pet",
+        "age_30_49"
+      ],
+      "support": 14793,
+      "population": 669389.392162291,
+      "weightSquareSum": 30305651.9591782
+    },
+    {
+      "ids": [
+        "arc_creator_discovery_review"
+      ],
+      "support": 32680,
+      "population": 1485362.6175493912,
+      "weightSquareSum": 67582954.0038879
+    },
+    {
+      "ids": [
+        "arc_delivery_order_digital"
+      ],
+      "support": 284413,
+      "population": 12692876.593255129,
+      "weightSquareSum": 567018086.3920311
+    },
+    {
+      "ids": [
+        "arc_adventure_creator_discovery"
+      ],
+      "support": 45332,
+      "population": 2042477.2599338512,
+      "weightSquareSum": 92129413.28891939
+    },
+    {
+      "ids": [
+        "arc_creator_discovery_search_info"
+      ],
+      "support": 7582,
+      "population": 333344.22911502176,
+      "weightSquareSum": 14663300.79576059
+    },
+    {
+      "ids": [
+        "arc_ecommerce_planned_purchase"
+      ],
+      "support": 778,
+      "population": 35286.03792788024,
+      "weightSquareSum": 1601672.7107783784
+    },
+    {
+      "ids": [
+        "arc_offline_recovery"
+      ],
+      "support": 95733,
+      "population": 4305198.850008369,
+      "weightSquareSum": 193798155.93455267
+    },
+    {
+      "ids": [
+        "arc_gear_upgrade_review"
+      ],
+      "support": 437,
+      "population": 19947.769742990364,
+      "weightSquareSum": 911489.2340023145
+    },
+    {
+      "ids": [
+        "arc_connection_repeat_purchase"
+      ],
+      "support": 126967,
+      "population": 5620285.186733045,
+      "weightSquareSum": 248987094.545293
+    },
+    {
+      "ids": [
+        "arc_adventure_paid_subscription"
+      ],
+      "support": 28885,
+      "population": 1323912.336724005,
+      "weightSquareSum": 60716765.581060976
+    },
+    {
+      "ids": [
+        "arc_collecting_expression"
+      ],
+      "support": 24165,
+      "population": 1098082.6743430884,
+      "weightSquareSum": 49940392.19426976
+    },
+    {
+      "ids": [
+        "arc_planning_specialist"
+      ],
+      "support": 39743,
+      "population": 1781909.9972415,
+      "weightSquareSum": 79963666.01805271
+    },
+    {
+      "ids": [
+        "arc_practice_recovery"
+      ],
+      "support": 46666,
+      "population": 2077453.2808087624,
+      "weightSquareSum": 92551332.99561408
+    },
+    {
+      "ids": [
+        "arc_offline_consult_paid"
+      ],
+      "support": 702,
+      "population": 31871.220134069332,
+      "weightSquareSum": 1448270.4166683734
+    },
+    {
+      "ids": [
+        "arc_adventure_paid"
+      ],
+      "support": 14812,
+      "population": 669426.3049993677,
+      "weightSquareSum": 30281425.94418606
+    },
+    {
+      "ids": [
+        "arc_adventure_ecommerce"
+      ],
+      "support": 10476,
+      "population": 473528.56022549793,
+      "weightSquareSum": 21423560.76065842
+    },
+    {
+      "ids": [
+        "arc_community_info_search_info"
+      ],
+      "support": 647,
+      "population": 29076.485289594293,
+      "weightSquareSum": 1307971.719252537
+    },
+    {
+      "ids": [
+        "arc_premium_recovery"
+      ],
+      "support": 16499,
+      "population": 748524.5060894657,
+      "weightSquareSum": 33986653.060479105
+    },
+    {
+      "ids": [
+        "arc_digital_recommendation"
+      ],
+      "support": 5831,
+      "population": 262491.5562824641,
+      "weightSquareSum": 11827854.448742934
+    },
+    {
+      "ids": [
+        "arc_growth_value_seeking"
+      ],
+      "support": 6326,
+      "population": 282539.2683195972,
+      "weightSquareSum": 12630497.096391026
+    },
+    {
+      "ids": [
+        "arc_membership_paid_subscription"
+      ],
+      "support": 640,
+      "population": 29287.812912552752,
+      "weightSquareSum": 1340895.9046416485
+    },
+    {
+      "ids": [
+        "arc_delivery_order_fandom"
+      ],
+      "support": 2107,
+      "population": 93834.15331764566,
+      "weightSquareSum": 4183452.720718671
+    },
+    {
+      "ids": [
+        "arc_digital_discount"
+      ],
+      "support": 523,
+      "population": 23478.780385809237,
+      "weightSquareSum": 1055244.6605925846
+    },
+    {
+      "ids": [
+        "arc_creator_discovery_recovery"
+      ],
+      "support": 48278,
+      "population": 2180428.919219124,
+      "weightSquareSum": 98585804.54484889
+    },
+    {
+      "ids": [
+        "arc_adventure_offline"
+      ],
+      "support": 52700,
+      "population": 2375582.429935769,
+      "weightSquareSum": 107193845.93076316
+    },
+    {
+      "ids": [
+        "arc_paid_subscription_recovery"
+      ],
+      "support": 39161,
+      "population": 1796256.2071249592,
+      "weightSquareSum": 82440293.99307148
+    },
+    {
+      "ids": [
+        "arc_planning_review"
+      ],
+      "support": 26844,
+      "population": 1224263.4090458779,
+      "weightSquareSum": 55887293.46822093
+    },
+    {
+      "ids": [
+        "arc_creator_discovery_delivery_order"
+      ],
+      "support": 27280,
+      "population": 1228222.5747450066,
+      "weightSquareSum": 55361242.30909693
+    },
+    {
+      "ids": [
+        "arc_recovery_review"
+      ],
+      "support": 39345,
+      "population": 1793301.276053291,
+      "weightSquareSum": 81814953.39360882
+    },
+    {
+      "ids": [
+        "arc_collecting_search_info"
+      ],
+      "support": 4565,
+      "population": 204415.9027141389,
+      "weightSquareSum": 9162337.281296298
+    },
+    {
+      "ids": [
+        "arc_offline_planning"
+      ],
+      "support": 58413,
+      "population": 2634078.5130670588,
+      "weightSquareSum": 118899399.69770578
+    },
+    {
+      "ids": [
+        "arc_collecting_planning"
+      ],
+      "support": 29396,
+      "population": 1333415.7870565439,
+      "weightSquareSum": 60537236.525327906
+    },
+    {
+      "ids": [
+        "arc_paid_subscription_planning"
+      ],
+      "support": 26538,
+      "population": 1217366.1087062038,
+      "weightSquareSum": 55874905.98841978
+    },
+    {
+      "ids": [
+        "arc_adventure_collecting"
+      ],
+      "support": 24731,
+      "population": 1121502.0899758064,
+      "weightSquareSum": 50903748.151352
+    },
+    {
+      "ids": [
+        "arc_digital_search_info"
+      ],
+      "support": 14971,
+      "population": 662151.9310056721,
+      "weightSquareSum": 29308191.43699474
+    },
+    {
+      "ids": [
+        "arc_expression_specialist"
+      ],
+      "support": 26017,
+      "population": 1166755.5496454658,
+      "weightSquareSum": 52370540.939195104
+    },
+    {
+      "ids": [
+        "arc_growth_specialist"
+      ],
+      "support": 16635,
+      "population": 744754.7148538434,
+      "weightSquareSum": 33372715.14542445
+    },
+    {
+      "ids": [
+        "arc_paid_recovery"
+      ],
+      "support": 21659,
+      "population": 979028.3634124427,
+      "weightSquareSum": 44291285.24028963
+    },
+    {
+      "ids": [
+        "arc_paid_planning"
+      ],
+      "support": 15132,
+      "population": 684616.6043114078,
+      "weightSquareSum": 30999376.429620236
+    },
+    {
+      "ids": [
+        "arc_pain_physical_repeat_purchase"
+      ],
+      "support": 26792,
+      "population": 1168419.7738090227,
+      "weightSquareSum": 50971055.39421944
+    },
+    {
+      "ids": [
+        "arc_planning_premium"
+      ],
+      "support": 12062,
+      "population": 547764.0502593814,
+      "weightSquareSum": 24895153.47819367
+    },
+    {
+      "ids": [
+        "arc_ownership_repeat_purchase"
+      ],
+      "support": 34685,
+      "population": 1524280.2040366288,
+      "weightSquareSum": 67029229.491661206
+    },
+    {
+      "ids": [
+        "arc_planned_purchase_review"
+      ],
+      "support": 501,
+      "population": 22798.214603298355,
+      "weightSquareSum": 1038484.9523803213
+    },
+    {
+      "ids": [
+        "arc_paid_subscription_premium"
+      ],
+      "support": 2332,
+      "population": 106734.15238883234,
+      "weightSquareSum": 4887854.345834085
+    },
+    {
+      "ids": [
+        "arc_offline_practice"
+      ],
+      "support": 13241,
+      "population": 589292.087745951,
+      "weightSquareSum": 26245531.865634426
+    },
+    {
+      "ids": [
+        "arc_practice_repeat_purchase"
+      ],
+      "support": 24221,
+      "population": 1071089.65349245,
+      "weightSquareSum": 47394135.522242576
+    },
+    {
+      "ids": [
+        "arc_planned_purchase_planning"
+      ],
+      "support": 2187,
+      "population": 98968.63209771906,
+      "weightSquareSum": 4482307.233125071
+    },
+    {
+      "ids": [
+        "arc_convenience_value_seeking"
+      ],
+      "support": 4186,
+      "population": 187851.2366226093,
+      "weightSquareSum": 8437989.461499983
+    },
+    {
+      "ids": [
+        "arc_pain_physical_value_seeking"
+      ],
+      "support": 2972,
+      "population": 129648.84097419748,
+      "weightSquareSum": 5656870.527689084
+    },
+    {
+      "ids": [
+        "arc_adventure_gear_upgrade"
+      ],
+      "support": 584,
+      "population": 26583.898785215923,
+      "weightSquareSum": 1211359.6160388323
+    },
+    {
+      "ids": [
+        "arc_gear_upgrade_planning"
+      ],
+      "support": 444,
+      "population": 20284.63863601379,
+      "weightSquareSum": 927644.6733747519
+    },
+    {
+      "ids": [
+        "arc_fandom_repeat_purchase"
+      ],
+      "support": 1956,
+      "population": 86686.82680242503,
+      "weightSquareSum": 3845566.7226938233
+    },
+    {
+      "ids": [
+        "arc_fandom_offline"
+      ],
+      "support": 735,
+      "population": 33059.57167254917,
+      "weightSquareSum": 1488758.3757291422
+    },
+    {
+      "ids": [
+        "arc_creator_discovery_review",
+        "pet",
+        "age_30_49"
+      ],
+      "support": 596,
+      "population": 27258.524391734354,
+      "weightSquareSum": 1247637.2359432792
+    },
+    {
+      "ids": [
+        "arc_offline_recovery",
+        "travel",
+        "age_30_49"
+      ],
+      "support": 38425,
+      "population": 1746715.0883986305,
+      "weightSquareSum": 79452815.19224042
+    },
+    {
+      "ids": [
+        "arc_planning_specialist",
+        "education",
+        "age_30_49"
+      ],
+      "support": 1329,
+      "population": 59834.77720936235,
+      "weightSquareSum": 2695077.2769354605
+    },
+    {
+      "ids": [
+        "arc_community_info_search_info",
+        "beauty",
+        "age_30_49"
+      ],
+      "support": 33,
+      "population": 1483.690275705404,
+      "weightSquareSum": 66724.27482273962
+    },
+    {
+      "ids": [
+        "arc_delivery_order_fandom",
+        "wellness",
+        "age_30_49"
+      ],
+      "support": 348,
+      "population": 15875.20491479467,
+      "weightSquareSum": 724730.8236979652
+    },
+    {
+      "ids": [
+        "arc_planning_review",
+        "food",
+        "age_30_49"
+      ],
+      "support": 11304,
+      "population": 517577.4709312044,
+      "weightSquareSum": 23715070.035927244
+    },
+    {
+      "ids": [
+        "arc_collecting_planning",
+        "content",
+        "age_30_49"
+      ],
+      "support": 5321,
+      "population": 242025.51474387402,
+      "weightSquareSum": 11014155.352298003
+    },
+    {
+      "ids": [
+        "arc_growth_specialist",
+        "finance",
+        "age_30_49"
+      ],
+      "support": 73,
+      "population": 3314.6768297517146,
+      "weightSquareSum": 150595.81018108508
+    },
+    {
+      "ids": [
+        "arc_ownership_repeat_purchase",
+        "home",
+        "age_30_49"
+      ],
+      "support": 1009,
+      "population": 45504.61924543349,
+      "weightSquareSum": 2053273.9822007157
+    },
+    {
+      "ids": [
+        "arc_planned_purchase_planning",
+        "collect",
+        "age_30_49"
+      ],
+      "support": 202,
+      "population": 9168.193539844455,
+      "weightSquareSum": 416317.7657680679
+    },
+    {
+      "ids": [
+        "arc_fandom_repeat_purchase",
+        "music",
+        "age_30_49"
+      ],
+      "support": 215,
+      "population": 9773.114751361783,
+      "weightSquareSum": 444565.2103326494
+    },
+    {
+      "ids": [
+        "arc_creator_discovery_review",
+        "arc_delivery_order_digital"
+      ],
+      "support": 14642,
+      "population": 665447.6195213752,
+      "weightSquareSum": 30275484.389117006
+    },
+    {
+      "ids": [
+        "pet",
+        "pain_time"
+      ],
+      "support": 91,
+      "population": 4107.26335424509,
+      "weightSquareSum": 185502.65808291905
+    },
+    {
+      "ids": [
+        "travel",
+        "review"
+      ],
+      "support": 45989,
+      "population": 2092157.7326056752,
+      "weightSquareSum": 95271826.54942314
+    }
+  ]
+}

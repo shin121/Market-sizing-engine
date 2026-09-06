@@ -1,0 +1,112 @@
+{
+  "runtime": "Built Cloudflare Worker through local Wrangler/workerd",
+  "at": "2026-09-06T02:45:57.101Z",
+  "rows": [
+    {
+      "q": "",
+      "status": 200,
+      "ms": 125,
+      "bytes": 187789,
+      "population": 44105000,
+      "support": 989509,
+      "cells": 63
+    },
+    {
+      "q": "pet",
+      "status": 200,
+      "ms": 29,
+      "bytes": 173669,
+      "population": 1818266.9567445377,
+      "support": 40638,
+      "cells": 63
+    },
+    {
+      "q": "arc_collecting_planning",
+      "status": 200,
+      "ms": 430,
+      "bytes": 196116,
+      "population": 1333415.7870564004,
+      "support": 29396,
+      "cells": 63
+    },
+    {
+      "q": "arc_collecting_planning~pet~age_30",
+      "status": 200,
+      "ms": 342,
+      "bytes": 170855,
+      "population": 16729.566840085954,
+      "support": 364,
+      "cells": 63
+    },
+    {
+      "q": "finance",
+      "status": 200,
+      "ms": 31,
+      "bytes": 176721,
+      "population": 465871.5982140499,
+      "support": 10430,
+      "cells": 63
+    },
+    {
+      "q": "arc_paid_subscription_planning~pet",
+      "status": 200,
+      "ms": 404,
+      "bytes": 188006,
+      "population": 80600.7524918102,
+      "support": 1760,
+      "cells": 63
+    },
+    {
+      "q": "age_20~age_70",
+      "status": 200,
+      "ms": 28,
+      "bytes": 83056,
+      "population": 0,
+      "support": 0,
+      "cells": 0
+    },
+    {
+      "route": "/atlas",
+      "status": 200,
+      "ms": 57,
+      "bytes": 184441
+    },
+    {
+      "route": "/atlas/archetypes/arc_collecting_planning",
+      "status": 200,
+      "ms": 626,
+      "bytes": 260065
+    },
+    {
+      "route": "/atlas/markets/pet",
+      "status": 200,
+      "ms": 113,
+      "bytes": 261066
+    },
+    {
+      "route": "/atlas/segments/age_30~arc_collecting_planning~pet",
+      "status": 200,
+      "ms": 510,
+      "bytes": 235260
+    },
+    {
+      "route": "/atlas/signals/review",
+      "status": 200,
+      "ms": 637,
+      "bytes": 246825
+    },
+    {
+      "route": "/atlas/relationship?q=arc_collecting_planning",
+      "status": 200,
+      "ms": 16,
+      "bytes": 188008
+    },
+    {
+      "route": "/atlas/opportunity?q=arc_collecting_planning",
+      "status": 200,
+      "ms": 27,
+      "bytes": 205880
+    }
+  ],
+  "invalidStatus": 400
+}

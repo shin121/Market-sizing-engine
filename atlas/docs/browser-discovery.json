@@ -1,0 +1,3320 @@
+{
+  "startedAt": "2026-09-06T02:24:56.990Z",
+  "steps": [
+    {
+      "at": "2026-09-06T02:24:57.406Z",
+      "label": "1. Global Atlas people lens",
+      "breadcrumbs": "전체 시장",
+      "conditions": [],
+      "modules": [
+        "Global Market Atlas",
+        "전체 소비자 구성",
+        "산업별 관련 인구",
+        "산업을 넘는 발견",
+        "다음으로 볼 기회",
+        "Discovery Radar"
+      ],
+      "title": "한국 소비자 시장을 한눈에",
+      "url": "http://localhost:3001/atlas"
+    },
+    {
+      "at": "2026-09-06T02:24:57.799Z",
+      "label": "2. Industry lens",
+      "breadcrumbs": "전체 시장",
+      "conditions": [],
+      "modules": [
+        "Global Market Atlas",
+        "전체 소비자 구성",
+        "산업별 관련 인구",
+        "산업을 넘는 발견",
+        "다음으로 볼 기회",
+        "Discovery Radar"
+      ],
+      "title": "한국 소비자 시장을 한눈에",
+      "url": "http://localhost:3001/atlas?row=archetype&col=market&lens=markets"
+    },
+    {
+      "at": "2026-09-06T02:24:58.851Z",
+      "label": "3. Map → full archetype",
+      "breadcrumbs": "전체 시장\n소비 유형",
+      "conditions": [
+        "계획 중심 수집몰입형"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "계획 중심 수집몰입형",
+      "url": "http://localhost:3001/atlas/archetypes/arc_collecting_planning"
+    },
+    {
+      "at": "2026-09-06T02:24:59.534Z",
+      "label": "4. Archetype → Pet",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n산업·시장",
+      "conditions": [
+        "반려동물"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "반려동물",
+      "url": "http://localhost:3001/atlas/markets/pet?trail=arc_collecting_planning"
+    },
+    {
+      "at": "2026-09-06T02:25:00.416Z",
+      "label": "5. Pet → different archetype",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n반려동물\n소비 유형",
+      "conditions": [
+        "계획 중심 구독서비스이용형"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "계획 중심 구독서비스이용형",
+      "url": "http://localhost:3001/atlas/archetypes/arc_paid_subscription_planning?trail=arc_collecting_planning%7Cpet"
+    },
+    {
+      "at": "2026-09-06T02:25:01.481Z",
+      "label": "6. Archetype → need full dashboard",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n반려동물\n계획 중심 구독서비스이용형\n욕구·불편",
+      "conditions": [
+        "이동·활동 제약"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "이동·활동 제약",
+      "url": "http://localhost:3001/atlas/signals/pain_physical?trail=arc_collecting_planning%7Cpet%7Carc_paid_subscription_planning"
+    },
+    {
+      "at": "2026-09-06T02:25:03.211Z",
+      "label": "7. Back / Forward / Reload",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n반려동물\n계획 중심 구독서비스이용형\n욕구·불편",
+      "conditions": [
+        "이동·활동 제약"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "이동·활동 제약",
+      "url": "http://localhost:3001/atlas/signals/pain_physical?trail=arc_collecting_planning%7Cpet%7Carc_paid_subscription_planning"
+    },
+    {
+      "at": "2026-09-06T02:25:03.801Z",
+      "label": "8. Archetype → age × Pet matrix",
+      "breadcrumbs": "전체 시장\n교차분석",
+      "conditions": [
+        "계획 중심 수집몰입형"
+      ],
+      "modules": [
+        "교차분석 · 현재 집단을 더 나누기",
+        "현재 집단의 주요 신호",
+        "다른 방향으로 나누기"
+      ],
+      "title": "교차분석",
+      "url": "http://localhost:3001/atlas/matrix?q=arc_collecting_planning&row=age&col=market&focus=pet&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:25:04.892Z",
+      "label": "9. Matrix → three-condition segment",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n세그먼트",
+      "conditions": [
+        "30대",
+        "계획 중심 수집몰입형",
+        "반려동물"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "계획 중심 수집몰입형와 비교",
+        "반려동물와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "30대 × 계획 중심 수집몰입형 × 반려동물",
+      "url": "http://localhost:3001/atlas/segments/age_30~arc_collecting_planning~pet?trail=arc_collecting_planning"
+    },
+    {
+      "at": "2026-09-06T02:25:05.436Z",
+      "label": "10. Underlying aggregate dataset",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n세그먼트",
+      "conditions": [
+        "30대",
+        "계획 중심 수집몰입형",
+        "반려동물"
+      ],
+      "modules": [
+        "이 집단의 기초 집계 데이터",
+        "집계 기준과 데이터 범위"
+      ],
+      "title": "30대 × 계획 중심 수집몰입형 × 반려동물",
+      "url": "http://localhost:3001/atlas/segments/age_30~arc_collecting_planning~pet?trail=arc_collecting_planning&tab=data"
+    },
+    {
+      "at": "2026-09-06T02:25:06.173Z",
+      "label": "11. Segment → Opportunity",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n기회지도",
+      "conditions": [
+        "30대",
+        "계획 중심 수집몰입형",
+        "반려동물"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=age_30%7Earc_collecting_planning%7Epet&row=age&col=market&trail=arc_collecting_planning&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:25:09.541Z",
+      "label": "12. Two comparisons persist in URL",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n기회지도",
+      "conditions": [
+        "30대",
+        "계획 중심 수집몰입형",
+        "반려동물"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "선택한 집단 나란히 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=age_30%7Earc_collecting_planning%7Epet&row=age&col=market&trail=arc_collecting_planning&lens=people&compare=age_30%7Earc_collecting_planning%7Epet%7Cage_30%7Earc_collecting_planning%7Edigital%7Epet"
+    },
+    {
+      "at": "2026-09-06T02:25:10.107Z",
+      "label": "13. Relationship node → inline analytics",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n관계 탐색",
+      "conditions": [
+        "30대",
+        "계획 중심 수집몰입형",
+        "반려동물"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "선택한 연결"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=age_30%7Earc_collecting_planning%7Epet&row=age&col=market&focus=arc_collecting_expression&trail=arc_collecting_planning&lens=people&compare=age_30%7Earc_collecting_planning%7Epet%7Cage_30%7Earc_collecting_planning%7Edigital%7Epet"
+    },
+    {
+      "at": "2026-09-06T02:25:11.122Z",
+      "label": "14. Relationship → full joint dashboard",
+      "breadcrumbs": "전체 시장\n계획 중심 수집몰입형\n30대 × 계획 중심 수집몰입형 × 반려동물\n세그먼트",
+      "conditions": [
+        "30대",
+        "취향 표현 수집몰입형",
+        "계획 중심 수집몰입형",
+        "반려동물"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "취향 표현 수집몰입형와 비교",
+        "계획 중심 수집몰입형와 비교",
+        "반려동물와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "30대 × 취향 표현 수집몰입형 × 계획 중심 수집몰입형 × 반려동물",
+      "url": "http://localhost:3001/atlas/segments/age_30~arc_collecting_expression~arc_collecting_planning~pet?trail=arc_collecting_planning%7Cage_30%7Earc_collecting_planning%7Epet"
+    },
+    {
+      "at": "2026-09-06T02:25:11.741Z",
+      "label": "Theme pet market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "반려동물"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "반려동물",
+      "url": "http://localhost:3001/atlas/markets/pet"
+    },
+    {
+      "at": "2026-09-06T02:25:12.903Z",
+      "label": "Theme pet commercial cohort",
+      "breadcrumbs": "전체 시장\n반려동물\n세그먼트",
+      "conditions": [
+        "계획 중심 구독서비스이용형",
+        "반려동물"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "계획 중심 구독서비스이용형와 비교",
+        "반려동물와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "계획 중심 구독서비스이용형 × 반려동물",
+      "url": "http://localhost:3001/atlas/segments/arc_paid_subscription_planning~pet?trail=pet"
+    },
+    {
+      "at": "2026-09-06T02:25:13.435Z",
+      "label": "Theme pet strong relationships",
+      "breadcrumbs": "전체 시장\n반려동물\n관계 탐색",
+      "conditions": [
+        "계획 중심 구독서비스이용형",
+        "반려동물"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_paid_subscription_planning%7Epet&row=age&col=market&trail=pet&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:25:14.788Z",
+      "label": "Theme pet meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n반려동물\n계획 중심 구독서비스이용형 × 반려동물\n세그먼트",
+      "conditions": [
+        "계획 중심 구독서비스이용형",
+        "배달·포장 주문",
+        "번거로움·관리 부담",
+        "반려동물"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "계획 중심 구독서비스이용형와 비교",
+        "반려동물와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "계획 중심 구독서비스이용형 × 배달·포장 주문 × 번거로움·관리 부담 × 반려동물",
+      "url": "http://localhost:3001/atlas/segments/arc_paid_subscription_planning~delivery_order~pain_hassle~pet?trail=pet%7Carc_paid_subscription_planning%7Epet"
+    },
+    {
+      "at": "2026-09-06T02:25:15.256Z",
+      "label": "Theme pet opportunity candidates",
+      "breadcrumbs": "전체 시장\n반려동물\n계획 중심 구독서비스이용형 × 반려동물\n기회지도",
+      "conditions": [
+        "계획 중심 구독서비스이용형",
+        "배달·포장 주문",
+        "번거로움·관리 부담",
+        "반려동물"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_paid_subscription_planning%7Edelivery_order%7Epain_hassle%7Epet&row=age&col=market&trail=pet%7Carc_paid_subscription_planning%7Epet&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:25:15.956Z",
+      "label": "Theme pet cross-industry market",
+      "breadcrumbs": "전체 시장\n반려동물\n계획 중심 구독서비스이용형 × 반려동물\n산업·시장",
+      "conditions": [
+        "영상·콘텐츠"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "영상·콘텐츠",
+      "url": "http://localhost:3001/atlas/markets/content?trail=pet%7Carc_paid_subscription_planning%7Epet"
+    },
+    {
+      "at": "2026-09-06T02:25:16.622Z",
+      "label": "Theme travel market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "여행·로컬 경험"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "여행·로컬 경험",
+      "url": "http://localhost:3001/atlas/markets/travel"
+    },
+    {
+      "at": "2026-09-06T02:25:17.686Z",
+      "label": "Theme travel commercial cohort",
+      "breadcrumbs": "전체 시장\n여행·로컬 경험\n세그먼트",
+      "conditions": [
+        "디지털 활용 지인추천형",
+        "여행·로컬 경험"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "디지털 활용 지인추천형와 비교",
+        "여행·로컬 경험와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "디지털 활용 지인추천형 × 여행·로컬 경험",
+      "url": "http://localhost:3001/atlas/segments/arc_digital_recommendation~travel?trail=travel"
+    },
+    {
+      "at": "2026-09-06T02:25:18.215Z",
+      "label": "Theme travel strong relationships",
+      "breadcrumbs": "전체 시장\n여행·로컬 경험\n관계 탐색",
+      "conditions": [
+        "디지털 활용 지인추천형",
+        "여행·로컬 경험"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_digital_recommendation%7Etravel&row=age&col=market&trail=travel&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:25:19.659Z",
+      "label": "Theme travel meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n여행·로컬 경험\n디지털 활용 지인추천형 × 여행·로컬 경험\n세그먼트",
+      "conditions": [
+        "디지털 활용 지인추천형",
+        "편의·시간 절약 욕구",
+        "전문점·전문시설",
+        "여행·로컬 경험"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "디지털 활용 지인추천형와 비교",
+        "여행·로컬 경험와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "디지털 활용 지인추천형 × 편의·시간 절약 욕구 × 전문점·전문시설 × 여행·로컬 경험",
+      "url": "http://localhost:3001/atlas/segments/arc_digital_recommendation~convenience~specialist~travel?trail=travel%7Carc_digital_recommendation%7Etravel"
+    },
+    {
+      "at": "2026-09-06T02:25:20.128Z",
+      "label": "Theme travel opportunity candidates",
+      "breadcrumbs": "전체 시장\n여행·로컬 경험\n디지털 활용 지인추천형 × 여행·로컬 경험\n기회지도",
+      "conditions": [
+        "디지털 활용 지인추천형",
+        "편의·시간 절약 욕구",
+        "전문점·전문시설",
+        "여행·로컬 경험"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_digital_recommendation%7Econvenience%7Especialist%7Etravel&row=age&col=market&trail=travel%7Carc_digital_recommendation%7Etravel&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:25:20.836Z",
+      "label": "Theme travel cross-industry market",
+      "breadcrumbs": "전체 시장\n여행·로컬 경험\n디지털 활용 지인추천형 × 여행·로컬 경험\n산업·시장",
+      "conditions": [
+        "뷰티·패션"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "뷰티·패션",
+      "url": "http://localhost:3001/atlas/markets/beauty?trail=travel%7Carc_digital_recommendation%7Etravel"
+    },
+    {
+      "at": "2026-09-06T02:25:21.544Z",
+      "label": "Theme education market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "배움·자기계발"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "배움·자기계발",
+      "url": "http://localhost:3001/atlas/markets/education"
+    },
+    {
+      "at": "2026-09-06T02:25:22.639Z",
+      "label": "Theme education commercial cohort",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n세그먼트",
+      "conditions": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "배움 중심 전문채널이용형와 비교",
+        "배움·자기계발와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "배움 중심 전문채널이용형 × 배움·자기계발",
+      "url": "http://localhost:3001/atlas/segments/arc_growth_specialist~education?trail=education"
+    },
+    {
+      "at": "2026-09-06T02:25:23.175Z",
+      "label": "Theme education strong relationships",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n관계 탐색",
+      "conditions": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_growth_specialist%7Eeducation&row=age&col=market&trail=education&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:25:24.705Z",
+      "label": "Theme education meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n배움 중심 전문채널이용형 × 배움·자기계발\n세그먼트",
+      "conditions": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발",
+        "유료 구독서비스 접점",
+        "휴식·회복 욕구"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "배움 중심 전문채널이용형와 비교",
+        "배움·자기계발와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "배움 중심 전문채널이용형 × 배움·자기계발 × 유료 구독서비스 접점 × 휴식·회복 욕구",
+      "url": "http://localhost:3001/atlas/segments/arc_growth_specialist~education~paid_subscription~recovery?trail=education%7Carc_growth_specialist%7Eeducation"
+    },
+    {
+      "at": "2026-09-06T02:25:25.176Z",
+      "label": "Theme education opportunity candidates",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n배움 중심 전문채널이용형 × 배움·자기계발\n기회지도",
+      "conditions": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발",
+        "유료 구독서비스 접점",
+        "휴식·회복 욕구"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_growth_specialist%7Eeducation%7Epaid_subscription%7Erecovery&row=age&col=market&trail=education%7Carc_growth_specialist%7Eeducation&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:17.529Z",
+      "label": "Theme education market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "배움·자기계발"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "배움·자기계발",
+      "url": "http://localhost:3001/atlas/markets/education"
+    },
+    {
+      "at": "2026-09-06T02:26:18.102Z",
+      "label": "Theme education commercial cohort",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n세그먼트",
+      "conditions": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "배움 중심 전문채널이용형와 비교",
+        "배움·자기계발와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "배움 중심 전문채널이용형 × 배움·자기계발",
+      "url": "http://localhost:3001/atlas/segments/arc_growth_specialist~education?trail=education"
+    },
+    {
+      "at": "2026-09-06T02:26:18.757Z",
+      "label": "Theme education strong relationships",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n관계 탐색",
+      "conditions": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_growth_specialist%7Eeducation&row=age&col=market&trail=education&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:19.961Z",
+      "label": "Theme education meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n배움 중심 전문채널이용형 × 배움·자기계발\n세그먼트",
+      "conditions": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발",
+        "유료 구독서비스 접점",
+        "휴식·회복 욕구"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "배움 중심 전문채널이용형와 비교",
+        "배움·자기계발와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "배움 중심 전문채널이용형 × 배움·자기계발 × 유료 구독서비스 접점 × 휴식·회복 욕구",
+      "url": "http://localhost:3001/atlas/segments/arc_growth_specialist~education~paid_subscription~recovery?trail=education%7Carc_growth_specialist%7Eeducation"
+    },
+    {
+      "at": "2026-09-06T02:26:20.550Z",
+      "label": "Theme education opportunity candidates",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n배움 중심 전문채널이용형 × 배움·자기계발\n기회지도",
+      "conditions": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발",
+        "유료 구독서비스 접점",
+        "휴식·회복 욕구"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_growth_specialist%7Eeducation%7Epaid_subscription%7Erecovery&row=age&col=market&trail=education%7Carc_growth_specialist%7Eeducation&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:21.343Z",
+      "label": "Theme education cross-industry market",
+      "breadcrumbs": "전체 시장\n배움·자기계발\n배움 중심 전문채널이용형 × 배움·자기계발\n산업·시장",
+      "conditions": [
+        "모임·지역서비스"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "모임·지역서비스",
+      "url": "http://localhost:3001/atlas/markets/community?trail=education%7Carc_growth_specialist%7Eeducation"
+    },
+    {
+      "at": "2026-09-06T02:26:22.091Z",
+      "label": "Theme beauty market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "뷰티·패션"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "뷰티·패션",
+      "url": "http://localhost:3001/atlas/markets/beauty"
+    },
+    {
+      "at": "2026-09-06T02:26:23.272Z",
+      "label": "Theme beauty commercial cohort",
+      "breadcrumbs": "전체 시장\n뷰티·패션\n세그먼트",
+      "conditions": [
+        "구매 연계 직접확인형",
+        "뷰티·패션"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "구매 연계 직접확인형와 비교",
+        "뷰티·패션와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "구매 연계 직접확인형 × 뷰티·패션",
+      "url": "http://localhost:3001/atlas/segments/arc_offline_consult_paid~beauty?trail=beauty"
+    },
+    {
+      "at": "2026-09-06T02:26:23.952Z",
+      "label": "Theme beauty strong relationships",
+      "breadcrumbs": "전체 시장\n뷰티·패션\n관계 탐색",
+      "conditions": [
+        "구매 연계 직접확인형",
+        "뷰티·패션"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_offline_consult_paid%7Ebeauty&row=age&col=market&trail=beauty&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:25.571Z",
+      "label": "Theme beauty meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n뷰티·패션\n구매 연계 직접확인형 × 뷰티·패션\n세그먼트",
+      "conditions": [
+        "구매 연계 직접확인형",
+        "뷰티·패션",
+        "편의·시간 절약 욕구",
+        "온라인·모바일 접점"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "구매 연계 직접확인형와 비교",
+        "뷰티·패션와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "구매 연계 직접확인형 × 뷰티·패션 × 편의·시간 절약 욕구 × 온라인·모바일 접점",
+      "url": "http://localhost:3001/atlas/segments/arc_offline_consult_paid~beauty~convenience~digital?trail=beauty%7Carc_offline_consult_paid%7Ebeauty"
+    },
+    {
+      "at": "2026-09-06T02:26:26.174Z",
+      "label": "Theme beauty opportunity candidates",
+      "breadcrumbs": "전체 시장\n뷰티·패션\n구매 연계 직접확인형 × 뷰티·패션\n기회지도",
+      "conditions": [
+        "구매 연계 직접확인형",
+        "뷰티·패션",
+        "편의·시간 절약 욕구",
+        "온라인·모바일 접점"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_offline_consult_paid%7Ebeauty%7Econvenience%7Edigital&row=age&col=market&trail=beauty%7Carc_offline_consult_paid%7Ebeauty&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:27.012Z",
+      "label": "Theme beauty cross-industry market",
+      "breadcrumbs": "전체 시장\n뷰티·패션\n구매 연계 직접확인형 × 뷰티·패션\n산업·시장",
+      "conditions": [
+        "쇼핑·커머스"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "쇼핑·커머스",
+      "url": "http://localhost:3001/atlas/markets/commerce?trail=beauty%7Carc_offline_consult_paid%7Ebeauty"
+    },
+    {
+      "at": "2026-09-06T02:26:27.851Z",
+      "label": "Theme wellness market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "건강·휴식"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "건강·휴식",
+      "url": "http://localhost:3001/atlas/markets/wellness"
+    },
+    {
+      "at": "2026-09-06T02:26:29.092Z",
+      "label": "Theme wellness commercial cohort",
+      "breadcrumbs": "전체 시장\n건강·휴식\n세그먼트",
+      "conditions": [
+        "영상 탐색 정보탐색형",
+        "건강·휴식"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "영상 탐색 정보탐색형와 비교",
+        "건강·휴식와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "영상 탐색 정보탐색형 × 건강·휴식",
+      "url": "http://localhost:3001/atlas/segments/arc_creator_discovery_search_info~wellness?trail=wellness"
+    },
+    {
+      "at": "2026-09-06T02:26:29.747Z",
+      "label": "Theme wellness strong relationships",
+      "breadcrumbs": "전체 시장\n건강·휴식\n관계 탐색",
+      "conditions": [
+        "영상 탐색 정보탐색형",
+        "건강·휴식"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_creator_discovery_search_info%7Ewellness&row=age&col=market&trail=wellness&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:31.432Z",
+      "label": "Theme wellness meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n건강·휴식\n영상 탐색 정보탐색형 × 건강·휴식\n세그먼트",
+      "conditions": [
+        "영상 탐색 정보탐색형",
+        "확실성·실패 회피",
+        "전문점·전문시설",
+        "건강·휴식"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "영상 탐색 정보탐색형와 비교",
+        "건강·휴식와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "영상 탐색 정보탐색형 × 확실성·실패 회피 × 전문점·전문시설 × 건강·휴식",
+      "url": "http://localhost:3001/atlas/segments/arc_creator_discovery_search_info~certainty~specialist~wellness?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness"
+    },
+    {
+      "at": "2026-09-06T02:26:32.026Z",
+      "label": "Theme wellness opportunity candidates",
+      "breadcrumbs": "전체 시장\n건강·휴식\n영상 탐색 정보탐색형 × 건강·휴식\n기회지도",
+      "conditions": [
+        "영상 탐색 정보탐색형",
+        "확실성·실패 회피",
+        "전문점·전문시설",
+        "건강·휴식"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_creator_discovery_search_info%7Ecertainty%7Especialist%7Ewellness&row=age&col=market&trail=wellness%7Carc_creator_discovery_search_info%7Ewellness&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:32.757Z",
+      "label": "Theme wellness cross-industry market",
+      "breadcrumbs": "전체 시장\n건강·휴식\n영상 탐색 정보탐색형 × 건강·휴식\n산업·시장",
+      "conditions": [
+        "영상·콘텐츠"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "영상·콘텐츠",
+      "url": "http://localhost:3001/atlas/markets/content?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness"
+    },
+    {
+      "at": "2026-09-06T02:26:33.603Z",
+      "label": "Theme food market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "외식·미식"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "외식·미식",
+      "url": "http://localhost:3001/atlas/markets/food"
+    },
+    {
+      "at": "2026-09-06T02:26:34.797Z",
+      "label": "Theme food commercial cohort",
+      "breadcrumbs": "전체 시장\n외식·미식\n세그먼트",
+      "conditions": [
+        "디지털 활용 지인추천형",
+        "외식·미식"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "디지털 활용 지인추천형와 비교",
+        "외식·미식와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "디지털 활용 지인추천형 × 외식·미식",
+      "url": "http://localhost:3001/atlas/segments/arc_digital_recommendation~food?trail=food"
+    },
+    {
+      "at": "2026-09-06T02:26:35.452Z",
+      "label": "Theme food strong relationships",
+      "breadcrumbs": "전체 시장\n외식·미식\n관계 탐색",
+      "conditions": [
+        "디지털 활용 지인추천형",
+        "외식·미식"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_digital_recommendation%7Efood&row=age&col=market&trail=food&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:37.137Z",
+      "label": "Theme food meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n외식·미식\n디지털 활용 지인추천형 × 외식·미식\n세그먼트",
+      "conditions": [
+        "디지털 활용 지인추천형",
+        "커뮤니티 접점",
+        "소통·유대 욕구",
+        "외식·미식"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "디지털 활용 지인추천형와 비교",
+        "외식·미식와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "디지털 활용 지인추천형 × 커뮤니티 접점 × 소통·유대 욕구 × 외식·미식",
+      "url": "http://localhost:3001/atlas/segments/arc_digital_recommendation~community_channel~connection~food?trail=food%7Carc_digital_recommendation%7Efood"
+    },
+    {
+      "at": "2026-09-06T02:26:37.740Z",
+      "label": "Theme food opportunity candidates",
+      "breadcrumbs": "전체 시장\n외식·미식\n디지털 활용 지인추천형 × 외식·미식\n기회지도",
+      "conditions": [
+        "디지털 활용 지인추천형",
+        "커뮤니티 접점",
+        "소통·유대 욕구",
+        "외식·미식"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_digital_recommendation%7Ecommunity_channel%7Econnection%7Efood&row=age&col=market&trail=food%7Carc_digital_recommendation%7Efood&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:38.438Z",
+      "label": "Theme food cross-industry market",
+      "breadcrumbs": "전체 시장\n외식·미식\n디지털 활용 지인추천형 × 외식·미식\n산업·시장",
+      "conditions": [
+        "뷰티·패션"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "뷰티·패션",
+      "url": "http://localhost:3001/atlas/markets/beauty?trail=food%7Carc_digital_recommendation%7Efood"
+    },
+    {
+      "at": "2026-09-06T02:26:39.214Z",
+      "label": "Theme content market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "영상·콘텐츠"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "영상·콘텐츠",
+      "url": "http://localhost:3001/atlas/markets/content"
+    },
+    {
+      "at": "2026-09-06T02:26:40.366Z",
+      "label": "Theme content commercial cohort",
+      "breadcrumbs": "전체 시장\n영상·콘텐츠\n세그먼트",
+      "conditions": [
+        "유료구독 레슨이용형",
+        "영상·콘텐츠"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "유료구독 레슨이용형와 비교",
+        "영상·콘텐츠와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "유료구독 레슨이용형 × 영상·콘텐츠",
+      "url": "http://localhost:3001/atlas/segments/arc_membership_paid_subscription~content?trail=content"
+    },
+    {
+      "at": "2026-09-06T02:26:41.129Z",
+      "label": "Theme content strong relationships",
+      "breadcrumbs": "전체 시장\n영상·콘텐츠\n관계 탐색",
+      "conditions": [
+        "유료구독 레슨이용형",
+        "영상·콘텐츠"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_membership_paid_subscription%7Econtent&row=age&col=market&trail=content&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:42.768Z",
+      "label": "Theme content meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n영상·콘텐츠\n유료구독 레슨이용형 × 영상·콘텐츠\n세그먼트",
+      "conditions": [
+        "유료구독 레슨이용형",
+        "영상·콘텐츠",
+        "편의·시간 절약 욕구",
+        "온라인·모바일 접점"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "유료구독 레슨이용형와 비교",
+        "영상·콘텐츠와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "유료구독 레슨이용형 × 영상·콘텐츠 × 편의·시간 절약 욕구 × 온라인·모바일 접점",
+      "url": "http://localhost:3001/atlas/segments/arc_membership_paid_subscription~content~convenience~digital?trail=content%7Carc_membership_paid_subscription%7Econtent"
+    },
+    {
+      "at": "2026-09-06T02:26:43.371Z",
+      "label": "Theme content opportunity candidates",
+      "breadcrumbs": "전체 시장\n영상·콘텐츠\n유료구독 레슨이용형 × 영상·콘텐츠\n기회지도",
+      "conditions": [
+        "유료구독 레슨이용형",
+        "영상·콘텐츠",
+        "편의·시간 절약 욕구",
+        "온라인·모바일 접점"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_membership_paid_subscription%7Econtent%7Econvenience%7Edigital&row=age&col=market&trail=content%7Carc_membership_paid_subscription%7Econtent&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:26:44.209Z",
+      "label": "Theme content cross-industry market",
+      "breadcrumbs": "전체 시장\n영상·콘텐츠\n유료구독 레슨이용형 × 영상·콘텐츠\n산업·시장",
+      "conditions": [
+        "운동·아웃도어"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "운동·아웃도어",
+      "url": "http://localhost:3001/atlas/markets/fitness?trail=content%7Carc_membership_paid_subscription%7Econtent"
+    },
+    {
+      "at": "2026-09-06T02:26:45.045Z",
+      "label": "Theme finance market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/markets/finance"
+    },
+    {
+      "at": "2026-09-06T02:26:46.188Z",
+      "label": "Theme finance commercial cohort",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n세그먼트",
+      "conditions": [
+        "편의 우선 실속선택형",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "편의 우선 실속선택형와 비교",
+        "개인 재테크 관심와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "편의 우선 실속선택형 × 개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/segments/arc_convenience_value_seeking~finance?trail=finance"
+    },
+    {
+      "at": "2026-09-06T02:26:46.856Z",
+      "label": "Theme finance strong relationships",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n관계 탐색",
+      "conditions": [
+        "편의 우선 실속선택형",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_convenience_value_seeking%7Efinance&row=age&col=market&trail=finance&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:27:47.668Z",
+      "label": "Theme finance market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/markets/finance"
+    },
+    {
+      "at": "2026-09-06T02:27:48.273Z",
+      "label": "Theme finance commercial cohort",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n세그먼트",
+      "conditions": [
+        "편의 우선 실속선택형",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "편의 우선 실속선택형와 비교",
+        "개인 재테크 관심와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "편의 우선 실속선택형 × 개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/segments/arc_convenience_value_seeking~finance?trail=finance"
+    },
+    {
+      "at": "2026-09-06T02:27:48.935Z",
+      "label": "Theme finance strong relationships",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n관계 탐색",
+      "conditions": [
+        "편의 우선 실속선택형",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_convenience_value_seeking%7Efinance&row=age&col=market&trail=finance&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:27:49.770Z",
+      "label": "Theme finance sparse joint: broaden to market and type × need",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n교차분석",
+      "conditions": [
+        "편의 우선 실속선택형",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "교차분석 · 현재 집단을 더 나누기",
+        "현재 집단의 주요 신호",
+        "다른 방향으로 나누기"
+      ],
+      "title": "교차분석",
+      "url": "http://localhost:3001/atlas/matrix?q=arc_convenience_value_seeking%7Efinance&row=need&col=channel&trail=finance&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:27:52.187Z",
+      "label": "Theme finance meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n편의 우선 실속선택형 × 개인 재테크 관심\n개인 재테크 관심\n세그먼트",
+      "conditions": [
+        "교류 중심 단골선택형",
+        "소통·유대 욕구",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "교류 중심 단골선택형와 비교",
+        "개인 재테크 관심와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "교류 중심 단골선택형 × 소통·유대 욕구 × 개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/segments/arc_connection_repeat_purchase~connection~finance?trail=finance%7Carc_convenience_value_seeking%7Efinance%7Cfinance"
+    },
+    {
+      "at": "2026-09-06T02:27:52.834Z",
+      "label": "Theme finance opportunity candidates",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n편의 우선 실속선택형 × 개인 재테크 관심\n개인 재테크 관심\n기회지도",
+      "conditions": [
+        "교류 중심 단골선택형",
+        "소통·유대 욕구",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_connection_repeat_purchase%7Econnection%7Efinance&row=age&col=market&trail=finance%7Carc_convenience_value_seeking%7Efinance%7Cfinance&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:27:53.571Z",
+      "label": "Theme finance cross-industry market",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n편의 우선 실속선택형 × 개인 재테크 관심\n산업·시장",
+      "conditions": [
+        "쇼핑·커머스"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "쇼핑·커머스",
+      "url": "http://localhost:3001/atlas/markets/commerce?trail=finance%7Carc_convenience_value_seeking%7Efinance"
+    },
+    {
+      "at": "2026-09-06T02:27:54.464Z",
+      "label": "Theme home market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "집·인테리어"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "집·인테리어",
+      "url": "http://localhost:3001/atlas/markets/home"
+    },
+    {
+      "at": "2026-09-06T02:27:55.607Z",
+      "label": "Theme home commercial cohort",
+      "breadcrumbs": "전체 시장\n집·인테리어\n세그먼트",
+      "conditions": [
+        "온라인 탐색 신중구매형",
+        "집·인테리어"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "온라인 탐색 신중구매형와 비교",
+        "집·인테리어와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "온라인 탐색 신중구매형 × 집·인테리어",
+      "url": "http://localhost:3001/atlas/segments/arc_ecommerce_planned_purchase~home?trail=home"
+    },
+    {
+      "at": "2026-09-06T02:27:56.271Z",
+      "label": "Theme home strong relationships",
+      "breadcrumbs": "전체 시장\n집·인테리어\n관계 탐색",
+      "conditions": [
+        "온라인 탐색 신중구매형",
+        "집·인테리어"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_ecommerce_planned_purchase%7Ehome&row=age&col=market&trail=home&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:27:57.939Z",
+      "label": "Theme home meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n집·인테리어\n온라인 탐색 신중구매형 × 집·인테리어\n세그먼트",
+      "conditions": [
+        "온라인 탐색 신중구매형",
+        "소통·유대 욕구",
+        "배달·포장 주문",
+        "집·인테리어"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "온라인 탐색 신중구매형와 비교",
+        "집·인테리어와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "온라인 탐색 신중구매형 × 소통·유대 욕구 × 배달·포장 주문 × 집·인테리어",
+      "url": "http://localhost:3001/atlas/segments/arc_ecommerce_planned_purchase~connection~delivery_order~home?trail=home%7Carc_ecommerce_planned_purchase%7Ehome"
+    },
+    {
+      "at": "2026-09-06T02:27:58.544Z",
+      "label": "Theme home opportunity candidates",
+      "breadcrumbs": "전체 시장\n집·인테리어\n온라인 탐색 신중구매형 × 집·인테리어\n기회지도",
+      "conditions": [
+        "온라인 탐색 신중구매형",
+        "소통·유대 욕구",
+        "배달·포장 주문",
+        "집·인테리어"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_ecommerce_planned_purchase%7Econnection%7Edelivery_order%7Ehome&row=age&col=market&trail=home%7Carc_ecommerce_planned_purchase%7Ehome&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:27:59.266Z",
+      "label": "Theme home cross-industry market",
+      "breadcrumbs": "전체 시장\n집·인테리어\n온라인 탐색 신중구매형 × 집·인테리어\n산업·시장",
+      "conditions": [
+        "쇼핑·커머스"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "쇼핑·커머스",
+      "url": "http://localhost:3001/atlas/markets/commerce?trail=home%7Carc_ecommerce_planned_purchase%7Ehome"
+    },
+    {
+      "at": "2026-09-06T02:28:00.177Z",
+      "label": "Theme collect market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "수집·취미용품"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "수집·취미용품",
+      "url": "http://localhost:3001/atlas/markets/collect"
+    },
+    {
+      "at": "2026-09-06T02:28:01.424Z",
+      "label": "Theme collect commercial cohort",
+      "breadcrumbs": "전체 시장\n수집·취미용품\n세그먼트",
+      "conditions": [
+        "수집 중심 정보탐색형",
+        "수집·취미용품"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "수집 중심 정보탐색형와 비교",
+        "수집·취미용품와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "수집 중심 정보탐색형 × 수집·취미용품",
+      "url": "http://localhost:3001/atlas/segments/arc_collecting_search_info~collect?trail=collect"
+    },
+    {
+      "at": "2026-09-06T02:28:02.200Z",
+      "label": "Theme collect strong relationships",
+      "breadcrumbs": "전체 시장\n수집·취미용품\n관계 탐색",
+      "conditions": [
+        "수집 중심 정보탐색형",
+        "수집·취미용품"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_collecting_search_info%7Ecollect&row=age&col=market&trail=collect&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:28:03.952Z",
+      "label": "Theme collect meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n수집·취미용품\n수집 중심 정보탐색형 × 수집·취미용품\n세그먼트",
+      "conditions": [
+        "수집 중심 정보탐색형",
+        "수집·취미용품",
+        "커뮤니티 접점",
+        "취향·자기표현 욕구"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "수집 중심 정보탐색형와 비교",
+        "수집·취미용품와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "수집 중심 정보탐색형 × 수집·취미용품 × 커뮤니티 접점 × 취향·자기표현 욕구",
+      "url": "http://localhost:3001/atlas/segments/arc_collecting_search_info~collect~community_channel~expression?trail=collect%7Carc_collecting_search_info%7Ecollect"
+    },
+    {
+      "at": "2026-09-06T02:28:04.555Z",
+      "label": "Theme collect opportunity candidates",
+      "breadcrumbs": "전체 시장\n수집·취미용품\n수집 중심 정보탐색형 × 수집·취미용품\n기회지도",
+      "conditions": [
+        "수집 중심 정보탐색형",
+        "수집·취미용품",
+        "커뮤니티 접점",
+        "취향·자기표현 욕구"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_collecting_search_info%7Ecollect%7Ecommunity_channel%7Eexpression&row=age&col=market&trail=collect%7Carc_collecting_search_info%7Ecollect&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:28:05.298Z",
+      "label": "Theme collect cross-industry market",
+      "breadcrumbs": "전체 시장\n수집·취미용품\n수집 중심 정보탐색형 × 수집·취미용품\n산업·시장",
+      "conditions": [
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/markets/finance?trail=collect%7Carc_collecting_search_info%7Ecollect"
+    },
+    {
+      "label": "Search 가격",
+      "results": [
+        {
+          "href": "/atlas/signals/price_compare",
+          "text": "가격 비교\n소비 행동"
+        },
+        {
+          "href": "/atlas/signals/value_seeking",
+          "text": "실속·비용 절약\n소비 행동"
+        },
+        {
+          "href": "/atlas/signals/pain_cost",
+          "text": "비용·가격 부담\n욕구·불편"
+        }
+      ]
+    },
+    {
+      "label": "Search 수집",
+      "results": [
+        {
+          "href": "/atlas/archetypes/arc_collecting_search_info",
+          "text": "수집 중심 정보탐색형\n소비 유형"
+        },
+        {
+          "href": "/atlas/markets/collect",
+          "text": "수집·취미용품\n산업·시장"
+        },
+        {
+          "href": "/atlas/signals/collecting",
+          "text": "수집·소유 몰입\n소비 행동"
+        }
+      ]
+    },
+    {
+      "label": "Search 전문가",
+      "results": [
+        {
+          "href": "/atlas/signals/expert",
+          "text": "전문가 조언·지도\n소비 행동"
+        }
+      ]
+    },
+    {
+      "label": "Search 구독",
+      "results": [
+        {
+          "href": "/atlas/archetypes/arc_adventure_paid_subscription",
+          "text": "새 경험 구독서비스이용형\n소비 유형"
+        },
+        {
+          "href": "/atlas/archetypes/arc_membership_paid_subscription",
+          "text": "유료구독 레슨이용형\n소비 유형"
+        },
+        {
+          "href": "/atlas/archetypes/arc_paid_subscription_recovery",
+          "text": "휴식·보상 구독서비스이용형\n소비 유형"
+        }
+      ]
+    },
+    {
+      "label": "Search 반려동물",
+      "results": [
+        {
+          "href": "/atlas/markets/pet",
+          "text": "반려동물\n산업·시장"
+        },
+        {
+          "href": "/atlas/signals/int_pet_care",
+          "text": "반려동물 관리\n관심·하위 시장"
+        },
+        {
+          "href": "/atlas/segments/arc_creator_discovery_review~pet",
+          "text": "영상 탐색 후기검증형 × 반려동물\n세그먼트"
+        }
+      ]
+    },
+    {
+      "label": "Search 육아",
+      "results": [
+        {
+          "href": "/atlas/markets/family",
+          "text": "가족·돌봄\n산업·시장"
+        }
+      ]
+    },
+    {
+      "label": "Search 여행",
+      "results": [
+        {
+          "href": "/atlas/markets/travel",
+          "text": "여행·로컬 경험\n산업·시장"
+        },
+        {
+          "href": "/atlas/signals/int_travel_domestic",
+          "text": "국내·근교 여행\n관심·하위 시장"
+        },
+        {
+          "href": "/atlas/signals/int_travel_overseas",
+          "text": "해외 여행\n관심·하위 시장"
+        }
+      ]
+    },
+    {
+      "label": "Search 수집 반려동물",
+      "results": [
+        {
+          "href": "/atlas/segments/arc_collecting_expression~pet",
+          "text": "취향 표현 수집몰입형 × 반려동물\n세그먼트"
+        },
+        {
+          "href": "/atlas/segments/arc_collecting_search_info~pet",
+          "text": "수집 중심 정보탐색형 × 반려동물\n세그먼트"
+        },
+        {
+          "href": "/atlas/segments/arc_collecting_planning~pet",
+          "text": "계획 중심 수집몰입형 × 반려동물\n세그먼트"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-06T02:28:10.028Z",
+      "label": "Search → generated segment",
+      "breadcrumbs": "전체 시장\n세그먼트",
+      "conditions": [
+        "취향 표현 수집몰입형",
+        "반려동물"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "취향 표현 수집몰입형와 비교",
+        "반려동물와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "취향 표현 수집몰입형 × 반려동물",
+      "url": "http://localhost:3001/atlas/segments/arc_collecting_expression~pet"
+    },
+    {
+      "label": "QA quality correction: defining Matrix relationships are labeled and excluded from discovery highlights"
+    },
+    {
+      "at": "2026-09-06T02:40:39.492Z",
+      "label": "Theme finance market",
+      "breadcrumbs": "전체 시장\n산업·시장",
+      "conditions": [
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/markets/finance"
+    },
+    {
+      "at": "2026-09-06T02:40:40.590Z",
+      "label": "Theme finance commercial cohort",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n세그먼트",
+      "conditions": [
+        "편의 우선 실속선택형",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "편의 우선 실속선택형와 비교",
+        "개인 재테크 관심와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "편의 우선 실속선택형 × 개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/segments/arc_convenience_value_seeking~finance?trail=finance"
+    },
+    {
+      "at": "2026-09-06T02:40:41.247Z",
+      "label": "Theme finance strong relationships",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n관계 탐색",
+      "conditions": [
+        "편의 우선 실속선택형",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "관계 탐색",
+        "산업 연결",
+        "추가로 연결된 신호",
+        "현재 집단"
+      ],
+      "title": "관계 탐색",
+      "url": "http://localhost:3001/atlas/relationship?q=arc_convenience_value_seeking%7Efinance&row=age&col=market&trail=finance&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:40:42.080Z",
+      "label": "Theme finance sparse joint: broaden to market and type × need",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n교차분석",
+      "conditions": [
+        "편의 우선 실속선택형",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "교차분석 · 현재 집단을 더 나누기",
+        "현재 집단의 주요 신호",
+        "다른 방향으로 나누기"
+      ],
+      "title": "교차분석",
+      "url": "http://localhost:3001/atlas/matrix?q=arc_convenience_value_seeking%7Efinance&row=need&col=channel&trail=finance&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:40:44.427Z",
+      "label": "Theme finance meaningful matrix segment",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n편의 우선 실속선택형 × 개인 재테크 관심\n개인 재테크 관심\n세그먼트",
+      "conditions": [
+        "휴식·보상 후기검증형",
+        "확실성·실패 회피",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "휴식·보상 후기검증형와 비교",
+        "개인 재테크 관심와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "휴식·보상 후기검증형 × 확실성·실패 회피 × 개인 재테크 관심",
+      "url": "http://localhost:3001/atlas/segments/arc_recovery_review~certainty~finance?trail=finance%7Carc_convenience_value_seeking%7Efinance%7Cfinance"
+    },
+    {
+      "at": "2026-09-06T02:40:45.027Z",
+      "label": "Theme finance opportunity candidates",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n편의 우선 실속선택형 × 개인 재테크 관심\n개인 재테크 관심\n기회지도",
+      "conditions": [
+        "휴식·보상 후기검증형",
+        "확실성·실패 회피",
+        "개인 재테크 관심"
+      ],
+      "modules": [
+        "Opportunity Landscape",
+        "지금 선택한 집단",
+        "기회 후보 비교",
+        "점수 해석과 추정 근거"
+      ],
+      "title": "기회지도",
+      "url": "http://localhost:3001/atlas/opportunity?q=arc_recovery_review%7Ecertainty%7Efinance&row=age&col=market&trail=finance%7Carc_convenience_value_seeking%7Efinance%7Cfinance&lens=people"
+    },
+    {
+      "at": "2026-09-06T02:40:46.081Z",
+      "label": "Theme finance cross-industry market",
+      "breadcrumbs": "전체 시장\n개인 재테크 관심\n편의 우선 실속선택형 × 개인 재테크 관심\n산업·시장",
+      "conditions": [
+        "쇼핑·커머스"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 시장의 주요 소비 유형",
+        "평균보다 강한 소비 유형",
+        "욕구 · 불편",
+        "이 시장에서 구별되는 소비 행동",
+        "관심이 이어지는 다른 시장",
+        "작지만 강한 시장 내 집단",
+        "어떤 불편을 느끼는 소비자인가",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "시장 내 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "하위 시장을 더 살펴보기",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "쇼핑·커머스",
+      "url": "http://localhost:3001/atlas/markets/commerce?trail=finance%7Carc_convenience_value_seeking%7Efinance"
+    },
+    {
+      "label": "Search 가격",
+      "results": [
+        {
+          "href": "/atlas/signals/price_compare",
+          "text": "가격 비교\n소비 행동"
+        },
+        {
+          "href": "/atlas/signals/value_seeking",
+          "text": "실속·비용 절약\n소비 행동"
+        },
+        {
+          "href": "/atlas/signals/pain_cost",
+          "text": "비용·가격 부담\n욕구·불편"
+        }
+      ]
+    },
+    {
+      "label": "Search 수집",
+      "results": [
+        {
+          "href": "/atlas/archetypes/arc_collecting_search_info",
+          "text": "수집 중심 정보탐색형\n소비 유형"
+        },
+        {
+          "href": "/atlas/markets/collect",
+          "text": "수집·취미용품\n산업·시장"
+        },
+        {
+          "href": "/atlas/signals/collecting",
+          "text": "수집·소유 몰입\n소비 행동"
+        }
+      ]
+    },
+    {
+      "label": "Search 전문가",
+      "results": [
+        {
+          "href": "/atlas/signals/expert",
+          "text": "전문가 조언·지도\n소비 행동"
+        }
+      ]
+    },
+    {
+      "label": "Search 구독",
+      "results": [
+        {
+          "href": "/atlas/archetypes/arc_adventure_paid_subscription",
+          "text": "새 경험 구독서비스이용형\n소비 유형"
+        },
+        {
+          "href": "/atlas/archetypes/arc_membership_paid_subscription",
+          "text": "유료구독 레슨이용형\n소비 유형"
+        },
+        {
+          "href": "/atlas/archetypes/arc_paid_subscription_recovery",
+          "text": "휴식·보상 구독서비스이용형\n소비 유형"
+        }
+      ]
+    },
+    {
+      "label": "Search 반려동물",
+      "results": [
+        {
+          "href": "/atlas/markets/pet",
+          "text": "반려동물\n산업·시장"
+        },
+        {
+          "href": "/atlas/signals/int_pet_care",
+          "text": "반려동물 관리\n관심·하위 시장"
+        },
+        {
+          "href": "/atlas/segments/arc_creator_discovery_review~pet",
+          "text": "영상 탐색 후기검증형 × 반려동물\n세그먼트"
+        }
+      ]
+    },
+    {
+      "label": "Search 육아",
+      "results": [
+        {
+          "href": "/atlas/markets/family",
+          "text": "가족·돌봄\n산업·시장"
+        }
+      ]
+    },
+    {
+      "label": "Search 여행",
+      "results": [
+        {
+          "href": "/atlas/markets/travel",
+          "text": "여행·로컬 경험\n산업·시장"
+        },
+        {
+          "href": "/atlas/signals/int_travel_domestic",
+          "text": "국내·근교 여행\n관심·하위 시장"
+        },
+        {
+          "href": "/atlas/signals/int_travel_overseas",
+          "text": "해외 여행\n관심·하위 시장"
+        }
+      ]
+    },
+    {
+      "label": "Search 수집 반려동물",
+      "results": [
+        {
+          "href": "/atlas/segments/arc_collecting_expression~pet",
+          "text": "취향 표현 수집몰입형 × 반려동물\n세그먼트"
+        },
+        {
+          "href": "/atlas/segments/arc_collecting_search_info~pet",
+          "text": "수집 중심 정보탐색형 × 반려동물\n세그먼트"
+        },
+        {
+          "href": "/atlas/segments/arc_collecting_planning~pet",
+          "text": "계획 중심 수집몰입형 × 반려동물\n세그먼트"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-06T02:40:50.824Z",
+      "label": "Search → generated segment",
+      "breadcrumbs": "전체 시장\n세그먼트",
+      "conditions": [
+        "취향 표현 수집몰입형",
+        "반려동물"
+      ],
+      "modules": [
+        "연령별 분포",
+        "지역 분포",
+        "성별 · 생활 맥락",
+        "이 유형을 구별하는 신호",
+        "산업별 관심 연결",
+        "욕구 · 불편",
+        "구매·선택 방식",
+        "발견·신뢰 방식",
+        "이용 채널",
+        "취향 표현 수집몰입형와 비교",
+        "반려동물와 비교",
+        "산업을 넘는 기회 후보",
+        "함께 나타나는 소비 유형",
+        "더 구체적인 소비 패턴",
+        "관련 관심·하위 시장",
+        "산출 근거 · 데이터 범위"
+      ],
+      "title": "취향 표현 수집몰입형 × 반려동물",
+      "url": "http://localhost:3001/atlas/segments/arc_collecting_expression~pet"
+    }
+  ],
+  "themes": [
+    {
+      "id": "pet",
+      "label": "반려동물",
+      "pains": [
+        "이동·활동 제약\n12만명\n시장 내 6.4% · 소비 관여 49\n소비 유형과 상세 신호 확인 ↗",
+        "번거로움·관리 부담\n8.5만명\n시장 내 4.7% · 소비 관여 74\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n2만명\n시장 내 1.1% · 소비 관여 49\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n1만명\n시장 내 0.6% · 소비 관여 67\n소비 유형과 상세 신호 확인 ↗",
+        "비용·가격 부담\n5100명\n시장 내 0.3% · 소비 관여 60\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n4600명\n시장 내 0.3% · 소비 관여 43\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 3,
+      "types": 8,
+      "cohort": "계획 중심 구독서비스이용형 × 반려동물",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/content?trail=pet%7Carc_paid_subscription_planning%7Epet",
+          "label": "영상·콘텐츠"
+        },
+        {
+          "href": "/atlas/markets/commerce?trail=pet%7Carc_paid_subscription_planning%7Epet",
+          "label": "쇼핑·커머스"
+        },
+        {
+          "href": "/atlas/markets/home?trail=pet%7Carc_paid_subscription_planning%7Epet",
+          "label": "집·인테리어"
+        },
+        {
+          "href": "/atlas/markets/beauty?trail=pet%7Carc_paid_subscription_planning%7Epet",
+          "label": "뷰티·패션"
+        },
+        {
+          "href": "/atlas/markets/delivery?trail=pet%7Carc_paid_subscription_planning%7Epet",
+          "label": "배달·간편식"
+        },
+        {
+          "href": "/atlas/markets/gaming?trail=pet%7Carc_paid_subscription_planning%7Epet",
+          "label": "게임"
+        },
+        {
+          "href": "/atlas/markets/photo?trail=pet%7Carc_paid_subscription_planning%7Epet",
+          "label": "사진·창작"
+        },
+        {
+          "href": "/atlas/markets/food?trail=pet%7Carc_paid_subscription_planning%7Epet",
+          "label": "외식·미식"
+        }
+      ],
+      "signals": [
+        "01\n새로운 경험 탐색\n63.8%\n1.56×",
+        "02\n품질·프리미엄 선택\n6.1%\n3.06×",
+        "03\n단골·반복 선택\n22.9%\n0.61×",
+        "04\n수집·소유 몰입\n9.0%\n1.72×",
+        "05\n실력 향상·연습\n2.0%\n0.35×",
+        "06\n배달·포장 주문\n49.6%\n1.21×",
+        "07\n취향·자기표현 욕구\n37.5%\n1.24×",
+        "08\n휴식·회복 욕구\n83.7%\n1.15×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_paid_subscription_planning~delivery_order~pain_hassle~pet?trail=pet%7Carc_paid_subscription_planning%7Epet",
+        "index": 1.2,
+        "label": "2900명\n1.20×\n3.6% · n=63",
+        "n": 63
+      },
+      "opportunity": [
+        "계획 중심 구독서비스이용형",
+        "배달·포장 주문",
+        "번거로움·관리 부담",
+        "반려동물"
+      ],
+      "adjacent": "영상·콘텐츠"
+    },
+    {
+      "id": "travel",
+      "label": "여행·로컬 경험",
+      "pains": [
+        "이동·활동 제약\n260만명\n시장 내 6.2% · 소비 관여 32\n소비 유형과 상세 신호 확인 ↗",
+        "번거로움·관리 부담\n200만명\n시장 내 4.7% · 소비 관여 70\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n56만명\n시장 내 1.4% · 소비 관여 34\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n20만명\n시장 내 0.5% · 소비 관여 84\n소비 유형과 상세 신호 확인 ↗",
+        "비용·가격 부담\n14만명\n시장 내 0.3% · 소비 관여 62\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n13만명\n시장 내 0.3% · 소비 관여 50\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 4,
+      "types": 8,
+      "cohort": "디지털 활용 지인추천형 × 여행·로컬 경험",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/beauty?trail=travel%7Carc_digital_recommendation%7Etravel",
+          "label": "뷰티·패션"
+        },
+        {
+          "href": "/atlas/markets/content?trail=travel%7Carc_digital_recommendation%7Etravel",
+          "label": "영상·콘텐츠"
+        },
+        {
+          "href": "/atlas/markets/gaming?trail=travel%7Carc_digital_recommendation%7Etravel",
+          "label": "게임"
+        },
+        {
+          "href": "/atlas/markets/home?trail=travel%7Carc_digital_recommendation%7Etravel",
+          "label": "집·인테리어"
+        },
+        {
+          "href": "/atlas/markets/collect?trail=travel%7Carc_digital_recommendation%7Etravel",
+          "label": "수집·취미용품"
+        },
+        {
+          "href": "/atlas/markets/food?trail=travel%7Carc_digital_recommendation%7Etravel",
+          "label": "외식·미식"
+        },
+        {
+          "href": "/atlas/markets/finance?trail=travel%7Carc_digital_recommendation%7Etravel",
+          "label": "개인 재테크 관심"
+        },
+        {
+          "href": "/atlas/markets/commerce?trail=travel%7Carc_digital_recommendation%7Etravel",
+          "label": "쇼핑·커머스"
+        }
+      ],
+      "signals": [
+        "01\n영상·크리에이터 정보 탐색\n13.7%\n2.20×",
+        "02\n새로운 경험 탐색\n56.7%\n1.38×",
+        "03\n후기·리뷰 검토\n9.4%\n1.89×",
+        "04\n배움·성취 욕구\n25.6%\n1.46×",
+        "05\n단골·반복 선택\n26.0%\n0.69×",
+        "06\n확실성·실패 회피\n9.5%\n1.58×",
+        "07\n커뮤니티 정보 탐색\n1.6%\n2.73×",
+        "08\n편의·시간 절약 욕구\n15.1%\n1.35×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_digital_recommendation~convenience~specialist~travel?trail=travel%7Carc_digital_recommendation%7Etravel",
+        "index": 1.18,
+        "label": "5000명\n1.18×\n1.9% · n=110",
+        "n": 110
+      },
+      "opportunity": [
+        "디지털 활용 지인추천형",
+        "편의·시간 절약 욕구",
+        "전문점·전문시설",
+        "여행·로컬 경험"
+      ],
+      "adjacent": "뷰티·패션"
+    },
+    {
+      "id": "education",
+      "label": "배움·자기계발",
+      "pains": [
+        "이동·활동 제약\n18만명\n시장 내 7.0% · 소비 관여 48\n소비 유형과 상세 신호 확인 ↗",
+        "번거로움·관리 부담\n9.9만명\n시장 내 3.8% · 소비 관여 67\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n3.6만명\n시장 내 1.4% · 소비 관여 40\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n9900명\n시장 내 0.4% · 소비 관여 57\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n8400명\n시장 내 0.3% · 소비 관여 36\n소비 유형과 상세 신호 확인 ↗",
+        "비용·가격 부담\n8000명\n시장 내 0.3% · 소비 관여 52\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 3,
+      "types": 8,
+      "cohort": "배움 중심 전문채널이용형 × 배움·자기계발",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/community?trail=education%7Carc_growth_specialist%7Eeducation",
+          "label": "모임·지역서비스"
+        },
+        {
+          "href": "/atlas/markets/photo?trail=education%7Carc_growth_specialist%7Eeducation",
+          "label": "사진·창작"
+        },
+        {
+          "href": "/atlas/markets/collect?trail=education%7Carc_growth_specialist%7Eeducation",
+          "label": "수집·취미용품"
+        },
+        {
+          "href": "/atlas/markets/finance?trail=education%7Carc_growth_specialist%7Eeducation",
+          "label": "개인 재테크 관심"
+        },
+        {
+          "href": "/atlas/markets/family?trail=education%7Carc_growth_specialist%7Eeducation",
+          "label": "가족·돌봄"
+        },
+        {
+          "href": "/atlas/markets/beauty?trail=education%7Carc_growth_specialist%7Eeducation",
+          "label": "뷰티·패션"
+        },
+        {
+          "href": "/atlas/markets/home?trail=education%7Carc_growth_specialist%7Eeducation",
+          "label": "집·인테리어"
+        },
+        {
+          "href": "/atlas/markets/garden?trail=education%7Carc_growth_specialist%7Eeducation",
+          "label": "가드닝·식물"
+        }
+      ],
+      "signals": [
+        "01\n회원권·레슨 이용\n3.6%\n6.70×",
+        "02\n새로운 경험 탐색\n51.4%\n1.25×",
+        "03\n매장·현장 이용\n8.2%\n0.68×",
+        "04\n가족 일정·선호 조율\n9.6%\n1.41×",
+        "05\n채널 구독·팔로우\n1.3%\n2.39×",
+        "06\n실속·비용 절약\n4.9%\n1.54×",
+        "07\n후기·리뷰 검토\n3.0%\n0.61×",
+        "08\n지인 추천\n1.6%\n1.85×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_growth_specialist~education~paid_subscription~recovery?trail=education%7Carc_growth_specialist%7Eeducation",
+        "index": 1.26,
+        "label": "5000명\n1.26×\n2.6% · n=110",
+        "n": 110
+      },
+      "opportunity": [
+        "배움 중심 전문채널이용형",
+        "배움·자기계발",
+        "유료 구독서비스 접점",
+        "휴식·회복 욕구"
+      ],
+      "adjacent": "모임·지역서비스"
+    },
+    {
+      "id": "beauty",
+      "label": "뷰티·패션",
+      "pains": [
+        "번거로움·관리 부담\n13만명\n시장 내 5.7% · 소비 관여 75\n소비 유형과 상세 신호 확인 ↗",
+        "이동·활동 제약\n7.6만명\n시장 내 3.2% · 소비 관여 51\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n1.8만명\n시장 내 0.8% · 소비 관여 69\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n1.6만명\n시장 내 0.7% · 소비 관여 39\n소비 유형과 상세 신호 확인 ↗",
+        "가족 돌봄·조율 부담\n9100명\n시장 내 0.4% · 소비 관여 68\n소비 유형과 상세 신호 확인 ↗",
+        "시간 부족·일정 부담\n8500명\n시장 내 0.4% · 소비 관여 67\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 2,
+      "types": 8,
+      "cohort": "구매 연계 직접확인형 × 뷰티·패션",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/commerce?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+          "label": "쇼핑·커머스"
+        },
+        {
+          "href": "/atlas/markets/home?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+          "label": "집·인테리어"
+        },
+        {
+          "href": "/atlas/markets/collect?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+          "label": "수집·취미용품"
+        },
+        {
+          "href": "/atlas/markets/content?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+          "label": "영상·콘텐츠"
+        },
+        {
+          "href": "/atlas/markets/garden?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+          "label": "가드닝·식물"
+        },
+        {
+          "href": "/atlas/markets/education?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+          "label": "배움·자기계발"
+        },
+        {
+          "href": "/atlas/markets/mobility?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+          "label": "드라이브·모빌리티"
+        },
+        {
+          "href": "/atlas/markets/delivery?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+          "label": "배달·간편식"
+        }
+      ],
+      "signals": [
+        "01\n정보 검색·검토\n38.5%\n22.2×",
+        "02\n온라인 쇼핑\n20.0%\n11.6×",
+        "03\n새로운 경험 탐색\n88.2%\n2.15×",
+        "04\n매장·현장 이용\n27.8%\n2.29×",
+        "05\n단골·반복 선택\n19.0%\n0.51×",
+        "06\n편의·시간 절약 욕구\n20.2%\n1.80×",
+        "07\n온라인·모바일 접점\n78.9%\n1.27×",
+        "08\n배움·성취 욕구\n26.4%\n1.51×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_offline_consult_paid~beauty~convenience~digital?trail=beauty%7Carc_offline_consult_paid%7Ebeauty",
+        "index": 1.17,
+        "label": "1600명\n1.17×\n18.7% · n=36",
+        "n": 36
+      },
+      "opportunity": [
+        "구매 연계 직접확인형",
+        "뷰티·패션",
+        "편의·시간 절약 욕구",
+        "온라인·모바일 접점"
+      ],
+      "adjacent": "쇼핑·커머스"
+    },
+    {
+      "id": "wellness",
+      "label": "건강·휴식",
+      "pains": [
+        "이동·활동 제약\n170만명\n시장 내 6.3% · 소비 관여 32\n소비 유형과 상세 신호 확인 ↗",
+        "번거로움·관리 부담\n130만명\n시장 내 4.7% · 소비 관여 71\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n36만명\n시장 내 1.3% · 소비 관여 33\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n12만명\n시장 내 0.4% · 소비 관여 85\n소비 유형과 상세 신호 확인 ↗",
+        "비용·가격 부담\n9.2만명\n시장 내 0.3% · 소비 관여 49\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n7.7만명\n시장 내 0.3% · 소비 관여 52\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 2,
+      "types": 8,
+      "cohort": "영상 탐색 정보탐색형 × 건강·휴식",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/content?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+          "label": "영상·콘텐츠"
+        },
+        {
+          "href": "/atlas/markets/collect?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+          "label": "수집·취미용품"
+        },
+        {
+          "href": "/atlas/markets/community?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+          "label": "모임·지역서비스"
+        },
+        {
+          "href": "/atlas/markets/family?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+          "label": "가족·돌봄"
+        },
+        {
+          "href": "/atlas/markets/education?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+          "label": "배움·자기계발"
+        },
+        {
+          "href": "/atlas/markets/commerce?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+          "label": "쇼핑·커머스"
+        },
+        {
+          "href": "/atlas/markets/garden?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+          "label": "가드닝·식물"
+        },
+        {
+          "href": "/atlas/markets/finance?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+          "label": "개인 재테크 관심"
+        }
+      ],
+      "signals": [
+        "01\n온라인·모바일 접점\n99.9%\n1.61×",
+        "02\n새로운 경험 탐색\n69.2%\n1.68×",
+        "03\n후기·리뷰 검토\n13.8%\n2.78×",
+        "04\n수집·소유 몰입\n11.3%\n2.17×",
+        "05\n채널 구독·팔로우\n2.1%\n4.04×",
+        "06\n실속·비용 절약\n6.8%\n2.14×",
+        "07\n이동·활동 제약\n10.5%\n1.69×",
+        "08\n유료 구독서비스 접점\n1.2%\n0.25×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_creator_discovery_search_info~certainty~specialist~wellness?trail=wellness%7Carc_creator_discovery_search_info%7Ewellness",
+        "index": 1.38,
+        "label": "1800명\n1.38×\n0.6% · n=40",
+        "n": 40
+      },
+      "opportunity": [
+        "영상 탐색 정보탐색형",
+        "확실성·실패 회피",
+        "전문점·전문시설",
+        "건강·휴식"
+      ],
+      "adjacent": "영상·콘텐츠"
+    },
+    {
+      "id": "food",
+      "label": "외식·미식",
+      "pains": [
+        "이동·활동 제약\n200만명\n시장 내 5.7% · 소비 관여 33\n소비 유형과 상세 신호 확인 ↗",
+        "번거로움·관리 부담\n170만명\n시장 내 4.8% · 소비 관여 73\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n46만명\n시장 내 1.3% · 소비 관여 35\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n19만명\n시장 내 0.5% · 소비 관여 81\n소비 유형과 상세 신호 확인 ↗",
+        "비용·가격 부담\n12만명\n시장 내 0.3% · 소비 관여 64\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n12만명\n시장 내 0.3% · 소비 관여 47\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 4,
+      "types": 8,
+      "cohort": "디지털 활용 지인추천형 × 외식·미식",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/beauty?trail=food%7Carc_digital_recommendation%7Efood",
+          "label": "뷰티·패션"
+        },
+        {
+          "href": "/atlas/markets/content?trail=food%7Carc_digital_recommendation%7Efood",
+          "label": "영상·콘텐츠"
+        },
+        {
+          "href": "/atlas/markets/gaming?trail=food%7Carc_digital_recommendation%7Efood",
+          "label": "게임"
+        },
+        {
+          "href": "/atlas/markets/home?trail=food%7Carc_digital_recommendation%7Efood",
+          "label": "집·인테리어"
+        },
+        {
+          "href": "/atlas/markets/collect?trail=food%7Carc_digital_recommendation%7Efood",
+          "label": "수집·취미용품"
+        },
+        {
+          "href": "/atlas/markets/finance?trail=food%7Carc_digital_recommendation%7Efood",
+          "label": "개인 재테크 관심"
+        },
+        {
+          "href": "/atlas/markets/commerce?trail=food%7Carc_digital_recommendation%7Efood",
+          "label": "쇼핑·커머스"
+        },
+        {
+          "href": "/atlas/markets/delivery?trail=food%7Carc_digital_recommendation%7Efood",
+          "label": "배달·간편식"
+        }
+      ],
+      "signals": [
+        "01\n영상·크리에이터 정보 탐색\n13.6%\n2.18×",
+        "02\n새로운 경험 탐색\n57.0%\n1.39×",
+        "03\n단골·반복 선택\n25.2%\n0.67×",
+        "04\n후기·리뷰 검토\n9.5%\n1.91×",
+        "05\n배움·성취 욕구\n25.6%\n1.46×",
+        "06\n확실성·실패 회피\n9.4%\n1.56×",
+        "07\n커뮤니티 정보 탐색\n1.6%\n2.65×",
+        "08\n편의·시간 절약 욕구\n15.2%\n1.35×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_digital_recommendation~community_channel~connection~food?trail=food%7Carc_digital_recommendation%7Efood",
+        "index": 1.19,
+        "label": "4800명\n1.19×\n1.9% · n=107",
+        "n": 107
+      },
+      "opportunity": [
+        "디지털 활용 지인추천형",
+        "커뮤니티 접점",
+        "소통·유대 욕구",
+        "외식·미식"
+      ],
+      "adjacent": "뷰티·패션"
+    },
+    {
+      "id": "content",
+      "label": "영상·콘텐츠",
+      "pains": [
+        "이동·활동 제약\n130만명\n시장 내 5.7% · 소비 관여 38\n소비 유형과 상세 신호 확인 ↗",
+        "번거로움·관리 부담\n110만명\n시장 내 5.1% · 소비 관여 80\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n27만명\n시장 내 1.2% · 소비 관여 40\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n12만명\n시장 내 0.5% · 소비 관여 86\n소비 유형과 상세 신호 확인 ↗",
+        "비용·가격 부담\n8.3만명\n시장 내 0.4% · 소비 관여 74\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n7.1만명\n시장 내 0.3% · 소비 관여 57\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 3,
+      "types": 8,
+      "cohort": "유료구독 레슨이용형 × 영상·콘텐츠",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/fitness?trail=content%7Carc_membership_paid_subscription%7Econtent",
+          "label": "운동·아웃도어"
+        },
+        {
+          "href": "/atlas/markets/commerce?trail=content%7Carc_membership_paid_subscription%7Econtent",
+          "label": "쇼핑·커머스"
+        },
+        {
+          "href": "/atlas/markets/beauty?trail=content%7Carc_membership_paid_subscription%7Econtent",
+          "label": "뷰티·패션"
+        },
+        {
+          "href": "/atlas/markets/home?trail=content%7Carc_membership_paid_subscription%7Econtent",
+          "label": "집·인테리어"
+        },
+        {
+          "href": "/atlas/markets/delivery?trail=content%7Carc_membership_paid_subscription%7Econtent",
+          "label": "배달·간편식"
+        },
+        {
+          "href": "/atlas/markets/photo?trail=content%7Carc_membership_paid_subscription%7Econtent",
+          "label": "사진·창작"
+        },
+        {
+          "href": "/atlas/markets/food?trail=content%7Carc_membership_paid_subscription%7Econtent",
+          "label": "외식·미식"
+        },
+        {
+          "href": "/atlas/markets/wellness?trail=content%7Carc_membership_paid_subscription%7Econtent",
+          "label": "건강·휴식"
+        }
+      ],
+      "signals": [
+        "01\n유료 서비스·구매\n74.5%\n26.5×",
+        "02\n품질·프리미엄 선택\n9.2%\n4.59×",
+        "03\n새로운 경험 탐색\n70.4%\n1.72×",
+        "04\n계획·기록 습관\n66.1%\n1.47×",
+        "05\n번거로움·관리 부담\n10.3%\n2.24×",
+        "06\n전문점·전문시설\n12.9%\n1.64×",
+        "07\n수집·소유 몰입\n9.1%\n1.74×",
+        "08\n단골·반복 선택\n27.2%\n0.73×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_membership_paid_subscription~content~convenience~digital?trail=content%7Carc_membership_paid_subscription%7Econtent",
+        "index": 1.11,
+        "label": "2900명\n1.11×\n9.8% · n=63",
+        "n": 63
+      },
+      "opportunity": [
+        "유료구독 레슨이용형",
+        "영상·콘텐츠",
+        "편의·시간 절약 욕구",
+        "온라인·모바일 접점"
+      ],
+      "adjacent": "운동·아웃도어"
+    },
+    {
+      "id": "home",
+      "label": "집·인테리어",
+      "pains": [
+        "번거로움·관리 부담\n35만명\n시장 내 5.1% · 소비 관여 72\n소비 유형과 상세 신호 확인 ↗",
+        "이동·활동 제약\n31만명\n시장 내 4.5% · 소비 관여 39\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n5.6만명\n시장 내 0.8% · 소비 관여 34\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n4.2만명\n시장 내 0.6% · 소비 관여 70\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n2.6만명\n시장 내 0.4% · 소비 관여 62\n소비 유형과 상세 신호 확인 ↗",
+        "가족 돌봄·조율 부담\n2.4만명\n시장 내 0.4% · 소비 관여 70\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 3,
+      "types": 8,
+      "cohort": "온라인 탐색 신중구매형 × 집·인테리어",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/commerce?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+          "label": "쇼핑·커머스"
+        },
+        {
+          "href": "/atlas/markets/beauty?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+          "label": "뷰티·패션"
+        },
+        {
+          "href": "/atlas/markets/collect?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+          "label": "수집·취미용품"
+        },
+        {
+          "href": "/atlas/markets/content?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+          "label": "영상·콘텐츠"
+        },
+        {
+          "href": "/atlas/markets/pet?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+          "label": "반려동물"
+        },
+        {
+          "href": "/atlas/markets/delivery?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+          "label": "배달·간편식"
+        },
+        {
+          "href": "/atlas/markets/food?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+          "label": "외식·미식"
+        },
+        {
+          "href": "/atlas/markets/finance?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+          "label": "개인 재테크 관심"
+        }
+      ],
+      "signals": [
+        "01\n유료 서비스·구매\n37.9%\n13.5×",
+        "02\n계획·기록 습관\n94.6%\n2.10×",
+        "03\n수집·소유 몰입\n21.6%\n4.15×",
+        "04\n품질·프리미엄 선택\n10.7%\n5.37×",
+        "05\n매장·현장 이용\n31.4%\n2.58×",
+        "06\n새로운 경험 탐색\n71.2%\n1.73×",
+        "07\n편의·시간 절약 욕구\n24.2%\n2.16×",
+        "08\n배움·성취 욕구\n28.9%\n1.65×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_ecommerce_planned_purchase~connection~delivery_order~home?trail=home%7Carc_ecommerce_planned_purchase%7Ehome",
+        "index": 1.25,
+        "label": "2200명\n1.25×\n13.5% · n=49",
+        "n": 49
+      },
+      "opportunity": [
+        "온라인 탐색 신중구매형",
+        "소통·유대 욕구",
+        "배달·포장 주문",
+        "집·인테리어"
+      ],
+      "adjacent": "쇼핑·커머스"
+    },
+    {
+      "id": "collect",
+      "label": "수집·취미용품",
+      "pains": [
+        "번거로움·관리 부담\n26만명\n시장 내 4.9% · 소비 관여 74\n소비 유형과 상세 신호 확인 ↗",
+        "이동·활동 제약\n22만명\n시장 내 4.0% · 소비 관여 48\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n6.6만명\n시장 내 1.2% · 소비 관여 49\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n2.8만명\n시장 내 0.5% · 소비 관여 68\n소비 유형과 상세 신호 확인 ↗",
+        "비용·가격 부담\n2만명\n시장 내 0.4% · 소비 관여 57\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n1.8만명\n시장 내 0.3% · 소비 관여 44\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 3,
+      "types": 8,
+      "cohort": "수집 중심 정보탐색형 × 수집·취미용품",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/finance?trail=collect%7Carc_collecting_search_info%7Ecollect",
+          "label": "개인 재테크 관심"
+        },
+        {
+          "href": "/atlas/markets/beauty?trail=collect%7Carc_collecting_search_info%7Ecollect",
+          "label": "뷰티·패션"
+        },
+        {
+          "href": "/atlas/markets/commerce?trail=collect%7Carc_collecting_search_info%7Ecollect",
+          "label": "쇼핑·커머스"
+        },
+        {
+          "href": "/atlas/markets/home?trail=collect%7Carc_collecting_search_info%7Ecollect",
+          "label": "집·인테리어"
+        },
+        {
+          "href": "/atlas/markets/content?trail=collect%7Carc_collecting_search_info%7Ecollect",
+          "label": "영상·콘텐츠"
+        },
+        {
+          "href": "/atlas/markets/education?trail=collect%7Carc_collecting_search_info%7Ecollect",
+          "label": "배움·자기계발"
+        },
+        {
+          "href": "/atlas/markets/wellness?trail=collect%7Carc_collecting_search_info%7Ecollect",
+          "label": "건강·휴식"
+        },
+        {
+          "href": "/atlas/markets/food?trail=collect%7Carc_collecting_search_info%7Ecollect",
+          "label": "외식·미식"
+        }
+      ],
+      "signals": [
+        "01\n커뮤니티 정보 탐색\n9.7%\n16.3×",
+        "02\n영상·크리에이터 정보 탐색\n23.1%\n3.72×",
+        "03\n새로운 경험 탐색\n68.5%\n1.67×",
+        "04\n후기·리뷰 검토\n14.1%\n2.83×",
+        "05\n채널 구독·팔로우\n3.1%\n5.93×",
+        "06\n실속·비용 절약\n6.5%\n2.06×",
+        "07\n유료 서비스·구매\n5.9%\n2.10×",
+        "08\n온라인·모바일 접점\n76.0%\n1.22×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_collecting_search_info~collect~community_channel~expression?trail=collect%7Carc_collecting_search_info%7Ecollect",
+        "index": 1.29,
+        "label": "5400명\n1.29×\n2.7% · n=119",
+        "n": 119
+      },
+      "opportunity": [
+        "수집 중심 정보탐색형",
+        "수집·취미용품",
+        "커뮤니티 접점",
+        "취향·자기표현 욕구"
+      ],
+      "adjacent": "개인 재테크 관심"
+    },
+    {
+      "id": "finance",
+      "label": "개인 재테크 관심",
+      "pains": [
+        "이동·활동 제약\n3.7만명\n시장 내 7.9% · 소비 관여 32\n소비 유형과 상세 신호 확인 ↗",
+        "번거로움·관리 부담\n1.6만명\n시장 내 3.5% · 소비 관여 63\n소비 유형과 상세 신호 확인 ↗",
+        "디지털 이용 부담\n5400명\n시장 내 1.2% · 소비 관여 42\n소비 유형과 상세 신호 확인 ↗",
+        "거리·예약·대기 불편\n3400명\n시장 내 0.7% · 소비 관여 57\n소비 유형과 상세 신호 확인 ↗",
+        "비용·가격 부담\n2800명\n시장 내 0.6% · 소비 관여 61\n소비 유형과 상세 신호 확인 ↗",
+        "선택·결정의 어려움\n1700명\n시장 내 0.4% · 소비 관여 27\n소비 유형과 상세 신호 확인 ↗"
+      ],
+      "submarkets": 2,
+      "types": 8,
+      "cohort": "편의 우선 실속선택형 × 개인 재테크 관심",
+      "adjacency": [
+        {
+          "href": "/atlas/markets/commerce?trail=finance%7Carc_convenience_value_seeking%7Efinance",
+          "label": "쇼핑·커머스"
+        },
+        {
+          "href": "/atlas/markets/beauty?trail=finance%7Carc_convenience_value_seeking%7Efinance",
+          "label": "뷰티·패션"
+        },
+        {
+          "href": "/atlas/markets/home?trail=finance%7Carc_convenience_value_seeking%7Efinance",
+          "label": "집·인테리어"
+        },
+        {
+          "href": "/atlas/markets/pet?trail=finance%7Carc_convenience_value_seeking%7Efinance",
+          "label": "반려동물"
+        },
+        {
+          "href": "/atlas/markets/gaming?trail=finance%7Carc_convenience_value_seeking%7Efinance",
+          "label": "게임"
+        },
+        {
+          "href": "/atlas/markets/mobility?trail=finance%7Carc_convenience_value_seeking%7Efinance",
+          "label": "드라이브·모빌리티"
+        },
+        {
+          "href": "/atlas/markets/content?trail=finance%7Carc_convenience_value_seeking%7Efinance",
+          "label": "영상·콘텐츠"
+        },
+        {
+          "href": "/atlas/markets/delivery?trail=finance%7Carc_convenience_value_seeking%7Efinance",
+          "label": "배달·간편식"
+        }
+      ],
+      "signals": [
+        "01\n배움·성취 욕구\n29.9%\n1.70×",
+        "02\n온라인·모바일 접점\n80.9%\n1.30×",
+        "03\n계획·기록 습관\n59.1%\n1.31×",
+        "04\n단골·반복 선택\n27.3%\n0.73×",
+        "05\n새로운 경험 탐색\n50.8%\n1.24×",
+        "06\n휴식·회복 욕구\n85.8%\n1.18×",
+        "07\n취향·자기표현 욕구\n23.9%\n0.79×",
+        "08\n배달·포장 주문\n45.9%\n1.12×"
+      ],
+      "matrix": {
+        "href": "/atlas/segments/arc_recovery_review~certainty~finance?trail=finance%7Carc_convenience_value_seeking%7Efinance%7Cfinance",
+        "index": 1.74,
+        "label": "3400명\n1.74×\n0.7% · n=74",
+        "n": 74
+      },
+      "opportunity": [
+        "휴식·보상 후기검증형",
+        "확실성·실패 회피",
+        "개인 재테크 관심"
+      ],
+      "adjacent": "쇼핑·커머스"
+    }
+  ],
+  "visual": {
+    "radar": [
+      {
+        "bottom": 402.578125,
+        "id": "largest",
+        "rows": 3
+      },
+      {
+        "bottom": 514.578125,
+        "id": "distinctive",
+        "rows": 3
+      },
+      {
+        "bottom": 626.578125,
+        "id": "intensity",
+        "rows": 3
+      },
+      {
+        "bottom": 738.578125,
+        "id": "cross",
+        "rows": 3
+      },
+      {
+        "bottom": 850.578125,
+        "id": "small",
+        "rows": 3
+      }
+    ],
+    "tiles": 52,
+    "width": 1440
+  },
+  "finishedAt": "2026-09-06T02:40:50.825Z",
+  "success": true
+}

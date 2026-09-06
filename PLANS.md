@@ -515,3 +515,13 @@ The checked items above include historical implementation milestones. Current ve
 - Category participation and purchase-intent prevalence are not inferred from the broad official eligible universe.
 - Rounded published totals retain intervals reflecting their publication precision.
 - A Git commit cannot be recorded because this workspace is not a Git repository.
+
+
+## 2026-09-06 — Nemotron Atlas v0.3 GitHub / Vercel checkpoint
+
+- Imported the verified current Market Atlas (source commit 7ba33223b278b97f7aa0f90e63ce6d5d8adc340d) into the independent `atlas/` application. Existing Python engine and `web/` files are unchanged.
+- Replaced the Sites/Vinext Worker build adapter with Next.js 16.3.4 and Node 24.x for Vercel. Monetary models and UI semantics are unchanged.
+- Atlas: lint/typecheck, 31 domain tests, production build and 25-step browser journey passed. Production-server API, search, invalid-input and raw-data-boundary smoke checks passed.
+- Monetary scope remains music streaming/download, ages 20–69; missing anchors remain explicit.
+- Repository-required legacy commands were also attempted against this clean checkout: Python pytest returned 45 passed, 12 skipped, 15 failed and 10 errors; model validate requires the absent ignored `data/processed/market_engine.duckdb`. Tests also require absent original source files under `data/raw/`. These are existing-engine input requirements, not Atlas runtime dependencies. No unchanged engine files or model rules were altered to suppress them.
+- Vercel uses `atlas` as the project root with GitHub main integration. See `atlas/docs/DEPLOYMENT_VERCEL.md`.

@@ -1,0 +1,3030 @@
+{
+  "scope": "music streaming/download, ages 20–69; not total consumer spend",
+  "archetypes": [
+    {
+      "id": "arc_creator_discovery_review",
+      "label": "영상 탐색 후기검증형",
+      "population": 1485362.6175494245,
+      "populationRank": 13,
+      "spendRank": 15,
+      "topIndustriesByAffinity": [
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.8938066420066502
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.6950986627236322
+        },
+        {
+          "id": "mobility",
+          "label": "드라이브·모빌리티",
+          "index": 1.6217309191387983
+        }
+      ],
+      "relevantPopulation": 302218.8231439053,
+      "participationRate": 0.20346467561066728,
+      "annualSpendPerUnit": 92737.37259625056,
+      "low": 10529286335.834105,
+      "base": 28026979607.4967,
+      "high": 61254186006.057495,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.29056143269763435,
+        "directSpend": 0,
+        "anchor": 0.9915541315202192,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_delivery_order_digital",
+      "label": "디지털 활용 배달주문형",
+      "population": 12692876.59324808,
+      "populationRank": 1,
+      "spendRank": 1,
+      "topIndustriesByAffinity": [
+        {
+          "id": "delivery",
+          "label": "배달·간편식",
+          "index": 1.4050376285831296
+        },
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.2986597709664833
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.1897897628035725
+        }
+      ],
+      "relevantPopulation": 2843787.216092712,
+      "participationRate": 0.22404592018214783,
+      "annualSpendPerUnit": 90259.36558663903,
+      "low": 95501114693.03615,
+      "base": 256678429987.92255,
+      "high": 562993974765.2316,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.37720092773271735,
+        "directSpend": 0,
+        "anchor": 0.8468547045920716,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_adventure_creator_discovery",
+      "label": "새 경험 콘텐츠탐색형",
+      "population": 2042477.2599341527,
+      "populationRank": 8,
+      "spendRank": 10,
+      "topIndustriesByAffinity": [
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.9292070619533825
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.3930071571124887
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.3683229097447431
+        }
+      ],
+      "relevantPopulation": 439934.616489987,
+      "participationRate": 0.21539266317421327,
+      "annualSpendPerUnit": 91797.90779330669,
+      "low": 15109658195.646263,
+      "base": 40385077359.63157,
+      "high": 88407141094.52863,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.33656428751903483,
+        "directSpend": 0,
+        "anchor": 0.9450824083951312,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_creator_discovery_search_info",
+      "label": "영상 탐색 정보탐색형",
+      "population": 333344.2291150155,
+      "populationRank": 33,
+      "spendRank": 35,
+      "topIndustriesByAffinity": [
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.9299138689549489
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.6766907692797486
+        },
+        {
+          "id": "wellness",
+          "label": "건강·휴식",
+          "index": 1.4212792017424833
+        }
+      ],
+      "relevantPopulation": 60306.51209444679,
+      "participationRate": 0.18091362269733166,
+      "annualSpendPerUnit": 87387.66323992131,
+      "low": 1923705033.31343,
+      "base": 5270045170.083758,
+      "high": 11629606134.488466,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.38082730167647694,
+        "directSpend": 0,
+        "anchor": 0.8373641508065593,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_ecommerce_planned_purchase",
+      "label": "온라인 탐색 신중구매형",
+      "population": 35286.03792788032,
+      "populationRank": 43,
+      "spendRank": 45,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 32.20215045116629
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 3.9780378947798507
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 3.0193709555142116
+        }
+      ],
+      "relevantPopulation": 8797.394301866236,
+      "participationRate": 0.249316580111569,
+      "annualSpendPerUnit": 105315.8615489642,
+      "low": 249069280.22344533,
+      "base": 926505160.286991,
+      "high": 2335495697.8543234,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3582437946821209,
+        "directSpend": 0,
+        "anchor": 0.9864453127006251,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_offline_recovery",
+      "label": "휴식·보상 현장이용형",
+      "population": 4305198.850009981,
+      "populationRank": 3,
+      "spendRank": 3,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 1.7571268299716996
+        },
+        {
+          "id": "mobility",
+          "label": "드라이브·모빌리티",
+          "index": 1.3229745502402728
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.289164569281647
+        }
+      ],
+      "relevantPopulation": 1113225.9287379982,
+      "participationRate": 0.2585771221079411,
+      "annualSpendPerUnit": 91102.12551743949,
+      "low": 37832003730.478455,
+      "base": 101417248289.15727,
+      "high": 222208534042.9292,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.4105804354346942,
+        "directSpend": 0,
+        "anchor": 0.9480574864217657,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_gear_upgrade_review",
+      "label": "후기 확인 장비구매형",
+      "population": 19947.76974299036,
+      "populationRank": 52,
+      "spendRank": 52,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 2.537696383747255
+        },
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.7907493190427213
+        },
+        {
+          "id": "finance",
+          "label": "개인 재테크 관심",
+          "index": 1.7883296826036326
+        }
+      ],
+      "relevantPopulation": 3719.001610942869,
+      "participationRate": 0.18643696307201083,
+      "annualSpendPerUnit": 125192.64317180308,
+      "low": 125039837.0385218,
+      "base": 465591641.63413143,
+      "high": 1173961993.9546533,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.2641614646727925,
+        "directSpend": 0,
+        "anchor": 1,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_connection_repeat_purchase",
+      "label": "교류 중심 단골선택형",
+      "population": 5620285.186733679,
+      "populationRank": 2,
+      "spendRank": 2,
+      "topIndustriesByAffinity": [
+        {
+          "id": "community",
+          "label": "모임·지역서비스",
+          "index": 1.2563219081796508
+        },
+        {
+          "id": "family",
+          "label": "가족·돌봄",
+          "index": 1.065832507885781
+        },
+        {
+          "id": "wellness",
+          "label": "건강·휴식",
+          "index": 1.0559338796383138
+        }
+      ],
+      "relevantPopulation": 1105058.358666962,
+      "participationRate": 0.1966196237293049,
+      "annualSpendPerUnit": 95750.47481710544,
+      "low": 38979596506.08483,
+      "base": 105809862542.97281,
+      "high": 232788216705.4361,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.36282560635164957,
+        "directSpend": 0,
+        "anchor": 0.794193702915102,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_adventure_paid_subscription",
+      "label": "새 경험 구독서비스이용형",
+      "population": 1323912.3367239276,
+      "populationRank": 15,
+      "spendRank": 9,
+      "topIndustriesByAffinity": [
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.9474308283431758
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.8897072082246404
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 1.8704031054982024
+        }
+      ],
+      "relevantPopulation": 351767.40979035414,
+      "participationRate": 0.2657029472667474,
+      "annualSpendPerUnit": 119376.05148943952,
+      "low": 15953995536.924543,
+      "base": 41992604423.44009,
+      "high": 91466475617.22018,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3383194293178975,
+        "directSpend": 0,
+        "anchor": 0.998276504999595,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_collecting_expression",
+      "label": "취향 표현 수집몰입형",
+      "population": 1098082.6743429883,
+      "populationRank": 22,
+      "spendRank": 22,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 8.030367020639671
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 2.710706488044563
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.630788120316303
+        }
+      ],
+      "relevantPopulation": 233893.0871366334,
+      "participationRate": 0.21300134552853936,
+      "annualSpendPerUnit": 95130.27950312667,
+      "low": 8454303832.014904,
+      "base": 22250314753.157097,
+      "high": 48504714163.47088,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.2864331075062651,
+        "directSpend": 0,
+        "anchor": 0.9595493483210389,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_planning_specialist",
+      "label": "계획 중심 전문채널이용형",
+      "population": 1781909.9972415688,
+      "populationRank": 11,
+      "spendRank": 13,
+      "topIndustriesByAffinity": [
+        {
+          "id": "education",
+          "label": "배움·자기계발",
+          "index": 1.6944616182633374
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 1.5644092900945454
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.424391839976991
+        }
+      ],
+      "relevantPopulation": 380154.6739177382,
+      "participationRate": 0.21334111964477723,
+      "annualSpendPerUnit": 91271.64692536206,
+      "low": 12944674220.1688,
+      "base": 34697343174.84595,
+      "high": 76002650816.26247,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.33407561406692077,
+        "directSpend": 0,
+        "anchor": 0.9523038631225751,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_practice_recovery",
+      "label": "휴식·보상 실력추구형",
+      "population": 2077453.280808956,
+      "populationRank": 7,
+      "spendRank": 8,
+      "topIndustriesByAffinity": [
+        {
+          "id": "mobility",
+          "label": "드라이브·모빌리티",
+          "index": 1.4379744841401425
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.2267818775732997
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.222159751298357
+        }
+      ],
+      "relevantPopulation": 517514.2323291575,
+      "participationRate": 0.24910992565264262,
+      "annualSpendPerUnit": 87950.62501551835,
+      "low": 16758749861.773523,
+      "base": 45515700187.77557,
+      "high": 100114589180.91539,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.44281874840847174,
+        "directSpend": 0,
+        "anchor": 0.9386374330675721,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_offline_consult_paid",
+      "label": "구매 연계 직접확인형",
+      "population": 31871.220134069365,
+      "populationRank": 45,
+      "spendRank": 44,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 11.896211911122775
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 5.227070257706329
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 2.0551919139341295
+        }
+      ],
+      "relevantPopulation": 7535.956167503994,
+      "participationRate": 0.23645019349128357,
+      "annualSpendPerUnit": 123665.70310543517,
+      "low": 251446988.8827984,
+      "base": 931939318.026122,
+      "high": 2348148449.261269,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3325576081286248,
+        "directSpend": 0,
+        "anchor": 0.9720862956644212,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_adventure_paid",
+      "label": "새 경험 유료이용형",
+      "population": 669426.3049993346,
+      "populationRank": 28,
+      "spendRank": 24,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 6.785379115335207
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 3.5646467802593254
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 2.016877802040595
+        }
+      ],
+      "relevantPopulation": 177271.78618151642,
+      "participationRate": 0.2648115033090799,
+      "annualSpendPerUnit": 124744.91491822754,
+      "low": 8323089306.800345,
+      "base": 22113753884.61549,
+      "high": 48327549171.33412,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.38422871071316667,
+        "directSpend": 0,
+        "anchor": 0.9661047677560406,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_adventure_ecommerce",
+      "label": "새 경험 온라인구매형",
+      "population": 473528.5602254884,
+      "populationRank": 32,
+      "spendRank": 31,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 32.146955642478446
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 3.7987467179868526
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 2.5183223974938147
+        }
+      ],
+      "relevantPopulation": 123340.8972317767,
+      "participationRate": 0.26047192839444216,
+      "annualSpendPerUnit": 98118.38514056189,
+      "low": 4555385106.63859,
+      "base": 12102009658.169931,
+      "high": 26444747566.516186,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3806443987574152,
+        "directSpend": 0,
+        "anchor": 0.9711981764769814,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_community_info_search_info",
+      "label": "정보 검증 커뮤니티검증형",
+      "population": 29076.485289594333,
+      "populationRank": 47,
+      "spendRank": 50,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 5.784826725086147
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.6942890064206102
+        },
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.3560980468686925
+        }
+      ],
+      "relevantPopulation": 5712.49922212154,
+      "participationRate": 0.19646457146475968,
+      "annualSpendPerUnit": 90902.62712456912,
+      "low": 137801541.95760712,
+      "base": 519281186.7379055,
+      "high": 1314045187.3666654,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3193088969315256,
+        "directSpend": 0,
+        "anchor": 0.9729991392804936,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_premium_recovery",
+      "label": "휴식·보상 프리미엄선택형",
+      "population": 748524.506089439,
+      "populationRank": 25,
+      "spendRank": 19,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 3.4044056018898385
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 2.527014933913773
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 1.624187947724553
+        }
+      ],
+      "relevantPopulation": 193237.96828204265,
+      "participationRate": 0.2581585061143652,
+      "annualSpendPerUnit": 126714.19165935018,
+      "low": 9203767846.68763,
+      "base": 24485992948.754185,
+      "high": 53507241574.70889,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3663639973477183,
+        "directSpend": 0,
+        "anchor": 0.985894599658274,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_digital_recommendation",
+      "label": "디지털 활용 지인추천형",
+      "population": 262491.55628246255,
+      "populationRank": 35,
+      "spendRank": 33,
+      "topIndustriesByAffinity": [
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.8314683696229122
+        },
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.3978678535253353
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.338916405785759
+        }
+      ],
+      "relevantPopulation": 71440.16346008415,
+      "participationRate": 0.2721617581603602,
+      "annualSpendPerUnit": 90668.28547446361,
+      "low": 2428083834.2674994,
+      "base": 6477357134.941254,
+      "high": 14176562796.257038,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.4214763920925163,
+        "directSpend": 0,
+        "anchor": 0.933176635788606,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_growth_value_seeking",
+      "label": "배움 중심 실속선택형",
+      "population": 282539.26831959345,
+      "populationRank": 34,
+      "spendRank": 34,
+      "topIndustriesByAffinity": [
+        {
+          "id": "education",
+          "label": "배움·자기계발",
+          "index": 2.9271183775512077
+        },
+        {
+          "id": "finance",
+          "label": "개인 재테크 관심",
+          "index": 2.664016530411699
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.2458454704961195
+        }
+      ],
+      "relevantPopulation": 63237.388203049035,
+      "participationRate": 0.2238180504223514,
+      "annualSpendPerUnit": 91392.49647444891,
+      "low": 2154206616.9261117,
+      "base": 5779422778.4005165,
+      "high": 12673482152.470592,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.37080025282160944,
+        "directSpend": 0,
+        "anchor": 0.8786643585593685,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_membership_paid_subscription",
+      "label": "유료구독 레슨이용형",
+      "population": 29287.812912552807,
+      "populationRank": 46,
+      "spendRank": 43,
+      "topIndustriesByAffinity": [
+        {
+          "id": "fitness",
+          "label": "운동·아웃도어",
+          "index": 2.7440014187758486
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.1564962343518883
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 2.0274170878056488
+        }
+      ],
+      "relevantPopulation": 7899.823626129967,
+      "participationRate": 0.26973074601770924,
+      "annualSpendPerUnit": 159512.58627190063,
+      "low": 341679724.16866153,
+      "base": 1260121297.6958551,
+      "high": 3167669032.582385,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.34011124198151416,
+        "directSpend": 0,
+        "anchor": 0.9956910914999991,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_delivery_order_fandom",
+      "label": "배달활용 팬덤참여형",
+      "population": 93834.15331764576,
+      "populationRank": 41,
+      "spendRank": 40,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.7376942465944474
+        },
+        {
+          "id": "delivery",
+          "label": "배달·간편식",
+          "index": 1.405185317638863
+        },
+        {
+          "id": "music",
+          "label": "음악·공연",
+          "index": 1.175006794437983
+        }
+      ],
+      "relevantPopulation": 22818.367517453935,
+      "participationRate": 0.24317763533507453,
+      "annualSpendPerUnit": 89700.21453486745,
+      "low": 542339443.0050215,
+      "base": 2046812461.651069,
+      "high": 5185898225.111534,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.4236215699938517,
+        "directSpend": 0,
+        "anchor": 0.8146764315174256,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_digital_discount",
+      "label": "디지털 활용 혜택활용형",
+      "population": 23478.78038580924,
+      "populationRank": 49,
+      "spendRank": 48,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.6975059725592367
+        },
+        {
+          "id": "finance",
+          "label": "개인 재테크 관심",
+          "index": 2.159867541565864
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.6560256711666728
+        }
+      ],
+      "relevantPopulation": 6251.418422033653,
+      "participationRate": 0.26625822633496155,
+      "annualSpendPerUnit": 93600.58176180998,
+      "low": 156604860.35287794,
+      "base": 585136401.138846,
+      "high": 1477967824.309858,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.4272661513831945,
+        "directSpend": 0,
+        "anchor": 0.846978328238108,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_creator_discovery_recovery",
+      "label": "휴식·보상 콘텐츠탐색형",
+      "population": 2180428.919219294,
+      "populationRank": 6,
+      "spendRank": 7,
+      "topIndustriesByAffinity": [
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.9136258874366998
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.4257183509331888
+        },
+        {
+          "id": "mobility",
+          "label": "드라이브·모빌리티",
+          "index": 1.3713548971559608
+        }
+      ],
+      "relevantPopulation": 514267.8738558801,
+      "participationRate": 0.2358562892479038,
+      "annualSpendPerUnit": 91627.52460803285,
+      "low": 17622125622.997643,
+      "base": 47121092266.85039,
+      "high": 103153285749.62286,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3680059595276127,
+        "directSpend": 0,
+        "anchor": 0.9603962332923035,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_adventure_offline",
+      "label": "새 경험 현장이용형",
+      "population": 2375582.429935854,
+      "populationRank": 5,
+      "spendRank": 5,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.6669015875116333
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.9209943769529916
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.337747473258451
+        }
+      ],
+      "relevantPopulation": 636611.1145935026,
+      "participationRate": 0.2679810671148517,
+      "annualSpendPerUnit": 92895.5028793736,
+      "low": 22175205180.30471,
+      "base": 59138309628.761955,
+      "high": 129386898720.6479,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.4089500732475702,
+        "directSpend": 0,
+        "anchor": 0.9476325174559549,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_paid_subscription_recovery",
+      "label": "휴식·보상 구독서비스이용형",
+      "population": 1796256.2071248922,
+      "populationRank": 9,
+      "spendRank": 6,
+      "topIndustriesByAffinity": [
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.9471936818290336
+        },
+        {
+          "id": "pet",
+          "label": "반려동물",
+          "index": 1.5289096192310183
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 1.4784171895083038
+        }
+      ],
+      "relevantPopulation": 455656.8766108393,
+      "participationRate": 0.25367031429228504,
+      "annualSpendPerUnit": 118909.33424588632,
+      "low": 20568581808.387096,
+      "base": 54181855842.354866,
+      "high": 118025497682.41061,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3231451417171781,
+        "directSpend": 0,
+        "anchor": 0.9990377618411178,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_planning_review",
+      "label": "계획 중심 후기검증형",
+      "population": 1224263.4090457745,
+      "populationRank": 17,
+      "spendRank": 16,
+      "topIndustriesByAffinity": [
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.6651458389189153
+        },
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.5454708150204197
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.4854925267280188
+        }
+      ],
+      "relevantPopulation": 283476.0460763658,
+      "participationRate": 0.2315482468738611,
+      "annualSpendPerUnit": 94341.1622026359,
+      "low": 10101971925.436256,
+      "base": 26743459643.452312,
+      "high": 58365955834.95843,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.31870514657033283,
+        "directSpend": 0,
+        "anchor": 0.9902012327487798,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_creator_discovery_delivery_order",
+      "label": "배달활용 콘텐츠탐색형",
+      "population": 1228222.5747449999,
+      "populationRank": 16,
+      "spendRank": 18,
+      "topIndustriesByAffinity": [
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.9167733004073435
+        },
+        {
+          "id": "delivery",
+          "label": "배달·간편식",
+          "index": 1.405185317638626
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.371061736969867
+        }
+      ],
+      "relevantPopulation": 273103.86393092875,
+      "participationRate": 0.22235698117471078,
+      "annualSpendPerUnit": 91385.80886193785,
+      "low": 9326688988.710443,
+      "base": 24957817508.64854,
+      "high": 54655312956.81688,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.354645222894933,
+        "directSpend": 0,
+        "anchor": 0.9357503824703322,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_recovery_review",
+      "label": "휴식·보상 후기검증형",
+      "population": 1793301.2760531735,
+      "populationRank": 10,
+      "spendRank": 11,
+      "topIndustriesByAffinity": [
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.7100197272359792
+        },
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.6565265940537275
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.5246665978043146
+        }
+      ],
+      "relevantPopulation": 420996.7865029652,
+      "participationRate": 0.23476076893756817,
+      "annualSpendPerUnit": 93541.13562957195,
+      "low": 14838269378.432987,
+      "base": 39380517505.88781,
+      "high": 86000574504.11104,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3274813123772355,
+        "directSpend": 0,
+        "anchor": 0.9933450763760685,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_collecting_search_info",
+      "label": "수집 중심 정보탐색형",
+      "population": 204415.90271413876,
+      "populationRank": 36,
+      "spendRank": 38,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 8.127115336309519
+        },
+        {
+          "id": "finance",
+          "label": "개인 재테크 관심",
+          "index": 2.9572861066291933
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 2.065308761461324
+        }
+      ],
+      "relevantPopulation": 37623.082617508626,
+      "participationRate": 0.18405164235251234,
+      "annualSpendPerUnit": 92019.65773117279,
+      "low": 1293642355.7948618,
+      "base": 3462063185.2547803,
+      "high": 7583829379.561808,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.2926277714621613,
+        "directSpend": 0,
+        "anchor": 0.9167719381105482,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_offline_planning",
+      "label": "계획 중심 현장이용형",
+      "population": 2634078.513066995,
+      "populationRank": 4,
+      "spendRank": 4,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 1.6841324713193395
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.3129494094949898
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.2625749399900543
+        }
+      ],
+      "relevantPopulation": 653687.1786192417,
+      "participationRate": 0.2481654116900713,
+      "annualSpendPerUnit": 92313.10347392001,
+      "low": 22616775679.775734,
+      "base": 60343892159.45289,
+      "high": 132038523012.42302,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.378076574027562,
+        "directSpend": 0,
+        "anchor": 0.9544748838926429,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_collecting_planning",
+      "label": "계획 중심 수집몰입형",
+      "population": 1333415.7870564004,
+      "populationRank": 14,
+      "spendRank": 17,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 8.015491709344955
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 2.356667982647047
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.0605459906515167
+        }
+      ],
+      "relevantPopulation": 274461.18330062437,
+      "participationRate": 0.2058331586927696,
+      "annualSpendPerUnit": 95006.6928842555,
+      "low": 9891000675.830515,
+      "base": 26075649350.491776,
+      "high": 56873653523.93642,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.2818030026907484,
+        "directSpend": 0,
+        "anchor": 0.9579664191023566,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_paid_subscription_planning",
+      "label": "계획 중심 구독서비스이용형",
+      "population": 1217366.1087061006,
+      "populationRank": 18,
+      "spendRank": 12,
+      "topIndustriesByAffinity": [
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.9470080808196841
+        },
+        {
+          "id": "pet",
+          "label": "반려동물",
+          "index": 1.6060093506715942
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.4683710423751615
+        }
+      ],
+      "relevantPopulation": 298138.74987784907,
+      "participationRate": 0.24490475605135023,
+      "annualSpendPerUnit": 119597.18188289933,
+      "low": 13557120087.972307,
+      "base": 35656554295.481346,
+      "high": 77646964031.65497,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.30956343681569126,
+        "directSpend": 0,
+        "anchor": 0.9990857562121878,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_adventure_collecting",
+      "label": "새 경험 수집몰입형",
+      "population": 1121502.0899757121,
+      "populationRank": 21,
+      "spendRank": 20,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 7.961791199996
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 3.0335928228536093
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 2.784192365361954
+        }
+      ],
+      "relevantPopulation": 253529.70336993228,
+      "participationRate": 0.22606262229562396,
+      "annualSpendPerUnit": 95344.98486236078,
+      "low": 9164586694.63528,
+      "base": 24172785729.96501,
+      "high": 52733597384.04206,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3132756368991565,
+        "directSpend": 0,
+        "anchor": 0.9496089275436428,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_digital_search_info",
+      "label": "디지털 활용 정보탐색형",
+      "population": 662151.9310056493,
+      "populationRank": 29,
+      "spendRank": 32,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 2.373189590853341
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.86800929467438
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 1.7693616421000757
+        }
+      ],
+      "relevantPopulation": 123733.38627162226,
+      "participationRate": 0.18686555226638252,
+      "annualSpendPerUnit": 89894.89464550275,
+      "low": 4095943775.1232605,
+      "base": 11122999723.01878,
+      "high": 24481550377.952827,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.36187123301184476,
+        "directSpend": 0,
+        "anchor": 0.8420487722911683,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_expression_specialist",
+      "label": "취향 표현 전문채널이용형",
+      "population": 1166755.5496454225,
+      "populationRank": 20,
+      "spendRank": 25,
+      "topIndustriesByAffinity": [
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 1.8199857704196145
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.6799385994029792
+        },
+        {
+          "id": "education",
+          "label": "배움·자기계발",
+          "index": 1.457590906081154
+        }
+      ],
+      "relevantPopulation": 241433.19147145876,
+      "participationRate": 0.20692697073078453,
+      "annualSpendPerUnit": 91004.59804507908,
+      "low": 8205432270.139498,
+      "base": 21971530544.60072,
+      "high": 48119597594.33312,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.324690592809066,
+        "directSpend": 0,
+        "anchor": 0.9465966399596457,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_growth_specialist",
+      "label": "배움 중심 전문채널이용형",
+      "population": 744754.7148538282,
+      "populationRank": 26,
+      "spendRank": 29,
+      "topIndustriesByAffinity": [
+        {
+          "id": "education",
+          "label": "배움·자기계발",
+          "index": 4.3730986562393905
+        },
+        {
+          "id": "community",
+          "label": "모임·지역서비스",
+          "index": 1.8331481484485876
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 1.4840530915888253
+        }
+      ],
+      "relevantPopulation": 156148.52612380986,
+      "participationRate": 0.20966436735409844,
+      "annualSpendPerUnit": 90558.6896974502,
+      "low": 5270415035.50152,
+      "base": 14140605923.960295,
+      "high": 30990839909.357384,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3372286865819854,
+        "directSpend": 0,
+        "anchor": 0.9362106451079877,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_paid_recovery",
+      "label": "휴식·보상 유료이용형",
+      "population": 979028.3634123981,
+      "populationRank": 24,
+      "spendRank": 14,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 5.1179076097054095
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 2.4749043220925713
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 1.920290520443366
+        }
+      ],
+      "relevantPopulation": 259211.74821165166,
+      "participationRate": 0.2647642886546928,
+      "annualSpendPerUnit": 123529.72621516112,
+      "low": 12020742845.732876,
+      "base": 32020356288.33861,
+      "high": 70025428817.79585,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3889191572052031,
+        "directSpend": 0,
+        "anchor": 0.9694581994948201,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_paid_planning",
+      "label": "계획 중심 유료이용형",
+      "population": 684616.6043113807,
+      "populationRank": 27,
+      "spendRank": 26,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 4.2346572430996945
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 2.486651424860316
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 2.026018500631827
+        }
+      ],
+      "relevantPopulation": 173157.81778825546,
+      "participationRate": 0.2529266989696016,
+      "annualSpendPerUnit": 124633.03801891877,
+      "low": 8123875173.984113,
+      "base": 21581184887.67665,
+      "high": 47158682174.44274,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.36190872001014296,
+        "directSpend": 0,
+        "anchor": 0.9755295991098513,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_pain_physical_repeat_purchase",
+      "label": "활동 제약 단골선택형",
+      "population": 1168419.7738089415,
+      "populationRank": 19,
+      "spendRank": 28,
+      "topIndustriesByAffinity": [
+        {
+          "id": "family",
+          "label": "가족·돌봄",
+          "index": 1.6435533927512909
+        },
+        {
+          "id": "community",
+          "label": "모임·지역서비스",
+          "index": 1.5086583735115242
+        },
+        {
+          "id": "finance",
+          "label": "개인 재테크 관심",
+          "index": 1.3457641107674339
+        }
+      ],
+      "relevantPopulation": 157871.56459796207,
+      "participationRate": 0.13511545091651028,
+      "annualSpendPerUnit": 92073.71275426251,
+      "low": 5265187519.0049515,
+      "base": 14535821090.858759,
+      "high": 32173847567.49765,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3048821743582376,
+        "directSpend": 0,
+        "anchor": 0.5654987830439103,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_planning_premium",
+      "label": "계획 중심 프리미엄선택형",
+      "population": 547764.050259364,
+      "populationRank": 31,
+      "spendRank": 27,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.766649987834633
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 2.4715966829631557
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 1.6831555082260226
+        }
+      ],
+      "relevantPopulation": 137182.8211576748,
+      "participationRate": 0.2504414466278306,
+      "annualSpendPerUnit": 127237.05917791613,
+      "low": 6570560229.813257,
+      "base": 17454738733.832554,
+      "high": 38127339401.21239,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.35040753767558946,
+        "directSpend": 0,
+        "anchor": 0.9852216852640177,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_ownership_repeat_purchase",
+      "label": "소유 지향 단골선택형",
+      "population": 1524280.2040365783,
+      "populationRank": 12,
+      "spendRank": 21,
+      "topIndustriesByAffinity": [
+        {
+          "id": "family",
+          "label": "가족·돌봄",
+          "index": 1.4082014414223092
+        },
+        {
+          "id": "community",
+          "label": "모임·지역서비스",
+          "index": 1.2723985639662974
+        },
+        {
+          "id": "garden",
+          "label": "가드닝·식물",
+          "index": 1.1082900320262796
+        }
+      ],
+      "relevantPopulation": 240867.6538448297,
+      "participationRate": 0.15802058782038056,
+      "annualSpendPerUnit": 94462.42738836996,
+      "low": 8337186302.78967,
+      "base": 22752943261.524258,
+      "high": 50173592324.917755,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3150479736746217,
+        "directSpend": 0,
+        "anchor": 0.6749015527693584,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_planned_purchase_review",
+      "label": "후기 확인 신중구매형",
+      "population": 22798.21460329833,
+      "populationRank": 50,
+      "spendRank": 51,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 12.22575814991494
+        },
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.7809018284894191
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.7762016569414854
+        }
+      ],
+      "relevantPopulation": 4330.045861976616,
+      "participationRate": 0.1899291649509329,
+      "annualSpendPerUnit": 114081.67842019879,
+      "low": 132325755.19612741,
+      "base": 493978899.5707288,
+      "high": 1246595361.9425676,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.2717093683053077,
+        "directSpend": 0,
+        "anchor": 0.9931935435553945,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_paid_subscription_premium",
+      "label": "유료구독 프리미엄선택형",
+      "population": 106734.15238883301,
+      "populationRank": 39,
+      "spendRank": 37,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 3.442662908907077
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 2.354847266261912
+        },
+        {
+          "id": "content",
+          "label": "영상·콘텐츠",
+          "index": 1.9472040539565056
+        }
+      ],
+      "relevantPopulation": 24393.563533829016,
+      "participationRate": 0.2285450625490813,
+      "annualSpendPerUnit": 151604.28436714274,
+      "low": 1000643225.2542765,
+      "base": 3698168742.7105775,
+      "high": 9299727374.99207,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.29309844496309384,
+        "directSpend": 0,
+        "anchor": 0.9986448518394558,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_offline_practice",
+      "label": "현장 참여 실력추구형",
+      "population": 589292.0877459316,
+      "populationRank": 30,
+      "spendRank": 30,
+      "topIndustriesByAffinity": [
+        {
+          "id": "mobility",
+          "label": "드라이브·모빌리티",
+          "index": 1.5457628455403263
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.399972855799031
+        },
+        {
+          "id": "fitness",
+          "label": "운동·아웃도어",
+          "index": 1.1319728123868231
+        }
+      ],
+      "relevantPopulation": 138335.63384579733,
+      "participationRate": 0.23474883970517452,
+      "annualSpendPerUnit": 87733.35368295247,
+      "low": 4465296656.926097,
+      "base": 12136649091.148748,
+      "high": 26701192319.785248,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.4184535403718385,
+        "directSpend": 0,
+        "anchor": 0.9497989001702832,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_practice_repeat_purchase",
+      "label": "단골선택 실력추구형",
+      "population": 1071089.6534923913,
+      "populationRank": 23,
+      "spendRank": 23,
+      "topIndustriesByAffinity": [
+        {
+          "id": "mobility",
+          "label": "드라이브·모빌리티",
+          "index": 1.3574365918390536
+        },
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 1.2421343933635538
+        },
+        {
+          "id": "fitness",
+          "label": "운동·아웃도어",
+          "index": 1.126766137879347
+        }
+      ],
+      "relevantPopulation": 236961.97775350098,
+      "participationRate": 0.22123449421891392,
+      "annualSpendPerUnit": 93593.8854323911,
+      "low": 8114482310.400654,
+      "base": 22178192197.693977,
+      "high": 48884925566.89748,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.42506971315273834,
+        "directSpend": 0,
+        "anchor": 0.8990449319262251,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_planned_purchase_planning",
+      "label": "계획 중심 신중구매형",
+      "population": 98968.63209771898,
+      "populationRank": 40,
+      "spendRank": 39,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 22.783718945335746
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 3.300732603092168
+        },
+        {
+          "id": "home",
+          "label": "집·인테리어",
+          "index": 2.8560367020367776
+        }
+      ],
+      "relevantPopulation": 24007.913312923272,
+      "participationRate": 0.24258103607230322,
+      "annualSpendPerUnit": 108986.09969020875,
+      "low": 702508127.289329,
+      "base": 2616528833.6761456,
+      "high": 6600616473.697674,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3523300439856193,
+        "directSpend": 0,
+        "anchor": 0.9817505089263617,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_convenience_value_seeking",
+      "label": "편의 우선 실속선택형",
+      "population": 187851.2366226092,
+      "populationRank": 37,
+      "spendRank": 36,
+      "topIndustriesByAffinity": [
+        {
+          "id": "finance",
+          "label": "개인 재테크 관심",
+          "index": 2.9755342597393586
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.3286539160788715
+        },
+        {
+          "id": "beauty",
+          "label": "뷰티·패션",
+          "index": 1.73726830596553
+        }
+      ],
+      "relevantPopulation": 45724.59542155862,
+      "participationRate": 0.24340854094784992,
+      "annualSpendPerUnit": 92123.85313827271,
+      "low": 1574382720.6993093,
+      "base": 4212325913.4226027,
+      "high": 9225745828.855183,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.3854611818415903,
+        "directSpend": 0,
+        "anchor": 0.9039420792476662,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_pain_physical_value_seeking",
+      "label": "활동 제약 실속선택형",
+      "population": 129648.8409741986,
+      "populationRank": 38,
+      "spendRank": 42,
+      "topIndustriesByAffinity": [
+        {
+          "id": "finance",
+          "label": "개인 재테크 관심",
+          "index": 1.8618916264710876
+        },
+        {
+          "id": "family",
+          "label": "가족·돌봄",
+          "index": 1.7715474643052438
+        },
+        {
+          "id": "garden",
+          "label": "가드닝·식물",
+          "index": 1.5634614219816083
+        }
+      ],
+      "relevantPopulation": 18158.120534830003,
+      "participationRate": 0.14005617326300393,
+      "annualSpendPerUnit": 85863.38488346511,
+      "low": 402367185.0172578,
+      "base": 1559117692.24246,
+      "high": 3987415837.9537544,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.32803822388757786,
+        "directSpend": 0,
+        "anchor": 0.5366531904005702,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_adventure_gear_upgrade",
+      "label": "새 경험 장비구매형",
+      "population": 26583.89878521596,
+      "populationRank": 48,
+      "spendRank": 47,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 3.2129945224692356
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 3.1805215958980293
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.648225874688401
+        }
+      ],
+      "relevantPopulation": 5226.979225826893,
+      "participationRate": 0.1966219954438647,
+      "annualSpendPerUnit": 126930.16220478993,
+      "low": 178051999.29331207,
+      "base": 663461320.9752748,
+      "high": 1673681271.1322725,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.28337518860199384,
+        "directSpend": 0,
+        "anchor": 1,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_gear_upgrade_planning",
+      "label": "계획 중심 장비구매형",
+      "population": 20284.63863601377,
+      "populationRank": 51,
+      "spendRank": 49,
+      "topIndustriesByAffinity": [
+        {
+          "id": "collect",
+          "label": "수집·취미용품",
+          "index": 3.351846209799119
+        },
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 1.9583397140024716
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.734410997980949
+        }
+      ],
+      "relevantPopulation": 4034.4951087422132,
+      "participationRate": 0.19889410805570312,
+      "annualSpendPerUnit": 129964.44585293069,
+      "low": 141130923.62694165,
+      "base": 524340921.1040411,
+      "high": 1321110450.4047031,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.2758780477005707,
+        "directSpend": 0,
+        "anchor": 1,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_fandom_repeat_purchase",
+      "label": "단골선택 팬덤참여형",
+      "population": 86686.82680242501,
+      "populationRank": 42,
+      "spendRank": 41,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 2.5928665286154486
+        },
+        {
+          "id": "music",
+          "label": "음악·공연",
+          "index": 1.186615482897148
+        },
+        {
+          "id": "family",
+          "label": "가족·돌봄",
+          "index": 1.0746725014351706
+        }
+      ],
+      "relevantPopulation": 19512.50899093399,
+      "participationRate": 0.2250919743020071,
+      "annualSpendPerUnit": 95408.11665853379,
+      "low": 490226684.87142193,
+      "base": 1861651734.1077197,
+      "high": 4725945989.295264,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.41781268966222884,
+        "directSpend": 0,
+        "anchor": 0.7956445279796394,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    },
+    {
+      "id": "arc_fandom_offline",
+      "label": "현장 참여 팬덤참여형",
+      "population": 33059.57167254912,
+      "populationRank": 44,
+      "spendRank": 46,
+      "topIndustriesByAffinity": [
+        {
+          "id": "commerce",
+          "label": "쇼핑·커머스",
+          "index": 3.2914012276682847
+        },
+        {
+          "id": "mobility",
+          "label": "드라이브·모빌리티",
+          "index": 1.1832524887427938
+        },
+        {
+          "id": "gaming",
+          "label": "게임",
+          "index": 1.178721882308511
+        }
+      ],
+      "relevantPopulation": 9583.54041289095,
+      "participationRate": 0.28988701087281793,
+      "annualSpendPerUnit": 91145.6145070707,
+      "low": 232938432.53348196,
+      "base": 873497680.0862918,
+      "high": 2208016323.404707,
+      "method": "calibrated_baseline",
+      "confidence": "Low",
+      "coverage": {
+        "population": 0.46648177661794304,
+        "directSpend": 0,
+        "anchor": 0.9160195250177687,
+        "isPartial": true,
+        "supportedMarkets": 1,
+        "totalMarkets": 1
+      }
+    }
+  ],
+  "quadrants": {
+    "scale": [
+      "영상 탐색 후기검증형",
+      "디지털 활용 배달주문형",
+      "새 경험 콘텐츠탐색형",
+      "휴식·보상 현장이용형",
+      "교류 중심 단골선택형",
+      "새 경험 구독서비스이용형",
+      "계획 중심 전문채널이용형",
+      "휴식·보상 콘텐츠탐색형",
+      "새 경험 현장이용형",
+      "휴식·보상 구독서비스이용형",
+      "휴식·보상 후기검증형",
+      "계획 중심 현장이용형",
+      "계획 중심 수집몰입형",
+      "소유 지향 단골선택형"
+    ],
+    "volume": [
+      "휴식·보상 실력추구형"
+    ],
+    "premium_niche": [
+      "온라인 탐색 신중구매형",
+      "후기 확인 장비구매형",
+      "취향 표현 수집몰입형",
+      "구매 연계 직접확인형",
+      "새 경험 유료이용형",
+      "새 경험 온라인구매형",
+      "정보 검증 커뮤니티검증형",
+      "휴식·보상 프리미엄선택형",
+      "디지털 활용 지인추천형",
+      "배움 중심 실속선택형",
+      "유료구독 레슨이용형",
+      "디지털 활용 혜택활용형",
+      "계획 중심 후기검증형",
+      "배달활용 콘텐츠탐색형",
+      "수집 중심 정보탐색형",
+      "계획 중심 구독서비스이용형",
+      "새 경험 수집몰입형",
+      "취향 표현 전문채널이용형",
+      "배움 중심 전문채널이용형",
+      "휴식·보상 유료이용형",
+      "계획 중심 유료이용형",
+      "활동 제약 단골선택형",
+      "계획 중심 프리미엄선택형",
+      "후기 확인 신중구매형",
+      "유료구독 프리미엄선택형",
+      "단골선택 실력추구형",
+      "계획 중심 신중구매형",
+      "편의 우선 실속선택형",
+      "새 경험 장비구매형",
+      "계획 중심 장비구매형",
+      "단골선택 팬덤참여형",
+      "현장 참여 팬덤참여형"
+    ],
+    "small_low": [
+      "영상 탐색 정보탐색형",
+      "배달활용 팬덤참여형",
+      "디지털 활용 정보탐색형",
+      "현장 참여 실력추구형",
+      "활동 제약 실속선택형"
+    ]
+  },
+  "industries": [
+    {
+      "id": "pet",
+      "label": "반려동물",
+      "categoryPopulation": 1818266.9567445382,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "household",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "unit_mapping_required",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 546110.3040150835
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 208315.12489724442
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 167670.10880104188
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_paid_subscription_planning",
+          "label": "계획 중심 구독서비스이용형",
+          "index": 1.606009350671546
+        },
+        {
+          "id": "arc_adventure_paid_subscription",
+          "label": "새 경험 구독서비스이용형",
+          "index": 1.5801406771898405
+        },
+        {
+          "id": "arc_paid_subscription_premium",
+          "label": "유료구독 프리미엄선택형",
+          "index": 1.5438200079984103
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "label": "여행·로컬 경험",
+      "categoryPopulation": 41331484.456571415,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "person",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "missing_calibration_anchor",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 12043470.22073929
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 5304857.432334922
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 4080765.091284758
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_digital_recommendation",
+          "label": "디지털 활용 지인추천형",
+          "index": 1.0524867030855616
+        },
+        {
+          "id": "arc_ecommerce_planned_purchase",
+          "label": "온라인 탐색 신중구매형",
+          "index": 1.0519366791128784
+        },
+        {
+          "id": "arc_offline_consult_paid",
+          "label": "구매 연계 직접확인형",
+          "index": 1.038167245046168
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "label": "배움·자기계발",
+      "categoryPopulation": 2571837.271249264,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "person",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "missing_calibration_anchor",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 778048.1038356427
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 319191.9714780981
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 216443.5483242912
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_growth_specialist",
+          "label": "배움 중심 전문채널이용형",
+          "index": 4.373098656239439
+        },
+        {
+          "id": "arc_growth_value_seeking",
+          "label": "배움 중심 실속선택형",
+          "index": 2.927118377551203
+        },
+        {
+          "id": "arc_planning_specialist",
+          "label": "계획 중심 전문채널이용형",
+          "index": 1.6944616182633576
+        }
+      ]
+    },
+    {
+      "id": "beauty",
+      "label": "뷰티·패션",
+      "categoryPopulation": 2341923.2998590837,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "person",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "missing_calibration_anchor",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 801890.607228833
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 259846.26443001404
+        },
+        {
+          "id": "arc_adventure_offline",
+          "label": "새 경험 현장이용형",
+          "population": 242315.41294042906
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_offline_consult_paid",
+          "label": "구매 연계 직접확인형",
+          "index": 5.227070257706337
+        },
+        {
+          "id": "arc_ecommerce_planned_purchase",
+          "label": "온라인 탐색 신중구매형",
+          "index": 3.978037894779861
+        },
+        {
+          "id": "arc_adventure_ecommerce",
+          "label": "새 경험 온라인구매형",
+          "index": 3.7987467179867322
+        }
+      ]
+    },
+    {
+      "id": "wellness",
+      "label": "건강·휴식",
+      "categoryPopulation": 26949953.98815458,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "person",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "missing_calibration_anchor",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 7905911.254393906
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 3626312.9370848965
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 2829045.8587051798
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_creator_discovery_search_info",
+          "label": "영상 탐색 정보탐색형",
+          "index": 1.4212792017425133
+        },
+        {
+          "id": "arc_digital_search_info",
+          "label": "디지털 활용 정보탐색형",
+          "index": 1.267160015463281
+        },
+        {
+          "id": "arc_premium_recovery",
+          "label": "휴식·보상 프리미엄선택형",
+          "index": 1.2336284388567613
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "label": "외식·미식",
+      "categoryPopulation": 35093004.98013567,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "person",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "missing_calibration_anchor",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 9920655.119776774
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 4222738.910157189
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 3518817.921489427
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_digital_recommendation",
+          "label": "디지털 활용 지인추천형",
+          "index": 1.2096371815020044
+        },
+        {
+          "id": "arc_paid_planning",
+          "label": "계획 중심 유료이용형",
+          "index": 1.1138741785432413
+        },
+        {
+          "id": "arc_planning_premium",
+          "label": "계획 중심 프리미엄선택형",
+          "index": 1.108520199164789
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "label": "영상·콘텐츠",
+      "categoryPopulation": 22640741.55145737,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "person",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "missing_calibration_anchor",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 8461712.508683205
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 2717974.812458187
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 2349031.175570615
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_membership_paid_subscription",
+          "label": "유료구독 레슨이용형",
+          "index": 1.948036900635925
+        },
+        {
+          "id": "arc_adventure_paid_subscription",
+          "label": "새 경험 구독서비스이용형",
+          "index": 1.9474308283441104
+        },
+        {
+          "id": "arc_paid_subscription_premium",
+          "label": "유료구독 프리미엄선택형",
+          "index": 1.947204053956437
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "label": "개인 재테크 관심",
+      "categoryPopulation": 465871.59821404994,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "person",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "missing_calibration_anchor",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 148653.08381071652
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 51501.55828675505
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 43342.61736708039
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_convenience_value_seeking",
+          "label": "편의 우선 실속선택형",
+          "index": 2.975534259739359
+        },
+        {
+          "id": "arc_collecting_search_info",
+          "label": "수집 중심 정보탐색형",
+          "index": 2.9572861066291956
+        },
+        {
+          "id": "arc_growth_value_seeking",
+          "label": "배움 중심 실속선택형",
+          "index": 2.6640165304117027
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "label": "집·인테리어",
+      "categoryPopulation": 6825777.896969774,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": null,
+      "populationUnit": "household",
+      "base": null,
+      "annualSpendPerUnit": null,
+      "status": "unit_mapping_required",
+      "topBySpend": [],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 2140463.1590937492
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 690229.6759653046
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 623755.1502034584
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_ecommerce_planned_purchase",
+          "label": "온라인 탐색 신중구매형",
+          "index": 3.019370955514217
+        },
+        {
+          "id": "arc_planned_purchase_planning",
+          "label": "계획 중심 신중구매형",
+          "index": 2.8560367020368003
+        },
+        {
+          "id": "arc_collecting_expression",
+          "label": "취향 표현 수집몰입형",
+          "index": 2.7107064880443756
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "label": "음악·공연",
+      "categoryPopulation": 19518226.861803234,
+      "categoryPopulationUnit": "person",
+      "relevantPopulation": 9544463.456676316,
+      "populationUnit": "person",
+      "base": 861003273113.1909,
+      "annualSpendPerUnit": 90209.70922267217,
+      "status": "estimated",
+      "topBySpend": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "base": 256678429987.92255
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "base": 105809862542.97281
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "base": 101417248289.15727
+        }
+      ],
+      "topByPopulation": [
+        {
+          "id": "arc_delivery_order_digital",
+          "label": "디지털 활용 배달주문형",
+          "population": 5653584.730188547
+        },
+        {
+          "id": "arc_connection_repeat_purchase",
+          "label": "교류 중심 단골선택형",
+          "population": 2567614.6427011224
+        },
+        {
+          "id": "arc_offline_recovery",
+          "label": "휴식·보상 현장이용형",
+          "population": 1864475.9877816846
+        }
+      ],
+      "topByAffinity": [
+        {
+          "id": "arc_pain_physical_value_seeking",
+          "label": "활동 제약 실속선택형",
+          "index": 1.3812687968163646
+        },
+        {
+          "id": "arc_pain_physical_repeat_purchase",
+          "label": "활동 제약 단골선택형",
+          "index": 1.218281987941819
+        },
+        {
+          "id": "arc_fandom_repeat_purchase",
+          "label": "단골선택 팬덤참여형",
+          "index": 1.186615482897147
+        }
+      ]
+    }
+  ],
+  "matrix": {
+    "context": {
+      "view": "matrix",
+      "ids": [],
+      "trail": [],
+      "lens": "people",
+      "row": "age",
+      "column": "archetype",
+      "focus": null,
+      "allSignals": false,
+      "compare": [],
+      "tab": "profile",
+      "metric": "marketValue",
+      "moneyScope": "music",
+      "xAxis": "population",
+      "yAxis": "spendPerUnit"
+    },
+    "cells": [
+      {
+        "ids": [
+          "age_50",
+          "arc_delivery_order_digital"
+        ],
+        "population": 2707697.6508015106,
+        "populationRank": 1,
+        "spendRank": 3,
+        "value": 49462158705.83693,
+        "spendPerUnit": 84365.96125998501
+      },
+      {
+        "ids": [
+          "age_50",
+          "arc_connection_repeat_purchase"
+        ],
+        "population": 1337153.5562827778,
+        "populationRank": 6,
+        "spendRank": 7,
+        "value": 26280704730.8097,
+        "spendPerUnit": 91088.57650526123
+      },
+      {
+        "ids": [
+          "age_50",
+          "arc_offline_recovery"
+        ],
+        "population": 966706.2189381112,
+        "populationRank": 8,
+        "spendRank": 15,
+        "value": 17957927471.112915,
+        "spendPerUnit": 85042.38320764418
+      },
+      {
+        "ids": [
+          "age_50",
+          "arc_offline_planning"
+        ],
+        "population": 497148.9232381522,
+        "populationRank": 21,
+        "spendRank": 28,
+        "value": 8411672760.16625,
+        "spendPerUnit": 85300.3480461667
+      },
+      {
+        "ids": [
+          "age_50",
+          "arc_adventure_offline"
+        ],
+        "population": 484392.48206034873,
+        "populationRank": 23,
+        "spendRank": 26,
+        "value": 8642774300.756754,
+        "spendPerUnit": 85414.15393994628
+      },
+      {
+        "ids": [
+          "age_50",
+          "arc_creator_discovery_recovery"
+        ],
+        "population": 492032.9168926714,
+        "populationRank": 22,
+        "spendRank": 30,
+        "value": 7641637343.618757,
+        "spendPerUnit": 84671.46436519921
+      },
+      {
+        "ids": [
+          "age_50",
+          "arc_practice_recovery"
+        ],
+        "population": 646579.4110638475,
+        "populationRank": 13,
+        "spendRank": 20,
+        "value": 12841422424.003696,
+        "spendPerUnit": 84683.08845667535
+      },
+      {
+        "ids": [
+          "age_40",
+          "arc_delivery_order_digital"
+        ],
+        "population": 2127422.9909531083,
+        "populationRank": 3,
+        "spendRank": 4,
+        "value": 43427742448.71009,
+        "spendPerUnit": 87123.52799941947
+      },
+      {
+        "ids": [
+          "age_40",
+          "arc_connection_repeat_purchase"
+        ],
+        "population": 929397.7402046327,
+        "populationRank": 10,
+        "spendRank": 11,
+        "value": 21328406806.387215,
+        "spendPerUnit": 94491.68133178625
+      },
+      {
+        "ids": [
+          "age_40",
+          "arc_offline_recovery"
+        ],
+        "population": 957454.8061676293,
+        "populationRank": 9,
+        "spendRank": 13,
+        "value": 20377138686.686874,
+        "spendPerUnit": 87503.10373348242
+      },
+      {
+        "ids": [
+          "age_40",
+          "arc_offline_planning"
+        ],
+        "population": 531419.0822745406,
+        "populationRank": 18,
+        "spendRank": 23,
+        "value": 10529669257.941484,
+        "spendPerUnit": 87858.38037482553
+      },
+      {
+        "ids": [
+          "age_40",
+          "arc_adventure_offline"
+        ],
+        "population": 482275.5955086923,
+        "populationRank": 26,
+        "spendRank": 24,
+        "value": 9870820768.06565,
+        "spendPerUnit": 88348.39778286111
+      },
+      {
+        "ids": [
+          "age_40",
+          "arc_creator_discovery_recovery"
+        ],
+        "population": 460074.19284915715,
+        "populationRank": 27,
+        "spendRank": 29,
+        "value": 8005224760.149232,
+        "spendPerUnit": 87734.36156129705
+      },
+      {
+        "ids": [
+          "age_40",
+          "arc_practice_recovery"
+        ],
+        "population": 531345.8364441511,
+        "populationRank": 19,
+        "spendRank": 22,
+        "value": 12029327549.499712,
+        "spendPerUnit": 86782.56286960082
+      },
+      {
+        "ids": [
+          "age_60",
+          "arc_delivery_order_digital"
+        ],
+        "population": 2280949.8321191464,
+        "populationRank": 2,
+        "spendRank": 5,
+        "value": 36277169226.76227,
+        "spendPerUnit": 83454.96439281
+      },
+      {
+        "ids": [
+          "age_60",
+          "arc_connection_repeat_purchase"
+        ],
+        "population": 1285541.9025675985,
+        "populationRank": 7,
+        "spendRank": 9,
+        "value": 21639077998.09545,
+        "spendPerUnit": 89742.1503545179
+      },
+      {
+        "ids": [
+          "age_60",
+          "arc_offline_recovery"
+        ],
+        "population": 527004.1068679644,
+        "populationRank": 20,
+        "spendRank": 27,
+        "value": 8428889827.672485,
+        "spendPerUnit": 84484.71387720776
+      },
+      {
+        "ids": [
+          "age_60",
+          "arc_offline_planning"
+        ],
+        "population": 310765.7080724375,
+        "populationRank": 31,
+        "spendRank": 33,
+        "value": 4302180340.230624,
+        "spendPerUnit": 84577.11186536896
+      },
+      {
+        "ids": [
+          "age_60",
+          "arc_adventure_offline"
+        ],
+        "population": 279611.23002141574,
+        "populationRank": 33,
+        "spendRank": 34,
+        "value": 4156505763.9982786,
+        "spendPerUnit": 84466.97272026216
+      },
+      {
+        "ids": [
+          "age_60",
+          "arc_creator_discovery_recovery"
+        ],
+        "population": 269735.7602995393,
+        "populationRank": 34,
+        "spendRank": 35,
+        "value": 3798963220.4519434,
+        "spendPerUnit": 83864.34889025816
+      },
+      {
+        "ids": [
+          "age_60",
+          "arc_practice_recovery"
+        ],
+        "population": 344283.2862823522,
+        "populationRank": 30,
+        "spendRank": 31,
+        "value": 5961294696.70504,
+        "spendPerUnit": 84073.8427853684
+      },
+      {
+        "ids": [
+          "age_30",
+          "arc_delivery_order_digital"
+        ],
+        "population": 2004028.290304517,
+        "populationRank": 4,
+        "spendRank": 2,
+        "value": 55399462663.02968,
+        "spendPerUnit": 92095.37940703926
+      },
+      {
+        "ids": [
+          "age_30",
+          "arc_connection_repeat_purchase"
+        ],
+        "population": 633730.9316318107,
+        "populationRank": 14,
+        "spendRank": 14,
+        "value": 20041937003.20691,
+        "spendPerUnit": 100433.9569555684
+      },
+      {
+        "ids": [
+          "age_30",
+          "arc_offline_recovery"
+        ],
+        "population": 885406.7690790824,
+        "populationRank": 11,
+        "spendRank": 8,
+        "value": 25927801060.945457,
+        "spendPerUnit": 92058.36044004932
+      },
+      {
+        "ids": [
+          "age_30",
+          "arc_offline_planning"
+        ],
+        "population": 577170.6513337796,
+        "populationRank": 16,
+        "spendRank": 17,
+        "value": 16039732943.876043,
+        "spendPerUnit": 92543.00041517042
+      },
+      {
+        "ids": [
+          "age_30",
+          "arc_adventure_offline"
+        ],
+        "population": 484129.83422357775,
+        "populationRank": 24,
+        "spendRank": 18,
+        "value": 14914724022.075527,
+        "spendPerUnit": 93314.48776033666
+      },
+      {
+        "ids": [
+          "age_30",
+          "arc_creator_discovery_recovery"
+        ],
+        "population": 483356.6286693161,
+        "populationRank": 25,
+        "spendRank": 21,
+        "value": 12818232521.654745,
+        "spendPerUnit": 92168.19896097905
+      },
+      {
+        "ids": [
+          "age_30",
+          "arc_practice_recovery"
+        ],
+        "population": 301743.08352593565,
+        "populationRank": 32,
+        "spendRank": 25,
+        "value": 9136256553.926117,
+        "spendPerUnit": 91031.81140634182
+      },
+      {
+        "ids": [
+          "age_20",
+          "arc_delivery_order_digital"
+        ],
+        "population": 1999541.2070146375,
+        "populationRank": 5,
+        "spendRank": 1,
+        "value": 72111896943.58356,
+        "spendPerUnit": 99766.25087769626
+      },
+      {
+        "ids": [
+          "age_20",
+          "arc_connection_repeat_purchase"
+        ],
+        "population": 412115.9863007122,
+        "populationRank": 29,
+        "spendRank": 16,
+        "value": 16519736004.47354,
+        "spendPerUnit": 110025.56189560033
+      },
+      {
+        "ids": [
+          "age_20",
+          "arc_offline_recovery"
+        ],
+        "population": 780656.4006752712,
+        "populationRank": 12,
+        "spendRank": 6,
+        "value": 28725491242.73954,
+        "spendPerUnit": 99819.38544642122
+      },
+      {
+        "ids": [
+          "age_20",
+          "arc_offline_planning"
+        ],
+        "population": 600868.0767803196,
+        "populationRank": 15,
+        "spendRank": 12,
+        "value": 21060636857.23849,
+        "spendPerUnit": 99795.63259961965
+      },
+      {
+        "ids": [
+          "age_20",
+          "arc_adventure_offline"
+        ],
+        "population": 540109.0436974276,
+        "populationRank": 17,
+        "spendRank": 10,
+        "value": 21553484773.865738,
+        "spendPerUnit": 100409.04086149757
+      },
+      {
+        "ids": [
+          "age_20",
+          "arc_creator_discovery_recovery"
+        ],
+        "population": 413534.74147799506,
+        "populationRank": 28,
+        "spendRank": 19,
+        "value": 14857034420.97572,
+        "spendPerUnit": 100114.59980373045
+      },
+      {
+        "ids": [
+          "age_20",
+          "arc_practice_recovery"
+        ],
+        "population": 151326.95235859894,
+        "populationRank": 35,
+        "spendRank": 32,
+        "value": 5547398963.641009,
+        "spendPerUnit": 99078.51172149414
+      }
+    ]
+  }
+}

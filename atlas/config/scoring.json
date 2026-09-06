@@ -1,0 +1,20 @@
+{
+  "version": "commercial-atlas-v2",
+  "weights": {
+    "size": 0.18,
+    "distinctiveness": 0.15,
+    "consumption": 0.2,
+    "need": 0.15,
+    "reach": 0.1,
+    "crossIndustry": 0.12,
+    "momentum": 0.05,
+    "competition": 0.05
+  },
+  "sensitivityFraction": 0.3,
+  "smallSupportSensitivityFraction": 0.5,
+  "minimumReliableSupport": 1000,
+  "strongLift": 1.35,
+  "mediumLift": 1.1,
+  "minRelationshipSupport": 30,
+  "description": "Relative exploration score, not business valuation. Missing metrics excluded and weights renormalized. Textual proxies do not establish willingness to pay or unmet demand."
+}

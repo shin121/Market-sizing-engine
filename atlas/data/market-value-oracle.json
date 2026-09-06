@@ -1,0 +1,183 @@
+{
+  "method": "Independent SQL row predicates, weighted proxy moments and age×sex normalization. No serving index/cube input.",
+  "cases": [
+    {
+      "ids": [],
+      "eligible": 16042786.127758093,
+      "participants": 9544463.456676358,
+      "base": 861003273113.2244,
+      "low": 320121082431.3443,
+      "high": 1888997619597.212,
+      "support": 358529
+    },
+    {
+      "ids": [
+        "music"
+      ],
+      "eligible": 16042786.127757726,
+      "participants": 9544463.456676062,
+      "base": 861003273113.2115,
+      "low": 320121082431.3395,
+      "high": 1888997619597.184,
+      "support": 358529
+    },
+    {
+      "ids": [
+        "age_70"
+      ],
+      "eligible": 0,
+      "participants": 0,
+      "base": 0,
+      "low": 0.0,
+      "high": 0.0,
+      "support": 0
+    },
+    {
+      "ids": [
+        "age_20",
+        "age_70"
+      ],
+      "eligible": 0,
+      "participants": 0,
+      "base": 0,
+      "low": 0.0,
+      "high": 0.0,
+      "support": 0
+    },
+    {
+      "ids": [
+        "arc_collecting_planning",
+        "pet",
+        "age_30_49"
+      ],
+      "eligible": 6539.549802195242,
+      "participants": 4891.510726474154,
+      "base": 453421745.43905115,
+      "low": 120822646.63380356,
+      "high": 1143499478.5260253,
+      "support": 144
+    },
+    {
+      "ids": [
+        "arc_paid_subscription_planning",
+        "age_30_49"
+      ],
+      "eligible": 195124.17995430625,
+      "participants": 148512.1166435497,
+      "base": 17069299986.680092,
+      "low": 6379848902.325264,
+      "high": 37259322474.142746,
+      "support": 4264
+    },
+    {
+      "ids": [
+        "arc_creator_discovery_review"
+      ],
+      "eligible": 431589.0902306685,
+      "participants": 302218.82314390485,
+      "base": 28026979607.496067,
+      "low": 10529286335.833874,
+      "high": 61254186006.0561,
+      "support": 9439
+    },
+    {
+      "ids": [
+        "arc_offline_recovery"
+      ],
+      "eligible": 1767630.4184700535,
+      "participants": 1113225.928738002,
+      "base": 101417248289.16043,
+      "low": 37832003730.47962,
+      "high": 222208534042.9361,
+      "support": 39277
+    },
+    {
+      "ids": [
+        "arc_planning_specialist"
+      ],
+      "eligible": 595292.676540463,
+      "participants": 380154.6739177389,
+      "base": 34697343174.84763,
+      "low": 12944674220.169422,
+      "high": 76002650816.26614,
+      "support": 13242
+    },
+    {
+      "ids": [
+        "arc_community_info_search_info"
+      ],
+      "eligible": 9284.380444466095,
+      "participants": 5712.49922212154,
+      "base": 519281186.7379261,
+      "low": 137801541.95761257,
+      "high": 1314045187.3667173,
+      "support": 207
+    },
+    {
+      "ids": [
+        "arc_delivery_order_fandom"
+      ],
+      "eligible": 39750.1713474649,
+      "participants": 22818.36751745394,
+      "base": 2046812461.6511476,
+      "low": 542339443.0050421,
+      "high": 5185898225.111736,
+      "support": 889
+    },
+    {
+      "ids": [
+        "arc_planning_review"
+      ],
+      "eligible": 390179.04922062927,
+      "participants": 283476.0460763662,
+      "base": 26743459643.45268,
+      "low": 10101971925.436403,
+      "high": 58365955834.959206,
+      "support": 8520
+    },
+    {
+      "ids": [
+        "arc_collecting_planning"
+      ],
+      "eligible": 375760.57262774074,
+      "participants": 274461.1833006239,
+      "base": 26075649350.49345,
+      "low": 9891000675.831158,
+      "high": 56873653523.94006,
+      "support": 8246
+    },
+    {
+      "ids": [
+        "arc_growth_specialist"
+      ],
+      "eligible": 251152.65431589782,
+      "participants": 156148.52612380995,
+      "base": 14140605923.96107,
+      "low": 5270415035.501807,
+      "high": 30990839909.35908,
+      "support": 5599
+    },
+    {
+      "ids": [
+        "arc_ownership_repeat_purchase"
+      ],
+      "eligible": 480221.3895940613,
+      "participants": 240867.65384482907,
+      "base": 22752943261.525505,
+      "low": 8337186302.79012,
+      "high": 50173592324.92052,
+      "support": 10860
+    },
+    {
+      "ids": [
+        "arc_planned_purchase_planning"
+      ],
+      "eligible": 34869.622500185906,
+      "participants": 24007.913312923283,
+      "base": 2616528833.6762824,
+      "low": 702508127.2893658,
+      "high": 6600616473.698017,
+      "support": 771
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+> 최신 **Nemotron Market Atlas v0.3**는 [`atlas/`](atlas/README.md)에 있습니다. 인구/연간 소비액 Lens와 Vercel 독립 배포를 지원합니다. 기존 엔진과 `web/`는 별도로 유지합니다.
+
 # Korea Market Sizing Engine
 
 This repository builds a reproducible, unit-safe synthetic-population and market-sizing engine for South Korea. It distinguishes calibrated baseline populations from overlapping business archetypes and never presents synthetic narrative data as facts about real people.

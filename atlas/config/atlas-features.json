@@ -1,0 +1,1256 @@
+{
+  "version": "commercial-features-v2.1",
+  "minimumSupport": 150,
+  "features": [
+    {
+      "id": "food",
+      "label": "외식·미식",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "맛집|외식|미식|음식점|식당|빵집|베이커리|카페",
+      "mechanism": false,
+      "stem": "외식·미식",
+      "parent": null
+    },
+    {
+      "id": "travel",
+      "label": "여행·로컬 경험",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "여행|관광|유적지|시티투어|나들이|온천",
+      "mechanism": false,
+      "stem": "여행·로컬 경험",
+      "parent": null
+    },
+    {
+      "id": "fitness",
+      "label": "운동·아웃도어",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "배드민턴|등산|트레킹|헬스장|러닝|자전거|필라테스|수영|골프",
+      "mechanism": false,
+      "stem": "운동·아웃도어",
+      "parent": null
+    },
+    {
+      "id": "content",
+      "label": "영상·콘텐츠",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "유튜브|넷플릭스|웹툰|드라마|영화|다큐멘터리",
+      "mechanism": false,
+      "stem": "영상·콘텐츠",
+      "parent": null
+    },
+    {
+      "id": "music",
+      "label": "음악·공연",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "음악|트로트|노래|라디오|콘서트|공연|기타 연주|피아노",
+      "mechanism": false,
+      "stem": "음악·공연",
+      "parent": null
+    },
+    {
+      "id": "gaming",
+      "label": "게임",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "게임|닌텐도|플레이스테이션|롤 |리그 오브 레전드",
+      "mechanism": false,
+      "stem": "게임",
+      "parent": null
+    },
+    {
+      "id": "beauty",
+      "label": "뷰티·패션",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "뷰티|피부 관리|피부관리|화장품|메이크업|패션|옷 쇼핑|의류",
+      "mechanism": false,
+      "stem": "뷰티·패션",
+      "parent": null
+    },
+    {
+      "id": "home",
+      "label": "집·인테리어",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "인테리어|가구 배치|집 꾸미|소품|청소|정리 정돈",
+      "mechanism": false,
+      "stem": "집·인테리어",
+      "parent": null
+    },
+    {
+      "id": "garden",
+      "label": "가드닝·식물",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "텃밭|화초|식물|가꾸기|분재|원예",
+      "mechanism": false,
+      "stem": "가드닝·식물",
+      "parent": null
+    },
+    {
+      "id": "pet",
+      "label": "반려동물",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "반려견|반려묘|반려동물|강아지|고양이",
+      "mechanism": false,
+      "stem": "반려동물",
+      "parent": null
+    },
+    {
+      "id": "education",
+      "label": "배움·자기계발",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "강좌|강의|배우는|배우고|배우며|배우기|자격증|독서|외국어|자기계발|학습",
+      "mechanism": false,
+      "stem": "배움·자기계발",
+      "parent": null
+    },
+    {
+      "id": "wellness",
+      "label": "건강·휴식",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "건강|사우나|목욕탕|반신욕|마사지|휴식|명상",
+      "mechanism": false,
+      "stem": "건강·휴식",
+      "parent": null
+    },
+    {
+      "id": "collect",
+      "label": "수집·취미용품",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "수집|피규어|프라모델|낚시|장비|레고|공예|뜨개질",
+      "mechanism": false,
+      "stem": "수집·취미용품",
+      "parent": null
+    },
+    {
+      "id": "photo",
+      "label": "사진·창작",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "촬영|출사|카메라|사진|그림|서예|스케치|전시",
+      "mechanism": false,
+      "stem": "사진·창작",
+      "parent": null
+    },
+    {
+      "id": "community",
+      "label": "모임·지역서비스",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "동호회|모임|친목|문화센터|봉사|경로당|복지관",
+      "mechanism": false,
+      "stem": "모임·지역서비스",
+      "parent": null
+    },
+    {
+      "id": "delivery",
+      "label": "배달·간편식",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "배달|밀키트|간편식|포장 음식|포장해|포장하여",
+      "mechanism": false,
+      "stem": "배달·간편식",
+      "parent": null
+    },
+    {
+      "id": "commerce",
+      "label": "쇼핑·커머스",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "쇼핑|온라인 구매|중고 거래|중고거래|직구|쿠팡|당근마켓",
+      "mechanism": false,
+      "stem": "쇼핑·커머스",
+      "parent": null
+    },
+    {
+      "id": "mobility",
+      "label": "드라이브·모빌리티",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "드라이브|자동차|자동차 정비|오토바이|차박",
+      "mechanism": false,
+      "stem": "드라이브·모빌리티",
+      "parent": null
+    },
+    {
+      "id": "family",
+      "label": "가족·돌봄",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "육아|자녀 교육|손주|손자|손녀|아이 돌|자녀들과|가족 여행",
+      "mechanism": false,
+      "stem": "가족·돌봄",
+      "parent": null
+    },
+    {
+      "id": "finance",
+      "label": "개인 재테크 관심",
+      "kind": "market",
+      "family": "affinity",
+      "pattern": "재테크|주식 투자|주식투자|투자 정보|가계부|저축|경제 뉴스",
+      "mechanism": false,
+      "stem": "개인 재테크 관심",
+      "parent": null
+    },
+    {
+      "id": "price_compare",
+      "label": "가격 비교",
+      "kind": "behavior",
+      "family": "value",
+      "pattern": "가격.{0,12}비교|가격비교|최저가|비교.{0,12}가격",
+      "mechanism": 1,
+      "stem": "가격비교",
+      "parent": null
+    },
+    {
+      "id": "discount",
+      "label": "할인·혜택 활용",
+      "kind": "behavior",
+      "family": "value",
+      "pattern": "할인|쿠폰|적립금|특가|프로모션",
+      "mechanism": 1,
+      "stem": "혜택활용",
+      "parent": null
+    },
+    {
+      "id": "value_seeking",
+      "label": "실속·비용 절약",
+      "kind": "behavior",
+      "family": "value",
+      "pattern": "가성비|저렴|알뜰|절약|실속|합리적인 가격",
+      "mechanism": 1,
+      "stem": "실속추구",
+      "parent": null
+    },
+    {
+      "id": "premium",
+      "label": "품질·프리미엄 선택",
+      "kind": "behavior",
+      "family": "premium",
+      "pattern": "프리미엄|명품|고급|오마카세|파인\\s?다이닝|고가의",
+      "mechanism": 1,
+      "stem": "프리미엄선택",
+      "parent": null
+    },
+    {
+      "id": "planned_purchase",
+      "label": "계획·신중 구매",
+      "kind": "behavior",
+      "family": "purchase",
+      "pattern": "(구매|구입|쇼핑).{0,25}(계획|목록|신중|고민)|(계획|목록|신중|고민).{0,25}(구매|구입|쇼핑)",
+      "mechanism": 1,
+      "stem": "신중구매",
+      "parent": null
+    },
+    {
+      "id": "impulse",
+      "label": "즉흥·충동 구매",
+      "kind": "behavior",
+      "family": "purchase",
+      "pattern": "(충동|즉흥).{0,15}(구매|쇼핑)|(구매|쇼핑).{0,15}(충동|즉흥)",
+      "mechanism": 1,
+      "stem": "즉흥구매",
+      "parent": null
+    },
+    {
+      "id": "paid",
+      "label": "유료 서비스·구매",
+      "kind": "behavior",
+      "family": "purchase",
+      "pattern": "유료|결제|구입|구매|입장권|티켓|회원권",
+      "mechanism": 1,
+      "stem": "유료이용",
+      "parent": null
+    },
+    {
+      "id": "repeat_purchase",
+      "label": "단골·반복 선택",
+      "kind": "behavior",
+      "family": "purchase",
+      "pattern": "단골|재구매|정기 구매|정기적으로 구매|늘 찾는|자주 찾는",
+      "mechanism": 1,
+      "stem": "단골선택",
+      "parent": null
+    },
+    {
+      "id": "review",
+      "label": "후기·리뷰 검토",
+      "kind": "behavior",
+      "family": "trust",
+      "pattern": "후기|리뷰",
+      "mechanism": 1,
+      "stem": "후기검증",
+      "parent": null
+    },
+    {
+      "id": "search_info",
+      "label": "정보 검색·검토",
+      "kind": "behavior",
+      "family": "trust",
+      "pattern": "정보.{0,16}(검색|찾아|수집)|꼼꼼히.{0,15}(검색|살펴|비교)|검색.{0,15}(정보|찾아|비교)",
+      "mechanism": 1,
+      "stem": "정보탐색",
+      "parent": null
+    },
+    {
+      "id": "community_info",
+      "label": "커뮤니티 정보 탐색",
+      "kind": "behavior",
+      "family": "trust",
+      "pattern": "(커뮤니티|동호회|단톡|온라인 카페).{0,25}(정보|후기|추천|공유)|(정보|후기|추천).{0,25}(커뮤니티|동호회|온라인 카페)",
+      "mechanism": 1,
+      "stem": "커뮤니티탐색",
+      "parent": null
+    },
+    {
+      "id": "expert",
+      "label": "전문가 조언·지도",
+      "kind": "behavior",
+      "family": "trust",
+      "pattern": "(전문가|전문 리뷰|강사|트레이너).{0,25}(조언|추천|상담을|지도를|배우|도움을)|전문가에게|전문가의 (도움|조언|지도)",
+      "mechanism": 1,
+      "stem": "전문지도",
+      "parent": null
+    },
+    {
+      "id": "recommendation",
+      "label": "지인 추천",
+      "kind": "behavior",
+      "family": "trust",
+      "pattern": "(지인|친구|동료|가족).{0,18}추천|추천.{0,18}(지인|친구|동료|가족)",
+      "mechanism": 1,
+      "stem": "지인추천",
+      "parent": null
+    },
+    {
+      "id": "offline_consult",
+      "label": "방문 상담·직접 확인",
+      "kind": "behavior",
+      "family": "trust",
+      "pattern": "(매장|제품|상품|구매).{0,25}(직접|상담|확인|비교)|직접.{0,12}(만져보|써보|입어보)|상담.{0,8}(받|통해)",
+      "mechanism": 1,
+      "stem": "직접확인",
+      "parent": null
+    },
+    {
+      "id": "creator_discovery",
+      "label": "영상·크리에이터 정보 탐색",
+      "kind": "behavior",
+      "family": "trust",
+      "pattern": "(유튜브|블로그|인스타그램|인플루언서).{0,24}(정보|리뷰|후기|추천|배우|검색)",
+      "mechanism": 1,
+      "stem": "콘텐츠탐색",
+      "parent": null
+    },
+    {
+      "id": "collecting",
+      "label": "수집·소유 몰입",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "수집|한정판|컬렉션|소장",
+      "mechanism": 1,
+      "stem": "수집몰입",
+      "parent": null
+    },
+    {
+      "id": "gear_upgrade",
+      "label": "장비 비교·구매",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "(장비|전자기기|음향기기|촬영기기|카메라).{0,20}(구매|교체|업그레이드|투자|비교)|(구매|교체|업그레이드).{0,20}(장비|전자기기|음향기기|카메라)",
+      "mechanism": 1,
+      "stem": "장비투자",
+      "parent": null
+    },
+    {
+      "id": "fandom",
+      "label": "팬덤·팬 활동",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "팬카페|팬클럽|팬덤|덕질|팬미팅|열성 팬|열혈 팬|팬으로|팬이며",
+      "mechanism": 1,
+      "stem": "팬덤참여",
+      "parent": null
+    },
+    {
+      "id": "practice",
+      "label": "실력 향상·연습",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "실력.{0,14}(높|향상|키우|늘리)|연습|레슨|숙련",
+      "mechanism": 1,
+      "stem": "실력추구",
+      "parent": null
+    },
+    {
+      "id": "routine",
+      "label": "반복·정기 활동",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "매일|매주|일주일에|정기적|주 [2-7이삼사오육칠]",
+      "mechanism": 0,
+      "stem": "정기활동",
+      "parent": null
+    },
+    {
+      "id": "adventure",
+      "label": "새로운 경험 탐색",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "새로운|신상|최신|색다른|도전",
+      "mechanism": 0,
+      "stem": "새경험탐색",
+      "parent": null
+    },
+    {
+      "id": "planning",
+      "label": "계획·기록 습관",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "계획|일정표|기록|목록|체계적",
+      "mechanism": 0,
+      "stem": "계획기록",
+      "parent": null
+    },
+    {
+      "id": "social",
+      "label": "모임·함께 즐기기",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "동호회|모임|친구들과|함께 즐",
+      "mechanism": 0,
+      "stem": "동행교류",
+      "parent": null
+    },
+    {
+      "id": "solo",
+      "label": "혼자 몰입",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "혼자서|홀로|혼자 즐|혼자 조용|혼자만의",
+      "mechanism": 0,
+      "stem": "혼자몰입",
+      "parent": null
+    },
+    {
+      "id": "local",
+      "label": "근거리·동네 이용",
+      "kind": "behavior",
+      "family": "engagement",
+      "pattern": "동네|근교|인근|집 근처",
+      "mechanism": 0,
+      "stem": "근거리이용",
+      "parent": null
+    },
+    {
+      "id": "paid_subscription",
+      "label": "유료 구독서비스 접점",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "넷플릭스|티빙|스포티파이|디즈니\\s?플러스|유료 구독|구독료|월정액|정기 결제|프리미엄 구독",
+      "mechanism": 1,
+      "stem": "유료구독",
+      "parent": null
+    },
+    {
+      "id": "creator_follow",
+      "label": "채널 구독·팔로우",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "채널.{0,16}구독|구독.{0,16}채널|팔로우",
+      "mechanism": 0,
+      "stem": "채널구독",
+      "parent": null
+    },
+    {
+      "id": "ecommerce",
+      "label": "온라인 쇼핑",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "온라인.{0,12}(구매|쇼핑)|인터넷.{0,10}(구매|쇼핑)|쿠팡|직구|쇼핑몰",
+      "mechanism": 1,
+      "stem": "온라인구매",
+      "parent": null
+    },
+    {
+      "id": "secondhand",
+      "label": "중고·재판매 거래",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "중고.{0,5}거래|당근마켓|중고장터|번개장터",
+      "mechanism": 1,
+      "stem": "중고거래",
+      "parent": null
+    },
+    {
+      "id": "offline",
+      "label": "매장·현장 이용",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "직접 방문|매장|전통시장|현장|오프라인",
+      "mechanism": 1,
+      "stem": "현장이용",
+      "parent": null
+    },
+    {
+      "id": "specialist",
+      "label": "전문점·전문시설",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "전문점|공방|레슨|전문 매장|전문 시설|문화센터",
+      "mechanism": 1,
+      "stem": "전문채널",
+      "parent": null
+    },
+    {
+      "id": "community_channel",
+      "label": "커뮤니티 접점",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "동호회|온라인 커뮤니티|온라인 카페|단톡|팬카페",
+      "mechanism": 0,
+      "stem": "커뮤니티접점",
+      "parent": null
+    },
+    {
+      "id": "digital",
+      "label": "온라인·모바일 접점",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "유튜브|온라인|모바일|스마트폰|인스타그램|인터넷|앱",
+      "mechanism": 0,
+      "stem": "디지털이용",
+      "parent": null
+    },
+    {
+      "id": "delivery_order",
+      "label": "배달·포장 주문",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "배달.{0,20}(시켜|주문|이용)|포장.{0,10}(주문|해|하여)|주문.{0,12}배달",
+      "mechanism": 1,
+      "stem": "배달활용",
+      "parent": null
+    },
+    {
+      "id": "membership",
+      "label": "회원권·레슨 이용",
+      "kind": "channel",
+      "family": "channel",
+      "pattern": "회원권|레슨|정기 강좌|수강|강습",
+      "mechanism": 1,
+      "stem": "회원레슨",
+      "parent": null
+    },
+    {
+      "id": "convenience",
+      "label": "편의·시간 절약 욕구",
+      "kind": "need",
+      "family": "convenience",
+      "pattern": "간편|편리|시간을 절약|간단히|간단하게|효율적",
+      "mechanism": 0,
+      "stem": "편의추구",
+      "parent": null
+    },
+    {
+      "id": "saving",
+      "label": "지출 절약 욕구",
+      "kind": "need",
+      "family": "value",
+      "pattern": "비용.{0,12}(줄|절약|절감)|돈을 아끼|지출.{0,12}(줄|관리)|생활비.{0,12}(아끼|줄)",
+      "mechanism": 0,
+      "stem": "지출관리",
+      "parent": null
+    },
+    {
+      "id": "recovery",
+      "label": "휴식·회복 욕구",
+      "kind": "need",
+      "family": "recovery",
+      "pattern": "피로|스트레스|휴식|쉬고|회복|지친",
+      "mechanism": 0,
+      "stem": "회복추구",
+      "parent": null
+    },
+    {
+      "id": "growth",
+      "label": "배움·성취 욕구",
+      "kind": "need",
+      "family": "growth",
+      "pattern": "배우는|배우고|배우며|배우기|성취|자격증|자기계발|성장",
+      "mechanism": 0,
+      "stem": "배움추구",
+      "parent": null
+    },
+    {
+      "id": "connection",
+      "label": "소통·유대 욕구",
+      "kind": "need",
+      "family": "connection",
+      "pattern": "외로|유대|소통|교류|정을 나누|대화를 나누|안부",
+      "mechanism": 0,
+      "stem": "유대추구",
+      "parent": null
+    },
+    {
+      "id": "expression",
+      "label": "취향·자기표현 욕구",
+      "kind": "need",
+      "family": "expression",
+      "pattern": "취향|개성|표현|창작|직접 만들|자신만의",
+      "mechanism": 0,
+      "stem": "취향표현",
+      "parent": null
+    },
+    {
+      "id": "certainty",
+      "label": "확실성·실패 회피",
+      "kind": "need",
+      "family": "trust",
+      "pattern": "실패.{0,12}(줄|피|싫)|검증된|확실한|믿을 수|신뢰|안심",
+      "mechanism": 0,
+      "stem": "확실성추구",
+      "parent": null
+    },
+    {
+      "id": "quality",
+      "label": "완성도·품질 중시",
+      "kind": "need",
+      "family": "premium",
+      "pattern": "품질|퀄리티|완성도|음질|내구성",
+      "mechanism": 0,
+      "stem": "품질중시",
+      "parent": null
+    },
+    {
+      "id": "ownership",
+      "label": "소유·간직 욕구",
+      "kind": "need",
+      "family": "engagement",
+      "pattern": "소유|간직|소장|수집품|컬렉션",
+      "mechanism": 0,
+      "stem": "소유추구",
+      "parent": null
+    },
+    {
+      "id": "family_optimization",
+      "label": "가족 일정·선호 조율",
+      "kind": "need",
+      "family": "convenience",
+      "pattern": "가족.{0,25}(일정|계획|고려|맞추)|아이.{0,20}(일정|취향|맞추)|가족의.{0,12}(건강|안녕|취향)",
+      "mechanism": 0,
+      "stem": "가족조율",
+      "parent": null
+    },
+    {
+      "id": "pain_time",
+      "label": "시간 부족·일정 부담",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "시간.{0,8}(부족|쫓)|시간(이|은|도) 없|시간을 내기 (어렵|힘들)|바쁜 (업무|일정)",
+      "mechanism": 0,
+      "stem": "시간제약",
+      "parent": null
+    },
+    {
+      "id": "pain_cost",
+      "label": "비용·가격 부담",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "(가격|비용|돈|경제적|지출).{0,20}(부담|비싸|어려|아끼|부족)|부담.{0,15}(가격|비용)|비싸",
+      "mechanism": 0,
+      "stem": "비용부담",
+      "parent": null
+    },
+    {
+      "id": "pain_physical",
+      "label": "이동·활동 제약",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "무릎|관절|허리.{0,10}(아프|통증|불편)|체력.{0,15}(부담|한계|떨어)|거동|이동.{0,10}(불편|어려)",
+      "mechanism": 0,
+      "stem": "활동제약",
+      "parent": null
+    },
+    {
+      "id": "pain_hassle",
+      "label": "번거로움·관리 부담",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "번거로|귀찮|관리.{0,12}(부담|힘들|어려)|복잡.{0,15}(절차|과정)|정리.{0,12}(힘들|어려)",
+      "mechanism": 0,
+      "stem": "관리부담",
+      "parent": null
+    },
+    {
+      "id": "pain_choice",
+      "label": "선택·결정의 어려움",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "선택.{0,16}(어려|고민|힘들)|결정.{0,12}(어려|못|고민)|고르.{0,8}(어려|힘들)|무엇을.{0,12}고민",
+      "mechanism": 0,
+      "stem": "선택고민",
+      "parent": null
+    },
+    {
+      "id": "pain_trust",
+      "label": "정보·품질 불신",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "신뢰.{0,12}(어려|부족|못)|믿기 어려|허위|과장 광고|불확실|실패할까",
+      "mechanism": 0,
+      "stem": "신뢰불안",
+      "parent": null
+    },
+    {
+      "id": "pain_digital",
+      "label": "디지털 이용 부담",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "(디지털|스마트폰|앱|온라인|인터넷).{0,22}(어려|서툴|복잡|익숙하지|부담)",
+      "mechanism": 0,
+      "stem": "디지털장벽",
+      "parent": null
+    },
+    {
+      "id": "pain_care",
+      "label": "가족 돌봄·조율 부담",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "(돌봄|육아|간병|집안일).{0,22}(부담|힘들|어려|지친)|부담.{0,12}(육아|돌봄)",
+      "mechanism": 0,
+      "stem": "돌봄부담",
+      "parent": null
+    },
+    {
+      "id": "pain_access",
+      "label": "거리·예약·대기 불편",
+      "kind": "need",
+      "family": "pain",
+      "pattern": "대기.{0,15}(길|불편|부담)|예약.{0,15}(어려|힘들|복잡)|거리.{0,15}(멀|부담)|접근성.{0,10}(낮|불편)",
+      "mechanism": 0,
+      "stem": "접근불편",
+      "parent": null
+    },
+    {
+      "id": "int_food_home",
+      "label": "직접 요리·집밥",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "요리|집밥|직접 만들어|직접 조리",
+      "mechanism": false,
+      "stem": "직접 요리·집밥",
+      "parent": "food"
+    },
+    {
+      "id": "int_food_local",
+      "label": "로컬 식당·노포",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "노포|동네 식당|단골집|전통시장",
+      "mechanism": false,
+      "stem": "로컬 식당·노포",
+      "parent": "food"
+    },
+    {
+      "id": "int_food_fine",
+      "label": "파인 다이닝·코스",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "오마카세|파인\\s?다이닝|코스 요리",
+      "mechanism": false,
+      "stem": "파인 다이닝·코스",
+      "parent": "food"
+    },
+    {
+      "id": "int_food_cafe",
+      "label": "카페·베이커리",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "카페|빵집|베이커리|디저트",
+      "mechanism": false,
+      "stem": "카페·베이커리",
+      "parent": "food"
+    },
+    {
+      "id": "int_travel_domestic",
+      "label": "국내·근교 여행",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "국내|근교|제주|지역 여행",
+      "mechanism": false,
+      "stem": "국내·근교 여행",
+      "parent": "travel"
+    },
+    {
+      "id": "int_travel_overseas",
+      "label": "해외 여행",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "해외|일본 여행|유럽|동남아",
+      "mechanism": false,
+      "stem": "해외 여행",
+      "parent": "travel"
+    },
+    {
+      "id": "int_travel_nature",
+      "label": "자연·휴양 여행",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "휴양|온천|숲|자연|산림",
+      "mechanism": false,
+      "stem": "자연·휴양 여행",
+      "parent": "travel"
+    },
+    {
+      "id": "int_travel_culture",
+      "label": "역사·문화 탐방",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "유적지|박물관|문화유산|역사 탐방",
+      "mechanism": false,
+      "stem": "역사·문화 탐방",
+      "parent": "travel"
+    },
+    {
+      "id": "int_fitness_hiking",
+      "label": "등산·트레킹",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "등산|트레킹|둘레길",
+      "mechanism": false,
+      "stem": "등산·트레킹",
+      "parent": "fitness"
+    },
+    {
+      "id": "int_fitness_training",
+      "label": "헬스·개인 트레이닝",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "헬스장|근력|트레이너|웨이트",
+      "mechanism": false,
+      "stem": "헬스·개인 트레이닝",
+      "parent": "fitness"
+    },
+    {
+      "id": "int_fitness_sport",
+      "label": "구기·라켓 스포츠",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "배드민턴|테니스|탁구|축구",
+      "mechanism": false,
+      "stem": "구기·라켓 스포츠",
+      "parent": "fitness"
+    },
+    {
+      "id": "int_content_streaming",
+      "label": "OTT·정주행",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "넷플릭스|티빙|정주행|디즈니",
+      "mechanism": false,
+      "stem": "OTT·정주행",
+      "parent": "content"
+    },
+    {
+      "id": "int_content_learning",
+      "label": "정보·학습 콘텐츠",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "다큐멘터리|강의|정보 채널",
+      "mechanism": false,
+      "stem": "정보·학습 콘텐츠",
+      "parent": "content"
+    },
+    {
+      "id": "int_content_short",
+      "label": "숏폼·SNS 콘텐츠",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "숏폼|릴스|틱톡|인스타그램",
+      "mechanism": false,
+      "stem": "숏폼·SNS 콘텐츠",
+      "parent": "content"
+    },
+    {
+      "id": "int_music_live",
+      "label": "공연·라이브",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "콘서트|라이브|공연|뮤지컬",
+      "mechanism": false,
+      "stem": "공연·라이브",
+      "parent": "music"
+    },
+    {
+      "id": "int_music_playing",
+      "label": "악기 연주·레슨",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "기타|피아노|악기|색소폰|우쿨렐레",
+      "mechanism": false,
+      "stem": "악기 연주·레슨",
+      "parent": "music"
+    },
+    {
+      "id": "int_music_listen",
+      "label": "음악 감상·스트리밍",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "음악 감상|플레이리스트|멜론|스포티파이|라디오",
+      "mechanism": false,
+      "stem": "음악 감상·스트리밍",
+      "parent": "music"
+    },
+    {
+      "id": "int_gaming_mobile",
+      "label": "모바일 게임",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "모바일 게임|스마트폰 게임",
+      "mechanism": false,
+      "stem": "모바일 게임",
+      "parent": "gaming"
+    },
+    {
+      "id": "int_gaming_console",
+      "label": "콘솔·PC 게임",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "콘솔|닌텐도|플레이스테이션|온라인 게임|PC 게임",
+      "mechanism": false,
+      "stem": "콘솔·PC 게임",
+      "parent": "gaming"
+    },
+    {
+      "id": "int_beauty_skin",
+      "label": "피부·뷰티 관리",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "피부|화장품|메이크업|뷰티",
+      "mechanism": false,
+      "stem": "피부·뷰티 관리",
+      "parent": "beauty"
+    },
+    {
+      "id": "int_beauty_fashion",
+      "label": "의류·스타일링",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "패션|의류|스타일링|옷 쇼핑",
+      "mechanism": false,
+      "stem": "의류·스타일링",
+      "parent": "beauty"
+    },
+    {
+      "id": "int_home_decor",
+      "label": "인테리어·공간 꾸미기",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "인테리어|소품|가구",
+      "mechanism": false,
+      "stem": "인테리어·공간 꾸미기",
+      "parent": "home"
+    },
+    {
+      "id": "int_home_organize",
+      "label": "청소·정리",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "청소|정리 정돈|수납",
+      "mechanism": false,
+      "stem": "청소·정리",
+      "parent": "home"
+    },
+    {
+      "id": "int_home_repair",
+      "label": "수리·DIY",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "수리|DIY|고장|직접 고치",
+      "mechanism": false,
+      "stem": "수리·DIY",
+      "parent": "home"
+    },
+    {
+      "id": "int_garden_plants",
+      "label": "실내 식물·화초",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "화초|분재|반려식물|베란다",
+      "mechanism": false,
+      "stem": "실내 식물·화초",
+      "parent": "garden"
+    },
+    {
+      "id": "int_garden_farm",
+      "label": "텃밭·도시 농사",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "텃밭|농사|채소|상추",
+      "mechanism": false,
+      "stem": "텃밭·도시 농사",
+      "parent": "garden"
+    },
+    {
+      "id": "int_pet_dog",
+      "label": "반려견 활동",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "반려견|강아지",
+      "mechanism": false,
+      "stem": "반려견 활동",
+      "parent": "pet"
+    },
+    {
+      "id": "int_pet_cat",
+      "label": "반려묘 활동",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "반려묘|고양이",
+      "mechanism": false,
+      "stem": "반려묘 활동",
+      "parent": "pet"
+    },
+    {
+      "id": "int_pet_care",
+      "label": "반려동물 관리",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "사료|동물병원|반려동물.{0,12}(건강|관리)|펫",
+      "mechanism": false,
+      "stem": "반려동물 관리",
+      "parent": "pet"
+    },
+    {
+      "id": "int_education_language",
+      "label": "외국어 학습",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "외국어|영어|일본어|중국어",
+      "mechanism": false,
+      "stem": "외국어 학습",
+      "parent": "education"
+    },
+    {
+      "id": "int_education_skill",
+      "label": "자격·직무 학습",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "자격증|직무|자기계발",
+      "mechanism": false,
+      "stem": "자격·직무 학습",
+      "parent": "education"
+    },
+    {
+      "id": "int_education_reading",
+      "label": "독서·인문 학습",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "독서|책을|인문|도서관",
+      "mechanism": false,
+      "stem": "독서·인문 학습",
+      "parent": "education"
+    },
+    {
+      "id": "int_wellness_rest",
+      "label": "휴식·스파·사우나",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "휴식|사우나|목욕|온천|마사지",
+      "mechanism": false,
+      "stem": "휴식·스파·사우나",
+      "parent": "wellness"
+    },
+    {
+      "id": "int_wellness_self",
+      "label": "자가 건강관리",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "영양|건강관리|건강 관리|명상|건강식",
+      "mechanism": false,
+      "stem": "자가 건강관리",
+      "parent": "wellness"
+    },
+    {
+      "id": "int_collect_objects",
+      "label": "물품·한정판 수집",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "피규어|프라모델|한정판|레고|수집",
+      "mechanism": false,
+      "stem": "물품·한정판 수집",
+      "parent": "collect"
+    },
+    {
+      "id": "int_collect_craft",
+      "label": "공예·제작 취미",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "공예|뜨개질|공방|바느질",
+      "mechanism": false,
+      "stem": "공예·제작 취미",
+      "parent": "collect"
+    },
+    {
+      "id": "int_collect_fishing",
+      "label": "낚시·장비 취미",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "낚시|낚싯대|장비",
+      "mechanism": false,
+      "stem": "낚시·장비 취미",
+      "parent": "collect"
+    },
+    {
+      "id": "int_photo_camera",
+      "label": "사진·카메라",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "카메라|출사|촬영|사진",
+      "mechanism": false,
+      "stem": "사진·카메라",
+      "parent": "photo"
+    },
+    {
+      "id": "int_photo_art",
+      "label": "미술·창작",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "그림|스케치|서예|전시",
+      "mechanism": false,
+      "stem": "미술·창작",
+      "parent": "photo"
+    },
+    {
+      "id": "int_community_club",
+      "label": "동호회·친목 모임",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "동호회|친목|모임",
+      "mechanism": false,
+      "stem": "동호회·친목 모임",
+      "parent": "community"
+    },
+    {
+      "id": "int_community_public",
+      "label": "지역 문화·공공 시설",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "문화센터|복지관|경로당|도서관",
+      "mechanism": false,
+      "stem": "지역 문화·공공 시설",
+      "parent": "community"
+    },
+    {
+      "id": "int_delivery_meal",
+      "label": "배달·포장식",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "배달|포장 음식|포장 주문",
+      "mechanism": false,
+      "stem": "배달·포장식",
+      "parent": "delivery"
+    },
+    {
+      "id": "int_delivery_easy",
+      "label": "밀키트·간편식",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "밀키트|간편식|냉동식품",
+      "mechanism": false,
+      "stem": "밀키트·간편식",
+      "parent": "delivery"
+    },
+    {
+      "id": "int_commerce_used",
+      "label": "중고 거래",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "중고|당근마켓",
+      "mechanism": false,
+      "stem": "중고 거래",
+      "parent": "commerce"
+    },
+    {
+      "id": "int_commerce_online",
+      "label": "온라인 쇼핑",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "온라인 쇼핑|쿠팡|쇼핑몰|직구",
+      "mechanism": false,
+      "stem": "온라인 쇼핑",
+      "parent": "commerce"
+    },
+    {
+      "id": "int_mobility_drive",
+      "label": "드라이브·차박",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "드라이브|차박",
+      "mechanism": false,
+      "stem": "드라이브·차박",
+      "parent": "mobility"
+    },
+    {
+      "id": "int_mobility_maintain",
+      "label": "자동차·기기 정비",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "정비|튜닝|자동차 관리",
+      "mechanism": false,
+      "stem": "자동차·기기 정비",
+      "parent": "mobility"
+    },
+    {
+      "id": "int_family_children",
+      "label": "자녀 교육·양육",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "자녀 교육|육아|아이 돌|자녀들과",
+      "mechanism": false,
+      "stem": "자녀 교육·양육",
+      "parent": "family"
+    },
+    {
+      "id": "int_family_senior",
+      "label": "부모·손주 돌봄",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "부모님|손주|손자|손녀|간병",
+      "mechanism": false,
+      "stem": "부모·손주 돌봄",
+      "parent": "family"
+    },
+    {
+      "id": "int_finance_save",
+      "label": "저축·가계 관리",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "저축|가계부|생활비",
+      "mechanism": false,
+      "stem": "저축·가계 관리",
+      "parent": "finance"
+    },
+    {
+      "id": "int_finance_invest",
+      "label": "투자 정보 탐색",
+      "kind": "interest",
+      "family": "interest",
+      "pattern": "주식|투자|경제 뉴스|재테크",
+      "mechanism": false,
+      "stem": "투자 정보 탐색",
+      "parent": "finance"
+    }
+  ]
+}

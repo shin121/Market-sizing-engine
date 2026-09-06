@@ -1,0 +1,362 @@
+[
+  {
+    "id": "food",
+    "label": "외식·미식",
+    "kind": "market",
+    "family": "affinity",
+    "support": 785922,
+    "populationEstimate": 35093004.98013567,
+    "share": 0.7956695381506785,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "travel",
+    "label": "여행·로컬 경험",
+    "kind": "market",
+    "family": "affinity",
+    "support": 927110,
+    "populationEstimate": 41331484.456571415,
+    "share": 0.9371156208269226,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "fitness",
+    "label": "운동·아웃도어",
+    "kind": "market",
+    "family": "affinity",
+    "support": 340127,
+    "populationEstimate": 15200830.549342249,
+    "share": 0.3446509590600216,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "content",
+    "label": "영상·콘텐츠",
+    "kind": "market",
+    "family": "affinity",
+    "support": 505955,
+    "populationEstimate": 22640741.55145736,
+    "share": 0.5133372985252775,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "music",
+    "label": "음악·공연",
+    "kind": "market",
+    "family": "affinity",
+    "support": 439043,
+    "populationEstimate": 19518226.861803234,
+    "share": 0.4425400036685917,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "gaming",
+    "label": "게임",
+    "kind": "market",
+    "family": "affinity",
+    "support": 118278,
+    "populationEstimate": 5407139.037280776,
+    "share": 0.12259696264098802,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "beauty",
+    "label": "뷰티·패션",
+    "kind": "market",
+    "family": "affinity",
+    "support": 51934,
+    "populationEstimate": 2341923.299859084,
+    "share": 0.05309881645752374,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "home",
+    "label": "집·인테리어",
+    "kind": "market",
+    "family": "affinity",
+    "support": 152295,
+    "populationEstimate": 6825777.896969773,
+    "share": 0.1547619974372469,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "garden",
+    "label": "가드닝·식물",
+    "kind": "market",
+    "family": "affinity",
+    "support": 98296,
+    "populationEstimate": 4321040.266293021,
+    "share": 0.09797166457982137,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "pet",
+    "label": "반려동물",
+    "kind": "market",
+    "family": "affinity",
+    "support": 40638,
+    "populationEstimate": 1818266.956744538,
+    "share": 0.04122586910201878,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "education",
+    "label": "배움·자기계발",
+    "kind": "market",
+    "family": "affinity",
+    "support": 57947,
+    "populationEstimate": 2571837.2712492645,
+    "share": 0.0583116941673113,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "wellness",
+    "label": "건강·휴식",
+    "kind": "market",
+    "family": "affinity",
+    "support": 605256,
+    "populationEstimate": 26949953.988154575,
+    "share": 0.6110407887576144,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "collect",
+    "label": "수집·취미용품",
+    "kind": "market",
+    "family": "affinity",
+    "support": 120785,
+    "populationEstimate": 5410139.901743917,
+    "share": 0.1226650017400276,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "photo",
+    "label": "사진·창작",
+    "kind": "market",
+    "family": "affinity",
+    "support": 383680,
+    "populationEstimate": 17097445.532125816,
+    "share": 0.3876532259863013,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "community",
+    "label": "모임·지역서비스",
+    "kind": "market",
+    "family": "affinity",
+    "support": 179259,
+    "populationEstimate": 7878686.071168275,
+    "share": 0.1786347595775598,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "delivery",
+    "label": "배달·간편식",
+    "kind": "market",
+    "family": "affinity",
+    "support": 702477,
+    "populationEstimate": 31387319.12891768,
+    "share": 0.7116499065620153,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "commerce",
+    "label": "쇼핑·커머스",
+    "kind": "market",
+    "family": "affinity",
+    "support": 30470,
+    "populationEstimate": 1369629.027318654,
+    "share": 0.031053826716214813,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "mobility",
+    "label": "드라이브·모빌리티",
+    "kind": "market",
+    "family": "affinity",
+    "support": 60813,
+    "populationEstimate": 2722878.5886880355,
+    "share": 0.06173627907693087,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "family",
+    "label": "가족·돌봄",
+    "kind": "market",
+    "family": "affinity",
+    "support": 265015,
+    "populationEstimate": 11620314.349461004,
+    "share": 0.2634693197927901,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  },
+  {
+    "id": "finance",
+    "label": "개인 재테크 관심",
+    "kind": "market",
+    "family": "affinity",
+    "support": 10430,
+    "populationEstimate": 465871.5982140499,
+    "share": 0.01056278422432944,
+    "sourceFields": [
+      "sports_persona",
+      "arts_persona",
+      "travel_persona",
+      "culinary_persona",
+      "family_persona",
+      "hobbies_and_interests",
+      "persona"
+    ]
+  }
+]

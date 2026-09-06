@@ -1,0 +1,34 @@
+
+> nemotron-opportunity-workbench@0.2.0 test
+> tsc -p tsconfig.tests.json && node scripts/run-tests.mjs
+
+✔ independent SQL oracle: weighted joints, all memberships, calibration and zeros (149.760166ms)
+✔ commercial bundles pass discovery, holdout, unique naming and overlap gates (0.368917ms)
+✔ artifact fingerprint prevents stale cube reuse (7.296416ms)
+✔ central metric parity with extraction and independent defining-signal exclusion (4.265083ms)
+✔ signal indexes use universe and parent deltas use exact parent (134.543875ms)
+✔ missing metrics excluded; empty population cannot become an opportunity (0.142958ms)
+✔ URL context, canonical routes, history and invalid public inputs (0.33625ms)
+✔ five radar groups have real distinct rankings and three candidates (0.393958ms)
+✔ discovery engine: pet (86.062542ms)
+✔ discovery engine: travel (86.898583ms)
+✔ discovery engine: education (85.019583ms)
+✔ discovery engine: beauty (93.000916ms)
+✔ discovery engine: wellness (92.204125ms)
+✔ discovery engine: food (85.038916ms)
+✔ discovery engine: content (91.981625ms)
+✔ discovery engine: finance (86.38225ms)
+✔ discovery engine: home (93.744208ms)
+✔ discovery engine: collect (92.474542ms)
+✔ search reaches types, markets, signals and generated segments (19.08375ms)
+✔ public payload excludes raw records, UUIDs, narratives and posting bytes (2.641417ms)
+✔ maximum public context remains analyzable and cannot promote an invalid ninth condition (425.785083ms)
+✔ matrix does not promote a type defining signal as an independent discovery (0.357042ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1759.672708

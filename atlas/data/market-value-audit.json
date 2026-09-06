@@ -1,0 +1,246 @@
+{
+  "auditedAt": "2026-09-06T04:09:52Z",
+  "shards": 9,
+  "rows": 1000000,
+  "fields": [
+    {
+      "field": "uuid",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "professional_persona",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 19098,
+      "explicitFrequencyMentions": 16,
+      "monetaryLanguageMentions": 30595
+    },
+    {
+      "field": "sports_persona",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 25,
+      "explicitFrequencyMentions": 952,
+      "monetaryLanguageMentions": 1066
+    },
+    {
+      "field": "arts_persona",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 4,
+      "explicitFrequencyMentions": 5,
+      "monetaryLanguageMentions": 1553
+    },
+    {
+      "field": "travel_persona",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 24,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 4333
+    },
+    {
+      "field": "culinary_persona",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 15,
+      "explicitFrequencyMentions": 61202,
+      "monetaryLanguageMentions": 3916
+    },
+    {
+      "field": "family_persona",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 12,
+      "explicitFrequencyMentions": 96,
+      "monetaryLanguageMentions": 1426
+    },
+    {
+      "field": "persona",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 121,
+      "explicitFrequencyMentions": 2,
+      "monetaryLanguageMentions": 1698
+    },
+    {
+      "field": "cultural_background",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 188,
+      "explicitFrequencyMentions": 8,
+      "monetaryLanguageMentions": 4035
+    },
+    {
+      "field": "skills_and_expertise",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 10260,
+      "explicitFrequencyMentions": 19,
+      "monetaryLanguageMentions": 58896
+    },
+    {
+      "field": "skills_and_expertise_list",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 480,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 99085
+    },
+    {
+      "field": "hobbies_and_interests",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 3,
+      "explicitFrequencyMentions": 2032,
+      "monetaryLanguageMentions": 2219
+    },
+    {
+      "field": "hobbies_and_interests_list",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 2,
+      "explicitFrequencyMentions": 7900,
+      "monetaryLanguageMentions": 1018
+    },
+    {
+      "field": "career_goals_and_ambitions",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 1729,
+      "explicitFrequencyMentions": 26,
+      "monetaryLanguageMentions": 9422
+    },
+    {
+      "field": "sex",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "age",
+      "type": "BIGINT",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "marital_status",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "military_status",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "family_type",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "housing_type",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "education_level",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "bachelors_field",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "occupation",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "district",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 1604
+    },
+    {
+      "field": "province",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    },
+    {
+      "field": "country",
+      "type": "VARCHAR",
+      "rows": 1000000,
+      "nonempty": 1000000,
+      "numericAmountMentions": 0,
+      "explicitFrequencyMentions": 0,
+      "monetaryLanguageMentions": 0
+    }
+  ],
+  "patterns": {
+    "amount": "([0-9][0-9,.]*\\s*(만|천|백|억)?\\s*원|₩\\s*[0-9]|[0-9][0-9,.]*\\s*(KRW|달러|dollars))",
+    "frequency": "((월|주|연|년)\\s*[0-9]+\\s*(회|번)|[0-9]+\\s*(회|번)\\s*(정도)?\\s*(매월|매주|매년))",
+    "monetary": "(지출|소비액|구매액|이용료|구독료|결제|회비|가격|금액|예산|spend|payment|price|budget)"
+  }
+}

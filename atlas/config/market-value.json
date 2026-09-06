@@ -1,0 +1,96 @@
+{
+  "version": "market-value-v1",
+  "currency": "KRW",
+  "period": "annual",
+  "opportunityWeight": 0.1,
+  "economicReferenceShare": 0.15,
+  "proxyCoefficients": {
+    "paid": 0.35,
+    "premium": 0.4,
+    "paid_subscription": 0.3,
+    "gear_upgrade": 0.2,
+    "repeat_purchase": 0.15,
+    "membership": 0.2
+  },
+  "populationSensitivity": {
+    "regular": 0.3,
+    "sparse": 0.5,
+    "minimumSupport": 1000
+  },
+  "proxySensitivity": { "low": 0.8, "high": 1.25 },
+  "anchors": [
+    {
+      "id": "kocca-2024-digital-music",
+      "marketId": "music",
+      "scopeLabel": "음악 스트리밍·다운로드 · 20–69세",
+      "populationUnit": "person",
+      "method": "calibrated_baseline",
+      "referencePeriod": "2024-01–2024-06",
+      "sourceId": "SRC-KOCCA-MUSIC",
+      "sourceTitle": "2024 음악산업백서 · 음악 이용자 조사",
+      "sourceUrl": "https://welcon.kocca.kr/ko/info/report/1954309",
+      "sourceLocator": "표 2-2-2-12 (인쇄 p.147/PDF p.149), 표 2-2-2-11 (p.146), 전체 연령별 사례 수",
+      "sourceFileSha256": "8c0f42b39227e2649485c075b6faabf9db749a568048cdaf0486d1cc299b22a1",
+      "spendPeriod": "monthly",
+      "binLow": [0, 5000, 10000, 15000, 20000],
+      "binBase": [2500, 7500, 12500, 17500, 25000],
+      "binHigh": [5000, 10000, 15000, 20000, 40000],
+      "ageBands": [
+        {
+          "ageBand": "20-29",
+          "musicUsers": 577,
+          "paidUsers": 494,
+          "paymentShares": [20.1, 53.9, 19.6, 4.1, 2.3]
+        },
+        {
+          "ageBand": "30-39",
+          "musicUsers": 602,
+          "paidUsers": 486,
+          "paymentShares": [22.6, 57.3, 15.4, 4.0, 0.7]
+        },
+        {
+          "ageBand": "40-49",
+          "musicUsers": 645,
+          "paidUsers": 408,
+          "paymentShares": [27.7, 54.3, 14.4, 2.4, 1.2]
+        },
+        {
+          "ageBand": "50-59",
+          "musicUsers": 680,
+          "paidUsers": 323,
+          "paymentShares": [32.1, 47.8, 16.9, 3.2, 0]
+        },
+        {
+          "ageBand": "60-69",
+          "musicUsers": 579,
+          "paidUsers": 214,
+          "paymentShares": [36.3, 42.1, 18.2, 2.5, 0.8]
+        }
+      ],
+      "assumptions": [
+        "음악 관심 서술 집단에 조사 음악 이용자의 연령별 유료 참여율을 이식합니다. 실제 결제자 식별이 아닙니다.",
+        "연령별 공개 사례 수 비율을 참여율 proxy로 사용합니다. 반올림과 조사대상 차이가 있습니다.",
+        "구간 중간값으로 평균을 근사하고 월 금액에 12를 곱합니다. 2만원 이상 열린 구간은 Base 2.5만원, High 4만원의 명시적 꼬리 가정입니다.",
+        "동일 연령 내 구매·이용 신호의 선형 가중치로 소비를 배분하며, 연령별 전체 음악 기준 평균을 보존합니다. 계수는 추정된 지출 탄력성이 아닙니다.",
+        "70세 이상은 기준 조사 범위 밖입니다. 공연·음반·악기 지출 및 다른 19개 산업은 이 금액에 포함하지 않습니다.",
+        "공유 요금제 이용자의 자기보고 결제금액을 실제 계정 매출로 해석하지 않습니다. 금액은 소비액 탐색 proxy이며 확보 가능한 매출이 아닙니다.",
+        "Low/High는 인구·구간·배분 가정을 변화시킨 민감도 범위이며 신뢰구간이나 엄밀한 상한이 아닙니다."
+      ]
+    }
+  ],
+  "requiredUnits": {
+    "pet": "household",
+    "family": "household",
+    "home": "household"
+  },
+  "rejectedInternalSources": [
+    {
+      "source": "phase2r_b_gold_queries.json / production.v_gold_query_result",
+      "reason": "기존 GOLD-01–10은 특정 사업체·가구·WTP·고지출 세그먼트의 가정값. 대상·조건·단위가 현재 일반 산업과 일치하지 않음."
+    },
+    {
+      "source": "reports/market_scenarios.json",
+      "reason": "기업용 홈페이지 서비스의 회사별 가격·획득 시나리오이며 소비자 산업 지출 기준이 아님."
+    }
+  ]
+}
