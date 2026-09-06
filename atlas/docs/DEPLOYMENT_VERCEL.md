@@ -12,6 +12,18 @@
 
 `48ce58d`의 GitHub main 자동 production 배포가 READY였고 운영 주소의 29단계 브라우저 여정, 오류 0을 확인했다. [운영 검증 기록](../data/revision-production-qa.json). 후속 범위 보완은 각 집단의 High를 공식 전국 항목 총액으로 제한하며 전국 기준액 자체는 고정한다.
 
+## 현재 운영 검증
+
+`2d84014`의 production 배포 `dpl_AFWtFx85hRDo365J5qhytcquubZ8`가
+READY 상태이며 [운영 Atlas](https://nemotron-market-atlas.vercel.app/atlas)에
+반영됐다. 흐름 화면에서 시장 → 경험·문제 → 하위 행동·구매 방식의 계층을
+확인하고, 하위 유형을 같은 조건의 세그먼트 프로필 대시보드로 열 수 있다.
+프로필에는 관련 인구, 연간 소비금액, 단위당 지출, 연령·지역 구성, 기준시장
+추이, 하위 유형, 산출 근거가 한 화면에 표시된다. `3faab3e`의 하위 유형 카드와
+beauty skin → cosmetics → Matrix → Opportunity 여정을 production에서 재확인했고,
+브라우저 error 로그는 없었다. 저장소 루트 배포에 필요한 대형 로컬 산출물은
+루트 `.vercelignore`에서 제외한다.
+
 ## 대상과 실행 방식
 
 - GitHub: [shin121/Market-sizing-engine](https://github.com/shin121/Market-sizing-engine), `main`의 `atlas/`.
