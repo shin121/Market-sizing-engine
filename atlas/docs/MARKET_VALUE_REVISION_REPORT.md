@@ -20,7 +20,7 @@
 18. **Opportunity** — 인구와 경제적 규모 signal을 분리하고 기존 점수 구조에 중앙 weight 0.1로 금액을 연결했다. 축·버블·비교·새로고침의 조건을 유지한다.
 19. **Sanity Test** — 실제 52개 유형·20개 시장 전수 검사와 4개 경제적 규모/밀도 패턴을 `data/research-demand-sanity.json`에 기록했다. 모든 미보정 행동의 현실 유병률까지 검증했다는 뜻은 아니다.
 20. **Browser Acceptance** — 최종 29단계: 전체 → 프리미엄 유형 → 음악 시장 → 유형 → Matrix 금액 → Segment → Opportunity → Relationship/검색, 시장 10개, 집·인테리어의 3중 교집합, 배달, 모바일. 브라우저 오류 0. `data/revision-browser-qa.json`.
-21. **lint / typecheck / test / build** — Atlas lint/typecheck/77 tests/Next production build 통과. 원래 Python 엔진은 입력 데이터·DuckDB 미포함으로 45 passed / 12 skipped / 15 failed / 10 errors; CLI validate도 DB 부재로 실행을 마치지 못했다. 해당 엔진 코드는 변경하지 않았다.
+21. **lint / typecheck / test / build** — Atlas lint/typecheck/78 tests/Next production build 통과. 원래 Python 엔진은 입력 데이터·DuckDB 미포함으로 45 passed / 12 skipped / 15 failed / 10 errors; CLI validate도 DB 부재로 실행을 마치지 못했다. 해당 엔진 코드는 변경하지 않았다.
 22. **Known Limitations** — 합성 프로필, 선별 조사 비율 이식, 조건부 독립·70+ 가정, 온라인 일부 채널, 혼합 기준연도, 7개 시장 미확보, 실제 구매자/가구 식별 미확보. 소득·세그먼트 실측 성장·매출 예측·SOM을 추가하지 않았다.
 
 [현재 산식·출처·범위](EXTERNAL_SPEND_AND_POPULATION.md) · [Vercel 운영 Atlas](https://nemotron-market-atlas.vercel.app/atlas?metric=marketValue)

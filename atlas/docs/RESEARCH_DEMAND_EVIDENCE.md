@@ -218,7 +218,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   three-column flow and linked profile/range/age/sex/region modules. Measured
   problem experience and unmeasured need severity/payment intent have separate
   UI wording. Nested definitions no longer repeat the parent paragraph.
-- Atlas 77/77 tests passed, lint passed, typecheck passed after build, production
+- Atlas 78/78 tests passed, lint passed, typecheck passed after build, production
   `npm run build -- --webpack` passed. A concurrent typecheck initially raced with
   Next regenerating `.next/types`; the sequential final typecheck passed. No new
   default-Turbopack success is claimed. Numeric sanity ledger regenerated.

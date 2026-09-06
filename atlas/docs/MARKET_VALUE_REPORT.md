@@ -86,7 +86,7 @@ Global Atlas → 실제 프리미엄 유형 → 지원 산업 지출 순 → 음
 
 ## 21. lint / typecheck / test / build
 
-Lint, Typecheck, 77 tests, production build 통과. 여섯 산식, 독립 monetary oracle, 단위·범위·빈 집단·합산·순위 차이·URL context를 검사했다. 배포용 Next.js에서 분석 API와 화면, 금액 검색 및 잘못된 조건 400을 확인했다. Raw narrative/bitmap/per-person moments가 API로 노출되지 않는다. [런타임 측정](../data/market-value-performance.json).
+Lint, Typecheck, 78 tests, production build 통과. 여섯 산식, 독립 monetary oracle, 단위·범위·빈 집단·합산·순위 차이·URL context를 검사했다. 배포용 Next.js에서 분석 API와 화면, 금액 검색 및 잘못된 조건 400을 확인했다. Raw narrative/bitmap/per-person moments가 API로 노출되지 않는다. [런타임 측정](../data/market-value-performance.json).
 
 ## 22. Known Limitations
 
