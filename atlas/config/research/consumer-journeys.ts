@@ -99,6 +99,22 @@ export const consumerJourneys = [
     ],
   },
   {
+    id: 'content_subscription',
+    market: 'content',
+    column: 30,
+    label: '온라인 구독·오락서비스 이용 중 불편',
+    scope: 'OTT·전자책·오디오북·게임·생성형 AI 등 온라인 구독·오락서비스',
+    job: '구독 조건과 효용을 맞추기',
+    hypothesis: '요금·해지·콘텐츠 조건을 비교하는 지원이 불필요한 구독을 줄일까?',
+    alternatives: '서비스 앱, 통신사 결합, 구독 관리 앱, 고객센터',
+    question: '요금 인상·자동갱신·해지 불편 중 실제 손실과 유료 해결 의향은?',
+    types: [
+      ['price', '가격 대비 효용 불만'],
+      ['information', '구독 조건 비교정보 부족'],
+      ['redress', '취소·환불 해결 어려움'],
+    ],
+  },
+  {
     id: 'learning',
     market: 'education',
     column: 13,

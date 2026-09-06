@@ -52,10 +52,10 @@ reproducible with the respective Python scripts and the official PDFs.
 
 ## Current coverage
 
-- 195 registered external factors. Four rare leisure activities lack an age rate
+- 199 registered external factors. Four rare leisure activities lack an age rate
   and return `not_estimable`; missing table dashes are never converted to zero.
 - All 20 markets now have a **defined, sourced partial demand scope**, covering
-  66 industry/experience branches. This does not mean complete industry coverage.
+  67 industry/experience branches. This does not mean complete industry coverage.
 - Personal dining and household delivery retain direct/weighted spend anchors;
   reviewed online category baselines now cover matching profiles in beauty,
   commerce, travel, fitness, education, pet, family, mobility and community.
@@ -64,8 +64,9 @@ reproducible with the respective Python scripts and the official PDFs.
   narrative-weighted online category allocation.
   Music listening now has a separate KOCCA 2024 age-specific paid-user and
   payment-bin transfer; it prices paid digital listening participants only and
-  does not price the broader music or performance market.
-  The regenerated sanity ledger has 98 profiles with a monetary baseline;
+  does not price the broader music or performance market. Paid content now uses
+  the KOCCA 2025 monthly average for the paid OTT cohort, with mixed-genre scope.
+  The regenerated sanity ledger has 102 profiles with a monetary baseline;
   these remain partial online or category allocations rather than complete
   market-size measurements.
 - Household delivery/HMR profiles include household-head age/sex, household size
@@ -159,7 +160,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   listed explicitly. No national total is synthesized by adding overlapping markets.
 - One URL context carries market, branch/subtype, age, metric and up to three
   comparison references through flow → Matrix → Opportunity → comparison.
-- 283 addressable profiles: 20 roots, 66 purpose/experience branches, 197 lower
+- 287 addressable profiles: 20 roots, 67 purpose/experience branches, 200 lower
   buying/usage/problem scenarios. `_root` is separate from branch IDs, fixing the collision
   between delivery's aggregate and its delivery/takeout branch.
 - Matrix age cells consume the same external profiles and money engine as the
@@ -198,8 +199,8 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   The original 5,035 any-problem denominator is explicitly converted to the 10,000
   all-respondent denominator within every age/sex/region stratum. Full details:
   `CONSUMER_PROBLEM_DATA_AUDIT.md`.
-- Ten product-problem cohorts and thirty specific subtypes added across seven
-  markets. Total 195 factors / 283 profiles (20 roots, 66 branches, 197 lower
+- Eleven product-problem cohorts and thirty-three specific subtypes added across
+  eight markets. Total 199 factors / 287 profiles (20 roots, 67 branches, 200 lower
   profiles). The same four unused rare leisure factors remain unavailable; direct
   item-level spend coverage remains partial even where category baselines are
   available. Generic branches and legacy mapping gaps remain.

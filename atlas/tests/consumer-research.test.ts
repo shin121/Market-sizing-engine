@@ -114,7 +114,7 @@ void test('industry problem flows reach matrix and comparison without borrowing 
     (b) => b.id === 'problem_beauty',
   )!.profile;
   assert.match(beauty.regionBasis, /광주·세종.*결측.*전이/);
-  assert.equal(consumerFactors.length, 40);
+  assert.equal(consumerFactors.length, consumerJourneys.length * 4);
 });
 
 void test('KCA commerce channels expose use, frequency and channel-specific problem cohorts', () => {

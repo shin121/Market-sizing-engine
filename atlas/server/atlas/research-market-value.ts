@@ -26,6 +26,7 @@ const onlineSource = {
 const musicAnchor = marketValueConfig.anchors.find(
   (anchor) => anchor.marketId === 'music',
 );
+const contentAnchor = marketValueConfig.contentAnchors[0];
 
 /**
  * An external category total can be useful without pretending it is a direct
@@ -173,6 +174,120 @@ function musicAgeBand(ageMin: number) {
   if (ageMin >= 50 && ageMin < 60) return '50-59';
   if (ageMin >= 60 && ageMin < 70) return '60-69';
   return null;
+}
+
+/** Transfer the published all-paid-service monthly spend to the explicit
+ * paid-OTT cohort. The survey covers mixed online content services, so this
+ * is a calibrated content proxy rather than an OTT-only transaction total. */
+function contentBaselineValue(
+  estimate: DemandEstimate,
+  marketId: string,
+): MarketValueEstimate | null {
+  if (
+    !contentAnchor ||
+    marketId !== 'content' ||
+    estimate.unionGroups?.length ||
+    estimate.unit !== 'person' ||
+    !estimate.factorIds.includes('ott_paid') ||
+    estimate.factorIds.some((id) =>
+      ['commerce', 'research_presearch', 'research_review'].includes(id),
+    )
+  )
+    return null;
+  const monthly = Number(contentAnchor.monthlySpend ?? 0);
+  const lowMonthly = Number(
+    contentAnchor.monthlySpendSensitivity?.low ?? monthly * 0.75,
+  );
+  const highMonthly = Number(
+    contentAnchor.monthlySpendSensitivity?.high ?? monthly * 1.25,
+  );
+  if (!monthly || !lowMonthly || !highMonthly || estimate.base <= 0)
+    return null;
+  const national = researchEstimate(['ott_paid'], 'person');
+  if (national.status !== 'estimated' || national.base <= 0) return null;
+  const annual = monthly * 12;
+  const lowAnnual = lowMonthly * 12;
+  const highAnnual = highMonthly * 12;
+  const base = estimate.base * annual;
+  const low = estimate.low * lowAnnual;
+  const high = estimate.high * highAnnual;
+  const isTransfer = estimate.factorIds.length > 2;
+  const source = {
+    id: contentAnchor.sourceId,
+    title: contentAnchor.sourceTitle,
+    url: contentAnchor.sourceUrl,
+    locator: contentAnchor.sourceLocator,
+    referencePeriod: contentAnchor.referencePeriod,
+  };
+  return {
+    annualValue: base,
+    low,
+    base,
+    high,
+    currency: 'KRW',
+    period: 'annual',
+    populationUnit: 'person',
+    scopeId: 'paid-content-2025',
+    scopeLabel: contentAnchor.scopeLabel,
+    categoryPopulation: national.base,
+    categoryPopulationUnit: 'person',
+    relevantPopulation: estimate.base,
+    annualSpendPerUnit: annual,
+    spendPerUnitRange: { low: lowAnnual, base: annual, high: highAnnual },
+    participationRate: national.base > 0 ? estimate.base / national.base : null,
+    participationIndex: null,
+    spendIntensityIndex: null,
+    spendDensity: annual,
+    spendDensityIndex: annual / annual,
+    shareOfSpendPool: national.base > 0 ? base / (national.base * annual) : null,
+    method: 'calibrated_baseline',
+    confidence: 'Low',
+    completeness: isTransfer ? 0.45 : 0.58,
+    status: 'estimated',
+    isAdditive: false,
+    additiveForDisjointPopulations: true,
+    componentIds: ['paid-content-2025'],
+    coverage: {
+      population: national.base > 0 ? estimate.base / national.base : 0,
+      directSpend: 0,
+      anchor: 1,
+      isPartial: true,
+      supportedMarkets: 1,
+      totalMarkets: 1,
+    },
+    componentBreakdown: [
+      {
+        id: 'paid-content-2025',
+        label: '유료 온라인 콘텐츠 서비스 지출',
+        annualValue: base,
+        nationalValue: national.base * annual,
+        sourceId: contentAnchor.sourceId,
+      },
+    ],
+    denominatorBasis: 'modeled_participant',
+    denominatorLabel: '유료 콘텐츠 서비스 이용자',
+    sourceBasis: [
+      source,
+      ...demandSources
+        .filter((candidate) => estimate.sourceIds.includes(candidate.id))
+        .map((candidate) => ({
+          id: candidate.id,
+          title: candidate.title,
+          url: candidate.url,
+          locator: candidate.locator,
+          referencePeriod: candidate.referencePeriod,
+        })),
+    ].filter((candidate, index, all) =>
+      all.findIndex((item) => item.id === candidate.id) === index,
+    ),
+    assumptions: [
+      ...contentAnchor.assumptions,
+      ...estimate.assumptions,
+      isTransfer
+        ? '요금 증가·추가 하위 조건에는 유료 콘텐츠 서비스 이용자의 평균 지출액을 전이합니다. 해당 조건의 실제 결제 교차표가 아닙니다.'
+        : '유료 OTT 이용자 집단을 관련 지출 참여자로 사용합니다. 무료 OTT 이용자와 전체 동영상 이용자에는 금액을 확장하지 않습니다.',
+    ],
+  };
 }
 
 /** Apply the reviewed music-user payment distribution to the externally
@@ -558,6 +673,8 @@ export function researchMarketValue(
     ],
   };
   if (estimate.status !== 'estimated') return empty;
+  const contentValue = contentBaselineValue(estimate, marketId);
+  if (contentValue) return contentValue;
   const musicValue = musicBaselineValue(estimate, marketId);
   if (musicValue) return musicValue;
   let anchorId: string, scopeLabel: string, monthly: (age?: number) => number;

@@ -2,7 +2,7 @@
 
 > 이 문서의 수치·지출 범위는 현재 구현을 기준으로 합니다. 지원 시장·기준액 목록은 [baselines](MARKET_VALUE_BASELINES.md), 전수 검증은 [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
 
-현재 활성 범위는 **외식·배달 조사 지출과 선별 2025 온라인 카테고리 거래액의 연간 소비액 proxy**다. 품목·채널·구매 주체가 일치하지 않는 cohort에는 금액을 연결하지 않는다. 전체 대한민국 소비 규모나 사업자가 확보할 수 있는 매출이 아니다.
+현재 활성 범위는 **외식·배달 조사 지출, 선별 2025 온라인 카테고리 거래액, KOCCA 2025 유료 콘텐츠 서비스 지출의 연간 소비액 proxy**다. 품목·채널·구매 주체가 일치하지 않는 cohort에는 금액을 연결하지 않는다. 전체 대한민국 소비 규모나 사업자가 확보할 수 있는 매출이 아니다.
 
 ## 네 객체의 의미
 
@@ -24,7 +24,7 @@
 |5|consumption_proxy|연간 기준 지출 × 소비 강도|계산 경로 지원, 별도 활성 기준 없음|
 |6|heuristic_range|출처·가정이 명시된 연간 범위|계산 경로 지원, 임의 금액 생성 안 함|
 
-`server/atlas/spend-methods.ts`가 여섯 경로와 단위·범위 검증을 제공한다. 직접 금액은 이미 해당 Segment/기간/단위에 맞춘 값이라는 입력 계약이다. 원시 가중 관측이 있으면 weighted 경로에 제공한다. 월 ×12, 주 ×52, 연 ×1이다. Weighted 평균을 계산한 뒤 Population Engine의 인구를 한 번만 곱한다. 실제 서비스의 데이터 어댑터는 아래의 연령별 calibrated baseline 하나만 연결되어 있다. 하위 단계도 KRW 기준 자체가 없으면 숫자를 만들지 않는다.
+`server/atlas/spend-methods.ts`가 여섯 경로와 단위·범위 검증을 제공한다. 직접 금액은 이미 해당 Segment/기간/단위에 맞춘 값이라는 입력 계약이다. 원시 가중 관측이 있으면 weighted 경로에 제공한다. 월 ×12, 주 ×52, 연 ×1이다. Weighted 평균을 계산한 뒤 Population Engine의 인구를 한 번만 곱한다. 실제 서비스의 데이터 어댑터는 음악 결제 구간과 유료 콘텐츠 월평균, 선별 온라인 category 기준액에 연결되어 있다. 하위 단계도 KRW 기준 자체가 없으면 숫자를 만들지 않는다.
 
 ## 기준 지출의 출처
 
@@ -76,7 +76,7 @@ AnnualSpendPerUnit(S) = AnnualValue(S) / RelevantPopulation(S)
 - 원본 빈 교집합은 인구·소비액 0, 단위 지출/Opportunity는 null. 금액 기준 결손은 0이 아닌 null이다.
 - 조사 연령 밖은 `outside_anchor_scope`, 금액 기준 부재는 `missing_calibration_anchor`, 가구 연결 필요는 `unit_mapping_required`다.
 
-Coverage.population = 선택 cohort 인구 / 선택 전체 인구. Coverage.anchor = 선택 cohort 인구 / 기준액 분모. DirectSpend = 0. Completeness = 기준액 연결 충족도의 별도 지표다. 이것은 전체 가계 소비 중 측정한 비중이 아니다. 지원 시장 12/20과 `isPartial:true`를 표시한다. 기존 인구·신호 Completeness는 덮어쓰지 않는다.
+Coverage.population = 선택 cohort 인구 / 선택 전체 인구. Coverage.anchor = 선택 cohort 인구 / 기준액 분모. DirectSpend = 0. Completeness = 기준액 연결 충족도의 별도 지표다. 이것은 전체 가계 소비 중 측정한 비중이 아니다. 지원 시장 13/20과 `isPartial:true`를 표시한다. 기존 인구·신호 Completeness는 덮어쓰지 않는다.
 
 ## 합산과 Share
 

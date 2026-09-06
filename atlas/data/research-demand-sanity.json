@@ -1,8 +1,8 @@
 {
   "version": "research-demand-2026-09-06-v3",
-  "generatedAt": "2026-09-06T18:34:31.449Z",
+  "generatedAt": "2026-09-06T18:53:28.419Z",
   "status": "in_progress_not_full_goal",
-  "factorCount": 195,
+  "factorCount": 199,
   "marketCount": 20,
   "unsupportedFactors": [
     {
@@ -1693,23 +1693,25 @@
     {
       "id": "content",
       "label": "영상·콘텐츠",
-      "scope": "무료 동영상을 포함한 OTT 이용",
+      "scope": "무료 동영상을 포함한 OTT 이용 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": null,
       "root": {
         "id": "_root",
         "label": "영상·콘텐츠",
         "status": "estimated",
-        "population": 34329999,
+        "population": 35284788.49999999,
         "unit": "person",
         "low": 32565799,
-        "high": 35999669,
+        "high": 37653622.3,
         "methods": [
-          "survey_transfer"
+          "survey_transfer",
+          "research_scenario"
         ],
         "factors": [
-          "content"
+          "content",
+          "kca_content_subscription"
         ],
-        "evidenceGrade": "C",
+        "evidenceGrade": "D",
         "annualValue": null,
         "spendPerUnit": null,
         "spendScope": "선택 집단의 관련 소비",
@@ -1719,7 +1721,8 @@
         "hasHouseholdProfile": false,
         "sourceIds": [
           "KCC-OTT-2024",
-          "CENSUS-2024"
+          "CENSUS-2024",
+          "KCA-CONSUMPTION-2025"
         ]
       },
       "branches": [
@@ -1739,10 +1742,10 @@
             "ott_paid"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 2691948833946.1084,
+          "spendPerUnit": 130908,
+          "spendScope": "유료 OTT·콘텐츠 서비스 · 유료 이용자 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -1771,10 +1774,10 @@
                 "ott_paid"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1076779533578.4432,
+              "spendPerUnit": 130908,
+              "spendScope": "유료 OTT·콘텐츠 서비스 · 유료 이용자 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -1868,10 +1871,10 @@
             "ott_paid"
           ],
           "evidenceGrade": "C",
-          "annualValue": null,
-          "spendPerUnit": null,
-          "spendScope": "선택 집단의 관련 소비",
-          "moneyStatus": "missing_calibration_anchor",
+          "annualValue": 1076779533578.4432,
+          "spendPerUnit": 130908,
+          "spendScope": "유료 OTT·콘텐츠 서비스 · 유료 이용자 · 2025",
+          "moneyStatus": "estimated",
           "hasAge": true,
           "hasRegion": false,
           "hasHouseholdProfile": false,
@@ -1900,10 +1903,10 @@
                 "ott_paid"
               ],
               "evidenceGrade": "C",
-              "annualValue": null,
-              "spendPerUnit": null,
-              "spendScope": "선택 집단의 관련 소비",
-              "moneyStatus": "missing_calibration_anchor",
+              "annualValue": 1076779533578.4432,
+              "spendPerUnit": 130908,
+              "spendScope": "유료 OTT·콘텐츠 서비스 · 유료 이용자 · 2025",
+              "moneyStatus": "estimated",
               "hasAge": true,
               "hasRegion": false,
               "hasHouseholdProfile": false,
@@ -2107,6 +2110,121 @@
                 "KCC-OTT-2024",
                 "KISDI-OTT-2024",
                 "CENSUS-2024"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_content_subscription",
+          "label": "온라인 구독·오락서비스 이용 중 불편",
+          "status": "estimated",
+          "population": 2425525.0000000005,
+          "unit": "person",
+          "low": 1697867.5000000005,
+          "high": 3153182.500000001,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_content_subscription"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "구독 조건과 효용을 맞추기",
+          "validationQuestion": "요금 인상·자동갱신·해지 불편 중 실제 손실과 유료 해결 의향은?",
+          "children": [
+            {
+              "id": "problem_content_subscription~price",
+              "label": "가격 대비 효용 불만",
+              "status": "estimated",
+              "population": 780483.724282706,
+              "unit": "person",
+              "low": 382437.0248985259,
+              "high": 1319017.494037773,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_content_subscription",
+                "kca_content_subscription_price"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_content_subscription~information",
+              "label": "구독 조건 비교정보 부족",
+              "status": "estimated",
+              "population": 357104.3418433359,
+              "unit": "person",
+              "low": 174981.1275032346,
+              "high": 603506.3377152378,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_content_subscription",
+                "kca_content_subscription_information"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_content_subscription~redress",
+              "label": "취소·환불 해결 어려움",
+              "status": "estimated",
+              "population": 271104.33692628844,
+              "unit": "person",
+              "low": 132841.1250938813,
+              "high": 458166.3294054275,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_content_subscription",
+                "kca_content_subscription_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             }
           ]

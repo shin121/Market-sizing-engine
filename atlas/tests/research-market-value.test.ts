@@ -114,6 +114,36 @@ void test('music payment anchor separates listeners from paid spend participants
   assert.equal(playing.profile.marketValue.annualValue, null);
 });
 
+void test('KOCCA paid-content anchor prices only paid cohorts and keeps WTP out of spend', () => {
+  const content = getResearchExplorer('content')!;
+  const paid = content.branches.find((branch) => branch.id === 'paid')!;
+  const price = content.branches.find((branch) => branch.id === 'price')!;
+  const short = content.branches.find((branch) => branch.id === 'short')!;
+  assert.equal(paid.profile.marketValue.status, 'estimated');
+  assert.equal(paid.profile.marketValue.scopeId, 'paid-content-2025');
+  assert.equal(paid.profile.marketValue.annualSpendPerUnit, 10909 * 12);
+  assert.ok(
+    paid.profile.marketValue.low! < paid.profile.marketValue.base! &&
+      paid.profile.marketValue.base! < paid.profile.marketValue.high!,
+  );
+  assert.equal(
+    paid.profile.marketValue.spendPerUnitRange?.high,
+    13636 * 12,
+    'the sensitivity high is ±25%, not the published maximum willingness to pay',
+  );
+  assert.ok(
+    paid.profile.marketValue.sourceBasis.some(
+      (source) => source.id === 'KOCCA-CONTENT-2025',
+    ),
+  );
+  assert.equal(price.profile.marketValue.status, 'estimated');
+  assert.equal(short.profile.marketValue.annualValue, null);
+  const review = paid.children.find((child) => child.id === 'paid~review')!;
+  const online = paid.children.find((child) => child.id === 'paid~online')!;
+  assert.equal(review.marketValue.annualValue, null);
+  assert.equal(online.marketValue.annualValue, null);
+});
+
 void test('generic lower discovery paths do not inherit a parent market spend pool', () => {
   const travel = getResearchExplorer('travel')!;
   const nature = travel.branches.find((b) => b.id === 'nature')!;

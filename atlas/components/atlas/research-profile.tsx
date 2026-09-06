@@ -83,6 +83,10 @@ export function ResearchProfileDashboard({
   const change = first && last ? last / first - 1 : null;
   const confidence = value.status === 'estimated' ? value.confidence : 'Unavailable';
   const unit = unitLabel(selected.unit);
+  const sourceCount = new Set([
+    ...selected.sourceIds,
+    ...value.sourceBasis.map((source) => source.id),
+  ]).size;
 
   return (
     <section className="research-profile-dashboard" aria-label="세그먼트 프로필">
@@ -161,14 +165,50 @@ export function ResearchProfileDashboard({
         </section>
       </div>
 
+      <section className="rp-patterns">
+        <div className="rp-card-head">
+          <div>
+            <small>BEHAVIOR SIGNALS · OBSERVED VS MODELED</small>
+            <h3>주요 이용·소비 패턴</h3>
+          </div>
+          <span>발견을 위한 신호</span>
+        </div>
+        <div className="rp-pattern-grid">
+          <div className="rp-pattern-list">
+            {selected.observations.length ? selected.observations.slice(0, 4).map((observation, index) => (
+              <div key={observation.label}>
+                <b>{String(index + 1).padStart(2, '0')}</b>
+                <span><strong>{observation.label}</strong>{observation.value}</span>
+              </div>
+            )) : <p className="rp-empty">이 집단의 행동 신호를 아직 확보하지 못했습니다.</p>}
+          </div>
+          <div className="rp-money-callout">
+            <small>WHERE MONEY MOVES</small>
+            <strong>{value.annualValue === null ? '금액 기준 미확보' : moneyStatus(selected)}</strong>
+            {value.annualValue !== null ? (
+              <p>{value.scopeLabel}<br />지출 관련 {researchPopulation(value.relevantPopulation, value.populationUnit)} · {formatKRW(value.annualSpendPerUnit)} / {unit}·년</p>
+            ) : (
+              <p>활동·관심 신호는 확인되지만, 같은 품목·채널·구매 단위의 금액 기준이 아직 연결되지 않았습니다.</p>
+            )}
+          </div>
+          <div className="rp-next-callout">
+            <small>NEXT QUESTION</small>
+            <strong>{selected.question || '최근 사용·구매 빈도와 해결 의향을 확인하세요.'}</strong>
+            <p>현재 대안 · {selected.alternatives || '대안 정보 미확보'}</p>
+          </div>
+        </div>
+        <p className="rp-note">관찰된 이용·관심 비율과 외부 기준으로 모델링한 금액은 서로 다른 근거입니다. 금액이 없는 시장은 0원이 아니라 아직 연결하지 않은 상태입니다.</p>
+      </section>
+
       <section className="rp-lower-types">
         <div className="rp-card-head"><div><small>LOWER TYPES · BRANCH LOCAL</small><h3>{selected.level === 'market' ? '주요 경험·니즈' : `${selected.label} 안의 하위 행동·구매 방식`}</h3><p>하위 유형은 상위 시장과 동급으로 합산하지 않고, 선택 집단 안에서 추가 비교합니다.</p></div><span>{children.length}개</span></div>
         {children.length ? <div className="rp-lower-table"><div className="rp-lower-row rp-lower-header"><span>유형</span><span>관련 인구</span><span>연간 소비금액</span><span>근거</span></div>{children.map((child) => <Link key={child.key} href={researchHref(child.market, child.node, child.age, data.context.compare, data.context.metric)} className="rp-lower-row"><span><b>{child.label}</b><small>{child.job || child.scope}</small></span><strong>{researchPopulation(child.population, child.unit)}</strong><strong>{moneyStatus(child)}</strong><span className="rp-lower-grade">{child.grade}<ArrowUpRight size={13} /></span></Link>)}</div> : <p className="rp-empty">이 집단의 하위 유형이 아직 연결되지 않았습니다.</p>}
       </section>
 
       <section className="rp-evidence">
-        <div className="rp-card-head"><div><small>EVIDENCE & ASSUMPTIONS</small><h3>산출 근거</h3></div><span><Database size={13} /> {selected.sourceIds.length}개 출처</span></div>
+        <div className="rp-card-head"><div><small>EVIDENCE & ASSUMPTIONS</small><h3>산출 근거</h3></div><span><Database size={13} /> {sourceCount}개 출처</span></div>
         <div className="rp-evidence-grid"><div>{selected.observations.map((observation) => <p key={observation.label}><b>{observation.label}</b><span>{observation.value}</span></p>)}</div><ul>{selected.assumptions.slice(0, 5).map((assumption) => <li key={assumption}>{assumption}</li>)}</ul></div>
+        {value.sourceBasis.length > 0 && <div className="rp-source-list">{value.sourceBasis.slice(0, 4).map((source) => <a key={source.id} href={source.url} target="_blank" rel="noreferrer"><span>{source.title}</span><small>{source.referencePeriod || '기간 미표기'}{source.locator ? ` · ${source.locator}` : ''}</small><ArrowUpRight size={12} /></a>)}</div>}
         <p className="rp-footnote"><Info size={13} /> 인구와 금액은 외부 조사·공식 모집단으로 만든 추정입니다. 지출 풀은 확보 가능한 범위이며 매출·SOM이 아닙니다.</p>
       </section>
     </section>

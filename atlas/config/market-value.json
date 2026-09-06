@@ -78,6 +78,35 @@
       ]
     }
   ],
+  "contentAnchors": [
+    {
+      "id": "kocca-2025-paid-content",
+      "marketId": "content",
+      "scopeLabel": "유료 OTT·콘텐츠 서비스 · 유료 이용자 · 2025",
+      "populationUnit": "person",
+      "method": "calibrated_baseline",
+      "referencePeriod": "2025",
+      "sourceId": "KOCCA-CONTENT-2025",
+      "sourceTitle": "2025 콘텐츠 이용행태 조사 결과",
+      "sourceUrl": "https://chn.kocca.kr/kocca/koccanews/reportview.do?menuNo=204767&nttNo=1067",
+      "sourceLocator": "한국콘텐츠진흥원 보도자료: 유료 서비스 이용자 월평균 지출액 10,909원",
+      "spendPeriod": "monthly",
+      "monthlySpend": 10909,
+      "monthlySpendSensitivity": {
+        "low": 8182,
+        "high": 13636
+      },
+      "publishedWillingnessToPay": 14076,
+      "publishedSingleServicePrice": 7939,
+      "assumptions": [
+        "유료 OTT 이용자를 실제 유료 서비스 지출 참여자로 사용합니다. 무료 동영상 이용자 전체에는 금액을 확장하지 않습니다.",
+        "2025 콘텐츠 이용행태 조사의 유료 서비스 월평균 지출액 10,909원을 12개월로 연간화합니다.",
+        "Low/High는 평균 지출액의 ±25% 민감도이며, 조사에서 별도로 공개한 최대 지불의향 14,076원과 1개 서비스 적정가격 7,939원은 시장규모에 직접 사용하지 않습니다.",
+        "영상·음악·웹툰·게임 등 유료 온라인 콘텐츠가 섞인 유료 서비스 조사값입니다. OTT 단일 장르의 실제 지출 교차표가 아닙니다.",
+        "금액은 소비자 지출 풀의 탐색용 추정이며 플랫폼 매출·기업별 점유 매출·SOM이 아닙니다."
+      ]
+    }
+  ],
   "requiredUnits": {
     "pet": "household",
     "family": "household",

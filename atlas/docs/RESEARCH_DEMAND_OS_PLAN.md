@@ -63,12 +63,13 @@ Opportunity, comparisons, saved ideas and drill-through must continue to work.
 
 ## Current checkpoint
 
-The external model covers 20 explicitly scoped markets, 66 branches, 197 lower
-scenarios and 195 factors. Four unused rare leisure factors correctly remain
+The external model covers 20 explicitly scoped markets, 67 branches, 200 lower
+scenarios and 199 factors. Four unused rare leisure factors correctly remain
 unavailable. Dining/delivery retain direct or weighted anchors; reviewed online
 category baselines now also cover matching beauty, commerce, travel, fitness,
 education, pet, family, mobility and community cohorts. Music listening
-additionally uses the KOCCA age-specific paid-user/payment-bin transfer. All 20 market journeys were opened in Chrome in the
+additionally uses the KOCCA age-specific paid-user/payment-bin transfer, and
+paid content uses the KOCCA 2025 paid-service monthly average. All 20 market journeys were opened in Chrome in the
 preceding phases.
 
 Local primary Atlas, search/API, Matrix, Opportunity, comparison, source inspection

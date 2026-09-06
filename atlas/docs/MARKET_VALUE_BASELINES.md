@@ -35,6 +35,7 @@ skin-care cohort or added to the online transaction total.
 | Mobility | KRW 7.5751tn (2025) | person | `calibrated_baseline` | online automobile and automobile supplies |
 | Community / culture-leisure cohort | KRW 3.2966tn (2025) | person | `calibrated_baseline` | online culture and leisure services; not all meetings |
 | Music / paid listening transfer | KOCCA 2024 age-specific paid-listener ratios and monthly payment bins | person | `calibrated_baseline` | 20–69 digital music listening and paid-use proxy; not all music or live performance |
+| Content / paid online services transfer | KOCCA 2025 paid-service monthly average KRW 10,909 | person | `calibrated_baseline` | paid OTT cohort; mixed video/music/webtoon/game/AI service scope |
 
 The category source is the National Data Office annual online-shopping release,
 2025-01–2025-12, published 2026-02-02. The source URL, PDF locator and SHA-256
@@ -45,6 +46,13 @@ midpoints by age to the externally estimated listening cohort. The current liste
 branch yields about 11.70m relevant paid participants and roughly KRW 91.7k per
 paid participant per year; lower video/radio intersections inherit the age transfer
 and remain clearly labeled as modeled, rather than direct payment observations.
+
+The content adapter applies the 2025 KOCCA paid-service monthly average (KRW
+10,909) to the explicit paid-OTT cohort. It returns roughly KRW 130.9k per paid
+participant per year with a ±25% sensitivity range. The survey combines multiple
+online content services, so it is not an OTT-only transaction total. The published
+maximum willingness to pay (KRW 14,076) and one-service appropriate price (KRW
+7,939) are retained as validation observations and are not used as spend.
 
 ## Allocation and uncertainty
 
@@ -77,3 +85,6 @@ across overlapping types or presented as company revenue.
   spend.
 - Growth, competition, alternatives and reachability still require dedicated
   external sources or product research.
+- OTT subgenre, platform and account-level paid spend still need a
+  category-matched cross-tab before the content proxy can move beyond low
+  confidence.
