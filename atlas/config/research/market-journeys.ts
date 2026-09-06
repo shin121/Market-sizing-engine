@@ -489,6 +489,73 @@ const experienceMarkets: ResearchMarket[] = [
         '빠른 반복 구매와 신중한 신규 구매의 요구가 다른가?',
         '종합몰, 가격 비교, 브랜드몰',
         '품목별 반복 구매·검색·반품 비용을 확인하기',
+        false,
+        [
+          { id: 'pc', label: 'PC 인터넷쇼핑', factors: ['kca_channel_pc'] },
+          { id: 'mobile', label: '모바일쇼핑', factors: ['kca_channel_mobile'] },
+          { id: 'sns', label: 'SNS 플랫폼 쇼핑', factors: ['kca_channel_sns'] },
+          { id: 'c2c', label: '개인간 거래 플랫폼 쇼핑', factors: ['kca_channel_c2c'] },
+          {
+            id: 'pc_quality',
+            label: 'PC · 품질 문제 경험',
+            factors: ['kca_channel_pc', 'kca_channel_pc_quality'],
+          },
+          {
+            id: 'pc_delivery',
+            label: 'PC · 배송 문제 경험',
+            factors: ['kca_channel_pc', 'kca_channel_pc_delivery'],
+          },
+          {
+            id: 'pc_price',
+            label: 'PC · 가격 문제 경험',
+            factors: ['kca_channel_pc', 'kca_channel_pc_price'],
+          },
+          {
+            id: 'mobile_quality',
+            label: '모바일 · 품질 문제 경험',
+            factors: ['kca_channel_mobile', 'kca_channel_mobile_quality'],
+          },
+          {
+            id: 'mobile_delivery',
+            label: '모바일 · 배송 문제 경험',
+            factors: ['kca_channel_mobile', 'kca_channel_mobile_delivery'],
+          },
+          {
+            id: 'mobile_price',
+            label: '모바일 · 가격 문제 경험',
+            factors: ['kca_channel_mobile', 'kca_channel_mobile_price'],
+          },
+          {
+            id: 'sns_quality',
+            label: 'SNS · 품질 문제 경험',
+            factors: ['kca_channel_sns', 'kca_channel_sns_quality'],
+          },
+          {
+            id: 'sns_price',
+            label: 'SNS · 가격 문제 경험',
+            factors: ['kca_channel_sns', 'kca_channel_sns_price'],
+          },
+          {
+            id: 'sns_redress',
+            label: 'SNS · 환불 문제 경험',
+            factors: ['kca_channel_sns', 'kca_channel_sns_redress'],
+          },
+          {
+            id: 'c2c_redress',
+            label: '개인간 거래 · 환불 문제 경험',
+            factors: ['kca_channel_c2c', 'kca_channel_c2c_redress'],
+          },
+          {
+            id: 'c2c_quality',
+            label: '개인간 거래 · 품질 문제 경험',
+            factors: ['kca_channel_c2c', 'kca_channel_c2c_quality'],
+          },
+          {
+            id: 'c2c_price',
+            label: '개인간 거래 · 가격 문제 경험',
+            factors: ['kca_channel_c2c', 'kca_channel_c2c_price'],
+          },
+        ],
       ),
       b(
         'cosmetics',

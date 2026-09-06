@@ -49,7 +49,7 @@ reproducible with the respective Python scripts and the official PDFs.
 
 ## Current coverage
 
-- 139 registered external factors. Four rare leisure activities lack an age rate
+- 195 registered external factors. Four rare leisure activities lack an age rate
   and return `not_estimable`; missing table dashes are never converted to zero.
 - All 20 markets now have a **defined, sourced partial demand scope**, covering
   56 industry/experience branches. This does not mean complete industry coverage.
@@ -64,6 +64,17 @@ reproducible with the respective Python scripts and the official PDFs.
   sourced KOCCA overall level. KOCCA's 10–69 rate is transferred to 20–69, explicitly
   an assumption. The new shape preserves the level and has higher twenties than
   sixties participation. It is not the actual KOCCA age cross-tab.
+
+The local follow-up increment also registers KCA's online transaction-channel
+tables: PC, mobile, SNS and C2C use cohorts plus three most-serious problem
+subtypes per channel. The commerce journey exposes sixteen lower profiles (four
+channel parents and twelve problem cohorts). The channel observations preserve
+monthly frequency—PC 3.1, mobile 5.1, SNS 1.9, C2C 1.8 uses per month—and the
+channel-user problem denominator. Frequency is visible in the selected profile but
+does not become spend without item-level ticket size or category calibration. The
+new channel profiles are person-based `survey_transfer` estimates, overlap-aware,
+and currently have no market value anchor. This increment is local until the
+release checkpoint below is updated after live deployment.
 
 ## Scope and aggregation controls
 
@@ -162,7 +173,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   all-respondent denominator within every age/sex/region stratum. Full details:
   `CONSUMER_PROBLEM_DATA_AUDIT.md`.
 - Ten product-problem cohorts and thirty specific subtypes added across seven
-  markets. Total 179 factors / 266 profiles (20 roots, 66 branches, 180 lower
+  markets. Total 195 factors / 282 profiles (20 roots, 66 branches, 196 lower
   profiles). The same four unused rare leisure factors remain unavailable; money
   coverage remains 19 profiles. Generic branches and legacy mapping gaps remain.
 - Parent/child factors preserve each age's observed all-respondent rate and apply
@@ -179,7 +190,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   three-column flow and linked profile/range/age/sex/region modules. Measured
   problem experience and unmeasured need severity/payment intent have separate
   UI wording. Nested definitions no longer repeat the parent paragraph.
-- Atlas 71/71 tests passed, lint passed, typecheck passed after build, production
+- Atlas 72/72 tests passed, lint passed, typecheck passed after build, production
   `npm run build -- --webpack` passed. A concurrent typecheck initially raced with
   Next regenerating `.next/types`; the sequential final typecheck passed. No new
   default-Turbopack success is claimed. Numeric sanity ledger regenerated.
@@ -187,7 +198,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   collection errors (missing duckdb/fastapi/psycopg), and CLI validate cannot import
   duckdb. Original Python implementation and ignored source/database inputs are
   unchanged. These do not certify a full repository pass.
-- KCA channel use/frequency/problem numeric tables are extracted but not integrated;
-  the same PDF also contains repairability, service-use and other useful items.
-  Continue the remaining all-industry data, taxonomy and discovery work before
-  final deployment. No active-goal completion or production release is claimed.
+- KCA channel use/frequency/problem numeric tables are integrated locally; the same
+  PDF also contains repairability, service-use and other useful items. Continue the
+  remaining all-industry data, taxonomy and discovery work before final deployment.
+  No active-goal completion or production release is claimed for this follow-up.

@@ -74,6 +74,11 @@ export function ResearchFlow({
       : (branch?.children.find((p) => p.id === node) ??
         branch?.profile ??
         data.root);
+  const selectedProblemMeasured =
+    branch?.evidenceType === 'consumer_problem' ||
+    selected.observations.some((o) =>
+      /문제 경험/.test(`${o.label} ${o.value}`),
+    );
   const ageDistribution: ResearchProfile['ages'] =
     selected.householdProfile?.ages ?? selected.ages;
   const sexDistribution = selected.householdProfile?.sexes ?? selected.sexes;
@@ -485,7 +490,7 @@ export function ResearchFlow({
                   <h3>{branch.job}</h3>
                   <p>{branch.hypothesis}</p>
                   <span>
-                    {branch.evidenceType === 'consumer_problem'
+                    {selectedProblemMeasured
                       ? '문제 경험은 조사됨 · 해결 의향과 문제 강도는 추가 검증'
                       : '활동 경험으로부터 만든 사업 가설 · 문제 발생률은 미측정'}
                   </span>
@@ -589,6 +594,19 @@ export function ResearchFlow({
                 </>
               )}
             </div>
+            {selected.observations.length > 0 && (
+              <section className="research-observation-strip">
+                <h3>
+                  관찰된 이용 패턴 <span>조사 응답</span>
+                </h3>
+                {selected.observations.slice(-2).map((o, i) => (
+                  <p key={i}>
+                    <b>{o.label}</b>
+                    <span>{o.value}</span>
+                  </p>
+                ))}
+              </section>
+            )}
             <section className="research-money-gap">
               <h3>이 집단의 연간 지출</h3>
               {selected.marketValue.status === 'estimated' ? (

@@ -20,7 +20,9 @@ out = Path(__file__).resolve().parents[1] / 'config/research/consumer-observatio
 pages = {'problem': 497, **{key: 501 + 2 * i for i, key in enumerate([
     'quality', 'price', 'advertising', 'terms', 'contract', 'redress',
     'safety', 'privacy', 'information', 'education', 'explanation', 'delivery',
-])}, 'online_channels': 601, 'offline_channels': 562}
+])}, 'online_channels': 601, 'offline_channels': 562,
+         'priority_pc': 605, 'priority_mobile': 607,
+         'priority_social': 609, 'priority_c2c': 611}
 labels = ['2025년', '남성', '여성', '20대', '30대', '40대', '50대', '60대 이상',
           '서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기',
           '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주']
@@ -82,6 +84,8 @@ assert tables['problem']['rows']['2025년']['n'] == 10000
 assert tables['advertising']['rows']['2025년']['n'] == 5035
 assert tables['problem']['rows']['2025년']['values'][26] == 8.2
 assert tables['advertising']['rows']['2025년']['values'][26] == 6.9
+assert tables['priority_c2c']['rows']['2025년']['n'] == 266
+assert tables['priority_c2c']['rows']['2025년']['values'][5] == 28.6
 out.write_text(json.dumps({
     'sourceId': 'KCA-CONSUMPTION-2025',
     'url': 'https://www.kca.go.kr/smartconsumer/sub.do?menukey=7301&mode=view&no=1004455437',

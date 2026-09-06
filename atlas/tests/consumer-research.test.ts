@@ -4,6 +4,8 @@ import data from '../config/research/consumer-observations.json';
 import { consumerJourneys } from '../config/research/consumer-journeys';
 import {
   consumerAbsoluteRate,
+  consumerChannelFactors,
+  consumerChannelProblemFactors,
   consumerFactors,
 } from '../server/atlas/consumer-research';
 import {
@@ -113,4 +115,45 @@ void test('industry problem flows reach matrix and comparison without borrowing 
   )!.profile;
   assert.match(beauty.regionBasis, /광주·세종.*결측.*전이/);
   assert.equal(consumerFactors.length, 40);
+});
+
+void test('KCA commerce channels expose use, frequency and channel-specific problem cohorts', () => {
+  assert.equal(consumerChannelFactors.length, 4);
+  assert.equal(consumerChannelProblemFactors.length, 12);
+  const commerce = getResearchExplorer('commerce')!;
+  const online = commerce.branches.find((b) => b.id === 'online')!;
+  assert.equal(online.children.length, 16);
+  const mobile = online.children.find((p) => p.id === 'online~mobile')!;
+  assert.equal(mobile.estimate.status, 'estimated');
+  if (mobile.estimate.status !== 'estimated') return;
+  assert.equal(mobile.estimate.unit, 'person');
+  assert.ok(mobile.observations.some((o) => /월평균 5\.1회/.test(o.value)));
+  assert.ok(mobile.estimate.base > 20_000_000);
+  assert.equal(mobile.regions.length, 17);
+  const c2c = online.children.find((p) => p.id === 'online~c2c')!;
+  assert.equal(c2c.estimate.status, 'estimated');
+  if (c2c.estimate.status !== 'estimated') return;
+  assert.ok(c2c.observations.some((o) => /월평균 1\.8회/.test(o.value)));
+  assert.ok(c2c.estimate.base > 5_000_000);
+  assert.equal(c2c.regions.length, 17);
+  assert.ok(mobile.definition?.includes('모바일쇼핑'));
+  const mobileQuality = online.children.find(
+    (p) => p.id === 'online~mobile_quality',
+  )!;
+  assert.equal(mobileQuality.estimate.status, 'estimated');
+  assert.equal(mobileQuality.label, '모바일 · 품질 문제 경험');
+  assert.ok(
+    mobileQuality.observations.some((o) => /가장 심각하게/.test(o.value)),
+  );
+  const channelProblem = researchEstimate([
+    'kca_channel_c2c_redress',
+  ]);
+  assert.equal(channelProblem.status, 'estimated');
+  if (channelProblem.status === 'estimated') {
+    const c2cEstimate = researchEstimate(['kca_channel_c2c']);
+    assert.equal(c2cEstimate.status, 'estimated');
+    if (c2cEstimate.status !== 'estimated') return;
+    assert.ok(channelProblem.base < c2cEstimate.base);
+    assert.ok(channelProblem.assumptions.some((a) => a.includes('문제 경험률')));
+  }
 });

@@ -766,6 +766,31 @@
   font-size: 8px;
   color: #a298b4;
 }
+.research-observation-strip {
+  background: #f7fafb;
+  border: 1px solid #e2eceb;
+  border-radius: 6px;
+  padding: 11px 12px 9px;
+}
+.research-observation-strip h3 {
+  margin-bottom: 8px;
+  color: #2a655d;
+}
+.research-observation-strip p {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 8px;
+  margin: 5px 0;
+  font-size: 9px;
+  line-height: 1.6;
+}
+.research-observation-strip p b {
+  color: #6f7f8d;
+  font-weight: 550;
+}
+.research-observation-strip p span {
+  color: #526b72;
+}
 .research-inspector section {
   margin: 0 0 18px;
   border-bottom: 1px solid #ebedf4;

@@ -1,8 +1,8 @@
 {
   "version": "research-demand-2026-09-06-v3",
-  "generatedAt": "2026-09-06T14:42:10.399Z",
+  "generatedAt": "2026-09-06T15:48:45.160Z",
   "status": "in_progress_not_production",
-  "factorCount": 179,
+  "factorCount": 195,
   "marketCount": 20,
   "unsupportedFactors": [
     {
@@ -2727,12 +2727,12 @@
     },
     {
       "id": "beauty",
-      "label": "뷰티·관리",
+      "label": "뷰티·패션",
       "scope": "온라인 화장품 구매 또는 미용 활동 경험. 전체 화장품 사용률은 아님 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": null,
       "root": {
         "id": "_root",
-        "label": "뷰티·관리",
+        "label": "뷰티·패션",
         "status": "estimated",
         "population": 25932120.25502533,
         "unit": "person",
@@ -6131,19 +6131,20 @@
           "validationQuestion": "품목별 반복 구매·검색·반품 비용을 확인하기",
           "children": [
             {
-              "id": "online~online",
-              "label": "온라인 구매 가능층",
+              "id": "online~pc",
+              "label": "PC 인터넷쇼핑",
               "status": "estimated",
-              "population": 32618342.14,
+              "population": 15184622.88731913,
               "unit": "person",
-              "low": 30328182.2,
-              "high": 33781849.338,
+              "low": 10679479.079930242,
+              "high": 19324157.95599986,
               "methods": [
                 "survey_transfer"
               ],
               "factors": [
                 "commerce",
-                "digital"
+                "digital",
+                "kca_channel_pc"
               ],
               "evidenceGrade": "C",
               "annualValue": null,
@@ -6151,74 +6152,474 @@
               "spendScope": "선택 집단의 관련 소비",
               "moneyStatus": "missing_calibration_anchor",
               "hasAge": true,
-              "hasRegion": false,
+              "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "NIA-2024",
-                "CENSUS-2024"
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             },
             {
-              "id": "online~presearch",
-              "label": "사전 정보 검토형",
+              "id": "online~mobile",
+              "label": "모바일쇼핑",
               "status": "estimated",
-              "population": 22582017.992239997,
+              "population": 25989230.639711693,
               "unit": "person",
-              "low": 13370476.231800001,
-              "high": 28175343.51412,
+              "low": 18248141.513386,
+              "high": 29653358.055654608,
               "methods": [
-                "survey_transfer",
-                "research_scenario"
+                "survey_transfer"
               ],
               "factors": [
                 "commerce",
                 "digital",
-                "research_presearch"
+                "kca_channel_mobile"
               ],
-              "evidenceGrade": "D",
+              "evidenceGrade": "C",
               "annualValue": null,
               "spendPerUnit": null,
               "spendScope": "선택 집단의 관련 소비",
               "moneyStatus": "missing_calibration_anchor",
               "hasAge": true,
-              "hasRegion": false,
+              "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "NIA-2024",
                 "CENSUS-2024",
-                "KCA-PURCHASE-2024"
+                "KCA-CONSUMPTION-2025"
               ]
             },
             {
-              "id": "online~review",
-              "label": "후기 참고 가능층",
+              "id": "online~sns",
+              "label": "SNS 플랫폼 쇼핑",
               "status": "estimated",
-              "population": 16123560.846459357,
+              "population": 6444538.075997371,
               "unit": "person",
-              "low": 5348190.49272,
-              "high": 24794302.2924256,
+              "low": 4538424.477419806,
+              "high": 8161527.78744515,
               "methods": [
-                "survey_transfer",
-                "research_scenario"
+                "survey_transfer"
               ],
               "factors": [
                 "commerce",
                 "digital",
-                "research_presearch",
-                "research_review"
+                "kca_channel_sns"
               ],
-              "evidenceGrade": "D",
+              "evidenceGrade": "C",
               "annualValue": null,
               "spendPerUnit": null,
               "spendScope": "선택 집단의 관련 소비",
               "moneyStatus": "missing_calibration_anchor",
               "hasAge": true,
-              "hasRegion": false,
+              "hasRegion": true,
               "hasHouseholdProfile": false,
               "sourceIds": [
                 "NIA-2024",
                 "CENSUS-2024",
-                "KCA-PURCHASE-2024"
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~c2c",
+              "label": "개인간 거래 플랫폼 쇼핑",
+              "status": "estimated",
+              "population": 7741659.417010315,
+              "unit": "person",
+              "low": 5443557.616210529,
+              "high": 9847803.362735145,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_c2c"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~pc_quality",
+              "label": "PC · 품질 문제 경험",
+              "status": "estimated",
+              "population": 738784.7388031938,
+              "unit": "person",
+              "low": 389492.497067298,
+              "high": 1177662.56244532,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_pc",
+                "kca_channel_pc_quality"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~pc_delivery",
+              "label": "PC · 배송 문제 경험",
+              "status": "estimated",
+              "population": 515049.1044527404,
+              "unit": "person",
+              "low": 271715.868979356,
+              "high": 818091.5757762275,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_pc",
+                "kca_channel_pc_delivery"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~pc_price",
+              "label": "PC · 가격 문제 경험",
+              "status": "estimated",
+              "population": 293942.4767431119,
+              "unit": "person",
+              "low": 155033.68495309842,
+              "high": 467973.77172788425,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_pc",
+                "kca_channel_pc_price"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~mobile_quality",
+              "label": "모바일 · 품질 문제 경험",
+              "status": "estimated",
+              "population": 1201086.6312514774,
+              "unit": "person",
+              "low": 632126.5503497348,
+              "high": 1706380.3064714884,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_mobile",
+                "kca_channel_mobile_quality"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~mobile_delivery",
+              "label": "모바일 · 배송 문제 경험",
+              "status": "estimated",
+              "population": 1419466.8196967365,
+              "unit": "person",
+              "low": 748486.2665186252,
+              "high": 2005934.5150742815,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_mobile",
+                "kca_channel_mobile_delivery"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~mobile_price",
+              "label": "모바일 · 가격 문제 경험",
+              "status": "estimated",
+              "population": 564020.486687141,
+              "unit": "person",
+              "low": 296829.3556611579,
+              "high": 803792.2716132515,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_mobile",
+                "kca_channel_mobile_price"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~sns_quality",
+              "label": "SNS · 품질 문제 경험",
+              "status": "estimated",
+              "population": 155392.80826464307,
+              "unit": "person",
+              "low": 82130.8913170542,
+              "high": 245399.74908257768,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_sns",
+                "kca_channel_sns_quality"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~sns_price",
+              "label": "SNS · 가격 문제 경험",
+              "status": "estimated",
+              "population": 75141.63771597494,
+              "unit": "person",
+              "low": 36255.67444531079,
+              "high": 125681.41042010061,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_sns",
+                "kca_channel_sns_price"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~sns_redress",
+              "label": "SNS · 환불 문제 경험",
+              "status": "estimated",
+              "population": 74773.70959383834,
+              "unit": "person",
+              "low": 37380.607127512056,
+              "high": 122008.2563769251,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_sns",
+                "kca_channel_sns_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~c2c_redress",
+              "label": "개인간 거래 · 환불 문제 경험",
+              "status": "estimated",
+              "population": 312803.10366303823,
+              "unit": "person",
+              "low": 165077.37660386227,
+              "high": 496214.1690178305,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_c2c",
+                "kca_channel_c2c_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~c2c_quality",
+              "label": "개인간 거래 · 품질 문제 경험",
+              "status": "estimated",
+              "population": 212296.53539597068,
+              "unit": "person",
+              "low": 111911.058576062,
+              "high": 338761.6214911632,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_c2c",
+                "kca_channel_c2c_quality"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "online~c2c_price",
+              "label": "개인간 거래 · 가격 문제 경험",
+              "status": "estimated",
+              "population": 63213.970301072186,
+              "unit": "person",
+              "low": 28178.861705817537,
+              "high": 109506.00245552308,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "commerce",
+                "digital",
+                "kca_channel_c2c",
+                "kca_channel_c2c_price"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "NIA-2024",
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             }
           ]

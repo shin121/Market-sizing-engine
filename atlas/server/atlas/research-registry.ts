@@ -16,7 +16,12 @@ import type { DemandEstimate, DemandUnavailable } from '../../lib/demand';
 import prior from '../../config/behavior-calibration.json';
 import { foodSource, sectorFactors } from './sector-research';
 import sectorFacts from '../../config/research/sector-observations.json';
-import { consumerSource, consumerFactors } from './consumer-research';
+import {
+  consumerSource,
+  consumerFactors,
+  consumerChannelFactors,
+  consumerChannelProblemFactors,
+} from './consumer-research';
 
 const purchaseSource = prior.sources.find((s) => s.id === 'KCA-PURCHASE-2024')!;
 export const demandSources: DemandSource[] = [
@@ -83,6 +88,8 @@ export const demandFactors: DemandFactor[] = [
   ...purchaseFactors,
   ...sectorFactors,
   ...consumerFactors,
+  ...consumerChannelFactors,
+  ...consumerChannelProblemFactors,
 ];
 export const adultResearchFrame: DemandCell[] = controls.controls.map((c) => ({
   id: c.age_band + '_' + c.sex,
