@@ -107,6 +107,60 @@
       ]
     }
   ],
+  "gamingAnchors": [
+    {
+      "id": "kocca-2025-mobile-game-spend",
+      "marketId": "gaming",
+      "factorId": "int_gaming_mobile",
+      "scopeLabel": "모바일 게임 지출 · 모바일 게임 이용자 · 2025",
+      "populationUnit": "person",
+      "method": "calibrated_baseline",
+      "referencePeriod": "2025",
+      "sourceId": "KOCCA-GAME-2025",
+      "sourceTitle": "2025 게임이용자 실태조사",
+      "sourceUrl": "https://welcon.kocca.kr/ko/info/report/1956850",
+      "sourceLocator": "표 3-77(인쇄 p.338): 모바일 게임 이용자 연간 총비용 평균 46,808.75원(0원 응답 포함)",
+      "spendPeriod": "annual",
+      "annualSpend": 46808.75,
+      "annualSpendSensitivity": {
+        "low": 37447,
+        "high": 56171
+      },
+      "assumptions": [
+        "모바일 게임 이용자(n=4,477)의 연간 총비용 평균 46,808.75원을 사용합니다. 0원 응답을 포함한 표의 평균입니다.",
+        "Low/High는 원 조사 신뢰구간이 아닌 연간 지출 ±20% 민감도입니다.",
+        "모바일 게임 이용자는 PC·콘솔과 중복될 수 있어 전체 게임 소비액으로 합산하지 않습니다.",
+        "게임 내 결제·다운로드·구독을 합친 플랫폼 총액이며 장비·PC방 비용은 포함하지 않습니다.",
+        "금액은 소비자 지출 풀의 탐색용 추정이며 게임사 매출·SOM이 아닙니다."
+      ]
+    },
+    {
+      "id": "kocca-2025-pc-game-spend",
+      "marketId": "gaming",
+      "factorId": "gaming_pc",
+      "scopeLabel": "PC 게임 지출 · PC 게임 이용자 · 2025",
+      "populationUnit": "person",
+      "method": "calibrated_baseline",
+      "referencePeriod": "2025",
+      "sourceId": "KOCCA-GAME-2025",
+      "sourceTitle": "2025 게임이용자 실태조사",
+      "sourceUrl": "https://welcon.kocca.kr/ko/info/report/1956850",
+      "sourceLocator": "표 3-33(인쇄 p.277): PC 게임 이용자 연간 총비용 평균 127,632.39원(0원 응답 포함)",
+      "spendPeriod": "annual",
+      "annualSpend": 127632.39,
+      "annualSpendSensitivity": {
+        "low": 102106,
+        "high": 153159
+      },
+      "assumptions": [
+        "PC 게임 이용자(n=2,920)의 연간 총비용 평균 127,632.39원을 사용합니다. 0원 응답을 포함한 표의 평균입니다.",
+        "Low/High는 원 조사 신뢰구간이 아닌 연간 지출 ±20% 민감도입니다.",
+        "PC 게임 이용자는 모바일·콘솔과 중복될 수 있어 전체 게임 소비액으로 합산하지 않습니다.",
+        "게임 내 결제·다운로드·구독을 합친 플랫폼 총액이며 PC방 이용료와 장비 비용은 포함하지 않습니다.",
+        "금액은 소비자 지출 풀의 탐색용 추정이며 게임사 매출·SOM이 아닙니다."
+      ]
+    }
+  ],
   "requiredUnits": {
     "pet": "household",
     "family": "household",

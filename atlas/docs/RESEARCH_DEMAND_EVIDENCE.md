@@ -44,6 +44,7 @@ modeled; total cosmetics penetration remains an explicit research gap.
 | Same report, tables 1-340–343 | HMR frequency includes a non-use option. Heat-and-eat non-use 25.1%, ready-to-eat 19.5%, meal-kit 27.2%. | Each product has its own buyers and weekly buyers. No response-count projection; no delivery-spend reuse for HMR. Related product unions use a midpoint of possible overlap bounds, because independence otherwise produces implausibly near-universal participation. |
 | [2024 Population and Housing Census](https://www.mods.go.kr/boardDownload.es?bid=203&list_no=437767&seq=3) | Table 68 printed p.89/PDF98: households with 65+ member 7.137m, elderly-only 4.007m, elderly-alone 2.289m. Table 71 p.92/PDF101: households with child ≤18 4.517m, child ≤5 1.284m. | Household situations, not paid care demand, illness or unmet need. Nested subgroups reconcile to official counts. Person/household conversion prohibited. |
 | [NIA 2024 tables](https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=27870&cbIdx=99870) | Tables 128/130, printed pp.273/277, PDF283/287. Internet banking 80.7%, mobile banking 80.6% **of 12+ monthly internet users**. Both provide observed age×sex rates. | The internet denominator is applied once. Mobile is a subset: mobile/total rate is conditional. Digital-bank users are not stock owners or paid advisory clients; transaction/assets are not consumption. |
+| [KOCCA 2025 게임이용자 실태조사](https://welcon.kocca.kr/ko/info/report/1956850) 및 [발표 요약](https://sitehomebos.kocca.kr/kocca/koccanews/reportview.do?menuNo=204767&nttNo=1073) | 10~69세 10,000명 조사. 최근 1년 게임 이용률 50.2%, 플랫폼 이용률 PC 58.1%, 콘솔 28.6%, 모바일 89.1%. 원표의 플랫폼별 연간 총비용 평균(0원 응답 포함): 모바일 KRW 46,808.75, PC KRW 127,632.39. | 모바일·PC·콘솔은 중복 이용자일 수 있다. 플랫폼 평균을 합산해 전체 게임시장으로 만들지 않으며, 콘솔은 장비·타이틀의 전수 평균 기준이 없어 미연결로 둔다. KOCCA 10~69세 수준을 20~69세 공식 인구에 전이한 모형이다. |
 
 Only numeric observations and short labels are extracted into product configuration;
 full reports and rendered pages remain outside the repository. Hashes and exact
@@ -66,7 +67,7 @@ reproducible with the respective Python scripts and the official PDFs.
   payment-bin transfer; it prices paid digital listening participants only and
   does not price the broader music or performance market. Paid content now uses
   the KOCCA 2025 monthly average for the paid OTT cohort, with mixed-genre scope.
-  The regenerated sanity ledger has 102 profiles with a monetary baseline;
+  The regenerated sanity ledger has 105 profiles with a monetary baseline;
   these remain partial online or category allocations rather than complete
   market-size measurements.
 - Household delivery/HMR profiles include household-head age/sex, household size
@@ -98,6 +99,12 @@ pet supplies (household), children's goods (household), automobiles and online
 culture/leisure. Mixed union roots remain unpriced to prevent double counting.
 The public production route was checked with the mobile quality cohort after
 deployment.
+
+The gaming increment adds the 2025 KOCCA annual total-cost averages for mobile
+(KRW 46,808.75) and PC (KRW 127,632.39) platform users. These are separate
+platform cohorts with overlapping membership; they are not added into an
+all-game market total. Console equipment/title purchases remain unpriced because
+the report publishes payer distributions without an all-user annual average.
 
 The anchor inventory, category scopes and allocation formula are documented in
 `MARKET_VALUE_BASELINES.md`.
@@ -218,7 +225,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   three-column flow and linked profile/range/age/sex/region modules. Measured
   problem experience and unmeasured need severity/payment intent have separate
   UI wording. Nested definitions no longer repeat the parent paragraph.
-- Atlas 78/78 tests passed, lint passed, typecheck passed after build, production
+- Atlas 79/79 tests passed, lint passed, typecheck passed after build, production
   `npm run build -- --webpack` passed. A concurrent typecheck initially raced with
   Next regenerating `.next/types`; the sequential final typecheck passed. No new
   default-Turbopack success is claimed. Numeric sanity ledger regenerated.

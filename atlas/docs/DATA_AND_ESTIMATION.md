@@ -1,6 +1,6 @@
 # Data, membership and estimation
 
-> 이 문서는 현재 산식·외부 인구 보정·13/20개 산업 범위를 기준으로 합니다. 전수 검증은 [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
+> 이 문서는 현재 산식·외부 인구 보정·14/20개 산업 범위를 기준으로 합니다. 전수 검증은 [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
 
 ## Semantic families and extraction
 
@@ -65,6 +65,6 @@ All raw and record-level intermediate data remains outside deployment. `atlas_bu
 
 The original missing-direct-spend finding remains valid. A separate economic layer now combines the existing population calibration with reviewed external baselines: observed food/delivery spending, selected 2025 online category transaction totals, the 2024 KOCCA age-specific paid-music transfer and the 2025 KOCCA paid-content monthly average. It does not convert Affinity into spending or infer company revenue. The skin-care beauty activity cohort remains unpriced until an all-channel category denominator is available.
 
-Population, relevant paid-participant population, annual spend per participant and annual spend pool are separate fields. Each estimate carries a unit, period, scope, Low/Base/High, method, confidence, population/anchor/direct-spend coverage and non-additivity metadata. Other markets stay explicitly unavailable until a compatible monetary baseline and, where necessary, a household mapping are connected. The 13/20 market coverage is not the fraction of all household spending observed.
+Population, relevant paid-participant population, annual spend per participant and annual spend pool are separate fields. Each estimate carries a unit, period, scope, Low/Base/High, method, confidence, population/anchor/direct-spend coverage and non-additivity metadata. Other markets stay explicitly unavailable until a compatible monetary baseline and, where necessary, a household mapping are connected. The 14/20 market coverage is not the fraction of all household spending observed.
 
 [Full monetary formulas and limitations](MARKET_VALUE_METHODS.md) define participation, normalization, range sensitivities, age exclusions and the separate opportunity economic component. [Sanity results](MARKET_VALUE_SANITY.md) show actual population/money rank differences without claiming complete category coverage.

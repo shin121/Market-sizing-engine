@@ -1,6 +1,6 @@
 # Market Value Sanity Test (historical release)
 
-> 이 문서의 수치·지출 범위는 v0.3/v0.4 레거시 구현 기록입니다. 현재 13/20개 산업 산식과 전수 검증은 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
+> 이 문서의 수치·지출 범위는 v0.3/v0.4 레거시 구현 기록입니다. 현재 14/20개 산업 산식과 전수 검증은 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
 
 이 표는 음악 기준만 연결했던 초기 릴리스의 보존 결과다. 현재 범위의 전수 결과는
 `data/research-demand-sanity.json`과 [baselines](MARKET_VALUE_BASELINES.md)를

@@ -1260,6 +1260,26 @@
   border-color: #9bc9c1;
   color: #087968;
 }
+.rp-definition-callout {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 18px 0 4px;
+  padding: 13px 16px;
+  border: 1px solid #cfe5e4;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f2fbfa, #f8fbff);
+  color: #44556a;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.rp-definition-callout strong {
+  flex: 0 0 auto;
+  color: #0a786f;
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+.rp-definition-callout span { flex: 1; }
 .rp-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2023,6 +2043,13 @@
   }
   .rp-heading > a {
     margin-top: 12px;
+  }
+  .rp-definition-callout {
+    display: block;
+  }
+  .rp-definition-callout strong {
+    display: block;
+    margin-bottom: 4px;
   }
   .rp-heading h2 {
     font-size: 22px;

@@ -36,6 +36,8 @@ skin-care cohort or added to the online transaction total.
 | Community / culture-leisure cohort | KRW 3.2966tn (2025) | person | `calibrated_baseline` | online culture and leisure services; not all meetings |
 | Music / paid listening transfer | KOCCA 2024 age-specific paid-listener ratios and monthly payment bins | person | `calibrated_baseline` | 20–69 digital music listening and paid-use proxy; not all music or live performance |
 | Content / paid online services transfer | KOCCA 2025 paid-service monthly average KRW 10,909 | person | `calibrated_baseline` | paid OTT cohort; mixed video/music/webtoon/game/AI service scope |
+| Gaming / mobile platform users | KOCCA 2025 mobile-game annual average KRW 46,808.75 | person | `calibrated_baseline` | mobile game users; overlaps PC/console and excludes equipment/PC방 |
+| Gaming / PC platform users | KOCCA 2025 PC-game annual average KRW 127,632.39 | person | `calibrated_baseline` | PC game users; overlaps mobile/console and excludes equipment/PC방 |
 
 The category source is the National Data Office annual online-shopping release,
 2025-01–2025-12, published 2026-02-02. The source URL, PDF locator and SHA-256
@@ -53,6 +55,12 @@ participant per year with a ±25% sensitivity range. The survey combines multipl
 online content services, so it is not an OTT-only transaction total. The published
 maximum willingness to pay (KRW 14,076) and one-service appropriate price (KRW
 7,939) are retained as validation observations and are not used as spend.
+
+The gaming adapters apply the 2025 KOCCA platform averages to the matching
+mobile and PC cohorts. They are intentionally separate, non-additive views:
+the survey reports platform users that can overlap, and it does not provide an
+all-user annual average for console equipment and title purchases. The result
+is therefore a platform spend pool, not the total Korean game market.
 
 ## Allocation and uncertainty
 

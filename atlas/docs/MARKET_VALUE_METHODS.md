@@ -76,7 +76,7 @@ AnnualSpendPerUnit(S) = AnnualValue(S) / RelevantPopulation(S)
 - 원본 빈 교집합은 인구·소비액 0, 단위 지출/Opportunity는 null. 금액 기준 결손은 0이 아닌 null이다.
 - 조사 연령 밖은 `outside_anchor_scope`, 금액 기준 부재는 `missing_calibration_anchor`, 가구 연결 필요는 `unit_mapping_required`다.
 
-Coverage.population = 선택 cohort 인구 / 선택 전체 인구. Coverage.anchor = 선택 cohort 인구 / 기준액 분모. DirectSpend = 0. Completeness = 기준액 연결 충족도의 별도 지표다. 이것은 전체 가계 소비 중 측정한 비중이 아니다. 지원 시장 13/20과 `isPartial:true`를 표시한다. 기존 인구·신호 Completeness는 덮어쓰지 않는다.
+Coverage.population = 선택 cohort 인구 / 선택 전체 인구. Coverage.anchor = 선택 cohort 인구 / 기준액 분모. DirectSpend = 0. Completeness = 기준액 연결 충족도의 별도 지표다. 이것은 전체 가계 소비 중 측정한 비중이 아니다. 지원 시장 14/20과 `isPartial:true`를 표시한다. 기존 인구·신호 Completeness는 덮어쓰지 않는다.
 
 ## 합산과 Share
 

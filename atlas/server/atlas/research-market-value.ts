@@ -27,6 +27,7 @@ const musicAnchor = marketValueConfig.anchors.find(
   (anchor) => anchor.marketId === 'music',
 );
 const contentAnchor = marketValueConfig.contentAnchors[0];
+const gamingAnchors = marketValueConfig.gamingAnchors ?? [];
 
 /**
  * An external category total can be useful without pretending it is a direct
@@ -286,6 +287,124 @@ function contentBaselineValue(
       isTransfer
         ? '요금 증가·추가 하위 조건에는 유료 콘텐츠 서비스 이용자의 평균 지출액을 전이합니다. 해당 조건의 실제 결제 교차표가 아닙니다.'
         : '유료 OTT 이용자 집단을 관련 지출 참여자로 사용합니다. 무료 OTT 이용자와 전체 동영상 이용자에는 금액을 확장하지 않습니다.',
+    ],
+  };
+}
+
+/** Apply an official platform-level game spending average only to the
+ * corresponding platform cohort. PC and mobile users overlap, so these
+ * estimates are deliberately non-additive and are never promoted to a total
+ * game-market value. */
+function gamingPlatformValue(
+  estimate: DemandEstimate,
+  marketId: string,
+): MarketValueEstimate | null {
+  if (
+    marketId !== 'gaming' ||
+    estimate.unionGroups?.length ||
+    estimate.unit !== 'person' ||
+    estimate.factorIds.some((id) =>
+      ['commerce', 'research_presearch', 'research_review'].includes(id),
+    )
+  )
+    return null;
+  const platformFactors = gamingAnchors.map((anchor) => anchor.factorId);
+  const anchor = gamingAnchors.find(
+    (candidate) =>
+      estimate.factorIds.includes(candidate.factorId) &&
+      estimate.factorIds.filter((id) => platformFactors.includes(id)).length ===
+        1,
+  );
+  if (!anchor) return null;
+  const annual = Number(anchor.annualSpend ?? 0);
+  const lowAnnual = Number(
+    anchor.annualSpendSensitivity?.low ?? annual * 0.8,
+  );
+  const highAnnual = Number(
+    anchor.annualSpendSensitivity?.high ?? annual * 1.2,
+  );
+  if (!annual || !lowAnnual || !highAnnual || estimate.base <= 0)
+    return null;
+  const category = researchEstimate([anchor.factorId], 'person');
+  if (category.status !== 'estimated' || category.base <= 0) return null;
+  const base = estimate.base * annual;
+  const low = estimate.low * lowAnnual;
+  const high = estimate.high * highAnnual;
+  const source = {
+    id: anchor.sourceId,
+    title: anchor.sourceTitle,
+    url: anchor.sourceUrl,
+    locator: anchor.sourceLocator,
+    referencePeriod: anchor.referencePeriod,
+  };
+  return {
+    annualValue: base,
+    low,
+    base,
+    high,
+    currency: 'KRW',
+    period: 'annual',
+    populationUnit: 'person',
+    scopeId: anchor.id,
+    scopeLabel: anchor.scopeLabel,
+    categoryPopulation: category.base,
+    categoryPopulationUnit: 'person',
+    relevantPopulation: estimate.base,
+    annualSpendPerUnit: annual,
+    spendPerUnitRange: { low: lowAnnual, base: annual, high: highAnnual },
+    participationRate:
+      category.base > 0 ? estimate.base / category.base : null,
+    participationIndex: null,
+    spendIntensityIndex: null,
+    spendDensity: annual,
+    spendDensityIndex: 1,
+    shareOfSpendPool:
+      category.base > 0 ? estimate.base / category.base : null,
+    method: 'calibrated_baseline',
+    confidence: 'Low',
+    completeness: 0.62,
+    status: 'estimated',
+    isAdditive: false,
+    additiveForDisjointPopulations: true,
+    componentIds: [anchor.id],
+    coverage: {
+      population: category.base > 0 ? estimate.base / category.base : 0,
+      directSpend: 0,
+      anchor: 1,
+      isPartial: true,
+      supportedMarkets: 1,
+      totalMarkets: 1,
+    },
+    componentBreakdown: [
+      {
+        id: anchor.id,
+        label: anchor.scopeLabel,
+        annualValue: base,
+        nationalValue: category.base * annual,
+        sourceId: anchor.sourceId,
+      },
+    ],
+    denominatorBasis: 'modeled_participant',
+    denominatorLabel: '플랫폼 이용자당 연간 게임 지출',
+    sourceBasis: [
+      source,
+      ...demandSources
+        .filter((candidate) => estimate.sourceIds.includes(candidate.id))
+        .map((candidate) => ({
+          id: candidate.id,
+          title: candidate.title,
+          url: candidate.url,
+          locator: candidate.locator,
+          referencePeriod: candidate.referencePeriod,
+        })),
+    ].filter((candidate, index, all) =>
+      all.findIndex((item) => item.id === candidate.id) === index,
+    ),
+    assumptions: [
+      ...anchor.assumptions,
+      ...estimate.assumptions,
+      '플랫폼별 이용자는 서로 중복되므로 PC·모바일 금액을 합산해 게임 전체 시장으로 해석하지 않습니다.',
+      '하위 구매·검색 조건은 해당 교차 결제표가 없어 플랫폼 이용자 평균을 전이하지 않습니다.',
     ],
   };
 }
@@ -675,6 +794,8 @@ export function researchMarketValue(
   if (estimate.status !== 'estimated') return empty;
   const contentValue = contentBaselineValue(estimate, marketId);
   if (contentValue) return contentValue;
+  const gamingValue = gamingPlatformValue(estimate, marketId);
+  if (gamingValue) return gamingValue;
   const musicValue = musicBaselineValue(estimate, marketId);
   if (musicValue) return musicValue;
   let anchorId: string, scopeLabel: string, monthly: (age?: number) => number;

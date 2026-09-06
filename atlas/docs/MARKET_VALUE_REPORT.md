@@ -2,7 +2,7 @@
 
 > 이 문서는 중앙 Market Value Engine의 현재 산출 범위와 한계를 기록합니다. 세부 기준액과 범위는 [baselines](MARKET_VALUE_BASELINES.md), 외부 인구 보정은 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
 
-기존 Atlas에 인구와 경제적 소비액을 구분하는 Lens를 추가했다. 현재 금액은 외식·배달의 조사 지출, 2025 온라인 거래액을 관련 조사 인구에 배분한 부분 범위, 2024 KOCCA 음악 유료 이용·결제 구간 전이, 2025 KOCCA 유료 콘텐츠 월평균 전이로 계산한다. 온라인 화장품 구매와 미용 활동은 별도 코호트이며, **미용 활동 인구를 전체 화장품 사용자 수로 해석하지 않는다.** 산업 전체 소비나 회사 매출을 임의로 합산하지 않는다.
+기존 Atlas에 인구와 경제적 소비액을 구분하는 Lens를 추가했다. 현재 금액은 외식·배달의 조사 지출, 2025 온라인 거래액을 관련 조사 인구에 배분한 부분 범위, 2024 KOCCA 음악 유료 이용·결제 구간 전이, 2025 KOCCA 유료 콘텐츠 월평균 전이, 2025 KOCCA 게임 플랫폼별 연간 총비용 평균 전이로 계산한다. 온라인 화장품 구매와 미용 활동은 별도 코호트이며, **미용 활동 인구를 전체 화장품 사용자 수로 해석하지 않는다.** 산업 전체 소비나 회사 매출을 임의로 합산하지 않는다.
 
 ## 1. Nemotron Monetary Data Audit
 
@@ -18,7 +18,7 @@ paid, premium, paid_subscription, gear_upgrade, repeat_purchase, membership의 �
 
 ## 4. Market Value Method hierarchy
 
-Direct → Weighted → Frequency×Ticket → Calibrated baseline → Consumption proxy → Heuristic range의 여섯 계산 경로를 구현·테스트했다. 현재 활성 어댑터는 외식·배달 조사 지출, 온라인 카테고리 기준액 배분, 음악·유료 콘텐츠 결제 전이다. [산식 문서](MARKET_VALUE_METHODS.md)에 각 경로의 입력 계약과 미사용 이유가 있다.
+Direct → Weighted → Frequency×Ticket → Calibrated baseline → Consumption proxy → Heuristic range의 여섯 계산 경로를 구현·테스트했다. 현재 활성 어댑터는 외식·배달 조사 지출, 온라인 카테고리 기준액 배분, 음악·유료 콘텐츠·게임 플랫폼 지출 전이다. [산식 문서](MARKET_VALUE_METHODS.md)에 각 경로의 입력 계약과 미사용 이유가 있다.
 
 ## 5. Spend per Unit 산출 방식
 
@@ -30,7 +30,7 @@ Direct → Weighted → Frequency×Ticket → Calibrated baseline → Consumptio
 
 ## 7. Archetype × Industry Market Value
 
-실제 유형 × 산업 조합을 같은 중앙 엔진으로 평가한다. 온라인 화장품 구매 cohort는 약 1,299만 성인, 2025 온라인 화장품 거래액 기준 약 1.06백만원/인·년의 범위로 표시된다. 피부·헤어·뷰티 관리 cohort 약 1,660만 성인은 품목 일치 기준액이 없어 금액을 표시하지 않는다. 유료 콘텐츠 cohort는 KOCCA 2025 월평균 10,909원을 연환산한 약 130,908원/인·년 proxy를 사용한다.
+실제 유형 × 산업 조합을 같은 중앙 엔진으로 평가한다. 온라인 화장품 구매 cohort는 약 1,299만 성인, 2025 온라인 화장품 거래액 기준 약 1.06백만원/인·년의 범위로 표시된다. 피부·헤어·뷰티 관리 cohort 약 1,660만 성인은 품목 일치 기준액이 없어 금액을 표시하지 않는다. 유료 콘텐츠 cohort는 KOCCA 2025 월평균 10,909원을 연환산한 약 130,908원/인·년 proxy를 사용하며, 게임은 모바일·PC 플랫폼 cohort에서 각각 연 46,809원·127,632원을 표시한다. 플랫폼 중복 때문에 두 금액을 더해 전체 게임시장으로 해석하지 않는다.
 
 ## 8. Segment Market Value
 
@@ -86,7 +86,7 @@ Global Atlas → 실제 프리미엄 유형 → 지원 산업 지출 순 → 음
 
 ## 21. lint / typecheck / test / build
 
-Lint, Typecheck, 78 tests, production build 통과. 여섯 산식, 독립 monetary oracle, 단위·범위·빈 집단·합산·순위 차이·URL context를 검사했다. 배포용 Next.js에서 분석 API와 화면, 금액 검색 및 잘못된 조건 400을 확인했다. Raw narrative/bitmap/per-person moments가 API로 노출되지 않는다. [런타임 측정](../data/market-value-performance.json).
+Lint, Typecheck, 79 tests, production build 통과. 여섯 산식, 독립 monetary oracle, 단위·범위·빈 집단·합산·순위 차이·URL context를 검사했다. 배포용 Next.js에서 분석 API와 화면, 금액 검색 및 잘못된 조건 400을 확인했다. Raw narrative/bitmap/per-person moments가 API로 노출되지 않는다. [런타임 측정](../data/market-value-performance.json).
 
 ## 22. Known Limitations
 

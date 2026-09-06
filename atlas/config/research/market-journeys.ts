@@ -251,7 +251,7 @@ const experienceMarkets: ResearchMarket[] = [
     branches: [
       b(
         'skin',
-        '피부·헤어·뷰티 관리',
+        '피부·헤어·뷰티 관리 경험자',
         ['leisure_F67'],
         '나에게 맞는 관리 찾기',
         '제품·서비스 선택에서 효과 확인이 어려운가?',

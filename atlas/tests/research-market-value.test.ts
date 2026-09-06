@@ -144,6 +144,32 @@ void test('KOCCA paid-content anchor prices only paid cohorts and keeps WTP out 
   assert.equal(online.marketValue.annualValue, null);
 });
 
+void test('KOCCA game anchors price platform cohorts without adding overlapping users', () => {
+  const gaming = getResearchExplorer('gaming')!;
+  const mobile = gaming.branches.find((branch) => branch.id === 'mobile')!;
+  const consoleBranch = gaming.branches.find((branch) => branch.id === 'console')!;
+  assert.equal(mobile.profile.marketValue.status, 'estimated');
+  assert.equal(mobile.profile.marketValue.scopeId, 'kocca-2025-mobile-game-spend');
+  assert.equal(mobile.profile.marketValue.annualSpendPerUnit, 46808.75);
+  assert.ok(
+    mobile.profile.marketValue.annualValue! > 700_000_000_000 &&
+      mobile.profile.marketValue.annualValue! < 1_000_000_000_000,
+    'the all-user annual mobile-game anchor should produce a sub-trillion KRW pool for the modeled cohort',
+  );
+  assert.ok(
+    mobile.profile.marketValue.sourceBasis.some(
+      (source) => source.id === 'KOCCA-GAME-2025',
+    ),
+  );
+  assert.equal(
+    consoleBranch.profile.marketValue.annualValue,
+    null,
+    'console equipment/title spend does not have an all-user annual average in the anchor',
+  );
+  const mobileOnline = mobile.children.find((child) => child.id === 'mobile~online')!;
+  assert.equal(mobileOnline.marketValue.annualValue, null);
+});
+
 void test('generic lower discovery paths do not inherit a parent market spend pool', () => {
   const travel = getResearchExplorer('travel')!;
   const nature = travel.branches.find((b) => b.id === 'nature')!;

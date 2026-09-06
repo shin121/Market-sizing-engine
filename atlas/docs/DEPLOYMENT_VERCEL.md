@@ -1,6 +1,6 @@
 # GitHub / Vercel 배포
 
-현재 운영본은 외부 조사 인구 보정과 13/20개 시장의 부분 지출 기준을 포함합니다. [현재 범위와 산식](EXTERNAL_SPEND_AND_POPULATION.md), [전수 검증](../data/research-demand-sanity.json)을 참고하세요. 아래 v0.3/v0.4 항목은 이전 기록입니다.
+현재 운영본은 외부 조사 인구 보정과 14/20개 시장의 부분 지출 기준을 포함합니다. [현재 범위와 산식](EXTERNAL_SPEND_AND_POPULATION.md), [전수 검증](../data/research-demand-sanity.json)을 참고하세요. 아래 v0.3/v0.4 항목은 이전 기록입니다.
 
 [운영 Atlas](https://nemotron-market-atlas.vercel.app/atlas) · [Money Lens](https://nemotron-market-atlas.vercel.app/atlas?metric=marketValue)
 

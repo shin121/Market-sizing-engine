@@ -105,6 +105,19 @@ export function ResearchProfileDashboard({
         </Link>
       </header>
 
+      {selected.market === 'beauty' && selected.node === 'skin' && (
+        <div className="rp-definition-callout" role="note">
+          <strong>모집단 정의 확인</strong>
+          <span>
+            {researchPopulation(selected.population, selected.unit)}은 피부·헤어·뷰티
+            관리 경험자입니다. 화장품을 한 번이라도 사용한 전체 인구가 아닙니다.
+            아래의 ‘관리 경험자 중 온라인 화장품 구매’는 별도 구매 cohort이며,
+            오프라인을 포함한 전체 화장품 사용자 수는 같은 분모의 공식 통계가 없어
+            산출하지 않습니다.
+          </span>
+        </div>
+      )}
+
       <div className="rp-metrics">
         <div>
           <small>관련 인구 / 가구</small>
