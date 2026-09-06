@@ -63,8 +63,9 @@ export function MoneyControls({ data }: { data: AtlasPayload }) {
           </button>
         ))}
       </fieldset>
-      {c.view === 'overview' && c.lens === 'markets' ? (
-        <span>산업별 확보 범위 비교 · 전체 소비시장 합계 아님</span>
+      {(c.view === 'overview' && c.lens === 'markets') ||
+      (c.view === 'matrix' && (c.row === 'market' || c.column === 'market')) ? (
+        <span>각 시장의 확보된 지출 범위 · 항목별 범위가 다르며 합산 불가</span>
       ) : (
         <label>
           지출 범위{' '}

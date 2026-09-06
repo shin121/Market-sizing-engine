@@ -8,31 +8,41 @@ import {
   Grid2X2,
   ChartScatter,
   Compass,
-  ArrowLeft,
-  ChevronRight,
-  X,
+  Database,
+  Layers3,
   ArrowUpRight,
+  X,
 } from 'lucide-react';
-import { Input } from '@/components/ui/input';
 import {
   contextHref,
   KIND_NAMES,
-  pct,
+  population,
   type AtlasPayload,
   type AtlasEntity,
-  type AtlasView,
 } from '@/lib/atlas';
-import { Entry, href, segmentEntity, PopulationStrip } from './common';
-import { Overview } from './overview';
-import { MoneyControls, MoneyMetrics } from './money';
+import { orderedConditions } from '@/lib/discovery';
+import { href, segmentEntity } from './common';
+import { MoneyControls } from './money';
 import { formatKRW, type MarketValueEstimate } from '@/lib/market-value';
-import { shortPopulation } from '@/lib/atlas';
+import { EntityDashboard } from './entity';
+import { Relationship, Matrix, Opportunity } from './analysis-views';
+import {
+  MarketDiscovery,
+  SegmentProfile,
+  FocusMetrics,
+  SegmentBuilder,
+  ConditionTrail,
+} from './discovery-profile';
+import { WorkspaceActions, WorkspaceLinks } from './workspace';
+import {
+  CompareWorkspace,
+  IdeasWorkspace,
+  SourcesWorkspace,
+} from './decision-workspace';
 type SearchResult = AtlasEntity & {
   population?: number;
   marketValue?: MarketValueEstimate;
 };
-import { EntityDashboard } from './entity';
-import { Relationship, Matrix, Opportunity } from './analysis-views';
 export function AtlasWorkbench({ data }: { data: AtlasPayload }) {
   const c = data.context,
     p = data.profile;
@@ -43,42 +53,36 @@ export function AtlasWorkbench({ data }: { data: AtlasPayload }) {
   const [query, setQuery] = useState(''),
     [results, setResults] = useState<SearchResult[]>([]),
     [searchOpen, setSearchOpen] = useState(false),
-    [searchError, setSearchError] = useState(false),
-    [searchPending, setSearchPending] = useState(false);
+    [searchPending, setSearchPending] = useState(false),
+    [searchError, setSearchError] = useState(false);
   useEffect(() => {
     if (!query.trim()) return;
-    const controller = new AbortController(),
-      timer = setTimeout(() => {
-        fetch(
-          '/api/atlas/search?q=' +
-            encodeURIComponent(query) +
-            '&spend=' +
-            encodeURIComponent(c.moneyScope),
-          {
-            signal: controller.signal,
-          },
-        )
-          .then((r) => {
-            if (!r.ok) throw Error('search');
-            return r.json();
-          })
-          .then((body) => {
-            setResults((body as { results: SearchResult[] }).results);
-            setSearchError(false);
+    const controller = new AbortController();
+    const timer = setTimeout(() => {
+      fetch('/api/atlas/search?q=' + encodeURIComponent(query), {
+        signal: controller.signal,
+      })
+        .then((r) => {
+          if (!r.ok) throw Error('search');
+          return r.json();
+        })
+        .then((body) => {
+          setResults(body.results);
+          setSearchError(false);
+          setSearchPending(false);
+        })
+        .catch((e) => {
+          if (e.name !== 'AbortError') {
+            setSearchError(true);
             setSearchPending(false);
-          })
-          .catch((error) => {
-            if (error.name !== 'AbortError') {
-              setSearchError(true);
-              setSearchPending(false);
-            }
-          });
-      }, 180);
+          }
+        });
+    }, 180);
     return () => {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [query, c.moneyScope]);
+  }, [query]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -91,146 +95,141 @@ export function AtlasWorkbench({ data }: { data: AtlasPayload }) {
     window.addEventListener('keydown', key);
     return () => window.removeEventListener('keydown', key);
   }, []);
-  const navigation = [
-    { view: 'overview', label: '전체 시장', icon: Compass },
+  const analysis = [
     { view: 'relationship', label: '관계 탐색', icon: Network },
     { view: 'matrix', label: '교차분석', icon: Grid2X2 },
-    { view: 'opportunity', label: '기회지도', icon: ChartScatter },
+    { view: 'opportunity', label: '기회 탐색기', icon: ChartScatter },
   ] as const;
-  const changeTab = (tab: 'profile' | 'data') => {
-    const q = new URLSearchParams(params.toString());
-    if (tab === 'data') q.set('tab', 'data');
-    else q.delete('tab');
-    router.push(pathname + (q.size ? '?' + q.toString() : ''), {
-      scroll: false,
-    });
+  const titles: Record<string, string> = {
+    overview: '시장 탐색',
+    entity: data.conditions.some((e) => e.kind === 'interest')
+      ? data.conditions
+          .filter((e) => e.kind === 'interest')
+          .map((e) => e.label)
+          .join(' · ')
+      : p.summary.entity.label,
+    relationship: '관계 탐색',
+    matrix: '교차분석',
+    opportunity: '기회 탐색기',
+    compare: '세그먼트 비교',
+    ideas: '아이디어 보드',
+    sources: '데이터·산출 근거',
   };
-  const title =
-    c.view === 'overview'
-      ? '한국 소비자 시장을 한눈에'
-      : c.view === 'entity'
-        ? p.summary.entity.label
-        : (
-            {
-              relationship: '관계 탐색',
-              matrix: '교차분석',
-              opportunity: '기회지도',
-            } as Record<string, string>
-          )[c.view];
-  const description =
-    c.view === 'overview'
-      ? `${data.universe.archetypes}개 소비 유형과 ${data.universe.markets}개 산업을 연결해 사업 후보를 발견하세요.`
-      : c.view === 'entity'
-        ? (p.summary.entity.description ??
-          `${KIND_NAMES[p.summary.entity.kind]}의 인구 구성, 소비 행동과 연결 시장을 탐색합니다.`)
-        : p.summary.entity.label;
+  const workspaceView = ['compare', 'ideas', 'sources'].includes(c.view);
+  const changeTab = (tab: string) => {
+    const q = new URLSearchParams(params.toString());
+    q.set('tab', tab);
+    router.push(pathname + '?' + q, { scroll: false });
+  };
+  const profileUrl = c.ids.length ? href(segmentEntity(c.ids), c) : '/atlas';
   return (
-    <div className="atlas-shell">
+    <div className={'atlas-shell os-shell view-' + c.view}>
       <a className="skip-link" href="#analysis-main">
         분석 내용으로 이동
       </a>
       <aside className="atlas-sidebar" aria-label="Atlas 탐색 메뉴">
         <Link href="/atlas" className="brand">
-          <span>▧</span> Market <b>Atlas</b>
+          <span>ϟ</span>Market <b>Atlas</b>
         </Link>
-        <div className="sidebar-label">DISCOVER</div>
-        <nav aria-label="주요 분석 화면">
-          {navigation.map(({ view, label, icon: Icon }) => (
+        <div className="sidebar-label">탐색</div>
+        <nav aria-label="주요 탐색 화면">
+          <Link href="/atlas" className={c.view === 'overview' ? 'active' : ''}>
+            <Compass size={18} />
+            시장 탐색
+          </Link>
+          <Link
+            href={profileUrl}
+            className={c.view === 'entity' ? 'active' : ''}
+          >
+            <Layers3 size={18} />
+            세그먼트 프로필
+          </Link>
+          <WorkspaceLinks context={c} />
+        </nav>
+        <div className="sidebar-label">분석</div>
+        <nav aria-label="분석 도구">
+          {analysis.map(({ view, label, icon: Icon }) => (
             <Link
               key={view}
-              prefetch={false}
               className={c.view === view ? 'active' : ''}
-              href={contextHref(
-                view as AtlasView,
-                view === 'overview'
-                  ? []
-                  : view === 'relationship' && !c.ids.length
-                    ? data.radar[1].items[0].ids
-                    : c.ids,
-                c,
-              )}
+              href={contextHref(view, c.ids, c)}
+              prefetch={false}
             >
-              <Icon size={17} />
+              <Icon size={18} />
               {label}
             </Link>
           ))}
         </nav>
-        <div className="sidebar-label">EXPLORE MARKETS</div>
+        <div className="sidebar-label">데이터</div>
+        <nav>
+          <Link
+            href={contextHref('sources', c.ids, c)}
+            className={c.view === 'sources' ? 'active' : ''}
+          >
+            <Database size={18} />
+            데이터·산출 근거
+          </Link>
+        </nav>
+        <div className="sidebar-label">시장 바로가기</div>
         <nav className="market-nav" aria-label="산업 탐색">
           {data.navigation
             .filter((e) => e.kind === 'market')
             .map((e) => (
-              <Entry
+              <Link
                 key={e.id}
-                entity={e}
-                context={c}
+                href={href(e, c)}
                 className={c.ids.includes(e.id) ? 'market-active' : ''}
               >
                 <span className="market-dot" />
                 {e.label}
-              </Entry>
+              </Link>
             ))}
         </nav>
-        <div className="sidebar-universe">
-          <span>UNIVERSE SNAPSHOT</span>
-          <b>
-            4,410만 <small>명</small>
-          </b>
-          <p>
-            대한민국 · 20세 이상
-            <br />
-            2024.11 인구 기준
-          </p>
+        <div className="os-sidebar-foot">
+          <span className="avatar-mark">MA</span>
           <div>
-            <strong>{data.universe.sourceRows.toLocaleString()}</strong> 합성
-            페르소나
+            <b>Opportunity workspace</b>
+            <small>한국 소비자 · 모델 추정</small>
           </div>
-          <div>
-            <strong>{pct(data.universe.coverageShare, 0)}</strong> 유형 포괄
-            비중
-          </div>
-          <small>
-            추정 인구 · 개인 단위
-            <br />
-            산업과 유형 간 중복 가능
-          </small>
         </div>
       </aside>
       <div className="atlas-body">
         <header className="global-header">
           <div className="global-search">
             <Search size={16} />
-            <Input
+            <input
               ref={input}
-              aria-label="유형, 산업, 신호, 세그먼트 검색"
-              placeholder="유형, 산업, 소비 행동을 검색하세요"
+              aria-label="시장·관심·조건 검색"
+              placeholder="시장, 관심 영역, 생활 조건 검색"
               value={query}
+              onFocus={() => setSearchOpen(true)}
               onChange={(e) => {
                 setQuery(e.target.value);
-                setSearchPending(Boolean(e.target.value.trim()));
-                setSearchError(false);
                 setResults([]);
+                setSearchError(false);
+                setSearchPending(!!e.target.value.trim());
                 setSearchOpen(true);
               }}
-              onFocus={() => setSearchOpen(true)}
             />
             <kbd>⌘ K</kbd>
             {searchOpen && query.trim() && (
               <div className="search-results">
                 <div className="search-heading">
-                  전체 탐색 · {results.length}개 결과
+                  <span>시장과 관심에서 탐색을 시작하세요</span>
                   <button
+                    aria-label="검색 닫기"
                     onClick={() => setSearchOpen(false)}
-                    aria-label="검색 결과 닫기"
                   >
                     <X size={14} />
                   </button>
                 </div>
                 {results.map((e) => (
                   <Link
-                    prefetch={false}
                     key={e.id}
-                    href={href(e, c)}
+                    href={href(e, {
+                      ...c,
+                      moneyScope: e.marketValue?.scopeId ?? 'covered',
+                    })}
                     onClick={() => {
                       setSearchOpen(false);
                       setQuery('');
@@ -241,16 +240,14 @@ export function AtlasWorkbench({ data }: { data: AtlasPayload }) {
                       <small>
                         {KIND_NAMES[e.kind]} ·{' '}
                         {e.population !== undefined
-                          ? shortPopulation(e.population) + '명'
-                          : ''}
-                        {e.marketValue?.base !== null &&
-                        e.marketValue?.base !== undefined
-                          ? ' · ' +
-                            formatKRW(e.marketValue.base, false) +
-                            ' / 년 (' +
-                            e.marketValue.scopeLabel +
-                            ')'
-                          : ' · 지출 기준 미확보'}
+                          ? population(e.population)
+                          : ''}{' '}
+                        ·{' '}
+                        {e.marketValue?.base != null
+                          ? formatKRW(e.marketValue.base) +
+                            ' / 년 · ' +
+                            e.marketValue.scopeLabel
+                          : '지출 기준 미확보'}
                       </small>
                     </span>
                     <ArrowUpRight size={14} />
@@ -262,150 +259,116 @@ export function AtlasWorkbench({ data }: { data: AtlasPayload }) {
                       ? '검색 중…'
                       : searchError
                         ? '검색을 불러오지 못했습니다. 다시 입력해 주세요.'
-                        : '검색 결과가 없습니다. 가격, 구독, 수집 같은 표현도 사용해 보세요.'}
+                        : '일치하는 조건이 없습니다. 맞벌이·소득·비이용 여부는 현재 데이터로 확인할 수 없습니다. 연령·가구·관심 조건으로 탐색해 보세요.'}
                   </p>
                 )}
               </div>
             )}
           </div>
-          <div className="header-meta">
-            KOREA CONSUMER INTELLIGENCE<span>Nemotron-derived</span>
-          </div>
+          <span className="header-meta">
+            KOREA CONSUMER INTELLIGENCE <span>Population × Economic value</span>
+          </span>
         </header>
         <main id="analysis-main">
-          <nav className="breadcrumbs" aria-label="탐색 경로">
-            <button
-              onClick={() => router.back()}
-              aria-label="이전 탐색으로 돌아가기"
-            >
-              <ArrowLeft size={14} />
-            </button>
-            <Link href="/atlas">전체 시장</Link>
-            {data.breadcrumbs.map((e, i) => (
-              <span key={e.id + '-' + i}>
-                <ChevronRight size={12} />
-                <Entry
-                  entity={e}
-                  context={{ ...c, trail: c.trail.slice(0, i), ids: [] }}
-                />
-              </span>
-            ))}
-            {c.view !== 'overview' && (
-              <span>
-                <ChevronRight size={12} />
-                {c.view === 'entity'
-                  ? KIND_NAMES[p.summary.entity.kind]
-                  : title}
-              </span>
-            )}
-          </nav>
+          <ConditionTrail data={data} />
           <div className="entity-heading">
             <div>
-              <h1>{title}</h1>
-              <p>{description}</p>
+              <h1>{titles[c.view]}</h1>
+              <p>
+                {c.view === 'overview'
+                  ? '시장과 관심 영역에서 출발해 다음 사업 가설을 발견하세요.'
+                  : c.view === 'compare'
+                    ? '후보의 규모·소비·행동·근거를 같은 기준으로 비교하세요.'
+                    : c.view === 'ideas'
+                      ? '관심 집단을 사업 가설로 바꾸고, 다음 검증을 기록하세요.'
+                      : c.view === 'sources'
+                        ? '추정값의 범위와 추가로 필요한 데이터를 확인하세요.'
+                        : orderedConditions(data.conditions)
+                            .map((e) => KIND_NAMES[e.kind])
+                            .join(' › ') + ' · 현재 집단 안에서 탐색'}
+              </p>
             </div>
-            {c.view === 'entity' && (
-              <div className="entity-actions">
-                <button
-                  className={c.tab === 'profile' ? 'active' : ''}
-                  onClick={() => changeTab('profile')}
-                >
-                  프로필
-                </button>
-                <button
-                  className={c.tab === 'data' ? 'active' : ''}
-                  onClick={() => changeTab('data')}
-                >
-                  집계 데이터
-                </button>
-                <Link
-                  prefetch={false}
-                  href={contextHref('opportunity', c.ids, c)}
-                >
-                  기회지도 ↗
-                </Link>
-              </div>
+            {!workspaceView && c.ids.length > 0 && (
+              <WorkspaceActions
+                key={c.ids.join('~') + c.moneyScope}
+                summary={p.summary}
+                context={c}
+              />
             )}
           </div>
-          {c.ids.length > 0 && (
-            <div className="context-bar">
-              <b>현재 조건</b>
-              {data.conditions.map((e) => (
-                <span key={e.id}>
-                  <Entry entity={e} context={c} />
-                  <Link
-                    prefetch={false}
-                    href={href(
-                      segmentEntity(c.ids.filter((id) => id !== e.id)),
-                      c,
-                    )}
-                    aria-label={`${e.label} 조건 제거`}
-                  >
-                    <X size={11} />
-                  </Link>
-                </span>
-              ))}
-              <small>AND · {c.ids.length}/8</small>
-              <div className="context-views">
-                {navigation
-                  .filter((n) => n.view !== 'overview')
-                  .map((n) => (
+          {!workspaceView && c.ids.length > 0 && (
+            <>
+              <div className="context-bar">
+                <b>선택한 조건</b>
+                {orderedConditions(data.conditions).map((e) => (
+                  <span key={e.id}>
+                    {e.label}
                     <Link
-                      prefetch={false}
-                      key={n.view}
-                      href={contextHref(n.view, c.ids, c)}
+                      aria-label={`${e.label} 조건 제거`}
+                      href={href(
+                        segmentEntity(c.ids.filter((id) => id !== e.id)),
+                        c,
+                      )}
                     >
-                      {n.label}
+                      <X size={11} />
                     </Link>
-                  ))}
+                  </span>
+                ))}
               </div>
+              <SegmentBuilder data={data} />
+            </>
+          )}
+          {!workspaceView && <MoneyControls data={data} />}
+          {!workspaceView && c.view !== 'overview' && (
+            <FocusMetrics profile={p} />
+          )}
+          {c.view === 'entity' && (
+            <div className="profile-tabbar">
+              <button
+                className={c.tab === 'profile' ? 'active' : ''}
+                onClick={() => changeTab('profile')}
+              >
+                세그먼트 프로필
+              </button>
+              <button
+                className={c.tab === 'data' ? 'active' : ''}
+                onClick={() => changeTab('data')}
+              >
+                집계 데이터
+              </button>
+              {analysis.map((a) => (
+                <Link key={a.view} href={contextHref(a.view, c.ids, c)}>
+                  {a.label} ↗
+                </Link>
+              ))}
             </div>
           )}
-          <MoneyControls data={data} />
           {c.view === 'overview' ? (
-            <div className="population-strip global-strip">
-              <div className="metric-main">
-                <span>대한민국 20세 이상</span>
-                <strong>
-                  4,410만<small> 명</small>
-                </strong>
-                <small>2024.11 인구 기준</small>
-              </div>
-              <div>
-                <span>소비 유형</span>
-                <strong>
-                  {data.universe.archetypes}
-                  <small> 개</small>
-                </strong>
-                <small>중복 소속 가능한 소비 메커니즘</small>
-              </div>
-              <div>
-                <span>산업·시장</span>
-                <strong>
-                  {data.universe.markets}
-                  <small> 개</small>
-                </strong>
-                <small>유형과 구분된 산업 Lens</small>
-              </div>
-              <MoneyMetrics value={data.money?.summary} />
-            </div>
-          ) : (
-            <PopulationStrip summary={p.summary} />
-          )}
-          {c.view === 'overview' ? (
-            <Overview data={data} />
+            <MarketDiscovery data={data} />
           ) : c.view === 'entity' ? (
-            <EntityDashboard data={data} />
+            c.tab === 'data' ? (
+              <EntityDashboard data={data} />
+            ) : (
+              <SegmentProfile key={c.ids.join('~')} data={data} />
+            )
           ) : c.view === 'relationship' ? (
             <Relationship data={data} />
           ) : c.view === 'matrix' ? (
             <Matrix data={data} />
-          ) : (
+          ) : c.view === 'opportunity' ? (
             <Opportunity data={data} />
+          ) : c.view === 'compare' ? (
+            <CompareWorkspace />
+          ) : c.view === 'ideas' ? (
+            <IdeasWorkspace />
+          ) : (
+            <SourcesWorkspace data={data} />
           )}
           <footer className="atlas-footer">
-            <span>Nemotron Market Atlas · 인구와 소비액에서 사업 후보까지</span>
-            <span>합성 소비자 서술 · 인구 추정 · 실제 매출·시계열 없음</span>
+            <span>Market Atlas · 시장에서 관심으로, 관심에서 사업 가설로</span>
+            <span>
+              합성 프로필·외부 기준 배분 · 실제 매출이나 구매자 조사 아님
+            </span>
           </footer>
         </main>
       </div>

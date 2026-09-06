@@ -24,7 +24,10 @@ export type AtlasView =
   | 'entity'
   | 'relationship'
   | 'matrix'
-  | 'opportunity';
+  | 'opportunity'
+  | 'compare'
+  | 'ideas'
+  | 'sources';
 export type AtlasAxis =
   | 'archetype'
   | 'market'
@@ -277,17 +280,13 @@ export function contextHref(
 }
 export function shortPopulation(n: number) {
   if (n === 0) return '0';
-  if (n < 100) return '100명 미만';
+  if (n < 100) return '<100';
   if (n < 10000) return Math.round(n / 100) * 100 + '';
   return Number((n / 10000).toPrecision(2)).toLocaleString('ko-KR') + '만';
 }
 export function population(n: number) {
   const value = shortPopulation(n);
-  return n === 0
-    ? '0명'
-    : value.endsWith('미만')
-      ? '약 ' + value
-      : '약 ' + value + '명';
+  return n === 0 ? '0명' : n < 100 ? '100명 미만' : '약 ' + value + '명';
 }
 export function pct(n: number, digits = 1) {
   return n > 0 && n < 0.001 ? '<0.1%' : (n * 100).toFixed(digits) + '%';

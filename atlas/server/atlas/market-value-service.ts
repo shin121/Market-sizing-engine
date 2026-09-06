@@ -143,7 +143,16 @@ export function enrichMarketValue(
   if (matrix) {
     const cells = matrix.cells.map((cell) => ({
       ...cell,
-      marketValue: compactValue(estimateMarketValue(cell.ids, scope)),
+      marketValue: compactValue(
+        estimateMarketValue(
+          cell.ids,
+          cell.column.kind === 'market'
+            ? cell.column.id
+            : cell.row.kind === 'market'
+              ? cell.row.id
+              : scope,
+        ),
+      ),
     }));
     const valid = cells.filter(
       (cell) =>
@@ -200,7 +209,12 @@ export function enrichMarketValue(
     ),
     radar: data.radar.map((r) => ({ ...r, items: r.items.map(withMoney) })),
     opportunities: data.opportunities
-      .map(withMoney)
+      .map((s) =>
+        addEconomicScore(
+          s,
+          !c.ids.length && s.entity.kind === 'market' ? s.entity.id : scope,
+        ),
+      )
       .sort(
         (a, b) => (b.metrics.opportunity ?? 0) - (a.metrics.opportunity ?? 0),
       ),

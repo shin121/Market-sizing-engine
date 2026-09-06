@@ -173,7 +173,16 @@ for (const market of [
     const p = getProfile([market]);
     assert.ok(p.archetypes.filter((s) => s.support >= 100).length >= 3);
     assert.ok(p.painPatterns.length >= 1);
-    assert.ok(p.relatedOpportunities.length >= 3);
+    assert.ok(p.relatedOpportunities.length > 0);
+    assert.ok(
+      p.relatedOpportunities.every((s) =>
+        s.ids.some((id) =>
+          features.some(
+            (f) => f.id === id && f.kind === 'interest' && f.parent === market,
+          ),
+        ),
+      ),
+    );
     const m = getMatrix(
       resolveContext(['matrix'], { q: market, row: 'archetype', col: 'need' }),
     );

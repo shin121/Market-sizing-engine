@@ -2,6 +2,7 @@ import catalogJson from '../data/atlas-catalog.json';
 import cubeJson from '../data/atlas-calibrated-cubes.json';
 import calibrationJson from '../data/atlas-calibration.json';
 import type { AtlasEntity, EntityKind } from '../../lib/atlas';
+import { AGE_UNIONS, orderedConditions } from '../../lib/discovery';
 export interface SourceFeature {
   id: string;
   label: string;
@@ -143,6 +144,15 @@ export const entities: AtlasEntity[] = [
     kind: d.kind,
     family: d.family,
   })),
+  ...Object.keys(AGE_UNIONS).map((id) => ({
+    id,
+    label:
+      id === 'age_60_plus'
+        ? '60세 이상'
+        : id.replace('age_', '').replace('_', '–') + '세',
+    kind: 'age_range' as const,
+    family: 'identity',
+  })),
 ];
 export const registry = new Map(entities.map((e) => [e.id, e]));
 export const markets = entities.filter((e) => e.kind === 'market');
@@ -157,7 +167,9 @@ export function entityForIds(ids: string[]): AtlasEntity {
   return {
     id: ids.length ? ids.join('~') : 'universe',
     label: ids.length
-      ? ids.map((id) => registry.get(id)!.label).join(' × ')
+      ? orderedConditions(ids.map((id) => registry.get(id)!))
+          .map((e) => e.label)
+          .join(' × ')
       : '대한민국 소비자 시장',
     kind: 'segment',
     family: 'affinity',

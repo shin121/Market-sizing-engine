@@ -107,7 +107,24 @@ export function MarketMap({
               top: y / 3.8 + '%',
               width: w / 10 + '%',
               height: h / 3.8 + '%',
-              background: color(s.entity.family),
+              background:
+                s.entity.kind === 'market'
+                  ? ((
+                      {
+                        travel: '#167c8e',
+                        wellness: '#087a61',
+                        fitness: '#236b69',
+                        content: '#55508a',
+                        education: '#4e68a0',
+                        commerce: '#085b67',
+                        beauty: '#8a6599',
+                        home: '#3e7888',
+                        food: '#9a7447',
+                        music: '#7266ad',
+                        family: '#3a786e',
+                      } as Record<string, string>
+                    )[s.entity.id] ?? color(s.entity.family))
+                  : color(s.entity.family),
             }}
             onMouseEnter={() => setHover(s)}
             onMouseLeave={() => setHover(null)}

@@ -47,7 +47,14 @@ export function SpendRange({ value }: { value?: MarketValueEstimate }) {
 
 export function BaselineTrend({ value }: { value?: MarketValueEstimate }) {
   const trend = value?.nationalTrend;
-  if (!trend?.length) return <SpendRange value={value} />;
+  if (!trend?.length)
+    return (
+      <div className="trend-unavailable">
+        <b>추세 미확보</b>
+        <p>동일한 항목·기간의 시계열 근거가 필요합니다.</p>
+        <small>현재 규모를 성장률로 대체하지 않습니다.</small>
+      </div>
+    );
   const first = trend[0],
     last = trend[trend.length - 1],
     max = Math.max(...trend.map((v) => v.value));

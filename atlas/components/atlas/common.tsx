@@ -37,13 +37,28 @@ export function href(entity: AtlasEntity, c: AtlasContext) {
     .slice(-6);
   if (trail.length) p.set('trail', trail.join('|'));
   if (c.metric !== 'population') p.set('metric', c.metric);
-  p.set('spend', entity.kind === 'market' ? entity.id : c.moneyScope);
+  p.set(
+    'spend',
+    entity.kind === 'market'
+      ? entity.id
+      : entity.kind === 'interest' && entity.parent
+        ? entity.parent
+        : c.moneyScope,
+  );
+  if (c.compare.length) p.set('compare', c.compare.map(conditionKey).join('|'));
   p.set('x', c.xAxis);
   p.set('y', c.yAxis);
-  return entityPath(entity) + (p.size ? '?' + p.toString() : '');
+  const target =
+    entity.kind === 'interest' && entity.parent
+      ? segmentEntity([entity.parent, entity.id], entity.label)
+      : entity;
+  return entityPath(target) + (p.size ? '?' + p.toString() : '');
 }
 export function jointHref(id: string, c: AtlasContext) {
-  return href(segmentEntity(canonicalIds([...c.ids, id])), c);
+  return href(
+    segmentEntity(canonicalIds(c.ids.length >= 8 ? c.ids : [...c.ids, id])),
+    c,
+  );
 }
 export function Entry({
   entity,
@@ -155,7 +170,7 @@ export function StatList({
               className={s.direction === 'under' ? 'index-under' : 'index-over'}
               title={`전체 ${pct(s.baseShare)} → 현재 ${pct(s.share)} · 원본 ${s.support.toLocaleString()}건`}
             >
-              {shortPopulation(s.population)}명
+              {population(s.population)}
             </strong>
           )}
           {join &&

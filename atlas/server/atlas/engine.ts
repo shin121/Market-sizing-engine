@@ -1,4 +1,5 @@
 import { enrichMarketValue } from './market-value-service';
+import { hierarchyOrder } from '../../lib/discovery';
 import { inferSpendScope } from './market-value';
 import type { MoneyMetric, MoneyAxis } from '../../lib/market-value';
 import {
@@ -297,10 +298,33 @@ export function opportunities(ids: string[]): Summary[] {
       )
       .slice(0, 14)
       .map(({ f }) => registry.get(f.id)!);
-  } else targets = hasType ? markets : types;
+  } else if (
+    hasMarket &&
+    !ids.some((id) => registry.get(id)?.kind === 'interest')
+  ) {
+    targets = entities.filter(
+      (e) => e.kind === 'interest' && ids.includes(e.parent ?? ''),
+    );
+  } else if (
+    ids.some((id) => registry.get(id)?.kind === 'interest') &&
+    !hasType
+  ) {
+    targets = entities.filter(
+      (e) => e.kind === 'need' || e.kind === 'archetype',
+    );
+  } else targets = hasType ? markets : ids.length ? types : markets;
+  const current = measure(ids);
   const result = targets
-    .filter((t) => !ids.includes(t.id))
+    .filter((t) => !definitions(ids).has(t.id))
     .filter((t) => measure(combine(ids, t.id)).support >= 30)
+    .filter((t) => {
+      const next = measure(combine(ids, t.id));
+      return (
+        !ids.length ||
+        Math.abs(next.population - current.population) > 0.01 ||
+        next.support !== current.support
+      );
+    })
     .map((t) => summarize(combine(ids, t.id)))
     .sort(
       (a, b) => (b.metrics.opportunity ?? -1) - (a.metrics.opportunity ?? -1),
@@ -470,7 +494,14 @@ export function resolveContext(
     view: AtlasContext['view'] = 'overview';
   if (path.length) {
     if (
-      ['relationship', 'matrix', 'opportunity'].includes(path[0]) &&
+      [
+        'relationship',
+        'matrix',
+        'opportunity',
+        'compare',
+        'ideas',
+        'sources',
+      ].includes(path[0]) &&
       path.length === 1
     )
       view = path[0] as AtlasContext['view'];
@@ -502,8 +533,8 @@ export function resolveContext(
   const row = (get('row') ||
       (ids.some((id) => registry.get(id)?.kind === 'archetype')
         ? 'age'
-        : 'archetype')) as AtlasAxis,
-    column = (get('col') || 'market') as AtlasAxis;
+        : 'age')) as AtlasAxis,
+    column = (get('col') || (ids.length ? 'interest' : 'market')) as AtlasAxis;
   if (!axes.includes(row) || !axes.includes(column))
     throw new Error('지원하지 않는 교차분석 축입니다.');
   const compare = get('compare')
@@ -525,7 +556,7 @@ export function resolveContext(
     view,
     ids,
     trail,
-    lens: get('lens') === 'markets' ? 'markets' : 'people',
+    lens: get('lens') === 'people' ? 'people' : 'markets',
     row,
     column,
     focus: focus || null,
@@ -629,9 +660,21 @@ export function analyzeAtlas(context: AtlasContext): AtlasPayload {
         sourceDate: source.sourceDate,
       },
       navigation: entities.filter((e) =>
-        ['market', 'age', 'age_range', 'region', 'sex', 'household'].includes(
-          e.kind,
-        ),
+        [
+          'market',
+          'interest',
+          'age',
+          'age_range',
+          'region',
+          'sex',
+          'household',
+          'housing',
+          'marital',
+          'need',
+          'behavior',
+          'channel',
+          'archetype',
+        ].includes(e.kind),
       ),
       breadcrumbs: context.trail.map((key) => entityForIds(key.split('~'))),
     },
@@ -682,7 +725,7 @@ export function searchAtlas(query: string): AtlasEntity[] {
     ...direct.sort(
       (a, b) =>
         Number(b.label.startsWith(q)) - Number(a.label.startsWith(q)) ||
-        Number(b.kind === 'archetype') - Number(a.kind === 'archetype'),
+        hierarchyOrder(a) - hierarchyOrder(b),
     ),
     ...segments,
   ].slice(0, 36);

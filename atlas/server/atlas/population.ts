@@ -4,6 +4,7 @@ import indexJson from '../data/atlas-index.json';
 import calibratedIndex from '../data/atlas-calibrated-index.json';
 import { conditionKey, canonicalIds } from '../../lib/atlas';
 import { source, cubes, features, assertIds, type Cube } from './source';
+import { AGE_UNIONS } from '../../lib/discovery';
 const strings: Record<string, string> = { ...indexJson, ...calibratedIndex };
 const observedStrings: Record<string, string> = indexJson;
 const observedBitmaps = new Map<string, Uint32Array>();
@@ -35,6 +36,15 @@ function bitmap(id: string, observed = false) {
   const cache = observed ? observedBitmaps : bitmaps;
   const cached = cache.get(id);
   if (cached) return cached;
+  if (AGE_UNIONS[id]) {
+    const result = new Uint32Array(source.wordLength);
+    for (const member of AGE_UNIONS[id]) {
+      const bits = bitmap(member, observed);
+      for (let i = 0; i < result.length; i++) result[i] |= bits[i];
+    }
+    cache.set(id, result);
+    return result;
+  }
   const text = (observed ? observedStrings : strings)[id];
   if (!text) throw new Error('조건 인덱스가 없습니다: ' + id);
   const bytes = gunzipSync(Buffer.from(text, 'base64'));

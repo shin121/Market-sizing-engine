@@ -4,7 +4,9 @@ import { formatKRW } from '@/lib/market-value';
 import { MoneyOpportunityChart, MoneyBasis } from './money';
 import { SpendRange, SpendBreakdown, EvidenceTable } from './economic-profile';
 import { useState } from 'react';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useWorkspace } from './workspace';
+import { candidateKey, makeCandidate } from '@/lib/discovery';
 import { NativeSelect } from '@/components/ui/native-select';
 import {
   contextHref,
@@ -224,7 +226,7 @@ export function Matrix({ data }: { data: AtlasPayload }) {
     <>
       <Module
         title="교차분석 · 현재 집단을 더 나누기"
-        note="모든 셀은 실제 동시 검출을 연령·성별 가중 합산합니다"
+        note="서술 일치(n)와 보정 모델 배정을 구분합니다 · 하이라이트는 n≥30인 셀 중 선정"
         action={
           <div className="axis-controls">
             <label>
@@ -293,7 +295,10 @@ export function Matrix({ data }: { data: AtlasPayload }) {
               <Link
                 prefetch={false}
                 key={h.label}
-                href={href(segmentEntity(h.cell.ids), c)}
+                href={href(segmentEntity(h.cell.ids), {
+                  ...c,
+                  moneyScope: h.cell.marketValue?.scopeId ?? c.moneyScope,
+                })}
               >
                 <small>{h.label}</small>
                 <b>
@@ -392,6 +397,33 @@ export function Matrix({ data }: { data: AtlasPayload }) {
                               : ''}
                             {pct(cell.share)} · n=
                             {cell.support.toLocaleString()}
+                            {cell.support === 0 && cell.population > 0
+                              ? ' · 모델 배정만'
+                              : cell.support < 30
+                                ? ' · 희소'
+                                : ''}
+                            {money && (
+                              <em className="matrix-scope">
+                                {cell.marketValue?.scopeLabel}
+                              </em>
+                            )}
+                            {money &&
+                              cell.marketValue?.relevantPopulation != null &&
+                              Math.abs(
+                                cell.marketValue.relevantPopulation -
+                                  cell.population,
+                              ) > 1 && (
+                                <em
+                                  className="matrix-scope"
+                                  title="관심 인구와 연간 소비액의 배분 분모가 다릅니다. 실제 구매자 수가 아닙니다."
+                                >
+                                  배분 대상{' '}
+                                  {shortPopulation(
+                                    cell.marketValue.relevantPopulation,
+                                  )}
+                                  명 · 관심 인구와 구분
+                                </em>
+                              )}
                           </small>
                         </>
                       );
@@ -407,7 +439,11 @@ export function Matrix({ data }: { data: AtlasPayload }) {
                         {cell.ids.length <= 8 ? (
                           <Link
                             prefetch={false}
-                            href={href(segmentEntity(cell.ids), c)}
+                            href={href(segmentEntity(cell.ids), {
+                              ...c,
+                              moneyScope:
+                                cell.marketValue?.scopeId ?? c.moneyScope,
+                            })}
                             title={`${row.label} × ${col.label} 상세 세그먼트`}
                           >
                             {contents}
@@ -484,10 +520,9 @@ const groups = [
   '작은 고지출 집단',
 ];
 export function Opportunity({ data }: { data: AtlasPayload }) {
-  const c = data.context,
-    router = useRouter(),
-    pathname = usePathname(),
-    params = useSearchParams();
+  const c = data.context;
+  const { workspace, update } = useWorkspace();
+  const [compareMessage, setCompareMessage] = useState('');
   const [group, setGroup] = useState(groups[0]);
   let items = [...data.opportunities];
   if (group === groups[1])
@@ -522,16 +557,33 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
       (s) =>
         s.estimate.share < 0.03 && (s.marketValue?.spendDensityIndex ?? 0) > 1,
     );
+  const selected = (s: Summary) =>
+    workspace.compare.includes(
+      candidateKey(s.ids, s.marketValue?.scopeId ?? c.moneyScope),
+    );
   const compare = (s: Summary) => {
-    const key = conditionKey(s.ids),
-      current = c.compare.map(conditionKey);
-    const next = current.includes(key)
-      ? current.filter((k) => k !== key)
-      : [...current, key].slice(-3);
-    const p = new URLSearchParams(params.toString());
-    if (next.length) p.set('compare', next.join('|'));
-    else p.delete('compare');
-    router.push(pathname + '?' + p.toString(), { scroll: false });
+    const scope = s.marketValue?.scopeId ?? c.moneyScope,
+      key = candidateKey(s.ids, scope);
+    if (!selected(s) && workspace.compare.length >= 3) {
+      setCompareMessage(
+        '최대 3개입니다. 세그먼트 비교에서 후보를 정리해 주세요.',
+      );
+      return;
+    }
+    const ok = update((w) => ({
+      ...w,
+      candidates: w.candidates.some((x) => x.key === key)
+        ? w.candidates
+        : [...w.candidates, makeCandidate(s.ids, scope, s.entity.label)],
+      compare: selected(s)
+        ? w.compare.filter((k) => k !== key)
+        : [...w.compare, key],
+    }));
+    setCompareMessage(
+      ok
+        ? '비교 선택을 저장했습니다.'
+        : '브라우저 저장 공간을 사용할 수 없습니다.',
+    );
   };
   return (
     <>
@@ -597,15 +649,13 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
             onClick={() => compare(data.profile.summary)}
           >
             현재 집단{' '}
-            {c.compare.some((x) => conditionKey(x) === conditionKey(c.ids))
-              ? '비교에서 제거'
-              : '비교에 담기'}
+            {selected(data.profile.summary) ? '비교에서 제거' : '비교에 담기'}
           </button>
         </Module>
       </div>
       <Module
         title="기회 후보 비교"
-        note="최대 3개 집단 · 주소에 비교 선택을 유지합니다"
+        note="최대 3개 집단 · 화면을 이동해도 비교 선택과 지출 범위 유지"
       >
         <div className="candidate-tabs">
           {groups.map((g) => (
@@ -629,7 +679,7 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
                 <th>연간 금액 / 명</th>
                 <th>소비 관여</th>
                 <th>산업 연결</th>
-                <th>표본 / 입력</th>
+                <th>원 서술 n / 계산 입력</th>
                 <th>비교</th>
               </tr>
             </thead>
@@ -645,6 +695,28 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
                 >
                   <td>
                     <Entry entity={s.entity} context={c} />
+                    {conditionKey(s.ids) !== conditionKey(c.ids) &&
+                      c.ids.length > 0 && (
+                        <span className="candidate-reason">
+                          현재 인구의{' '}
+                          {pct(
+                            data.profile.summary.estimate.population
+                              ? s.estimate.population /
+                                  data.profile.summary.estimate.population
+                              : 0,
+                          )}{' '}
+                          · 점수 변화{' '}
+                          {(s.metrics.opportunity ?? 0) -
+                            (data.profile.summary.metrics.opportunity ?? 0) >=
+                          0
+                            ? '+'
+                            : ''}
+                          {(s.metrics.opportunity ?? 0) -
+                            (data.profile.summary.metrics.opportunity ??
+                              0)}{' '}
+                          · 조건 추가에 따른 상대 신호 변화
+                        </span>
+                      )}
                     {conditionKey(s.ids) === conditionKey(c.ids) && (
                       <small>현재 선택</small>
                     )}
@@ -666,11 +738,7 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
                       onClick={() => compare(s)}
                       aria-label={`${s.entity.label} 비교 선택`}
                     >
-                      {c.compare.some(
-                        (ids) => conditionKey(ids) === conditionKey(s.ids),
-                      )
-                        ? '✓ 선택됨'
-                        : '+ 비교'}
+                      {selected(s) ? '✓ 선택됨' : '+ 비교'}
                     </button>
                   </td>
                 </tr>
@@ -684,41 +752,17 @@ export function Opportunity({ data }: { data: AtlasPayload }) {
           )}
         </div>
       </Module>
-      {data.comparison.length > 0 && (
-        <Module title="선택한 집단 나란히 비교">
-          <div className="comparison-grid">
-            {data.comparison.map((s) => (
-              <div key={conditionKey(s.ids)}>
-                <Entry entity={s.entity} context={c} />
-                <strong>{shortPopulation(s.estimate.population)}명</strong>
-                <span>
-                  범위 {shortPopulation(s.estimate.low)}–
-                  {shortPopulation(s.estimate.high)}명
-                </span>
-                <dl>
-                  <dt>연간 소비액</dt>
-                  <dd>{formatKRW(s.marketValue?.base, false)}</dd>
-                  <dt>관련 인구당 지출</dt>
-                  <dd>{formatKRW(s.marketValue?.annualSpendPerUnit, false)}</dd>
-                  <dt>지출 범위</dt>
-                  <dd>{s.marketValue?.scopeLabel}</dd>
-                  <dt>Opportunity</dt>
-                  <dd>{s.metrics.opportunity}</dd>
-                  <dt>소비 관여</dt>
-                  <dd>{s.metrics.consumptionIntensity}</dd>
-                  <dt>평균과의 차이</dt>
-                  <dd>{s.metrics.distinctivenessScore}</dd>
-                  <dt>연결 산업</dt>
-                  <dd>{s.metrics.crossIndustryBreadth}개</dd>
-                  <dt>데이터 입력</dt>
-                  <dd>{s.metrics.completeness}%</dd>
-                </dl>
-                <button onClick={() => compare(s)}>비교에서 제거</button>
-              </div>
-            ))}
-          </div>
-        </Module>
-      )}
+      <div className="opportunity-workspace-link">
+        <output>{compareMessage}</output>
+        <Link href="/atlas/compare">
+          선택한 {workspace.compare.length}개 세그먼트 나란히 비교 ↗
+        </Link>
+      </div>
+      <p className="inline-caveat">
+        계산 입력 비율은 점수에 사용 가능한 가중치의 비중입니다. 데이터 정확도나
+        실제 구매 가능성이 아닙니다. 유사 후보는 중복 인구를 가지며 합산할 수
+        없습니다.
+      </p>
       {data.money && <MoneyBasis value={data.money.summary} />}
       <Module title="점수 해석과 추정 근거">
         <Basis profile={data.profile} />

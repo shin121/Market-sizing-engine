@@ -25,7 +25,12 @@ export const availableSpendMarkets = [
   ]),
 ];
 export function inferSpendScope(ids: string[]) {
-  return ids.find((id) => registry.get(id)?.kind === 'market') ?? 'covered';
+  return (
+    ids.find((id) => registry.get(id)?.kind === 'market') ??
+    ids.map((id) => registry.get(id)).find((e) => e?.kind === 'interest')
+      ?.parent ??
+    'covered'
+  );
 }
 function blank(ids: string[], scope: string): MarketValueEstimate {
   const market = registry.get(scope),
