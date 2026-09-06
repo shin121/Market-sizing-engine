@@ -8,6 +8,10 @@
 
 초기 Vercel production 배포는 `READY`를 확인했다. GitHub 구현 commit `fe7160aea5d8bfbacd2c8f8233bc1fc67afc1048`에서 빌드했으며, 운영 API도 HTTP 200으로 52개 유형·20개 산업·금액 객체를 반환했다. 이후 `main` push는 연결된 Vercel 프로젝트에서 자동 배포된다.
 
+## v0.4 운영 검증
+
+`48ce58d`의 GitHub main 자동 production 배포가 READY였고 운영 주소의 29단계 브라우저 여정, 오류 0을 확인했다. [운영 검증 기록](../data/revision-production-qa.json). 후속 범위 보완은 각 집단의 High를 공식 전국 항목 총액으로 제한하며 전국 기준액 자체는 고정한다.
+
 ## 대상과 실행 방식
 
 - GitHub: [shin121/Market-sizing-engine](https://github.com/shin121/Market-sizing-engine), `main`의 `atlas/`.

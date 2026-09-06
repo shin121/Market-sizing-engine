@@ -537,3 +537,5 @@ The checked items above include historical implementation milestones. Current ve
 - All 52 archetypes and 20 markets audited; 29 age × archetype cells change rank between population and spend. Example: 40s × digital delivery population rank 18 → spend rank 8. These are model checks, not universal external validity certification.
 - Required root checks rerun with `PYTHONPATH=src`: pytest 45 passed / 12 skipped / 15 failed / 10 errors; CLI validate blocked by missing `data/processed/market_engine.duckdb`. Original source files under `data/raw` are also absent. No original Python or `web/` implementation changed.
 - Release through the existing `shin121/Market-sizing-engine` main branch and Vercel `nemotron-market-atlas` project (root `atlas`, Node 24).
+
+- Vercel production `48ce58d` / `dpl_H51toDKePTXi8x5MxGynvXbbqmNH`: READY, live 29-step browser journey passed, error/fatal logs empty. Follow-up range patch keeps national published totals fixed and caps segment High per component; 39 tests, lint/typecheck/build and equal-range browser rendering passed again.

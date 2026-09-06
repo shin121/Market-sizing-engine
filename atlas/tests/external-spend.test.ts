@@ -37,6 +37,8 @@ void test('all new scopes preserve national pools across disjoint age partitions
   for (const scope of Object.keys(external.scopes)) {
     const whole = estimateMarketValue([], scope);
     close(estimateMarketValue([scope], scope).base!, whole.base!);
+    close(whole.low!, whole.base!);
+    close(whole.high!, whole.base!);
     const ages = [20, 30, 40, 50, 60, 70].map((age) =>
       estimateMarketValue(['age_' + age], scope),
     );
@@ -84,6 +86,7 @@ void test('all actual type and market estimates have ordered ranges, conserving 
       const value = estimateMarketValue([type.id], market.id);
       assert.ok(value.base! >= 0 && value.base! <= total + 1);
       assert.ok(value.low! <= value.base! && value.base! <= value.high!);
+      assert.ok(value.high! <= total + 1);
       assert.ok(
         value.relevantPopulation! <= measure([type.id]).population + 0.01,
       );

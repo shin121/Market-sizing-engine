@@ -51,6 +51,7 @@ function calculate(ids: string[], scope: string) {
   const national = breakdown.reduce((s, v) => s + v.nationalValue, 0);
   const density = relevantPopulation ? base / relevantPopulation : null;
   return {
+    isNational: conditions.length === 0,
     base,
     national,
     density,

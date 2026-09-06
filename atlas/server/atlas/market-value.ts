@@ -152,9 +152,23 @@ export function estimateMarketValue(
     const base = external.base + (music?.base ?? 0);
     const national = external.national + (allMusic?.base ?? 0);
     const low =
-      external.base * externalAllocation.lowMultiplier + (music?.low ?? 0);
+      (external.isNational
+        ? external.base
+        : external.base * externalAllocation.lowMultiplier) + (music?.low ?? 0);
+    // A selected group's allocation cannot exceed a known national component.
+    // National published anchors are fixed; only their segment allocation varies.
     const high =
-      external.base * externalAllocation.highMultiplier + (music?.high ?? 0);
+      (external.isNational
+        ? external.base
+        : external.breakdown.reduce(
+            (sum, row) =>
+              sum +
+              Math.min(
+                row.nationalValue,
+                row.annualValue * externalAllocation.highMultiplier,
+              ),
+            0,
+          )) + (music?.high ?? 0);
     const density = relevantPopulation ? base / relevantPopulation : null;
     const result: MarketValueEstimate = {
       ...empty,
