@@ -75,15 +75,25 @@ money-vs-population rank inversion and 390px overflow were checked in real UI.
 29 of 51 previous interest links are mapped. 22 old interests, old commercial
 archetype IDs and many joint filters still need sourced mappings. Richer axes,
 industry-specific lower archetypes and monetary coverage need further work. Existing
-saved notes are preserved. Production has not migrated. No goal completion is claimed.
+saved notes are preserved. The verified migration was published to production at
+the release checkpoint below. No goal completion is claimed.
 See `RESEARCH_DEMAND_EVIDENCE.md` and `data/research-demand-sanity.json`.
 
-The next release checkpoint publishes the verified external-model migration and
+The release checkpoint publishes the verified external-model migration and
 consumer-problem increment before further coverage expansion. This directly fixes
 the production skin/beauty 1.90m misinterpretation. Remaining unsupported conditions
 stay explicit rather than reverting to synthetic prevalence. GitHub and Vercel
 publication were authorized earlier; verify the production alias and old beauty
 link after the release. This release is not completion of the broader goal.
+
+Release `b903e4f` reached GitHub main and Vercel production on 2026-09-06 KST,
+deployment `dpl_DkApqbw7SNysnX2Y7GTBGZDymSWP` (Ready, 34s remote build).
+The production alias and legacy beauty URL were verified in Chrome; skin care
+16.60m and online cosmetics 12.99m are separate, explicitly scoped populations.
+Beauty advertising problems → age 30 → Matrix → Opportunity preserved the 0.28m
+segment. Browser error logs were empty; the new deployment error-log query returned
+no entries. The follow-up label aligns the market title with its clothing branch:
+`뷰티·패션`, while the skin-care profile remains narrowly defined.
 
 KCA 2025 consumer-life evidence adds ten product-problem parents and thirty
 specific problem subtypes with corrected denominators, age/sex models and explicit

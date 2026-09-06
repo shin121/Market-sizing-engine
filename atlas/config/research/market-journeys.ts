@@ -240,7 +240,7 @@ const experienceMarkets: ResearchMarket[] = [
   },
   {
     id: 'beauty',
-    label: '뷰티·관리',
+    label: '뷰티·패션',
     unit: 'person',
     scope: '온라인 화장품 구매 또는 미용 활동 경험. 전체 화장품 사용률은 아님',
     branches: [

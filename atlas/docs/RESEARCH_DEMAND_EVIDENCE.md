@@ -1,5 +1,21 @@
 # Research demand evidence — working revision, 2026-09-06
 
+Release checkpoint: `b903e4f` was pushed to GitHub main and deployed to the public
+Vercel alias `https://nemotron-market-atlas.vercel.app` (Ready, 34s build).
+Deployment: `https://nemotron-market-atlas-asihetqi7-woochul-shins-projects.vercel.app`.
+The earlier local-only status below records the development chronology. Current
+production uses `research-demand-2026-09-06-v3`; broader coverage work is ongoing.
+Chrome verified the old skin/beauty URL redirects to the care-experience profile;
+online cosmetics is a separate profile. Production API populations reconcile with
+local output: 16,601,061 care-experience adults; 12,993,648.35 online-cosmetics buyers;
+280,357.09 adults in their thirties with beauty advertising problems. These exact
+values are QA diagnostics; the UI rounds and labels modeled estimates. All three
+return missing monetary anchors, preventing old fashion-spend inheritance. The
+problem subtype → age filter → Matrix → Opportunity flow was verified on production.
+No browser errors were logged, and the deployment error-log scan had no entries.
+The follow-up market label is `뷰티·패션`, matching the newly connected clothing
+problem branch without relabeling the narrower skin-care cohort as all cosmetics.
+
 This is an in-progress replacement of the population model. It is served locally
 at `/atlas/research/[market]` and now powers the local primary `/atlas`, Matrix,
 Opportunity, comparison, source and search/API routes. Production still uses its

@@ -576,3 +576,11 @@ No production push/deployment or full goal completion at this working checkpoint
   duckdb/fastapi/psycopg; CLI validate cannot import duckdb. Original Python code and
   ignored database inputs are unchanged. Final Atlas verification is logged under
   `atlas/docs/RESEARCH_DEMAND_EVIDENCE.md`.
+
+- Publication checkpoint: external-demand migration and KCA industry problems are
+  now on GitHub main (`b903e4f`) and Vercel production, model
+  `research-demand-2026-09-06-v3`. Old beauty links redirect to care-experience
+  populations; production browser/API and Matrix→Opportunity checks passed.
+  This resolves the misleading 1.90m cosmetics interpretation in the public app.
+  Broader goal remains active: missing total-use/spend anchors, generic lower
+  branches and unsupported legacy conditions still require research and integration.
