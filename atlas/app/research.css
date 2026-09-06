@@ -965,6 +965,72 @@
   font-size: 9px;
   letter-spacing: -0.1px;
 }
+.research-trend {
+  border-top: 1px solid #edf0f4;
+  padding-top: 12px;
+  margin-top: 12px !important;
+}
+.research-trend h3 {
+  display: flex;
+  justify-content: space-between;
+}
+.research-trend h3 span {
+  color: #9aa5b4;
+}
+.research-trend-head {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-top: 5px;
+}
+.research-trend-head strong {
+  color: #087c6d;
+  font-size: 19px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.research-trend-head span {
+  color: #8d99aa;
+  font-size: 9px;
+}
+.research-trend-bars {
+  display: flex;
+  align-items: end;
+  gap: 18px;
+  height: 98px;
+  border-bottom: 1px solid #e8edf2;
+  padding: 10px 12px 0;
+}
+.research-trend-bars > div {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+  gap: 4px;
+}
+.research-trend-bars b {
+  color: #62768a;
+  font-size: 8px;
+  white-space: nowrap;
+}
+.research-trend-bars i {
+  display: block;
+  width: 32px;
+  min-height: 8px;
+  background: linear-gradient(180deg, #48bea9, #087c6d);
+  border-radius: 4px 4px 0 0;
+}
+.research-trend-bars small {
+  color: #98a4b3;
+  font-size: 8px;
+}
+.research-trend > p {
+  color: #98a4b3;
+  font-size: 8px;
+  margin: 8px 0 0;
+}
 .research-save-button {
   display: flex;
   justify-content: center;

@@ -684,6 +684,45 @@ export function ResearchFlow({
                 </>
               )}
             </section>
+            {selected.marketValue.nationalTrend &&
+              selected.marketValue.nationalTrend.length >= 2 && (
+                <section className="research-trend">
+                  <h3>
+                    기준 시장 추이 <span>전국 공표 거래액</span>
+                  </h3>
+                  <div className="research-trend-head">
+                    <strong>
+                      {(() => {
+                        const trend = selected.marketValue.nationalTrend!;
+                        const previous = trend[trend.length - 2].value;
+                        const latest = trend[trend.length - 1].value;
+                        return previous > 0
+                          ? `${latest >= previous ? '+' : ''}${(((latest - previous) / previous) * 100).toFixed(1)}%`
+                          : '—';
+                      })()}
+                    </strong>
+                    <span>최근 기준연도 변화</span>
+                  </div>
+                  <div className="research-trend-bars">
+                    {selected.marketValue.nationalTrend.map((point) => {
+                      const max = Math.max(
+                        ...selected.marketValue.nationalTrend!.map(
+                          (item) => item.value,
+                        ),
+                        1,
+                      );
+                      return (
+                        <div key={point.year}>
+                          <b>{formatKRW(point.value)}</b>
+                          <i style={{ height: `${Math.max(8, (point.value / max) * 72)}px` }} />
+                          <small>{point.year}</small>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <p>전국 카테고리 기준액의 변화이며 선택 집단의 성장률이 아닙니다.</p>
+                </section>
+              )}
             <section>
               <h3>
                 {selected.householdProfile
