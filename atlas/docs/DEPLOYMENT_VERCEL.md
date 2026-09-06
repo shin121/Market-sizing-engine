@@ -1,5 +1,11 @@
 # GitHub / Vercel 배포
 
+[운영 Atlas](https://nemotron-market-atlas.vercel.app/atlas) · [Money Lens](https://nemotron-market-atlas.vercel.app/atlas?metric=marketValue)
+
+[운영 환경 25단계 탐색 검증](../data/vercel-production-verification.json)도 통과했으며 검증 중 error/fatal runtime 로그가 없었다.
+
+초기 Vercel production 배포는 `READY`를 확인했다. GitHub 구현 commit `fe7160aea5d8bfbacd2c8f8233bc1fc67afc1048`에서 빌드했으며, 운영 API도 HTTP 200으로 52개 유형·20개 산업·금액 객체를 반환했다. 이후 `main` push는 연결된 Vercel 프로젝트에서 자동 배포된다.
+
 ## 대상과 실행 방식
 
 - GitHub: [shin121/Market-sizing-engine](https://github.com/shin121/Market-sizing-engine), `main`의 `atlas/`.

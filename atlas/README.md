@@ -1,3 +1,5 @@
+[Vercel에서 최신 Market Atlas 열기](https://nemotron-market-atlas.vercel.app/atlas) · [인구 / 시장 규모 ₩ 보기](https://nemotron-market-atlas.vercel.app/atlas?metric=marketValue)
+
 # Nemotron Market Atlas
 
 한국 소비자 전체에서 **소비 유형 → 산업 → 다른 유형 → 구체적인 집단 → 기회 후보**를 탐색하는 워크벤치입니다. 100만 합성 페르소나 전체를 다시 분석해 **52개 중복 소속 가능한 상업적 유형**, 20개 시장, 103개 행동·욕구·채널·관심 신호를 만들었습니다.

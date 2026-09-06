@@ -1,3 +1,5 @@
+[Vercel에서 최신 Market Atlas 열기](https://nemotron-market-atlas.vercel.app/atlas) · [인구 / 시장 규모 ₩ 보기](https://nemotron-market-atlas.vercel.app/atlas?metric=marketValue)
+
 > 최신 **Nemotron Market Atlas v0.3**는 [`atlas/`](atlas/README.md)에 있습니다. 인구/연간 소비액 Lens와 Vercel 독립 배포를 지원합니다. 기존 엔진과 `web/`는 별도로 유지합니다.
 
 # Korea Market Sizing Engine
