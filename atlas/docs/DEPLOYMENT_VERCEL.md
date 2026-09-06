@@ -8,8 +8,8 @@
 
 ## 최신 운영 검증
 
-`cc2fc5c`가 GitHub `main`에 반영됐고 Vercel production 배포
-`dpl_BCCH8Rqb7QUZxm3gGzijg7p8XXvw`가 `READY` 상태다. 음악 감상 프로필은
+`4e811bf`가 GitHub `main`에 반영됐고 Vercel production 배포
+`dpl_7MvRWQdob89jV8qYieyfb69pDynP`가 `READY` 상태다. 음악 감상 프로필은
 전체 감상 인구와 분리된 약 1,170만 명의 지출 관련 유료 참여자, 약 1.1조원
 연간 지출 풀, 약 9.2만원/명·년을 표시한다. 피부·헤어·뷰티 관리 프로필은
 약 1,660만 명의 미용 활동 cohort로 유지하며 화장품 전체 사용자나 금액으로
