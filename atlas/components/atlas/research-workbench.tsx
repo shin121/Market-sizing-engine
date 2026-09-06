@@ -12,6 +12,7 @@ import {
   Database,
   Search,
   Bookmark,
+  Layers3,
 } from 'lucide-react';
 import { researchHref } from '@/lib/research-explorer';
 import {
@@ -26,6 +27,7 @@ import {
 } from '@/lib/research-workspace';
 import { formatKRW, unitLabel } from '@/lib/market-value';
 import { ResearchIdeas } from './research-ideas';
+import { ResearchProfileDashboard } from './research-profile';
 
 const metricLabels: Record<ResearchMetric, string> = {
   population: '인구·가구 규모',
@@ -35,6 +37,7 @@ const metricLabels: Record<ResearchMetric, string> = {
 };
 const titles: Record<ResearchView, string> = {
   overview: '어떤 시장의 수요를 발견할까요?',
+  profile: '선택한 세그먼트의 시장 프로필',
   matrix: '인구와 돈은 다른 곳에 모입니다',
   opportunity: '다음에 검증할 기회를 고르세요',
   compare: '세그먼트를 나란히 비교하세요',
@@ -248,7 +251,26 @@ export function ResearchWorkbench({
           <span>ϟ</span>Market <b>Atlas</b>
         </Link>
         <small>DISCOVERY WORKSPACE</small>
-        {navigation.map(([view, label, Icon]) => (
+        {navigation.slice(0, 1).map(([view, label, Icon]) => (
+          <Link
+            key={view}
+            className={c.view === view ? 'active' : ''}
+            href={researchWorkspaceHref(view, c)}
+          >
+            <Icon size={17} />
+            {label}
+          </Link>
+        ))}
+        {c.market && (
+          <Link
+            className={c.view === 'profile' ? 'active' : ''}
+            href={researchWorkspaceHref('profile', c)}
+          >
+            <Layers3 size={17} />
+            세그먼트 프로필
+          </Link>
+        )}
+        {navigation.slice(1).map(([view, label, Icon]) => (
           <Link
             key={view}
             className={c.view === view ? 'active' : ''}
@@ -514,6 +536,7 @@ export function ResearchWorkbench({
               </>
             )}
             {c.view === 'matrix' && <MatrixPanel data={data} />}
+            {c.view === 'profile' && <ResearchProfileDashboard data={data} />}
             {c.view === 'compare' && <ComparisonPanel data={data} />}
             {c.view === 'ideas' && (
               <section className="rw-ideas-home">

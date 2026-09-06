@@ -48,6 +48,7 @@ export const legacyResearchTargets: Record<string, [string, string]> = {
 };
 const viewNames = [
   'overview',
+  'profile',
   'matrix',
   'opportunity',
   'compare',

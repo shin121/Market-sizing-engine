@@ -2,6 +2,7 @@ import type { DemandUnit } from './demand';
 import type { ResearchProfile } from './research-explorer';
 export type ResearchView =
   | 'overview'
+  | 'profile'
   | 'matrix'
   | 'opportunity'
   | 'compare'

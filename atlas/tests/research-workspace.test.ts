@@ -170,3 +170,26 @@ void test('comparison URL round-trips market, lower subtype and age and uses one
   assert.equal(p.comparison[1].opportunity.economicValue, null);
   assert.ok(p.comparison.every((c) => c.opportunity.completeness < 0.3));
 });
+
+void test('segment profile view resolves the selected branch and keeps lower types branch-local', () => {
+  const resolved = resolveResearchContext(['profile'], {
+    market: 'travel',
+    node: 'nature',
+    metric: 'marketValue',
+  });
+  assert.deepEqual(resolved.unresolved, []);
+  assert.equal(resolved.context.view, 'profile');
+  const workspace = researchWorkspace(resolved.context);
+  assert.equal(workspace.selected?.node, 'nature');
+  assert.deepEqual(
+    workspace.candidates
+      .filter(
+        (candidate) =>
+          candidate.market === 'travel' &&
+          candidate.level === 'archetype' &&
+          candidate.parentLabel === workspace.selected?.label,
+      )
+      .map((candidate) => candidate.node),
+    ['nature~camp', 'nature~drive', 'nature~gear'],
+  );
+});

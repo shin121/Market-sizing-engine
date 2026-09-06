@@ -219,6 +219,17 @@ export function ResearchFlow({
           <div className="research-header-actions">
             <ResearchIdeas />
             <Link
+              href={researchWorkspaceHref('profile', {
+                market: data.market.id,
+                node: selected.id,
+                age,
+                compare,
+                metric,
+              })}
+            >
+              세그먼트 프로필
+            </Link>
+            <Link
               href={researchWorkspaceHref('compare', {
                 metric,
                 compare: [
