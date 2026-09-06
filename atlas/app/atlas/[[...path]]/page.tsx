@@ -1,6 +1,11 @@
 import Link from 'next/link';
-import { analyzeAtlas, resolveContext } from '@/server/atlas/engine';
-import { AtlasWorkbench } from '@/components/atlas/workbench';
+import { redirect } from 'next/navigation';
+import {
+  resolveResearchContext,
+  researchWorkspace,
+} from '@/server/atlas/research-workspace';
+import { ResearchWorkbench } from '@/components/atlas/research-workbench';
+import { researchHref } from '@/lib/research-explorer';
 export default async function AtlasPage({
   params,
   searchParams,
@@ -10,9 +15,9 @@ export default async function AtlasPage({
 }) {
   const { path = [] } = await params,
     query = await searchParams;
-  let context;
+  let resolved;
   try {
-    context = resolveContext(path, query);
+    resolved = resolveResearchContext(path, query);
   } catch {
     return (
       <main className="route-error">
@@ -24,5 +29,25 @@ export default async function AtlasPage({
       </main>
     );
   }
-  return <AtlasWorkbench data={analyzeAtlas(context)} />;
+  if (
+    !resolved.unresolved.length &&
+    resolved.context.market &&
+    (path.length === 2 || path[0] === 'relationship')
+  ) {
+    redirect(
+      researchHref(
+        resolved.context.market,
+        resolved.context.node || '_root',
+        resolved.context.age,
+        resolved.context.compare,
+        resolved.context.metric,
+      ),
+    );
+  }
+  return (
+    <ResearchWorkbench
+      key={JSON.stringify(resolved.context)}
+      data={researchWorkspace(resolved.context, resolved.unresolved)}
+    />
+  );
 }

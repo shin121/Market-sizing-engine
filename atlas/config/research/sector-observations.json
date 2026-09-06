@@ -1,0 +1,29 @@
+{
+  "version": "2026-09-06-v1",
+  "census": {
+    "sourceId": "CENSUS-2024",
+    "referencePeriod": "2024-11-01",
+    "generalHouseholds": 22294419,
+    "children18Households": 4517000,
+    "children5Households": 1284000,
+    "elder65Households": 7137000,
+    "elderOnlyHouseholds": 4007000,
+    "elderAloneHouseholds": 2289000,
+    "locator": "표68 인쇄 p.89/PDF p.98; 표71 p.92/PDF p.101; 일반가구 원수 p.121/PDF p.130",
+    "sha256": "c682415c76405d6c8ee895f7cd963ee52b837119a9f171d74ec0512c2ebd40ea",
+    "scope": "18세 이하/5세 이하 자녀가 있는 일반가구, 65세 이상 가구원 동거. 서비스 이용·돌봄 필요·지불 의향은 조사하지 않은 가족 상황. 자녀 수에는 기준 연령 초과 형제자매도 포함되므로 영유아 수로 해석하지 않음."
+  },
+  "banking": {
+    "sourceId": "NIA-2024",
+    "referencePeriod": "2024, 최근 1년 이용",
+    "denominator": "만12세 이상 최근 1개월 인터넷 이용자",
+    "locator": "표128 인쇄 p.273/PDF p.283, 표130 p.277/PDF p.287",
+    "sha256": "7e4692b40d89710da6cde9710e81184b52025985849429ab0b42e0a7baa5675f",
+    "ageMin": [20,30,40,50,60,70],
+    "male": [0.931,0.950,0.945,0.913,0.778,0.369],
+    "female": [0.939,0.940,0.937,0.900,0.704,0.269],
+    "mobileMale": [0.931,0.949,0.944,0.912,0.777,0.368],
+    "mobileFemale": [0.937,0.939,0.936,0.900,0.703,0.269],
+    "scope": "계좌 이용 채널. 주식 보유·저축 상품 구입·유료 금융서비스 이용률과 별개. 나이×성별은 공표된 교차율. 모바일은 인터넷뱅킹의 부분집합으로 조건부율을 산출."
+  }
+}

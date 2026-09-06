@@ -44,7 +44,7 @@ export interface MarketValueEstimate {
   scopeId: string;
   scopeLabel: string;
   categoryPopulation: number;
-  categoryPopulationUnit: 'person';
+  categoryPopulationUnit: PopulationUnit;
   relevantPopulation: number | null;
   annualSpendPerUnit: number | null;
   spendPerUnitRange: MoneyRange | null;

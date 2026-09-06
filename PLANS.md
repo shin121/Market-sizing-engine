@@ -539,3 +539,24 @@ The checked items above include historical implementation milestones. Current ve
 - Release through the existing `shin121/Market-sizing-engine` main branch and Vercel `nemotron-market-atlas` project (root `atlas`, Node 24).
 
 - Vercel production `48ce58d` / `dpl_H51toDKePTXi8x5MxGynvXbbqmNH`: READY, live 29-step browser journey passed, error/fatal logs empty. Follow-up range patch keeps national published totals fixed and caps segment High per component; 39 tests, lint/typecheck/build and equal-range browser rendering passed again.
+
+## 2026-09-06 — Research demand replacement, local work in progress
+
+- Independent external estimator and reference-style interactive market → experience/need → lower behavior flow added at `/atlas/research/[market]`. Official population frames and conditional external rates replace synthetic narrative prevalence in this new route.
+- 20 scoped markets / 56 branches / 139 external factors; four unused rare activity rates remain unavailable. KREI food/household frequency, purpose, channel, demographic margins and spend tables, Census family groups, NIA age×sex banking rates, and MCST leisure activity rates are recorded with source/period/denominator/hash.
+- Beauty care experience is about 16.60m adults; online cosmetics shoppers about 12.99m. Neither is total cosmetics use. Old 1.90m lexical population is not reused. Household and personal spending are separated; delivery anchors cannot price mixed HMR unions, and per-animal pet costs remain unconverted.
+- Atlas 62 tests passed, lint/typecheck passed, production Webpack build passed. Default Turbopack CSS worker fails internal port bind (EPERM) in this environment, including escalation retry. Actual browser opened all 20 market journeys across two phases; saved idea roundtrip, unsupported age and 390px overflow checks passed, no error logs returned.
+- Required root commands attempted: system Python pytest 14 collection errors due missing duckdb/fastapi/psycopg; bundled Python lacks pytest/duckdb; CLI validate cannot import duckdb. Original ignored database inputs remain absent. No Python code was changed.
+- This is NOT completion of the active goal. The old primary Atlas, Matrix/Opportunity/search/comparison/ideas and deployed production still use prior calculations. Primary migration, all-interest completeness, further category money/profile anchors and final GitHub/Vercel release remain outstanding. See `atlas/docs/RESEARCH_DEMAND_EVIDENCE.md` and `atlas/docs/RESEARCH_DEMAND_OS_PLAN.md`.
+
+
+### 2026-09-06 — External demand primary workspace (goal remains in progress)
+
+Local Atlas map, Matrix, Opportunity, comparison, source and search/profile/analysis
+API routes now share the external model (226 profiles, 20 roots / 56 branches /
+150 lower scenarios). Fixed root/branch ID collision, household age rejection and
+cross-view URL context. 29/51 legacy interest scopes resolve; unmapped conditions
+remain explicit. Old idea notes are preserved. 68 Atlas tests, lint/typecheck and
+Webpack build passed; primary UI/API, money rank inversion and mobile width checked.
+Root Python checks retain the previously documented missing-dependency failures.
+No production push/deployment or full goal completion at this working checkpoint.

@@ -1,0 +1,94 @@
+{
+  "sourceId": "CENSUS-2024",
+  "referencePeriod": "2024-11-01",
+  "unit": "person",
+  "scope": "전 연령 지역 인구 비중; 20세 이상 분포의 전이 proxy",
+  "locator": "2024 Population and Housing Census appendix table 1, PDF p.113 (printed p.104)",
+  "province_rows": [
+    {
+      "code": "11",
+      "name_ko": "서울특별시",
+      "person": 9335444
+    },
+    {
+      "code": "26",
+      "name_ko": "부산광역시",
+      "person": 3257256
+    },
+    {
+      "code": "27",
+      "name_ko": "대구광역시",
+      "person": 2369335
+    },
+    {
+      "code": "28",
+      "name_ko": "인천광역시",
+      "person": 3058033
+    },
+    {
+      "code": "29",
+      "name_ko": "광주광역시",
+      "person": 1444171
+    },
+    {
+      "code": "30",
+      "name_ko": "대전광역시",
+      "person": 1467093
+    },
+    {
+      "code": "31",
+      "name_ko": "울산광역시",
+      "person": 1106895
+    },
+    {
+      "code": "36",
+      "name_ko": "세종특별자치시",
+      "person": 390156
+    },
+    {
+      "code": "41",
+      "name_ko": "경기도",
+      "person": 13914479
+    },
+    {
+      "code": "51",
+      "name_ko": "강원특별자치도",
+      "person": 1522881
+    },
+    {
+      "code": "43",
+      "name_ko": "충청북도",
+      "person": 1646328
+    },
+    {
+      "code": "44",
+      "name_ko": "충청남도",
+      "person": 2238243
+    },
+    {
+      "code": "52",
+      "name_ko": "전북특별자치도",
+      "person": 1758836
+    },
+    {
+      "code": "46",
+      "name_ko": "전라남도",
+      "person": 1778338
+    },
+    {
+      "code": "47",
+      "name_ko": "경상북도",
+      "person": 2578999
+    },
+    {
+      "code": "48",
+      "name_ko": "경상남도",
+      "person": 3264243
+    },
+    {
+      "code": "50",
+      "name_ko": "제주특별자치도",
+      "person": 674817
+    }
+  ]
+}

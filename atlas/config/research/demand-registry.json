@@ -1,0 +1,1192 @@
+{
+  "version": "research-demand-2026-09-06-v3",
+  "status": "local_research_explorer_in_progress",
+  "rangePolicy": "All Low/High values are explicit model sensitivity assumptions, not source-provided confidence intervals. Point observations remain separately recorded. Unsupported factors do not fall back to synthetic prevalence.",
+  "sources": [
+    {
+      "id": "NIA-2024",
+      "title": "2024 인터넷이용실태조사 통계표",
+      "publisher": "한국지능정보사회진흥원",
+      "url": "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=27870&cbIdx=99870",
+      "referencePeriod": "2024",
+      "locator": "표13 인쇄 p.23/PDF p.33; 표109 인쇄 p.229/PDF p.239; 표113 p.237/PDF p.247; 표119 인쇄 p.249/PDF p.259",
+      "surveyUniverse": "인터넷 이용률: 해당 연령 인구; 쇼핑률: 인터넷 이용자; 품목별 구매율: 최근 1년 인터넷쇼핑 이용자",
+      "limitations": [
+        "서로 다른 조건부 분모를 순서대로 적용",
+        "70세 이상 세부 연령에는 같은 공표 비율 적용",
+        "원문 및 해시는 behavior-calibration.json에 보존"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "SPORT-2025",
+      "title": "2025 국민생활체육조사",
+      "publisher": "문화체육관광부",
+      "url": "https://www.mcst.go.kr/site/s_policy/subPolicy/sportstour/sportstour29.jsp",
+      "referencePeriod": "2025",
+      "locator": "연령별 참여율 / 주 참여 종목 1+2+3순위 / 참여 이유",
+      "surveyUniverse": "만 10세 이상; 주 1회·1회 30분 이상 규칙적 활동",
+      "limitations": [
+        "Atlas에는 20세 이상 부분만 적용",
+        "종목과 목적의 교차표는 미확보",
+        "연령별 참여율과 성별 참여율은 별도 주변분포라 중복 곱하지 않음"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "KCC-OTT-2024",
+      "title": "2024 방송매체 이용행태조사 결과",
+      "publisher": "방송통신위원회",
+      "url": "https://www.kmcc.go.kr/user.do?boardId=1113&boardSeq=64951&mode=view&page=A05030000",
+      "referencePeriod": "2024",
+      "locator": "전체 및 연령별 OTT 이용률",
+      "surveyUniverse": "13세 이상 8,316명 / 5,645가구 방문면접",
+      "limitations": [
+        "OTT는 무료 동영상 이용을 포함",
+        "연령별 값의 성별 차이는 미확보"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "KISDI-OTT-2024",
+      "title": "2024년도 방송시장 경쟁상황 평가",
+      "publisher": "정보통신정책연구원",
+      "url": "https://www.kisdi.re.kr/report/fileView.do?arrMasterId=3934581&id=1863216&key=m2101113024973",
+      "referencePeriod": "2024",
+      "locator": "요약 p.58: 유료결제 비율 / 다중구독 / 지불금액",
+      "surveyUniverse": "이용률은 방송매체 이용행태조사; 요금변화는 별도 OTT 이용자 설문",
+      "limitations": [
+        "별도 조사 유료 이용자 요금 부담을 전체로 전이할 때 survey_transfer",
+        "평균 구독 개수 2.8을 사람 수로 곱하지 않음"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "KOCCA-GAME-2025",
+      "title": "2025 게임이용자 실태조사 발표",
+      "publisher": "한국콘텐츠진흥원",
+      "url": "https://sitehomebos.kocca.kr/kocca/koccanews/reportview.do?menuNo=204767&nttNo=1073",
+      "referencePeriod": "2025",
+      "locator": "최근 1년 게임 이용률 / 플랫폼별 이용 / 사이버폭력 경험",
+      "surveyUniverse": "만 10~69세; 이용자 본조사 10,000명",
+      "limitations": [
+        "10~69세 전체율을 20~69세에 적용하는 전이",
+        "70세 이상은 해당 추정 대상에서 제외",
+        "플랫폼 이용자는 중복됨"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "KEDI-LEARN-2025",
+      "title": "한국 성인의 평생학습 실태",
+      "publisher": "한국교육개발원 / e-나라지표",
+      "url": "https://www.index.go.kr/unity/potal/eNara/sub/showStblGams3.do?freq=Y&idx_cd=1555&period=N&stts_cd=155501",
+      "referencePeriod": "2025",
+      "locator": "전체 33.7 / 비형식 33.5 / 직업 14.5 / 취미여가스포츠 15.9",
+      "surveyUniverse": "만 25~79세 성인의 최근 1년 프로그램 참여",
+      "limitations": [
+        "비형식과 형식은 단순 합산 불가",
+        "20~24세와 80세 이상은 해당 추정 대상에서 제외"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "TOUR-2024",
+      "title": "2024 국민여행조사",
+      "publisher": "문화체육관광부 / 한국문화관광연구원",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1652",
+      "referencePeriod": "2024",
+      "locator": "국내여행 경험률 95.4%, 총량 해설",
+      "surveyUniverse": "15세 이상 국내여행 경험자 및 전체 인구",
+      "limitations": [
+        "국내여행 기준이며 해외여행 전체를 대신하지 않음",
+        "20세 이상 적용은 연령 전이",
+        "여행 횟수는 고유 여행자 수가 아님"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "MAFRA-PET-2025",
+      "title": "2025 반려동물 양육현황 조사",
+      "publisher": "농림축산식품부",
+      "url": "https://www.mafra.go.kr/bbs/home/792/576961/artclView.do",
+      "referencePeriod": "2025",
+      "locator": "국가승인 방문면접 조사: 양육가구 29.2 / 개 80.5 / 고양이 14.4",
+      "surveyUniverse": "전국 일반가구 3,000가구",
+      "limitations": [
+        "가구 비율을 성인 인구에 곱하지 않음",
+        "개와 고양이 가구는 중복 가능",
+        "2024 온라인 개인 조사와 시계열을 직접 연결하지 않음"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "CENSUS-2024",
+      "title": "2024 인구주택총조사 결과",
+      "publisher": "국가데이터처",
+      "url": "https://www.mods.go.kr/boardDownload.es?bid=203&list_no=437767&seq=3",
+      "referencePeriod": "2024-11-01",
+      "locator": "공식 20세 이상 연령·성별 인구 controls; 시도별 총인구 표1; 고령자가구 표68 p.89/PDF98; 자녀 동거가구 표71 p.92/PDF101; 일반가구 원수 p.121/PDF130",
+      "surveyUniverse": "인구는 대한민국 상주 인구의 20세 이상 부분; 가구는 일반가구(외국인가구·집단가구 제외)",
+      "limitations": [
+        "개인과 가구를 각각의 공식 분모로 산정하며 평균 가구원 수로 전환하지 않음",
+        "성인 연령별 인구 및 일부 가구 항목은 공표 반올림 값, 일반가구 분모는 22,294,419가구"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "OPEN-BEAUTY-F-2025",
+      "title": "뷰티 트렌드 리포트 2025",
+      "publisher": "오픈서베이",
+      "url": "https://blog.opensurvey.co.kr/article/beauty-2025-2/",
+      "referencePeriod": "2024-12-23/24",
+      "locator": "p.11 미용관리 / p.14-15 향수 / p.17 구매 채널",
+      "surveyUniverse": "만 15~59세 여성 1,000명",
+      "limitations": [
+        "전국 모든 성별·연령으로 직접 확대하지 않음",
+        "경험 여부와 최근 1년 구매를 구분",
+        "미용 관리 경험률은 화장품 이용률이 아님"
+      ],
+      "retrievedAt": "2026-09-06"
+    },
+    {
+      "id": "OPEN-BEAUTY-M-2025",
+      "title": "남성 뷰티 트렌드 리포트 2025",
+      "publisher": "오픈서베이",
+      "url": "https://blog.opensurvey.co.kr/article/mens-beauty-2025-2/",
+      "referencePeriod": "2025-05-27/30",
+      "locator": "향수 사용 70 / 피부미용 시술 경험 42 / 향후 의향 69",
+      "surveyUniverse": "전국 만 20~59세 남성 1,000명, 연령·지역 인구비례 할당",
+      "limitations": [
+        "향수 사용자를 스킨케어 이용자로 바꾸지 않음",
+        "평생 시술 경험은 연간 시술 수요가 아님"
+      ],
+      "retrievedAt": "2026-09-06"
+    }
+  ],
+  "factors": [
+    {
+      "id": "digital",
+      "label": "인터넷 이용",
+      "unit": "person",
+      "prerequisites": [],
+      "sourceIds": [
+        "NIA-2024"
+      ],
+      "definition": "월 1회 이상 인터넷을 이용하는 20세 이상 성인",
+      "observation": "연령·성별 인터넷 이용률",
+      "rates": [
+        {
+          "low": 0.975,
+          "base": 0.995,
+          "high": 1,
+          "ageMin": 20,
+          "ageMax": 29,
+          "sex": "male"
+        },
+        {
+          "low": 0.977,
+          "base": 0.997,
+          "high": 1,
+          "ageMin": 20,
+          "ageMax": 29,
+          "sex": "female"
+        },
+        {
+          "low": 0.976,
+          "base": 0.996,
+          "high": 1,
+          "ageMin": 30,
+          "ageMax": 39,
+          "sex": "male"
+        },
+        {
+          "low": 0.975,
+          "base": 0.995,
+          "high": 1,
+          "ageMin": 30,
+          "ageMax": 39,
+          "sex": "female"
+        },
+        {
+          "low": 0.9740000000000001,
+          "base": 0.9940000000000001,
+          "high": 1,
+          "ageMin": 40,
+          "ageMax": 49,
+          "sex": "male"
+        },
+        {
+          "low": 0.973,
+          "base": 0.993,
+          "high": 1,
+          "ageMin": 40,
+          "ageMax": 49,
+          "sex": "female"
+        },
+        {
+          "low": 0.968,
+          "base": 0.988,
+          "high": 1,
+          "ageMin": 50,
+          "ageMax": 59,
+          "sex": "male"
+        },
+        {
+          "low": 0.967,
+          "base": 0.987,
+          "high": 1,
+          "ageMin": 50,
+          "ageMax": 59,
+          "sex": "female"
+        },
+        {
+          "low": 0.9329999999999999,
+          "base": 0.953,
+          "high": 0.973,
+          "ageMin": 60,
+          "ageMax": 69,
+          "sex": "male"
+        },
+        {
+          "low": 0.94,
+          "base": 0.96,
+          "high": 0.98,
+          "ageMin": 60,
+          "ageMax": 69,
+          "sex": "female"
+        },
+        {
+          "low": 0.684,
+          "base": 0.7040000000000001,
+          "high": 0.7240000000000001,
+          "ageMin": 70,
+          "ageMax": 120,
+          "sex": "male"
+        },
+        {
+          "low": 0.6429999999999999,
+          "base": 0.6629999999999999,
+          "high": 0.6829999999999999,
+          "ageMin": 70,
+          "ageMax": 120,
+          "sex": "female"
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "commerce",
+      "label": "온라인 쇼핑",
+      "unit": "person",
+      "prerequisites": [
+        "digital"
+      ],
+      "sourceIds": [
+        "NIA-2024"
+      ],
+      "definition": "최근 1년 인터넷쇼핑 이용 성인",
+      "observation": "인터넷 이용자 중 연간 쇼핑률",
+      "rates": [
+        {
+          "low": 0.96,
+          "base": 1,
+          "high": 1,
+          "ageMin": 20,
+          "ageMax": 29,
+          "sex": "male"
+        },
+        {
+          "low": 0.96,
+          "base": 1,
+          "high": 1,
+          "ageMin": 20,
+          "ageMax": 29,
+          "sex": "female"
+        },
+        {
+          "low": 0.96,
+          "base": 1,
+          "high": 1,
+          "ageMin": 30,
+          "ageMax": 39,
+          "sex": "male"
+        },
+        {
+          "low": 0.9590000000000001,
+          "base": 0.9990000000000001,
+          "high": 1,
+          "ageMin": 30,
+          "ageMax": 39,
+          "sex": "female"
+        },
+        {
+          "low": 0.957,
+          "base": 0.997,
+          "high": 1,
+          "ageMin": 40,
+          "ageMax": 49,
+          "sex": "male"
+        },
+        {
+          "low": 0.956,
+          "base": 0.996,
+          "high": 1,
+          "ageMin": 40,
+          "ageMax": 49,
+          "sex": "female"
+        },
+        {
+          "low": 0.8359999999999999,
+          "base": 0.8759999999999999,
+          "high": 0.9159999999999999,
+          "ageMin": 50,
+          "ageMax": 59,
+          "sex": "male"
+        },
+        {
+          "low": 0.817,
+          "base": 0.857,
+          "high": 0.897,
+          "ageMin": 50,
+          "ageMax": 59,
+          "sex": "female"
+        },
+        {
+          "low": 0.394,
+          "base": 0.434,
+          "high": 0.474,
+          "ageMin": 60,
+          "ageMax": 69,
+          "sex": "male"
+        },
+        {
+          "low": 0.445,
+          "base": 0.485,
+          "high": 0.525,
+          "ageMin": 60,
+          "ageMax": 69,
+          "sex": "female"
+        },
+        {
+          "low": 0.14600000000000002,
+          "base": 0.18600000000000003,
+          "high": 0.22600000000000003,
+          "ageMin": 70,
+          "ageMax": 120,
+          "sex": "male"
+        },
+        {
+          "low": 0.13999999999999999,
+          "base": 0.18,
+          "high": 0.22,
+          "ageMin": 70,
+          "ageMax": 120,
+          "sex": "female"
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "cosmetics_online_buyers",
+      "label": "온라인 화장품 구매",
+      "unit": "person",
+      "prerequisites": [
+        "commerce"
+      ],
+      "sourceIds": [
+        "NIA-2024"
+      ],
+      "definition": "최근 1년 온라인에서 화장품을 구매한 성인; 전체 화장품 사용자는 아님",
+      "observation": "표119 인터넷쇼핑 이용자 중 화장품 구매율",
+      "rates": [
+        {
+          "low": 0.21200000000000002,
+          "base": 0.272,
+          "high": 0.332,
+          "ageMin": 20,
+          "ageMax": 29,
+          "sex": "male"
+        },
+        {
+          "low": 0.179,
+          "base": 0.239,
+          "high": 0.299,
+          "ageMin": 30,
+          "ageMax": 39,
+          "sex": "male"
+        },
+        {
+          "low": 0.17300000000000001,
+          "base": 0.233,
+          "high": 0.29300000000000004,
+          "ageMin": 40,
+          "ageMax": 49,
+          "sex": "male"
+        },
+        {
+          "low": 0.138,
+          "base": 0.198,
+          "high": 0.258,
+          "ageMin": 50,
+          "ageMax": 59,
+          "sex": "male"
+        },
+        {
+          "low": 0.145,
+          "base": 0.205,
+          "high": 0.265,
+          "ageMin": 60,
+          "ageMax": 69,
+          "sex": "male"
+        },
+        {
+          "low": 0.089,
+          "base": 0.149,
+          "high": 0.209,
+          "ageMin": 70,
+          "ageMax": 120,
+          "sex": "male"
+        },
+        {
+          "low": 0.603,
+          "base": 0.6629999999999999,
+          "high": 0.7229999999999999,
+          "ageMin": 20,
+          "ageMax": 29,
+          "sex": "female"
+        },
+        {
+          "low": 0.6040000000000001,
+          "base": 0.664,
+          "high": 0.724,
+          "ageMin": 30,
+          "ageMax": 39,
+          "sex": "female"
+        },
+        {
+          "low": 0.532,
+          "base": 0.5920000000000001,
+          "high": 0.6520000000000001,
+          "ageMin": 40,
+          "ageMax": 49,
+          "sex": "female"
+        },
+        {
+          "low": 0.47000000000000003,
+          "base": 0.53,
+          "high": 0.5900000000000001,
+          "ageMin": 50,
+          "ageMax": 59,
+          "sex": "female"
+        },
+        {
+          "low": 0.35600000000000004,
+          "base": 0.41600000000000004,
+          "high": 0.47600000000000003,
+          "ageMin": 60,
+          "ageMax": 69,
+          "sex": "female"
+        },
+        {
+          "low": 0.185,
+          "base": 0.245,
+          "high": 0.305,
+          "ageMin": 70,
+          "ageMax": 120,
+          "sex": "female"
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "오프라인 구매·선물 수령자를 별도 조사로 더할 수 있는가?"
+    },
+    {
+      "id": "fitness",
+      "label": "규칙적 운동",
+      "unit": "person",
+      "prerequisites": [],
+      "sourceIds": [
+        "SPORT-2025"
+      ],
+      "definition": "주 1회 이상 30분 이상 운동하는 성인",
+      "observation": "20대65.2 / 30대67.8 / 40대67.1 / 50대64.2 / 60대65.8 / 70+59.5",
+      "rates": [
+        {
+          "low": 0.612,
+          "base": 0.652,
+          "high": 0.6920000000000001,
+          "ageMin": 20,
+          "ageMax": 29
+        },
+        {
+          "low": 0.638,
+          "base": 0.678,
+          "high": 0.7180000000000001,
+          "ageMin": 30,
+          "ageMax": 39
+        },
+        {
+          "low": 0.631,
+          "base": 0.671,
+          "high": 0.7110000000000001,
+          "ageMin": 40,
+          "ageMax": 49
+        },
+        {
+          "low": 0.602,
+          "base": 0.642,
+          "high": 0.682,
+          "ageMin": 50,
+          "ageMax": 59
+        },
+        {
+          "low": 0.618,
+          "base": 0.658,
+          "high": 0.6980000000000001,
+          "ageMin": 60,
+          "ageMax": 69
+        },
+        {
+          "low": 0.5549999999999999,
+          "base": 0.595,
+          "high": 0.635,
+          "ageMin": 70,
+          "ageMax": 120
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "int_fitness_hiking",
+      "label": "등산·트레킹",
+      "unit": "person",
+      "prerequisites": [
+        "fitness"
+      ],
+      "sourceIds": [
+        "SPORT-2025"
+      ],
+      "definition": "규칙적 운동 참여자 중 등산·트레킹",
+      "observation": "2025 조사 참여자 조건부 비율 17.1%",
+      "rates": [
+        {
+          "low": 0.11100000000000002,
+          "base": 0.171,
+          "high": 0.231
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 목적을 가진 운동자가 현재 대안에 불만이 있는가? 참여 목적 자체를 미충족 수요로 보지 않음"
+    },
+    {
+      "id": "int_fitness_gym",
+      "label": "헬스·개인 운동",
+      "unit": "person",
+      "prerequisites": [
+        "fitness"
+      ],
+      "sourceIds": [
+        "SPORT-2025"
+      ],
+      "definition": "규칙적 운동 참여자 중 헬스·개인 운동",
+      "observation": "2025 조사 참여자 조건부 비율 17.5%",
+      "rates": [
+        {
+          "low": 0.11499999999999999,
+          "base": 0.175,
+          "high": 0.235
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 목적을 가진 운동자가 현재 대안에 불만이 있는가? 참여 목적 자체를 미충족 수요로 보지 않음"
+    },
+    {
+      "id": "need_fitness_weight",
+      "label": "체중·체형 관리",
+      "unit": "person",
+      "prerequisites": [
+        "fitness"
+      ],
+      "sourceIds": [
+        "SPORT-2025"
+      ],
+      "definition": "규칙적 운동 참여자 중 체중·체형 관리",
+      "observation": "2025 조사 참여자 조건부 비율 48.5%",
+      "rates": [
+        {
+          "low": 0.425,
+          "base": 0.485,
+          "high": 0.5449999999999999
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 목적을 가진 운동자가 현재 대안에 불만이 있는가? 참여 목적 자체를 미충족 수요로 보지 않음"
+    },
+    {
+      "id": "need_fitness_stress",
+      "label": "운동으로 스트레스 해소",
+      "unit": "person",
+      "prerequisites": [
+        "fitness"
+      ],
+      "sourceIds": [
+        "SPORT-2025"
+      ],
+      "definition": "규칙적 운동 참여자 중 운동으로 스트레스 해소",
+      "observation": "2025 조사 참여자 조건부 비율 41.2%",
+      "rates": [
+        {
+          "low": 0.352,
+          "base": 0.412,
+          "high": 0.472
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 목적을 가진 운동자가 현재 대안에 불만이 있는가? 참여 목적 자체를 미충족 수요로 보지 않음"
+    },
+    {
+      "id": "need_fitness_health",
+      "label": "건강·체력 유지",
+      "unit": "person",
+      "prerequisites": [
+        "fitness"
+      ],
+      "sourceIds": [
+        "SPORT-2025"
+      ],
+      "definition": "규칙적 운동 참여자 중 건강·체력 유지",
+      "observation": "2025 조사 참여자 조건부 비율 79.9%",
+      "rates": [
+        {
+          "low": 0.7390000000000001,
+          "base": 0.799,
+          "high": 0.859
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 목적을 가진 운동자가 현재 대안에 불만이 있는가? 참여 목적 자체를 미충족 수요로 보지 않음"
+    },
+    {
+      "id": "content",
+      "label": "온라인 동영상 이용",
+      "unit": "person",
+      "prerequisites": [],
+      "sourceIds": [
+        "KCC-OTT-2024"
+      ],
+      "definition": "무료 서비스를 포함한 OTT 이용 성인; TV 전체 시청자는 아님",
+      "observation": "20대97.5 / 30대95.7 / 40대90.7 / 50대85.9 / 60대66.7 / 70+27.1",
+      "rates": [
+        {
+          "low": 0.9349999999999999,
+          "base": 0.975,
+          "high": 1,
+          "ageMin": 20,
+          "ageMax": 29
+        },
+        {
+          "low": 0.9169999999999999,
+          "base": 0.957,
+          "high": 0.997,
+          "ageMin": 30,
+          "ageMax": 39
+        },
+        {
+          "low": 0.867,
+          "base": 0.907,
+          "high": 0.9470000000000001,
+          "ageMin": 40,
+          "ageMax": 49
+        },
+        {
+          "low": 0.819,
+          "base": 0.859,
+          "high": 0.899,
+          "ageMin": 50,
+          "ageMax": 59
+        },
+        {
+          "low": 0.627,
+          "base": 0.667,
+          "high": 0.7070000000000001,
+          "ageMin": 60,
+          "ageMax": 69
+        },
+        {
+          "low": 0.231,
+          "base": 0.271,
+          "high": 0.311,
+          "ageMin": 70,
+          "ageMax": 120
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "ott_paid",
+      "label": "유료 OTT 이용",
+      "unit": "person",
+      "prerequisites": [
+        "content"
+      ],
+      "sourceIds": [
+        "KISDI-OTT-2024"
+      ],
+      "definition": "OTT 이용자 중 유료결제 이용자",
+      "observation": "유료결제 비율 59.9%",
+      "rates": [
+        {
+          "low": 0.5289999999999999,
+          "base": 0.599,
+          "high": 0.669
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "need_ott_price",
+      "label": "OTT 지출 증가",
+      "unit": "person",
+      "prerequisites": [
+        "ott_paid"
+      ],
+      "sourceIds": [
+        "KISDI-OTT-2024"
+      ],
+      "definition": "전년보다 OTT 지불금액이 증가했다고 응답한 유료 이용자",
+      "observation": "유료 이용자 중 증가40.0 / 비슷52.5 / 감소7.4",
+      "rates": [
+        {
+          "low": 0.30000000000000004,
+          "base": 0.4,
+          "high": 0.5
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "지출 증가를 불만으로 느끼며 다른 상품으로 전환할 의향이 있는가?"
+    },
+    {
+      "id": "int_content_short",
+      "label": "숏폼 동영상",
+      "unit": "person",
+      "prerequisites": [
+        "content"
+      ],
+      "sourceIds": [
+        "KISDI-OTT-2024"
+      ],
+      "definition": "OTT 이용자 중 숏폼 시청",
+      "observation": "OTT 시청 유형 중 숏폼 70.7%",
+      "rates": [
+        {
+          "low": 0.637,
+          "base": 0.707,
+          "high": 0.7769999999999999
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "gaming",
+      "label": "게임 이용",
+      "unit": "person",
+      "prerequisites": [],
+      "sourceIds": [
+        "KOCCA-GAME-2025"
+      ],
+      "definition": "최근 1년 게임을 이용한 20~69세; 70세 이상 제외",
+      "observation": "10~69세 이용률 50.2%를 20~69세에 전이",
+      "rates": [
+        {
+          "low": 0.422,
+          "base": 0.502,
+          "high": 0.582,
+          "ageMin": 20,
+          "ageMax": 69
+        },
+        {
+          "low": 0,
+          "base": 0,
+          "high": 0,
+          "ageMin": 70,
+          "ageMax": 120
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "70세 이상 0은 미이용 판정이 아니라 이 조사 추정 대상 제외를 의미합니다.",
+        "10~69세 전체 비율을 20~69세로 전이; 민감도 ±8%p."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인",
+      "populationScope": {
+        "ageMin": 20,
+        "ageMax": 69
+      },
+      "profileShape": {
+        "factorId": "leisure_F59",
+        "ageMin": 20,
+        "ageMax": 69
+      }
+    },
+    {
+      "id": "int_gaming_mobile",
+      "label": "모바일 게임",
+      "unit": "person",
+      "prerequisites": [
+        "gaming"
+      ],
+      "sourceIds": [
+        "KOCCA-GAME-2025"
+      ],
+      "definition": "게임 이용자 중 모바일 이용",
+      "observation": "모바일 89.1%",
+      "rates": [
+        {
+          "low": 0.841,
+          "base": 0.891,
+          "high": 0.9410000000000001
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "gaming_pc",
+      "label": "PC 게임",
+      "unit": "person",
+      "prerequisites": [
+        "gaming"
+      ],
+      "sourceIds": [
+        "KOCCA-GAME-2025"
+      ],
+      "definition": "게임 이용자 중 PC 이용",
+      "observation": "PC 58.1%",
+      "rates": [
+        {
+          "low": 0.5309999999999999,
+          "base": 0.581,
+          "high": 0.631
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "gaming_console",
+      "label": "콘솔 게임",
+      "unit": "person",
+      "prerequisites": [
+        "gaming"
+      ],
+      "sourceIds": [
+        "KOCCA-GAME-2025"
+      ],
+      "definition": "게임 이용자 중 콘솔 이용",
+      "observation": "콘솔 28.6%",
+      "rates": [
+        {
+          "low": 0.236,
+          "base": 0.286,
+          "high": 0.33599999999999997
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "need_gaming_safety",
+      "label": "게임 내 괴롭힘 경험",
+      "unit": "person",
+      "prerequisites": [
+        "gaming"
+      ],
+      "sourceIds": [
+        "KOCCA-GAME-2025"
+      ],
+      "definition": "게임 내 사이버폭력 피해 경험자",
+      "observation": "피해 경험 46.4%",
+      "rates": [
+        {
+          "low": 0.394,
+          "base": 0.464,
+          "high": 0.534
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "어떤 게임·소통 방식에서 피해가 발생하며 이용자가 원하는 대응 수단은 무엇인가?"
+    },
+    {
+      "id": "arc_gaming_unresolved",
+      "label": "피해 후 대응하지 않음",
+      "unit": "person",
+      "prerequisites": [
+        "need_gaming_safety"
+      ],
+      "sourceIds": [
+        "KOCCA-GAME-2025"
+      ],
+      "definition": "피해를 경험했으나 별도 대응하지 않은 게임 이용자",
+      "observation": "피해 경험자 중 그냥 넘김 57.3%",
+      "rates": [
+        {
+          "low": 0.49299999999999994,
+          "base": 0.573,
+          "high": 0.6529999999999999
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "미대응 이유는 신고 피로·보복 우려·절차 불신 중 무엇인가? 유료 보호 기능 수요와는 별개"
+    },
+    {
+      "id": "education",
+      "label": "성인 평생학습",
+      "unit": "person",
+      "prerequisites": [],
+      "sourceIds": [
+        "KEDI-LEARN-2025"
+      ],
+      "definition": "최근 1년 프로그램에 참여한 25~79세 성인",
+      "observation": "2025 전체 참여율 33.7%",
+      "rates": [
+        {
+          "low": 0,
+          "base": 0,
+          "high": 0,
+          "ageMin": 20,
+          "ageMax": 24
+        },
+        {
+          "low": 0.29700000000000004,
+          "base": 0.337,
+          "high": 0.377,
+          "ageMin": 25,
+          "ageMax": 79
+        },
+        {
+          "low": 0,
+          "base": 0,
+          "high": 0,
+          "ageMin": 80,
+          "ageMax": 120
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "25~79세만 추정; 밖의 연령은 미참여자가 아니라 대상 제외",
+        "25세 경계의 공식 인구 세부화 전 20대 구간 내 균등 인구 근사"
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인",
+      "populationScope": {
+        "ageMin": 25,
+        "ageMax": 79
+      }
+    },
+    {
+      "id": "int_education_career",
+      "label": "직무·직업 학습",
+      "unit": "person",
+      "prerequisites": [
+        "education"
+      ],
+      "sourceIds": [
+        "KEDI-LEARN-2025"
+      ],
+      "definition": "평생학습 참여자 중 직업관련 비형식교육 참여자",
+      "observation": "전체 성인의 14.5%; 조건부 비율 14.5/33.7",
+      "rates": [
+        {
+          "low": 0.36026706231454,
+          "base": 0.43026706231454,
+          "high": 0.50026706231454
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "learn_hobby",
+      "label": "취미·여가·스포츠 학습",
+      "unit": "person",
+      "prerequisites": [
+        "education"
+      ],
+      "sourceIds": [
+        "KEDI-LEARN-2025"
+      ],
+      "definition": "평생학습 참여자 중 취미·여가·스포츠 교육 참여자",
+      "observation": "전체 성인의 15.9%; 조건부 비율 15.9/33.7",
+      "rates": [
+        {
+          "low": 0.4018100890207715,
+          "base": 0.4718100890207715,
+          "high": 0.5418100890207715
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "travel_domestic",
+      "label": "국내여행 경험",
+      "unit": "person",
+      "prerequisites": [],
+      "sourceIds": [
+        "TOUR-2024"
+      ],
+      "definition": "최근 1년 국내여행을 한 성인",
+      "observation": "국내여행 경험률 95.4%",
+      "rates": [
+        {
+          "low": 0.9139999999999999,
+          "base": 0.954,
+          "high": 0.994
+        }
+      ],
+      "method": "survey_transfer",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "여행 여부 외에 다음 여행 목적·동반자·예약 방식이 확인되는가?"
+    },
+    {
+      "id": "pet_household",
+      "label": "반려동물 양육 가구",
+      "unit": "household",
+      "prerequisites": [],
+      "sourceIds": [
+        "MAFRA-PET-2025"
+      ],
+      "definition": "현재 거주지에서 반려동물을 양육하는 일반가구",
+      "observation": "일반가구 양육률 29.2%",
+      "rates": [
+        {
+          "low": 0.257,
+          "base": 0.292,
+          "high": 0.32699999999999996
+        }
+      ],
+      "method": "survey_rate",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "서비스의 지불 단위가 가구·동물·방문 중 무엇인가?"
+    },
+    {
+      "id": "pet_dog_household",
+      "label": "반려견 양육 가구",
+      "unit": "household",
+      "prerequisites": [
+        "pet_household"
+      ],
+      "sourceIds": [
+        "MAFRA-PET-2025"
+      ],
+      "definition": "반려동물 양육가구 중 개를 기르는 가구",
+      "observation": "양육가구 중 개 80.5%",
+      "rates": [
+        {
+          "low": 0.765,
+          "base": 0.805,
+          "high": 0.8450000000000001
+        }
+      ],
+      "method": "survey_rate",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    },
+    {
+      "id": "pet_cat_household",
+      "label": "반려묘 양육 가구",
+      "unit": "household",
+      "prerequisites": [
+        "pet_household"
+      ],
+      "sourceIds": [
+        "MAFRA-PET-2025"
+      ],
+      "definition": "반려동물 양육가구 중 고양이를 기르는 가구",
+      "observation": "양육가구 중 고양이 14.4%",
+      "rates": [
+        {
+          "low": 0.10399999999999998,
+          "base": 0.144,
+          "high": 0.184
+        }
+      ],
+      "method": "survey_rate",
+      "assumptions": [
+        "Low/High는 조사 오차가 아닌 적용·전이 민감도 가정입니다."
+      ],
+      "validationQuestion": "이 조사 분모와 현재 사업의 실제 사용·구매 대상이 일치하는지 확인"
+    }
+  ]
+}

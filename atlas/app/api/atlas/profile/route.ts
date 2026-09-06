@@ -1,36 +1,23 @@
-import { getProfile } from '@/server/atlas/engine';
-import { assertIds, registry } from '@/server/atlas/source';
-import { addEconomicScore } from '@/server/atlas/market-value-service';
-import {
-  estimateMarketValue,
-  inferSpendScope,
-} from '@/server/atlas/market-value';
-import { canonicalIds } from '@/lib/atlas';
-
+import { resolveResearchContext } from '@/server/atlas/research-workspace';
+import { getResearchExplorer } from '@/server/atlas/research-explorer';
 export function GET(request: Request) {
-  try {
-    const q = new URL(request.url).searchParams;
-    const ids = canonicalIds((q.get('q') ?? '').split('~').filter(Boolean));
-    assertIds(ids, 8);
-    const scope = q.get('spend') || inferSpendScope(ids);
-    if (scope !== 'covered' && registry.get(scope)?.kind !== 'market')
-      throw Error('scope');
-    const p = getProfile(ids, false);
-    return Response.json({
-      ...p,
-      summary: {
-        ...addEconomicScore(p.summary, scope),
-        estimate: p.summary.estimate,
-        marketValue: estimateMarketValue(ids, scope),
-      },
-    });
-  } catch {
+  const query = Object.fromEntries(new URL(request.url).searchParams);
+  const { context, unresolved } = resolveResearchContext([], query);
+  if (unresolved.length || !context.market)
     return Response.json(
       {
-        error:
-          '저장된 조건을 불러올 수 없습니다. 조건과 지출 범위를 확인해 주세요.',
+        status: 'not_estimable',
+        unresolved,
+        error: '외부 근거가 연결된 시장과 조건을 선택하세요.',
       },
-      { status: 400 },
+      { status: 422 },
     );
-  }
+  const data = getResearchExplorer(context.market, context.age)!;
+  const profile =
+    !context.node || context.node === '_root'
+      ? data.root
+      : data.branches
+          .flatMap((b) => [b.profile, ...b.children])
+          .find((p) => p.id === context.node);
+  return Response.json({ model: data.version, market: data.market, profile });
 }

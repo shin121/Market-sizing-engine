@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './discovery.css';
+import './research.css';
 export const metadata: Metadata = {
   title: 'Market Atlas · 시장에서 사업 가설까지',
   icons: { icon: '/favicon.svg' },
