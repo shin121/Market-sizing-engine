@@ -34,10 +34,17 @@ skin-care cohort or added to the online transaction total.
 | Family with children | KRW 5.4515tn (2025) | household | `calibrated_baseline` | online children's goods |
 | Mobility | KRW 7.5751tn (2025) | person | `calibrated_baseline` | online automobile and automobile supplies |
 | Community / culture-leisure cohort | KRW 3.2966tn (2025) | person | `calibrated_baseline` | online culture and leisure services; not all meetings |
+| Music / paid listening transfer | KOCCA 2024 age-specific paid-listener ratios and monthly payment bins | person | `calibrated_baseline` | 20–69 digital music listening and paid-use proxy; not all music or live performance |
 
 The category source is the National Data Office annual online-shopping release,
 2025-01–2025-12, published 2026-02-02. The source URL, PDF locator and SHA-256
 are recorded in `config/external-spend.json`.
+
+The music adapter applies the published paid-user/listener ratio and payment-bin
+midpoints by age to the externally estimated listening cohort. The current listen
+branch yields about 11.70m relevant paid participants and roughly KRW 91.7k per
+paid participant per year; lower video/radio intersections inherit the age transfer
+and remain clearly labeled as modeled, rather than direct payment observations.
 
 ## Allocation and uncertainty
 
@@ -59,6 +66,9 @@ across overlapping types or presented as company revenue.
 
 - All-channel cosmetics penetration and offline cosmetics spend are still
   unobserved; the skin activity cohort cannot be priced from the online anchor.
+- Home/interior activity (`F54`) is not a furniture-purchaser denominator. The
+  national furniture/living transaction total is therefore kept as an open anchor
+  until a matching buyer or household mapping is available.
 - The MFDS industry benchmark is available as a separate scope, but it cannot be
   converted into people, household spend or an all-channel user count without a
   retail/consumer denominator bridge.

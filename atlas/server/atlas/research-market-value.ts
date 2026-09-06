@@ -7,6 +7,7 @@ import type { MarketValueEstimate } from '../../lib/market-value';
 import { foodRows, foodSource } from './sector-research';
 import { researchEstimate, demandSources } from './research-registry';
 import external from '../../config/external-spend.json';
+import marketValueConfig from '../../config/market-value.json';
 
 type ExternalComponent = (typeof external.components)[number];
 
@@ -21,6 +22,10 @@ const onlineSource = {
   locator: external.source.locator,
   referencePeriod: external.source.referencePeriod,
 };
+
+const musicAnchor = marketValueConfig.anchors.find(
+  (anchor) => anchor.marketId === 'music',
+);
 
 /**
  * An external category total can be useful without pretending it is a direct
@@ -159,6 +164,202 @@ const externalAnchors: {
 
 function boundedFraction(value: number) {
   return Math.max(0, Math.min(1, value));
+}
+
+function musicAgeBand(ageMin: number) {
+  if (ageMin >= 20 && ageMin < 30) return '20-29';
+  if (ageMin >= 30 && ageMin < 40) return '30-39';
+  if (ageMin >= 40 && ageMin < 50) return '40-49';
+  if (ageMin >= 50 && ageMin < 60) return '50-59';
+  if (ageMin >= 60 && ageMin < 70) return '60-69';
+  return null;
+}
+
+/** Apply the reviewed music-user payment distribution to the externally
+ * estimated listening cohort. This is a survey-transfer estimate: listening
+ * is not silently treated as a paid subscription, and 70+ is outside the
+ * payment survey's published age bands. */
+function musicBaselineValue(
+  estimate: DemandEstimate,
+  marketId: string,
+): MarketValueEstimate | null {
+  if (
+    !musicAnchor ||
+    marketId !== 'music' ||
+    estimate.unionGroups?.length ||
+    estimate.unit !== 'person' ||
+    !estimate.factorIds.includes('leisure_G77') ||
+    estimate.factorIds.some((id) =>
+      ['commerce', 'research_presearch', 'research_review'].includes(id),
+    )
+  )
+    return null;
+  const ageRows = musicAnchor.ageBands;
+  const annualAverage = (shares: number[], bins: number[]) => {
+    const total = shares.reduce((sum, value) => sum + value, 0);
+    return total > 0
+      ? (shares.reduce((sum, share, index) => sum + share * bins[index], 0) /
+          total) *
+          12
+      : 0;
+  };
+  const values = estimate.cells
+    .map((cell) => {
+      const band = musicAgeBand(cell.ageMin ?? 0);
+      const row = ageRows.find((candidate) => candidate.ageBand === band);
+      if (!row || cell.ageMin === undefined || cell.ageMin >= 70) return null;
+      const paidRate = row.paidUsers / Math.max(row.musicUsers, 1);
+      return {
+        cell,
+        paidRate,
+        lowPaidRate: Math.max(0, paidRate * 0.9),
+        highPaidRate: Math.min(1, paidRate * 1.1),
+        baseSpend: annualAverage(row.paymentShares, musicAnchor.binBase),
+        lowSpend: annualAverage(row.paymentShares, musicAnchor.binLow),
+        highSpend: annualAverage(row.paymentShares, musicAnchor.binHigh),
+      };
+    })
+    .filter((value): value is NonNullable<typeof value> => value !== null);
+  if (!values.length) return null;
+
+  const category = researchEstimate(['leisure_G77'], 'person');
+  if (category.status !== 'estimated') return null;
+  const eligiblePopulation = values.reduce((sum, value) => sum + value.cell.base, 0);
+  const categoryPopulation = category.cells
+    .filter((cell) => (cell.ageMin ?? 120) < 70)
+    .reduce((sum, cell) => sum + cell.base, 0);
+  const participants = values.reduce(
+    (sum, value) => sum + value.cell.base * value.paidRate,
+    0,
+  );
+  const lowParticipants = values.reduce(
+    (sum, value) => sum + value.cell.low * value.lowPaidRate,
+    0,
+  );
+  const highParticipants = values.reduce(
+    (sum, value) => sum + value.cell.high * value.highPaidRate,
+    0,
+  );
+  const base = values.reduce(
+    (sum, value) => sum + value.cell.base * value.paidRate * value.baseSpend,
+    0,
+  );
+  const low = values.reduce(
+    (sum, value) =>
+      sum + value.cell.low * value.lowPaidRate * value.lowSpend,
+    0,
+  );
+  const high = values.reduce(
+    (sum, value) =>
+      sum + value.cell.high * value.highPaidRate * value.highSpend,
+    0,
+  );
+  if (!participants || !categoryPopulation) return null;
+  const nationalValues = category.cells
+    .filter((cell) => (cell.ageMin ?? 120) < 70)
+    .map((cell) => {
+      const band = musicAgeBand(cell.ageMin ?? 0);
+      const row = ageRows.find((candidate) => candidate.ageBand === band);
+      if (!row) return 0;
+      return (
+        cell.base *
+        (row.paidUsers / Math.max(row.musicUsers, 1)) *
+        annualAverage(row.paymentShares, musicAnchor.binBase)
+      );
+    });
+  const nationalBase = nationalValues.reduce((sum, value) => sum + value, 0);
+  const nationalParticipants = category.cells
+    .filter((cell) => (cell.ageMin ?? 120) < 70)
+    .reduce((sum, cell) => {
+      const band = musicAgeBand(cell.ageMin ?? 0);
+      const row = ageRows.find((candidate) => candidate.ageBand === band);
+      return row
+        ? sum + cell.base * (row.paidUsers / Math.max(row.musicUsers, 1))
+        : sum;
+    }, 0);
+  const spend = base / participants;
+  const isTransfer = estimate.factorIds.length > 1;
+  return {
+    annualValue: base,
+    low,
+    base,
+    high,
+    currency: 'KRW',
+    period: 'annual',
+    populationUnit: 'person',
+    scopeId: 'music-digital-2024',
+    scopeLabel: '음악 유료 이용·디지털 음악 지출 · 2024',
+    categoryPopulation,
+    categoryPopulationUnit: 'person',
+    relevantPopulation: participants,
+    annualSpendPerUnit: spend,
+    spendPerUnitRange: {
+      low: lowParticipants ? low / lowParticipants : spend,
+      base: spend,
+      high: highParticipants ? high / highParticipants : spend,
+    },
+    participationRate: eligiblePopulation ? participants / eligiblePopulation : null,
+    participationIndex: null,
+    spendIntensityIndex: null,
+    spendDensity: spend,
+    spendDensityIndex:
+      nationalBase > 0 && nationalParticipants > 0
+        ? spend / (nationalBase / nationalParticipants)
+        : null,
+    shareOfSpendPool: nationalBase > 0 ? base / nationalBase : null,
+    method: 'calibrated_baseline',
+    confidence: 'Low',
+    completeness: isTransfer ? 0.45 : 0.62,
+    status: 'estimated',
+    isAdditive: false,
+    additiveForDisjointPopulations: true,
+    componentIds: ['digital-music-2024'],
+    coverage: {
+      population: estimate.base > 0 ? eligiblePopulation / estimate.base : 0,
+      directSpend: 0,
+      anchor: 1,
+      isPartial: true,
+      supportedMarkets: 1,
+      totalMarkets: 1,
+    },
+    componentBreakdown: [
+      {
+        id: 'digital-music-2024',
+        label: '디지털 음악 유료 이용 지출',
+        annualValue: base,
+        nationalValue: nationalBase,
+        sourceId: musicAnchor.sourceId,
+      },
+    ],
+    sourceBasis: [
+      {
+        id: musicAnchor.sourceId,
+        title: musicAnchor.sourceTitle,
+        url: musicAnchor.sourceUrl,
+        locator: musicAnchor.sourceLocator,
+        referencePeriod: musicAnchor.referencePeriod,
+      },
+      ...demandSources
+        .filter((source) => estimate.sourceIds.includes(source.id))
+        .map((source) => ({
+          id: source.id,
+          title: source.title,
+          url: source.url,
+          locator: source.locator,
+          referencePeriod: source.referencePeriod,
+        })),
+    ].filter((source, index, all) =>
+      all.findIndex((candidate) => candidate.id === source.id) === index,
+    ),
+    assumptions: [
+      ...musicAnchor.assumptions,
+      '음악 감상 경험자 전체를 결제자로 보지 않고, 2024 음악 이용자 조사에서 연령별 유료 이용자 비율을 적용했습니다.',
+      '20~69세 공개 결제 구간만 사용했습니다. 70세 이상은 음악 감상 인구에는 포함될 수 있지만 이 지출 기준의 결제 분모에는 포함하지 않습니다.',
+      isTransfer
+        ? '영상·라디오 등 하위 교집합에는 전체 음악 이용자의 연령별 결제율·결제구간을 전이했습니다. 하위 유형의 실제 결제 교차표가 아닙니다.'
+        : '유료 이용자의 월 결제 구간 중간값을 연간화했습니다. 공유 요금제와 음악 외 공연·음반·악기 지출은 포함하지 않습니다.',
+    ],
+  };
 }
 
 /** Allocate a published online category total to an externally estimated
@@ -357,6 +558,8 @@ export function researchMarketValue(
     ],
   };
   if (estimate.status !== 'estimated') return empty;
+  const musicValue = musicBaselineValue(estimate, marketId);
+  if (musicValue) return musicValue;
   let anchorId: string, scopeLabel: string, monthly: (age?: number) => number;
   if (unit === 'person' && estimate.factorIds.includes('food_dining')) {
     anchorId = 'food_dining';

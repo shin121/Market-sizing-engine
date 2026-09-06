@@ -67,11 +67,12 @@ The external model covers 20 explicitly scoped markets, 66 branches, 197 lower
 scenarios and 195 factors. Four unused rare leisure factors correctly remain
 unavailable. Dining/delivery retain direct or weighted anchors; reviewed online
 category baselines now also cover matching beauty, commerce, travel, fitness,
-education, pet, family, mobility and community cohorts. All 20 market journeys were opened in Chrome in the
+education, pet, family, mobility and community cohorts. Music listening
+additionally uses the KOCCA age-specific paid-user/payment-bin transfer. All 20 market journeys were opened in Chrome in the
 preceding phases.
 
 Local primary Atlas, search/API, Matrix, Opportunity, comparison, source inspection
-and saved ideas now use the external model. The 74-test suite, lint/typecheck and
+and saved ideas now use the external model. The 77-test suite, lint/typecheck and
 Webpack production build passed. Matrix/flow/comparison navigation, separate units,
 money-vs-population rank inversion and 390px overflow were checked in real UI.
 

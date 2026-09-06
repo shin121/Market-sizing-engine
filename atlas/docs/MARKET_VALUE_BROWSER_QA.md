@@ -1,6 +1,6 @@
 # Market Value Browser QA
 
-> 이 문서는 v0.4 브라우저 검증 기록입니다. 현재 산식·외부 인구 보정·11/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
+> 이 문서는 v0.4 브라우저 검증 기록입니다. 현재 산식·외부 인구 보정·12/20개 산업 범위는 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 현재 전수 검증은 [research-demand-sanity.json](../data/research-demand-sanity.json)을 사용합니다.
 
 실제 Chromium/agent-browser, 1440×900 및 390×844에서 탐색했다. 개발 서버에서 전체 여정 25단계를, 완성된 Cloudflare Worker에서 Matrix 모드·브라우저 history·근거·모바일을 추가 검증했다. 브라우저 uncaught errors는 0개다.
 
@@ -34,7 +34,7 @@
 |24|Industry audit music|음악·공연|
 |25|Mobile money Atlas|한국 소비자 시장을 한눈에|
 
-실제 유형 `arc_premium_recovery`(휴식·보상 프리미엄선택형)를 사용했다. 요구사항의 예시 이름이나 숫자를 별도 데이터로 만들지 않았다. 금액 기준이 있는 음악으로 이동했고, 다른 9개 산업의 결손/가구 단위 상태도 화면에서 확인했다.
+실제 유형 `arc_premium_recovery`(휴식·보상 프리미엄선택형)를 사용했다. 요구사항의 예시 이름이나 숫자를 별도 데이터로 만들지 않았다. 금액 기준이 있는 음악으로 이동했고, 다른 8개 산업의 결손/가구 단위 상태도 화면에서 확인했다.
 
 ## 배포 빌드 추가 검증
 

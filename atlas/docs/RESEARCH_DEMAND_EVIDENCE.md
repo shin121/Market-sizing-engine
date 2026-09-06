@@ -62,7 +62,10 @@ reproducible with the respective Python scripts and the official PDFs.
   These are online transaction allocations with low confidence, not direct
   respondent spend fields. The new flow does not inherit the old
   narrative-weighted online category allocation.
-  The regenerated sanity ledger has 95 profiles with a monetary baseline;
+  Music listening now has a separate KOCCA 2024 age-specific paid-user and
+  payment-bin transfer; it prices paid digital listening participants only and
+  does not price the broader music or performance market.
+  The regenerated sanity ledger has 98 profiles with a monetary baseline;
   these remain partial online or category allocations rather than complete
   market-size measurements.
 - Household delivery/HMR profiles include household-head age/sex, household size
@@ -214,7 +217,7 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   three-column flow and linked profile/range/age/sex/region modules. Measured
   problem experience and unmeasured need severity/payment intent have separate
   UI wording. Nested definitions no longer repeat the parent paragraph.
-- Atlas 74/74 tests passed, lint passed, typecheck passed after build, production
+- Atlas 77/77 tests passed, lint passed, typecheck passed after build, production
   `npm run build -- --webpack` passed. A concurrent typecheck initially raced with
   Next regenerating `.next/types`; the sequential final typecheck passed. No new
   default-Turbopack success is claimed. Numeric sanity ledger regenerated.

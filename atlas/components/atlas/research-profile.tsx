@@ -110,7 +110,12 @@ export function ResearchProfileDashboard({
         <div>
           <small>연간 관련 소비금액</small>
           <strong className={value.annualValue === null ? 'muted' : ''}>{moneyStatus(selected)}</strong>
-          <span>{value.scopeLabel ?? '같은 품목·채널·구매 주체의 기준 필요'}</span>
+          <span>
+            {value.relevantPopulation !== null
+              ? `지출 관련 ${researchPopulation(value.relevantPopulation, value.populationUnit)} · `
+              : ''}
+            {value.scopeLabel ?? '같은 품목·채널·구매 주체의 기준 필요'}
+          </span>
         </div>
         <div>
           <small>단위당 연간 지출</small>

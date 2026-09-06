@@ -61,7 +61,7 @@ Nemotron → Population Engine → Spend Signal Engine
   → Analysis Service → shared Money UI
 ```
 
-`server/atlas/spend-methods.ts` provides six amount calculation paths with period, range and unit guards. `server/atlas/market-value.ts` supplies the legacy music adapter and `server/atlas/research-market-value.ts` supplies the current food, delivery and reviewed online-category adapters. Existing calibrated population bitmaps produce per-stratum moments; no raw Parquet is loaded for page requests. A single scoped monetary component is evaluated directly against each population, not summed across overlapping archetypes.
+`server/atlas/spend-methods.ts` provides six amount calculation paths with period, range and unit guards. `server/atlas/market-value.ts` supplies the legacy music adapter and `server/atlas/research-market-value.ts` supplies the current food, delivery, reviewed online-category and music-payment adapters. Existing calibrated population bitmaps produce per-stratum moments; no raw Parquet is loaded for page requests. A single scoped monetary component is evaluated directly against each population, not summed across overlapping archetypes.
 
 `lib/market-value.ts` defines the central MarketValueEstimate and KRW/unit formatters. `server/atlas/market-value-service.ts` enriches existing summaries without mutating the population summary cache, adds separate economic score inputs, monetary Radar, industry/contribution tables, Matrix values and highlights. `components/atlas/money.tsx` renders those objects. It never supplies monetary assumptions or multiplies arbitrary spend by population.
 

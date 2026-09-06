@@ -22,7 +22,11 @@ import type {
   ResearchProfile,
 } from '@/lib/research-explorer';
 import { researchHref } from '@/lib/research-explorer';
-import { candidateKey, researchWorkspaceHref } from '@/lib/research-workspace';
+import {
+  candidateKey,
+  researchPopulation,
+  researchWorkspaceHref,
+} from '@/lib/research-workspace';
 import {
   formatKRW,
   SPEND_METHOD_LABELS,
@@ -331,7 +335,7 @@ export function ResearchFlow({
             </strong>
             <span>
               {headline.marketValue.status === 'estimated'
-                ? `${formatKRW(headline.marketValue.annualSpendPerUnit)} / ${unitLabel(headline.marketValue.populationUnit)}·년`
+                ? `${headline.marketValue.relevantPopulation !== null ? `지출 관련 ${researchPopulation(headline.marketValue.relevantPopulation, headline.marketValue.populationUnit)} · ` : ''}${formatKRW(headline.marketValue.annualSpendPerUnit)} / ${unitLabel(headline.marketValue.populationUnit)}·년`
                 : '같은 품목·채널·구매 주체의 기준 필요'}
             </span>
           </div>
@@ -653,6 +657,16 @@ export function ResearchFlow({
                   <p>
                     {selected.marketValue.scopeLabel}
                     <br />
+                    {selected.marketValue.relevantPopulation !== null && (
+                      <>
+                        지출 관련{' '}
+                        {researchPopulation(
+                          selected.marketValue.relevantPopulation,
+                          selected.marketValue.populationUnit,
+                        )}{' '}
+                        ·{' '}
+                      </>
+                    )}
                     {formatKRW(selected.marketValue.annualSpendPerUnit)} /{' '}
                     {unitLabel(selected.marketValue.populationUnit)}·년
                   </p>

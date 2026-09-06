@@ -2,7 +2,7 @@
 
 > 이 문서는 중앙 Market Value Engine의 현재 산출 범위와 한계를 기록합니다. 세부 기준액과 범위는 [baselines](MARKET_VALUE_BASELINES.md), 외부 인구 보정은 [개정 문서](EXTERNAL_SPEND_AND_POPULATION.md), 전수 검증은 [revision-sanity.json](../data/revision-sanity.json)을 사용합니다.
 
-기존 Atlas에 인구와 경제적 소비액을 구분하는 Lens를 추가했다. 현재 금액은 외식·배달의 조사 지출과, 2025 온라인 거래액을 관련 조사 인구에 배분한 부분 범위에서 계산한다. 온라인 화장품 구매와 미용 활동은 별도 코호트이며, **미용 활동 인구를 전체 화장품 사용자 수로 해석하지 않는다.** 산업 전체 소비나 회사 매출을 임의로 합산하지 않는다.
+기존 Atlas에 인구와 경제적 소비액을 구분하는 Lens를 추가했다. 현재 금액은 외식·배달의 조사 지출, 2025 온라인 거래액을 관련 조사 인구에 배분한 부분 범위, 2024 KOCCA 음악 유료 이용·결제 구간 전이로 계산한다. 온라인 화장품 구매와 미용 활동은 별도 코호트이며, **미용 활동 인구를 전체 화장품 사용자 수로 해석하지 않는다.** 산업 전체 소비나 회사 매출을 임의로 합산하지 않는다.
 
 ## 1. Nemotron Monetary Data Audit
 
@@ -18,7 +18,7 @@ paid, premium, paid_subscription, gear_upgrade, repeat_purchase, membership의 �
 
 ## 4. Market Value Method hierarchy
 
-Direct → Weighted → Frequency×Ticket → Calibrated baseline → Consumption proxy → Heuristic range의 여섯 계산 경로를 구현·테스트했다. 현재 활성 어댑터는 외식·배달 조사 지출과 온라인 카테고리 기준액 배분이다. [산식 문서](MARKET_VALUE_METHODS.md)에 각 경로의 입력 계약과 미사용 이유가 있다.
+Direct → Weighted → Frequency×Ticket → Calibrated baseline → Consumption proxy → Heuristic range의 여섯 계산 경로를 구현·테스트했다. 현재 활성 어댑터는 외식·배달 조사 지출, 온라인 카테고리 기준액 배분, 음악 결제 전이다. [산식 문서](MARKET_VALUE_METHODS.md)에 각 경로의 입력 계약과 미사용 이유가 있다.
 
 ## 5. Spend per Unit 산출 방식
 
@@ -50,7 +50,7 @@ Population coverage, Anchor coverage, Direct spend coverage, 지원 산업 수�
 
 ## 12. Global Atlas 변경
 
-인구 / 시장 규모 ₩ 전환, People/Market 양방향 지도, 금액 면적, compact monetary strip을 추가했다. 헤더 약 8,600억원/년은 **확보된 음악 일부 범위**로 표시한다. 전체 대한민국 소비시장 합계로 표현하지 않는다. 산업 금액 coverage가 낮아 기본 Lens는 인구다.
+인구 / 시장 규모 ₩ 전환, People/Market 양방향 지도, 금액 면적, compact monetary strip을 추가했다. 헤더 금액은 **확보된 부분 범위**(음악 감상 cohort의 유료 디지털 음악 지출 포함)로 표시한다. 전체 대한민국 소비시장 합계로 표현하지 않는다. 산업 금액 coverage가 낮아 기본 Lens는 인구다.
 
 ## 13. Discovery Radar Money Lens
 
@@ -86,7 +86,7 @@ Global Atlas → 실제 프리미엄 유형 → 지원 산업 지출 순 → 음
 
 ## 21. lint / typecheck / test / build
 
-Lint, Typecheck, 31 tests, production build 통과. 여섯 산식, 16개 독립 DuckDB monetary oracle, 단위·범위·빈 집단·합산·순위 차이·URL context를 검사했다. 배포용 Cloudflare Worker에서 8개 분석 API와 8개 화면, 금액 검색 및 잘못된 조건 400을 확인했다. Raw narrative/bitmap/per-person moments가 API로 노출되지 않는다. [런타임 측정](../data/market-value-performance.json).
+Lint, Typecheck, 77 tests, production build 통과. 여섯 산식, 독립 monetary oracle, 단위·범위·빈 집단·합산·순위 차이·URL context를 검사했다. 배포용 Next.js에서 분석 API와 화면, 금액 검색 및 잘못된 조건 400을 확인했다. Raw narrative/bitmap/per-person moments가 API로 노출되지 않는다. [런타임 측정](../data/market-value-performance.json).
 
 ## 22. Known Limitations
 

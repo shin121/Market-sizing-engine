@@ -87,6 +87,32 @@ void test('reviewed online category baselines connect only matching research coh
   assert.ok(pet.annualValue! > 2_000_000_000_000);
   assert.equal(pet.scopeLabel, '온라인 반려용품 거래액 · 2025');
 });
+void test('music payment anchor separates listeners from paid spend participants', () => {
+  const music = getResearchExplorer('music')!;
+  const listen = music.branches.find((branch) => branch.id === 'listen')!;
+  assert.equal(listen.profile.marketValue.status, 'estimated');
+  assert.equal(listen.profile.estimate.status, 'estimated');
+  if (listen.profile.estimate.status !== 'estimated') return;
+  assert.ok(listen.profile.marketValue.annualValue! > 500_000_000_000);
+  assert.ok(
+    listen.profile.marketValue.relevantPopulation! <
+      listen.profile.estimate.base,
+    'listening population must not be presented as all paid participants',
+  );
+  assert.ok(
+    listen.profile.marketValue.annualSpendPerUnit! > 70_000 &&
+      listen.profile.marketValue.annualSpendPerUnit! < 130_000,
+  );
+  assert.ok(
+    listen.profile.marketValue.spendDensityIndex! > 0.8 &&
+      listen.profile.marketValue.spendDensityIndex! < 1.2,
+    'the full listening cohort should normalize near the national paid-listening density',
+  );
+  const review = listen.children.find((child) => child.id === 'listen~review')!;
+  assert.equal(review.marketValue.annualValue, null);
+  const playing = music.branches.find((branch) => branch.id === 'play')!;
+  assert.equal(playing.profile.marketValue.annualValue, null);
+});
 
 void test('generic lower discovery paths do not inherit a parent market spend pool', () => {
   const travel = getResearchExplorer('travel')!;
