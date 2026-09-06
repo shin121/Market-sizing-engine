@@ -113,3 +113,10 @@ in progress. The commerce journey now also exposes four channel-use cohorts and
 twelve channel-specific most-serious problem cohorts from the same report. KCA
 repairability, service-use and household cost-perception tables remain available
 for later integrations.
+
+The follow-up UI increment (`3faab3e`) keeps the presentation hierarchy explicit:
+market → experience/need or measured problem → lower behaviour/purchase type.
+Lower types such as online search, review checking and equipment exploration are
+now rendered as branch-local comparison cards below the relationship canvas. They
+remain the same URL-addressable profiles and estimates, but are no longer shown
+as peers of the market's top-level experiences.
