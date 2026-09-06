@@ -334,7 +334,7 @@ export function ResearchFlow({
             <div className="research-column-labels">
               <span>탐색 시장</span>
               <span>경험 · 니즈를 검증할 집단</span>
-              <span>구매 방식 · 하위 모형</span>
+              <span>행동 · 문제 · 구매 방식</span>
             </div>
             {data.branches.length ? (
               <div className="research-canvas-scroll">
@@ -407,9 +407,11 @@ export function ResearchFlow({
                       aria-pressed={selected.id === b.id}
                     >
                       <span className="research-node-eyebrow">
-                        {b.painMeasured
-                          ? '조사된 참여 목적·경험'
-                          : '활동 경험 기반'}
+                        {b.evidenceType === 'consumer_problem'
+                          ? '조사된 문제 경험'
+                          : b.painMeasured
+                            ? '조사된 참여 목적·경험'
+                            : '활동 경험 기반'}
                       </span>
                       <b>{b.label}</b>
                       <strong>{people(b.profile)}</strong>
@@ -433,9 +435,11 @@ export function ResearchFlow({
                       aria-pressed={selected.id === p.id}
                     >
                       <small>
-                        {p.evidenceGrade === 'D'
-                          ? '전이 시나리오'
-                          : '조건부 모형'}
+                        {branch.evidenceType === 'consumer_problem'
+                          ? '유형별 조사 · 분모 보정'
+                          : p.evidenceGrade === 'D'
+                            ? '전이 시나리오'
+                            : '조건부 모형'}
                       </small>
                       <b>{p.label}</b>
                       <strong>{people(p)}</strong>
@@ -481,7 +485,9 @@ export function ResearchFlow({
                   <h3>{branch.job}</h3>
                   <p>{branch.hypothesis}</p>
                   <span>
-                    활동 경험으로부터 만든 사업 가설 · 문제 발생률은 미측정
+                    {branch.evidenceType === 'consumer_problem'
+                      ? '문제 경험은 조사됨 · 해결 의향과 문제 강도는 추가 검증'
+                      : '활동 경험으로부터 만든 사업 가설 · 문제 발생률은 미측정'}
                   </span>
                 </div>
                 <div>
@@ -553,7 +559,8 @@ export function ResearchFlow({
             <h2>{selected.label}</h2>
             <p>
               {selected.estimate.status === 'estimated'
-                ? selected.estimate.definitions.join(' · ')
+                ? (selected.definition ??
+                  selected.estimate.definitions.join(' · '))
                 : selected.estimate.reason === 'outside_scope'
                   ? selected.estimate.detail
                   : (data.market.gap ?? '분모 또는 경험률 추가 확인 필요')}

@@ -16,12 +16,14 @@ import type { DemandEstimate, DemandUnavailable } from '../../lib/demand';
 import prior from '../../config/behavior-calibration.json';
 import { foodSource, sectorFactors } from './sector-research';
 import sectorFacts from '../../config/research/sector-observations.json';
+import { consumerSource, consumerFactors } from './consumer-research';
 
 const purchaseSource = prior.sources.find((s) => s.id === 'KCA-PURCHASE-2024')!;
 export const demandSources: DemandSource[] = [
   ...(data.sources as DemandSource[]),
   leisureSource,
   foodSource,
+  consumerSource,
   {
     ...purchaseSource,
     publisher: '한국소비자원',
@@ -80,6 +82,7 @@ export const demandFactors: DemandFactor[] = [
   ...leisureFactors,
   ...purchaseFactors,
   ...sectorFactors,
+  ...consumerFactors,
 ];
 export const adultResearchFrame: DemandCell[] = controls.controls.map((c) => ({
   id: c.age_band + '_' + c.sex,
@@ -117,7 +120,9 @@ export function researchEstimate(ids: string[], unit: DemandUnit = 'person') {
 export function researchUnion(
   groups: string[][],
   unit: DemandUnit = 'person',
-  model: 'conditional_independence' | 'overlap_bounds' = 'conditional_independence',
+  model:
+    | 'conditional_independence'
+    | 'overlap_bounds' = 'conditional_independence',
 ): DemandEstimate | DemandUnavailable {
   const unique = [
     ...new Map(
@@ -166,11 +171,15 @@ export function researchUnion(
       c.base += sign * joint.cells[i].base;
     });
   }
-  if(model==='overlap_bounds')cells.forEach((c,i)=>{
-    const lower=Math.max(...kept.map(t=>t.cells[i].base));
-    const upper=Math.min(c.population,kept.reduce((n,t)=>n+t.cells[i].base,0));
-    c.base=(lower+upper)/2;
-  });
+  if (model === 'overlap_bounds')
+    cells.forEach((c, i) => {
+      const lower = Math.max(...kept.map((t) => t.cells[i].base));
+      const upper = Math.min(
+        c.population,
+        kept.reduce((n, t) => n + t.cells[i].base, 0),
+      );
+      c.base = (lower + upper) / 2;
+    });
   return {
     ...kept[0],
     unionGroups: kept.map((t) => t.factorIds),
@@ -198,7 +207,9 @@ export function researchUnion(
     sourceIds: [...new Set(kept.flatMap((t) => t.sourceIds))],
     assumptions: [
       ...new Set(kept.flatMap((t) => t.assumptions)),
-      model==='overlap_bounds'?'여러 활동의 상관·중복률이 미관측입니다. Base는 공표 참여율로 가능한 합집합 최소·최대 사이의 중간값이고 Low/High는 민감도를 포함한 경계입니다. 독립 가정으로 대부분의 가구가 참여한다고 단정하지 않습니다.':'여러 활동 중 하나 이상인 합집합입니다. Base는 조건부 독립 모형의 포함·배제 계산이며 Low/High는 중복을 모를 때의 합집합 경계입니다.',
+      model === 'overlap_bounds'
+        ? '여러 활동의 상관·중복률이 미관측입니다. Base는 공표 참여율로 가능한 합집합 최소·최대 사이의 중간값이고 Low/High는 민감도를 포함한 경계입니다. 독립 가정으로 대부분의 가구가 참여한다고 단정하지 않습니다.'
+        : '여러 활동 중 하나 이상인 합집합입니다. Base는 조건부 독립 모형의 포함·배제 계산이며 Low/High는 중복을 모를 때의 합집합 경계입니다.',
     ],
     methods: [...new Set(kept.flatMap((t) => t.methods)), 'research_scenario'],
   };

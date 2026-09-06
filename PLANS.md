@@ -560,3 +560,19 @@ remain explicit. Old idea notes are preserved. 68 Atlas tests, lint/typecheck an
 Webpack build passed; primary UI/API, money rank inversion and mobile width checked.
 Root Python checks retain the previously documented missing-dependency failures.
 No production push/deployment or full goal completion at this working checkpoint.
+
+### 2026-09-06 — Industry consumer-problem evidence (goal remains in progress)
+
+- Audited KCA 2025 consumer-life survey, including original questionnaire,
+  unweighted respondent scope, and all-problem vs all-respondent denominators.
+- Added reproducible numeric extraction, ten observed product-problem cohorts and
+  thirty specific children across beauty/clothing, home, fitness, travel, learning,
+  finance and health devices. No synthetic case-count prevalence or spend borrowing.
+- Model now has 179 factors / 20 market roots / 66 branches / 180 lower profiles.
+  Regional imputations and unmeasured paid demand are explicit. Generic lower
+  behavior elsewhere, missing monetary anchors and legacy mapping remain active work.
+- Added denominator/age/containment/region/navigation tests; Atlas 71 tests pass.
+  Root `PYTHONPATH=src python3 -m pytest` rerun: 14 collection errors from missing
+  duckdb/fastapi/psycopg; CLI validate cannot import duckdb. Original Python code and
+  ignored database inputs are unchanged. Final Atlas verification is logged under
+  `atlas/docs/RESEARCH_DEMAND_EVIDENCE.md`.

@@ -61,14 +61,14 @@ Opportunity, comparisons, saved ideas and drill-through must continue to work.
 
 ## Current checkpoint
 
-The external model covers 20 explicitly scoped markets, 56 branches, 150 lower
-scenarios and 139 factors. Four unused rare leisure factors correctly remain
+The external model covers 20 explicitly scoped markets, 66 branches, 180 lower
+scenarios and 179 factors. Four unused rare leisure factors correctly remain
 unavailable. Dining/delivery have 19 monetary profiles; other matching anchors
 remain work in progress. All 20 market journeys were opened in Chrome in the
 preceding phases.
 
 Local primary Atlas, search/API, Matrix, Opportunity, comparison, source inspection
-and saved ideas now use the external model. The 68-test suite, lint/typecheck and
+and saved ideas now use the external model. The 71-test suite, lint/typecheck and
 Webpack production build passed. Matrix/flow/comparison navigation, separate units,
 money-vs-population rank inversion and 390px overflow were checked in real UI.
 
@@ -77,3 +77,18 @@ archetype IDs and many joint filters still need sourced mappings. Richer axes,
 industry-specific lower archetypes and monetary coverage need further work. Existing
 saved notes are preserved. Production has not migrated. No goal completion is claimed.
 See `RESEARCH_DEMAND_EVIDENCE.md` and `data/research-demand-sanity.json`.
+
+The next release checkpoint publishes the verified external-model migration and
+consumer-problem increment before further coverage expansion. This directly fixes
+the production skin/beauty 1.90m misinterpretation. Remaining unsupported conditions
+stay explicit rather than reverting to synthetic prevalence. GitHub and Vercel
+publication were authorized earlier; verify the production alias and old beauty
+link after the release. This release is not completion of the broader goal.
+
+KCA 2025 consumer-life evidence adds ten product-problem parents and thirty
+specific problem subtypes with corrected denominators, age/sex models and explicit
+regional imputation. See `CONSUMER_PROBLEM_DATA_AUDIT.md`. This replaces generic
+purchase scenarios on those new branches; earlier generic branches remain work
+in progress. Newly extracted channel use/frequency/problem tables are available
+for the next integration, as are KCA repairability, service-use and household
+cost-perception tables in the same official PDF.

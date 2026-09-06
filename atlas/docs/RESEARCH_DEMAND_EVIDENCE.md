@@ -137,3 +137,41 @@ statistical confidence intervals. No spend pool is a revenue forecast or SOM.
   for detail/comparison; repeated demographic/source prose is trimmed from lists.
 - Remaining data and taxonomy gaps above still apply. No GitHub push, deployment
   or completion of the active goal is claimed by this checkpoint.
+
+## KCA 2025 product-problem journeys — local verified increment
+
+- Audited the 1,108-page official KCA report, original question 2/3 and Appendix 3;
+  recorded numeric observations, exact PDF hash, period and no-weighting statement.
+  The original 5,035 any-problem denominator is explicitly converted to the 10,000
+  all-respondent denominator within every age/sex/region stratum. Full details:
+  `CONSUMER_PROBLEM_DATA_AUDIT.md`.
+- Ten product-problem cohorts and thirty specific subtypes added across seven
+  markets. Total 179 factors / 266 profiles (20 roots, 66 branches, 180 lower
+  profiles). The same four unused rare leisure factors remain unavailable; money
+  coverage remains 19 profiles. Generic branches and legacy mapping gaps remain.
+- Parent/child factors preserve each age's observed all-respondent rate and apply
+  parent participation once. Regional missingness is kept in the source data and
+  any profile imputation explicitly names its parent/nationwide basis.
+- Browser actually opened all ten new problem parents: beauty, clothing, home
+  repair, appliances, sports facilities, travel, learning, insurance, financial
+  products and health devices. Each exposed its three specific lower types and
+  region module. Beauty → advertising problems → Matrix → thirties → comparison
+  preserved 0.28m people and age. Added home contract problems (0.22m) and sports
+  cancellation/redress (0.59m) to the three-column comparison. Opportunity lists
+  the selected product-problem cohort without invented money. Browser errors: [].
+- Reference flow screenshot checked: curved links, selected branch/leaf, aligned
+  three-column flow and linked profile/range/age/sex/region modules. Measured
+  problem experience and unmeasured need severity/payment intent have separate
+  UI wording. Nested definitions no longer repeat the parent paragraph.
+- Atlas 71/71 tests passed, lint passed, typecheck passed after build, production
+  `npm run build -- --webpack` passed. A concurrent typecheck initially raced with
+  Next regenerating `.next/types`; the sequential final typecheck passed. No new
+  default-Turbopack success is claimed. Numeric sanity ledger regenerated.
+- Required root commands rerun with `PYTHONPATH=src`: pytest stops at fourteen
+  collection errors (missing duckdb/fastapi/psycopg), and CLI validate cannot import
+  duckdb. Original Python implementation and ignored source/database inputs are
+  unchanged. These do not certify a full repository pass.
+- KCA channel use/frequency/problem numeric tables are extracted but not integrated;
+  the same PDF also contains repairability, service-use and other useful items.
+  Continue the remaining all-industry data, taxonomy and discovery work before
+  final deployment. No active-goal completion or production release is claimed.

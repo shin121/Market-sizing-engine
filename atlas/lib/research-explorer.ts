@@ -16,6 +16,7 @@ export interface ResearchBranch {
   children?: { id: string; label: string; factors: string[] }[];
   /** These are propositions for testing, never measured pain prevalence. */
   painMeasured?: boolean;
+  evidenceType?: 'consumer_problem';
 }
 export interface ResearchMarket {
   id: string;
@@ -30,6 +31,8 @@ export interface ResearchMarket {
 export interface ResearchProfile {
   id: string;
   label: string;
+  /** Concise most-specific scope when a published nested cohort is available. */
+  definition?: string;
   estimate: DemandEstimate | DemandUnavailable;
   factors: string[];
   observations: { label: string; value: string }[];

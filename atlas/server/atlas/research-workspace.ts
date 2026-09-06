@@ -185,7 +185,10 @@ function candidate(
       level === 'market'
         ? market.scope
         : e.status === 'estimated'
-          ? e.definitions.join(' · ')
+          ? p.definition
+            ? p.definition +
+              (age ? ` · ${age === '70' ? '70세 이상' : age + '대'}` : '')
+            : e.definitions.join(' · ')
           : e.detail,
     unit: market.unit,
     population: e.status === 'estimated' ? e.base : null,

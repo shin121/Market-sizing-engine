@@ -2,6 +2,7 @@ import type {
   ResearchBranch,
   ResearchMarket,
 } from '../../lib/research-explorer';
+import { consumerJourneys } from './consumer-journeys';
 const b = (
   id: string,
   label: string,
@@ -26,7 +27,7 @@ const b = (
 
 /** Editorial jobs and proposed alternatives are product hypotheses. Population
  * comes exclusively from each explicit external factor, not these descriptions. */
-export const researchMarkets: ResearchMarket[] = [
+const experienceMarkets: ResearchMarket[] = [
   {
     id: 'music',
     label: '음악·공연',
@@ -833,3 +834,40 @@ export const researchMarkets: ResearchMarket[] = [
     gap: '디지털 은행 이용의 분모를 확보했습니다. 주식 보유·연금·저축 및 금융 자문 결제는 별도 조사 필요. 금융 거래액·자산은 소비 지출이 아닙니다.',
   },
 ];
+
+/** A problem cohort is its own observed branch, never an arbitrary problem
+ * rate applied to the market's other activity cohorts. The root is their OR. */
+export const researchMarkets: ResearchMarket[] = experienceMarkets.map(
+  (market) => {
+    const journeys = consumerJourneys.filter((j) => j.market === market.id);
+    if (!journeys.length) return market;
+    return {
+      ...market,
+      scope:
+        market.scope +
+        ' · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님',
+      unionModel: 'overlap_bounds',
+      branches: [
+        ...market.branches,
+        ...journeys.map((j) => ({
+          ...b(
+            'problem_' + j.id,
+            j.label,
+            ['kca_' + j.id],
+            j.job,
+            j.hypothesis,
+            j.alternatives,
+            j.question,
+            true,
+            j.types.map(([type, label]) => ({
+              id: type,
+              label,
+              factors: ['kca_' + j.id + '_' + type],
+            })),
+          ),
+          evidenceType: 'consumer_problem' as const,
+        })),
+      ],
+    };
+  },
+);

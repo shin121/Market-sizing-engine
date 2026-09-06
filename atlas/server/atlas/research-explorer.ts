@@ -9,6 +9,7 @@ import { leisureObservations } from './leisure-research';
 import geography from '../../config/research/region-frame.json';
 import { researchMarketValue } from './research-market-value';
 import { foodProfileMargins } from './sector-research';
+import { consumerProfileRegions, consumerSource } from './consumer-research';
 import type {
   DemandEstimate,
   DemandUnavailable,
@@ -44,7 +45,9 @@ function profile(
   label: string,
   groups: string[][],
   unit: DemandUnit,
-  unionModel: 'conditional_independence' | 'overlap_bounds' = 'conditional_independence',
+  unionModel:
+    | 'conditional_independence'
+    | 'overlap_bounds' = 'conditional_independence',
 ): ResearchProfile {
   const cacheKey = [id, unit, unionModel, JSON.stringify(groups)].join(':');
   const previous = profiles.get(cacheKey);
@@ -96,9 +99,20 @@ function profile(
     regions = foodMargins.regions;
     regionBasis = foodMargins.basis;
   }
+  const consumerRegions =
+    estimate.status === 'estimated' ? consumerProfileRegions(estimate) : null;
+  if (consumerRegions) {
+    regions = consumerRegions.regions;
+    regionBasis = consumerRegions.basis;
+  }
   const out: ResearchProfile = {
     id,
     label,
+    definition:
+      groups.length === 1
+        ? active.filter((f) => f.sourceIds.includes(consumerSource.id)).at(-1)
+            ?.definition
+        : undefined,
     estimate,
     marketValue: researchMarketValue(estimate),
     factors,
@@ -195,7 +209,13 @@ export function getResearchExplorer(
     };
   };
   const root = filter(
-    profile('_root', market.label, roots(market), market.unit, market.unionModel),
+    profile(
+      '_root',
+      market.label,
+      roots(market),
+      market.unit,
+      market.unionModel,
+    ),
   );
   return {
     version: 'research-demand-2026-09-06-v3',

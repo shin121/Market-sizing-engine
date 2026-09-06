@@ -1,8 +1,8 @@
 {
   "version": "research-demand-2026-09-06-v3",
-  "generatedAt": "2026-09-06T13:56:49.985Z",
+  "generatedAt": "2026-09-06T14:42:10.399Z",
   "status": "in_progress_not_production",
-  "factorCount": 139,
+  "factorCount": 179,
   "marketCount": 20,
   "unsupportedFactors": [
     {
@@ -436,13 +436,13 @@
     {
       "id": "travel",
       "label": "여행·로컬 경험",
-      "scope": "국내여행 또는 아래 여가 여행 활동 경험",
+      "scope": "국내여행 또는 아래 여가 여행 활동 경험 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": null,
       "root": {
         "id": "_root",
         "label": "여행·로컬 경험",
         "status": "estimated",
-        "population": 43619943.94382304,
+        "population": 43090585,
         "unit": "person",
         "low": 40311970,
         "high": 44105000,
@@ -455,7 +455,8 @@
           "leisure_E39",
           "leisure_E38",
           "leisure_E41",
-          "leisure_E42"
+          "leisure_E42",
+          "kca_travel"
         ],
         "evidenceGrade": "D",
         "annualValue": null,
@@ -468,7 +469,8 @@
         "sourceIds": [
           "TOUR-2024",
           "CENSUS-2024",
-          "MCST-LEISURE-2024"
+          "MCST-LEISURE-2024",
+          "KCA-CONSUMPTION-2025"
         ]
       },
       "branches": [
@@ -959,29 +961,146 @@
               ]
             }
           ]
+        },
+        {
+          "id": "problem_travel",
+          "label": "여행 예약·이용 중 불편",
+          "status": "estimated",
+          "population": 3406049.000000001,
+          "unit": "person",
+          "low": 2384234.3,
+          "high": 4427863.7,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_travel"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "예약 조건과 실제 경험 맞추기",
+          "validationQuestion": "항공·숙박·체험 중 문제가 집중되는 단계와 회피 비용은?",
+          "children": [
+            {
+              "id": "problem_travel~terms",
+              "label": "불리한 예약·거래 조건",
+              "status": "estimated",
+              "population": 603289.037873504,
+              "unit": "person",
+              "low": 295611.6285580169,
+              "high": 1019558.4740062219,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_travel",
+                "kca_travel_terms"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_travel~redress",
+              "label": "취소·환불 해결 어려움",
+              "status": "estimated",
+              "population": 486995.95554544317,
+              "unit": "person",
+              "low": 238628.0182172671,
+              "high": 823023.164871799,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_travel",
+                "kca_travel_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_travel~advertising",
+              "label": "광고와 실제 경험의 차이",
+              "status": "estimated",
+              "population": 752172.1969665518,
+              "unit": "person",
+              "low": 368564.3765136103,
+              "high": 1271171.0128734724,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_travel",
+                "kca_travel_advertising"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "id": "fitness",
       "label": "운동·아웃도어",
-      "scope": "주 1회·30분 이상 규칙적 운동 참여",
+      "scope": "주 1회·30분 이상 규칙적 운동 참여 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": null,
       "root": {
         "id": "_root",
         "label": "운동·아웃도어",
         "status": "estimated",
-        "population": 28672138,
+        "population": 29851101,
         "unit": "person",
         "low": 26907938,
-        "high": 30436338,
+        "high": 33501641.799999997,
         "methods": [
-          "survey_transfer"
+          "survey_transfer",
+          "research_scenario"
         ],
         "factors": [
-          "fitness"
+          "fitness",
+          "kca_fitness"
         ],
-        "evidenceGrade": "C",
+        "evidenceGrade": "D",
         "annualValue": null,
         "spendPerUnit": null,
         "spendScope": "선택 집단의 관련 소비",
@@ -991,7 +1110,8 @@
         "hasHouseholdProfile": false,
         "sourceIds": [
           "SPORT-2025",
-          "CENSUS-2024"
+          "CENSUS-2024",
+          "KCA-CONSUMPTION-2025"
         ]
       },
       "branches": [
@@ -1495,6 +1615,121 @@
                 "SPORT-2025",
                 "CENSUS-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_fitness",
+          "label": "운동시설 계약·이용 불편",
+          "status": "estimated",
+          "population": 2357926.000000001,
+          "unit": "person",
+          "low": 1650548.2000000004,
+          "high": 3065303.8000000003,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_fitness"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "내 이용에 맞는 운동 계약",
+          "validationQuestion": "환불 거부·위약금·시설 폐업 중 문제 유형과 손실 규모는?",
+          "children": [
+            {
+              "id": "problem_fitness~redress",
+              "label": "취소·환불 해결 어려움",
+              "status": "estimated",
+              "population": 591753.3650531508,
+              "unit": "person",
+              "low": 289959.1488760439,
+              "high": 1000063.1869398248,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_fitness",
+                "kca_fitness_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_fitness~terms",
+              "label": "불리한 이용·계약 조건",
+              "status": "estimated",
+              "population": 559512.8709708275,
+              "unit": "person",
+              "low": 274161.3067757054,
+              "high": 945576.7519406985,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_fitness",
+                "kca_fitness_terms"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_fitness~price",
+              "label": "이용 가격 대비 불만",
+              "status": "estimated",
+              "population": 641483.28904879,
+              "unit": "person",
+              "low": 314326.8116339071,
+              "high": 1084106.7584924551,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_fitness",
+                "kca_fitness_price"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             }
           ]
@@ -2493,16 +2728,16 @@
     {
       "id": "beauty",
       "label": "뷰티·관리",
-      "scope": "온라인 화장품 구매 또는 미용 활동 경험. 전체 화장품 사용률은 아님",
+      "scope": "온라인 화장품 구매 또는 미용 활동 경험. 전체 화장품 사용률은 아님 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": null,
       "root": {
         "id": "_root",
         "label": "뷰티·관리",
         "status": "estimated",
-        "population": 23646843.086673997,
+        "population": 25932120.25502533,
         "unit": "person",
         "low": 13694463.123103784,
-        "high": 31632099.07228031,
+        "high": 38959063.19579113,
         "methods": [
           "survey_transfer",
           "research_scenario"
@@ -2511,7 +2746,9 @@
           "leisure_F67",
           "commerce",
           "cosmetics_online_buyers",
-          "digital"
+          "digital",
+          "kca_beauty",
+          "kca_clothing"
         ],
         "evidenceGrade": "D",
         "annualValue": null,
@@ -2524,7 +2761,8 @@
         "sourceIds": [
           "NIA-2024",
           "CENSUS-2024",
-          "MCST-LEISURE-2024"
+          "MCST-LEISURE-2024",
+          "KCA-CONSUMPTION-2025"
         ]
       },
       "branches": [
@@ -2773,6 +3011,236 @@
                 "NIA-2024",
                 "CENSUS-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_beauty",
+          "label": "뷰티 선택·이용 중 불편",
+          "status": "estimated",
+          "population": 3653918,
+          "unit": "person",
+          "low": 2557742.5999999996,
+          "high": 4750093.399999999,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_beauty"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "광고와 실제 경험의 차이 줄이기",
+          "validationQuestion": "문제 발생 품목, 재구매 중단, 최근 손실액과 유료 해결 의향은?",
+          "children": [
+            {
+              "id": "problem_beauty~advertising",
+              "label": "과장·기만 광고 경험",
+              "status": "estimated",
+              "population": 1524004.4895772338,
+              "unit": "person",
+              "low": 746762.1998928444,
+              "high": 2575567.587385525,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_beauty",
+                "kca_beauty_advertising"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_beauty~price",
+              "label": "가격 대비 효용 불만",
+              "status": "estimated",
+              "population": 1504673.09989933,
+              "unit": "person",
+              "low": 737289.8189506716,
+              "high": 2542897.5388298677,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_beauty",
+                "kca_beauty_price"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_beauty~redress",
+              "label": "교환·환불 해결 어려움",
+              "status": "estimated",
+              "population": 241820.59258353122,
+              "unit": "person",
+              "low": 118492.09036593026,
+              "high": 408676.80146616785,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_beauty",
+                "kca_beauty_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_clothing",
+          "label": "의류·신발 구매 후 불편",
+          "status": "estimated",
+          "population": 8146549.000000002,
+          "unit": "person",
+          "low": 5702584.300000001,
+          "high": 10590513.700000003,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_clothing"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "받은 상품이 기대와 맞는 구매",
+          "validationQuestion": "품질·핏·사이즈 중 실제 문제의 원인과 반품 비용은?",
+          "children": [
+            {
+              "id": "problem_clothing~quality",
+              "label": "상품 품질 불량 경험",
+              "status": "estimated",
+              "population": 1970628.2002319288,
+              "unit": "person",
+              "low": 965607.8181136447,
+              "high": 3330361.6583919595,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_clothing",
+                "kca_clothing_quality"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_clothing~redress",
+              "label": "교환·환불 해결 어려움",
+              "status": "estimated",
+              "population": 841433.7317848732,
+              "unit": "person",
+              "low": 412302.5285745879,
+              "high": 1422023.006716436,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_clothing",
+                "kca_clothing_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_clothing~delivery",
+              "label": "오배송·배송 지연 경험",
+              "status": "estimated",
+              "population": 1459806.5936510514,
+              "unit": "person",
+              "low": 715305.2308890151,
+              "high": 2467073.1432702774,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_clothing",
+                "kca_clothing_delivery"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             }
           ]
@@ -3065,23 +3533,25 @@
     {
       "id": "education",
       "label": "배움·자기계발",
-      "scope": "최근 1년 평생학습 프로그램 참여, 25~79세",
+      "scope": "최근 1년 평생학습 프로그램 참여, 25~79세 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": null,
       "root": {
         "id": "_root",
         "label": "배움·자기계발",
         "status": "estimated",
-        "population": 12989328,
+        "population": 13930235.26389914,
         "unit": "person",
-        "low": 11447568.000000002,
-        "high": 14531088,
+        "low": 11474878.869458798,
+        "high": 16926726.700000003,
         "methods": [
-          "survey_transfer"
+          "survey_transfer",
+          "research_scenario"
         ],
         "factors": [
-          "education"
+          "education",
+          "kca_learning"
         ],
-        "evidenceGrade": "C",
+        "evidenceGrade": "D",
         "annualValue": null,
         "spendPerUnit": null,
         "spendScope": "선택 집단의 관련 소비",
@@ -3091,7 +3561,8 @@
         "hasHouseholdProfile": false,
         "sourceIds": [
           "KEDI-LEARN-2025",
-          "CENSUS-2024"
+          "CENSUS-2024",
+          "KCA-CONSUMPTION-2025"
         ]
       },
       "branches": [
@@ -3476,29 +3947,146 @@
               ]
             }
           ]
+        },
+        {
+          "id": "problem_learning",
+          "label": "교육 선택·계약 중 불편",
+          "status": "estimated",
+          "population": 1842799.0000000002,
+          "unit": "person",
+          "low": 1289959.3,
+          "high": 2395638.7000000016,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_learning"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "수강 결정의 불확실성 줄이기",
+          "validationQuestion": "학습자와 결제자, 강의 품질·효과 불만과 해지 비용은?",
+          "children": [
+            {
+              "id": "problem_learning~advertising",
+              "label": "과장·기만 광고 경험",
+              "status": "estimated",
+              "population": 356603.1597355489,
+              "unit": "person",
+              "low": 174735.54827041895,
+              "high": 602659.3399530777,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_learning",
+                "kca_learning_advertising"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_learning~information",
+              "label": "수강 전 비교정보 부족",
+              "status": "estimated",
+              "population": 256111.26691309706,
+              "unit": "person",
+              "low": 125494.52078741757,
+              "high": 432828.0410831341,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_learning",
+                "kca_learning_information"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_learning~redress",
+              "label": "수강 취소·환불 어려움",
+              "status": "estimated",
+              "population": 264879.2719204465,
+              "unit": "person",
+              "low": 129790.84324101878,
+              "high": 447645.9695455547,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_learning",
+                "kca_learning_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "id": "home",
       "label": "집·인테리어",
-      "scope": "실내 장식 변경 또는 생활공예 경험. 전체 주거 소비자 수가 아님",
+      "scope": "실내 장식 변경 또는 생활공예 경험. 전체 주거 소비자 수가 아님 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": null,
       "root": {
         "id": "_root",
         "label": "집·인테리어",
         "status": "estimated",
-        "population": 3055288.128180758,
+        "population": 5652277.3658934785,
         "unit": "person",
-        "low": 1567441.911643093,
-        "high": 3950005.191671642,
+        "low": 2213141.6121891425,
+        "high": 10551362.291671643,
         "methods": [
           "survey_transfer",
           "research_scenario"
         ],
         "factors": [
           "leisure_F54",
-          "leisure_F50"
+          "leisure_F50",
+          "kca_repair",
+          "kca_appliance"
         ],
         "evidenceGrade": "D",
         "annualValue": null,
@@ -3510,7 +4098,8 @@
         "hasHouseholdProfile": false,
         "sourceIds": [
           "CENSUS-2024",
-          "MCST-LEISURE-2024"
+          "MCST-LEISURE-2024",
+          "KCA-CONSUMPTION-2025"
         ]
       },
       "branches": [
@@ -3754,6 +4343,236 @@
                 "CENSUS-2024",
                 "MCST-LEISURE-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_repair",
+          "label": "주택수리·시공 중 불편",
+          "status": "estimated",
+          "population": 2156599.9999999995,
+          "unit": "person",
+          "low": 1509619.999999999,
+          "high": 2803580,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_repair"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "약속한 조건대로 완성되는 시공",
+          "validationQuestion": "공정별 분쟁 원인, 재시공 금액, 검수 서비스 지불 의향은?",
+          "children": [
+            {
+              "id": "problem_repair~contract",
+              "label": "계약 불이행·부당행위 경험",
+              "status": "estimated",
+              "population": 220986.98623448086,
+              "unit": "person",
+              "low": 108283.62325489563,
+              "high": 373468.00673627265,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_repair",
+                "kca_repair_contract"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_repair~information",
+              "label": "시공 비교정보 부족",
+              "status": "estimated",
+              "population": 339776.6282977473,
+              "unit": "person",
+              "low": 166490.54786589617,
+              "high": 574222.5018231929,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_repair",
+                "kca_repair_information"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_repair~price",
+              "label": "시공 가격 대비 불만",
+              "status": "estimated",
+              "population": 670979.3837180987,
+              "unit": "person",
+              "low": 328779.8980218683,
+              "high": 1133955.1584835865,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_repair",
+                "kca_repair_price"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_appliance",
+          "label": "가전 선택·사용 중 불편",
+          "status": "estimated",
+          "population": 2921367.0000000005,
+          "unit": "person",
+          "low": 2044956.9000000001,
+          "high": 3797777.1,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_appliance"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "제품 수명까지 고려하는 구매",
+          "validationQuestion": "문제 제품의 수리 가능성·교체 비용과 유료 점검 의향은?",
+          "children": [
+            {
+              "id": "problem_appliance~quality",
+              "label": "가전 품질 불량 경험",
+              "status": "estimated",
+              "population": 251757.91920873002,
+              "unit": "person",
+              "low": 123361.38041227772,
+              "high": 425470.8834627538,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_appliance",
+                "kca_appliance_quality"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_appliance~information",
+              "label": "구매 전 비교정보 부족",
+              "status": "estimated",
+              "population": 319361.8754950406,
+              "unit": "person",
+              "low": 156487.31899256987,
+              "high": 539721.5695866185,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_appliance",
+                "kca_appliance_information"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_appliance~redress",
+              "label": "교환·보상 해결 어려움",
+              "status": "estimated",
+              "population": 231584.73218104683,
+              "unit": "person",
+              "low": 113476.51876871291,
+              "high": 391378.19738596905,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_appliance",
+                "kca_appliance_redress"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             }
           ]
@@ -4852,13 +5671,13 @@
     {
       "id": "wellness",
       "label": "건강·휴식",
-      "scope": "산책·목욕/사우나 중 하나 이상 여가 경험. 의료 수요 제외",
+      "scope": "산책·목욕/사우나 중 하나 이상 여가 경험. 의료 수요 제외 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": null,
       "root": {
         "id": "_root",
         "label": "건강·휴식",
         "status": "estimated",
-        "population": 38792697.32054319,
+        "population": 39299096.50000001,
         "unit": "person",
         "low": 25869894.75,
         "high": 44105000,
@@ -4868,7 +5687,8 @@
         ],
         "factors": [
           "leisure_G71",
-          "leisure_G72"
+          "leisure_G72",
+          "kca_health_device"
         ],
         "evidenceGrade": "D",
         "annualValue": null,
@@ -4880,7 +5700,8 @@
         "hasHouseholdProfile": false,
         "sourceIds": [
           "CENSUS-2024",
-          "MCST-LEISURE-2024"
+          "MCST-LEISURE-2024",
+          "KCA-CONSUMPTION-2025"
         ]
       },
       "branches": [
@@ -5124,6 +5945,121 @@
                 "CENSUS-2024",
                 "MCST-LEISURE-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_health_device",
+          "label": "건강관리 기기 선택 불편",
+          "status": "estimated",
+          "population": 2064087.0000000005,
+          "unit": "person",
+          "low": 1444860.9000000006,
+          "high": 2683313.1000000006,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_health_device"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "내 관리에 적합한 기기 선택",
+          "validationQuestion": "질환 관리용·생활 관리용 구분과 실제 사용 중단 이유는?",
+          "children": [
+            {
+              "id": "problem_health_device~advertising",
+              "label": "기기 광고에 대한 문제 경험",
+              "status": "estimated",
+              "population": 579063.2943210315,
+              "unit": "person",
+              "low": 283741.01421730535,
+              "high": 978616.9674025436,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_health_device",
+                "kca_health_device_advertising"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_health_device~information",
+              "label": "기기 비교정보 부족",
+              "status": "estimated",
+              "population": 321897.6995155384,
+              "unit": "person",
+              "low": 157729.87276261387,
+              "high": 544007.1121812599,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_health_device",
+                "kca_health_device_information"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_health_device~explanation",
+              "label": "설명 부족·불완전 판매 경험",
+              "status": "estimated",
+              "population": 242536.3314718535,
+              "unit": "person",
+              "low": 118842.80242120821,
+              "high": 409886.4001874325,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_health_device",
+                "kca_health_device_explanation"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             }
           ]
@@ -6917,25 +7853,28 @@
     {
       "id": "finance",
       "label": "개인 재테크",
-      "scope": "최근 1년 인터넷뱅킹 이용 성인. 주식·저축·유료 자문 고객 전체를 뜻하지 않음",
+      "scope": "최근 1년 인터넷뱅킹 이용 성인. 주식·저축·유료 자문 고객 전체를 뜻하지 않음 · 별도 품목 문제 경험 집단 포함. 표시된 수요의 합집합이며 산업 전체 이용자 수는 아님",
       "gap": "디지털 은행 이용의 분모를 확보했습니다. 주식 보유·연금·저축 및 금융 자문 결제는 별도 조사 필요. 금융 거래액·자산은 소비 지출이 아닙니다.",
       "root": {
         "id": "_root",
         "label": "개인 재테크",
         "status": "estimated",
-        "population": 34412902.82400001,
+        "population": 36713487.84749999,
         "unit": "person",
         "low": 30332467.731599998,
-        "high": 37496643.640099995,
+        "high": 40408157.69318707,
         "methods": [
           "survey_transfer",
-          "survey_rate"
+          "survey_rate",
+          "research_scenario"
         ],
         "factors": [
           "digital",
-          "finance_banking"
+          "finance_banking",
+          "kca_insurance",
+          "kca_banking"
         ],
-        "evidenceGrade": "C",
+        "evidenceGrade": "D",
         "annualValue": null,
         "spendPerUnit": null,
         "spendScope": "선택 집단의 관련 소비",
@@ -6945,7 +7884,8 @@
         "hasHouseholdProfile": false,
         "sourceIds": [
           "NIA-2024",
-          "CENSUS-2024"
+          "CENSUS-2024",
+          "KCA-CONSUMPTION-2025"
         ]
       },
       "branches": [
@@ -7172,6 +8112,236 @@
                 "NIA-2024",
                 "CENSUS-2024",
                 "KCA-PURCHASE-2024"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_insurance",
+          "label": "보험 이해·계약 중 불편",
+          "status": "estimated",
+          "population": 4649401.000000001,
+          "unit": "person",
+          "low": 3254580.7,
+          "high": 6044221.3,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_insurance"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "보장과 계약 조건을 이해하기",
+          "validationQuestion": "보험 종류·계약 단계별 원인과 독립 검토에 대한 지불 의향은?",
+          "children": [
+            {
+              "id": "problem_insurance~explanation",
+              "label": "설명 부족·불완전 판매 경험",
+              "status": "estimated",
+              "population": 1219532.710251737,
+              "unit": "person",
+              "low": 597571.0280233509,
+              "high": 2061010.2803254353,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_insurance",
+                "kca_insurance_explanation"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_insurance~information",
+              "label": "보험 비교정보 부족",
+              "status": "estimated",
+              "population": 977616.8618627717,
+              "unit": "person",
+              "low": 479032.262312758,
+              "high": 1652172.4965480838,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_insurance",
+                "kca_insurance_information"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_insurance~terms",
+              "label": "불리한 보험 거래조건",
+              "status": "estimated",
+              "population": 894524.8166295912,
+              "unit": "person",
+              "low": 438317.1601484996,
+              "high": 1511746.9401040091,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_insurance",
+                "kca_insurance_terms"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem_banking",
+          "label": "금융상품 선택·이용 불편",
+          "status": "estimated",
+          "population": 3477877,
+          "unit": "person",
+          "low": 2434513.9,
+          "high": 4521240.100000001,
+          "methods": [
+            "survey_transfer"
+          ],
+          "factors": [
+            "kca_banking"
+          ],
+          "evidenceGrade": "C",
+          "annualValue": null,
+          "spendPerUnit": null,
+          "spendScope": "선택 집단의 관련 소비",
+          "moneyStatus": "missing_calibration_anchor",
+          "hasAge": true,
+          "hasRegion": true,
+          "hasHouseholdProfile": false,
+          "sourceIds": [
+            "CENSUS-2024",
+            "KCA-CONSUMPTION-2025"
+          ],
+          "job": "위험과 조건을 이해하는 금융 이용",
+          "validationQuestion": "상품별 실제 피해 여부와 문제를 예방하는 행동·비용은?",
+          "children": [
+            {
+              "id": "problem_banking~privacy",
+              "label": "개인정보·사기 불안 경험",
+              "status": "estimated",
+              "population": 1002607.4131600349,
+              "unit": "person",
+              "low": 491277.6324484171,
+              "high": 1694406.528240459,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_banking",
+                "kca_banking_privacy"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_banking~information",
+              "label": "금융상품 비교정보 부족",
+              "status": "estimated",
+              "population": 759431.3765805346,
+              "unit": "person",
+              "low": 372121.37452446186,
+              "high": 1283439.026421104,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_banking",
+                "kca_banking_information"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
+              ]
+            },
+            {
+              "id": "problem_banking~explanation",
+              "label": "설명 부족·불완전 판매 경험",
+              "status": "estimated",
+              "population": 717594.6746850412,
+              "unit": "person",
+              "low": 351621.39059567027,
+              "high": 1212735.0002177204,
+              "methods": [
+                "survey_transfer"
+              ],
+              "factors": [
+                "kca_banking",
+                "kca_banking_explanation"
+              ],
+              "evidenceGrade": "C",
+              "annualValue": null,
+              "spendPerUnit": null,
+              "spendScope": "선택 집단의 관련 소비",
+              "moneyStatus": "missing_calibration_anchor",
+              "hasAge": true,
+              "hasRegion": true,
+              "hasHouseholdProfile": false,
+              "sourceIds": [
+                "CENSUS-2024",
+                "KCA-CONSUMPTION-2025"
               ]
             }
           ]
