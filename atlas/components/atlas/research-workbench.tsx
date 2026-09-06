@@ -240,6 +240,11 @@ export function ResearchWorkbench({
   const moneyKnown = rows.filter(
     (p) => p.marketValue.annualValue !== null,
   ).length;
+  const moneyMarkets = new Set(
+    data.candidates
+      .filter((p) => p.marketValue.annualValue !== null)
+      .map((p) => p.market),
+  ).size;
   const panelContext = { ...c, node: c.node || '_root' };
   return (
     <div className="research-os rw-shell">
@@ -477,10 +482,10 @@ export function ResearchWorkbench({
                   </div>
                   <div>
                     <b>
-                      {moneyKnown}
-                      <em> / {rows.length}</em>
+                      {c.market ? moneyKnown : moneyMarkets}
+                      <em> / {c.market ? rows.length : roots.length}</em>
                     </b>
-                    <span>지출 기준이 연결된 범위</span>
+                    <span>{c.market ? '지출 기준이 연결된 세그먼트' : '지출 기준이 연결된 시장(일부 하위 범위)'}</span>
                   </div>
                 </div>
                 <div className="rw-controls">
